@@ -1,0 +1,58 @@
+[
+  {
+    "id": "q001",
+    "genre": "science",
+    "question_text": {
+      "ja": "水の化学式は？",
+      "en": "What is the chemical formula for water?"
+    },
+    "choices": [
+      {
+        "ja": "CO2",
+        "en": "CO2"
+      },
+      {
+        "en": "H2O",
+        "ja": "H2O"
+      },
+      {
+        "en": "O2",
+        "ja": "O2"
+      },
+      {
+        "ja": "N2",
+        "en": "N2"
+      }
+    ],
+    "correct_answer_index": 1,
+    "image_path": null
+  },
+  {
+    "id": "q002",
+    "genre": "geography",
+    "question_text": {
+      "ja": "日本の首都は？",
+      "en": "What is the capital of Japan?"
+    },
+    "choices": [
+      {
+        "en": "Osaka",
+        "ja": "大阪"
+      },
+      {
+        "ja": "東京",
+        "en": "Tokyo"
+      },
+      {
+        "ja": "京都",
+        "en": "Kyoto"
+      },
+      {
+        "ja": "名古屋",
+        "en": "Nagoya"
+      }
+    ],
+    "correct_answer_index": 1,
+    "image_path": null
+  }
+]
