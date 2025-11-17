@@ -1,58 +1,162 @@
 [
   {
-    "id": "q001",
-    "genre": "science",
+    "id": "q00001",
+    "genre": "programming",
     "question_text": {
-      "en": "What is the chemical formula for water?",
-      "ja": "水の化学式は？"
+      "ja": "Pythonでリストをソートするメソッドは？",
+      "en": "What method sorts a list in Python?"
     },
     "choices": [
-      {
-        "ja": "CO2",
-        "en": "CO2"
-      },
-      {
-        "ja": "H2O",
-        "en": "H2O"
-      },
-      {
-        "ja": "O2",
-        "en": "O2"
-      },
-      {
-        "ja": "N2",
-        "en": "N2"
-      }
+      {"ja": "sort()", "en": "sort()"},
+      {"ja": "order()", "en": "order()"},
+      {"ja": "arrange()", "en": "arrange()"},
+      {"ja": "organize()", "en": "organize()"}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null
+  },
+  {
+    "id": "q00002",
+    "genre": "programming",
+    "question_text": {
+      "ja": "Rustで可変変数を宣言するキーワードは？",
+      "en": "What keyword declares a mutable variable in Rust?"
+    },
+    "choices": [
+      {"ja": "let", "en": "let"},
+      {"ja": "let mut", "en": "let mut"},
+      {"ja": "var", "en": "var"},
+      {"ja": "mut", "en": "mut"}
     ],
     "correct_answer_index": 1,
     "image_path": null
   },
   {
-    "id": "q002",
-    "genre": "geography",
+    "id": "q00003",
+    "genre": "programming",
     "question_text": {
-      "ja": "日本の首都は？",
-      "en": "What is the capital of Japan?"
+      "ja": "JavaScriptで非同期処理を扱う構文は？",
+      "en": "What syntax handles async operations in JavaScript?"
     },
     "choices": [
-      {
-        "ja": "大阪",
-        "en": "Osaka"
-      },
-      {
-        "ja": "東京",
-        "en": "Tokyo"
-      },
-      {
-        "ja": "京都",
-        "en": "Kyoto"
-      },
-      {
-        "ja": "名古屋",
-        "en": "Nagoya"
-      }
+      {"ja": "async/await", "en": "async/await"},
+      {"ja": "thread/join", "en": "thread/join"},
+      {"ja": "parallel/sync", "en": "parallel/sync"},
+      {"ja": "defer/resume", "en": "defer/resume"}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null
+  },
+  {
+    "id": "q00004",
+    "genre": "programming",
+    "question_text": {
+      "ja": "O(log n)の計算量を持つ探索アルゴリズムは？",
+      "en": "Which search algorithm has O(log n) complexity?"
+    },
+    "choices": [
+      {"ja": "せんけいたんさく", "en": "linear search"},
+      {"ja": "にぶんたんさく", "en": "binary search"},
+      {"ja": "はっしゅたんさく", "en": "hash search"},
+      {"ja": "ぜんたんさく", "en": "exhaustive search"}
     ],
     "correct_answer_index": 1,
+    "image_path": null
+  },
+  {
+    "id": "q00005",
+    "genre": "programming",
+    "question_text": {
+      "ja": "デザインパターンのシングルトンの目的は？",
+      "en": "What is the purpose of Singleton pattern?"
+    },
+    "choices": [
+      {"ja": "インスタンスを1つだけにする", "en": "Only one instance"},
+      {"ja": "けいしょうをかんたんにする", "en": "Easy inheritance"},
+      {"ja": "へいれつしょりをする", "en": "Parallel processing"},
+      {"ja": "めもりをせつやくする", "en": "Save memory"}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null
+  },
+  {
+    "id": "q00006",
+    "genre": "programming",
+    "question_text": {
+      "ja": "関数型プログラミングで避けるべきものは？",
+      "en": "What should be avoided in functional programming?"
+    },
+    "choices": [
+      {"ja": "ふくさよう", "en": "side effects"},
+      {"ja": "さいきてきよびだし", "en": "recursion"},
+      {"ja": "こうかいかんすう", "en": "higher-order functions"},
+      {"ja": "ふへんせい", "en": "immutability"}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null
+  },
+  {
+    "id": "q00007",
+    "genre": "programming",
+    "question_text": {
+      "ja": "Pythonでディクショナリのキーを取得するメソッドは？",
+      "en": "Method to get dictionary keys in Python?"
+    },
+    "choices": [
+      {"ja": "keys()", "en": "keys()"},
+      {"ja": "getkeys()", "en": "getkeys()"},
+      {"ja": "keylist()", "en": "keylist()"},
+      {"ja": "allkeys()", "en": "allkeys()"}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null
+  },
+  {
+    "id": "q00008",
+    "genre": "programming",
+    "question_text": {
+      "ja": "クイックソートの平均計算量は？",
+      "en": "Average time complexity of quicksort?"
+    },
+    "choices": [
+      {"ja": "O(n)", "en": "O(n)"},
+      {"ja": "O(n log n)", "en": "O(n log n)"},
+      {"ja": "O(n^2)", "en": "O(n^2)"},
+      {"ja": "O(log n)", "en": "O(log n)"}
+    ],
+    "correct_answer_index": 1,
+    "image_path": null
+  },
+  {
+    "id": "q00009",
+    "genre": "programming",
+    "question_text": {
+      "ja": "スタックのデータ構造の特徴は？",
+      "en": "Characteristic of stack data structure?"
+    },
+    "choices": [
+      {"ja": "FIFO", "en": "FIFO"},
+      {"ja": "LIFO", "en": "LIFO"},
+      {"ja": "ランダムアクセス", "en": "Random access"},
+      {"ja": "そーとずみ", "en": "Sorted"}
+    ],
+    "correct_answer_index": 1,
+    "image_path": null
+  },
+  {
+    "id": "q00010",
+    "genre": "programming",
+    "question_text": {
+      "ja": "JavaScriptのnullとundefinedの違いは？",
+      "en": "Difference between null and undefined in JS?"
+    },
+    "choices": [
+      {"ja": "nullはいとてきなくうち", "en": "null is intentional empty"},
+      {"ja": "おなじいみ", "en": "Same meaning"},
+      {"ja": "undefinedはえらー", "en": "undefined is error"},
+      {"ja": "ちがいはない", "en": "No difference"}
+    ],
+    "correct_answer_index": 0,
     "image_path": null
   }
 ]
