@@ -7,7 +7,6 @@ description = "A quiz and typing game that combines learning with skill improvem
 license = "MIT"
 homepage = "https://github.com/kako-jun/type-globe"
 repository = "https://github.com/kako-jun/type-globe"
-documentation = "https://docs.rs/type-globe"
 readme = "README.md"
 keywords = ["game", "tui", "typing", "quiz"]
 categories = ["command-line-utilities", "games"]
@@ -28,3 +27,4 @@ cargo-husky = { version = "1", default-features = false, features = ["user-hooks
 lto = true
 codegen-units = 1
 panic = "abort"
+strip = true
