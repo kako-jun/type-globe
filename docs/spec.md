@@ -112,5 +112,6 @@ src/
 | Path | Description |
 |---|---|
 | `data/questions_ja.json` | 100 quiz questions (Japanese) |
+| `data/questions_en.json` | Quiz questions (English) |
 | `scripts/generate_questions.py` | AI-assisted question generation script |
 | `.claude/quiz-generation-policy.md` | Quality guidelines for question generation |
