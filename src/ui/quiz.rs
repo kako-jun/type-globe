@@ -5,15 +5,24 @@ use crossterm::{
 };
 use ratatui::{
     backend::CrosstermBackend,
-    layout::{Alignment, Constraint, Direction, Layout},
+    layout::{Alignment, Constraint, Direction, Layout, Rect},
     style::{Color, Modifier, Style},
     text::{Line, Span},
-    widgets::{Block, Borders, List, ListItem, ListState, Paragraph, Gauge},
+    widgets::{Block, Borders, Gauge, List, ListItem, ListState, Paragraph},
     Frame, Terminal,
 };
 use std::io;
 use crate::game::{QuizGame, QuizResult};
 use crate::types::{Question, Language};
+
+const STYLE_TITLE: Style = Style::new().fg(Color::Cyan).add_modifier(Modifier::BOLD);
+const STYLE_SELECTED: Style = Style::new().fg(Color::Yellow).add_modifier(Modifier::BOLD);
+const STYLE_NORMAL: Style = Style::new().fg(Color::White);
+const STYLE_HELP: Style = Style::new().fg(Color::Gray);
+const STYLE_STATS: Style = Style::new().fg(Color::Cyan);
+const STYLE_CORRECT: Style = Style::new().fg(Color::Green).add_modifier(Modifier::BOLD);
+const STYLE_INCORRECT: Style = Style::new().fg(Color::Red).add_modifier(Modifier::BOLD);
+const STYLE_CONTINUE: Style = Style::new().fg(Color::Yellow);
 
 pub struct QuizUI {
     quiz_game: QuizGame,
@@ -26,7 +35,7 @@ impl QuizUI {
     pub fn new(questions: Vec<Question>, language: Language) -> Self {
         let mut quiz_game = QuizGame::new(questions, language);
         quiz_game.start();
-        
+
         Self {
             quiz_game,
             selected_choice: 0,
@@ -56,7 +65,7 @@ impl QuizUI {
             terminal.draw(|f| self.ui(f))?;
 
             if let Event::Key(key) = event::read()? {
-                if self.handle_input(key) {
+                if self.handle_key(key) {
                     break;
                 }
             }
@@ -65,17 +74,17 @@ impl QuizUI {
         Ok(self.quiz_game.get_final_score())
     }
 
-    fn handle_input(&mut self, key: KeyEvent) -> bool {
+    fn handle_key(&mut self, key: KeyEvent) -> bool {
         match key.code {
             KeyCode::Char('q') => return true,
-            
-            KeyCode::Up => {
-                if !self.show_result && self.selected_choice > 0 {
-                    self.selected_choice -= 1;
+
+            KeyCode::Up | KeyCode::Char('k') => {
+                if !self.show_result {
+                    self.selected_choice = self.selected_choice.saturating_sub(1);
                 }
             }
-            
-            KeyCode::Down => {
+
+            KeyCode::Down | KeyCode::Char('j') => {
                 if !self.show_result {
                     if let Some(question) = self.quiz_game.get_current_question() {
                         if self.selected_choice < question.choices.len() - 1 {
@@ -84,59 +93,38 @@ impl QuizUI {
                     }
                 }
             }
-            
-            KeyCode::Char('1') => {
-                if !self.show_result {
-                    self.selected_choice = 0;
-                }
-            }
-            KeyCode::Char('2') => {
-                if !self.show_result {
-                    self.selected_choice = 1;
-                }
-            }
-            KeyCode::Char('3') => {
-                if !self.show_result {
-                    self.selected_choice = 2;
-                }
-            }
-            KeyCode::Char('4') => {
-                if !self.show_result {
-                    self.selected_choice = 3;
-                }
-            }
-            
+
+            KeyCode::Char('1') if !self.show_result => self.selected_choice = 0,
+            KeyCode::Char('2') if !self.show_result => self.selected_choice = 1,
+            KeyCode::Char('3') if !self.show_result => self.selected_choice = 2,
+            KeyCode::Char('4') if !self.show_result => self.selected_choice = 3,
+
             KeyCode::Enter | KeyCode::Char(' ') => {
                 if self.show_result {
                     if self.quiz_game.is_game_finished() {
                         return true;
-                    } else {
-                        self.show_result = false;
-                        self.current_result = None;
-                        self.selected_choice = 0;
                     }
-                } else {
-                    if let Some(result) = self.quiz_game.answer_question(self.selected_choice) {
-                        self.current_result = Some(result);
-                        self.show_result = true;
-                    }
+                    self.show_result = false;
+                    self.current_result = None;
+                    self.selected_choice = 0;
+                } else if let Some(result) = self.quiz_game.answer_question(self.selected_choice) {
+                    self.current_result = Some(result);
+                    self.show_result = true;
                 }
             }
-            
+
             KeyCode::Char('s') => {
-                if !self.show_result {
-                    if self.quiz_game.skip_question() {
-                        if self.quiz_game.is_game_finished() {
-                            return true;
-                        }
-                        self.selected_choice = 0;
+                if !self.show_result && self.quiz_game.skip_question() {
+                    if self.quiz_game.is_game_finished() {
+                        return true;
                     }
+                    self.selected_choice = 0;
                 }
             }
-            
+
             _ => {}
         }
-        
+
         false
     }
 
@@ -154,41 +142,41 @@ impl QuizUI {
 
         self.render_title(f, chunks[0]);
         self.render_progress(f, chunks[1]);
-        
+
         if self.show_result {
             self.render_result(f, chunks[2]);
         } else {
             self.render_question(f, chunks[2]);
         }
-        
+
         self.render_help(f, chunks[3]);
     }
 
-    fn render_title(&self, f: &mut Frame, area: ratatui::layout::Rect) {
+    fn render_title(&self, f: &mut Frame, area: Rect) {
         let title = Paragraph::new("TypeGlobe - クイズモード")
-            .style(Style::default().fg(Color::Cyan).add_modifier(Modifier::BOLD))
+            .style(STYLE_TITLE)
             .alignment(Alignment::Center)
             .block(Block::default().borders(Borders::ALL));
         f.render_widget(title, area);
     }
 
-    fn render_progress(&self, f: &mut Frame, area: ratatui::layout::Rect) {
+    fn render_progress(&self, f: &mut Frame, area: Rect) {
         let (current, total) = self.quiz_game.get_progress();
         let progress_ratio = if total > 0 { current as f64 / total as f64 } else { 0.0 };
-        
+
         let gauge = Gauge::default()
             .block(Block::default().title(format!("進捗: {}/{}", current, total)).borders(Borders::ALL))
             .gauge_style(Style::default().fg(Color::Blue))
             .ratio(progress_ratio);
-        
+
         f.render_widget(gauge, area);
     }
 
-    fn render_question(&self, f: &mut Frame, area: ratatui::layout::Rect) {
+    fn render_question(&self, f: &mut Frame, area: Rect) {
         if let Some(question) = self.quiz_game.get_current_question() {
             let question_text = self.quiz_game.get_question_text(question);
             let choices = self.quiz_game.get_choice_texts(question);
-            
+
             let chunks = Layout::default()
                 .direction(Direction::Vertical)
                 .constraints([
@@ -198,7 +186,7 @@ impl QuizUI {
                 .split(area);
 
             let question_paragraph = Paragraph::new(question_text)
-                .style(Style::default().fg(Color::White))
+                .style(STYLE_NORMAL)
                 .alignment(Alignment::Left)
                 .block(Block::default().title("問題").borders(Borders::ALL))
                 .wrap(ratatui::widgets::Wrap { trim: true });
@@ -210,9 +198,9 @@ impl QuizUI {
                 .map(|(i, choice)| {
                     let text = format!("{}. {}", i + 1, choice);
                     let style = if i == self.selected_choice {
-                        Style::default().fg(Color::Yellow).add_modifier(Modifier::BOLD)
+                        STYLE_SELECTED
                     } else {
-                        Style::default().fg(Color::White)
+                        STYLE_NORMAL
                     };
                     ListItem::new(Line::from(Span::styled(text, style)))
                 })
@@ -220,7 +208,7 @@ impl QuizUI {
 
             let choices_list = List::new(choice_items)
                 .block(Block::default().title("選択肢").borders(Borders::ALL))
-                .highlight_style(Style::default().fg(Color::Yellow).add_modifier(Modifier::BOLD));
+                .highlight_style(STYLE_SELECTED);
 
             let mut state = ListState::default();
             state.select(Some(self.selected_choice));
@@ -234,68 +222,72 @@ impl QuizUI {
         }
     }
 
-    fn render_result(&self, f: &mut Frame, area: ratatui::layout::Rect) {
-        if let (Some(result), Some(question)) = (&self.current_result, self.quiz_game.get_current_question()) {
-            let choices = self.quiz_game.get_choice_texts(question);
-            
-            let result_text = if result.is_correct {
-                "正解！".to_string()
-            } else {
-                format!("不正解。正解は: {}", choices.get(result.correct_answer_index).unwrap_or(&"不明".to_string()))
-            };
-            
-            let result_color = if result.is_correct { Color::Green } else { Color::Red };
-            
-            let chunks = Layout::default()
-                .direction(Direction::Vertical)
-                .constraints([
-                    Constraint::Length(3),
-                    Constraint::Length(3),
-                    Constraint::Min(2),
-                ])
-                .split(area);
+    fn render_result(&self, f: &mut Frame, area: Rect) {
+        let (Some(result), Some(question)) = (&self.current_result, self.quiz_game.get_current_question()) else {
+            return;
+        };
 
-            let result_paragraph = Paragraph::new(result_text)
-                .style(Style::default().fg(result_color).add_modifier(Modifier::BOLD))
-                .alignment(Alignment::Center)
-                .block(Block::default().title("結果").borders(Borders::ALL));
-            f.render_widget(result_paragraph, chunks[0]);
+        let choices = self.quiz_game.get_choice_texts(question);
 
-            let stats_text = format!(
-                "現在のスコア: {} | 正答率: {:.1}%",
-                self.quiz_game.get_final_score(),
-                self.quiz_game.get_accuracy() * 100.0
-            );
-            
-            let stats_paragraph = Paragraph::new(stats_text)
-                .style(Style::default().fg(Color::Cyan))
-                .alignment(Alignment::Center)
-                .block(Block::default().title("統計").borders(Borders::ALL));
-            f.render_widget(stats_paragraph, chunks[1]);
+        let (result_text, result_style) = if result.is_correct {
+            ("正解！".to_string(), STYLE_CORRECT)
+        } else {
+            let correct_text = choices
+                .get(result.correct_answer_index)
+                .cloned()
+                .unwrap_or_else(|| "不明".to_string());
+            (format!("不正解。正解は: {}", correct_text), STYLE_INCORRECT)
+        };
 
-            let continue_text = if self.quiz_game.is_game_finished() {
-                "Enterキーでゲーム終了"
-            } else {
-                "Enterキーで次の問題へ"
-            };
-            
-            let continue_paragraph = Paragraph::new(continue_text)
-                .style(Style::default().fg(Color::Yellow))
-                .alignment(Alignment::Center)
-                .block(Block::default().borders(Borders::ALL));
-            f.render_widget(continue_paragraph, chunks[2]);
-        }
+        let chunks = Layout::default()
+            .direction(Direction::Vertical)
+            .constraints([
+                Constraint::Length(3),
+                Constraint::Length(3),
+                Constraint::Min(2),
+            ])
+            .split(area);
+
+        let result_paragraph = Paragraph::new(result_text)
+            .style(result_style)
+            .alignment(Alignment::Center)
+            .block(Block::default().title("結果").borders(Borders::ALL));
+        f.render_widget(result_paragraph, chunks[0]);
+
+        let stats_text = format!(
+            "現在のスコア: {} | 正答率: {:.1}%",
+            self.quiz_game.get_final_score(),
+            self.quiz_game.get_accuracy() * 100.0
+        );
+
+        let stats_paragraph = Paragraph::new(stats_text)
+            .style(STYLE_STATS)
+            .alignment(Alignment::Center)
+            .block(Block::default().title("統計").borders(Borders::ALL));
+        f.render_widget(stats_paragraph, chunks[1]);
+
+        let continue_text = if self.quiz_game.is_game_finished() {
+            "Enterキーでゲーム終了"
+        } else {
+            "Enterキーで次の問題へ"
+        };
+
+        let continue_paragraph = Paragraph::new(continue_text)
+            .style(STYLE_CONTINUE)
+            .alignment(Alignment::Center)
+            .block(Block::default().borders(Borders::ALL));
+        f.render_widget(continue_paragraph, chunks[2]);
     }
 
-    fn render_help(&self, f: &mut Frame, area: ratatui::layout::Rect) {
+    fn render_help(&self, f: &mut Frame, area: Rect) {
         let help_text = if self.show_result {
             "Enter: 次へ | q: 終了"
         } else {
-            "↑↓: 選択 | 1-4: 直接選択 | Enter/Space: 決定 | s: スキップ | q: 終了"
+            "↑↓/j/k: 選択 | 1-4: 直接選択 | Enter/Space: 決定 | s: スキップ | q: 終了"
         };
 
         let help = Paragraph::new(help_text)
-            .style(Style::default().fg(Color::Gray))
+            .style(STYLE_HELP)
             .alignment(Alignment::Center)
             .block(Block::default().borders(Borders::ALL));
         f.render_widget(help, area);
