@@ -99,7 +99,7 @@ impl TypingTexts {
         let mut hasher = DefaultHasher::new();
         SystemTime::now()
             .duration_since(UNIX_EPOCH)
-            .unwrap()
+            .unwrap_or_default()
             .as_nanos()
             .hash(&mut hasher);
         

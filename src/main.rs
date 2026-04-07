@@ -15,7 +15,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     Storage::ensure_data_directory(&config.data_dir)?;
 
     let mut menu = MenuUI::new();
-    let (language, mode) = menu.run()?;
+    let (language, mode) = match menu.run() {
+        Ok(result) => result,
+        Err(_) => return Ok(()),
+    };
 
     let questions_file = config.questions_file_path(&language);
     

@@ -5,7 +5,7 @@ use crossterm::{
 };
 use ratatui::{
     backend::CrosstermBackend,
-    layout::{Alignment, Constraint, Direction, Layout},
+    layout::{Alignment, Constraint, Direction, Layout, Rect},
     style::{Color, Modifier, Style},
     text::{Line, Span},
     widgets::{Block, Borders, List, ListItem, ListState, Paragraph},
@@ -14,10 +14,16 @@ use ratatui::{
 use std::io;
 use crate::types::{GameMode, Language};
 
+const STYLE_TITLE: Style = Style::new().fg(Color::Cyan).add_modifier(Modifier::BOLD);
+const STYLE_SELECTED: Style = Style::new().fg(Color::Yellow).add_modifier(Modifier::BOLD);
+const STYLE_NORMAL: Style = Style::new();
+const STYLE_HELP: Style = Style::new().fg(Color::Gray);
+
 pub struct MenuUI {
     selected_language: usize,
     selected_mode: usize,
     step: MenuStep,
+    should_quit: bool,
 }
 
 #[derive(Debug, Clone, PartialEq)]
@@ -32,6 +38,7 @@ impl MenuUI {
             selected_language: 0,
             selected_mode: 0,
             step: MenuStep::LanguageSelection,
+            should_quit: false,
         }
     }
 
@@ -56,32 +63,32 @@ impl MenuUI {
             terminal.draw(|f| self.ui(f))?;
 
             if let Event::Key(key) = event::read()? {
-                match self.handle_input(key) {
-                    Some(result) => return Ok(result),
-                    None => {}
+                if let Some(result) = self.handle_key(key) {
+                    return Ok(result);
+                }
+                if self.should_quit {
+                    return Err("User quit".into());
                 }
             }
         }
     }
 
-    fn handle_input(&mut self, key: KeyEvent) -> Option<(Language, GameMode)> {
+    fn handle_key(&mut self, key: KeyEvent) -> Option<(Language, GameMode)> {
         match key.code {
-            KeyCode::Char('q') => std::process::exit(0),
-            KeyCode::Up => {
+            KeyCode::Char('q') => {
+                self.should_quit = true;
+            }
+            KeyCode::Up | KeyCode::Char('k') => {
                 match self.step {
                     MenuStep::LanguageSelection => {
-                        if self.selected_language > 0 {
-                            self.selected_language -= 1;
-                        }
+                        self.selected_language = self.selected_language.saturating_sub(1);
                     }
                     MenuStep::ModeSelection => {
-                        if self.selected_mode > 0 {
-                            self.selected_mode -= 1;
-                        }
+                        self.selected_mode = self.selected_mode.saturating_sub(1);
                     }
                 }
             }
-            KeyCode::Down => {
+            KeyCode::Down | KeyCode::Char('j') => {
                 match self.step {
                     MenuStep::LanguageSelection => {
                         if self.selected_language < 1 {
@@ -140,77 +147,89 @@ impl MenuUI {
             ])
             .split(f.area());
 
-        let title = Paragraph::new("TypeGlobe - Quiz & Typing Game")
-            .style(Style::default().fg(Color::Cyan).add_modifier(Modifier::BOLD))
-            .alignment(Alignment::Center)
-            .block(Block::default().borders(Borders::ALL));
-        f.render_widget(title, chunks[0]);
+        self.render_title(f, chunks[0]);
 
         match self.step {
-            MenuStep::LanguageSelection => {
-                let languages = vec!["日本語 (Japanese)", "English"];
-                let items: Vec<ListItem> = languages
-                    .iter()
-                    .enumerate()
-                    .map(|(i, &lang)| {
-                        let style = if i == self.selected_language {
-                            Style::default().fg(Color::Yellow).add_modifier(Modifier::BOLD)
-                        } else {
-                            Style::default()
-                        };
-                        ListItem::new(Line::from(Span::styled(lang, style)))
-                    })
-                    .collect();
-
-                let language_list = List::new(items)
-                    .block(Block::default().title("言語を選択してください / Select Language").borders(Borders::ALL))
-                    .highlight_style(Style::default().fg(Color::Yellow).add_modifier(Modifier::BOLD));
-
-                let mut state = ListState::default();
-                state.select(Some(self.selected_language));
-                f.render_stateful_widget(language_list, chunks[1], &mut state);
-            }
-            MenuStep::ModeSelection => {
-                let modes = vec![
-                    "クイズモード / Quiz Mode",
-                    "タイピングモード / Typing Mode", 
-                    "クイズ+タイピングモード / Quiz+Typing Mode",
-                    "タイムアタック25 / Time Attack 25",
-                    "RPGモード / RPG Mode",
-                    "ステルスモード / Stealth Mode",
-                ];
-                let items: Vec<ListItem> = modes
-                    .iter()
-                    .enumerate()
-                    .map(|(i, &mode)| {
-                        let style = if i == self.selected_mode {
-                            Style::default().fg(Color::Yellow).add_modifier(Modifier::BOLD)
-                        } else {
-                            Style::default()
-                        };
-                        ListItem::new(Line::from(Span::styled(mode, style)))
-                    })
-                    .collect();
-
-                let mode_list = List::new(items)
-                    .block(Block::default().title("ゲームモードを選択してください / Select Game Mode").borders(Borders::ALL))
-                    .highlight_style(Style::default().fg(Color::Yellow).add_modifier(Modifier::BOLD));
-
-                let mut state = ListState::default();
-                state.select(Some(self.selected_mode));
-                f.render_stateful_widget(mode_list, chunks[1], &mut state);
-            }
+            MenuStep::LanguageSelection => self.render_language_selection(f, chunks[1]),
+            MenuStep::ModeSelection => self.render_mode_selection(f, chunks[1]),
         }
 
+        self.render_help(f, chunks[2]);
+    }
+
+    fn render_title(&self, f: &mut Frame, area: Rect) {
+        let title = Paragraph::new("TypeGlobe - Quiz & Typing Game")
+            .style(STYLE_TITLE)
+            .alignment(Alignment::Center)
+            .block(Block::default().borders(Borders::ALL));
+        f.render_widget(title, area);
+    }
+
+    fn render_language_selection(&self, f: &mut Frame, area: Rect) {
+        let languages = vec!["日本語 (Japanese)", "English"];
+        let items: Vec<ListItem> = languages
+            .iter()
+            .enumerate()
+            .map(|(i, &lang)| {
+                let style = if i == self.selected_language {
+                    STYLE_SELECTED
+                } else {
+                    STYLE_NORMAL
+                };
+                ListItem::new(Line::from(Span::styled(lang, style)))
+            })
+            .collect();
+
+        let language_list = List::new(items)
+            .block(Block::default().title("言語を選択してください / Select Language").borders(Borders::ALL))
+            .highlight_style(STYLE_SELECTED);
+
+        let mut state = ListState::default();
+        state.select(Some(self.selected_language));
+        f.render_stateful_widget(language_list, area, &mut state);
+    }
+
+    fn render_mode_selection(&self, f: &mut Frame, area: Rect) {
+        let modes = vec![
+            "クイズモード / Quiz Mode",
+            "タイピングモード / Typing Mode",
+            "クイズ+タイピングモード / Quiz+Typing Mode",
+            "タイムアタック25 / Time Attack 25",
+            "RPGモード / RPG Mode",
+            "ステルスモード / Stealth Mode",
+        ];
+        let items: Vec<ListItem> = modes
+            .iter()
+            .enumerate()
+            .map(|(i, &mode)| {
+                let style = if i == self.selected_mode {
+                    STYLE_SELECTED
+                } else {
+                    STYLE_NORMAL
+                };
+                ListItem::new(Line::from(Span::styled(mode, style)))
+            })
+            .collect();
+
+        let mode_list = List::new(items)
+            .block(Block::default().title("ゲームモードを選択してください / Select Game Mode").borders(Borders::ALL))
+            .highlight_style(STYLE_SELECTED);
+
+        let mut state = ListState::default();
+        state.select(Some(self.selected_mode));
+        f.render_stateful_widget(mode_list, area, &mut state);
+    }
+
+    fn render_help(&self, f: &mut Frame, area: Rect) {
         let help_text = match self.step {
-            MenuStep::LanguageSelection => "↑↓: 選択 / Select | Enter: 決定 / Confirm | q: 終了 / Quit",
-            MenuStep::ModeSelection => "↑↓: 選択 / Select | Enter: 決定 / Confirm | Esc: 戻る / Back | q: 終了 / Quit",
+            MenuStep::LanguageSelection => "↑↓/j/k: 選択 / Select | Enter: 決定 / Confirm | q: 終了 / Quit",
+            MenuStep::ModeSelection => "↑↓/j/k: 選択 / Select | Enter: 決定 / Confirm | Esc: 戻る / Back | q: 終了 / Quit",
         };
 
         let help = Paragraph::new(help_text)
-            .style(Style::default().fg(Color::Gray))
+            .style(STYLE_HELP)
             .alignment(Alignment::Center)
             .block(Block::default().borders(Borders::ALL));
-        f.render_widget(help, chunks[2]);
+        f.render_widget(help, area);
     }
 }
