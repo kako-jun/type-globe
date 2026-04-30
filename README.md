@@ -82,13 +82,14 @@ Current `main` controls:
 - `s`: skip
 - `q`: quit
 
-| Key | Action |
+| Key | Current `main` | Target v0.2.0 |
 |---|---|
-| `Letters` | Target v0.2.0 behavior: type the correct choice's text |
-| `Enter` | Confirm |
-| `Tab` | Skip question |
-| `F5` | Restart run |
-| `Esc` | Quit |
+| `↑↓` / `j` `k` | Move selection | Removed |
+| `1`-`4` | Jump to a choice | Removed |
+| `Letters` | Unused in current quiz flow | Type the correct choice's text |
+| `Enter` / `Space` | Confirm | Confirm |
+| `s` / `Tab` | Skip question | Skip question |
+| `q` / `Esc` | Quit | Quit |
 
 **Listening RPG**
 
