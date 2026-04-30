@@ -1,4 +1,5 @@
 pub mod help_line;
+pub mod input_loop;
 pub mod layout;
 pub mod menu;
 pub mod quiz;
@@ -6,6 +7,7 @@ pub mod records;
 pub mod status;
 
 pub use help_line::{HelpEntry, HelpLine};
+pub use input_loop::{InputChannel, RecvOutcome};
 pub use layout::PaneFrame;
 pub use menu::MenuUI;
 pub use quiz::QuizUI;

@@ -2,9 +2,9 @@ use crate::game::{QuizGame, QuizResult};
 use crate::io::Storage;
 use crate::jiwa_core::{RevealHandle, RevealOpts, Rgb};
 use crate::types::{Language, Question, ScoreEntry};
-use crate::ui::{HelpEntry, HelpLine, PaneFrame, StatusPane};
+use crate::ui::{HelpEntry, HelpLine, InputChannel, PaneFrame, RecvOutcome, StatusPane};
 use crossterm::{
-    event::{self, Event, KeyCode, KeyEvent, KeyModifiers},
+    event::{KeyCode, KeyEvent, KeyModifiers},
     execute,
     terminal::{disable_raw_mode, enable_raw_mode, EnterAlternateScreen, LeaveAlternateScreen},
 };
@@ -105,24 +105,33 @@ impl QuizUI {
         &mut self,
         terminal: &mut Terminal<CrosstermBackend<io::Stdout>>,
     ) -> Result<u32, Box<dyn std::error::Error>> {
-        // Poll cadence is short enough that the typewriter / fade reveal
-        // (#19/#20/#21) renders smoothly (~33 fps). Side-pane Time / CPM /
-        // WPM also benefit; CPU stays trivially low at this rate.
-        const TICK: Duration = Duration::from_millis(30);
+        // Redraw cadence is short enough that the typewriter / fade
+        // reveal (#19/#20/#21) renders smoothly (~33 fps). The actual
+        // input read happens on a separate thread (#22) so a player who
+        // already knows the answer can begin typing during the reveal
+        // without waiting for the next redraw tick.
+        const REDRAW: Duration = Duration::from_millis(30);
+
+        let input = InputChannel::spawn();
 
         loop {
             terminal.draw(|f| self.ui(f))?;
 
-            if event::poll(TICK)? {
-                if let Event::Key(key) = event::read()? {
+            match input.recv_until(REDRAW) {
+                RecvOutcome::Key(key) => {
                     if self.handle_key(key) {
                         break;
                     }
                 }
+                RecvOutcome::Timeout => {
+                    // No input in this window — loop redraws so the
+                    // reveal animation and the timer keep moving while
+                    // the player is thinking.
+                }
+                RecvOutcome::Disconnected => break, // Worker thread exited.
             }
-            // No event in this tick — loop redraws so the reveal animation
-            // and the timer keep moving while the player is thinking.
         }
+        // `input` drops here → shutdown flag flipped → worker joins.
 
         Ok(self.quiz_game.get_final_score())
     }
