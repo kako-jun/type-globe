@@ -247,7 +247,10 @@ impl QuizUI {
     fn help_line(&self) -> HelpLine {
         if self.show_result {
             if self.quiz_game.is_game_finished() {
-                HelpLine::new(vec![HelpEntry::new("Enter", "Finish"), HelpEntry::new("q", "Quit")])
+                HelpLine::new(vec![
+                    HelpEntry::new("Enter", "Finish"),
+                    HelpEntry::new("q", "Quit"),
+                ])
             } else {
                 HelpLine::new(vec![
                     HelpEntry::new("Enter", "Next"),
