@@ -134,10 +134,7 @@ mod tests {
 
     #[test]
     fn detects_prefix_conflict() {
-        let q = question_with_choices(
-            "q-1",
-            &[("en", &["move", "movement", "borrow", "ref"])],
-        );
+        let q = question_with_choices("q-1", &[("en", &["move", "movement", "borrow", "ref"])]);
         let conflicts = find_prefix_conflicts(&[q]);
         assert_eq!(conflicts.len(), 1);
         assert_eq!(conflicts[0].question_id, "q-1");
@@ -150,10 +147,7 @@ mod tests {
 
     #[test]
     fn detects_prefix_regardless_of_choice_order() {
-        let q = question_with_choices(
-            "q-rev",
-            &[("en", &["movement", "move", "borrow", "ref"])],
-        );
+        let q = question_with_choices("q-rev", &[("en", &["movement", "move", "borrow", "ref"])]);
         let conflicts = find_prefix_conflicts(&[q]);
         assert_eq!(conflicts.len(), 1);
         assert_eq!(conflicts[0].shorter_text, "move");
@@ -194,10 +188,7 @@ mod tests {
 
     #[test]
     fn reports_all_conflicts_within_a_question() {
-        let q = question_with_choices(
-            "q-many",
-            &[("en", &["a", "ab", "abc", "z"])],
-        );
+        let q = question_with_choices("q-many", &[("en", &["a", "ab", "abc", "z"])]);
         let conflicts = find_prefix_conflicts(&[q]);
         // a < ab, a < abc, ab < abc → 3 conflicts.
         assert_eq!(conflicts.len(), 3);
