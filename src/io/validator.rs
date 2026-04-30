@@ -8,6 +8,10 @@
 //!
 //! Per `docs/spec.md`: "no two choices in a question may share a prefix that
 //! would make a typed answer ambiguous before `Enter`." (Enforced here.)
+//!
+//! Scope: this module flags prefix conflicts only. Choice-count enforcement
+//! (e.g. exactly 4 choices), correct-index range checks, and other shape
+//! validation are out of scope and left to a separate validator.
 
 use crate::types::Question;
 
@@ -28,14 +32,15 @@ pub struct PrefixConflict {
 pub fn find_prefix_conflicts(questions: &[Question]) -> Vec<PrefixConflict> {
     let mut conflicts = Vec::new();
     for question in questions {
-        let mut languages: Vec<&String> = question
+        // BTreeSet's iterator is already in ascending order, so the resulting
+        // Vec is sorted — no extra sort needed.
+        let languages: Vec<&String> = question
             .choices
             .iter()
             .flat_map(|c| c.keys())
             .collect::<std::collections::BTreeSet<_>>()
             .into_iter()
             .collect();
-        languages.sort();
         for language in languages {
             let texts: Vec<(usize, &str)> = question
                 .choices
@@ -84,10 +89,11 @@ fn prefix_pair<'a>(
     }
 }
 
-/// Format a single conflict for stderr or a build report.
+/// Format a single conflict for stderr or a build report. Choice texts are
+/// rendered with `{:?}` so embedded quotes / control chars are escaped.
 pub fn format_conflict(c: &PrefixConflict) -> String {
     format!(
-        "[prefix conflict] question {} ({}): choice #{} \"{}\" is a prefix of choice #{} \"{}\"",
+        "[prefix conflict] question {} ({}): choice #{} {:?} is a prefix of choice #{} {:?}",
         c.question_id, c.language, c.shorter_index, c.shorter_text, c.longer_index, c.longer_text
     )
 }
@@ -215,9 +221,74 @@ mod tests {
         );
     }
 
-    // Ignored until #58 cleans up the bundled data — the validator already
-    // reports the real conflicts (let / let mut, Java / JavaScript, etc.).
-    // Run with `cargo test -- --ignored` once the data is fixed.
+    #[test]
+    fn format_conflict_escapes_embedded_quotes() {
+        let c = PrefixConflict {
+            question_id: "q-q".into(),
+            language: "en".into(),
+            shorter_index: 0,
+            shorter_text: r#"say "hi""#.into(),
+            longer_index: 1,
+            longer_text: r#"say "hi" loud"#.into(),
+        };
+        // {:?} debug-formatted strings escape embedded quotes as \", so the
+        // output is unambiguous when grepped or piped.
+        assert!(format_conflict(&c).contains(r#"\"hi\""#));
+    }
+
+    #[test]
+    fn detects_multi_byte_prefix() {
+        // Multi-byte UTF-8 characters must not split — `日` is a strict
+        // prefix of `日本` at the byte level too, since UTF-8 is
+        // self-synchronizing.
+        let q = question_with_choices("q-utf8", &[("ja", &["日", "日本", "x", "y"])]);
+        let conflicts = find_prefix_conflicts(&[q]);
+        assert_eq!(conflicts.len(), 1);
+        assert_eq!(conflicts[0].shorter_text, "日");
+        assert_eq!(conflicts[0].longer_text, "日本");
+    }
+
+    #[test]
+    fn skips_languages_missing_from_a_choice() {
+        // If a choice carries only `en`, the `ja` pass for that choice is
+        // simply skipped — no panic, no false positive.
+        let q = Question {
+            id: "q-asym".into(),
+            genre: "test".into(),
+            question_text: {
+                let mut m = HashMap::new();
+                m.insert("en".to_string(), "dummy".to_string());
+                m.insert("ja".to_string(), "ダミー".to_string());
+                m
+            },
+            choices: vec![
+                {
+                    let mut h = HashMap::new();
+                    h.insert("en".to_string(), "let".to_string());
+                    // No `ja` entry on purpose.
+                    h
+                },
+                {
+                    let mut h = HashMap::new();
+                    h.insert("en".to_string(), "let mut".to_string());
+                    h.insert("ja".to_string(), "可変let".to_string());
+                    h
+                },
+            ],
+            correct_answer_index: 0,
+            image_path: None,
+        };
+        let conflicts = find_prefix_conflicts(&[q]);
+        // Conflict reported only for `en`; `ja` has just one populated
+        // choice so nothing to compare against.
+        assert_eq!(conflicts.len(), 1);
+        assert_eq!(conflicts[0].language, "en");
+    }
+
+    // TODO(#27, #58): ignored until #58 cleans up the bundled data — the
+    // validator already reports the real conflicts (let / let mut,
+    // Java / JavaScript, etc.). Run with `cargo test -- --ignored` once
+    // the data is fixed.
     #[test]
     #[ignore]
     fn shipped_question_data_is_clean_ja() {
