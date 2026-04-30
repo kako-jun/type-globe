@@ -74,6 +74,8 @@ impl MenuUI {
     }
 
     fn handle_key(&mut self, key: KeyEvent) -> Option<(Language, GameMode)> {
+        const MODE_COUNT: usize = 4;
+
         match key.code {
             KeyCode::Char('q') => {
                 self.should_quit = true;
@@ -96,7 +98,7 @@ impl MenuUI {
                         }
                     }
                     MenuStep::ModeSelection => {
-                        if self.selected_mode < 5 {
+                        if self.selected_mode + 1 < MODE_COUNT {
                             self.selected_mode += 1;
                         }
                     }
@@ -115,11 +117,9 @@ impl MenuUI {
                         };
                         let mode = match self.selected_mode {
                             0 => GameMode::Quiz,
-                            1 => GameMode::Typing,
-                            2 => GameMode::QuizTyping,
-                            3 => GameMode::TimeAttack,
-                            4 => GameMode::Rpg,
-                            5 => GameMode::Stealth,
+                            1 => GameMode::TimeAttack25,
+                            2 => GameMode::HackAndSlashRpg,
+                            3 => GameMode::Ranking,
                             _ => GameMode::Quiz,
                         };
                         return Some((language, mode));
@@ -158,7 +158,7 @@ impl MenuUI {
     }
 
     fn render_title(&self, f: &mut Frame, area: Rect) {
-        let title = Paragraph::new("TypeGlobe - Quiz & Typing Game")
+        let title = Paragraph::new("type-globe - The answer is never shown")
             .style(STYLE_TITLE)
             .alignment(Alignment::Center)
             .block(Block::default().borders(Borders::ALL));
@@ -192,11 +192,9 @@ impl MenuUI {
     fn render_mode_selection(&self, f: &mut Frame, area: Rect) {
         let modes = vec![
             "クイズモード / Quiz Mode",
-            "タイピングモード / Typing Mode",
-            "クイズ+タイピングモード / Quiz+Typing Mode",
             "タイムアタック25 / Time Attack 25",
-            "RPGモード / RPG Mode",
-            "ステルスモード / Stealth Mode",
+            "リスニングRPG / Listening Hack-and-Slash RPG",
+            "ランキング / Ranking",
         ];
         let items: Vec<ListItem> = modes
             .iter()

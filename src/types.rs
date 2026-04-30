@@ -39,20 +39,16 @@ pub struct TimeEntry {
 #[derive(Debug, Clone, Deserialize, Serialize)]
 pub struct Ranking {
     pub quiz_mode: Vec<ScoreEntry>,
-    pub typing_mode: Vec<ScoreEntry>,
-    pub quiz_typing_mode: Vec<ScoreEntry>,
-    pub time_attack: Vec<TimeEntry>,
-    pub rpg_mode: Vec<ScoreEntry>,
+    pub time_attack_25: Vec<TimeEntry>,
+    pub hack_and_slash_rpg: Vec<ScoreEntry>,
 }
 
 #[derive(Debug, Clone)]
 pub enum GameMode {
     Quiz,
-    Typing,
-    QuizTyping,
-    TimeAttack,
-    Rpg,
-    Stealth,
+    TimeAttack25,
+    HackAndSlashRpg,
+    Ranking,
 }
 
 #[derive(Debug, Clone)]
@@ -84,10 +80,8 @@ impl Default for Ranking {
     fn default() -> Self {
         Ranking {
             quiz_mode: Vec::new(),
-            typing_mode: Vec::new(),
-            quiz_typing_mode: Vec::new(),
-            time_attack: Vec::new(),
-            rpg_mode: Vec::new(),
+            time_attack_25: Vec::new(),
+            hack_and_slash_rpg: Vec::new(),
         }
     }
 }
