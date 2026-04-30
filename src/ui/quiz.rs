@@ -1,6 +1,6 @@
 use crate::game::{QuizGame, QuizResult};
 use crate::types::{Language, Question};
-use crate::ui::PaneFrame;
+use crate::ui::{PaneFrame, StatusPane};
 use crossterm::{
     event::{self, Event, KeyCode, KeyEvent},
     execute,
@@ -11,20 +11,19 @@ use ratatui::{
     layout::{Alignment, Constraint, Direction, Layout, Rect},
     style::{Color, Modifier, Style},
     text::{Line, Span},
-    widgets::{Block, Borders, Gauge, List, ListItem, ListState, Paragraph},
+    widgets::{Block, Borders, List, ListItem, ListState, Paragraph},
     Frame, Terminal,
 };
 use std::io;
+use std::time::Duration;
 
 const STYLE_TITLE: Style = Style::new().fg(Color::Cyan).add_modifier(Modifier::BOLD);
 const STYLE_SELECTED: Style = Style::new().fg(Color::Yellow).add_modifier(Modifier::BOLD);
 const STYLE_NORMAL: Style = Style::new().fg(Color::White);
 const STYLE_HELP: Style = Style::new().fg(Color::Gray);
-const STYLE_STATS: Style = Style::new().fg(Color::Cyan);
 const STYLE_CORRECT: Style = Style::new().fg(Color::Green).add_modifier(Modifier::BOLD);
 const STYLE_INCORRECT: Style = Style::new().fg(Color::Red).add_modifier(Modifier::BOLD);
 const STYLE_CONTINUE: Style = Style::new().fg(Color::Yellow);
-const STYLE_MUTED: Style = Style::new().fg(Color::DarkGray);
 
 pub struct QuizUI {
     quiz_game: QuizGame,
@@ -142,58 +141,11 @@ impl QuizUI {
     }
 
     fn render_status_pane(&self, f: &mut Frame, area: Rect) {
-        let (current, total) = self.quiz_game.get_progress();
-        let progress_ratio = if total > 0 {
-            current as f64 / total as f64
-        } else {
-            0.0
-        };
-
-        let chunks = Layout::default()
-            .direction(Direction::Vertical)
-            .constraints([Constraint::Length(3), Constraint::Min(6)])
-            .split(area);
-
-        let gauge = Gauge::default()
-            .block(
-                Block::default()
-                    .title(format!("進捗: {current}/{total}"))
-                    .borders(Borders::ALL),
-            )
-            .gauge_style(Style::default().fg(Color::Blue))
-            .ratio(progress_ratio);
-
-        f.render_widget(gauge, chunks[0]);
-
-        let stats = vec![
-            Line::from(vec![
-                Span::styled("Score ", STYLE_MUTED),
-                Span::styled(self.quiz_game.get_final_score().to_string(), STYLE_STATS),
-            ]),
-            Line::from(vec![
-                Span::styled("Accuracy ", STYLE_MUTED),
-                Span::styled(
-                    format!("{:.1}%", self.quiz_game.get_accuracy() * 100.0),
-                    STYLE_STATS,
-                ),
-            ]),
-            Line::from(vec![
-                Span::styled("State ", STYLE_MUTED),
-                Span::styled(
-                    if self.show_result {
-                        "Result"
-                    } else {
-                        "Question"
-                    },
-                    STYLE_STATS,
-                ),
-            ]),
-        ];
-
-        let stats_paragraph = Paragraph::new(stats)
-            .block(Block::default().title("統計").borders(Borders::ALL))
-            .alignment(Alignment::Left);
-        f.render_widget(stats_paragraph, chunks[1]);
+        // CPM / WPM are 0 until typed selection (#24) lands and we begin
+        // measuring keystrokes; the pane structure already reserves the slots.
+        let elapsed = self.quiz_game.get_total_time().unwrap_or(Duration::ZERO);
+        let pane = StatusPane::quiz(self.quiz_game.get_final_score(), elapsed, 0, 0);
+        pane.render(f, area);
     }
 
     fn render_main_pane(&self, f: &mut Frame, area: Rect) {
@@ -202,7 +154,9 @@ impl QuizUI {
             .constraints([Constraint::Length(3), Constraint::Min(6)])
             .split(area);
 
-        let title = Paragraph::new("TypeGlobe - クイズモード")
+        let (current, total) = self.quiz_game.get_progress();
+        let title_text = format!("TypeGlobe — Quiz  Q{current}/{total}");
+        let title = Paragraph::new(title_text)
             .style(STYLE_TITLE)
             .alignment(Alignment::Center)
             .block(Block::default().borders(Borders::ALL));

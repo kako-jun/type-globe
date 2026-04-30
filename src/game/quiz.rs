@@ -93,6 +93,8 @@ impl QuizGame {
         self.score
     }
 
+    /// TODO(#24): wired up by typed-selection scoring.
+    #[allow(dead_code)]
     pub fn get_accuracy(&self) -> f32 {
         if self.total_answers == 0 {
             0.0
@@ -101,7 +103,6 @@ impl QuizGame {
         }
     }
 
-    #[allow(dead_code)]
     pub fn get_total_time(&self) -> Option<Duration> {
         self.start_time.map(|start| start.elapsed())
     }
