@@ -12,6 +12,7 @@ impl Storage {
         Ok(())
     }
 
+    #[allow(dead_code)]
     pub fn load_player_data(file_path: &str) -> Result<Player, Box<dyn std::error::Error>> {
         if !Path::new(file_path).exists() {
             return Ok(Player::default());
@@ -22,12 +23,17 @@ impl Storage {
         Ok(player)
     }
 
-    pub fn save_player_data(file_path: &str, player: &Player) -> Result<(), Box<dyn std::error::Error>> {
+    #[allow(dead_code)]
+    pub fn save_player_data(
+        file_path: &str,
+        player: &Player,
+    ) -> Result<(), Box<dyn std::error::Error>> {
         let content = serde_json::to_string_pretty(player)?;
         fs::write(file_path, content)?;
         Ok(())
     }
 
+    #[allow(dead_code)]
     pub fn load_ranking(file_path: &str) -> Result<Ranking, Box<dyn std::error::Error>> {
         if !Path::new(file_path).exists() {
             return Ok(Ranking::default());
@@ -38,13 +44,20 @@ impl Storage {
         Ok(ranking)
     }
 
-    pub fn save_ranking(file_path: &str, ranking: &Ranking) -> Result<(), Box<dyn std::error::Error>> {
+    #[allow(dead_code)]
+    pub fn save_ranking(
+        file_path: &str,
+        ranking: &Ranking,
+    ) -> Result<(), Box<dyn std::error::Error>> {
         let content = serde_json::to_string_pretty(ranking)?;
         fs::write(file_path, content)?;
         Ok(())
     }
 
-    pub fn save_sample_questions(file_path: &str, questions: &[crate::types::Question]) -> Result<(), Box<dyn std::error::Error>> {
+    pub fn save_sample_questions(
+        file_path: &str,
+        questions: &[crate::types::Question],
+    ) -> Result<(), Box<dyn std::error::Error>> {
         let content = serde_json::to_string_pretty(questions)?;
         fs::write(file_path, content)?;
         Ok(())

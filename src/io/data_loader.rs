@@ -1,4 +1,4 @@
-use crate::types::{Question, Language};
+use crate::types::{Language, Question};
 use std::fs;
 use std::path::Path;
 
@@ -15,22 +15,22 @@ impl DataLoader {
         Ok(questions)
     }
 
+    #[allow(dead_code)]
     pub fn filter_questions_by_genre(questions: &[Question], genre: Option<&str>) -> Vec<Question> {
         match genre {
-            Some(g) => questions.iter()
-                .filter(|q| q.genre == g)
-                .cloned()
-                .collect(),
+            Some(g) => questions.iter().filter(|q| q.genre == g).cloned().collect(),
             None => questions.to_vec(),
         }
     }
 
     pub fn get_question_text(question: &Question, language: &Language) -> String {
-        question.question_text
+        question
+            .question_text
             .get(language.code())
             .cloned()
             .unwrap_or_else(|| {
-                question.question_text
+                question
+                    .question_text
                     .values()
                     .next()
                     .cloned()
@@ -38,17 +38,14 @@ impl DataLoader {
             })
     }
 
-    pub fn get_choice_text(choice: &std::collections::HashMap<String, String>, language: &Language) -> String {
+    pub fn get_choice_text(
+        choice: &std::collections::HashMap<String, String>,
+        language: &Language,
+    ) -> String {
         choice
             .get(language.code())
             .cloned()
-            .unwrap_or_else(|| {
-                choice
-                    .values()
-                    .next()
-                    .cloned()
-                    .unwrap_or_default()
-            })
+            .unwrap_or_else(|| choice.values().next().cloned().unwrap_or_default())
     }
 
     pub fn create_sample_questions() -> Vec<Question> {
@@ -61,7 +58,10 @@ impl DataLoader {
                 question_text: {
                     let mut map = HashMap::new();
                     map.insert("ja".to_string(), "水の化学式は？".to_string());
-                    map.insert("en".to_string(), "What is the chemical formula for water?".to_string());
+                    map.insert(
+                        "en".to_string(),
+                        "What is the chemical formula for water?".to_string(),
+                    );
                     map
                 },
                 choices: vec![
@@ -99,7 +99,10 @@ impl DataLoader {
                 question_text: {
                     let mut map = HashMap::new();
                     map.insert("ja".to_string(), "日本の首都は？".to_string());
-                    map.insert("en".to_string(), "What is the capital of Japan?".to_string());
+                    map.insert(
+                        "en".to_string(),
+                        "What is the capital of Japan?".to_string(),
+                    );
                     map
                 },
                 choices: vec![

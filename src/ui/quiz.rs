@@ -1,3 +1,5 @@
+use crate::game::{QuizGame, QuizResult};
+use crate::types::{Language, Question};
 use crossterm::{
     event::{self, Event, KeyCode, KeyEvent},
     execute,
@@ -12,8 +14,6 @@ use ratatui::{
     Frame, Terminal,
 };
 use std::io;
-use crate::game::{QuizGame, QuizResult};
-use crate::types::{Question, Language};
 
 const STYLE_TITLE: Style = Style::new().fg(Color::Cyan).add_modifier(Modifier::BOLD);
 const STYLE_SELECTED: Style = Style::new().fg(Color::Yellow).add_modifier(Modifier::BOLD);
@@ -60,7 +60,10 @@ impl QuizUI {
         result
     }
 
-    fn run_app(&mut self, terminal: &mut Terminal<CrosstermBackend<io::Stdout>>) -> Result<u32, Box<dyn std::error::Error>> {
+    fn run_app(
+        &mut self,
+        terminal: &mut Terminal<CrosstermBackend<io::Stdout>>,
+    ) -> Result<u32, Box<dyn std::error::Error>> {
         loop {
             terminal.draw(|f| self.ui(f))?;
 
@@ -162,10 +165,18 @@ impl QuizUI {
 
     fn render_progress(&self, f: &mut Frame, area: Rect) {
         let (current, total) = self.quiz_game.get_progress();
-        let progress_ratio = if total > 0 { current as f64 / total as f64 } else { 0.0 };
+        let progress_ratio = if total > 0 {
+            current as f64 / total as f64
+        } else {
+            0.0
+        };
 
         let gauge = Gauge::default()
-            .block(Block::default().title(format!("進捗: {}/{}", current, total)).borders(Borders::ALL))
+            .block(
+                Block::default()
+                    .title(format!("進捗: {current}/{total}"))
+                    .borders(Borders::ALL),
+            )
             .gauge_style(Style::default().fg(Color::Blue))
             .ratio(progress_ratio);
 
@@ -179,10 +190,7 @@ impl QuizUI {
 
             let chunks = Layout::default()
                 .direction(Direction::Vertical)
-                .constraints([
-                    Constraint::Length(3),
-                    Constraint::Min(4),
-                ])
+                .constraints([Constraint::Length(3), Constraint::Min(4)])
                 .split(area);
 
             let question_paragraph = Paragraph::new(question_text)
@@ -223,7 +231,9 @@ impl QuizUI {
     }
 
     fn render_result(&self, f: &mut Frame, area: Rect) {
-        let (Some(result), Some(question)) = (&self.current_result, self.quiz_game.get_current_question()) else {
+        let (Some(result), Some(question)) =
+            (&self.current_result, self.quiz_game.get_current_question())
+        else {
             return;
         };
 
@@ -236,7 +246,7 @@ impl QuizUI {
                 .get(result.correct_answer_index)
                 .cloned()
                 .unwrap_or_else(|| "不明".to_string());
-            (format!("不正解。正解は: {}", correct_text), STYLE_INCORRECT)
+            (format!("不正解。正解は: {correct_text}"), STYLE_INCORRECT)
         };
 
         let chunks = Layout::default()

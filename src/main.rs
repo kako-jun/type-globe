@@ -1,71 +1,69 @@
-mod types;
 mod config;
-mod io;
 mod game;
+mod io;
+mod types;
 mod ui;
 
 use config::Config;
-use io::{DataLoader, Storage, TypingTexts};
-use types::{GameMode, Language};
-use ui::{MenuUI, QuizUI, TypingUI};
+use io::{DataLoader, Storage};
+use std::io::{stdin, stdout, Write};
+use types::GameMode;
+use ui::{MenuUI, QuizUI};
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let config = Config::default();
-    
+
     Storage::ensure_data_directory(&config.data_dir)?;
 
-    let mut menu = MenuUI::new();
-    let (language, mode) = match menu.run() {
-        Ok(result) => result,
-        Err(_) => return Ok(()),
-    };
+    loop {
+        let mut menu = MenuUI::new();
+        let (language, mode) = match menu.run() {
+            Ok(result) => result,
+            Err(_) => return Ok(()),
+        };
 
-    let questions_file = config.questions_file_path(&language);
-    
-    if !std::path::Path::new(&questions_file).exists() {
-        println!("問題ファイルが見つかりません。サンプル問題を作成しています...");
-        let sample_questions = DataLoader::create_sample_questions();
-        Storage::save_sample_questions(&questions_file, &sample_questions)?;
-        println!("サンプル問題を作成しました: {}", questions_file);
-    }
+        match mode {
+            GameMode::Quiz => {
+                let questions_file = config.questions_file_path(&language);
 
-    match mode {
-        GameMode::Quiz => {
-            let questions = DataLoader::load_questions(&questions_file)?;
-            if questions.is_empty() {
-                println!("問題が見つかりません。");
+                if !std::path::Path::new(&questions_file).exists() {
+                    println!("問題ファイルが見つかりません。サンプル問題を作成しています...");
+                    let sample_questions = DataLoader::create_sample_questions();
+                    Storage::save_sample_questions(&questions_file, &sample_questions)?;
+                    println!("サンプル問題を作成しました: {questions_file}");
+                }
+
+                let questions = DataLoader::load_questions(&questions_file)?;
+                if questions.is_empty() {
+                    println!("問題が見つかりません。");
+                    return Ok(());
+                }
+
+                let mut quiz_ui = QuizUI::new(questions, language);
+                let final_score = quiz_ui.run()?;
+
+                println!("ゲーム終了！最終スコア: {final_score}");
                 return Ok(());
             }
-            
-            let mut quiz_ui = QuizUI::new(questions, language);
-            let final_score = quiz_ui.run()?;
-            
-            println!("ゲーム終了！最終スコア: {}", final_score);
-        }
-        GameMode::Typing => {
-            let typing_text = TypingTexts::get_random_text(&language);
-            let mut typing_ui = TypingUI::new(typing_text);
-            let result = typing_ui.run()?;
-            
-            println!("タイピング完了！");
-            println!("WPM: {:.1}", result.wpm);
-            println!("正確性: {:.1}%", result.accuracy);
-            println!("時間: {:.1}秒", result.total_time.as_secs_f32());
-            println!("エラー数: {}", result.errors);
-        }
-        GameMode::QuizTyping => {
-            println!("クイズ+タイピングモードを開始します...");
-        }
-        GameMode::TimeAttack => {
-            println!("タイムアタック25モードを開始します...");
-        }
-        GameMode::Rpg => {
-            println!("RPGモードを開始します...");
-        }
-        GameMode::Stealth => {
-            println!("ステルスモードを開始します...");
+            GameMode::TimeAttack25 => {
+                show_unimplemented_mode_message("Time Attack 25")?;
+            }
+            GameMode::HackAndSlashRpg => {
+                show_unimplemented_mode_message("Listening RPG")?;
+            }
+            GameMode::Ranking => {
+                show_unimplemented_mode_message("Ranking")?;
+            }
         }
     }
+}
 
+fn show_unimplemented_mode_message(mode_name: &str) -> Result<(), Box<dyn std::error::Error>> {
+    println!("{mode_name} is not implemented yet.");
+    println!("Press Enter to return to the menu.");
+    stdout().flush()?;
+
+    let mut input = String::new();
+    stdin().read_line(&mut input)?;
     Ok(())
 }
