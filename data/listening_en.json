@@ -1,0 +1,21 @@
+[
+  { "id": "l-en-001", "text": "apple",     "kind": "word" },
+  { "id": "l-en-002", "text": "river",     "kind": "word" },
+  { "id": "l-en-003", "text": "Tokyo",     "kind": "word" },
+  { "id": "l-en-004", "text": "blue",      "kind": "word" },
+  { "id": "l-en-005", "text": "music",     "kind": "word" },
+  { "id": "l-en-006", "text": "kitten",    "kind": "word" },
+  { "id": "l-en-007", "text": "rocket",    "kind": "word" },
+  { "id": "l-en-008", "text": "winter",    "kind": "word" },
+  { "id": "l-en-009", "text": "thunder",   "kind": "word" },
+  { "id": "l-en-010", "text": "horizon",   "kind": "word" },
+  { "id": "l-en-051", "text": "George Washington",            "kind": "phrase" },
+  { "id": "l-en-052", "text": "open source software",          "kind": "phrase" },
+  { "id": "l-en-053", "text": "machine learning",              "kind": "phrase" },
+  { "id": "l-en-054", "text": "Pacific Ocean",                 "kind": "phrase" },
+  { "id": "l-en-055", "text": "sunrise on the lake",           "kind": "phrase" },
+  { "id": "l-en-101", "text": "the quick brown fox jumps over the lazy dog",     "kind": "sentence" },
+  { "id": "l-en-102", "text": "the early bird catches the worm",                  "kind": "sentence" },
+  { "id": "l-en-103", "text": "knowledge is power and curiosity is its engine",    "kind": "sentence" },
+  { "id": "l-en-104", "text": "a journey of a thousand miles begins with a single step", "kind": "sentence" }
+]
