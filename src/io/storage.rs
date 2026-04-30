@@ -4,7 +4,6 @@ use std::path::Path;
 
 pub struct Storage;
 
-#[allow(dead_code)]
 impl Storage {
     pub fn ensure_data_directory(data_dir: &str) -> Result<(), Box<dyn std::error::Error>> {
         if !Path::new(data_dir).exists() {
@@ -13,6 +12,7 @@ impl Storage {
         Ok(())
     }
 
+    #[allow(dead_code)]
     pub fn load_player_data(file_path: &str) -> Result<Player, Box<dyn std::error::Error>> {
         if !Path::new(file_path).exists() {
             return Ok(Player::default());
@@ -23,6 +23,7 @@ impl Storage {
         Ok(player)
     }
 
+    #[allow(dead_code)]
     pub fn save_player_data(
         file_path: &str,
         player: &Player,
@@ -32,6 +33,7 @@ impl Storage {
         Ok(())
     }
 
+    #[allow(dead_code)]
     pub fn load_ranking(file_path: &str) -> Result<Ranking, Box<dyn std::error::Error>> {
         if !Path::new(file_path).exists() {
             return Ok(Ranking::default());
@@ -42,6 +44,7 @@ impl Storage {
         Ok(ranking)
     }
 
+    #[allow(dead_code)]
     pub fn save_ranking(
         file_path: &str,
         ranking: &Ranking,

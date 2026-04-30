@@ -2,6 +2,8 @@
 
 > Version: targeting v0.2.0 (offline-complete edition).
 > This document supersedes all v0.1.x specs. The previous "display-and-type" mode has been removed.
+>
+> Note: this is a **target specification** for the v0.2.0 redesign. The current `main` branch still uses JSON/`serde_json`, and some quiz interaction remains on the legacy selection model until follow-up issues land.
 
 ## Core Principle
 
@@ -105,7 +107,9 @@ Both **CPM** (characters per minute) and **WPM** (words per minute) are displaye
 
 ## Data Structures
 
-All data files use **YAML** for readability and inline comments. Rust side uses `serde_yaml`. This applies to question banks, listening prompts, player progress, and rankings — everything.
+Target v0.2.0 direction: all data files use **YAML** for readability and inline comments, with Rust side moved to `serde_yaml`.
+
+Current `main` branch status: question banks / player progress / rankings are still JSON-backed and use `serde_json`.
 
 ### Answer-form classification (`kind`)
 

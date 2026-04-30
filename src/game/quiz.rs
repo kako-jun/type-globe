@@ -14,11 +14,12 @@ pub struct QuizGame {
 }
 
 #[derive(Debug, Clone)]
-#[allow(dead_code)]
 pub struct QuizResult {
     pub is_correct: bool,
     pub correct_answer_index: usize,
+    #[allow(dead_code)]
     pub selected_answer_index: usize,
+    #[allow(dead_code)]
     pub time_taken: Duration,
 }
 
