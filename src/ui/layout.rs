@@ -12,27 +12,28 @@
 //!   (Lv / EXP / HP / Floor) / `input_echo` / `log` (battle log) +
 //!   always-on `help_line`.
 //!
-//! ## Current transitional layout
+//! ## Bottom stack
 //!
-//! Until #24 (typed selection) lands, the quiz still uses the legacy arrow /
-//! number-key selection model, so no `input_echo` slot is allocated — the
-//! 1-line `help_line` is rendered directly at the bottom by the
-//! `ui::HelpLine` component (#18). When #24 ships, the bottom region will be
-//! split into a 1-line input echo above the help line.
+//! Both quiz and hack frames carry a 1-line `input_echo` (renders the
+//! typed answer / sentence) immediately below the top panes, and an
+//! always-on 1-line `help_line` at the very bottom rendered by the
+//! `ui::HelpLine` component (#18). For hack mode, a 5-line `log` slot
+//! sits between the input echo and the help line.
 
 use ratatui::layout::{Constraint, Direction, Layout, Rect};
 
 /// Geometric breakdown of a mode's screen.
 ///
-/// `main` and `side` are always present; `log` is filled only by hack-and-slash
-/// runs (it carries the battle log per `docs/spec.md`).
+/// `main`, `side`, `input_echo`, and `help_line` are always present;
+/// `log` is filled only by hack-and-slash runs (it carries the battle log
+/// per `docs/spec.md`).
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub struct PaneFrame {
     pub main: Rect,
     pub side: Rect,
-    /// Bottom region — a 1-line `ui::HelpLine` slot. Once #24 (typed
-    /// selection) ships, this region will grow to host a 1-line input
-    /// echo above the help line.
+    /// 1-line input echo (typed answer / sentence) per `docs/spec.md`.
+    pub input_echo: Rect,
+    /// 1-line always-on help line, rendered by `ui::HelpLine` (#18).
     pub help_line: Rect,
     /// Hack-and-slash battle log pane. `None` for quiz-style modes.
     pub log: Option<Rect>,
@@ -40,10 +41,8 @@ pub struct PaneFrame {
 
 const SIDE_WIDTH: u16 = 24;
 const MAIN_MIN_WIDTH: u16 = 40;
-// 1-line always-on help line (per spec).
-// TODO(#24): grow to 2 once typed selection adds a 1-line input echo above.
-const QUIZ_BOTTOM_HEIGHT: u16 = 1;
-const HACK_BOTTOM_HEIGHT: u16 = 1;
+const INPUT_ECHO_HEIGHT: u16 = 1;
+const HELP_LINE_HEIGHT: u16 = 1;
 const HACK_LOG_HEIGHT: u16 = 5;
 
 impl PaneFrame {
@@ -52,7 +51,11 @@ impl PaneFrame {
         let outer = Layout::default()
             .direction(Direction::Vertical)
             .margin(1)
-            .constraints([Constraint::Min(10), Constraint::Length(QUIZ_BOTTOM_HEIGHT)])
+            .constraints([
+                Constraint::Min(10),
+                Constraint::Length(INPUT_ECHO_HEIGHT),
+                Constraint::Length(HELP_LINE_HEIGHT),
+            ])
             .split(area);
 
         let top = split_top(outer[0]);
@@ -60,7 +63,8 @@ impl PaneFrame {
         Self {
             main: top[0],
             side: top[1],
-            help_line: outer[1],
+            input_echo: outer[1],
+            help_line: outer[2],
             log: None,
         }
     }
@@ -76,8 +80,9 @@ impl PaneFrame {
             .margin(1)
             .constraints([
                 Constraint::Min(12),
-                Constraint::Length(HACK_BOTTOM_HEIGHT),
+                Constraint::Length(INPUT_ECHO_HEIGHT),
                 Constraint::Length(HACK_LOG_HEIGHT),
+                Constraint::Length(HELP_LINE_HEIGHT),
             ])
             .split(area);
 
@@ -86,8 +91,9 @@ impl PaneFrame {
         Self {
             main: top[0],
             side: top[1],
-            help_line: outer[1],
+            input_echo: outer[1],
             log: Some(outer[2]),
+            help_line: outer[3],
         }
     }
 }
@@ -104,7 +110,7 @@ fn split_top(area: Rect) -> std::rc::Rc<[Rect]> {
 
 #[cfg(test)]
 mod tests {
-    use super::{PaneFrame, HACK_BOTTOM_HEIGHT, HACK_LOG_HEIGHT, QUIZ_BOTTOM_HEIGHT, SIDE_WIDTH};
+    use super::{PaneFrame, HACK_LOG_HEIGHT, HELP_LINE_HEIGHT, INPUT_ECHO_HEIGHT, SIDE_WIDTH};
     use ratatui::layout::Rect;
 
     const MARGIN: u16 = 1;
@@ -117,8 +123,11 @@ mod tests {
         let inner_width = area.width - MARGIN * 2;
         assert_eq!(frame.side.width, SIDE_WIDTH);
         assert_eq!(frame.main.width, inner_width - SIDE_WIDTH);
-        assert_eq!(frame.help_line.height, QUIZ_BOTTOM_HEIGHT);
+        assert_eq!(frame.input_echo.height, INPUT_ECHO_HEIGHT);
+        assert_eq!(frame.input_echo.width, inner_width);
+        assert_eq!(frame.help_line.height, HELP_LINE_HEIGHT);
         assert_eq!(frame.help_line.width, inner_width);
+        assert!(frame.input_echo.y < frame.help_line.y);
         assert!(frame.log.is_none());
     }
 
@@ -130,17 +139,20 @@ mod tests {
         let inner_width = area.width - MARGIN * 2;
         assert_eq!(frame.side.width, SIDE_WIDTH);
         assert_eq!(frame.main.width, inner_width - SIDE_WIDTH);
-        assert_eq!(frame.help_line.height, HACK_BOTTOM_HEIGHT);
+        assert_eq!(frame.input_echo.height, INPUT_ECHO_HEIGHT);
+        assert_eq!(frame.help_line.height, HELP_LINE_HEIGHT);
         let log = frame.log.expect("hack log pane");
         assert_eq!(log.height, HACK_LOG_HEIGHT);
         assert_eq!(log.width, inner_width);
+        assert!(frame.input_echo.y < log.y);
+        assert!(log.y < frame.help_line.y);
     }
 
     #[test]
     fn quiz_layout_does_not_panic_on_small_terminal() {
         let frame = PaneFrame::quiz(Rect::new(0, 0, 60, 20));
         assert!(frame.main.width >= 1);
-        assert_eq!(frame.help_line.height, QUIZ_BOTTOM_HEIGHT);
+        assert_eq!(frame.help_line.height, HELP_LINE_HEIGHT);
     }
 
     #[test]
