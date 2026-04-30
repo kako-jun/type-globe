@@ -65,9 +65,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 /// the data. Routing every question-loading code path through this helper
 /// keeps future modes (Time Attack 25, Ranking) from silently bypassing the
 /// `docs/spec.md` integrity check (#27).
-fn load_questions_with_warnings(
-    path: &str,
-) -> Result<Vec<Question>, Box<dyn std::error::Error>> {
+fn load_questions_with_warnings(path: &str) -> Result<Vec<Question>, Box<dyn std::error::Error>> {
     let questions = DataLoader::load_questions(path)?;
     for c in io::find_prefix_conflicts(&questions) {
         eprintln!("warning: {}", io::format_conflict(&c));
