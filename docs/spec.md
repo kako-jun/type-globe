@@ -105,63 +105,106 @@ Both **CPM** (characters per minute) and **WPM** (words per minute) are displaye
 
 ## Data Structures
 
-### Quiz question (`data/questions_<lang>.json`)
+All data files use **YAML** for readability and inline comments. Rust side uses `serde_yaml`. This applies to question banks, listening prompts, player progress, and rankings — everything.
 
-```json
-[
-  {
-    "id": "q001",
-    "genre": "programming",
-    "question_text": "Which keyword moves ownership in Rust?",
-    "choices": ["borrow", "move", "ref", "clone"],
-    "correct_answer_index": 1,
-    "image_path": null
-  }
-]
+### Answer-form classification (`kind`)
+
+Every answer string is classified into one of three forms. This drives the hack-and-slash boss placement and lets the renderer choose appropriate enemy visuals.
+
+| kind | form | examples | role |
+|---|---|---|---|
+| `word` | a single word | `Tokyo` / `move` / `borrow` | regular enemy |
+| `phrase` | space-separated proper noun / compound | `George Washington` / `HyperText Transfer Protocol` | mid-tier enemy |
+| `sentence` | a short sentence | `the quick brown fox jumps over the lazy dog` | **boss** |
+
+### Hack-and-slash boss placement (Plan A — fixed)
+
+Within one 10-prompt run:
+
+- prompts 1–7 → `word`
+- prompts 8–9 → `phrase`
+- **prompt 10 → `sentence` (boss)** — guaranteed dramatic finish; the TTS readout is also longer, reinforcing the boss feel acoustically.
+
+Quiz-side runs are not bound by this layout — quiz questions may freely mix kinds.
+
+### Quiz question (`data/questions_<lang>.yaml`)
+
+```yaml
+- id: q001
+  genre: programming
+  question: Which keyword moves ownership in Rust?
+  choices: [borrow, move, ref, clone]
+  correct: 1                # 0-indexed
+  kind: word
+
+- id: q050
+  genre: history
+  question: Who was the first president of the United States?
+  choices:
+    - George Washington
+    - Abraham Lincoln
+    - Thomas Jefferson
+    - John Adams
+  correct: 0
+  kind: phrase
+
+- id: q099
+  genre: literature
+  question: How does Descartes' famous proposition begin in English?
+  choices:
+    - I think therefore I am
+    - I drink therefore I sleep
+    - I see therefore I know
+    - I am therefore I think
+  correct: 0
+  kind: sentence
 ```
 
-Validation: no two choices may share a prefix that would make a typed answer ambiguous before `Enter`. (Enforced by a build-time linter.)
+Validation: no two choices in a question may share a prefix that would make a typed answer ambiguous before `Enter`. (Enforced by a build-time linter.)
 
-### Listening prompt (`data/listening_<lang>.json`)
+### Listening prompt (`data/listening_<lang>.yaml`)
 
-```json
-[
-  {
-    "id": "l001",
-    "text": "the quick brown fox jumps over the lazy dog",
-    "lang": "en"
-  }
-]
+```yaml
+- id: l001
+  text: Tokyo
+  kind: word
+
+- id: l050
+  text: George Washington
+  kind: phrase
+
+- id: l100
+  text: the quick brown fox jumps over the lazy dog
+  kind: sentence
 ```
 
 The TTS layer turns `text` into audio at runtime via the `tts` crate; no audio files are shipped.
 
-### Player progress (`player.json`)
+### Player progress (`player.yaml`)
 
-```json
-{
-  "player_name": "User",
-  "language": "ja",
-  "rpg_stats": {
-    "level": 1,
-    "exp": 0,
-    "hp_max": 100,
-    "titles_unlocked": []
-  }
-}
+```yaml
+player_name: User
+language: ja
+rpg_stats:
+  level: 1
+  exp: 0
+  hp_max: 100
+  titles_unlocked: []
 ```
 
-### Ranking (`ranking_<lang>.json`)
+### Ranking (`ranking_<lang>.yaml`)
 
-```json
-{
-  "quiz_single": [
-    {"name": "Player1", "score": 1500, "cpm": 230, "wpm": 46, "ts": "2026-04-30T10:00:00Z"}
-  ],
-  "time_attack_25": [
-    {"name": "PlayerX", "time_seconds": 180, "ts": "2026-04-30T10:05:00Z"}
-  ]
-}
+```yaml
+quiz_single:
+  - name: Player1
+    score: 1500
+    cpm: 230
+    wpm: 46
+    ts: 2026-04-30T10:00:00Z
+time_attack_25:
+  - name: PlayerX
+    time_seconds: 180
+    ts: 2026-04-30T10:05:00Z
 ```
 
 Top 10 per mode per language.
