@@ -18,6 +18,65 @@ const STYLE_TITLE: Style = Style::new().fg(Color::Cyan).add_modifier(Modifier::B
 const STYLE_SELECTED: Style = Style::new().fg(Color::Yellow).add_modifier(Modifier::BOLD);
 const STYLE_NORMAL: Style = Style::new();
 const STYLE_HELP: Style = Style::new().fg(Color::Gray);
+const STYLE_LABEL: Style = Style::new().fg(Color::Cyan).add_modifier(Modifier::BOLD);
+
+struct LanguageOption {
+    label: &'static str,
+    description: [&'static str; 2],
+}
+
+struct ModeOption {
+    label: &'static str,
+    description: [&'static str; 2],
+}
+
+const LANGUAGE_OPTIONS: [LanguageOption; 2] = [
+    LanguageOption {
+        label: "日本語 / Japanese",
+        description: [
+            "Use Japanese prompts and localized records.",
+            "問題文とランキング表示を日本語にします。",
+        ],
+    },
+    LanguageOption {
+        label: "English",
+        description: [
+            "Use English prompts and localized records.",
+            "English questions and ranking labels are used.",
+        ],
+    },
+];
+
+const MODE_OPTIONS: [ModeOption; 4] = [
+    ModeOption {
+        label: "Quiz",
+        description: [
+            "The standard play mode: answer quiz prompts and build core skill.",
+            "基本プレイ。問題に答えて type-globe の土台を鍛えます。",
+        ],
+    },
+    ModeOption {
+        label: "Time Attack 25",
+        description: [
+            "A Quiz variant with panel capture and head-to-head pressure.",
+            "Quiz 派生。対戦とパネル奪取で 25 マスを奪い合います。",
+        ],
+    },
+    ModeOption {
+        label: "Listening RPG",
+        description: [
+            "A separate ruleset: hear the prompt, then survive a 10-battle run.",
+            "別ルール系。聞いて打つ 10 戦のリスニングRPGです。",
+        ],
+    },
+    ModeOption {
+        label: "Records / Ranking",
+        description: [
+            "Browse cross-mode records for Quiz, Time Attack 25, and Listening RPG.",
+            "3 モード分の結果を横断して見るランキング画面です。",
+        ],
+    },
+];
 
 pub struct MenuUI {
     selected_language: usize,
@@ -56,6 +115,15 @@ impl MenuUI {
         terminal.show_cursor()?;
 
         result
+    }
+
+    pub fn return_to_mode_selection(&mut self, language: Language) {
+        self.selected_language = match language {
+            Language::Japanese => 0,
+            Language::English => 1,
+        };
+        self.step = MenuStep::ModeSelection;
+        self.should_quit = false;
     }
 
     fn run_app(
@@ -163,20 +231,20 @@ impl MenuUI {
     }
 
     fn render_language_selection(&self, f: &mut Frame, area: Rect) {
-        let languages = ["日本語 (Japanese)", "English"];
-        let items: Vec<ListItem> = languages
+        let items: Vec<ListItem> = LANGUAGE_OPTIONS
             .iter()
             .enumerate()
-            .map(|(i, &lang)| {
+            .map(|(i, language)| {
                 let style = if i == self.selected_language {
                     STYLE_SELECTED
                 } else {
                     STYLE_NORMAL
                 };
-                ListItem::new(Line::from(Span::styled(lang, style)))
+                ListItem::new(Line::from(Span::styled(language.label, style)))
             })
             .collect();
 
+        let [list_area, detail_area] = split_selection_area(area);
         let language_list = List::new(items)
             .block(
                 Block::default()
@@ -187,26 +255,28 @@ impl MenuUI {
 
         let mut state = ListState::default();
         state.select(Some(self.selected_language));
-        f.render_stateful_widget(language_list, area, &mut state);
+        f.render_stateful_widget(language_list, list_area, &mut state);
+
+        self.render_detail_panel(
+            f,
+            detail_area,
+            "Language",
+            LANGUAGE_OPTIONS[self.selected_language].description,
+        );
     }
 
     fn render_mode_selection(&self, f: &mut Frame, area: Rect) {
-        let modes = [
-            "クイズモード / Quiz Mode",
-            "タイムアタック25 / Time Attack 25",
-            "リスニングRPG / Listening Hack-and-Slash RPG",
-            "ランキング / Ranking",
-        ];
-        let items: Vec<ListItem> = modes
+        let [list_area, detail_area] = split_selection_area(area);
+        let items: Vec<ListItem> = MODE_OPTIONS
             .iter()
             .enumerate()
-            .map(|(i, &mode)| {
+            .map(|(i, mode)| {
                 let style = if i == self.selected_mode {
                     STYLE_SELECTED
                 } else {
                     STYLE_NORMAL
                 };
-                ListItem::new(Line::from(Span::styled(mode, style)))
+                ListItem::new(Line::from(Span::styled(mode.label, style)))
             })
             .collect();
 
@@ -220,7 +290,14 @@ impl MenuUI {
 
         let mut state = ListState::default();
         state.select(Some(self.selected_mode));
-        f.render_stateful_widget(mode_list, area, &mut state);
+        f.render_stateful_widget(mode_list, list_area, &mut state);
+
+        self.render_detail_panel(
+            f,
+            detail_area,
+            "Mode",
+            MODE_OPTIONS[self.selected_mode].description,
+        );
     }
 
     fn render_help(&self, f: &mut Frame, area: Rect) {
@@ -239,4 +316,37 @@ impl MenuUI {
             .block(Block::default().borders(Borders::ALL));
         f.render_widget(help, area);
     }
+
+    fn render_detail_panel(&self, f: &mut Frame, area: Rect, title: &str, description: [&str; 2]) {
+        let lines = vec![
+            Line::from(Span::styled(title, STYLE_LABEL)),
+            Line::default(),
+            Line::from(description[0]),
+            Line::from(description[1]),
+        ];
+
+        let detail = Paragraph::new(lines)
+            .wrap(ratatui::widgets::Wrap { trim: true })
+            .block(
+                Block::default()
+                    .title("説明 / Details")
+                    .borders(Borders::ALL),
+            );
+        f.render_widget(detail, area);
+    }
+}
+
+fn split_selection_area(area: Rect) -> [Rect; 2] {
+    let constraints = if area.width >= 80 {
+        [Constraint::Percentage(42), Constraint::Percentage(58)]
+    } else {
+        [Constraint::Percentage(50), Constraint::Percentage(50)]
+    };
+
+    let chunks = Layout::default()
+        .direction(Direction::Horizontal)
+        .constraints(constraints)
+        .split(area);
+
+    [chunks[0], chunks[1]]
 }

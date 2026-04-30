@@ -40,10 +40,10 @@ type-globe
 
 | Mode | Status | Description |
 |---|---|---|
-| Quiz (single-run) | target: v0.2.0 | Type-to-select 4-choice quiz, ten questions per run |
-| Time Attack 25 | target: v0.2.0 | 5×5 panel battle vs. CPU, total time decides ranking |
-| Listening RPG (TypeQuest) | target: v0.2.0 | Audio-only prompts, ten enemies per dungeon run, EXP / level / titles |
-| Ranking | target: v0.2.0 | Top 10 per mode per language, persisted locally |
+| Quiz (single-run) | target: v0.2.0 | The standard play mode: type-to-select 4-choice quiz, ten questions per run |
+| Time Attack 25 | target: v0.2.0 | A Quiz variant with a 5×5 panel battle vs. CPU |
+| Listening RPG (TypeQuest) | target: v0.2.0 | A separate ruleset: audio-only prompts, ten enemies per dungeon run |
+| Ranking | target: v0.2.0 | A records view that spans Quiz, Time Attack 25, and Listening RPG |
 | Image Quiz | v0.3.0+ | Requires terminal graphics protocol (kitty / iTerm2 / wezterm) |
 | Stealth | v0.3.0+ | Disguises the UI as a generic CLI tool |
 | `type-globe-online` | v0.3.0+ | mypace WebSocket integration for live rankings, posted to Nostr |
