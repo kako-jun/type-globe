@@ -42,24 +42,23 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                 let mut quiz_ui = QuizUI::new(questions, language);
                 let final_score = quiz_ui.run()?;
 
-                println!("ゲーム終了！最終スコア: {final_score}");
-                return Ok(());
+                show_return_to_menu_message(&format!("Quiz finished. Final score: {final_score}"))?;
             }
             GameMode::TimeAttack25 => {
-                show_unimplemented_mode_message("Time Attack 25")?;
+                show_return_to_menu_message("Time Attack 25 is not implemented yet.")?;
             }
             GameMode::HackAndSlashRpg => {
-                show_unimplemented_mode_message("Listening RPG")?;
+                show_return_to_menu_message("Listening RPG is not implemented yet.")?;
             }
             GameMode::Ranking => {
-                show_unimplemented_mode_message("Ranking")?;
+                show_return_to_menu_message("Ranking is not implemented yet.")?;
             }
         }
     }
 }
 
-fn show_unimplemented_mode_message(mode_name: &str) -> Result<(), Box<dyn std::error::Error>> {
-    println!("{mode_name} is not implemented yet.");
+fn show_return_to_menu_message(message: &str) -> Result<(), Box<dyn std::error::Error>> {
+    println!("{message}");
     println!("Press Enter to return to the menu.");
     stdout().flush()?;
 
