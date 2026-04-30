@@ -1,42 +1,98 @@
-# TypeGlobe - Quiz & Typing Game
+# type-globe
 
-クイズとタイピングを融合させた教育的TUIゲーム。多言語対応、オフライン動作。
+ターミナル TUI のタイピングゲーム。**打つべき文字列が画面に出ない**のが本作の核。
+
+## コア原理（絶対）
+
+> プレイヤーは画面に表示されたものを打つのではなく、**クイズを解く**または**音声を聞き取る**ことで「何を打つべきか」を導出する。
+
+百人一首の競技かるた（下の句は読まれない）と同じ。**反射神経ではなく知識・記憶・聴解**で勝負する。
+
+この原理を破る仕様（=答えの文字列を入力前に画面表示する仕様）は**追加してはいけない**。`Tab` のスキップは「問題そのものを飛ばす」意味であり、答えを表示するスキップは存在しない。
+
+## 二軸構成（クロスさせない）
+
+| 提示方式 | ゲーム構造 |
+|---|---|
+| クイズ提示（4択 / 将来は画像） | 単発スコア / Time Attack 25 / ランキング |
+| リスニング提示（TTS で読み上げ） | ハクスラ RPG（10問=1潜入） |
+
+クロスのモード（リスニング × Time Attack 等）は作らない。
 
 ## ドキュメント
 
 | ファイル | 内容 | 言語 |
 |---|---|---|
-| `README.md` | エンドユーザー向けの使い方 | 英語（暫定） |
-| `docs/overview.md` | ゲームコンセプト・設計思想 | 英語 |
-| `docs/spec.md` | ゲームモード仕様・データ構造 | 英語 |
-| `docs/roadmap.md` | 完了済み・残タスク（内部運用メモ） | 日本語 |
-| `CLAUDE.md` | AI向け内部ドキュメント | 日本語 |
+| `README.md` | エンドユーザー向けの使い方（マスター） | 英語 |
+| `README.ja.md` | 日本語版 | 日本語 |
+| `docs/overview.md` | コンセプト・設計思想 | 英語 |
+| `docs/spec.md` | モード仕様・画面・データ構造 | 英語 |
+| `docs/roadmap.md` | フェーズ別タスク | 日本語 |
+| `CLAUDE.md` | AI 向け内部ドキュメント（このファイル） | 日本語 |
 
-## ソース構成
+## ソース構成（v0.2.0 ターゲット）
 
 ```
 src/
-├── main.rs              # エントリーポイント、ゲームモード分岐
-├── types.rs             # データ型定義（Question, Player, Ranking, GameMode, Language）
-├── config.rs            # 設定管理
+├── main.rs
+├── types.rs
+├── config.rs
+├── jiwa_core/           # 内製アニメーションモジュール
+│   ├── typewriter.rs    # 1文字ずつ出現
+│   ├── fade.rs          # TrueColor 段階補間
+│   └── input.rs         # 演出と並行した入力受付
 ├── game/
-│   ├── quiz.rs          # クイズモードロジック（スコア計算、正解判定）
-│   └── typing.rs        # タイピングモードロジック（WPM計算、正確性測定）
+│   ├── quiz.rs          # 「打って選択」+ Enter 確定
+│   ├── time_attack.rs   # 5x5 パネル + CPU 対戦
+│   └── hack.rs          # リスニング × RPG（10問サイクル）
+├── audio/
+│   └── tts.rs           # `tts` crate ラッパー、言語ルーティング
 ├── io/
-│   ├── data_loader.rs   # JSON問題読み込み・パース
-│   ├── storage.rs       # ランキング・プレイヤーデータ保存
-│   └── typing_texts.rs  # タイピング練習テキスト
+│   ├── data_loader.rs
+│   └── storage.rs       # player.json / ranking_*.json
 └── ui/
-    ├── menu.rs          # 言語・モード選択メニュー
-    ├── quiz.rs          # クイズUI描画
-    └── typing.rs        # タイピングUI描画
+    ├── menu.rs
+    ├── quiz.rs          # 3ペイン
+    ├── hack.rs          # 4ペイン
+    ├── time_attack.rs
+    ├── ranking.rs
+    └── help_line.rs     # 常時表示ヘルプ
 ```
 
 ## 主要な設計判断
 
-- **Rust + ratatui + crossterm**: クロスプラットフォームTUI。軽量で高速な応答性能
-- **ローカルJSON永続化**: オフラインファースト。問題・ランキング・プレイヤーデータはすべてローカルJSONファイル
-- **ローマ字入力のみ**: 漢字変換を必要としない。4択クイズでは数字キー(1-4)にも対応
-- **言語選択は起動時**: 日本語/英語を選択し、問題文・UIが切り替わる
-- **ステルスモード**: CLI風偽装表示で仕事中にプレイ可能（フェーズ4で実装予定）
-- **問題生成はAI**: scripts/generate_questions.py で生成。品質方針は .claude/quiz-generation-policy.md
+- **Rust + ratatui + crossterm**：クロスプラットフォーム TUI
+- **ローカル JSON 永続化**：オフラインファースト。`player.json` / `ranking_<lang>.json` / `data/questions_<lang>.json` / `data/listening_<lang>.json`
+- **TTS は実行時生成**：`tts` crate で OS ネイティブ TTS を呼ぶ。音声ファイルは同梱しない
+- **`jiwa_core` は内製**：jiwa リポは未着手。type-globe で先に実装し、安定後に jiwa crate として切り出す（**(b) 内製→後で切り出し**方針）
+- **演出スキップ不可**：問題文の reveal アニメーションは最後まで再生する（公平性）
+- **演出と並行入力**：知っている人は出待ちせず先打ちできる
+- **失敗概念なし（v0.2.0）**：HP 0 で死亡などは導入しない。10問やったら必ず帰還、ミスは EXP が減るだけ
+- **音声リプレイ無制限・無ペナルティ**：タイム消費が自然なペナルティ
+- **クイズは「打って選択」**：矢印キー選択は不採用。前方一致衝突は問題側でバリデート、Enter で確定
+- **CPM / WPM 併記**
+
+## ブランド
+
+- **type-globe**：オフライン版。本リポの主力
+- **type-globe-online**：v0.3.0+ で展開予定の**ブランド名**。リポは分けない。`online` ラベル付きで Issue 管理
+- mypace WebSocket 連携 / オンラインランキング / Nostr 投稿は `type-globe-online` 配下
+
+## v0.2.0「オフライン完成版」スコープ
+
+`offline-first` ラベル付き Issue が対象。`online` は v0.3.0+ に送る。
+
+詳細は `docs/roadmap.md` 参照。
+
+## 廃止された旧仕様
+
+v0.1.x にあった以下は v0.2.0 で**削除**：
+
+- 「画面に表示された文字列を打つ」表示タイピングモード（コア原理に反するため）
+- クイズの矢印キー / 数字キー（1-4）選択（反射要素を排除するため）
+
+## 問題生成
+
+- 既存：`scripts/generate_questions.py`、`.claude/quiz-generation-policy.md`
+- v0.2.0 ターゲット：100 → 1,000 問
+- リスニング問題セット（`data/listening_<lang>.json`）も新設
