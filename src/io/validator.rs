@@ -285,22 +285,22 @@ mod tests {
         assert_eq!(conflicts[0].language, "en");
     }
 
-    // TODO(#27, #58): ignored until #58 cleans up the bundled data — the
-    // validator already reports the real conflicts (let / let mut,
-    // Java / JavaScript, etc.). Run with `cargo test -- --ignored` once
-    // the data is fixed.
-    #[test]
-    #[ignore]
-    fn shipped_question_data_is_clean_ja() {
-        let path = "data/questions_ja.json";
+    // Bundled data must stay free of prefix conflicts; the build-time
+    // linter (#60) re-enforces this in CI on the same data files. Reads
+    // the JSON directly with serde_json so the assertion logic compiles
+    // unchanged when this module is `#[path]`-included into the
+    // `lint-questions` binary, where `crate::io::DataLoader` is absent.
+    fn assert_data_clean(path: &str) {
         if !std::path::Path::new(path).exists() {
             return;
         }
-        let questions = crate::io::DataLoader::load_questions(path).expect("load ja");
+        let text = std::fs::read_to_string(path).expect("read questions json");
+        let questions: Vec<Question> = serde_json::from_str(&text).expect("parse questions json");
         let conflicts = find_prefix_conflicts(&questions);
         assert!(
             conflicts.is_empty(),
-            "shipped ja data has prefix conflicts:\n{}",
+            "shipped data ({}) has prefix conflicts:\n{}",
+            path,
             conflicts
                 .iter()
                 .map(format_conflict)
@@ -310,22 +310,12 @@ mod tests {
     }
 
     #[test]
-    #[ignore]
+    fn shipped_question_data_is_clean_ja() {
+        assert_data_clean("data/questions_ja.json");
+    }
+
+    #[test]
     fn shipped_question_data_is_clean_en() {
-        let path = "data/questions_en.json";
-        if !std::path::Path::new(path).exists() {
-            return;
-        }
-        let questions = crate::io::DataLoader::load_questions(path).expect("load en");
-        let conflicts = find_prefix_conflicts(&questions);
-        assert!(
-            conflicts.is_empty(),
-            "shipped en data has prefix conflicts:\n{}",
-            conflicts
-                .iter()
-                .map(format_conflict)
-                .collect::<Vec<_>>()
-                .join("\n")
-        );
+        assert_data_clean("data/questions_en.json");
     }
 }
