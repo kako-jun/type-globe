@@ -245,6 +245,8 @@ impl QuizUI {
     }
 
     fn help_line(&self) -> HelpLine {
+        // TODO(#24): switch to spec strings `[Esc] Quit  [Tab] Skip  [F5] Restart`
+        // once typed selection replaces the legacy arrow / number keys.
         if self.show_result {
             if self.quiz_game.is_game_finished() {
                 HelpLine::new(vec![

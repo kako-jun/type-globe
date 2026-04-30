@@ -30,8 +30,9 @@ use ratatui::layout::{Constraint, Direction, Layout, Rect};
 pub struct PaneFrame {
     pub main: Rect,
     pub side: Rect,
-    /// Bottom region. Currently holds the help text directly; once #18 / #24
-    /// land this will be subdivided into `input_echo` + 1-line help_line.
+    /// Bottom region — a 1-line `ui::HelpLine` slot. Once #24 (typed
+    /// selection) ships, this region will grow to host a 1-line input
+    /// echo above the help line.
     pub help_line: Rect,
     /// Hack-and-slash battle log pane. `None` for quiz-style modes.
     pub log: Option<Rect>,

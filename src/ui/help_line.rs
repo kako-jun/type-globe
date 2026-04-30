@@ -48,7 +48,8 @@ impl HelpLine {
         if area.height == 0 || self.entries.is_empty() {
             return;
         }
-        let mut spans: Vec<Span<'_>> = Vec::with_capacity(self.entries.len() * 4);
+        // 2 spans per entry (key + action), plus n-1 separators.
+        let mut spans: Vec<Span<'_>> = Vec::with_capacity(self.entries.len() * 3);
         for (i, entry) in self.entries.iter().enumerate() {
             if i > 0 {
                 spans.push(Span::styled("  ", STYLE_SEP));
