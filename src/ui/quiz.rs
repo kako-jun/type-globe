@@ -433,8 +433,14 @@ impl QuizUI {
     }
 
     fn render_result(&self, f: &mut Frame, area: Rect) {
+        // Use `get_answered_question` (not `get_current_question`) — the
+        // index has already advanced past the one we just answered, and
+        // we need *that* question's choices to look up the correct
+        // answer text. Otherwise two questions whose `correct_answer_index`
+        // happen to match (e.g. both `1`) leak the next question's
+        // choice into the "Wrong. Answer: …" line.
         let (Some(result), Some(question)) =
-            (&self.current_result, self.quiz_game.get_current_question())
+            (&self.current_result, self.quiz_game.get_answered_question())
         else {
             return;
         };
