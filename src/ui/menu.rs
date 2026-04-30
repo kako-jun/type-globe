@@ -1,4 +1,5 @@
 use crate::types::{GameMode, Language};
+use crate::ui::{HelpEntry, HelpLine};
 use crossterm::{
     event::{self, Event, KeyCode, KeyEvent},
     execute,
@@ -17,7 +18,6 @@ use std::io;
 const STYLE_TITLE: Style = Style::new().fg(Color::Cyan).add_modifier(Modifier::BOLD);
 const STYLE_SELECTED: Style = Style::new().fg(Color::Yellow).add_modifier(Modifier::BOLD);
 const STYLE_NORMAL: Style = Style::new();
-const STYLE_HELP: Style = Style::new().fg(Color::Gray);
 const STYLE_LABEL: Style = Style::new().fg(Color::Cyan).add_modifier(Modifier::BOLD);
 
 struct LanguageOption {
@@ -208,7 +208,7 @@ impl MenuUI {
             .constraints([
                 Constraint::Length(3),
                 Constraint::Min(10),
-                Constraint::Length(3),
+                Constraint::Length(1),
             ])
             .split(f.area());
 
@@ -219,7 +219,7 @@ impl MenuUI {
             MenuStep::ModeSelection => self.render_mode_selection(f, chunks[1]),
         }
 
-        self.render_help(f, chunks[2]);
+        self.help_line().render(f, chunks[2]);
     }
 
     fn render_title(&self, f: &mut Frame, area: Rect) {
@@ -300,21 +300,20 @@ impl MenuUI {
         );
     }
 
-    fn render_help(&self, f: &mut Frame, area: Rect) {
-        let help_text = match self.step {
-            MenuStep::LanguageSelection => {
-                "↑↓/j/k: 選択 / Select | Enter: 決定 / Confirm | q: 終了 / Quit"
-            }
-            MenuStep::ModeSelection => {
-                "↑↓/j/k: 選択 / Select | Enter: 決定 / Confirm | Esc: 戻る / Back | q: 終了 / Quit"
-            }
-        };
-
-        let help = Paragraph::new(help_text)
-            .style(STYLE_HELP)
-            .alignment(Alignment::Center)
-            .block(Block::default().borders(Borders::ALL));
-        f.render_widget(help, area);
+    fn help_line(&self) -> HelpLine {
+        match self.step {
+            MenuStep::LanguageSelection => HelpLine::new(vec![
+                HelpEntry::new("↑↓", "Select"),
+                HelpEntry::new("Enter", "Confirm"),
+                HelpEntry::new("q", "Quit"),
+            ]),
+            MenuStep::ModeSelection => HelpLine::new(vec![
+                HelpEntry::new("↑↓", "Select"),
+                HelpEntry::new("Enter", "Confirm"),
+                HelpEntry::new("Esc", "Back"),
+                HelpEntry::new("q", "Quit"),
+            ]),
+        }
     }
 
     fn render_detail_panel(&self, f: &mut Frame, area: Rect, title: &str, description: [&str; 2]) {
