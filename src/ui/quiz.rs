@@ -2,7 +2,7 @@ use crate::game::{QuizGame, QuizResult};
 use crate::types::{Language, Question};
 use crate::ui::{HelpEntry, HelpLine, PaneFrame, StatusPane};
 use crossterm::{
-    event::{self, Event, KeyCode, KeyEvent},
+    event::{self, Event, KeyCode, KeyEvent, KeyModifiers},
     execute,
     terminal::{disable_raw_mode, enable_raw_mode, EnterAlternateScreen, LeaveAlternateScreen},
 };
@@ -11,21 +11,25 @@ use ratatui::{
     layout::{Alignment, Constraint, Direction, Layout, Rect},
     style::{Color, Modifier, Style},
     text::{Line, Span},
-    widgets::{Block, Borders, List, ListItem, ListState, Paragraph},
+    widgets::{Block, Borders, List, ListItem, Paragraph},
     Frame, Terminal,
 };
 use std::io;
 use std::time::Duration;
 
 const STYLE_TITLE: Style = Style::new().fg(Color::Cyan).add_modifier(Modifier::BOLD);
-const STYLE_SELECTED: Style = Style::new().fg(Color::Yellow).add_modifier(Modifier::BOLD);
 const STYLE_NORMAL: Style = Style::new().fg(Color::White);
 const STYLE_CORRECT: Style = Style::new().fg(Color::Green).add_modifier(Modifier::BOLD);
 const STYLE_INCORRECT: Style = Style::new().fg(Color::Red).add_modifier(Modifier::BOLD);
+const STYLE_INPUT_ECHO: Style = Style::new().fg(Color::Yellow).add_modifier(Modifier::BOLD);
+const STYLE_CHOICE_LABEL: Style = Style::new().fg(Color::Cyan).add_modifier(Modifier::BOLD);
 
 pub struct QuizUI {
     quiz_game: QuizGame,
-    selected_choice: usize,
+    /// Characters the player has typed for the current question. Per
+    /// `docs/spec.md`, this is the only source of truth for which choice is
+    /// being picked — there is no arrow / number-key fallback.
+    input_buffer: String,
     current_result: Option<QuizResult>,
     show_result: bool,
 }
@@ -37,7 +41,7 @@ impl QuizUI {
 
         Self {
             quiz_game,
-            selected_choice: 0,
+            input_buffer: String::new(),
             current_result: None,
             show_result: false,
         }
@@ -77,56 +81,62 @@ impl QuizUI {
     }
 
     fn handle_key(&mut self, key: KeyEvent) -> bool {
+        // Quit keys: Esc, and Ctrl+C as the standard terminal escape.
+        // Printable characters (including 'q') are part of typed selection
+        // and must reach the buffer.
+        if matches!(key.code, KeyCode::Esc) {
+            return true;
+        }
+        if matches!(key.code, KeyCode::Char('c')) && key.modifiers.contains(KeyModifiers::CONTROL) {
+            return true;
+        }
+
+        if self.show_result {
+            return self.handle_key_result(key);
+        }
+
         match key.code {
-            KeyCode::Char('q') => return true,
-
-            KeyCode::Up | KeyCode::Char('k') => {
-                if !self.show_result {
-                    self.selected_choice = self.selected_choice.saturating_sub(1);
-                }
-            }
-
-            KeyCode::Down | KeyCode::Char('j') => {
-                if !self.show_result {
-                    if let Some(question) = self.quiz_game.get_current_question() {
-                        if self.selected_choice < question.choices.len() - 1 {
-                            self.selected_choice += 1;
-                        }
-                    }
-                }
-            }
-
-            KeyCode::Char('1') if !self.show_result => self.selected_choice = 0,
-            KeyCode::Char('2') if !self.show_result => self.selected_choice = 1,
-            KeyCode::Char('3') if !self.show_result => self.selected_choice = 2,
-            KeyCode::Char('4') if !self.show_result => self.selected_choice = 3,
-
-            KeyCode::Enter | KeyCode::Char(' ') => {
-                if self.show_result {
-                    if self.quiz_game.is_game_finished() {
-                        return true;
-                    }
-                    self.show_result = false;
-                    self.current_result = None;
-                    self.selected_choice = 0;
-                } else if let Some(result) = self.quiz_game.answer_question(self.selected_choice) {
+            KeyCode::Enter => {
+                let typed = self.input_buffer.clone();
+                if let Some(result) = self.quiz_game.answer_question_typed(&typed) {
                     self.current_result = Some(result);
                     self.show_result = true;
                 }
             }
-
-            KeyCode::Char('s') => {
-                if !self.show_result && self.quiz_game.skip_question() {
+            KeyCode::Tab => {
+                if self.quiz_game.skip_question() {
+                    self.input_buffer.clear();
                     if self.quiz_game.is_game_finished() {
                         return true;
                     }
-                    self.selected_choice = 0;
                 }
             }
-
+            KeyCode::Backspace => {
+                self.input_buffer.pop();
+            }
+            // Drop any modifier-bearing chord (Ctrl+X / Alt+X) so it cannot
+            // accidentally land in the typed answer.
+            KeyCode::Char(c)
+                if !key
+                    .modifiers
+                    .intersects(KeyModifiers::CONTROL | KeyModifiers::ALT) =>
+            {
+                self.input_buffer.push(c);
+            }
             _ => {}
         }
+        false
+    }
 
+    fn handle_key_result(&mut self, key: KeyEvent) -> bool {
+        if key.code == KeyCode::Enter {
+            if self.quiz_game.is_game_finished() {
+                return true;
+            }
+            self.show_result = false;
+            self.current_result = None;
+            self.input_buffer.clear();
+        }
         false
     }
 
@@ -135,7 +145,25 @@ impl QuizUI {
 
         self.render_main_pane(f, frame.main);
         self.render_status_pane(f, frame.side);
+        self.render_input_echo(f, frame.input_echo);
         self.render_help_line(f, frame.help_line);
+    }
+
+    fn render_input_echo(&self, f: &mut Frame, area: Rect) {
+        if area.height == 0 {
+            return;
+        }
+        // Hide the echo while showing a result — keeps the screen calm
+        // during the "correct/wrong" reveal.
+        let body = if self.show_result {
+            String::new()
+        } else {
+            format!("> {}_", self.input_buffer)
+        };
+        let line = Paragraph::new(body)
+            .style(STYLE_INPUT_ECHO)
+            .alignment(Alignment::Left);
+        f.render_widget(line, area);
     }
 
     fn render_status_pane(&self, f: &mut Frame, area: Rect) {
@@ -180,33 +208,31 @@ impl QuizUI {
             let question_paragraph = Paragraph::new(question_text)
                 .style(STYLE_NORMAL)
                 .alignment(Alignment::Left)
-                .block(Block::default().title("問題").borders(Borders::ALL))
+                .block(Block::default().title("Question").borders(Borders::ALL))
                 .wrap(ratatui::widgets::Wrap { trim: true });
             f.render_widget(question_paragraph, chunks[0]);
 
+            // Plain non-highlighted list — typed selection means there is no
+            // "currently focused" choice. Labels A/B/C/D match docs/spec.md.
+            const LABELS: [&str; 4] = ["A", "B", "C", "D"];
             let choice_items: Vec<ListItem> = choices
                 .iter()
                 .enumerate()
                 .map(|(i, choice)| {
-                    let text = format!("{}. {}", i + 1, choice);
-                    let style = if i == self.selected_choice {
-                        STYLE_SELECTED
-                    } else {
-                        STYLE_NORMAL
-                    };
-                    ListItem::new(Line::from(Span::styled(text, style)))
+                    let label = LABELS.get(i).copied().unwrap_or("?");
+                    ListItem::new(Line::from(vec![
+                        Span::styled(format!("{label}) "), STYLE_CHOICE_LABEL),
+                        Span::styled(choice.clone(), STYLE_NORMAL),
+                    ]))
                 })
                 .collect();
 
             let choices_list = List::new(choice_items)
-                .block(Block::default().title("選択肢").borders(Borders::ALL))
-                .highlight_style(STYLE_SELECTED);
+                .block(Block::default().title("Choices").borders(Borders::ALL));
 
-            let mut state = ListState::default();
-            state.select(Some(self.selected_choice));
-            f.render_stateful_widget(choices_list, chunks[1], &mut state);
+            f.render_widget(choices_list, chunks[1]);
         } else {
-            let no_question = Paragraph::new("問題がありません")
+            let no_question = Paragraph::new("No question available")
                 .style(Style::default().fg(Color::Red))
                 .alignment(Alignment::Center)
                 .block(Block::default().borders(Borders::ALL));
@@ -224,19 +250,19 @@ impl QuizUI {
         let choices = self.quiz_game.get_choice_texts(question);
 
         let (result_text, result_style) = if result.is_correct {
-            ("正解！".to_string(), STYLE_CORRECT)
+            ("Correct!".to_string(), STYLE_CORRECT)
         } else {
             let correct_text = choices
                 .get(result.correct_answer_index)
                 .cloned()
-                .unwrap_or_else(|| "不明".to_string());
-            (format!("不正解。正解は: {correct_text}"), STYLE_INCORRECT)
+                .unwrap_or_else(|| "(unknown)".to_string());
+            (format!("Wrong. Answer: {correct_text}"), STYLE_INCORRECT)
         };
 
         let result_paragraph = Paragraph::new(result_text)
             .style(result_style)
             .alignment(Alignment::Center)
-            .block(Block::default().title("結果").borders(Borders::ALL));
+            .block(Block::default().title("Result").borders(Borders::ALL));
         f.render_widget(result_paragraph, area);
     }
 
@@ -245,27 +271,25 @@ impl QuizUI {
     }
 
     fn help_line(&self) -> HelpLine {
-        // TODO(#24): switch to spec strings `[Esc] Quit  [Tab] Skip  [F5] Restart`
-        // once typed selection replaces the legacy arrow / number keys.
         if self.show_result {
-            if self.quiz_game.is_game_finished() {
-                HelpLine::new(vec![
-                    HelpEntry::new("Enter", "Finish"),
-                    HelpEntry::new("q", "Quit"),
-                ])
+            let next_label = if self.quiz_game.is_game_finished() {
+                "Finish"
             } else {
-                HelpLine::new(vec![
-                    HelpEntry::new("Enter", "Next"),
-                    HelpEntry::new("q", "Quit"),
-                ])
-            }
-        } else {
+                "Next"
+            };
             HelpLine::new(vec![
-                HelpEntry::new("↑↓", "Select"),
-                HelpEntry::new("1-4", "Pick"),
+                HelpEntry::new("Esc", "Quit"),
+                HelpEntry::new("Enter", next_label),
+            ])
+        } else {
+            // Spec form per docs/spec.md (`[Esc] Quit  [Tab] Skip  [F5] Restart`),
+            // augmented with Enter / Bksp for typed selection. F5 Restart is
+            // not wired yet.
+            HelpLine::new(vec![
+                HelpEntry::new("Esc", "Quit"),
+                HelpEntry::new("Tab", "Skip"),
                 HelpEntry::new("Enter", "Confirm"),
-                HelpEntry::new("s", "Skip"),
-                HelpEntry::new("q", "Quit"),
+                HelpEntry::new("Bksp", "Erase"),
             ])
         }
     }

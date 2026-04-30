@@ -71,23 +71,15 @@ Listening prompts are synthesized at runtime via the [`tts`](https://crates.io/c
 
 **Quiz**
 
-Current `main` branch note: quiz input is still transitioning from legacy selection controls to direct typed selection.
+Quiz answers are typed directly — there is no arrow / number-key fallback. The exact choice text must be entered, then `Enter` confirms. Prefix matches do not auto-confirm (e.g. `mov` does not pick `move`).
 
-Current `main` controls:
-- `↑↓` / `j` `k`: move selection
-- `1`-`4`: jump to a choice
-- `Enter` / `Space`: confirm
-- `s`: skip
-- `q`: quit
-
-| Key | Current `main` | Target v0.2.0 |
+| Key | Action |
 |---|---|
-| `↑↓` / `j` `k` | Move selection | Removed |
-| `1`-`4` | Jump to a choice | Removed |
-| `Letters` | Unused in current quiz flow | Type the correct choice's text |
-| `Enter` / `Space` | Confirm | Confirm |
-| `s` | Skip question | Skip question |
-| `q` | Quit | Quit |
+| Letters | Append to the typed answer |
+| `Backspace` | Erase the last character |
+| `Enter` | Confirm — exact match against one of the four choices |
+| `Tab` | Skip the current question |
+| `Esc` / `Ctrl+C` | Quit |
 
 **Listening RPG**
 
