@@ -54,14 +54,14 @@ src/
     ├── quiz.rs          # 3ペイン
     ├── hack.rs          # 4ペイン
     ├── time_attack.rs
-    ├── ranking.rs
+    ├── records.rs
     └── help_line.rs     # 常時表示ヘルプ
 ```
 
 ## 主要な設計判断（v0.2.0 ターゲット）
 
 - **Rust + ratatui + crossterm**：クロスプラットフォーム TUI
-- **保存形式は移行途中**：現行 `main` は JSON 永続化（`player.json` / `ranking_<lang>.json` / `data/questions_<lang>.json`）だが、v0.2.0 ターゲットでは YAML + `serde_yaml` へ移行予定
+- **保存形式は移行途中**：現行 `main` は JSON 永続化（`player.json` / `records_<lang>.json` / `data/questions_<lang>.json`）だが、v0.2.0 ターゲットでは YAML + `serde_yaml` へ移行予定
 - **TTS は実行時生成**：`tts` crate で OS ネイティブ TTS を呼ぶ。音声ファイルは同梱しない
 - **`jiwa_core` は内製**：jiwa リポは未着手。type-globe で先に実装し、安定後に jiwa crate として切り出す（**(b) 内製→後で切り出し**方針）
 - **演出スキップ不可**：問題文の reveal アニメーションは最後まで再生する（公平性）
@@ -75,7 +75,8 @@ src/
 
 - **type-globe**：オフライン版。本リポの主力
 - **type-globe-online**：v0.3.0+ で展開予定の**ブランド名**。リポは分けない。`online` ラベル付きで Issue 管理
-- mypace WebSocket 連携 / オンラインランキング / Nostr 投稿は `type-globe-online` 配下
+- mypace WebSocket 連携 / **Nostralgic Ranking 連携（世界ランキング）** / Nostr 投稿は `type-globe-online` 配下
+- 用語ルール: ローカル自己ベストは **Records**、世界順位は **Ranking**（Nostralgic Ranking）。混同禁止
 
 ## v0.2.0「オフライン完成版」スコープ
 

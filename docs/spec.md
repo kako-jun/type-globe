@@ -15,10 +15,12 @@ Inspired by competitive Hyakunin Isshu karuta (where the lower verse is never re
 
 | Presentation | Game Structure | Character |
 |---|---|---|
-| **Quiz** (4-choice; image-quiz later) | Single-run score / Time Attack 25 / **Ranking** | Competitive, public |
+| **Quiz** (4-choice; image-quiz later) | Single-run score / Time Attack 25 / **Records** | Competitive, public |
 | **Listening** (audio in EN / JA / ...) | **Hack-and-slash RPG** | Personal, progression |
 
-Quiz is paired with ranking-style modes; listening is paired with the RPG. The two presentation styles are never crossed.
+Quiz is paired with score-attack modes; listening is paired with the RPG. The two presentation styles are never crossed.
+
+> **Terminology.** "Records" = local self-best history. "Ranking" is reserved for world-vs-world comparison via Nostralgic Ranking, which lands in v0.3.0+ inside the `type-globe-online` brand label. Do not call self-best lists "ranking".
 
 ## Display Rules
 
@@ -33,7 +35,7 @@ Quiz is paired with ranking-style modes; listening is paired with the RPG. The t
 
 ## Game Modes
 
-### Quiz Mode (Single-run / Ranking-eligible)
+### Quiz Mode (Single-run / Records-eligible)
 
 3-pane layout:
 
@@ -62,7 +64,7 @@ Quiz is paired with ranking-style modes; listening is paired with the RPG. The t
 
 - 5×5 panel grid (homage to the Japanese TV show *Attack 25*).
 - CPU opponent. Whoever answers correctly first claims the panel.
-- Total elapsed time (thinking + typing) determines ranking.
+- Total elapsed time (thinking + typing) is the recorded result; the local self-best lands in Records.
 
 ### Listening × Hack-and-Slash RPG
 
@@ -109,7 +111,7 @@ Both **CPM** (characters per minute) and **WPM** (words per minute) are displaye
 
 Target v0.2.0 direction: all data files use **YAML** for readability and inline comments, with Rust side moved to `serde_yaml`.
 
-Current `main` branch status: question banks / player progress / rankings are still JSON-backed and use `serde_json`.
+Current `main` branch status: question banks / player progress / records are still JSON-backed and use `serde_json`.
 
 ### Answer-form classification (`kind`)
 
@@ -196,7 +198,7 @@ rpg_stats:
   titles_unlocked: []
 ```
 
-### Ranking (`ranking_<lang>.yaml`)
+### Records (`records_<lang>.yaml`)
 
 ```yaml
 quiz_single:
@@ -211,7 +213,7 @@ time_attack_25:
     ts: 2026-04-30T10:05:00Z
 ```
 
-Top 10 per mode per language.
+Top 10 per mode per language. This is a local self-best file — never call it a "ranking". World ranking (Nostralgic Ranking) is wired in the v0.3.0+ `type-globe-online` build and submits the same entries to a Nostr-relay-backed feed.
 
 ## Source Architecture (target)
 
@@ -243,7 +245,7 @@ src/
     ├── quiz.rs          # 3-pane layout
     ├── hack.rs          # 4-pane layout
     ├── time_attack.rs
-    ├── ranking.rs
+    ├── records.rs
     └── help_line.rs     # always-on bottom helpline
 ```
 

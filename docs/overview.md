@@ -12,15 +12,17 @@ The metaphor is competitive Hyakunin Isshu karuta: the lower verse is never reci
 
 ## Two Axes (never crossed)
 
-- **Quiz × Ranking-style modes** — knowledge-driven, competitive, public.
+- **Quiz × Score-attack modes** — knowledge-driven, competitive, public.
 - **Listening × Hack-and-Slash RPG** — comprehension-driven, personal, progression-oriented.
 
-Quiz prompts lead to single-run scoring, Time Attack 25, and global rankings. Listening prompts feed into a roguelike "one run = ten enemies" RPG.
+Quiz prompts lead to single-run scoring, Time Attack 25, and (in `type-globe-online`) world ranking via Nostralgic Ranking. Listening prompts feed into a roguelike "one run = ten enemies" RPG.
+
+> **Records vs Ranking.** Local self-best history is **Records**. **Ranking** is reserved for world-vs-world ordering through Nostralgic Ranking, which lands in the v0.3.0+ `type-globe-online` build. Don't blur them.
 
 ## Game Modes
 
 - **Quiz Mode** — Read the question, see the four choices, and **type the correct one's text** (no arrow-key selection). Press Enter to confirm.
-- **Time Attack 25** — 5×5 panel battle versus CPU, inspired by the *Attack 25* TV show. Total time (thinking + typing) decides the ranking.
+- **Time Attack 25** — 5×5 panel battle versus CPU, inspired by the *Attack 25* TV show. Total time (thinking + typing) is the recorded result; the local self-best lands in Records.
 - **Listening RPG (TypeQuest)** — Audio-only prompts. Each prompt is an enemy; ten enemies = one run. Mistypes cost EXP, never end the run.
 
 ## Display Animation (`jiwa_core`)
@@ -67,4 +69,4 @@ Deferred to v0.3.0 and beyond:
 
 - **Image Quiz** (terminal graphics protocol; kitty / iTerm2 / wezterm)
 - **Stealth Mode** (CLI-disguise UI)
-- **type-globe-online** — mypace WebSocket integration for live rankings and Nostr feed posting. Same repository, different brand label.
+- **type-globe-online** — mypace WebSocket integration plus **Nostralgic Ranking** submission (world ranking via Nostr) and Nostr feed posting. Same repository, different brand label.
