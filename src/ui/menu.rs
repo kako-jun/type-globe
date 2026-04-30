@@ -191,10 +191,8 @@ impl MenuUI {
                     return Some((language, mode));
                 }
             },
-            KeyCode::Esc => {
-                if self.step == MenuStep::ModeSelection {
-                    self.step = MenuStep::LanguageSelection;
-                }
+            KeyCode::Esc if self.step == MenuStep::ModeSelection => {
+                self.step = MenuStep::LanguageSelection;
             }
             _ => {}
         }

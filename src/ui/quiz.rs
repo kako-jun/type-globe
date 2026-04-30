@@ -111,12 +111,13 @@ impl QuizUI {
                     self.show_result = true;
                 }
             }
-            KeyCode::Tab => {
-                if self.quiz_game.skip_question() {
-                    self.input_buffer.clear();
-                    if self.quiz_game.is_game_finished() {
-                        return true;
-                    }
+            // The guard's side effect (skip_question) is intentional — Tab
+            // skipping is the action, not a precondition. If skip fails
+            // (no current question), the arm falls through to `_ => {}`.
+            KeyCode::Tab if self.quiz_game.skip_question() => {
+                self.input_buffer.clear();
+                if self.quiz_game.is_game_finished() {
+                    return true;
                 }
             }
             KeyCode::Backspace => {
