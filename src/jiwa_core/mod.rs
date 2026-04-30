@@ -17,9 +17,13 @@
 //! All time-bearing entry points take an explicit `now: Instant` so
 //! tests can advance time deterministically without a global clock.
 
+pub mod pulse;
 pub mod reveal;
 
 pub use reveal::{RevealHandle, RevealOpts, Rgb};
-// `RevealedGrapheme` is part of the public surface but only constructed
-// inside `RevealHandle::snapshot`; callers receive it by value, so it
-// stays reachable via `reveal::RevealedGrapheme`.
+// `RevealedGrapheme` and `pulse::PulseFrame` are part of the public
+// surface but constructed inside their respective `snapshot` methods;
+// callers receive them by value, so they stay reachable via
+// `reveal::RevealedGrapheme` / `pulse::PulseFrame`.
+#[allow(unused_imports)]
+pub use pulse::{PulseHandle, PulseOpts};
