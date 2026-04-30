@@ -39,10 +39,13 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                     return Ok(());
                 }
 
-                let mut quiz_ui = QuizUI::new(questions, language.clone());
-                let final_score = quiz_ui.run()?;
+                // 10-question sampled run + result screen + Records save are
+                // all owned by QuizUI now (#26). main.rs only supplies the
+                // pool and the records file path.
+                let records_path = config.records_file_path(&language);
+                let mut quiz_ui = QuizUI::from_pool(&questions, language.clone(), records_path);
+                let _final_score = quiz_ui.run()?;
 
-                show_return_to_menu_message(&format!("Quiz finished. Final score: {final_score}"))?;
                 menu.return_to_mode_selection(language);
             }
             GameMode::TimeAttack25 => {

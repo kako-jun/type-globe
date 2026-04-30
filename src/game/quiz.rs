@@ -1,6 +1,11 @@
 use crate::io::DataLoader;
 use crate::types::{Language, Question};
+use rand::seq::SliceRandom;
 use std::time::{Duration, Instant};
+
+/// Number of questions a single Quiz run is locked to. Per `docs/spec.md`
+/// (Quiz Mode header) and Issue #26's acceptance criteria.
+pub const QUIZ_RUN_LENGTH: usize = 10;
 
 #[derive(Debug)]
 pub struct QuizGame {
@@ -9,6 +14,11 @@ pub struct QuizGame {
     score: u32,
     correct_answers: u32,
     total_answers: u32,
+    /// Cumulative count of characters from *correctly* answered choice texts.
+    /// CPM / WPM are derived from this and `start_time`. Wrong answers are
+    /// not counted because the player never finished typing the correct
+    /// choice — including them would inflate WPM for fast guessers.
+    typed_correct_chars: u32,
     start_time: Option<Instant>,
     language: Language,
 }
@@ -24,6 +34,8 @@ pub struct QuizResult {
 }
 
 impl QuizGame {
+    /// Construct a quiz with the supplied question list as-is. Used by
+    /// tests and any caller that has already curated its own ordering.
     pub fn new(questions: Vec<Question>, language: Language) -> Self {
         Self {
             questions,
@@ -31,9 +43,22 @@ impl QuizGame {
             score: 0,
             correct_answers: 0,
             total_answers: 0,
+            typed_correct_chars: 0,
             start_time: None,
             language,
         }
+    }
+
+    /// Build a fresh run by sampling up to `QUIZ_RUN_LENGTH` distinct
+    /// questions out of `pool`. If the pool is shorter than the run length
+    /// the whole pool is used (no padding, no repeats). Order is shuffled
+    /// so two consecutive runs don't see the same questions in the same
+    /// sequence.
+    pub fn from_pool(pool: &[Question], language: Language) -> Self {
+        let mut rng = rand::thread_rng();
+        let take = pool.len().min(QUIZ_RUN_LENGTH);
+        let sampled: Vec<Question> = pool.choose_multiple(&mut rng, take).cloned().collect();
+        Self::new(sampled, language)
     }
 
     pub fn start(&mut self) {
@@ -75,13 +100,24 @@ impl QuizGame {
     pub(crate) fn answer_question(&mut self, answer_index: usize) -> Option<QuizResult> {
         let question_start_time = Instant::now();
 
-        if let Some(question) = self.get_current_question() {
+        let snapshot = self.get_current_question().map(|question| {
             let correct_answer_index = question.correct_answer_index;
             let is_correct = answer_index == correct_answer_index;
+            let correct_chars = if is_correct {
+                DataLoader::get_choice_text(&question.choices[correct_answer_index], &self.language)
+                    .chars()
+                    .count() as u32
+            } else {
+                0
+            };
+            (correct_answer_index, is_correct, correct_chars)
+        });
 
+        if let Some((correct_answer_index, is_correct, correct_chars)) = snapshot {
             if is_correct {
                 self.correct_answers += 1;
                 self.score += self.calculate_score_for_question();
+                self.typed_correct_chars = self.typed_correct_chars.saturating_add(correct_chars);
             }
 
             self.total_answers += 1;
@@ -109,8 +145,6 @@ impl QuizGame {
         self.score
     }
 
-    /// TODO(#24): wired up by typed-selection scoring.
-    #[allow(dead_code)]
     pub fn get_accuracy(&self) -> f32 {
         if self.total_answers == 0 {
             0.0
@@ -119,8 +153,32 @@ impl QuizGame {
         }
     }
 
+    pub fn get_correct_count(&self) -> u32 {
+        self.correct_answers
+    }
+
     pub fn get_total_time(&self) -> Option<Duration> {
         self.start_time.map(|start| start.elapsed())
+    }
+
+    /// Characters per minute over the full run so far. Returns 0 when the
+    /// timer hasn't started or when no time has elapsed.
+    pub fn get_cpm(&self) -> u32 {
+        let secs = self
+            .get_total_time()
+            .map(|d| d.as_secs_f64())
+            .unwrap_or(0.0);
+        if secs <= 0.0 {
+            0
+        } else {
+            ((self.typed_correct_chars as f64) * 60.0 / secs).round() as u32
+        }
+    }
+
+    /// Words per minute, where 1 word = 5 characters (the standard
+    /// typing-test convention). Same denominator as `get_cpm`.
+    pub fn get_wpm(&self) -> u32 {
+        self.get_cpm() / 5
     }
 
     pub fn get_progress(&self) -> (usize, usize) {
@@ -251,5 +309,81 @@ mod tests {
             .expect("result");
         assert!(result.is_correct);
         assert_eq!(result.selected_answer_index, 0);
+    }
+
+    #[test]
+    fn from_pool_caps_at_run_length() {
+        // 30 distinct questions in the pool; from_pool must hand back
+        // exactly QUIZ_RUN_LENGTH = 10.
+        let pool: Vec<Question> = (0..30)
+            .map(|i| {
+                let mut q = make_question(&["a", "b", "c", "d"], 0);
+                q.id = format!("q{i:02}");
+                q
+            })
+            .collect();
+        let game = QuizGame::from_pool(&pool, Language::English);
+        assert_eq!(game.get_progress(), (0, QUIZ_RUN_LENGTH));
+    }
+
+    #[test]
+    fn from_pool_returns_whole_pool_when_smaller_than_run_length() {
+        let pool: Vec<Question> = (0..3)
+            .map(|i| {
+                let mut q = make_question(&["a", "b", "c", "d"], 0);
+                q.id = format!("q{i}");
+                q
+            })
+            .collect();
+        let game = QuizGame::from_pool(&pool, Language::English);
+        assert_eq!(game.get_progress(), (0, 3));
+    }
+
+    #[test]
+    fn from_pool_does_not_repeat_questions() {
+        // 10 distinct questions, take 10 — every id must be present once.
+        let pool: Vec<Question> = (0..QUIZ_RUN_LENGTH)
+            .map(|i| {
+                let mut q = make_question(&["a", "b", "c", "d"], 0);
+                q.id = format!("q{i}");
+                q
+            })
+            .collect();
+        let game = QuizGame::from_pool(&pool, Language::English);
+        let ids: std::collections::BTreeSet<&str> =
+            game.questions.iter().map(|q| q.id.as_str()).collect();
+        assert_eq!(ids.len(), QUIZ_RUN_LENGTH);
+    }
+
+    #[test]
+    fn cpm_and_wpm_are_zero_before_any_correct_answer() {
+        let q = make_question(&["a", "b", "c", "d"], 0);
+        let mut game = QuizGame::new(vec![q], Language::English);
+        game.start();
+        assert_eq!(game.get_cpm(), 0);
+        assert_eq!(game.get_wpm(), 0);
+    }
+
+    #[test]
+    fn cpm_counts_only_correct_answers() {
+        // Two questions, answer the first wrong and the second right —
+        // typed_correct_chars must equal len("right") == 5.
+        let q1 = make_question(&["right", "wrong1", "wrong2", "wrong3"], 0);
+        let q2 = make_question(&["right", "wrong1", "wrong2", "wrong3"], 0);
+        let mut game = QuizGame::new(vec![q1, q2], Language::English);
+        game.start();
+        game.answer_question_typed("wrong1");
+        game.answer_question_typed("right");
+        assert_eq!(game.typed_correct_chars, 5);
+    }
+
+    #[test]
+    fn correct_count_tracks_only_correct_answers() {
+        let q = make_question(&["right", "a", "b", "c"], 0);
+        let mut game = QuizGame::new(vec![q], Language::English);
+        game.start();
+        game.answer_question_typed("right");
+        assert_eq!(game.get_correct_count(), 1);
+        assert!((game.get_accuracy() - 1.0).abs() < f32::EPSILON);
     }
 }

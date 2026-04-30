@@ -59,6 +59,7 @@ Quiz is paired with score-attack modes; listening is paired with the RPG. The tw
 - **Enter to confirm.** Required because some choices may share prefixes (e.g. `move` vs `movement`).
 - Input echo shows only the characters the player has typed.
 - Score = function(CPM, accuracy, correctness).
+- One run is fixed at **10 questions** (constant `QUIZ_RUN_LENGTH`), sampled from the language's question pool. After the 10th question, the UI shows a Summary (Score / Correct / Accuracy / CPM / WPM / Time), then a Records-entry screen prompts for a name and writes a `ScoreEntry` to `records_<lang>.json` (Top 10 by score; ts as tiebreaker). Esc on either screen returns to the menu without saving.
 
 ### Time Attack 25
 

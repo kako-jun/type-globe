@@ -63,3 +63,54 @@ impl Storage {
         Ok(())
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use crate::types::ScoreEntry;
+    use std::env::temp_dir;
+
+    fn unique_path(prefix: &str) -> String {
+        // Nanosecond clock as a quick unique suffix — good enough for the
+        // single-process test runner; std lacks a built-in tempfile helper.
+        let nanos = std::time::SystemTime::now()
+            .duration_since(std::time::UNIX_EPOCH)
+            .map(|d| d.as_nanos())
+            .unwrap_or(0);
+        let dir = temp_dir();
+        format!("{}/type-globe-{prefix}-{nanos}.json", dir.display())
+    }
+
+    #[test]
+    fn load_records_returns_empty_when_file_absent() {
+        let path = unique_path("missing");
+        let records = Storage::load_records(&path).expect("load");
+        assert!(records.quiz_mode.is_empty());
+        assert!(records.time_attack_25.is_empty());
+        assert!(records.hack_and_slash_rpg.is_empty());
+    }
+
+    #[test]
+    fn save_then_load_records_round_trip() {
+        let path = unique_path("roundtrip");
+        let mut records = Records::default();
+        records.quiz_mode.push(ScoreEntry {
+            name: "Alice".into(),
+            score: 1500,
+            cpm: 230,
+            wpm: 46,
+            ts: 17_280_000,
+        });
+        Storage::save_records(&path, &records).expect("save");
+
+        let loaded = Storage::load_records(&path).expect("load");
+        assert_eq!(loaded.quiz_mode.len(), 1);
+        assert_eq!(loaded.quiz_mode[0].name, "Alice");
+        assert_eq!(loaded.quiz_mode[0].score, 1500);
+        assert_eq!(loaded.quiz_mode[0].cpm, 230);
+        assert_eq!(loaded.quiz_mode[0].wpm, 46);
+        assert_eq!(loaded.quiz_mode[0].ts, 17_280_000);
+
+        let _ = std::fs::remove_file(&path);
+    }
+}
