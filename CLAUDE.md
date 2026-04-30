@@ -49,7 +49,7 @@ src/
 │   └── tts.rs           # `tts` crate ラッパー、言語ルーティング
 ├── io/
 │   ├── data_loader.rs
-│   └── storage.rs       # player.json / ranking_*.json
+│   └── storage.rs       # current main: JSON, target v0.2.0: YAML
 └── ui/
     ├── menu.rs
     ├── quiz.rs          # 3ペイン

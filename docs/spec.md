@@ -236,7 +236,7 @@ src/
 ├── io/
 │   ├── mod.rs
 │   ├── data_loader.rs
-│   └── storage.rs       # player.json / ranking_*.json
+│   └── storage.rs       # current main: JSON, target v0.2.0: YAML
 └── ui/
     ├── mod.rs
     ├── menu.rs
