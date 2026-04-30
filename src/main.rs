@@ -12,11 +12,11 @@ use ui::{MenuUI, QuizUI};
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let config = Config::default();
+    let mut menu = MenuUI::new();
 
     Storage::ensure_data_directory(&config.data_dir)?;
 
     loop {
-        let mut menu = MenuUI::new();
         let (language, mode) = match menu.run() {
             Ok(result) => result,
             Err(_) => return Ok(()),
@@ -39,19 +39,23 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                     return Ok(());
                 }
 
-                let mut quiz_ui = QuizUI::new(questions, language);
+                let mut quiz_ui = QuizUI::new(questions, language.clone());
                 let final_score = quiz_ui.run()?;
 
                 show_return_to_menu_message(&format!("Quiz finished. Final score: {final_score}"))?;
+                menu.return_to_mode_selection(language);
             }
             GameMode::TimeAttack25 => {
                 show_return_to_menu_message("Time Attack 25 is not implemented yet.")?;
+                menu.return_to_mode_selection(language);
             }
             GameMode::HackAndSlashRpg => {
                 show_return_to_menu_message("Listening RPG is not implemented yet.")?;
+                menu.return_to_mode_selection(language);
             }
             GameMode::Ranking => {
                 show_return_to_menu_message("Ranking is not implemented yet.")?;
+                menu.return_to_mode_selection(language);
             }
         }
     }

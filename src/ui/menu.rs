@@ -70,7 +70,7 @@ const MODE_OPTIONS: [ModeOption; 4] = [
         ],
     },
     ModeOption {
-        label: "Ranking",
+        label: "Records / Ranking",
         description: [
             "Browse cross-mode records for Quiz, Time Attack 25, and Listening RPG.",
             "3 モード分の結果を横断して見るランキング画面です。",
@@ -115,6 +115,15 @@ impl MenuUI {
         terminal.show_cursor()?;
 
         result
+    }
+
+    pub fn return_to_mode_selection(&mut self, language: Language) {
+        self.selected_language = match language {
+            Language::Japanese => 0,
+            Language::English => 1,
+        };
+        self.step = MenuStep::ModeSelection;
+        self.should_quit = false;
     }
 
     fn run_app(
