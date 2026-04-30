@@ -24,16 +24,26 @@ pub struct RpgStats {
     pub exp: u32,
 }
 
+/// One row in a Records list. `ts` is Unix epoch seconds; the v0.2.0 YAML
+/// migration will format it as RFC3339 per `docs/spec.md`.
 #[derive(Debug, Clone, Deserialize, Serialize)]
 pub struct ScoreEntry {
     pub name: String,
     pub score: u32,
+    #[serde(default)]
+    pub cpm: u32,
+    #[serde(default)]
+    pub wpm: u32,
+    #[serde(default)]
+    pub ts: u64,
 }
 
 #[derive(Debug, Clone, Deserialize, Serialize)]
 pub struct TimeEntry {
     pub name: String,
     pub time_seconds: u32,
+    #[serde(default)]
+    pub ts: u64,
 }
 
 /// Self-best history per language. Local file only — global ordering of
