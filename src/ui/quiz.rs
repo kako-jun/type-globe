@@ -1,5 +1,6 @@
 use crate::game::{QuizGame, QuizResult};
 use crate::types::{Language, Question};
+use crate::ui::PaneFrame;
 use crossterm::{
     event::{self, Event, KeyCode, KeyEvent},
     execute,
@@ -23,6 +24,7 @@ const STYLE_STATS: Style = Style::new().fg(Color::Cyan);
 const STYLE_CORRECT: Style = Style::new().fg(Color::Green).add_modifier(Modifier::BOLD);
 const STYLE_INCORRECT: Style = Style::new().fg(Color::Red).add_modifier(Modifier::BOLD);
 const STYLE_CONTINUE: Style = Style::new().fg(Color::Yellow);
+const STYLE_MUTED: Style = Style::new().fg(Color::DarkGray);
 
 pub struct QuizUI {
     quiz_game: QuizGame,
@@ -132,44 +134,25 @@ impl QuizUI {
     }
 
     fn ui(&mut self, f: &mut Frame) {
-        let chunks = Layout::default()
-            .direction(Direction::Vertical)
-            .margin(1)
-            .constraints([
-                Constraint::Length(3),
-                Constraint::Length(3),
-                Constraint::Min(10),
-                Constraint::Length(4),
-            ])
-            .split(f.area());
+        let frame = PaneFrame::quiz(f.area());
 
-        self.render_title(f, chunks[0]);
-        self.render_progress(f, chunks[1]);
-
-        if self.show_result {
-            self.render_result(f, chunks[2]);
-        } else {
-            self.render_question(f, chunks[2]);
-        }
-
-        self.render_help(f, chunks[3]);
+        self.render_main_pane(f, frame.main);
+        self.render_status_pane(f, frame.side);
+        self.render_bottom_pane(f, frame.bottom);
     }
 
-    fn render_title(&self, f: &mut Frame, area: Rect) {
-        let title = Paragraph::new("TypeGlobe - クイズモード")
-            .style(STYLE_TITLE)
-            .alignment(Alignment::Center)
-            .block(Block::default().borders(Borders::ALL));
-        f.render_widget(title, area);
-    }
-
-    fn render_progress(&self, f: &mut Frame, area: Rect) {
+    fn render_status_pane(&self, f: &mut Frame, area: Rect) {
         let (current, total) = self.quiz_game.get_progress();
         let progress_ratio = if total > 0 {
             current as f64 / total as f64
         } else {
             0.0
         };
+
+        let chunks = Layout::default()
+            .direction(Direction::Vertical)
+            .constraints([Constraint::Length(3), Constraint::Min(6)])
+            .split(area);
 
         let gauge = Gauge::default()
             .block(
@@ -180,7 +163,56 @@ impl QuizUI {
             .gauge_style(Style::default().fg(Color::Blue))
             .ratio(progress_ratio);
 
-        f.render_widget(gauge, area);
+        f.render_widget(gauge, chunks[0]);
+
+        let stats = vec![
+            Line::from(vec![
+                Span::styled("Score ", STYLE_MUTED),
+                Span::styled(self.quiz_game.get_final_score().to_string(), STYLE_STATS),
+            ]),
+            Line::from(vec![
+                Span::styled("Accuracy ", STYLE_MUTED),
+                Span::styled(
+                    format!("{:.1}%", self.quiz_game.get_accuracy() * 100.0),
+                    STYLE_STATS,
+                ),
+            ]),
+            Line::from(vec![
+                Span::styled("State ", STYLE_MUTED),
+                Span::styled(
+                    if self.show_result {
+                        "Result"
+                    } else {
+                        "Question"
+                    },
+                    STYLE_STATS,
+                ),
+            ]),
+        ];
+
+        let stats_paragraph = Paragraph::new(stats)
+            .block(Block::default().title("統計").borders(Borders::ALL))
+            .alignment(Alignment::Left);
+        f.render_widget(stats_paragraph, chunks[1]);
+    }
+
+    fn render_main_pane(&self, f: &mut Frame, area: Rect) {
+        let chunks = Layout::default()
+            .direction(Direction::Vertical)
+            .constraints([Constraint::Length(3), Constraint::Min(6)])
+            .split(area);
+
+        let title = Paragraph::new("TypeGlobe - クイズモード")
+            .style(STYLE_TITLE)
+            .alignment(Alignment::Center)
+            .block(Block::default().borders(Borders::ALL));
+        f.render_widget(title, chunks[0]);
+
+        if self.show_result {
+            self.render_result(f, chunks[1]);
+        } else {
+            self.render_question(f, chunks[1]);
+        }
     }
 
     fn render_question(&self, f: &mut Frame, area: Rect) {
@@ -249,55 +281,30 @@ impl QuizUI {
             (format!("不正解。正解は: {correct_text}"), STYLE_INCORRECT)
         };
 
-        let chunks = Layout::default()
-            .direction(Direction::Vertical)
-            .constraints([
-                Constraint::Length(3),
-                Constraint::Length(3),
-                Constraint::Min(2),
-            ])
-            .split(area);
-
         let result_paragraph = Paragraph::new(result_text)
             .style(result_style)
             .alignment(Alignment::Center)
             .block(Block::default().title("結果").borders(Borders::ALL));
-        f.render_widget(result_paragraph, chunks[0]);
-
-        let stats_text = format!(
-            "現在のスコア: {} | 正答率: {:.1}%",
-            self.quiz_game.get_final_score(),
-            self.quiz_game.get_accuracy() * 100.0
-        );
-
-        let stats_paragraph = Paragraph::new(stats_text)
-            .style(STYLE_STATS)
-            .alignment(Alignment::Center)
-            .block(Block::default().title("統計").borders(Borders::ALL));
-        f.render_widget(stats_paragraph, chunks[1]);
-
-        let continue_text = if self.quiz_game.is_game_finished() {
-            "Enterキーでゲーム終了"
-        } else {
-            "Enterキーで次の問題へ"
-        };
-
-        let continue_paragraph = Paragraph::new(continue_text)
-            .style(STYLE_CONTINUE)
-            .alignment(Alignment::Center)
-            .block(Block::default().borders(Borders::ALL));
-        f.render_widget(continue_paragraph, chunks[2]);
+        f.render_widget(result_paragraph, area);
     }
 
-    fn render_help(&self, f: &mut Frame, area: Rect) {
-        let help_text = if self.show_result {
-            "Enter: 次へ | q: 終了"
+    fn render_bottom_pane(&self, f: &mut Frame, area: Rect) {
+        let bottom_text = if self.show_result {
+            if self.quiz_game.is_game_finished() {
+                "Enter: 終了 | q: 終了"
+            } else {
+                "Enter: 次の問題へ | q: 終了"
+            }
         } else {
             "↑↓/j/k: 選択 | 1-4: 直接選択 | Enter/Space: 決定 | s: スキップ | q: 終了"
         };
 
-        let help = Paragraph::new(help_text)
-            .style(STYLE_HELP)
+        let help = Paragraph::new(bottom_text)
+            .style(if self.show_result {
+                STYLE_CONTINUE
+            } else {
+                STYLE_HELP
+            })
             .alignment(Alignment::Center)
             .block(Block::default().borders(Borders::ALL));
         f.render_widget(help, area);
