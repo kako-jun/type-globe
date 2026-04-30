@@ -39,6 +39,15 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                     return Ok(());
                 }
 
+                // Warn (don't block) on prefix conflicts in the question
+                // bank. The shipped data is checked in unit tests; this
+                // catches user-supplied or freshly added questions at run
+                // time. See `docs/spec.md` and Issue #27.
+                let conflicts = io::find_prefix_conflicts(&questions);
+                for c in &conflicts {
+                    eprintln!("warning: {}", io::format_conflict(c));
+                }
+
                 let mut quiz_ui = QuizUI::new(questions, language.clone());
                 let final_score = quiz_ui.run()?;
 
