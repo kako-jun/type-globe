@@ -110,9 +110,7 @@ fn split_top(area: Rect) -> std::rc::Rc<[Rect]> {
 
 #[cfg(test)]
 mod tests {
-    use super::{
-        PaneFrame, HACK_LOG_HEIGHT, HELP_LINE_HEIGHT, INPUT_ECHO_HEIGHT, SIDE_WIDTH,
-    };
+    use super::{PaneFrame, HACK_LOG_HEIGHT, HELP_LINE_HEIGHT, INPUT_ECHO_HEIGHT, SIDE_WIDTH};
     use ratatui::layout::Rect;
 
     const MARGIN: u16 = 1;
