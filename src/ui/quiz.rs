@@ -2,7 +2,7 @@ use crate::game::{QuizGame, QuizResult};
 use crate::types::{Language, Question};
 use crate::ui::{HelpEntry, HelpLine, PaneFrame, StatusPane};
 use crossterm::{
-    event::{self, Event, KeyCode, KeyEvent},
+    event::{self, Event, KeyCode, KeyEvent, KeyModifiers},
     execute,
     terminal::{disable_raw_mode, enable_raw_mode, EnterAlternateScreen, LeaveAlternateScreen},
 };
@@ -81,9 +81,13 @@ impl QuizUI {
     }
 
     fn handle_key(&mut self, key: KeyEvent) -> bool {
-        // Esc is the only quit key — printable characters (including 'q')
-        // are part of typed selection and must reach the buffer.
+        // Quit keys: Esc, and Ctrl+C as the standard terminal escape.
+        // Printable characters (including 'q') are part of typed selection
+        // and must reach the buffer.
         if matches!(key.code, KeyCode::Esc) {
+            return true;
+        }
+        if matches!(key.code, KeyCode::Char('c')) && key.modifiers.contains(KeyModifiers::CONTROL) {
             return true;
         }
 
@@ -110,7 +114,13 @@ impl QuizUI {
             KeyCode::Backspace => {
                 self.input_buffer.pop();
             }
-            KeyCode::Char(c) => {
+            // Drop any modifier-bearing chord (Ctrl+X / Alt+X) so it cannot
+            // accidentally land in the typed answer.
+            KeyCode::Char(c)
+                if !key
+                    .modifiers
+                    .intersects(KeyModifiers::CONTROL | KeyModifiers::ALT) =>
+            {
                 self.input_buffer.push(c);
             }
             _ => {}
@@ -268,16 +278,18 @@ impl QuizUI {
                 "Next"
             };
             HelpLine::new(vec![
-                HelpEntry::new("Enter", next_label),
                 HelpEntry::new("Esc", "Quit"),
+                HelpEntry::new("Enter", next_label),
             ])
         } else {
-            // Spec form per docs/spec.md (F5 Restart deferred).
+            // Spec form per docs/spec.md (`[Esc] Quit  [Tab] Skip  [F5] Restart`),
+            // augmented with Enter / Bksp for typed selection. F5 Restart is
+            // not wired yet.
             HelpLine::new(vec![
-                HelpEntry::new("Enter", "Confirm"),
-                HelpEntry::new("Tab", "Skip"),
-                HelpEntry::new("Bksp", "Erase"),
                 HelpEntry::new("Esc", "Quit"),
+                HelpEntry::new("Tab", "Skip"),
+                HelpEntry::new("Enter", "Confirm"),
+                HelpEntry::new("Bksp", "Erase"),
             ])
         }
     }

@@ -70,7 +70,9 @@ impl QuizGame {
         self.answer_question(index.unwrap_or(usize::MAX))
     }
 
-    pub fn answer_question(&mut self, answer_index: usize) -> Option<QuizResult> {
+    /// Index-based answer recorder. Prefer `answer_question_typed` from the
+    /// UI layer — `usize::MAX` is the documented "no-match" sentinel.
+    pub(crate) fn answer_question(&mut self, answer_index: usize) -> Option<QuizResult> {
         let question_start_time = Instant::now();
 
         if let Some(question) = self.get_current_question() {
@@ -209,6 +211,26 @@ mod tests {
         let result = game.answer_question_typed("").expect("result");
         assert!(!result.is_correct);
         assert_eq!(result.selected_answer_index, usize::MAX);
+    }
+
+    #[test]
+    fn typed_is_case_sensitive() {
+        // Documents the current contract: matching is byte-exact, no folding.
+        let question = make_question(&["borrow", "move", "ref", "clone"], 1);
+        let mut game = QuizGame::new(vec![question], Language::English);
+        game.start();
+        let result = game.answer_question_typed("Move").expect("result");
+        assert!(!result.is_correct);
+    }
+
+    #[test]
+    fn typed_trailing_whitespace_is_not_trimmed() {
+        // Documents the current contract: whitespace is significant.
+        let question = make_question(&["borrow", "move", "ref", "clone"], 1);
+        let mut game = QuizGame::new(vec![question], Language::English);
+        game.start();
+        let result = game.answer_question_typed("move ").expect("result");
+        assert!(!result.is_correct);
     }
 
     #[test]
