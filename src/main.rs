@@ -7,7 +7,7 @@ mod ui;
 use config::Config;
 use io::{DataLoader, Storage};
 use std::io::{stdin, stdout, Write};
-use types::GameMode;
+use types::{GameMode, Question};
 use ui::{MenuUI, QuizUI};
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
@@ -33,7 +33,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                     println!("サンプル問題を作成しました: {questions_file}");
                 }
 
-                let questions = DataLoader::load_questions(&questions_file)?;
+                let questions = load_questions_with_warnings(&questions_file)?;
                 if questions.is_empty() {
                     println!("問題が見つかりません。");
                     return Ok(());
@@ -59,6 +59,18 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             }
         }
     }
+}
+
+/// Load a question bank and warn (non-fatally) on any prefix conflicts in
+/// the data. Routing every question-loading code path through this helper
+/// keeps future modes (Time Attack 25, Ranking) from silently bypassing the
+/// `docs/spec.md` integrity check (#27).
+fn load_questions_with_warnings(path: &str) -> Result<Vec<Question>, Box<dyn std::error::Error>> {
+    let questions = DataLoader::load_questions(path)?;
+    for c in io::find_prefix_conflicts(&questions) {
+        eprintln!("warning: {}", io::format_conflict(&c));
+    }
+    Ok(questions)
 }
 
 fn show_return_to_menu_message(message: &str) -> Result<(), Box<dyn std::error::Error>> {
