@@ -67,14 +67,22 @@ impl QuizUI {
         &mut self,
         terminal: &mut Terminal<CrosstermBackend<io::Stdout>>,
     ) -> Result<u32, Box<dyn std::error::Error>> {
+        // Poll cadence: small enough that the side-pane Time advances within
+        // a noticeable fraction of a second (#54), large enough not to spin.
+        const TICK: Duration = Duration::from_millis(250);
+
         loop {
             terminal.draw(|f| self.ui(f))?;
 
-            if let Event::Key(key) = event::read()? {
-                if self.handle_key(key) {
-                    break;
+            if event::poll(TICK)? {
+                if let Event::Key(key) = event::read()? {
+                    if self.handle_key(key) {
+                        break;
+                    }
                 }
             }
+            // No event in this tick — loop redraws so Time / CPM / WPM keep
+            // moving even while the player is thinking.
         }
 
         Ok(self.quiz_game.get_final_score())
