@@ -1,6 +1,7 @@
 mod config;
 mod game;
 mod io;
+mod jiwa_core;
 mod types;
 mod ui;
 
