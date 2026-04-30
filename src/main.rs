@@ -8,7 +8,7 @@ use config::Config;
 use io::{DataLoader, Storage};
 use std::io::{stdin, stdout, Write};
 use types::{GameMode, Question};
-use ui::{MenuUI, QuizUI};
+use ui::{MenuUI, QuizUI, RecordsUI};
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let config = Config::default();
@@ -57,7 +57,9 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                 menu.return_to_mode_selection(language);
             }
             GameMode::Records => {
-                show_return_to_menu_message("Records is not implemented yet.")?;
+                let records_path = config.records_file_path(&language);
+                let mut records_ui = RecordsUI::load(&records_path)?;
+                records_ui.run()?;
                 menu.return_to_mode_selection(language);
             }
         }
