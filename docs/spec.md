@@ -99,9 +99,10 @@ Quiz is paired with score-attack modes; listening is paired with the RPG. The tw
 
 Implemented in-tree as `src/jiwa_core/`. To be extracted into the standalone `jiwa` crate once stable.
 
-- **Typewriter reveal** — characters appear one at a time.
-- **Per-character fade-in** — TrueColor (24-bit RGB) interpolation from dim to full intensity.
-- **Concurrent input acceptance** — players who already know the answer can begin typing before the reveal completes.
+- **Typewriter reveal** — characters appear one at a time. Iteration is by Unicode grapheme cluster (UAX #29), so combining marks and ZWJ sequences advance as one unit. Implemented in `jiwa_core::reveal::RevealHandle` (#19/#20).
+- **Per-character fade-in** — TrueColor (24-bit RGB) interpolation from `fade_from` to `fade_to` over `fade_duration`. Linear interpolation per channel. The renderer maps the resulting `Rgb(u8,u8,u8)` to `ratatui::Color::Rgb`. (#21)
+- **Pure / time-injectable** — every entry point takes an explicit `Instant`, so callers tick the reveal at their own redraw cadence and tests advance time without sleeping.
+- **Concurrent input acceptance** — players who already know the answer can begin typing before the reveal completes. Currently satisfied by the surrounding event loop; the dedicated input-channel split is tracked under #22.
 - **No skip key** — the reveal must always play to its end (fairness).
 
 ## Scoring

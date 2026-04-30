@@ -1,5 +1,6 @@
 use crate::game::{QuizGame, QuizResult};
 use crate::io::Storage;
+use crate::jiwa_core::{RevealHandle, RevealOpts, Rgb};
 use crate::types::{Language, Question, ScoreEntry};
 use crate::ui::{HelpEntry, HelpLine, PaneFrame, StatusPane};
 use crossterm::{
@@ -16,7 +17,7 @@ use ratatui::{
     Frame, Terminal,
 };
 use std::io;
-use std::time::{Duration, SystemTime, UNIX_EPOCH};
+use std::time::{Duration, Instant, SystemTime, UNIX_EPOCH};
 
 /// Top-N self-best entries kept per mode in `records_<lang>.json`.
 const RECORDS_TOP_N: usize = 10;
@@ -55,6 +56,12 @@ pub struct QuizUI {
     /// Set once the run's score has been saved to records, so a second
     /// Enter on the confirmation screen exits without writing a duplicate.
     saved: bool,
+    /// Question-text reveal animation (typewriter + fade-in, #19/#20/#21).
+    /// Lazily (re-)created each time the displayed question changes.
+    reveal: Option<RevealHandle>,
+    /// Question index the current `reveal` is anchored to. Used to detect
+    /// when we need to reset the animation for the next question.
+    reveal_for_question: Option<usize>,
 }
 
 impl QuizUI {
@@ -73,6 +80,8 @@ impl QuizUI {
             name_buffer: String::new(),
             records_file_path,
             saved: false,
+            reveal: None,
+            reveal_for_question: None,
         }
     }
 
@@ -96,9 +105,10 @@ impl QuizUI {
         &mut self,
         terminal: &mut Terminal<CrosstermBackend<io::Stdout>>,
     ) -> Result<u32, Box<dyn std::error::Error>> {
-        // Poll cadence: small enough that the side-pane Time advances within
-        // a noticeable fraction of a second (#54), large enough not to spin.
-        const TICK: Duration = Duration::from_millis(250);
+        // Poll cadence is short enough that the typewriter / fade reveal
+        // (#19/#20/#21) renders smoothly (~33 fps). Side-pane Time / CPM /
+        // WPM also benefit; CPU stays trivially low at this rate.
+        const TICK: Duration = Duration::from_millis(30);
 
         loop {
             terminal.draw(|f| self.ui(f))?;
@@ -110,8 +120,8 @@ impl QuizUI {
                     }
                 }
             }
-            // No event in this tick — loop redraws so Time / CPM / WPM keep
-            // moving even while the player is thinking.
+            // No event in this tick — loop redraws so the reveal animation
+            // and the timer keep moving while the player is thinking.
         }
 
         Ok(self.quiz_game.get_final_score())
@@ -262,12 +272,32 @@ impl QuizUI {
     }
 
     fn ui(&mut self, f: &mut Frame) {
+        if self.phase == Phase::Playing && !self.show_result {
+            self.ensure_reveal_for_current_question();
+        }
+
         let frame = PaneFrame::quiz(f.area());
 
         self.render_main_pane(f, frame.main);
         self.render_status_pane(f, frame.side);
         self.render_input_echo(f, frame.input_echo);
         self.render_help_line(f, frame.help_line);
+    }
+
+    /// Lazy-create / reset the question-text reveal so the animation
+    /// re-runs from the start whenever the player advances to a new
+    /// question. Anchored to wall-clock `Instant::now()` because the
+    /// rest of the loop already lives in real time.
+    fn ensure_reveal_for_current_question(&mut self) {
+        let (current_idx, _) = self.quiz_game.get_progress();
+        if self.reveal_for_question == Some(current_idx) {
+            return;
+        }
+        self.reveal = self.quiz_game.get_current_question().map(|question| {
+            let text = self.quiz_game.get_question_text(question);
+            RevealHandle::start(&text, RevealOpts::default_quiz())
+        });
+        self.reveal_for_question = Some(current_idx);
     }
 
     fn render_input_echo(&self, f: &mut Frame, area: Rect) {
@@ -325,9 +355,32 @@ impl QuizUI {
         }
     }
 
+    /// Build the question's text as a styled `Line`, using the reveal
+    /// snapshot when one is active. Each visible grapheme becomes one
+    /// `Span` with its current per-grapheme RGB color so the typewriter
+    /// and fade-in show up natively. Falls back to the plain text with a
+    /// white foreground when no reveal is available — e.g. a brief race
+    /// before `ensure_reveal_for_current_question` runs.
+    fn question_reveal_line(&self, question: &Question) -> Line<'static> {
+        if let Some(reveal) = self.reveal.as_ref() {
+            let snapshot = reveal.snapshot(Instant::now());
+            if !snapshot.is_empty() {
+                let spans: Vec<Span<'static>> = snapshot
+                    .into_iter()
+                    .map(|g| {
+                        let Rgb(r, gc, b) = g.color;
+                        Span::styled(g.text, Style::new().fg(Color::Rgb(r, gc, b)))
+                    })
+                    .collect();
+                return Line::from(spans);
+            }
+        }
+        let text = self.quiz_game.get_question_text(question);
+        Line::from(Span::styled(text, STYLE_NORMAL))
+    }
+
     fn render_question(&self, f: &mut Frame, area: Rect) {
         if let Some(question) = self.quiz_game.get_current_question() {
-            let question_text = self.quiz_game.get_question_text(question);
             let choices = self.quiz_game.get_choice_texts(question);
 
             let chunks = Layout::default()
@@ -335,8 +388,8 @@ impl QuizUI {
                 .constraints([Constraint::Length(3), Constraint::Min(4)])
                 .split(area);
 
-            let question_paragraph = Paragraph::new(question_text)
-                .style(STYLE_NORMAL)
+            let question_line = self.question_reveal_line(question);
+            let question_paragraph = Paragraph::new(question_line)
                 .alignment(Alignment::Left)
                 .block(Block::default().title("Question").borders(Borders::ALL))
                 .wrap(ratatui::widgets::Wrap { trim: true });
