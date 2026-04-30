@@ -90,7 +90,7 @@ Quiz is paired with score-attack modes; listening is paired with the RPG. The tw
 
 - **The prompt is audio only.** No text is shown.
 - Enemies are represented by emoji or symbols (no ASCII art).
-- A ♪ note pulses with `jiwa_core` animation while audio plays.
+- A ♪ note pulses with `jiwa_core::pulse::PulseHandle` (sinusoidal dim↔bright cycle) while audio plays. The listening UI calls `start("♪", PulseOpts::default_listening())` for the duration of the audio playback and snapshots it once per render frame.
 - **One prompt = one enemy. One run = 10 enemies (fixed)** — a roguelike "go down, come back" cycle.
 - **No failure state in v0.2.0.** Mistyping reduces EXP gain only; a run always completes after 10 prompts.
 - **Audio replay is unlimited** (`Space`); no penalty other than the time it consumes.
@@ -103,6 +103,7 @@ Implemented in-tree as `src/jiwa_core/`. To be extracted into the standalone `ji
 - **Per-character fade-in** — TrueColor (24-bit RGB) interpolation from `fade_from` to `fade_to` over `fade_duration`. Linear interpolation per channel. The renderer maps the resulting `Rgb(u8,u8,u8)` to `ratatui::Color::Rgb`. (#21)
 - **Pure / time-injectable** — every entry point takes an explicit `Instant`, so callers tick the reveal at their own redraw cadence and tests advance time without sleeping.
 - **Concurrent input acceptance** — players who already know the answer can begin typing before the reveal completes. Implemented in `src/ui/input_loop.rs`: a worker thread runs `event::poll` / `event::read` and pushes `KeyEvent`s through an `mpsc::channel`; the render thread blocks on `recv_timeout(REDRAW)` so input never has to wait for the next frame, and the redraw cadence is independent of input cadence (#22).
+- **Listening pulse** — `jiwa_core::pulse::PulseHandle` drives the `♪` symbol on the listening pane: a sinusoidal dim↔bright cycle (`PulseOpts::default_listening` = 1.5 s period). Same pure / time-injectable shape as `RevealHandle`. (#23)
 - **No skip key** — the reveal must always play to its end (fairness).
 
 ## Scoring
