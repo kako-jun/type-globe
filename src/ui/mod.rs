@@ -6,5 +6,6 @@ pub mod status;
 pub use layout::PaneFrame;
 pub use menu::MenuUI;
 pub use quiz::QuizUI;
-#[allow(unused_imports)] // ProgressBar / StatusItem are wired up by hack mode (#11).
+// TODO(#11): drop this allow once hack UI wires up ProgressBar / StatusItem.
+#[allow(unused_imports)]
 pub use status::{ProgressBar, StatusItem, StatusPane};

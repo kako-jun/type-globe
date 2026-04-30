@@ -61,6 +61,16 @@ impl StatusItem {
         }
     }
 
+    /// TODO(#11): drop this `allow(dead_code)` once the hack UI wires it up.
+    #[allow(dead_code)]
+    pub fn bar(label: impl Into<String>, current: u32, max: u32) -> Self {
+        Self::Bar(ProgressBar {
+            label: label.into(),
+            current,
+            max,
+        })
+    }
+
     pub fn height(&self) -> u16 {
         match self {
             StatusItem::Value { .. } => 1,
@@ -97,11 +107,19 @@ impl StatusPane {
         )
     }
 
-    /// Hack-and-slash status: Lv / EXP / HP / Floor.
+    /// Hack-and-slash status: Lv / EXP / HP / Floor / Run time
+    /// (per `docs/spec.md`).
     ///
     /// TODO(#11): drop this `allow(dead_code)` once the hack UI wires it up.
     #[allow(dead_code)]
-    pub fn hack(level: u32, exp: ProgressBar, hp: ProgressBar, floor: u32, floor_max: u32) -> Self {
+    pub fn hack(
+        level: u32,
+        exp: ProgressBar,
+        hp: ProgressBar,
+        floor: u32,
+        floor_max: u32,
+        run_time: Duration,
+    ) -> Self {
         Self::new(
             "Run",
             vec![
@@ -109,6 +127,7 @@ impl StatusPane {
                 StatusItem::Bar(exp),
                 StatusItem::Bar(hp),
                 StatusItem::value("Floor", format!("{floor}/{floor_max}")),
+                StatusItem::value("Run time", format_time(run_time)),
             ],
         )
     }
@@ -124,6 +143,8 @@ impl StatusPane {
             return;
         }
 
+        // Trailing Min(0) absorbs leftover height so items keep their natural
+        // size instead of being stretched to fill the pane.
         let constraints: Vec<Constraint> = self
             .items
             .iter()
@@ -173,7 +194,8 @@ fn format_time(d: Duration) -> String {
 fn format_score(score: u32) -> String {
     let s = score.to_string();
     let bytes = s.as_bytes();
-    let mut out = String::with_capacity(s.len() + s.len() / 3);
+    let comma_count = bytes.len().saturating_sub(1) / 3;
+    let mut out = String::with_capacity(s.len() + comma_count);
     for (i, b) in bytes.iter().enumerate() {
         if i > 0 && (bytes.len() - i) % 3 == 0 {
             out.push(',');
@@ -235,14 +257,27 @@ mod tests {
             },
             3,
             10,
+            Duration::from_secs(80),
         );
-        assert_eq!(pane.items.len(), 4);
+        assert_eq!(pane.items.len(), 5);
         assert_eq!(
             pane.items
                 .iter()
                 .filter(|i| matches!(i, StatusItem::Bar(_)))
                 .count(),
             2
+        );
+    }
+
+    #[test]
+    fn status_item_bar_constructor_matches_struct_form() {
+        assert_eq!(
+            StatusItem::bar("HP", 80, 100),
+            StatusItem::Bar(ProgressBar {
+                label: "HP".into(),
+                current: 80,
+                max: 100,
+            })
         );
     }
 
@@ -275,12 +310,15 @@ mod tests {
             },
             3,
             10,
+            Duration::from_secs(80),
         );
-        let terminal = render(&pane, 24, 14);
+        let terminal = render(&pane, 24, 16);
         let out = dump(&terminal);
         assert!(out.contains("Lv."));
         assert!(out.contains("Floor"));
         assert!(out.contains("3/10"));
+        assert!(out.contains("Run time"));
+        assert!(out.contains("1:20"));
     }
 
     #[test]
