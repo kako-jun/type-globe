@@ -20,9 +20,7 @@ use std::time::Duration;
 
 const STYLE_LABEL: Style = Style::new().fg(Color::DarkGray);
 const STYLE_VALUE: Style = Style::new().fg(Color::Cyan);
-const STYLE_TITLE: Style = Style::new()
-    .fg(Color::Cyan)
-    .add_modifier(Modifier::BOLD);
+const STYLE_TITLE: Style = Style::new().fg(Color::Cyan).add_modifier(Modifier::BOLD);
 
 /// A simple progress bar specification.
 #[derive(Debug, Clone, PartialEq, Eq)]
@@ -45,7 +43,10 @@ impl ProgressBar {
 /// One row in the status pane.
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub enum StatusItem {
-    Value { label: String, value: String },
+    Value {
+        label: String,
+        value: String,
+    },
     /// Used by hack-and-slash; quiz mode never produces bars.
     /// TODO(#11): drop this allow when hack UI lands.
     #[allow(dead_code)]
@@ -236,7 +237,13 @@ mod tests {
             10,
         );
         assert_eq!(pane.items.len(), 4);
-        assert_eq!(pane.items.iter().filter(|i| matches!(i, StatusItem::Bar(_))).count(), 2);
+        assert_eq!(
+            pane.items
+                .iter()
+                .filter(|i| matches!(i, StatusItem::Bar(_)))
+                .count(),
+            2
+        );
     }
 
     #[test]
@@ -278,24 +285,28 @@ mod tests {
 
     #[test]
     fn progress_bar_ratio_is_clamped() {
-        assert!((ProgressBar {
-            label: "X".into(),
-            current: 0,
-            max: 0,
-        }
-        .ratio()
-            - 0.0)
-            .abs()
-            < f64::EPSILON);
-        assert!((ProgressBar {
-            label: "X".into(),
-            current: 200,
-            max: 100,
-        }
-        .ratio()
-            - 1.0)
-            .abs()
-            < f64::EPSILON);
+        assert!(
+            (ProgressBar {
+                label: "X".into(),
+                current: 0,
+                max: 0,
+            }
+            .ratio()
+                - 0.0)
+                .abs()
+                < f64::EPSILON
+        );
+        assert!(
+            (ProgressBar {
+                label: "X".into(),
+                current: 200,
+                max: 100,
+            }
+            .ratio()
+                - 1.0)
+                .abs()
+                < f64::EPSILON
+        );
     }
 
     #[test]
