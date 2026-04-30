@@ -69,6 +69,8 @@ Both **CPM** (characters per minute) and **WPM** (words per minute) are displaye
 
 Listening prompts are synthesized at runtime via the [`tts`](https://crates.io/crates/tts) crate, which wraps the OS-native TTS engine (speech-dispatcher on Linux, AVSpeechSynthesizer on macOS, SAPI on Windows). No audio files ship with the binary. Replay is **unlimited and unpenalized** — the only cost is the time it consumes.
 
+On Linux, the `speech-dispatcher` daemon must be installed and running. If it is not, type-globe shows a clear "Listening mode is unavailable on this system" message and returns to the menu rather than crashing the binary; Quiz / Records / Time Attack 25 still work without TTS.
+
 ## Key Bindings
 
 **Quiz**
@@ -89,9 +91,10 @@ Quiz answers are typed directly — there is no arrow / number-key fallback. The
 |---|---|
 | Letters | Type what you heard |
 | `Enter` | Confirm |
-| `Space` | Replay sound (unlimited) |
-| `F5` | New run |
-| `Esc` | Return to town |
+| `Space` | Replay sound (unlimited, no penalty) |
+| `Esc` | Return to menu |
+
+The v0.2.0 build ships the **listening foundation**: TTS, the prompt data structure, and a single-prompt practice flow (word-kind prompts only, since `Space` is reserved for replay). The full ten-prompt RPG run with HP / EXP / boss placement is the next epic (#32–#37).
 
 ## Install
 
@@ -113,8 +116,8 @@ cargo build --release
 ## Requirements
 
 - A terminal with Unicode and ANSI escape support
-- An OS TTS backend (most modern macOS / Windows / Linux distros work out of the box)
-- Rust 1.70+ to build from source
+- An OS TTS backend for Listening mode (macOS / Windows work out of the box; on Linux, install and start `speech-dispatcher`)
+- Rust 1.78+ to build from source (Linux build also needs `libspeechd-dev`)
 
 ## License
 

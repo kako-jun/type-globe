@@ -1,4 +1,4 @@
-use crate::types::{Language, Question};
+use crate::types::{Language, ListeningPrompt, Question};
 use std::fs;
 use std::path::Path;
 
@@ -13,6 +13,22 @@ impl DataLoader {
         let content = fs::read_to_string(file_path)?;
         let questions: Vec<Question> = serde_json::from_str(&content)?;
         Ok(questions)
+    }
+
+    /// Load a listening-prompt bank for a single language (#29). The
+    /// caller picks the file via `Config::listening_file_path`. Empty
+    /// vector when the file is absent — same convention as
+    /// `load_questions` so the Listening UI can degrade to a "no
+    /// prompts shipped" message instead of a hard error.
+    pub fn load_listening_prompts(
+        file_path: &str,
+    ) -> Result<Vec<ListeningPrompt>, Box<dyn std::error::Error>> {
+        if !Path::new(file_path).exists() {
+            return Ok(Vec::new());
+        }
+        let content = fs::read_to_string(file_path)?;
+        let prompts: Vec<ListeningPrompt> = serde_json::from_str(&content)?;
+        Ok(prompts)
     }
 
     #[allow(dead_code)]
@@ -135,5 +151,41 @@ impl DataLoader {
                 image_path: None,
             },
         ]
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use crate::types::AnswerKind;
+
+    #[test]
+    fn shipped_listening_data_loads_for_both_languages() {
+        // The listening foundation epic ships these files in `data/`; if a
+        // future change accidentally breaks the schema (e.g. missing
+        // `kind`, typo'd serde rename) this test fails at PR time rather
+        // than at runtime when the player picks Listening Practice.
+        let ja = DataLoader::load_listening_prompts("data/listening_ja.json").expect("ja loads");
+        let en = DataLoader::load_listening_prompts("data/listening_en.json").expect("en loads");
+        assert!(!ja.is_empty(), "ja prompts non-empty");
+        assert!(!en.is_empty(), "en prompts non-empty");
+        // Foundation flow only exposes word-kind prompts (Space is
+        // reserved for replay) — fail loudly if no word survives the
+        // filter, which would brick the Listening Practice mode.
+        assert!(
+            ja.iter().any(|p| p.kind == AnswerKind::Word),
+            "at least one word-kind ja prompt must ship"
+        );
+        assert!(
+            en.iter().any(|p| p.kind == AnswerKind::Word),
+            "at least one word-kind en prompt must ship"
+        );
+    }
+
+    #[test]
+    fn load_listening_prompts_returns_empty_when_missing() {
+        let prompts = DataLoader::load_listening_prompts("data/__does_not_exist__.json")
+            .expect("missing file is not an error");
+        assert!(prompts.is_empty());
     }
 }

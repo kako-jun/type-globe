@@ -1,0 +1,212 @@
+//! Listening-mode game logic (#30 / #31).
+//!
+//! Single-prompt session for the v0.2.0 "listening foundation" epic.
+//! The full hack-and-slash run (10 prompts, HP/EXP, boss placement)
+//! lives in #32-#37 and will compose this module rather than replacing
+//! it.
+//!
+//! Design notes:
+//! - Pure: no audio I/O lives here. The UI owns the `TtsEngine` and
+//!   calls `speak()` whenever `wants_replay()` flips true.
+//! - The blind-input judge (`is_correct_listening_input`, #31) is a
+//!   free function so the unit tests don't need a session at all.
+
+use crate::types::ListeningPrompt;
+use rand::seq::SliceRandom;
+
+/// Decide whether `typed` matches `expected` for a listening prompt.
+///
+/// Per `docs/spec.md` and issue #31, the judge:
+/// - is **case-insensitive** (the player can't see the prompt, so
+///   forcing them to remember capitalisation is hostile to the spirit
+///   of the mode);
+/// - **trims surrounding whitespace** (a stray Space / Enter buffering
+///   space at either end shouldn't lose them the prompt);
+/// - keeps **internal spacing exact** (two-word phrases must be typed
+///   with the right number of spaces — that's part of the listening
+///   skill).
+pub fn is_correct_listening_input(typed: &str, expected: &str) -> bool {
+    typed.trim().to_lowercase() == expected.trim().to_lowercase()
+}
+
+/// One play-through of a single listening prompt. Tracks the active
+/// prompt, the player's typed buffer, and whether the round is over.
+/// The UI advances state by calling `submit()` on Enter and `replay()`
+/// on Space — the latter is just a flag the UI clears once it has
+/// asked the TTS engine to speak again.
+pub struct ListeningSession {
+    prompt: ListeningPrompt,
+    input: String,
+    submitted: Option<SubmissionResult>,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct SubmissionResult {
+    pub is_correct: bool,
+    /// The prompt's expected text, captured at submission time so the
+    /// UI can reveal it on the result screen without holding the
+    /// `ListeningPrompt` reference.
+    pub expected: String,
+}
+
+impl ListeningSession {
+    pub fn new(prompt: ListeningPrompt) -> Self {
+        Self {
+            prompt,
+            input: String::new(),
+            submitted: None,
+        }
+    }
+
+    /// Pick a random prompt from `pool`. Returns `None` when the pool
+    /// is empty so the caller can show a "no listening data" message
+    /// instead of panicking.
+    pub fn from_pool(pool: &[ListeningPrompt]) -> Option<Self> {
+        let mut rng = rand::thread_rng();
+        pool.choose(&mut rng).cloned().map(Self::new)
+    }
+
+    pub fn prompt(&self) -> &ListeningPrompt {
+        &self.prompt
+    }
+
+    pub fn input(&self) -> &str {
+        &self.input
+    }
+
+    pub fn push_char(&mut self, c: char) {
+        if self.submitted.is_some() {
+            return;
+        }
+        self.input.push(c);
+    }
+
+    pub fn pop_char(&mut self) {
+        if self.submitted.is_some() {
+            return;
+        }
+        self.input.pop();
+    }
+
+    /// Apply the blind-input judge. Once submitted the session is
+    /// frozen — further `push_char` / `pop_char` are no-ops.
+    pub fn submit(&mut self) -> &SubmissionResult {
+        let is_correct = is_correct_listening_input(&self.input, &self.prompt.text);
+        self.submitted = Some(SubmissionResult {
+            is_correct,
+            expected: self.prompt.text.clone(),
+        });
+        // Safe: we just assigned `Some(_)`.
+        self.submitted.as_ref().expect("just submitted")
+    }
+
+    pub fn result(&self) -> Option<&SubmissionResult> {
+        self.submitted.as_ref()
+    }
+
+    /// Whether the session has been submitted. The single-prompt UI
+    /// currently uses `result()` instead, but the run-loop in #32-#37
+    /// needs this as the "advance to next prompt" gate.
+    #[allow(dead_code)]
+    pub fn is_finished(&self) -> bool {
+        self.submitted.is_some()
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use crate::types::AnswerKind;
+
+    fn p(text: &str) -> ListeningPrompt {
+        ListeningPrompt {
+            id: "test".into(),
+            text: text.into(),
+            kind: AnswerKind::Word,
+        }
+    }
+
+    #[test]
+    fn judge_accepts_exact_match() {
+        assert!(is_correct_listening_input("apple", "apple"));
+    }
+
+    #[test]
+    fn judge_is_case_insensitive() {
+        assert!(is_correct_listening_input("Apple", "apple"));
+        assert!(is_correct_listening_input("APPLE", "apple"));
+    }
+
+    #[test]
+    fn judge_trims_surrounding_whitespace() {
+        assert!(is_correct_listening_input("  apple ", "apple"));
+        assert!(is_correct_listening_input("apple\n", "apple"));
+    }
+
+    #[test]
+    fn judge_keeps_internal_spacing_exact() {
+        // Listening is *part of* the skill: drop a space and it's wrong.
+        assert!(is_correct_listening_input(
+            "George Washington",
+            "George Washington"
+        ));
+        assert!(!is_correct_listening_input(
+            "GeorgeWashington",
+            "George Washington"
+        ));
+        assert!(!is_correct_listening_input(
+            "George  Washington",
+            "George Washington"
+        ));
+    }
+
+    #[test]
+    fn judge_rejects_different_word() {
+        assert!(!is_correct_listening_input("orange", "apple"));
+    }
+
+    #[test]
+    fn session_records_correct_submission() {
+        let mut s = ListeningSession::new(p("apple"));
+        for c in "apple".chars() {
+            s.push_char(c);
+        }
+        let r = s.submit().clone();
+        assert!(r.is_correct);
+        assert_eq!(r.expected, "apple");
+        assert!(s.is_finished());
+    }
+
+    #[test]
+    fn session_freezes_after_submit() {
+        let mut s = ListeningSession::new(p("apple"));
+        s.push_char('a');
+        s.submit();
+        s.push_char('b');
+        assert_eq!(s.input(), "a");
+    }
+
+    #[test]
+    fn session_records_incorrect_submission() {
+        let mut s = ListeningSession::new(p("apple"));
+        for c in "orange".chars() {
+            s.push_char(c);
+        }
+        let r = s.submit().clone();
+        assert!(!r.is_correct);
+        assert_eq!(r.expected, "apple");
+    }
+
+    #[test]
+    fn from_pool_returns_none_on_empty() {
+        let pool: Vec<ListeningPrompt> = Vec::new();
+        assert!(ListeningSession::from_pool(&pool).is_none());
+    }
+
+    #[test]
+    fn from_pool_picks_one_when_available() {
+        let pool = vec![p("apple"), p("river")];
+        let s = ListeningSession::from_pool(&pool).expect("pool non-empty");
+        assert!(matches!(s.prompt().text.as_str(), "apple" | "river"));
+    }
+}
