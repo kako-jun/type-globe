@@ -1,7 +1,5 @@
 # type-globe
 
-[日本語](README.ja.md)
-
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 > A typing game where the string you must type is **never shown on screen**.
@@ -88,8 +86,8 @@ Current `main` controls:
 | `1`-`4` | Jump to a choice | Removed |
 | `Letters` | Unused in current quiz flow | Type the correct choice's text |
 | `Enter` / `Space` | Confirm | Confirm |
-| `s` / `Tab` | Skip question | Skip question |
-| `q` / `Esc` | Quit | Quit |
+| `s` | Skip question | Skip question |
+| `q` | Quit | Quit |
 
 **Listening RPG**
 
