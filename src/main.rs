@@ -53,8 +53,8 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                 show_return_to_menu_message("Listening RPG is not implemented yet.")?;
                 menu.return_to_mode_selection(language);
             }
-            GameMode::Ranking => {
-                show_return_to_menu_message("Ranking is not implemented yet.")?;
+            GameMode::Records => {
+                show_return_to_menu_message("Records is not implemented yet.")?;
                 menu.return_to_mode_selection(language);
             }
         }
@@ -63,7 +63,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 /// Load a question bank and warn (non-fatally) on any prefix conflicts in
 /// the data. Routing every question-loading code path through this helper
-/// keeps future modes (Time Attack 25, Ranking) from silently bypassing the
+/// keeps future modes (Time Attack 25, Records) from silently bypassing the
 /// `docs/spec.md` integrity check (#27).
 fn load_questions_with_warnings(path: &str) -> Result<Vec<Question>, Box<dyn std::error::Error>> {
     let questions = DataLoader::load_questions(path)?;

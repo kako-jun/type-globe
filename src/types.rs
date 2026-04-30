@@ -36,8 +36,13 @@ pub struct TimeEntry {
     pub time_seconds: u32,
 }
 
+/// Self-best history per language. Local file only — global ordering of
+/// players (the actual *ranking*) is reserved for the v0.3.0+ Nostralgic
+/// Ranking integration in `type-globe-online`. Per kako-jun rule:
+/// "Ranking" is exclusively the world-comparison feature; offline
+/// self-bests are "Records".
 #[derive(Debug, Clone, Deserialize, Serialize, Default)]
-pub struct Ranking {
+pub struct Records {
     pub quiz_mode: Vec<ScoreEntry>,
     pub time_attack_25: Vec<TimeEntry>,
     pub hack_and_slash_rpg: Vec<ScoreEntry>,
@@ -48,7 +53,7 @@ pub enum GameMode {
     Quiz,
     TimeAttack25,
     HackAndSlashRpg,
-    Ranking,
+    Records,
 }
 
 #[derive(Debug, Clone)]

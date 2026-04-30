@@ -8,7 +8,7 @@ pub struct Config {
     #[allow(dead_code)]
     pub player_data_file: String,
     #[allow(dead_code)]
-    pub ranking_file_pattern: String,
+    pub records_file_pattern: String,
 }
 
 impl Default for Config {
@@ -18,7 +18,7 @@ impl Default for Config {
             default_language: Language::Japanese,
             questions_file_pattern: "questions_{}.json".to_string(),
             player_data_file: "player.json".to_string(),
-            ranking_file_pattern: "ranking_{}.json".to_string(),
+            records_file_pattern: "records_{}.json".to_string(),
         }
     }
 }
@@ -38,11 +38,11 @@ impl Config {
     }
 
     #[allow(dead_code)]
-    pub fn ranking_file_path(&self, language: &Language) -> String {
+    pub fn records_file_path(&self, language: &Language) -> String {
         format!(
             "{}/{}",
             self.data_dir,
-            self.ranking_file_pattern.replace("{}", language.code())
+            self.records_file_pattern.replace("{}", language.code())
         )
     }
 }
