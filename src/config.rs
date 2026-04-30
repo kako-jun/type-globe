@@ -1,5 +1,6 @@
 use crate::types::Language;
 
+#[allow(dead_code)]
 pub struct Config {
     pub data_dir: String,
     pub default_language: Language,
@@ -20,9 +21,14 @@ impl Default for Config {
     }
 }
 
+#[allow(dead_code)]
 impl Config {
     pub fn questions_file_path(&self, language: &Language) -> String {
-        format!("{}/{}", self.data_dir, self.questions_file_pattern.replace("{}", language.code()))
+        format!(
+            "{}/{}",
+            self.data_dir,
+            self.questions_file_pattern.replace("{}", language.code())
+        )
     }
 
     pub fn player_data_file_path(&self) -> String {
@@ -30,6 +36,10 @@ impl Config {
     }
 
     pub fn ranking_file_path(&self, language: &Language) -> String {
-        format!("{}/{}", self.data_dir, self.ranking_file_pattern.replace("{}", language.code()))
+        format!(
+            "{}/{}",
+            self.data_dir,
+            self.ranking_file_pattern.replace("{}", language.code())
+        )
     }
 }

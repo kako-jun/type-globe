@@ -4,6 +4,7 @@ use std::path::Path;
 
 pub struct Storage;
 
+#[allow(dead_code)]
 impl Storage {
     pub fn ensure_data_directory(data_dir: &str) -> Result<(), Box<dyn std::error::Error>> {
         if !Path::new(data_dir).exists() {
@@ -22,7 +23,10 @@ impl Storage {
         Ok(player)
     }
 
-    pub fn save_player_data(file_path: &str, player: &Player) -> Result<(), Box<dyn std::error::Error>> {
+    pub fn save_player_data(
+        file_path: &str,
+        player: &Player,
+    ) -> Result<(), Box<dyn std::error::Error>> {
         let content = serde_json::to_string_pretty(player)?;
         fs::write(file_path, content)?;
         Ok(())
@@ -38,13 +42,19 @@ impl Storage {
         Ok(ranking)
     }
 
-    pub fn save_ranking(file_path: &str, ranking: &Ranking) -> Result<(), Box<dyn std::error::Error>> {
+    pub fn save_ranking(
+        file_path: &str,
+        ranking: &Ranking,
+    ) -> Result<(), Box<dyn std::error::Error>> {
         let content = serde_json::to_string_pretty(ranking)?;
         fs::write(file_path, content)?;
         Ok(())
     }
 
-    pub fn save_sample_questions(file_path: &str, questions: &[crate::types::Question]) -> Result<(), Box<dyn std::error::Error>> {
+    pub fn save_sample_questions(
+        file_path: &str,
+        questions: &[crate::types::Question],
+    ) -> Result<(), Box<dyn std::error::Error>> {
         let content = serde_json::to_string_pretty(questions)?;
         fs::write(file_path, content)?;
         Ok(())

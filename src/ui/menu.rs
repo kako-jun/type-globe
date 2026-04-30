@@ -1,3 +1,4 @@
+use crate::types::{GameMode, Language};
 use crossterm::{
     event::{self, Event, KeyCode, KeyEvent},
     execute,
@@ -12,7 +13,6 @@ use ratatui::{
     Frame, Terminal,
 };
 use std::io;
-use crate::types::{GameMode, Language};
 
 const STYLE_TITLE: Style = Style::new().fg(Color::Cyan).add_modifier(Modifier::BOLD);
 const STYLE_SELECTED: Style = Style::new().fg(Color::Yellow).add_modifier(Modifier::BOLD);
@@ -58,7 +58,10 @@ impl MenuUI {
         result
     }
 
-    fn run_app(&mut self, terminal: &mut Terminal<CrosstermBackend<io::Stdout>>) -> Result<(Language, GameMode), Box<dyn std::error::Error>> {
+    fn run_app(
+        &mut self,
+        terminal: &mut Terminal<CrosstermBackend<io::Stdout>>,
+    ) -> Result<(Language, GameMode), Box<dyn std::error::Error>> {
         loop {
             terminal.draw(|f| self.ui(f))?;
 
@@ -80,52 +83,46 @@ impl MenuUI {
             KeyCode::Char('q') => {
                 self.should_quit = true;
             }
-            KeyCode::Up | KeyCode::Char('k') => {
-                match self.step {
-                    MenuStep::LanguageSelection => {
-                        self.selected_language = self.selected_language.saturating_sub(1);
-                    }
-                    MenuStep::ModeSelection => {
-                        self.selected_mode = self.selected_mode.saturating_sub(1);
+            KeyCode::Up | KeyCode::Char('k') => match self.step {
+                MenuStep::LanguageSelection => {
+                    self.selected_language = self.selected_language.saturating_sub(1);
+                }
+                MenuStep::ModeSelection => {
+                    self.selected_mode = self.selected_mode.saturating_sub(1);
+                }
+            },
+            KeyCode::Down | KeyCode::Char('j') => match self.step {
+                MenuStep::LanguageSelection => {
+                    if self.selected_language < 1 {
+                        self.selected_language += 1;
                     }
                 }
-            }
-            KeyCode::Down | KeyCode::Char('j') => {
-                match self.step {
-                    MenuStep::LanguageSelection => {
-                        if self.selected_language < 1 {
-                            self.selected_language += 1;
-                        }
-                    }
-                    MenuStep::ModeSelection => {
-                        if self.selected_mode + 1 < MODE_COUNT {
-                            self.selected_mode += 1;
-                        }
+                MenuStep::ModeSelection => {
+                    if self.selected_mode + 1 < MODE_COUNT {
+                        self.selected_mode += 1;
                     }
                 }
-            }
-            KeyCode::Enter => {
-                match self.step {
-                    MenuStep::LanguageSelection => {
-                        self.step = MenuStep::ModeSelection;
-                    }
-                    MenuStep::ModeSelection => {
-                        let language = match self.selected_language {
-                            0 => Language::Japanese,
-                            1 => Language::English,
-                            _ => Language::Japanese,
-                        };
-                        let mode = match self.selected_mode {
-                            0 => GameMode::Quiz,
-                            1 => GameMode::TimeAttack25,
-                            2 => GameMode::HackAndSlashRpg,
-                            3 => GameMode::Ranking,
-                            _ => GameMode::Quiz,
-                        };
-                        return Some((language, mode));
-                    }
+            },
+            KeyCode::Enter => match self.step {
+                MenuStep::LanguageSelection => {
+                    self.step = MenuStep::ModeSelection;
                 }
-            }
+                MenuStep::ModeSelection => {
+                    let language = match self.selected_language {
+                        0 => Language::Japanese,
+                        1 => Language::English,
+                        _ => Language::Japanese,
+                    };
+                    let mode = match self.selected_mode {
+                        0 => GameMode::Quiz,
+                        1 => GameMode::TimeAttack25,
+                        2 => GameMode::HackAndSlashRpg,
+                        3 => GameMode::Ranking,
+                        _ => GameMode::Quiz,
+                    };
+                    return Some((language, mode));
+                }
+            },
             KeyCode::Esc => {
                 if self.step == MenuStep::ModeSelection {
                     self.step = MenuStep::LanguageSelection;
@@ -166,7 +163,7 @@ impl MenuUI {
     }
 
     fn render_language_selection(&self, f: &mut Frame, area: Rect) {
-        let languages = vec!["日本語 (Japanese)", "English"];
+        let languages = ["日本語 (Japanese)", "English"];
         let items: Vec<ListItem> = languages
             .iter()
             .enumerate()
@@ -181,7 +178,11 @@ impl MenuUI {
             .collect();
 
         let language_list = List::new(items)
-            .block(Block::default().title("言語を選択してください / Select Language").borders(Borders::ALL))
+            .block(
+                Block::default()
+                    .title("言語を選択してください / Select Language")
+                    .borders(Borders::ALL),
+            )
             .highlight_style(STYLE_SELECTED);
 
         let mut state = ListState::default();
@@ -190,7 +191,7 @@ impl MenuUI {
     }
 
     fn render_mode_selection(&self, f: &mut Frame, area: Rect) {
-        let modes = vec![
+        let modes = [
             "クイズモード / Quiz Mode",
             "タイムアタック25 / Time Attack 25",
             "リスニングRPG / Listening Hack-and-Slash RPG",
@@ -210,7 +211,11 @@ impl MenuUI {
             .collect();
 
         let mode_list = List::new(items)
-            .block(Block::default().title("ゲームモードを選択してください / Select Game Mode").borders(Borders::ALL))
+            .block(
+                Block::default()
+                    .title("ゲームモードを選択してください / Select Game Mode")
+                    .borders(Borders::ALL),
+            )
             .highlight_style(STYLE_SELECTED);
 
         let mut state = ListState::default();
@@ -220,8 +225,12 @@ impl MenuUI {
 
     fn render_help(&self, f: &mut Frame, area: Rect) {
         let help_text = match self.step {
-            MenuStep::LanguageSelection => "↑↓/j/k: 選択 / Select | Enter: 決定 / Confirm | q: 終了 / Quit",
-            MenuStep::ModeSelection => "↑↓/j/k: 選択 / Select | Enter: 決定 / Confirm | Esc: 戻る / Back | q: 終了 / Quit",
+            MenuStep::LanguageSelection => {
+                "↑↓/j/k: 選択 / Select | Enter: 決定 / Confirm | q: 終了 / Quit"
+            }
+            MenuStep::ModeSelection => {
+                "↑↓/j/k: 選択 / Select | Enter: 決定 / Confirm | Esc: 戻る / Back | q: 終了 / Quit"
+            }
         };
 
         let help = Paragraph::new(help_text)

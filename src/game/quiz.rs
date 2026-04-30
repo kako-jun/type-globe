@@ -1,5 +1,5 @@
-use crate::types::{Question, Language};
 use crate::io::DataLoader;
+use crate::types::{Language, Question};
 use std::time::{Duration, Instant};
 
 #[derive(Debug)]
@@ -14,6 +14,7 @@ pub struct QuizGame {
 }
 
 #[derive(Debug, Clone)]
+#[allow(dead_code)]
 pub struct QuizResult {
     pub is_correct: bool,
     pub correct_answer_index: usize,
@@ -47,7 +48,8 @@ impl QuizGame {
     }
 
     pub fn get_choice_texts(&self, question: &Question) -> Vec<String> {
-        question.choices
+        question
+            .choices
             .iter()
             .map(|choice| DataLoader::get_choice_text(choice, &self.language))
             .collect()
@@ -55,27 +57,27 @@ impl QuizGame {
 
     pub fn answer_question(&mut self, answer_index: usize) -> Option<QuizResult> {
         let question_start_time = Instant::now();
-        
+
         if let Some(question) = self.get_current_question() {
             let correct_answer_index = question.correct_answer_index;
             let is_correct = answer_index == correct_answer_index;
-            
+
             if is_correct {
                 self.correct_answers += 1;
                 self.score += self.calculate_score_for_question();
             }
-            
+
             self.total_answers += 1;
-            
+
             let result = QuizResult {
                 is_correct,
                 correct_answer_index,
                 selected_answer_index: answer_index,
                 time_taken: question_start_time.elapsed(),
             };
-            
+
             self.current_question_index += 1;
-            
+
             Some(result)
         } else {
             None
@@ -98,6 +100,7 @@ impl QuizGame {
         }
     }
 
+    #[allow(dead_code)]
     pub fn get_total_time(&self) -> Option<Duration> {
         self.start_time.map(|start| start.elapsed())
     }

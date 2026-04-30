@@ -36,7 +36,7 @@ pub struct TimeEntry {
     pub time_seconds: u32,
 }
 
-#[derive(Debug, Clone, Deserialize, Serialize)]
+#[derive(Debug, Clone, Deserialize, Serialize, Default)]
 pub struct Ranking {
     pub quiz_mode: Vec<ScoreEntry>,
     pub time_attack_25: Vec<TimeEntry>,
@@ -72,16 +72,6 @@ impl Default for Player {
             player_name: "Player".to_string(),
             language: "ja".to_string(),
             rpg_stats: RpgStats { level: 1, exp: 0 },
-        }
-    }
-}
-
-impl Default for Ranking {
-    fn default() -> Self {
-        Ranking {
-            quiz_mode: Vec::new(),
-            time_attack_25: Vec::new(),
-            hack_and_slash_rpg: Vec::new(),
         }
     }
 }
