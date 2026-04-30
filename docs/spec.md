@@ -164,7 +164,7 @@ Quiz-side runs are not bound by this layout — quiz questions may freely mix ki
   kind: sentence
 ```
 
-Validation: no two choices in a question may share a prefix that would make a typed answer ambiguous before `Enter`. (Enforced by a build-time linter.)
+Validation: no two choices in a question may share a prefix that would make a typed answer ambiguous before `Enter`. Enforced by `cargo run --bin lint-questions -- <files>` (CI job `lint-data`) and by the unit tests `shipped_question_data_is_clean_{ja,en}` in `src/io/validator.rs`.
 
 ### Listening prompt (`data/listening_<lang>.yaml`)
 

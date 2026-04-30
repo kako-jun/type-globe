@@ -36,10 +36,6 @@
     },
     "choices": [
       {
-        "ja": "let",
-        "en": "let"
-      },
-      {
         "ja": "let mut",
         "en": "let mut"
       },
@@ -48,11 +44,15 @@
         "en": "var"
       },
       {
+        "ja": "const",
+        "en": "const"
+      },
+      {
         "ja": "mut",
         "en": "mut"
       }
     ],
-    "correct_answer_index": 1,
+    "correct_answer_index": 0,
     "image_path": null
   },
   {
@@ -848,8 +848,8 @@
     },
     "choices": [
       {
-        "ja": "Java",
-        "en": "Java"
+        "ja": "Java SE",
+        "en": "Java SE"
       },
       {
         "ja": "JavaScript",
@@ -1500,8 +1500,8 @@
         "en": "Light"
       },
       {
-        "ja": "エル",
-        "en": "L"
+        "ja": "エル（Lawliet）",
+        "en": "L (Lawliet)"
       },
       {
         "ja": "ミサ",
@@ -2635,25 +2635,25 @@
     "id": "q00095",
     "genre": "science",
     "question_text": {
-      "ja": "さんそのげんそきごうは?",
-      "en": "What is the chemical symbol for oxygen?"
+      "ja": "げんそきごう「O」がしめすげんそは?",
+      "en": "Which element does the chemical symbol 'O' represent?"
     },
     "choices": [
       {
-        "ja": "O",
-        "en": "O"
+        "ja": "酸素",
+        "en": "Oxygen"
       },
       {
-        "ja": "Ox",
-        "en": "Ox"
+        "ja": "オスミウム",
+        "en": "Osmium"
       },
       {
-        "ja": "Og",
-        "en": "Og"
+        "ja": "オガネソン",
+        "en": "Oganesson"
       },
       {
-        "ja": "Om",
-        "en": "Om"
+        "ja": "鉄",
+        "en": "Iron"
       }
     ],
     "correct_answer_index": 0,

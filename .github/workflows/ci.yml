@@ -57,4 +57,14 @@ jobs:
         with:
           components: clippy
       - name: Run clippy
-        run: cargo clippy -- -D warnings
+        run: cargo clippy --all-targets -- -D warnings
+
+  lint-data:
+    name: Lint question data (#60)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+      - name: Run question-data linter
+        run: cargo run --bin lint-questions -- data/questions_ja.json data/questions_en.json
