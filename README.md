@@ -75,6 +75,13 @@ Listening prompts are synthesized at runtime via the [`tts`](https://crates.io/c
 
 Current `main` branch note: quiz input is still transitioning from legacy selection controls to direct typed selection.
 
+Current `main` controls:
+- `↑↓` / `j` `k`: move selection
+- `1`-`4`: jump to a choice
+- `Enter` / `Space`: confirm
+- `s`: skip
+- `q`: quit
+
 | Key | Action |
 |---|---|
 | `Letters` | Target v0.2.0 behavior: type the correct choice's text |
