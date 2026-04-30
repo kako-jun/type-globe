@@ -11,6 +11,14 @@ pub const QUIZ_RUN_LENGTH: usize = 10;
 pub struct QuizGame {
     questions: Vec<Question>,
     current_question_index: usize,
+    /// Index of the most recently answered question, recorded *before*
+    /// `current_question_index` advances. The result screen needs this so
+    /// it can render the choices and `correct_answer_index` of the
+    /// question the player just answered, not the next one — otherwise
+    /// two consecutive questions whose `correct_answer_index` happens to
+    /// match (e.g. both `1`) make the "Wrong. Answer: X" line read off
+    /// the next question entirely.
+    last_answered_index: Option<usize>,
     score: u32,
     correct_answers: u32,
     total_answers: u32,
@@ -40,6 +48,7 @@ impl QuizGame {
         Self {
             questions,
             current_question_index: 0,
+            last_answered_index: None,
             score: 0,
             correct_answers: 0,
             total_answers: 0,
@@ -67,6 +76,14 @@ impl QuizGame {
 
     pub fn get_current_question(&self) -> Option<&Question> {
         self.questions.get(self.current_question_index)
+    }
+
+    /// The question the player most recently submitted an answer for.
+    /// Required by the result screen, which has to render the choices /
+    /// correct_answer_index of *that* question even though
+    /// `current_question_index` has already advanced to the next one.
+    pub fn get_answered_question(&self) -> Option<&Question> {
+        self.last_answered_index.and_then(|i| self.questions.get(i))
     }
 
     pub fn get_question_text(&self, question: &Question) -> String {
@@ -129,6 +146,9 @@ impl QuizGame {
                 time_taken: question_start_time.elapsed(),
             };
 
+            // Record before advancing so the result screen can render
+            // the question that was just answered, not the next one.
+            self.last_answered_index = Some(self.current_question_index);
             self.current_question_index += 1;
 
             Some(result)
@@ -375,6 +395,43 @@ mod tests {
         game.answer_question_typed("wrong1");
         game.answer_question_typed("right");
         assert_eq!(game.typed_correct_chars, 5);
+    }
+
+    #[test]
+    fn get_answered_question_points_at_just_answered_question() {
+        // Regression for the H2O / Tokyo result-screen bug: `answer_question`
+        // advances `current_question_index`, but the result screen needs the
+        // question the player *just* submitted. With two questions whose
+        // `correct_answer_index` happen to coincide (both `1`), looking up
+        // `current_question.choices[result.correct_answer_index]` after the
+        // answer would yield Q2's "Tokyo" while the run was actually on Q1
+        // ("H2O"). `get_answered_question` must keep returning Q1 here.
+        let q1 = make_question(&["CO2", "H2O", "O2", "N2"], 1);
+        let q2 = make_question(&["Osaka", "Tokyo", "Kyoto", "Nagoya"], 1);
+        let mut game = QuizGame::new(vec![q1, q2], Language::English);
+        game.start();
+
+        // Answer Q1 correctly. After this call, current_question_index = 1
+        // but the result screen still wants Q1.
+        let result = game.answer_question_typed("H2O").expect("result");
+        assert!(result.is_correct);
+
+        let answered = game
+            .get_answered_question()
+            .expect("just-answered question is set");
+        assert_eq!(answered.choices[result.correct_answer_index]["en"], "H2O");
+
+        // And `get_current_question` correctly points at Q2 for the
+        // next round — the two getters are not interchangeable.
+        let current = game.get_current_question().expect("next question");
+        assert_eq!(current.choices[1]["en"], "Tokyo");
+    }
+
+    #[test]
+    fn get_answered_question_is_none_before_any_answer() {
+        let q = make_question(&["a", "b", "c", "d"], 0);
+        let game = QuizGame::new(vec![q], Language::English);
+        assert!(game.get_answered_question().is_none());
     }
 
     #[test]

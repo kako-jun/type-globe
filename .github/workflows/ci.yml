@@ -17,6 +17,8 @@ jobs:
       - uses: actions/checkout@v4
       - name: Install Rust
         uses: dtolnay/rust-toolchain@stable
+      - name: Install speech-dispatcher headers (tts crate, #28)
+        run: sudo apt-get update && sudo apt-get install -y libspeechd-dev
       - name: Cache cargo registry
         uses: actions/cache@v4
         with:
@@ -56,6 +58,8 @@ jobs:
         uses: dtolnay/rust-toolchain@stable
         with:
           components: clippy
+      - name: Install speech-dispatcher headers (tts crate, #28)
+        run: sudo apt-get update && sudo apt-get install -y libspeechd-dev
       - name: Run clippy
         run: cargo clippy --all-targets -- -D warnings
 
@@ -66,5 +70,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Install Rust
         uses: dtolnay/rust-toolchain@stable
+      - name: Install speech-dispatcher headers (tts crate, #28)
+        run: sudo apt-get update && sudo apt-get install -y libspeechd-dev
       - name: Run question-data linter
         run: cargo run --bin lint-questions -- data/questions_ja.json data/questions_en.json

@@ -65,8 +65,8 @@ const MODE_OPTIONS: [ModeOption; 4] = [
     ModeOption {
         label: "Listening RPG",
         description: [
-            "A separate ruleset: hear the prompt, then survive a 10-battle run.",
-            "別ルール系。聞いて打つ 10 戦のリスニングRPGです。",
+            "Hear the prompt, type it blind. v0.2.0 ships practice mode; the 10-battle run lands in #32-#37.",
+            "聞いた音をブラインドで打つ別ルール。v0.2.0 は練習モード、10戦RPGは #32-#37 で来ます。",
         ],
     },
     ModeOption {

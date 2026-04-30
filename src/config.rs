@@ -9,6 +9,7 @@ pub struct Config {
     pub player_data_file: String,
     #[allow(dead_code)]
     pub records_file_pattern: String,
+    pub listening_file_pattern: String,
 }
 
 impl Default for Config {
@@ -19,6 +20,7 @@ impl Default for Config {
             questions_file_pattern: "questions_{}.json".to_string(),
             player_data_file: "player.json".to_string(),
             records_file_pattern: "records_{}.json".to_string(),
+            listening_file_pattern: "listening_{}.json".to_string(),
         }
     }
 }
@@ -44,5 +46,40 @@ impl Config {
             self.data_dir,
             self.records_file_pattern.replace("{}", language.code())
         )
+    }
+
+    pub fn listening_file_path(&self, language: &Language) -> String {
+        format!(
+            "{}/{}",
+            self.data_dir,
+            self.listening_file_pattern.replace("{}", language.code())
+        )
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn listening_file_path_uses_language_code() {
+        let cfg = Config::default();
+        assert_eq!(
+            cfg.listening_file_path(&Language::Japanese),
+            "data/listening_ja.json"
+        );
+        assert_eq!(
+            cfg.listening_file_path(&Language::English),
+            "data/listening_en.json"
+        );
+    }
+
+    #[test]
+    fn questions_file_path_uses_language_code() {
+        let cfg = Config::default();
+        assert_eq!(
+            cfg.questions_file_path(&Language::Japanese),
+            "data/questions_ja.json"
+        );
     }
 }

@@ -187,7 +187,20 @@ Validation: no two choices in a question may share a prefix that would make a ty
   kind: sentence
 ```
 
-The TTS layer turns `text` into audio at runtime via the `tts` crate; no audio files are shipped.
+The TTS layer turns `text` into audio at runtime via the `tts` crate (#28); no audio files are shipped. The current `main` ships `data/listening_<lang>.json` (JSON during the JSON-era of v0.2.0); the YAML migration renames `.json` → `.yaml` 1:1 with no schema change.
+
+#### Linux runtime requirement
+
+The `tts` crate's Linux backend is `speech-dispatcher`, which must be installed and running before listening mode can speak. Build-time, `libspeechd-dev` must be installed (CI installs it in the test / clippy / lint-data jobs). When the daemon isn't available at runtime, the listening UI shows a "Listening mode is unavailable on this system" message and returns to the menu rather than crashing — Quiz / Records / Time Attack 25 stay reachable.
+
+#### v0.2.0 foundation scope (#28-#31)
+
+The foundation epic ships:
+- `tts` crate integration (`src/audio/tts.rs`),
+- the listening prompt schema and bilingual data (`data/listening_<lang>.json`),
+- a single-prompt practice flow under the **Listening RPG** menu entry that exercises the blind-input judge end-to-end.
+
+The ten-prompt run loop with HP / EXP and the fixed boss placement (1-7 word, 8-9 phrase, 10 sentence) is the next epic (#32-#37). Until then, the practice mode filters the pool to `word`-kind prompts because `Space` is reserved for replay (per the key bindings above) and a phrase / sentence answer cannot be typed without rebinding the input model — that rebinding is part of #32-#37.
 
 ### Player progress (`player.yaml`)
 
