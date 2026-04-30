@@ -14,7 +14,7 @@ Two presentation styles, paired with two game structures. **They are never cross
 
 | Presentation | Paired with | What it rewards |
 |---|---|---|
-| **Quiz** — read the question and four choices, then type the correct one's text | Single-run, Time Attack 25, **ranking** | knowledge |
+| **Quiz** — read the question and four choices, then type the correct one's text | Single-run, Time Attack 25, **Records** | knowledge |
 | **Listening** — hear the prompt, type what you heard | **Hack-and-slash RPG** (10 prompts = 1 run) | comprehension |
 
 Target v0.2.0 behavior: in Quiz mode, there are **no arrow keys for selection** — you select by typing the correct choice's text directly. Press Enter to confirm.
@@ -43,10 +43,12 @@ type-globe
 | Quiz (single-run) | target: v0.2.0 | The standard play mode: type-to-select 4-choice quiz, ten questions per run |
 | Time Attack 25 | target: v0.2.0 | A Quiz variant with a 5×5 panel battle vs. CPU |
 | Listening RPG (TypeQuest) | target: v0.2.0 | A separate ruleset: audio-only prompts, ten enemies per dungeon run |
-| Records / Ranking | target: v0.2.0 | A records view that spans Quiz, Time Attack 25, and Listening RPG |
+| Records | target: v0.2.0 | Local self-best history across Quiz, Time Attack 25, and Listening RPG |
 | Image Quiz | v0.3.0+ | Requires terminal graphics protocol (kitty / iTerm2 / wezterm) |
 | Stealth | v0.3.0+ | Disguises the UI as a generic CLI tool |
-| `type-globe-online` | v0.3.0+ | mypace WebSocket integration for live rankings, posted to Nostr |
+| `type-globe-online` | v0.3.0+ | mypace WebSocket + **Nostralgic Ranking** (world ranking via Nostr) + Nostr feed |
+
+> **Records vs Ranking.** Local self-best history is **Records**. **Ranking** means world ordering through Nostralgic Ranking, only available in `type-globe-online` (v0.3.0+).
 
 ## Display Rules
 

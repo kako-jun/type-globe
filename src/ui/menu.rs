@@ -35,14 +35,14 @@ const LANGUAGE_OPTIONS: [LanguageOption; 2] = [
         label: "日本語 / Japanese",
         description: [
             "Use Japanese prompts and localized records.",
-            "問題文とランキング表示を日本語にします。",
+            "問題文と記録表示を日本語にします。",
         ],
     },
     LanguageOption {
         label: "English",
         description: [
             "Use English prompts and localized records.",
-            "English questions and ranking labels are used.",
+            "English questions and records labels are used.",
         ],
     },
 ];
@@ -70,10 +70,10 @@ const MODE_OPTIONS: [ModeOption; 4] = [
         ],
     },
     ModeOption {
-        label: "Records / Ranking",
+        label: "Records",
         description: [
-            "Browse cross-mode records for Quiz, Time Attack 25, and Listening RPG.",
-            "3 モード分の結果を横断して見るランキング画面です。",
+            "Browse your local self-best records across Quiz, Time Attack 25, and Listening RPG.",
+            "3 モードぶんの自己ベスト記録を横断して見る画面です。",
         ],
     },
 ];
@@ -185,7 +185,7 @@ impl MenuUI {
                         0 => GameMode::Quiz,
                         1 => GameMode::TimeAttack25,
                         2 => GameMode::HackAndSlashRpg,
-                        3 => GameMode::Ranking,
+                        3 => GameMode::Records,
                         _ => GameMode::Quiz,
                     };
                     return Some((language, mode));

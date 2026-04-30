@@ -1,4 +1,4 @@
-use crate::types::{Player, Ranking};
+use crate::types::{Player, Records};
 use std::fs;
 use std::path::Path;
 
@@ -34,22 +34,22 @@ impl Storage {
     }
 
     #[allow(dead_code)]
-    pub fn load_ranking(file_path: &str) -> Result<Ranking, Box<dyn std::error::Error>> {
+    pub fn load_records(file_path: &str) -> Result<Records, Box<dyn std::error::Error>> {
         if !Path::new(file_path).exists() {
-            return Ok(Ranking::default());
+            return Ok(Records::default());
         }
 
         let content = fs::read_to_string(file_path)?;
-        let ranking: Ranking = serde_json::from_str(&content)?;
-        Ok(ranking)
+        let records: Records = serde_json::from_str(&content)?;
+        Ok(records)
     }
 
     #[allow(dead_code)]
-    pub fn save_ranking(
+    pub fn save_records(
         file_path: &str,
-        ranking: &Ranking,
+        records: &Records,
     ) -> Result<(), Box<dyn std::error::Error>> {
-        let content = serde_json::to_string_pretty(ranking)?;
+        let content = serde_json::to_string_pretty(records)?;
         fs::write(file_path, content)?;
         Ok(())
     }
