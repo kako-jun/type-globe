@@ -216,6 +216,8 @@ time_attack_25:
 
 Top 10 per mode per language. This is a local self-best file — never call it a "ranking". World ranking (Nostralgic Ranking) is wired in the v0.3.0+ `type-globe-online` build and submits the same entries to a Nostr-relay-backed feed.
 
+The Records menu entry opens a read-only browser (`src/ui/records.rs`) that shows three sections — Quiz, Time Attack 25, Listening RPG — with the most recent ts in each section highlighted so the player can spot a just-saved entry without scrolling. Esc / Enter / `q` returns to the menu.
+
 ## Source Architecture (target)
 
 ```
