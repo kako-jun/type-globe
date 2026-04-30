@@ -1,5 +1,6 @@
 use crate::game::{QuizGame, QuizResult};
-use crate::types::{Language, Question};
+use crate::io::Storage;
+use crate::types::{Language, Question, ScoreEntry};
 use crate::ui::{HelpEntry, HelpLine, PaneFrame, StatusPane};
 use crossterm::{
     event::{self, Event, KeyCode, KeyEvent, KeyModifiers},
@@ -15,7 +16,13 @@ use ratatui::{
     Frame, Terminal,
 };
 use std::io;
-use std::time::Duration;
+use std::time::{Duration, SystemTime, UNIX_EPOCH};
+
+/// Top-N self-best entries kept per mode in `records_<lang>.json`.
+const RECORDS_TOP_N: usize = 10;
+/// Maximum characters the player can type into the name-entry field.
+/// Sized to fit comfortably in the side pane / Records list rendering.
+const NAME_MAX_CHARS: usize = 16;
 
 const STYLE_TITLE: Style = Style::new().fg(Color::Cyan).add_modifier(Modifier::BOLD);
 const STYLE_NORMAL: Style = Style::new().fg(Color::White);
@@ -23,6 +30,16 @@ const STYLE_CORRECT: Style = Style::new().fg(Color::Green).add_modifier(Modifier
 const STYLE_INCORRECT: Style = Style::new().fg(Color::Red).add_modifier(Modifier::BOLD);
 const STYLE_INPUT_ECHO: Style = Style::new().fg(Color::Yellow).add_modifier(Modifier::BOLD);
 const STYLE_CHOICE_LABEL: Style = Style::new().fg(Color::Cyan).add_modifier(Modifier::BOLD);
+
+/// High-level state machine for one Quiz session. The per-question
+/// "show_result" flag still lives separately; this enum captures the flow
+/// across the run: playing → summary → records-name-entry → done.
+#[derive(Debug, Clone, PartialEq)]
+enum Phase {
+    Playing,
+    Summary,
+    NamingForRecord,
+}
 
 pub struct QuizUI {
     quiz_game: QuizGame,
@@ -32,18 +49,30 @@ pub struct QuizUI {
     input_buffer: String,
     current_result: Option<QuizResult>,
     show_result: bool,
+    phase: Phase,
+    name_buffer: String,
+    records_file_path: String,
+    /// Set once the run's score has been saved to records, so a second
+    /// Enter on the confirmation screen exits without writing a duplicate.
+    saved: bool,
 }
 
 impl QuizUI {
-    pub fn new(questions: Vec<Question>, language: Language) -> Self {
-        let mut quiz_game = QuizGame::new(questions, language);
+    /// Build a UI by sampling a 10-question run from `pool`. Mirrors
+    /// `QuizGame::from_pool` so main.rs doesn't have to reach into the
+    /// game module directly.
+    pub fn from_pool(pool: &[Question], language: Language, records_file_path: String) -> Self {
+        let mut quiz_game = QuizGame::from_pool(pool, language);
         quiz_game.start();
-
         Self {
             quiz_game,
             input_buffer: String::new(),
             current_result: None,
             show_result: false,
+            phase: Phase::Playing,
+            name_buffer: String::new(),
+            records_file_path,
+            saved: false,
         }
     }
 
@@ -99,6 +128,12 @@ impl QuizUI {
             return true;
         }
 
+        match self.phase {
+            Phase::Summary => return self.handle_key_summary(key),
+            Phase::NamingForRecord => return self.handle_key_naming(key),
+            Phase::Playing => {}
+        }
+
         if self.show_result {
             return self.handle_key_result(key);
         }
@@ -140,13 +175,90 @@ impl QuizUI {
     fn handle_key_result(&mut self, key: KeyEvent) -> bool {
         if key.code == KeyCode::Enter {
             if self.quiz_game.is_game_finished() {
-                return true;
+                self.phase = Phase::Summary;
+                self.show_result = false;
+                self.current_result = None;
+                self.input_buffer.clear();
+                return false;
             }
             self.show_result = false;
             self.current_result = None;
             self.input_buffer.clear();
         }
         false
+    }
+
+    fn handle_key_summary(&mut self, key: KeyEvent) -> bool {
+        if key.code == KeyCode::Enter {
+            self.phase = Phase::NamingForRecord;
+            self.name_buffer.clear();
+        }
+        false
+    }
+
+    /// Name-entry phase: printable chars accumulate, Backspace deletes,
+    /// Enter on a non-empty name saves and exits, Enter on an empty name
+    /// is a no-op (forces an explicit choice — Esc still skips the save).
+    fn handle_key_naming(&mut self, key: KeyEvent) -> bool {
+        if self.saved {
+            // Once saved, any Enter / printable key dismisses the
+            // confirmation screen and returns to the menu.
+            if matches!(key.code, KeyCode::Enter | KeyCode::Char(_)) {
+                return true;
+            }
+            return false;
+        }
+
+        match key.code {
+            KeyCode::Enter => {
+                if self.name_buffer.trim().is_empty() {
+                    return false;
+                }
+                if let Err(err) = self.persist_record() {
+                    // Surfacing the failure inline keeps the run from
+                    // silently dropping on a disk error — Esc / next Enter
+                    // still exits regardless.
+                    eprintln!("warning: failed to save records: {err}");
+                }
+                self.saved = true;
+            }
+            KeyCode::Backspace => {
+                self.name_buffer.pop();
+            }
+            KeyCode::Char(c)
+                if !key
+                    .modifiers
+                    .intersects(KeyModifiers::CONTROL | KeyModifiers::ALT)
+                    && self.name_buffer.chars().count() < NAME_MAX_CHARS =>
+            {
+                self.name_buffer.push(c);
+            }
+            _ => {}
+        }
+        false
+    }
+
+    fn persist_record(&self) -> Result<(), Box<dyn std::error::Error>> {
+        let mut records = Storage::load_records(&self.records_file_path)?;
+        let entry = ScoreEntry {
+            name: self.name_buffer.trim().to_string(),
+            score: self.quiz_game.get_final_score(),
+            cpm: self.quiz_game.get_cpm(),
+            wpm: self.quiz_game.get_wpm(),
+            ts: SystemTime::now()
+                .duration_since(UNIX_EPOCH)
+                .map(|d| d.as_secs())
+                .unwrap_or(0),
+        };
+        records.quiz_mode.push(entry);
+        // Highest score first, then ts descending as a stable tiebreaker
+        // so the most recent attempt at a tied score wins display order.
+        records
+            .quiz_mode
+            .sort_by(|a, b| b.score.cmp(&a.score).then(b.ts.cmp(&a.ts)));
+        records.quiz_mode.truncate(RECORDS_TOP_N);
+        Storage::save_records(&self.records_file_path, &records)?;
+        Ok(())
     }
 
     fn ui(&mut self, f: &mut Frame) {
@@ -162,12 +274,13 @@ impl QuizUI {
         if area.height == 0 {
             return;
         }
-        // Hide the echo while showing a result — keeps the screen calm
-        // during the "correct/wrong" reveal.
-        let body = if self.show_result {
-            String::new()
-        } else {
-            format!("> {}_", self.input_buffer)
+        let body = match self.phase {
+            // Hide the echo on result / summary — keeps the screen calm
+            // during the "correct/wrong" reveal and final score reveal.
+            Phase::Playing if self.show_result => String::new(),
+            Phase::Playing => format!("> {}_", self.input_buffer),
+            Phase::Summary => String::new(),
+            Phase::NamingForRecord => format!("name> {}_", self.name_buffer),
         };
         let line = Paragraph::new(body)
             .style(STYLE_INPUT_ECHO)
@@ -176,10 +289,13 @@ impl QuizUI {
     }
 
     fn render_status_pane(&self, f: &mut Frame, area: Rect) {
-        // CPM / WPM are 0 until typed selection (#24) lands and we begin
-        // measuring keystrokes; the pane structure already reserves the slots.
         let elapsed = self.quiz_game.get_total_time().unwrap_or(Duration::ZERO);
-        let pane = StatusPane::quiz(self.quiz_game.get_final_score(), elapsed, 0, 0);
+        let pane = StatusPane::quiz(
+            self.quiz_game.get_final_score(),
+            elapsed,
+            self.quiz_game.get_cpm(),
+            self.quiz_game.get_wpm(),
+        );
         pane.render(f, area);
     }
 
@@ -190,17 +306,22 @@ impl QuizUI {
             .split(area);
 
         let (current, total) = self.quiz_game.get_progress();
-        let title_text = format!("TypeGlobe — Quiz  Q{current}/{total}");
+        let title_text = match self.phase {
+            Phase::Playing => format!("TypeGlobe — Quiz  Q{current}/{total}"),
+            Phase::Summary => "TypeGlobe — Quiz  Run complete".to_string(),
+            Phase::NamingForRecord => "TypeGlobe — Quiz  Records entry".to_string(),
+        };
         let title = Paragraph::new(title_text)
             .style(STYLE_TITLE)
             .alignment(Alignment::Center)
             .block(Block::default().borders(Borders::ALL));
         f.render_widget(title, chunks[0]);
 
-        if self.show_result {
-            self.render_result(f, chunks[1]);
-        } else {
-            self.render_question(f, chunks[1]);
+        match self.phase {
+            Phase::Summary => self.render_summary(f, chunks[1]),
+            Phase::NamingForRecord => self.render_naming(f, chunks[1]),
+            Phase::Playing if self.show_result => self.render_result(f, chunks[1]),
+            Phase::Playing => self.render_question(f, chunks[1]),
         }
     }
 
@@ -279,27 +400,104 @@ impl QuizUI {
         self.help_line().render(f, area);
     }
 
-    fn help_line(&self) -> HelpLine {
-        if self.show_result {
-            let next_label = if self.quiz_game.is_game_finished() {
-                "Finish"
-            } else {
-                "Next"
-            };
-            HelpLine::new(vec![
-                HelpEntry::new("Esc", "Quit"),
-                HelpEntry::new("Enter", next_label),
-            ])
+    fn render_summary(&self, f: &mut Frame, area: Rect) {
+        let total = self.quiz_game.get_progress().1 as u32;
+        let correct = self.quiz_game.get_correct_count();
+        let accuracy_pct = (self.quiz_game.get_accuracy() * 100.0).round() as u32;
+        let elapsed = self.quiz_game.get_total_time().unwrap_or(Duration::ZERO);
+        let mins = elapsed.as_secs() / 60;
+        let secs = elapsed.as_secs() % 60;
+
+        let lines = vec![
+            Line::from(Span::styled("Run complete", STYLE_CORRECT)),
+            Line::from(""),
+            Line::from(format!("  Score    : {}", self.quiz_game.get_final_score())),
+            Line::from(format!("  Correct  : {correct} / {total}")),
+            Line::from(format!("  Accuracy : {accuracy_pct}%")),
+            Line::from(format!("  CPM      : {}", self.quiz_game.get_cpm())),
+            Line::from(format!("  WPM      : {}", self.quiz_game.get_wpm())),
+            Line::from(format!("  Time     : {mins}:{secs:02}")),
+            Line::from(""),
+            Line::from(Span::styled(
+                "Press Enter to register a record (Esc to skip).",
+                STYLE_NORMAL,
+            )),
+        ];
+
+        let body = Paragraph::new(lines)
+            .alignment(Alignment::Left)
+            .block(Block::default().title("Summary").borders(Borders::ALL));
+        f.render_widget(body, area);
+    }
+
+    fn render_naming(&self, f: &mut Frame, area: Rect) {
+        let lines = if self.saved {
+            vec![
+                Line::from(Span::styled("Record saved.", STYLE_CORRECT)),
+                Line::from(""),
+                Line::from(format!("  Name  : {}", self.name_buffer.trim())),
+                Line::from(format!("  Score : {}", self.quiz_game.get_final_score())),
+                Line::from(""),
+                Line::from(Span::styled(
+                    "Press any key to return to the menu.",
+                    STYLE_NORMAL,
+                )),
+            ]
         } else {
-            // Spec form per docs/spec.md (`[Esc] Quit  [Tab] Skip  [F5] Restart`),
-            // augmented with Enter / Bksp for typed selection. F5 Restart is
-            // not wired yet.
-            HelpLine::new(vec![
+            vec![
+                Line::from("Enter a name for your records entry."),
+                Line::from(""),
+                Line::from(Span::styled(
+                    format!("  name : {}_", self.name_buffer),
+                    STYLE_INPUT_ECHO,
+                )),
+                Line::from(""),
+                Line::from(Span::styled(
+                    format!("(max {NAME_MAX_CHARS} chars; Enter saves, Esc skips)"),
+                    STYLE_NORMAL,
+                )),
+            ]
+        };
+
+        let body = Paragraph::new(lines).alignment(Alignment::Left).block(
+            Block::default()
+                .title("Records entry")
+                .borders(Borders::ALL),
+        );
+        f.render_widget(body, area);
+    }
+
+    fn help_line(&self) -> HelpLine {
+        match self.phase {
+            Phase::Playing if self.show_result => {
+                let next_label = if self.quiz_game.is_game_finished() {
+                    "Summary"
+                } else {
+                    "Next"
+                };
+                HelpLine::new(vec![
+                    HelpEntry::new("Esc", "Quit"),
+                    HelpEntry::new("Enter", next_label),
+                ])
+            }
+            Phase::Playing => HelpLine::new(vec![
                 HelpEntry::new("Esc", "Quit"),
                 HelpEntry::new("Tab", "Skip"),
                 HelpEntry::new("Enter", "Confirm"),
                 HelpEntry::new("Bksp", "Erase"),
-            ])
+            ]),
+            Phase::Summary => HelpLine::new(vec![
+                HelpEntry::new("Esc", "Skip"),
+                HelpEntry::new("Enter", "Register"),
+            ]),
+            Phase::NamingForRecord if self.saved => {
+                HelpLine::new(vec![HelpEntry::new("Enter", "Menu")])
+            }
+            Phase::NamingForRecord => HelpLine::new(vec![
+                HelpEntry::new("Esc", "Skip"),
+                HelpEntry::new("Enter", "Save"),
+                HelpEntry::new("Bksp", "Erase"),
+            ]),
         }
     }
 }
