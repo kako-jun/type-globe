@@ -138,7 +138,7 @@ impl QuizUI {
 
         self.render_main_pane(f, frame.main);
         self.render_status_pane(f, frame.side);
-        self.render_bottom_pane(f, frame.bottom);
+        self.render_help_line(f, frame.help_line);
     }
 
     fn render_status_pane(&self, f: &mut Frame, area: Rect) {
@@ -288,25 +288,28 @@ impl QuizUI {
         f.render_widget(result_paragraph, area);
     }
 
-    fn render_bottom_pane(&self, f: &mut Frame, area: Rect) {
-        let bottom_text = if self.show_result {
-            if self.quiz_game.is_game_finished() {
-                "Enter: 終了 | q: 終了"
-            } else {
-                "Enter: 次の問題へ | q: 終了"
-            }
-        } else {
-            "↑↓/j/k: 選択 | 1-4: 直接選択 | Enter/Space: 決定 | s: スキップ | q: 終了"
-        };
-
-        let help = Paragraph::new(bottom_text)
-            .style(if self.show_result {
-                STYLE_CONTINUE
-            } else {
-                STYLE_HELP
-            })
+    fn render_help_line(&self, f: &mut Frame, area: Rect) {
+        let (text, style) = self.help_line_content();
+        let help = Paragraph::new(text)
+            .style(style)
             .alignment(Alignment::Center)
             .block(Block::default().borders(Borders::ALL));
         f.render_widget(help, area);
+    }
+
+    fn help_line_content(&self) -> (&'static str, Style) {
+        if self.show_result {
+            let text = if self.quiz_game.is_game_finished() {
+                "Enter: 終了 | q: 終了"
+            } else {
+                "Enter: 次の問題へ | q: 終了"
+            };
+            (text, STYLE_CONTINUE)
+        } else {
+            (
+                "↑↓/j/k: 選択 | 1-4: 直接選択 | Enter/Space: 決定 | s: スキップ | q: 終了",
+                STYLE_HELP,
+            )
+        }
     }
 }
