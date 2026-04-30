@@ -16,9 +16,9 @@
 //!
 //! Until #24 (typed selection) lands, the quiz still uses the legacy arrow /
 //! number-key selection model, so no `input_echo` slot is allocated — the
-//! `help_line` block currently absorbs the bottom region. When #18 (help
-//! line component) and #24 ship, the bottom region will be split into a
-//! 1-line input echo and a 1-line always-on help line.
+//! 1-line `help_line` is rendered directly at the bottom by the
+//! `ui::HelpLine` component (#18). When #24 ships, the bottom region will be
+//! split into a 1-line input echo above the help line.
 
 use ratatui::layout::{Constraint, Direction, Layout, Rect};
 
@@ -39,8 +39,10 @@ pub struct PaneFrame {
 
 const SIDE_WIDTH: u16 = 24;
 const MAIN_MIN_WIDTH: u16 = 40;
-const QUIZ_BOTTOM_HEIGHT: u16 = 4;
-const HACK_BOTTOM_HEIGHT: u16 = 4;
+// 1-line always-on help line (per spec).
+// TODO(#24): grow to 2 once typed selection adds a 1-line input echo above.
+const QUIZ_BOTTOM_HEIGHT: u16 = 1;
+const HACK_BOTTOM_HEIGHT: u16 = 1;
 const HACK_LOG_HEIGHT: u16 = 5;
 
 impl PaneFrame {

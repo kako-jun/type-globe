@@ -1,6 +1,6 @@
 use crate::game::{QuizGame, QuizResult};
 use crate::types::{Language, Question};
-use crate::ui::{PaneFrame, StatusPane};
+use crate::ui::{HelpEntry, HelpLine, PaneFrame, StatusPane};
 use crossterm::{
     event::{self, Event, KeyCode, KeyEvent},
     execute,
@@ -20,10 +20,8 @@ use std::time::Duration;
 const STYLE_TITLE: Style = Style::new().fg(Color::Cyan).add_modifier(Modifier::BOLD);
 const STYLE_SELECTED: Style = Style::new().fg(Color::Yellow).add_modifier(Modifier::BOLD);
 const STYLE_NORMAL: Style = Style::new().fg(Color::White);
-const STYLE_HELP: Style = Style::new().fg(Color::Gray);
 const STYLE_CORRECT: Style = Style::new().fg(Color::Green).add_modifier(Modifier::BOLD);
 const STYLE_INCORRECT: Style = Style::new().fg(Color::Red).add_modifier(Modifier::BOLD);
-const STYLE_CONTINUE: Style = Style::new().fg(Color::Yellow);
 
 pub struct QuizUI {
     quiz_game: QuizGame,
@@ -243,27 +241,27 @@ impl QuizUI {
     }
 
     fn render_help_line(&self, f: &mut Frame, area: Rect) {
-        let (text, style) = self.help_line_content();
-        let help = Paragraph::new(text)
-            .style(style)
-            .alignment(Alignment::Center)
-            .block(Block::default().borders(Borders::ALL));
-        f.render_widget(help, area);
+        self.help_line().render(f, area);
     }
 
-    fn help_line_content(&self) -> (&'static str, Style) {
+    fn help_line(&self) -> HelpLine {
         if self.show_result {
-            let text = if self.quiz_game.is_game_finished() {
-                "Enter: 終了 | q: 終了"
+            if self.quiz_game.is_game_finished() {
+                HelpLine::new(vec![HelpEntry::new("Enter", "Finish"), HelpEntry::new("q", "Quit")])
             } else {
-                "Enter: 次の問題へ | q: 終了"
-            };
-            (text, STYLE_CONTINUE)
+                HelpLine::new(vec![
+                    HelpEntry::new("Enter", "Next"),
+                    HelpEntry::new("q", "Quit"),
+                ])
+            }
         } else {
-            (
-                "↑↓/j/k: 選択 | 1-4: 直接選択 | Enter/Space: 決定 | s: スキップ | q: 終了",
-                STYLE_HELP,
-            )
+            HelpLine::new(vec![
+                HelpEntry::new("↑↓", "Select"),
+                HelpEntry::new("1-4", "Pick"),
+                HelpEntry::new("Enter", "Confirm"),
+                HelpEntry::new("s", "Skip"),
+                HelpEntry::new("q", "Quit"),
+            ])
         }
     }
 }
