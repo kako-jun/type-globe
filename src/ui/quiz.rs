@@ -423,8 +423,8 @@ impl QuizUI {
         let (current, total) = self.quiz_game.get_progress();
         let title_text = match self.phase {
             Phase::Playing => format!("type-globe - Quiz {current}/{total}"),
-            Phase::Summary => "type-globe - Quiz - Run complete".to_string(),
-            Phase::NamingForRecord => "type-globe - Quiz - Records entry".to_string(),
+            Phase::Summary => "type-globe - Quiz".to_string(),
+            Phase::NamingForRecord => "type-globe - Quiz".to_string(),
         };
         let title = Paragraph::new(title_text)
             .style(STYLE_TITLE)

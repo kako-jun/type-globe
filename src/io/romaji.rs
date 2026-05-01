@@ -1,7 +1,7 @@
 /// Convert Japanese kana text into lowercase Hepburn-style ASCII.
 ///
 /// This is intentionally pragmatic rather than linguistically complete:
-/// it targets TypeGlobe's JA input mode (#69), where players need a
+/// it targets type-globe's JA input mode (#69), where players need a
 /// no-IME typing target for quiz/listening answers. The key project
 /// rules are:
 /// - ASCII only
