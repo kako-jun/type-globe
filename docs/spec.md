@@ -56,13 +56,13 @@ Quiz is paired with score-attack modes; listening is paired with the RPG. The tw
 ```
 
 - **No arrow-key selection.** Players type the correct choice's text directly; this both selects and answers.
-- **Exact match auto-confirms.** Question data must avoid prefix ambiguity so the match point is deterministic.
-- Input echo shows only the characters that are still on a valid answer prefix; non-prefix typos are rejected immediately.
+- **Exact match auto-confirms and immediately advances** to the next question — there is no "Correct!" interstitial and no Enter-to-continue. The flow is a continuous typing rhythm.
+- **Only the correct choice's typings are accepted as a valid prefix.** Any divergence (including the full text of a wrong choice) is treated as a mistype: the input flashes red and the buffer resets to zero, and the run does not advance. The player can only proceed by typing the correct answer.
 - Matching is **case-insensitive**.
 - A single logical answer may accept **multiple typed spellings**.
 - In JA mode, romanized aliases may be accepted for the same answer (for example `tokyo` and `toukyou`, `osaka` and `oosaka`). Question data may declare these explicitly with `ja_typings`. When a choice has a well-established official Latin spelling (for example a proper name), that spelling may also be accepted. The implementation may also derive additional common ASCII aliases from kana as long as it never reveals the answer string before typing.
 - Score = function(CPM, accuracy, correctness).
-- One run is fixed at **10 questions** (constant `QUIZ_RUN_LENGTH`), sampled from the language's question pool. After the 10th question, the UI shows a Summary (Score / Correct / Accuracy / CPM / WPM / Time), then a Records-entry screen prompts for a name and writes a `ScoreEntry` to `records_<lang>.json` (Top 10 by score; ts as tiebreaker). Esc on either screen returns to the menu without saving.
+- One run is fixed at **10 questions** (constant `QUIZ_RUN_LENGTH`), sampled from the language's question pool. The total Time is **frozen at the last correct keystroke** of the final question (or at the moment the final question is skipped via Tab) — it does not keep ticking on the Summary / Records-entry screens. After the 10th question, the UI shows a Summary (Score / Correct / Accuracy / CPM / WPM / Time), then a Records-entry screen prompts for a name and writes a `ScoreEntry` to `records_<lang>.json` (Top 10 by score; ts as tiebreaker). Esc on either screen returns to the menu without saving.
 
 ### Time Attack 25
 
