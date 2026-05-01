@@ -44,7 +44,7 @@ struct ModeOption {
 
 const LANGUAGE_OPTIONS: [LanguageOption; 2] = [
     LanguageOption {
-        label: "日本語 / Japanese",
+        label: "Japanese / 日本語",
         description: [
             "Use Japanese prompts and localized records.",
             "問題文と記録表示を日本語にします。",
@@ -292,7 +292,7 @@ impl MenuUI {
         let language_list = List::new(items)
             .block(
                 Block::default()
-                    .title("言語を選択してください / Select Language")
+                    .title("Select Language / 言語を選択してください")
                     .borders(Borders::ALL),
             )
             .highlight_style(STYLE_SELECTED);
@@ -326,7 +326,7 @@ impl MenuUI {
         let mode_list = List::new(items)
             .block(
                 Block::default()
-                    .title("ゲームモードを選択してください / Select Game Mode")
+                    .title("Select Game Mode / ゲームモードを選択してください")
                     .borders(Borders::ALL),
             )
             .highlight_style(STYLE_SELECTED);
@@ -366,7 +366,7 @@ impl MenuUI {
             .wrap(ratatui::widgets::Wrap { trim: true })
             .block(
                 Block::default()
-                    .title("説明 / Details")
+                    .title("Details / 説明")
                     .borders(Borders::ALL),
             );
         f.render_widget(detail, area);
