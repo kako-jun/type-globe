@@ -115,10 +115,11 @@ impl QuizGame {
         let Some(choice) = question.choices.get(question.correct_answer_index) else {
             return Vec::new();
         };
-        let mut candidates: Vec<String> = DataLoader::get_choice_typing_texts(choice, &self.language)
-            .into_iter()
-            .map(|candidate| candidate.to_lowercase())
-            .collect();
+        let mut candidates: Vec<String> =
+            DataLoader::get_choice_typing_texts(choice, &self.language)
+                .into_iter()
+                .map(|candidate| candidate.to_lowercase())
+                .collect();
         candidates.sort();
         candidates.dedup();
         candidates

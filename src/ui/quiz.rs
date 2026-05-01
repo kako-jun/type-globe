@@ -34,9 +34,9 @@ const STYLE_INPUT_ECHO: Style = Style::new().fg(Color::Yellow).add_modifier(Modi
 const STYLE_CHOICE_LABEL: Style = Style::new().fg(Color::Cyan).add_modifier(Modifier::BOLD);
 const INPUT_REJECT_FLASH_MS: u64 = 180;
 
-/// High-level state machine for one Quiz session. The per-question
-/// "show_result" flag still lives separately; this enum captures the flow
-/// across the run: playing → summary → records-name-entry → done.
+/// High-level state machine for one Quiz session. Issue #70 removed the
+/// per-question result interstitial, so playing → summary → records-name-
+/// entry → done is the entire flow.
 #[derive(Debug, Clone, PartialEq)]
 enum Phase {
     Playing,
@@ -600,5 +600,4 @@ impl QuizUI {
             ]),
         }
     }
-
 }
