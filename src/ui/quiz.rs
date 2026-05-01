@@ -1,3 +1,4 @@
+use crate::audio::{Cue, CueEngine};
 use crate::game::QuizGame;
 use crate::io::Storage;
 use crate::jiwa_core::{lerp_rgb, RevealHandle, RevealOpts, Rgb};
@@ -82,6 +83,9 @@ pub struct QuizUI {
     choices_reveal_starts_at: Option<Instant>,
     rejected_char: Option<char>,
     reject_flash_until: Option<Instant>,
+    /// Sound-effect engine (Issue #73). `None` when audio output is
+    /// unavailable — Quiz still works silently in that case.
+    cues: Option<CueEngine>,
 }
 
 impl QuizUI {
@@ -104,6 +108,13 @@ impl QuizUI {
             choices_reveal_starts_at: None,
             rejected_char: None,
             reject_flash_until: None,
+            cues: CueEngine::new(),
+        }
+    }
+
+    fn play_cue(&self, cue: Cue) {
+        if let Some(engine) = self.cues.as_ref() {
+            engine.play(cue);
         }
     }
 
@@ -183,6 +194,10 @@ impl QuizUI {
             KeyCode::Tab if self.quiz_game.skip_question() => {
                 self.input_buffer.clear();
                 self.clear_reject_flash();
+                // Skipping a question counts as the "wrong" outcome for
+                // sound purposes (Issue #73): the player gave up rather
+                // than landing the correct answer, so play "ブブー".
+                self.play_cue(Cue::Wrong);
                 if self.quiz_game.is_game_finished() {
                     self.phase = Phase::Summary;
                     return false;
@@ -302,6 +317,12 @@ impl QuizUI {
         if self.reveal_for_question == Some(current_idx) {
             return;
         }
+        // New question is about to be revealed — fire the "ダダン" cue
+        // (Issue #73) before the typewriter starts, so the audio leads
+        // the visual by a frame.
+        if self.quiz_game.get_current_question().is_some() {
+            self.play_cue(Cue::QuestionReveal);
+        }
         let now = Instant::now();
         self.reveal = self.quiz_game.get_current_question().map(|question| {
             let text = self.quiz_game.get_question_text(question);
@@ -395,11 +416,17 @@ impl QuizUI {
         if !self.quiz_game.is_valid_correct_typed_prefix(&attempted) {
             self.note_rejected_char(c);
             self.input_buffer.clear();
+            // Mistype cue (Issue #73) — slightly louder than the
+            // keystroke tick so the player can tell them apart.
+            self.play_cue(Cue::Mistype);
             return;
         }
 
         self.input_buffer.push(c);
         self.clear_reject_flash();
+        // Quiet typing tick (Issue #73). Played only on accepted
+        // characters so the mistype cue can stand alone.
+        self.play_cue(Cue::Keystroke);
 
         let typed = self.input_buffer.to_lowercase();
         if self
@@ -420,6 +447,10 @@ impl QuizUI {
     fn submit_current_answer(&mut self) {
         let typed = self.input_buffer.clone();
         if self.quiz_game.answer_question_typed(&typed).is_some() {
+            // Issue #70 limits this code path to correct answers (the
+            // input layer rejects wrong ones), so this is always the
+            // "ピンポーン" cue. Issue #73.
+            self.play_cue(Cue::Correct);
             self.input_buffer.clear();
             self.clear_reject_flash();
             if self.quiz_game.is_game_finished() {

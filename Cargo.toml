@@ -22,6 +22,7 @@ tokio = { version = "1.0", features = ["full"] }
 rand = "0.8"
 unicode-segmentation = "1.11"
 tts = "0.26"
+rodio = { version = "0.19", default-features = false }
 
 [dev-dependencies]
 cargo-husky = { version = "1", default-features = false, features = ["user-hooks"] }
