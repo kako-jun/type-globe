@@ -20,16 +20,13 @@ jobs:
     name: Build (${{ matrix.target }})
     runs-on: ${{ matrix.os }}
     strategy:
+      fail-fast: false
       matrix:
         include:
           - os: ubuntu-latest
             target: x86_64-unknown-linux-gnu
             binary: type-globe
             asset_name: type-globe-linux-x86_64
-          - os: ubuntu-latest
-            target: x86_64-unknown-linux-musl
-            binary: type-globe
-            asset_name: type-globe-linux-x86_64-musl
           - os: macos-latest
             target: x86_64-apple-darwin
             binary: type-globe
@@ -52,9 +49,6 @@ jobs:
       - name: Install speech-dispatcher headers (Linux gnu, tts crate)
         if: matrix.target == 'x86_64-unknown-linux-gnu'
         run: sudo apt-get update && sudo apt-get install -y libspeechd-dev
-      - name: Install musl-tools (Linux musl only)
-        if: matrix.target == 'x86_64-unknown-linux-musl'
-        run: sudo apt-get update && sudo apt-get install -y musl-tools
       - name: Build
         run: cargo build --release --target ${{ matrix.target }}
       - name: Strip binary (Unix)
