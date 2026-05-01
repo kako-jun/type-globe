@@ -552,7 +552,11 @@ impl QuizUI {
 
             let chunks = Layout::default()
                 .direction(Direction::Vertical)
-                .constraints([Constraint::Length(3), Constraint::Min(4)])
+                // Length(5) keeps 1 visible row of question text after
+                // the 2-row border and Issue #76's 2-row vertical padding
+                // (border + padding eats 4 rows). Choices stays Min so
+                // it absorbs whatever vertical space is left.
+                .constraints([Constraint::Length(5), Constraint::Min(6)])
                 .split(area);
 
             let question_line = self.question_reveal_line(question);
