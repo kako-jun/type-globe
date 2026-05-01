@@ -8,6 +8,7 @@ use crossterm::{
     execute,
     terminal::{disable_raw_mode, enable_raw_mode, EnterAlternateScreen, LeaveAlternateScreen},
 };
+use rand::seq::SliceRandom;
 use ratatui::{
     backend::CrosstermBackend,
     layout::{Alignment, Constraint, Direction, Layout, Rect},
@@ -16,7 +17,6 @@ use ratatui::{
     widgets::{Block, Borders, List, ListItem, Paragraph},
     Frame, Terminal,
 };
-use rand::seq::SliceRandom;
 use std::io;
 use std::time::{Duration, Instant, SystemTime, UNIX_EPOCH};
 
@@ -541,9 +541,7 @@ impl QuizUI {
             let alpha = self.choices_fade_alpha();
             let label_color = lerp_rgb_color(Rgb(20, 60, 80), Rgb(80, 200, 255), alpha);
             let text_color = lerp_rgb_color(Rgb(20, 20, 20), Rgb(255, 255, 255), alpha);
-            let label_style = Style::new()
-                .fg(label_color)
-                .add_modifier(Modifier::BOLD);
+            let label_style = Style::new().fg(label_color).add_modifier(Modifier::BOLD);
             let text_style = Style::new().fg(text_color);
             let order: Vec<usize> = if self.choice_order.len() == choices.len() {
                 self.choice_order.clone()

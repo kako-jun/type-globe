@@ -5,7 +5,6 @@ use crossterm::{
     execute,
     terminal::{disable_raw_mode, enable_raw_mode, EnterAlternateScreen, LeaveAlternateScreen},
 };
-use std::time::{Duration, Instant};
 use ratatui::{
     backend::CrosstermBackend,
     layout::{Alignment, Constraint, Direction, Layout, Rect},
@@ -15,6 +14,7 @@ use ratatui::{
     Frame, Terminal,
 };
 use std::io;
+use std::time::{Duration, Instant};
 
 const STYLE_TITLE: Style = Style::new().fg(Color::Cyan).add_modifier(Modifier::BOLD);
 const STYLE_SELECTED: Style = Style::new().fg(Color::Yellow).add_modifier(Modifier::BOLD);
@@ -324,11 +324,7 @@ impl MenuUI {
         state.select(Some(self.selected_mode));
         f.render_stateful_widget(mode_list, list_area, &mut state);
 
-        self.render_detail_panel(
-            f,
-            detail_area,
-            MODE_OPTIONS[self.selected_mode].description,
-        );
+        self.render_detail_panel(f, detail_area, MODE_OPTIONS[self.selected_mode].description);
     }
 
     fn help_line(&self) -> HelpLine {
