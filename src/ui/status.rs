@@ -137,7 +137,7 @@ impl StatusPane {
         // breathing room inside the border so the labels and values
         // don't crash into the frame.
         let block = Block::default()
-            .title(Span::styled(self.title.clone(), STYLE_TITLE))
+            .title(Span::styled(format!(" {} ", self.title), STYLE_TITLE))
             .borders(Borders::ALL)
             .padding(Padding::uniform(1));
         let inner = block.inner(area);

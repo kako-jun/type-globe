@@ -292,7 +292,7 @@ impl MenuUI {
         let language_list = List::new(items)
             .block(
                 Block::default()
-                    .title("Select Language / 言語を選択してください")
+                    .title(" Select Language / 言語を選択してください ")
                     .borders(Borders::ALL)
                     .padding(Padding::uniform(1)),
             )
@@ -327,7 +327,7 @@ impl MenuUI {
         let mode_list = List::new(items)
             .block(
                 Block::default()
-                    .title("Select Game Mode / ゲームモードを選択してください")
+                    .title(" Select Game Mode / ゲームモードを選択してください ")
                     .borders(Borders::ALL)
                     .padding(Padding::uniform(1)),
             )
@@ -368,7 +368,7 @@ impl MenuUI {
             .wrap(ratatui::widgets::Wrap { trim: true })
             .block(
                 Block::default()
-                    .title("Details / 説明")
+                    .title(" Details / 説明 ")
                     .borders(Borders::ALL)
                     .padding(Padding::uniform(1)),
             );
