@@ -1,3 +1,4 @@
+use crate::jiwa_core::{lerp_rgb, Rgb};
 use crate::types::{GameMode, Language};
 use crate::ui::{HelpEntry, HelpLine};
 use crossterm::{
@@ -14,11 +15,22 @@ use ratatui::{
     Frame, Terminal,
 };
 use std::io;
+use std::time::{Duration, Instant};
 
 const STYLE_TITLE: Style = Style::new().fg(Color::Cyan).add_modifier(Modifier::BOLD);
 const STYLE_SELECTED: Style = Style::new().fg(Color::Yellow).add_modifier(Modifier::BOLD);
 const STYLE_NORMAL: Style = Style::new();
-const STYLE_LABEL: Style = Style::new().fg(Color::Cyan).add_modifier(Modifier::BOLD);
+
+/// Cadence used by the menu while a description is fading in. Short enough
+/// that the lerp reads as continuous motion; the rest of the time the
+/// blocking event read takes over so the menu is otherwise idle.
+const REDRAW_TICK: Duration = Duration::from_millis(30);
+/// How long the right-pane description spends fading from dim gray to its
+/// final color after a selection change (Issue #72 follow-up: jiwa across
+/// the whole UI).
+const DETAIL_FADE_MS: u64 = 320;
+const DETAIL_FADE_FROM: Rgb = Rgb(60, 60, 60);
+const DETAIL_FADE_TO: Rgb = Rgb(220, 220, 220);
 
 struct LanguageOption {
     label: &'static str,
@@ -83,6 +95,12 @@ pub struct MenuUI {
     selected_mode: usize,
     step: MenuStep,
     should_quit: bool,
+    /// Wall-clock instant of the last selection or step change. The
+    /// detail panel fades in from `DETAIL_FADE_FROM` to `DETAIL_FADE_TO`
+    /// over `DETAIL_FADE_MS` starting from this instant, so each new
+    /// selection's description shows up with a soft jiwa rather than
+    /// snapping into place.
+    selection_changed_at: Instant,
 }
 
 #[derive(Debug, Clone, PartialEq)]
@@ -98,6 +116,7 @@ impl MenuUI {
             selected_mode: 0,
             step: MenuStep::LanguageSelection,
             should_quit: false,
+            selection_changed_at: Instant::now(),
         }
     }
 
@@ -124,21 +143,36 @@ impl MenuUI {
         };
         self.step = MenuStep::ModeSelection;
         self.should_quit = false;
+        self.selection_changed_at = Instant::now();
     }
 
     fn run_app(
         &mut self,
         terminal: &mut Terminal<CrosstermBackend<io::Stdout>>,
     ) -> Result<(Language, GameMode), Box<dyn std::error::Error>> {
+        // Long timeout used once the description panel has finished
+        // fading in — large enough that the menu effectively waits on
+        // input without burning a tick every 30 ms.
+        const IDLE_TIMEOUT: Duration = Duration::from_secs(60);
+
         loop {
             terminal.draw(|f| self.ui(f))?;
 
-            if let Event::Key(key) = event::read()? {
-                if let Some(result) = self.handle_key(key) {
-                    return Ok(result);
-                }
-                if self.should_quit {
-                    return Err("User quit".into());
+            // Tick fast while the fade is still moving, then fall back
+            // to an input-blocking timeout so the menu is otherwise idle.
+            let timeout = if self.detail_fade_in_progress() {
+                REDRAW_TICK
+            } else {
+                IDLE_TIMEOUT
+            };
+            if event::poll(timeout)? {
+                if let Event::Key(key) = event::read()? {
+                    if let Some(result) = self.handle_key(key) {
+                        return Ok(result);
+                    }
+                    if self.should_quit {
+                        return Err("User quit".into());
+                    }
                 }
             }
         }
@@ -146,6 +180,10 @@ impl MenuUI {
 
     fn handle_key(&mut self, key: KeyEvent) -> Option<(Language, GameMode)> {
         const MODE_COUNT: usize = 4;
+
+        let prev_language = self.selected_language;
+        let prev_mode = self.selected_mode;
+        let prev_step = self.step.clone();
 
         match key.code {
             KeyCode::Char('q') => {
@@ -196,6 +234,14 @@ impl MenuUI {
             }
             _ => {}
         }
+
+        if self.selected_language != prev_language
+            || self.selected_mode != prev_mode
+            || self.step != prev_step
+        {
+            self.selection_changed_at = Instant::now();
+        }
+
         None
     }
 
@@ -258,7 +304,6 @@ impl MenuUI {
         self.render_detail_panel(
             f,
             detail_area,
-            "Language",
             LANGUAGE_OPTIONS[self.selected_language].description,
         );
     }
@@ -290,12 +335,7 @@ impl MenuUI {
         state.select(Some(self.selected_mode));
         f.render_stateful_widget(mode_list, list_area, &mut state);
 
-        self.render_detail_panel(
-            f,
-            detail_area,
-            "Mode",
-            MODE_OPTIONS[self.selected_mode].description,
-        );
+        self.render_detail_panel(f, detail_area, MODE_OPTIONS[self.selected_mode].description);
     }
 
     fn help_line(&self) -> HelpLine {
@@ -314,12 +354,12 @@ impl MenuUI {
         }
     }
 
-    fn render_detail_panel(&self, f: &mut Frame, area: Rect, title: &str, description: [&str; 2]) {
+    fn render_detail_panel(&self, f: &mut Frame, area: Rect, description: [&str; 2]) {
+        let color = self.detail_fade_color();
+        let style = Style::new().fg(color);
         let lines = vec![
-            Line::from(Span::styled(title, STYLE_LABEL)),
-            Line::default(),
-            Line::from(description[0]),
-            Line::from(description[1]),
+            Line::from(Span::styled(description[0].to_string(), style)),
+            Line::from(Span::styled(description[1].to_string(), style)),
         ];
 
         let detail = Paragraph::new(lines)
@@ -330,6 +370,26 @@ impl MenuUI {
                     .borders(Borders::ALL),
             );
         f.render_widget(detail, area);
+    }
+
+    /// Linear interpolation from `DETAIL_FADE_FROM` to `DETAIL_FADE_TO`
+    /// based on time elapsed since the last selection / step change.
+    fn detail_fade_color(&self) -> Color {
+        let elapsed_ms = self.selection_changed_at.elapsed().as_millis() as u64;
+        let alpha = if DETAIL_FADE_MS == 0 {
+            1.0
+        } else {
+            (elapsed_ms as f32 / DETAIL_FADE_MS as f32).clamp(0.0, 1.0)
+        };
+        let Rgb(r, g, b) = lerp_rgb(DETAIL_FADE_FROM, DETAIL_FADE_TO, alpha);
+        Color::Rgb(r, g, b)
+    }
+
+    /// True while the detail panel's fade-in is still progressing, so the
+    /// run loop can poll instead of blocking. Once it returns false the
+    /// menu can use a long-timeout poll and stay idle.
+    fn detail_fade_in_progress(&self) -> bool {
+        self.selection_changed_at.elapsed().as_millis() < (DETAIL_FADE_MS as u128)
     }
 }
 
