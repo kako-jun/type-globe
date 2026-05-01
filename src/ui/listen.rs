@@ -219,7 +219,7 @@ impl ListenUI {
             .alignment(Alignment::Center)
             .block(
                 Block::default()
-                    .title(title_text)
+                    .title(format!(" {title_text} "))
                     .title_style(STYLE_TITLE)
                     .borders(Borders::ALL)
                     .padding(Padding::uniform(1)),
@@ -301,7 +301,7 @@ impl ListenUI {
         ];
         let para = Paragraph::new(lines).alignment(Alignment::Left).block(
             Block::default()
-                .title("Status")
+                .title(" Status ")
                 .borders(Borders::ALL)
                 .padding(Padding::uniform(1)),
         );
@@ -352,7 +352,7 @@ impl ListenUI {
         };
         let para = Paragraph::new(lines)
             .alignment(Alignment::Left)
-            .block(Block::default().title("Log").borders(Borders::ALL));
+            .block(Block::default().title(" Log ").borders(Borders::ALL));
         f.render_widget(para, area);
     }
 
