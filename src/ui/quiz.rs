@@ -27,10 +27,12 @@ const NAME_MAX_CHARS: usize = 16;
 
 const STYLE_TITLE: Style = Style::new().fg(Color::Cyan).add_modifier(Modifier::BOLD);
 const STYLE_NORMAL: Style = Style::new().fg(Color::White);
+const STYLE_DIM: Style = Style::new().fg(Color::DarkGray);
 const STYLE_CORRECT: Style = Style::new().fg(Color::Green).add_modifier(Modifier::BOLD);
 const STYLE_INCORRECT: Style = Style::new().fg(Color::Red).add_modifier(Modifier::BOLD);
 const STYLE_INPUT_ECHO: Style = Style::new().fg(Color::Yellow).add_modifier(Modifier::BOLD);
 const STYLE_CHOICE_LABEL: Style = Style::new().fg(Color::Cyan).add_modifier(Modifier::BOLD);
+const INPUT_REJECT_FLASH_MS: u64 = 180;
 
 /// High-level state machine for one Quiz session. The per-question
 /// "show_result" flag still lives separately; this enum captures the flow
@@ -62,6 +64,8 @@ pub struct QuizUI {
     /// Question index the current `reveal` is anchored to. Used to detect
     /// when we need to reset the animation for the next question.
     reveal_for_question: Option<usize>,
+    rejected_char: Option<char>,
+    reject_flash_until: Option<Instant>,
 }
 
 impl QuizUI {
@@ -82,6 +86,8 @@ impl QuizUI {
             saved: false,
             reveal: None,
             reveal_for_question: None,
+            rejected_char: None,
+            reject_flash_until: None,
         }
     }
 
@@ -158,24 +164,21 @@ impl QuizUI {
         }
 
         match key.code {
-            KeyCode::Enter => {
-                let typed = self.input_buffer.clone();
-                if let Some(result) = self.quiz_game.answer_question_typed(&typed) {
-                    self.current_result = Some(result);
-                    self.show_result = true;
-                }
-            }
+            KeyCode::Enter => {}
             // The guard's side effect (skip_question) is intentional — Tab
             // skipping is the action, not a precondition. If skip fails
             // (no current question), the arm falls through to `_ => {}`.
             KeyCode::Tab if self.quiz_game.skip_question() => {
                 self.input_buffer.clear();
+                self.clear_reject_flash();
                 if self.quiz_game.is_game_finished() {
-                    return true;
+                    self.phase = Phase::Summary;
+                    return false;
                 }
             }
             KeyCode::Backspace => {
                 self.input_buffer.pop();
+                self.clear_reject_flash();
             }
             // Drop any modifier-bearing chord (Ctrl+X / Alt+X) so it cannot
             // accidentally land in the typed answer.
@@ -184,7 +187,7 @@ impl QuizUI {
                     .modifiers
                     .intersects(KeyModifiers::CONTROL | KeyModifiers::ALT) =>
             {
-                self.input_buffer.push(c);
+                self.handle_playing_char(c);
             }
             _ => {}
         }
@@ -203,6 +206,7 @@ impl QuizUI {
             self.show_result = false;
             self.current_result = None;
             self.input_buffer.clear();
+            self.clear_reject_flash();
         }
         false
     }
@@ -238,6 +242,7 @@ impl QuizUI {
                     // silently dropping on a disk error — Esc / next Enter
                     // still exits regardless.
                     eprintln!("warning: failed to save records: {err}");
+                    return false;
                 }
                 self.saved = true;
             }
@@ -313,18 +318,106 @@ impl QuizUI {
         if area.height == 0 {
             return;
         }
-        let body = match self.phase {
+        let line = match self.phase {
             // Hide the echo on result / summary — keeps the screen calm
             // during the "correct/wrong" reveal and final score reveal.
-            Phase::Playing if self.show_result => String::new(),
-            Phase::Playing => format!("> {}_", self.input_buffer),
-            Phase::Summary => String::new(),
-            Phase::NamingForRecord => format!("name> {}_", self.name_buffer),
+            Phase::Playing if self.show_result => Line::from(""),
+            Phase::Playing => self.render_playing_input_line(),
+            Phase::Summary => Line::from(""),
+            Phase::NamingForRecord => Line::from(vec![
+                Span::styled("name> ", STYLE_DIM),
+                Span::styled(self.name_buffer.clone(), STYLE_INPUT_ECHO),
+                Span::styled("_", STYLE_INPUT_ECHO),
+            ]),
         };
-        let line = Paragraph::new(body)
-            .style(STYLE_INPUT_ECHO)
-            .alignment(Alignment::Left);
-        f.render_widget(line, area);
+        f.render_widget(Paragraph::new(line).alignment(Alignment::Left), area);
+    }
+
+    fn render_playing_input_line(&self) -> Line<'static> {
+        let flash_active = self.reject_flash_is_active();
+        let prompt = if self.should_shake_input_echo() {
+            " > "
+        } else {
+            "> "
+        };
+        let mut spans = vec![
+            Span::styled(
+                prompt.to_string(),
+                if flash_active {
+                    STYLE_INCORRECT
+                } else {
+                    STYLE_DIM
+                },
+            ),
+            Span::styled(self.input_buffer.clone(), STYLE_CORRECT),
+        ];
+        if flash_active {
+            if let Some(c) = self.rejected_char {
+                spans.push(Span::styled(c.to_string(), STYLE_INCORRECT));
+            }
+            spans.push(Span::styled("_", STYLE_INCORRECT));
+        } else {
+            spans.push(Span::styled("_", STYLE_INPUT_ECHO));
+        }
+        Line::from(spans)
+    }
+
+    fn handle_playing_char(&mut self, c: char) {
+        let mut attempted = self.input_buffer.clone();
+        attempted.push(c);
+        if !self.quiz_game.is_valid_typed_prefix(&attempted) {
+            self.note_rejected_char(c);
+            return;
+        }
+
+        self.input_buffer.push(c);
+        self.clear_reject_flash();
+
+        let typed = self.input_buffer.to_lowercase();
+        if self
+            .quiz_game
+            .current_typing_candidates()
+            .iter()
+            .any(|candidate| candidate == &typed)
+        {
+            self.submit_current_answer();
+        }
+    }
+
+    fn submit_current_answer(&mut self) {
+        let typed = self.input_buffer.clone();
+        if let Some(result) = self.quiz_game.answer_question_typed(&typed) {
+            self.current_result = Some(result);
+            self.show_result = true;
+            self.clear_reject_flash();
+        }
+    }
+
+    fn note_rejected_char(&mut self, c: char) {
+        self.rejected_char = Some(c);
+        self.reject_flash_until =
+            Some(Instant::now() + Duration::from_millis(INPUT_REJECT_FLASH_MS));
+    }
+
+    fn clear_reject_flash(&mut self) {
+        self.rejected_char = None;
+        self.reject_flash_until = None;
+    }
+
+    fn reject_flash_is_active(&self) -> bool {
+        self.reject_flash_until
+            .map(|until| Instant::now() < until)
+            .unwrap_or(false)
+    }
+
+    fn should_shake_input_echo(&self) -> bool {
+        self.reject_flash_until
+            .map(|until| {
+                let remaining_ticks =
+                    until.saturating_duration_since(Instant::now()).as_millis() / 45;
+                self.reject_flash_is_active() && remaining_ticks % 2 == 0
+            })
+            .unwrap_or(false)
     }
 
     fn render_status_pane(&self, f: &mut Frame, area: Rect) {
@@ -551,7 +644,7 @@ impl QuizUI {
             Phase::Playing => HelpLine::new(vec![
                 HelpEntry::new("Esc", "Quit"),
                 HelpEntry::new("Tab", "Skip"),
-                HelpEntry::new("Enter", "Confirm"),
+                HelpEntry::new("Auto", "Confirm"),
                 HelpEntry::new("Bksp", "Erase"),
             ]),
             Phase::Summary => HelpLine::new(vec![

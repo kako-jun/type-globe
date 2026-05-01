@@ -15,6 +15,7 @@
 //! - a battle-log pane (used only on the result screen for v0.2.0).
 
 use crate::audio::TtsEngine;
+use crate::game::listening::{acceptable_listening_inputs, is_valid_listening_prefix};
 use crate::game::{ListeningSession, SubmissionResult};
 use crate::jiwa_core::{PulseHandle, PulseOpts, Rgb};
 use crate::types::{AnswerKind, Language};
@@ -42,6 +43,7 @@ const STYLE_CORRECT: Style = Style::new().fg(Color::Green).add_modifier(Modifier
 const STYLE_INCORRECT: Style = Style::new().fg(Color::Red).add_modifier(Modifier::BOLD);
 const STYLE_INPUT_ECHO: Style = Style::new().fg(Color::Yellow).add_modifier(Modifier::BOLD);
 const STYLE_LABEL: Style = Style::new().fg(Color::Cyan).add_modifier(Modifier::BOLD);
+const INPUT_REJECT_FLASH_MS: u64 = 180;
 
 #[derive(Debug, Clone, PartialEq)]
 enum Phase {
@@ -64,6 +66,8 @@ pub struct ListenUI {
     /// the count for the next UI iteration is cheap and mirrors what
     /// the hack-and-slash run is going to want for telemetry.
     plays: u32,
+    rejected_char: Option<char>,
+    reject_flash_until: Option<Instant>,
 }
 
 impl ListenUI {
@@ -76,6 +80,8 @@ impl ListenUI {
             pulse: Some(PulseHandle::start("♪", PulseOpts::default_listening())),
             started_at: Instant::now(),
             plays: 0,
+            rejected_char: None,
+            reject_flash_until: None,
         }
     }
 
@@ -155,21 +161,17 @@ impl ListenUI {
             {
                 self.replay();
             }
-            KeyCode::Enter => {
-                self.session.submit();
-                self.pulse = None;
-                self.phase = Phase::Result;
-                let _ = self.tts.stop();
-            }
+            KeyCode::Enter => {}
             KeyCode::Backspace => {
                 self.session.pop_char();
+                self.clear_reject_flash();
             }
             KeyCode::Char(c)
                 if !key
                     .modifiers
                     .intersects(KeyModifiers::CONTROL | KeyModifiers::ALT) =>
             {
-                self.session.push_char(c);
+                self.handle_playing_char(c);
             }
             _ => {}
         }
@@ -244,7 +246,7 @@ impl ListenUI {
             Line::from(Span::styled("Listening...", STYLE_NORMAL)),
             Line::from(""),
             Line::from(Span::styled(
-                "(audio only — type what you hear, then Enter)",
+                "(audio only — exact match auto-confirms)",
                 STYLE_DIM,
             )),
         ]
@@ -307,13 +309,10 @@ impl ListenUI {
             return;
         }
         let body = match self.phase {
-            Phase::Playing => format!("> {}_", self.session.input()),
-            Phase::Result => String::new(),
+            Phase::Playing => self.render_playing_input_line(),
+            Phase::Result => Line::from(""),
         };
-        let line = Paragraph::new(body)
-            .style(STYLE_INPUT_ECHO)
-            .alignment(Alignment::Left);
-        f.render_widget(line, area);
+        f.render_widget(Paragraph::new(body).alignment(Alignment::Left), area);
     }
 
     fn render_log_pane(&self, f: &mut Frame, area: Rect) {
@@ -358,12 +357,90 @@ impl ListenUI {
             Phase::Playing => HelpLine::new(vec![
                 HelpEntry::new("Esc", "Quit"),
                 HelpEntry::new("Space", "Replay"),
-                HelpEntry::new("Enter", "Confirm"),
                 HelpEntry::new("Bksp", "Erase"),
             ]),
             Phase::Result => HelpLine::new(vec![HelpEntry::new("Enter", "Menu")]),
         };
         help.render(f, area);
+    }
+
+    fn render_playing_input_line(&self) -> Line<'static> {
+        let flash_active = self.reject_flash_is_active();
+        let prompt = if self.should_shake_input_echo() {
+            " > "
+        } else {
+            "> "
+        };
+        let mut spans = vec![
+            Span::styled(
+                prompt.to_string(),
+                if flash_active {
+                    STYLE_INCORRECT
+                } else {
+                    STYLE_DIM
+                },
+            ),
+            Span::styled(self.session.input().to_string(), STYLE_CORRECT),
+        ];
+        if flash_active {
+            if let Some(c) = self.rejected_char {
+                spans.push(Span::styled(c.to_string(), STYLE_INCORRECT));
+            }
+            spans.push(Span::styled("_", STYLE_INCORRECT));
+        } else {
+            spans.push(Span::styled("_", STYLE_INPUT_ECHO));
+        }
+        Line::from(spans)
+    }
+
+    fn handle_playing_char(&mut self, c: char) {
+        let mut attempted = self.session.input().to_string();
+        attempted.push(c);
+        if !is_valid_listening_prefix(&self.language, &attempted, &self.session.prompt().text) {
+            self.note_rejected_char(c);
+            return;
+        }
+
+        self.session.push_char(c);
+        self.clear_reject_flash();
+
+        let typed = self.session.input().to_lowercase();
+        if acceptable_listening_inputs(&self.language, &self.session.prompt().text)
+            .iter()
+            .any(|candidate| candidate == &typed)
+        {
+            self.session.submit();
+            self.pulse = None;
+            self.phase = Phase::Result;
+            let _ = self.tts.stop();
+        }
+    }
+
+    fn note_rejected_char(&mut self, c: char) {
+        self.rejected_char = Some(c);
+        self.reject_flash_until =
+            Some(Instant::now() + Duration::from_millis(INPUT_REJECT_FLASH_MS));
+    }
+
+    fn clear_reject_flash(&mut self) {
+        self.rejected_char = None;
+        self.reject_flash_until = None;
+    }
+
+    fn reject_flash_is_active(&self) -> bool {
+        self.reject_flash_until
+            .map(|until| Instant::now() < until)
+            .unwrap_or(false)
+    }
+
+    fn should_shake_input_echo(&self) -> bool {
+        self.reject_flash_until
+            .map(|until| {
+                let remaining_ticks =
+                    until.saturating_duration_since(Instant::now()).as_millis() / 45;
+                self.reject_flash_is_active() && remaining_ticks % 2 == 0
+            })
+            .unwrap_or(false)
     }
 }
 
