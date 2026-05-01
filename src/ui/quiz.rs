@@ -1,4 +1,4 @@
-use crate::game::{QuizGame, QuizResult};
+use crate::game::QuizGame;
 use crate::io::Storage;
 use crate::jiwa_core::{RevealHandle, RevealOpts, Rgb};
 use crate::types::{Language, Question, ScoreEntry};
@@ -50,8 +50,6 @@ pub struct QuizUI {
     /// `docs/spec.md`, this is the only source of truth for which choice is
     /// being picked — there is no arrow / number-key fallback.
     input_buffer: String,
-    current_result: Option<QuizResult>,
-    show_result: bool,
     phase: Phase,
     name_buffer: String,
     records_file_path: String,
@@ -78,8 +76,6 @@ impl QuizUI {
         Self {
             quiz_game,
             input_buffer: String::new(),
-            current_result: None,
-            show_result: false,
             phase: Phase::Playing,
             name_buffer: String::new(),
             records_file_path,
@@ -159,10 +155,6 @@ impl QuizUI {
             Phase::Playing => {}
         }
 
-        if self.show_result {
-            return self.handle_key_result(key);
-        }
-
         match key.code {
             KeyCode::Enter => {}
             // The guard's side effect (skip_question) is intentional — Tab
@@ -190,23 +182,6 @@ impl QuizUI {
                 self.handle_playing_char(c);
             }
             _ => {}
-        }
-        false
-    }
-
-    fn handle_key_result(&mut self, key: KeyEvent) -> bool {
-        if key.code == KeyCode::Enter {
-            if self.quiz_game.is_game_finished() {
-                self.phase = Phase::Summary;
-                self.show_result = false;
-                self.current_result = None;
-                self.input_buffer.clear();
-                return false;
-            }
-            self.show_result = false;
-            self.current_result = None;
-            self.input_buffer.clear();
-            self.clear_reject_flash();
         }
         false
     }
@@ -286,7 +261,7 @@ impl QuizUI {
     }
 
     fn ui(&mut self, f: &mut Frame) {
-        if self.phase == Phase::Playing && !self.show_result {
+        if self.phase == Phase::Playing {
             self.ensure_reveal_for_current_question();
         }
 
@@ -319,9 +294,6 @@ impl QuizUI {
             return;
         }
         let line = match self.phase {
-            // Hide the echo on result / summary — keeps the screen calm
-            // during the "correct/wrong" reveal and final score reveal.
-            Phase::Playing if self.show_result => Line::from(""),
             Phase::Playing => self.render_playing_input_line(),
             Phase::Summary => Line::from(""),
             Phase::NamingForRecord => Line::from(vec![
@@ -365,8 +337,12 @@ impl QuizUI {
     fn handle_playing_char(&mut self, c: char) {
         let mut attempted = self.input_buffer.clone();
         attempted.push(c);
-        if !self.quiz_game.is_valid_typed_prefix(&attempted) {
+        // Per Issue #70 only the correct answer's typings are accepted;
+        // any divergence is treated as a mistype that flashes red and
+        // resets the buffer to zero so the player retries from scratch.
+        if !self.quiz_game.is_valid_correct_typed_prefix(&attempted) {
             self.note_rejected_char(c);
+            self.input_buffer.clear();
             return;
         }
 
@@ -376,7 +352,7 @@ impl QuizUI {
         let typed = self.input_buffer.to_lowercase();
         if self
             .quiz_game
-            .current_typing_candidates()
+            .current_correct_typing_candidates()
             .iter()
             .any(|candidate| candidate == &typed)
         {
@@ -384,12 +360,19 @@ impl QuizUI {
         }
     }
 
+    /// Record the correct answer in the game state and advance immediately.
+    /// Issue #70: there is no "Correct!" interstitial — the player flows
+    /// straight into the next question, or into the summary screen if this
+    /// was the final question (in which case `QuizGame` has already frozen
+    /// the elapsed time).
     fn submit_current_answer(&mut self) {
         let typed = self.input_buffer.clone();
-        if let Some(result) = self.quiz_game.answer_question_typed(&typed) {
-            self.current_result = Some(result);
-            self.show_result = true;
+        if self.quiz_game.answer_question_typed(&typed).is_some() {
+            self.input_buffer.clear();
             self.clear_reject_flash();
+            if self.quiz_game.is_game_finished() {
+                self.phase = Phase::Summary;
+            }
         }
     }
 
@@ -452,7 +435,6 @@ impl QuizUI {
         match self.phase {
             Phase::Summary => self.render_summary(f, chunks[1]),
             Phase::NamingForRecord => self.render_naming(f, chunks[1]),
-            Phase::Playing if self.show_result => self.render_result(f, chunks[1]),
             Phase::Playing => self.render_question(f, chunks[1]),
         }
     }
@@ -523,38 +505,6 @@ impl QuizUI {
                 .block(Block::default().borders(Borders::ALL));
             f.render_widget(no_question, area);
         }
-    }
-
-    fn render_result(&self, f: &mut Frame, area: Rect) {
-        // Use `get_answered_question` (not `get_current_question`) — the
-        // index has already advanced past the one we just answered, and
-        // we need *that* question's choices to look up the correct
-        // answer text. Otherwise two questions whose `correct_answer_index`
-        // happen to match (e.g. both `1`) leak the next question's
-        // choice into the "Wrong. Answer: …" line.
-        let (Some(result), Some(question)) =
-            (&self.current_result, self.quiz_game.get_answered_question())
-        else {
-            return;
-        };
-
-        let choices = self.quiz_game.get_choice_texts(question);
-
-        let (result_text, result_style) = if result.is_correct {
-            ("Correct!".to_string(), STYLE_CORRECT)
-        } else {
-            let correct_text = choices
-                .get(result.correct_answer_index)
-                .cloned()
-                .unwrap_or_else(|| "(unknown)".to_string());
-            (format!("Wrong. Answer: {correct_text}"), STYLE_INCORRECT)
-        };
-
-        let result_paragraph = Paragraph::new(result_text)
-            .style(result_style)
-            .alignment(Alignment::Center)
-            .block(Block::default().title("Result").borders(Borders::ALL));
-        f.render_widget(result_paragraph, area);
     }
 
     fn render_help_line(&self, f: &mut Frame, area: Rect) {
@@ -630,17 +580,6 @@ impl QuizUI {
 
     fn help_line(&self) -> HelpLine {
         match self.phase {
-            Phase::Playing if self.show_result => {
-                let next_label = if self.quiz_game.is_game_finished() {
-                    "Summary"
-                } else {
-                    "Next"
-                };
-                HelpLine::new(vec![
-                    HelpEntry::new("Esc", "Quit"),
-                    HelpEntry::new("Enter", next_label),
-                ])
-            }
             Phase::Playing => HelpLine::new(vec![
                 HelpEntry::new("Esc", "Quit"),
                 HelpEntry::new("Tab", "Skip"),
@@ -661,4 +600,5 @@ impl QuizUI {
             ]),
         }
     }
+
 }

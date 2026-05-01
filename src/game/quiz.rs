@@ -28,16 +28,20 @@ pub struct QuizGame {
     /// choice — including them would inflate WPM for fast guessers.
     typed_correct_chars: u32,
     start_time: Option<Instant>,
+    /// Elapsed time at the moment the run ended (last question answered or
+    /// skipped). Once set, `get_total_time` returns this fixed value so the
+    /// final result screen shows the time of the last keystroke, not a
+    /// timer that keeps ticking afterwards.
+    frozen_time: Option<Duration>,
     language: Language,
 }
 
 #[derive(Debug, Clone)]
+#[allow(dead_code)]
 pub struct QuizResult {
     pub is_correct: bool,
     pub correct_answer_index: usize,
-    #[allow(dead_code)]
     pub selected_answer_index: usize,
-    #[allow(dead_code)]
     pub time_taken: Duration,
 }
 
@@ -54,6 +58,7 @@ impl QuizGame {
             total_answers: 0,
             typed_correct_chars: 0,
             start_time: None,
+            frozen_time: None,
             language,
         }
     }
@@ -79,9 +84,10 @@ impl QuizGame {
     }
 
     /// The question the player most recently submitted an answer for.
-    /// Required by the result screen, which has to render the choices /
-    /// correct_answer_index of *that* question even though
-    /// `current_question_index` has already advanced to the next one.
+    /// Kept for tests and possible future reuse — Issue #70 removed the
+    /// per-question result screen, so the production code no longer needs
+    /// it during the run.
+    #[allow(dead_code)]
     pub fn get_answered_question(&self) -> Option<&Question> {
         self.last_answered_index.and_then(|i| self.questions.get(i))
     }
@@ -98,17 +104,19 @@ impl QuizGame {
             .collect()
     }
 
-    /// All currently acceptable typed strings for the active question.
-    /// Used by the UI for live prefix validation so a mistyped suffix
-    /// is rejected immediately instead of forcing a Backspace recovery.
-    pub fn current_typing_candidates(&self) -> Vec<String> {
+    /// Typed strings that count as the **correct** answer for the active
+    /// question. Per Issue #70 the player can only advance by typing the
+    /// correct choice — wrong choices' typings are not accepted, so the
+    /// candidate list is intentionally narrow.
+    pub fn current_correct_typing_candidates(&self) -> Vec<String> {
         let Some(question) = self.get_current_question() else {
             return Vec::new();
         };
-        let mut candidates: Vec<String> = question
-            .choices
-            .iter()
-            .flat_map(|choice| DataLoader::get_choice_typing_texts(choice, &self.language))
+        let Some(choice) = question.choices.get(question.correct_answer_index) else {
+            return Vec::new();
+        };
+        let mut candidates: Vec<String> = DataLoader::get_choice_typing_texts(choice, &self.language)
+            .into_iter()
             .map(|candidate| candidate.to_lowercase())
             .collect();
         candidates.sort();
@@ -116,14 +124,16 @@ impl QuizGame {
         candidates
     }
 
-    /// Whether `typed` is still a valid prefix of at least one answer
-    /// candidate for the active question. Empty input is always valid.
-    pub fn is_valid_typed_prefix(&self, typed: &str) -> bool {
+    /// Whether `typed` is still a valid prefix of the **correct** answer
+    /// for the active question. Empty input is always valid. Anything that
+    /// diverges from the correct prefix is rejected like a mistype, which
+    /// is the contract Issue #70 asks for.
+    pub fn is_valid_correct_typed_prefix(&self, typed: &str) -> bool {
         if typed.is_empty() {
             return true;
         }
         let typed = typed.to_lowercase();
-        self.current_typing_candidates()
+        self.current_correct_typing_candidates()
             .iter()
             .any(|candidate| candidate.starts_with(&typed))
     }
@@ -187,6 +197,8 @@ impl QuizGame {
             self.last_answered_index = Some(self.current_question_index);
             self.current_question_index += 1;
 
+            self.maybe_freeze_time();
+
             Some(result)
         } else {
             None
@@ -214,7 +226,27 @@ impl QuizGame {
     }
 
     pub fn get_total_time(&self) -> Option<Duration> {
+        if let Some(d) = self.frozen_time {
+            return Some(d);
+        }
         self.start_time.map(|start| start.elapsed())
+    }
+
+    /// Snapshot the current elapsed time once the run is finished, so the
+    /// summary screen reports the time of the final correct keystroke
+    /// rather than a timer that keeps running while the result is on
+    /// screen. Idempotent — only fires the first time it's called after
+    /// `is_game_finished()` returns true.
+    fn maybe_freeze_time(&mut self) {
+        if self.frozen_time.is_some() {
+            return;
+        }
+        if !self.is_game_finished() {
+            return;
+        }
+        if let Some(start) = self.start_time {
+            self.frozen_time = Some(start.elapsed());
+        }
     }
 
     /// Characters per minute over the full run so far. Returns 0 when the
@@ -249,6 +281,7 @@ impl QuizGame {
         if self.current_question_index < self.questions.len() {
             self.current_question_index += 1;
             self.total_answers += 1;
+            self.maybe_freeze_time();
             true
         } else {
             false
@@ -404,17 +437,27 @@ mod tests {
     }
 
     #[test]
-    fn valid_prefix_accepts_partial_match() {
+    fn valid_prefix_accepts_partial_match_of_correct_choice() {
         let question = make_question(&["borrow", "move", "ref", "clone"], 1);
         let game = QuizGame::new(vec![question], Language::English);
-        assert!(game.is_valid_typed_prefix("mo"));
+        assert!(game.is_valid_correct_typed_prefix("mo"));
     }
 
     #[test]
     fn valid_prefix_rejects_wrong_branch() {
         let question = make_question(&["borrow", "move", "ref", "clone"], 1);
         let game = QuizGame::new(vec![question], Language::English);
-        assert!(!game.is_valid_typed_prefix("mx"));
+        assert!(!game.is_valid_correct_typed_prefix("mx"));
+    }
+
+    #[test]
+    fn valid_prefix_rejects_wrong_choice_text() {
+        // Per Issue #70 only the correct choice's typings are valid; typing
+        // a wrong choice's full text must be rejected as a mistype.
+        let question = make_question(&["borrow", "move", "ref", "clone"], 1);
+        let game = QuizGame::new(vec![question], Language::English);
+        assert!(!game.is_valid_correct_typed_prefix("b"));
+        assert!(!game.is_valid_correct_typed_prefix("borrow"));
     }
 
     #[test]
@@ -422,9 +465,37 @@ mod tests {
         let mut question = make_question(&["東京", "大阪", "京都", "名古屋"], 0);
         question.choices[0].ja_typings = vec!["tokyo".into(), "toukyou".into()];
         let game = QuizGame::new(vec![question], Language::Japanese);
-        assert!(game.is_valid_typed_prefix("tok"));
-        assert!(game.is_valid_typed_prefix("tou"));
-        assert!(!game.is_valid_typed_prefix("tax"));
+        assert!(game.is_valid_correct_typed_prefix("tok"));
+        assert!(game.is_valid_correct_typed_prefix("tou"));
+        assert!(!game.is_valid_correct_typed_prefix("tax"));
+    }
+
+    #[test]
+    fn final_time_is_frozen_at_last_correct_answer() {
+        // Two questions; after answering both, get_total_time() must return
+        // a stable value even after additional time elapses.
+        let q1 = make_question(&["right", "a", "b", "c"], 0);
+        let q2 = make_question(&["right", "a", "b", "c"], 0);
+        let mut game = QuizGame::new(vec![q1, q2], Language::English);
+        game.start();
+        game.answer_question_typed("right");
+        game.answer_question_typed("right");
+        let frozen = game.get_total_time().unwrap();
+        std::thread::sleep(Duration::from_millis(20));
+        let after_sleep = game.get_total_time().unwrap();
+        assert_eq!(frozen, after_sleep);
+    }
+
+    #[test]
+    fn final_time_is_frozen_when_last_question_is_skipped() {
+        let q = make_question(&["right", "a", "b", "c"], 0);
+        let mut game = QuizGame::new(vec![q], Language::English);
+        game.start();
+        assert!(game.skip_question());
+        let frozen = game.get_total_time().unwrap();
+        std::thread::sleep(Duration::from_millis(20));
+        let after_sleep = game.get_total_time().unwrap();
+        assert_eq!(frozen, after_sleep);
     }
 
     #[test]
