@@ -37,7 +37,7 @@ pub fn find_prefix_conflicts(questions: &[Question]) -> Vec<PrefixConflict> {
         let languages: Vec<&String> = question
             .choices
             .iter()
-            .flat_map(|c| c.keys())
+            .flat_map(|c| c.labels.keys())
             .collect::<std::collections::BTreeSet<_>>()
             .into_iter()
             .collect();
@@ -46,7 +46,7 @@ pub fn find_prefix_conflicts(questions: &[Question]) -> Vec<PrefixConflict> {
                 .choices
                 .iter()
                 .enumerate()
-                .filter_map(|(i, c)| c.get(language).map(|t| (i, t.as_str())))
+                .filter_map(|(i, c)| c.labels.get(language).map(|t| (i, t.as_str())))
                 .collect();
             for (a_pos, (a_idx, a_text)) in texts.iter().enumerate() {
                 for (b_idx, b_text) in texts.iter().skip(a_pos + 1) {
@@ -101,6 +101,7 @@ pub fn format_conflict(c: &PrefixConflict) -> String {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use crate::types::Choice;
     use std::collections::HashMap;
 
     fn question_with_choices(id: &str, choices_per_lang: &[(&str, &[&str])]) -> Question {
@@ -118,13 +119,16 @@ mod tests {
 
         let choices = (0..max_choices)
             .map(|i| {
-                let mut h = HashMap::new();
+                let mut labels = HashMap::new();
                 for (lang, slice) in choices_per_lang {
                     if let Some(text) = slice.get(i) {
-                        h.insert(lang.to_string(), text.to_string());
+                        labels.insert(lang.to_string(), text.to_string());
                     }
                 }
-                h
+                Choice {
+                    labels,
+                    ja_typings: Vec::new(),
+                }
             })
             .collect();
 
@@ -263,16 +267,22 @@ mod tests {
             },
             choices: vec![
                 {
-                    let mut h = HashMap::new();
-                    h.insert("en".to_string(), "let".to_string());
+                    let mut labels = HashMap::new();
+                    labels.insert("en".to_string(), "let".to_string());
                     // No `ja` entry on purpose.
-                    h
+                    Choice {
+                        labels,
+                        ja_typings: Vec::new(),
+                    }
                 },
                 {
-                    let mut h = HashMap::new();
-                    h.insert("en".to_string(), "let mut".to_string());
-                    h.insert("ja".to_string(), "可変let".to_string());
-                    h
+                    let mut labels = HashMap::new();
+                    labels.insert("en".to_string(), "let mut".to_string());
+                    labels.insert("ja".to_string(), "可変let".to_string());
+                    Choice {
+                        labels,
+                        ja_typings: Vec::new(),
+                    }
                 },
             ],
             correct_answer_index: 0,

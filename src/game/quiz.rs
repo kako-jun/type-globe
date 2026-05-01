@@ -103,10 +103,13 @@ impl QuizGame {
     /// match counts — prefix matches do nothing (so `mov` does not auto-pick
     /// `move`). A non-matching string yields an incorrect answer.
     pub fn answer_question_typed(&mut self, typed: &str) -> Option<QuizResult> {
+        let typed = typed.to_lowercase();
         let index = self.get_current_question().and_then(|question| {
-            self.get_choice_texts(question)
-                .iter()
-                .position(|choice| choice == typed)
+            question.choices.iter().position(|choice| {
+                DataLoader::get_choice_typing_texts(choice, &self.language)
+                    .iter()
+                    .any(|candidate| candidate.to_lowercase() == typed)
+            })
         });
         // usize::MAX guarantees a non-match against any valid index.
         self.answer_question(index.unwrap_or(usize::MAX))
@@ -223,6 +226,7 @@ impl QuizGame {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use crate::types::Choice;
     use std::collections::HashMap;
 
     fn make_question(choices: &[&str], correct: usize) -> Question {
@@ -233,10 +237,13 @@ mod tests {
         let choices = choices
             .iter()
             .map(|text| {
-                let mut h = HashMap::new();
-                h.insert("ja".to_string(), text.to_string());
-                h.insert("en".to_string(), text.to_string());
-                h
+                let mut labels = HashMap::new();
+                labels.insert("ja".to_string(), text.to_string());
+                labels.insert("en".to_string(), text.to_string());
+                Choice {
+                    labels,
+                    ja_typings: Vec::new(),
+                }
             })
             .collect();
 
@@ -292,13 +299,12 @@ mod tests {
     }
 
     #[test]
-    fn typed_is_case_sensitive() {
-        // Documents the current contract: matching is byte-exact, no folding.
+    fn typed_is_case_insensitive() {
         let question = make_question(&["borrow", "move", "ref", "clone"], 1);
         let mut game = QuizGame::new(vec![question], Language::English);
         game.start();
         let result = game.answer_question_typed("Move").expect("result");
-        assert!(!result.is_correct);
+        assert!(result.is_correct);
     }
 
     #[test]
@@ -329,6 +335,39 @@ mod tests {
             .expect("result");
         assert!(result.is_correct);
         assert_eq!(result.selected_answer_index, 0);
+    }
+
+    #[test]
+    fn japanese_mode_accepts_explicit_romaji() {
+        let mut question = make_question(&["東京", "大阪", "京都", "名古屋"], 0);
+        question.choices[0].ja_typings = vec!["tokyo".into(), "toukyou".into()];
+        question.choices[1].ja_typings = vec!["osaka".into(), "oosaka".into()];
+        question.choices[2].ja_typings = vec!["kyoto".into(), "kyouto".into()];
+        question.choices[3].ja_typings = vec!["nagoya".into()];
+        let mut game = QuizGame::new(vec![question], Language::Japanese);
+        game.start();
+        let result = game.answer_question_typed("tokyo").expect("result");
+        assert!(result.is_correct);
+    }
+
+    #[test]
+    fn japanese_mode_accepts_uppercase_romaji() {
+        let mut question = make_question(&["東京", "大阪", "京都", "名古屋"], 0);
+        question.choices[0].ja_typings = vec!["tokyo".into(), "toukyou".into()];
+        let mut game = QuizGame::new(vec![question], Language::Japanese);
+        game.start();
+        let result = game.answer_question_typed("TOKYO").expect("result");
+        assert!(result.is_correct);
+    }
+
+    #[test]
+    fn japanese_mode_accepts_long_vowel_alias() {
+        let mut question = make_question(&["とうきょう", "おおさか", "きょうと", "なごや"], 0);
+        question.choices[0].ja_typings = vec!["tokyo".into(), "toukyou".into()];
+        let mut game = QuizGame::new(vec![question], Language::Japanese);
+        game.start();
+        let result = game.answer_question_typed("toukyou").expect("result");
+        assert!(result.is_correct);
     }
 
     #[test]
@@ -419,12 +458,15 @@ mod tests {
         let answered = game
             .get_answered_question()
             .expect("just-answered question is set");
-        assert_eq!(answered.choices[result.correct_answer_index]["en"], "H2O");
+        assert_eq!(
+            answered.choices[result.correct_answer_index].labels["en"],
+            "H2O"
+        );
 
         // And `get_current_question` correctly points at Q2 for the
         // next round — the two getters are not interchangeable.
         let current = game.get_current_question().expect("next question");
-        assert_eq!(current.choices[1]["en"], "Tokyo");
+        assert_eq!(current.choices[1].labels["en"], "Tokyo");
     }
 
     #[test]

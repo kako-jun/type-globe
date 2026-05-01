@@ -115,7 +115,7 @@ fn run_listening_practice(
         return Ok(());
     }
 
-    let session = match ListeningSession::from_pool(&pool) {
+    let session = match ListeningSession::from_pool(&pool, language.clone()) {
         Some(s) => s,
         None => {
             show_return_to_menu_message("Failed to pick a listening prompt.")?;
