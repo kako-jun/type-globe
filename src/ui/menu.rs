@@ -54,7 +54,7 @@ const LANGUAGE_OPTIONS: [LanguageOption; 2] = [
         label: "English",
         description: [
             "Use English prompts and localized records.",
-            "English questions and records labels are used.",
+            "問題文と記録表示を英語にします。",
         ],
     },
 ];
