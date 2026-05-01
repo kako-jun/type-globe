@@ -70,7 +70,9 @@ impl RevealOpts {
             char_interval: Duration::from_millis(45),
             fade_duration: Duration::from_millis(320),
             fade_from: Rgb(60, 60, 60),
-            fade_to: Rgb(255, 255, 255),
+            // Per Issue #72 the question text settles to a soft green so
+            // it stays distinct from the choices and the input echo.
+            fade_to: Rgb(160, 220, 160),
         }
     }
 }
@@ -104,6 +106,10 @@ impl RevealHandle {
     }
 
     /// Convenience for production callers: anchors at `Instant::now()`.
+    /// Currently unused — quiz/listen pass an explicit `now` so the
+    /// question and choices reveals stay aligned to a single instant —
+    /// kept on the public API for future call sites.
+    #[allow(dead_code)]
     pub fn start(text: &str, opts: RevealOpts) -> Self {
         Self::start_at(text, opts, Instant::now())
     }

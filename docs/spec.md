@@ -55,6 +55,9 @@ Quiz is paired with score-attack modes; listening is paired with the RPG. The tw
 [Esc] Quit  [Tab] Skip  [F5] Restart
 ```
 
+- **The four choices are shuffled per question** so the answer's display position varies. Labels A/B/C/D are positional, not identity-based; the typing match is identity-based and stays correct under any shuffle.
+- **The choices fade in after the question text.** The question reveal starts immediately; the choices block stays invisible for ~0.5 s, then all four fade in together over ~0.3 s. This frames the question first and the options second.
+- **Question text settles to a soft green** (`Rgb(160, 220, 160)`) so it stays distinct from the choices and the input echo.
 - **No arrow-key selection.** Players type the correct choice's text directly; this both selects and answers.
 - **Exact match auto-confirms and immediately advances** to the next question — there is no "Correct!" interstitial and no Enter-to-continue. The flow is a continuous typing rhythm.
 - **Only the correct choice's typings are accepted as a valid prefix.** Any divergence (including the full text of a wrong choice) is treated as a mistype: the input flashes red and the buffer resets to zero, and the run does not advance. The player can only proceed by typing the correct answer.

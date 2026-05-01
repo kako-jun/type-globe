@@ -16,6 +16,7 @@ use ratatui::{
     widgets::{Block, Borders, List, ListItem, Paragraph},
     Frame, Terminal,
 };
+use rand::seq::SliceRandom;
 use std::io;
 use std::time::{Duration, Instant, SystemTime, UNIX_EPOCH};
 
@@ -31,8 +32,16 @@ const STYLE_DIM: Style = Style::new().fg(Color::DarkGray);
 const STYLE_CORRECT: Style = Style::new().fg(Color::Green).add_modifier(Modifier::BOLD);
 const STYLE_INCORRECT: Style = Style::new().fg(Color::Red).add_modifier(Modifier::BOLD);
 const STYLE_INPUT_ECHO: Style = Style::new().fg(Color::Yellow).add_modifier(Modifier::BOLD);
-const STYLE_CHOICE_LABEL: Style = Style::new().fg(Color::Cyan).add_modifier(Modifier::BOLD);
 const INPUT_REJECT_FLASH_MS: u64 = 180;
+/// How long after the question reveal starts before the choices block begins
+/// fading in (Issue #72). Roughly the time it takes for the eye to land on
+/// the question line, so the choices show up just as the player is ready
+/// to look down.
+const CHOICES_REVEAL_DELAY_MS: u64 = 500;
+/// How long the choices block takes to fade from invisible to its final
+/// color. The four choices appear as a single group (Issue #72), so this
+/// is the only timing knob the choices reveal needs.
+const CHOICES_FADE_MS: u64 = 320;
 
 /// High-level state machine for one Quiz session. Issue #70 removed the
 /// per-question result interstitial, so playing → summary → records-name-
@@ -62,6 +71,15 @@ pub struct QuizUI {
     /// Question index the current `reveal` is anchored to. Used to detect
     /// when we need to reset the animation for the next question.
     reveal_for_question: Option<usize>,
+    /// Permutation of the active question's choices (Issue #72). Indices
+    /// reference the original `question.choices`; `correct_answer_index`
+    /// stays meaningful because the typing match is identity-based, not
+    /// position-based.
+    choice_order: Vec<usize>,
+    /// Wall-clock instant at which the choices block begins fading in
+    /// (Issue #72). Set when a new question's reveal is anchored, so the
+    /// choices appear `CHOICES_REVEAL_DELAY_MS` after the question text.
+    choices_reveal_starts_at: Option<Instant>,
     rejected_char: Option<char>,
     reject_flash_until: Option<Instant>,
 }
@@ -82,6 +100,8 @@ impl QuizUI {
             saved: false,
             reveal: None,
             reveal_for_question: None,
+            choice_order: Vec::new(),
+            choices_reveal_starts_at: None,
             rejected_char: None,
             reject_flash_until: None,
         }
@@ -282,11 +302,43 @@ impl QuizUI {
         if self.reveal_for_question == Some(current_idx) {
             return;
         }
+        let now = Instant::now();
         self.reveal = self.quiz_game.get_current_question().map(|question| {
             let text = self.quiz_game.get_question_text(question);
-            RevealHandle::start(&text, RevealOpts::default_quiz())
+            RevealHandle::start_at(&text, RevealOpts::default_quiz(), now)
         });
+        // Issue #72: shuffle the four choices each question and stagger
+        // their reveal so the player reads the question first, then the
+        // choices fade in together a moment later.
+        if let Some(question) = self.quiz_game.get_current_question() {
+            let mut order: Vec<usize> = (0..question.choices.len()).collect();
+            order.shuffle(&mut rand::thread_rng());
+            self.choice_order = order;
+            self.choices_reveal_starts_at =
+                Some(now + Duration::from_millis(CHOICES_REVEAL_DELAY_MS));
+        } else {
+            self.choice_order.clear();
+            self.choices_reveal_starts_at = None;
+        }
         self.reveal_for_question = Some(current_idx);
+    }
+
+    /// Linear fade-in alpha for the choices block. Returns 0.0 while the
+    /// reveal is still scheduled in the future, ramps to 1.0 over
+    /// `CHOICES_FADE_MS`, and stays pinned at 1.0 afterwards.
+    fn choices_fade_alpha(&self) -> f32 {
+        let Some(starts_at) = self.choices_reveal_starts_at else {
+            return 1.0;
+        };
+        let now = Instant::now();
+        if now < starts_at {
+            return 0.0;
+        }
+        let elapsed_ms = now.saturating_duration_since(starts_at).as_millis() as u64;
+        if CHOICES_FADE_MS == 0 {
+            return 1.0;
+        }
+        (elapsed_ms as f32 / CHOICES_FADE_MS as f32).clamp(0.0, 1.0)
     }
 
     fn render_input_echo(&self, f: &mut Frame, area: Rect) {
@@ -481,16 +533,33 @@ impl QuizUI {
 
             // Plain non-highlighted list — typed selection means there is no
             // "currently focused" choice. Labels A/B/C/D match docs/spec.md.
+            // Issue #72: display order is the shuffled `choice_order`, not
+            // the original index, so the answer's position varies per
+            // question and the four choices fade in together after the
+            // question text is on screen.
             const LABELS: [&str; 4] = ["A", "B", "C", "D"];
-            let choice_items: Vec<ListItem> = choices
+            let alpha = self.choices_fade_alpha();
+            let label_color = lerp_rgb_color(Rgb(20, 60, 80), Rgb(80, 200, 255), alpha);
+            let text_color = lerp_rgb_color(Rgb(20, 20, 20), Rgb(255, 255, 255), alpha);
+            let label_style = Style::new()
+                .fg(label_color)
+                .add_modifier(Modifier::BOLD);
+            let text_style = Style::new().fg(text_color);
+            let order: Vec<usize> = if self.choice_order.len() == choices.len() {
+                self.choice_order.clone()
+            } else {
+                (0..choices.len()).collect()
+            };
+            let choice_items: Vec<ListItem> = order
                 .iter()
                 .enumerate()
-                .map(|(i, choice)| {
-                    let label = LABELS.get(i).copied().unwrap_or("?");
-                    ListItem::new(Line::from(vec![
-                        Span::styled(format!("{label}) "), STYLE_CHOICE_LABEL),
-                        Span::styled(choice.clone(), STYLE_NORMAL),
-                    ]))
+                .filter_map(|(display_idx, &orig_idx)| {
+                    let label = LABELS.get(display_idx).copied().unwrap_or("?");
+                    let choice = choices.get(orig_idx)?.clone();
+                    Some(ListItem::new(Line::from(vec![
+                        Span::styled(format!("{label}) "), label_style),
+                        Span::styled(choice, text_style),
+                    ])))
                 })
                 .collect();
 
@@ -600,4 +669,17 @@ impl QuizUI {
             ]),
         }
     }
+}
+
+/// Interpolate two `Rgb` triples and return a ratatui `Color` so the
+/// quiz renderer can fade the choices block in over `CHOICES_FADE_MS`
+/// (Issue #72) without pulling in a second color helper.
+fn lerp_rgb_color(from: Rgb, to: Rgb, t: f32) -> Color {
+    let t = t.clamp(0.0, 1.0);
+    let lerp = |a: u8, b: u8| -> u8 {
+        let af = a as f32;
+        let bf = b as f32;
+        (af + (bf - af) * t).round().clamp(0.0, 255.0) as u8
+    };
+    Color::Rgb(lerp(from.0, to.0), lerp(from.1, to.1), lerp(from.2, to.2))
 }

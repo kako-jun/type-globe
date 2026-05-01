@@ -5,6 +5,7 @@ use crossterm::{
     execute,
     terminal::{disable_raw_mode, enable_raw_mode, EnterAlternateScreen, LeaveAlternateScreen},
 };
+use std::time::{Duration, Instant};
 use ratatui::{
     backend::CrosstermBackend,
     layout::{Alignment, Constraint, Direction, Layout, Rect},
@@ -18,7 +19,17 @@ use std::io;
 const STYLE_TITLE: Style = Style::new().fg(Color::Cyan).add_modifier(Modifier::BOLD);
 const STYLE_SELECTED: Style = Style::new().fg(Color::Yellow).add_modifier(Modifier::BOLD);
 const STYLE_NORMAL: Style = Style::new();
-const STYLE_LABEL: Style = Style::new().fg(Color::Cyan).add_modifier(Modifier::BOLD);
+
+/// Cadence used by the menu while a description is fading in. Short enough
+/// that the lerp reads as continuous motion; the rest of the time the
+/// blocking event read takes over so the menu is otherwise idle.
+const REDRAW_TICK: Duration = Duration::from_millis(30);
+/// How long the right-pane description spends fading from dim gray to its
+/// final color after a selection change (Issue #72 follow-up: jiwa across
+/// the whole UI).
+const DETAIL_FADE_MS: u64 = 320;
+const DETAIL_FADE_FROM: Color = Color::Rgb(60, 60, 60);
+const DETAIL_FADE_TO: Color = Color::Rgb(220, 220, 220);
 
 struct LanguageOption {
     label: &'static str,
@@ -83,6 +94,12 @@ pub struct MenuUI {
     selected_mode: usize,
     step: MenuStep,
     should_quit: bool,
+    /// Wall-clock instant of the last selection or step change. The
+    /// detail panel fades in from `DETAIL_FADE_FROM` to `DETAIL_FADE_TO`
+    /// over `DETAIL_FADE_MS` starting from this instant, so each new
+    /// selection's description shows up with a soft jiwa rather than
+    /// snapping into place.
+    selection_changed_at: Instant,
 }
 
 #[derive(Debug, Clone, PartialEq)]
@@ -98,6 +115,7 @@ impl MenuUI {
             selected_mode: 0,
             step: MenuStep::LanguageSelection,
             should_quit: false,
+            selection_changed_at: Instant::now(),
         }
     }
 
@@ -124,6 +142,7 @@ impl MenuUI {
         };
         self.step = MenuStep::ModeSelection;
         self.should_quit = false;
+        self.selection_changed_at = Instant::now();
     }
 
     fn run_app(
@@ -133,12 +152,16 @@ impl MenuUI {
         loop {
             terminal.draw(|f| self.ui(f))?;
 
-            if let Event::Key(key) = event::read()? {
-                if let Some(result) = self.handle_key(key) {
-                    return Ok(result);
-                }
-                if self.should_quit {
-                    return Err("User quit".into());
+            // Poll instead of blocking read so the description panel can
+            // re-render mid-fade without waiting for the next keypress.
+            if event::poll(REDRAW_TICK)? {
+                if let Event::Key(key) = event::read()? {
+                    if let Some(result) = self.handle_key(key) {
+                        return Ok(result);
+                    }
+                    if self.should_quit {
+                        return Err("User quit".into());
+                    }
                 }
             }
         }
@@ -146,6 +169,10 @@ impl MenuUI {
 
     fn handle_key(&mut self, key: KeyEvent) -> Option<(Language, GameMode)> {
         const MODE_COUNT: usize = 4;
+
+        let prev_language = self.selected_language;
+        let prev_mode = self.selected_mode;
+        let prev_step = self.step.clone();
 
         match key.code {
             KeyCode::Char('q') => {
@@ -196,6 +223,14 @@ impl MenuUI {
             }
             _ => {}
         }
+
+        if self.selected_language != prev_language
+            || self.selected_mode != prev_mode
+            || self.step != prev_step
+        {
+            self.selection_changed_at = Instant::now();
+        }
+
         None
     }
 
@@ -258,7 +293,6 @@ impl MenuUI {
         self.render_detail_panel(
             f,
             detail_area,
-            "Language",
             LANGUAGE_OPTIONS[self.selected_language].description,
         );
     }
@@ -293,7 +327,6 @@ impl MenuUI {
         self.render_detail_panel(
             f,
             detail_area,
-            "Mode",
             MODE_OPTIONS[self.selected_mode].description,
         );
     }
@@ -314,12 +347,12 @@ impl MenuUI {
         }
     }
 
-    fn render_detail_panel(&self, f: &mut Frame, area: Rect, title: &str, description: [&str; 2]) {
+    fn render_detail_panel(&self, f: &mut Frame, area: Rect, description: [&str; 2]) {
+        let color = self.detail_fade_color();
+        let style = Style::new().fg(color);
         let lines = vec![
-            Line::from(Span::styled(title, STYLE_LABEL)),
-            Line::default(),
-            Line::from(description[0]),
-            Line::from(description[1]),
+            Line::from(Span::styled(description[0].to_string(), style)),
+            Line::from(Span::styled(description[1].to_string(), style)),
         ];
 
         let detail = Paragraph::new(lines)
@@ -331,6 +364,42 @@ impl MenuUI {
             );
         f.render_widget(detail, area);
     }
+
+    /// Linear interpolation from `DETAIL_FADE_FROM` to `DETAIL_FADE_TO`
+    /// based on time elapsed since the last selection / step change.
+    fn detail_fade_color(&self) -> Color {
+        let elapsed_ms = self.selection_changed_at.elapsed().as_millis() as u64;
+        let alpha = if DETAIL_FADE_MS == 0 {
+            1.0
+        } else {
+            (elapsed_ms as f32 / DETAIL_FADE_MS as f32).clamp(0.0, 1.0)
+        };
+        lerp_color(DETAIL_FADE_FROM, DETAIL_FADE_TO, alpha)
+    }
+}
+
+fn lerp_color(from: Color, to: Color, t: f32) -> Color {
+    let (fr, fg, fb) = unwrap_rgb(from);
+    let (tr, tg, tb) = unwrap_rgb(to);
+    let r = lerp_u8(fr, tr, t);
+    let g = lerp_u8(fg, tg, t);
+    let b = lerp_u8(fb, tb, t);
+    Color::Rgb(r, g, b)
+}
+
+fn unwrap_rgb(c: Color) -> (u8, u8, u8) {
+    match c {
+        Color::Rgb(r, g, b) => (r, g, b),
+        _ => (255, 255, 255),
+    }
+}
+
+fn lerp_u8(a: u8, b: u8, t: f32) -> u8 {
+    let af = a as f32;
+    let bf = b as f32;
+    (af + (bf - af) * t.clamp(0.0, 1.0))
+        .round()
+        .clamp(0.0, 255.0) as u8
 }
 
 fn split_selection_area(area: Rect) -> [Rect; 2] {
