@@ -75,7 +75,7 @@ On Linux, the `speech-dispatcher` daemon must be installed and running. If it is
 
 **Quiz**
 
-Quiz answers are typed directly — there is no arrow / number-key fallback. The exact choice text must be entered, then `Enter` confirms. Prefix matches do not auto-confirm (e.g. `mov` does not pick `move`).
+Quiz answers are typed directly — there is no arrow / number-key fallback. `Enter` confirms the answer, and prefix matches do not auto-confirm (e.g. `mov` does not pick `move`). Matching is case-insensitive (`H2O` / `h2o`, `TOKYO` / `tokyo`). In JA mode, a single answer may intentionally accept multiple romanized spellings (`tokyo` / `toukyou`, `osaka` / `oosaka`, etc.), and bundled data can declare them explicitly via `ja_typings`. When a choice has a well-established official Latin spelling (for example a proper name), that spelling may also be accepted.
 
 | Key | Action |
 |---|---|

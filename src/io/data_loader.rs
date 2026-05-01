@@ -1,4 +1,5 @@
-use crate::types::{Language, ListeningPrompt, Question};
+use crate::io::romaji::{hiragana_to_hepburn, hiragana_to_hepburn_variants};
+use crate::types::{Choice, Language, ListeningPrompt, Question};
 use std::fs;
 use std::path::Path;
 
@@ -54,14 +55,41 @@ impl DataLoader {
             })
     }
 
-    pub fn get_choice_text(
-        choice: &std::collections::HashMap<String, String>,
-        language: &Language,
-    ) -> String {
+    pub fn get_choice_text(choice: &Choice, language: &Language) -> String {
         choice
+            .labels
             .get(language.code())
             .cloned()
-            .unwrap_or_else(|| choice.values().next().cloned().unwrap_or_default())
+            .unwrap_or_else(|| choice.labels.values().next().cloned().unwrap_or_default())
+    }
+
+    pub fn get_choice_typing_texts(choice: &Choice, language: &Language) -> Vec<String> {
+        match language {
+            Language::Japanese => {
+                let mut variants = Vec::new();
+                for typing in &choice.ja_typings {
+                    variants.push(typing.to_lowercase());
+                }
+                let displayed = Self::get_choice_text(choice, language);
+                if displayed.is_ascii() {
+                    variants.push(displayed.to_lowercase());
+                } else {
+                    variants.extend(
+                        hiragana_to_hepburn_variants(&displayed)
+                            .into_iter()
+                            .filter(|candidate| !candidate.is_empty()),
+                    );
+                    let canonical = hiragana_to_hepburn(&displayed);
+                    if !canonical.is_empty() {
+                        variants.push(canonical);
+                    }
+                }
+                variants.sort();
+                variants.dedup();
+                variants
+            }
+            Language::English => vec![Self::get_choice_text(choice, language)],
+        }
     }
 
     pub fn create_sample_questions() -> Vec<Question> {
@@ -82,28 +110,40 @@ impl DataLoader {
                 },
                 choices: vec![
                     {
-                        let mut map = HashMap::new();
-                        map.insert("ja".to_string(), "CO2".to_string());
-                        map.insert("en".to_string(), "CO2".to_string());
-                        map
+                        let mut labels = HashMap::new();
+                        labels.insert("ja".to_string(), "CO2".to_string());
+                        labels.insert("en".to_string(), "CO2".to_string());
+                        Choice {
+                            labels,
+                            ja_typings: Vec::new(),
+                        }
                     },
                     {
-                        let mut map = HashMap::new();
-                        map.insert("ja".to_string(), "H2O".to_string());
-                        map.insert("en".to_string(), "H2O".to_string());
-                        map
+                        let mut labels = HashMap::new();
+                        labels.insert("ja".to_string(), "H2O".to_string());
+                        labels.insert("en".to_string(), "H2O".to_string());
+                        Choice {
+                            labels,
+                            ja_typings: Vec::new(),
+                        }
                     },
                     {
-                        let mut map = HashMap::new();
-                        map.insert("ja".to_string(), "O2".to_string());
-                        map.insert("en".to_string(), "O2".to_string());
-                        map
+                        let mut labels = HashMap::new();
+                        labels.insert("ja".to_string(), "O2".to_string());
+                        labels.insert("en".to_string(), "O2".to_string());
+                        Choice {
+                            labels,
+                            ja_typings: Vec::new(),
+                        }
                     },
                     {
-                        let mut map = HashMap::new();
-                        map.insert("ja".to_string(), "N2".to_string());
-                        map.insert("en".to_string(), "N2".to_string());
-                        map
+                        let mut labels = HashMap::new();
+                        labels.insert("ja".to_string(), "N2".to_string());
+                        labels.insert("en".to_string(), "N2".to_string());
+                        Choice {
+                            labels,
+                            ja_typings: Vec::new(),
+                        }
                     },
                 ],
                 correct_answer_index: 1,
@@ -123,28 +163,40 @@ impl DataLoader {
                 },
                 choices: vec![
                     {
-                        let mut map = HashMap::new();
-                        map.insert("ja".to_string(), "大阪".to_string());
-                        map.insert("en".to_string(), "Osaka".to_string());
-                        map
+                        let mut labels = HashMap::new();
+                        labels.insert("ja".to_string(), "大阪".to_string());
+                        labels.insert("en".to_string(), "Osaka".to_string());
+                        Choice {
+                            labels,
+                            ja_typings: vec!["osaka".to_string(), "oosaka".to_string()],
+                        }
                     },
                     {
-                        let mut map = HashMap::new();
-                        map.insert("ja".to_string(), "東京".to_string());
-                        map.insert("en".to_string(), "Tokyo".to_string());
-                        map
+                        let mut labels = HashMap::new();
+                        labels.insert("ja".to_string(), "東京".to_string());
+                        labels.insert("en".to_string(), "Tokyo".to_string());
+                        Choice {
+                            labels,
+                            ja_typings: vec!["tokyo".to_string(), "toukyou".to_string()],
+                        }
                     },
                     {
-                        let mut map = HashMap::new();
-                        map.insert("ja".to_string(), "京都".to_string());
-                        map.insert("en".to_string(), "Kyoto".to_string());
-                        map
+                        let mut labels = HashMap::new();
+                        labels.insert("ja".to_string(), "京都".to_string());
+                        labels.insert("en".to_string(), "Kyoto".to_string());
+                        Choice {
+                            labels,
+                            ja_typings: vec!["kyoto".to_string(), "kyouto".to_string()],
+                        }
                     },
                     {
-                        let mut map = HashMap::new();
-                        map.insert("ja".to_string(), "名古屋".to_string());
-                        map.insert("en".to_string(), "Nagoya".to_string());
-                        map
+                        let mut labels = HashMap::new();
+                        labels.insert("ja".to_string(), "名古屋".to_string());
+                        labels.insert("en".to_string(), "Nagoya".to_string());
+                        Choice {
+                            labels,
+                            ja_typings: vec!["nagoya".to_string()],
+                        }
                     },
                 ],
                 correct_answer_index: 1,
@@ -187,5 +239,35 @@ mod tests {
         let prompts = DataLoader::load_listening_prompts("data/__does_not_exist__.json")
             .expect("missing file is not an error");
         assert!(prompts.is_empty());
+    }
+
+    #[test]
+    fn ja_choice_typing_prefers_explicit_field() {
+        let choice = Choice {
+            labels: std::collections::HashMap::from([
+                ("ja".to_string(), "東京".to_string()),
+                ("en".to_string(), "Tokyo".to_string()),
+            ]),
+            ja_typings: vec!["tokyo".to_string()],
+        };
+        assert_eq!(
+            DataLoader::get_choice_typing_texts(&choice, &Language::Japanese),
+            vec!["tokyo".to_string()]
+        );
+    }
+
+    #[test]
+    fn ja_choice_typing_includes_long_vowel_aliases() {
+        let choice = Choice {
+            labels: std::collections::HashMap::from([
+                ("ja".to_string(), "とうきょう".to_string()),
+                ("en".to_string(), "Tokyo".to_string()),
+            ]),
+            ja_typings: vec!["tokyo".to_string()],
+        };
+        assert_eq!(
+            DataLoader::get_choice_typing_texts(&choice, &Language::Japanese),
+            vec!["tokyo".to_string(), "toukyou".to_string()]
+        );
     }
 }

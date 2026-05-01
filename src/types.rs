@@ -6,9 +6,17 @@ pub struct Question {
     pub id: String,
     pub genre: String,
     pub question_text: HashMap<String, String>,
-    pub choices: Vec<HashMap<String, String>>,
+    pub choices: Vec<Choice>,
     pub correct_answer_index: usize,
     pub image_path: Option<String>,
+}
+
+#[derive(Debug, Clone, Deserialize, Serialize, Default)]
+pub struct Choice {
+    #[serde(flatten)]
+    pub labels: HashMap<String, String>,
+    #[serde(default)]
+    pub ja_typings: Vec<String>,
 }
 
 /// Answer-form classification per `docs/spec.md`. Drives hack-and-slash

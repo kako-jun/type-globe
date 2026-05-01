@@ -1,4 +1,5 @@
 pub mod data_loader;
+pub mod romaji;
 pub mod storage;
 pub mod validator;
 

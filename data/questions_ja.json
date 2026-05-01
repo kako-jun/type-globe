@@ -1,2802 +1,4066 @@
 [
   {
-    "id": "q00001",
-    "genre": "programming",
-    "question_text": {
-      "ja": "Pythonでリストをソートするメソッドは？",
-      "en": "What method sorts a list in Python?"
-    },
     "choices": [
       {
+        "en": "sort()",
         "ja": "sort()",
-        "en": "sort()"
+        "ja_typings": [
+          "sort()"
+        ]
       },
       {
+        "en": "order()",
         "ja": "order()",
-        "en": "order()"
+        "ja_typings": [
+          "order()"
+        ]
       },
       {
+        "en": "arrange()",
         "ja": "arrange()",
-        "en": "arrange()"
+        "ja_typings": [
+          "arrange()"
+        ]
       },
       {
+        "en": "organize()",
         "ja": "organize()",
-        "en": "organize()"
+        "ja_typings": [
+          "organize()"
+        ]
       }
     ],
     "correct_answer_index": 0,
-    "image_path": null
+    "genre": "programming",
+    "id": "q00001",
+    "image_path": null,
+    "question_text": {
+      "en": "What method sorts a list in Python?",
+      "ja": "Pythonでリストをソートするメソッドは？"
+    }
   },
   {
-    "id": "q00002",
-    "genre": "programming",
-    "question_text": {
-      "ja": "Rustで可変変数を宣言するキーワードは？",
-      "en": "What keyword declares a mutable variable in Rust?"
-    },
     "choices": [
       {
+        "en": "let mut",
         "ja": "let mut",
-        "en": "let mut"
+        "ja_typings": [
+          "let mut"
+        ]
       },
       {
+        "en": "var",
         "ja": "var",
-        "en": "var"
+        "ja_typings": [
+          "var"
+        ]
       },
       {
+        "en": "const",
         "ja": "const",
-        "en": "const"
+        "ja_typings": [
+          "const"
+        ]
       },
       {
+        "en": "mut",
         "ja": "mut",
-        "en": "mut"
+        "ja_typings": [
+          "mut"
+        ]
       }
     ],
     "correct_answer_index": 0,
-    "image_path": null
+    "genre": "programming",
+    "id": "q00002",
+    "image_path": null,
+    "question_text": {
+      "en": "What keyword declares a mutable variable in Rust?",
+      "ja": "Rustで可変変数を宣言するキーワードは？"
+    }
   },
   {
-    "id": "q00003",
-    "genre": "programming",
-    "question_text": {
-      "ja": "JavaScriptで非同期処理を扱う構文は？",
-      "en": "What syntax handles async operations in JavaScript?"
-    },
     "choices": [
       {
+        "en": "async/await",
         "ja": "async/await",
-        "en": "async/await"
+        "ja_typings": [
+          "async/await"
+        ]
       },
       {
+        "en": "thread/join",
         "ja": "thread/join",
-        "en": "thread/join"
+        "ja_typings": [
+          "thread/join"
+        ]
       },
       {
+        "en": "parallel/sync",
         "ja": "parallel/sync",
-        "en": "parallel/sync"
+        "ja_typings": [
+          "parallel/sync"
+        ]
       },
       {
+        "en": "defer/resume",
         "ja": "defer/resume",
-        "en": "defer/resume"
+        "ja_typings": [
+          "defer/resume"
+        ]
       }
     ],
     "correct_answer_index": 0,
-    "image_path": null
+    "genre": "programming",
+    "id": "q00003",
+    "image_path": null,
+    "question_text": {
+      "en": "What syntax handles async operations in JavaScript?",
+      "ja": "JavaScriptで非同期処理を扱う構文は？"
+    }
   },
   {
-    "id": "q00004",
-    "genre": "programming",
-    "question_text": {
-      "ja": "O(log n)の計算量を持つ探索アルゴリズムは？",
-      "en": "Which search algorithm has O(log n) complexity?"
-    },
     "choices": [
       {
+        "en": "linear search",
         "ja": "せんけいたんさく",
-        "en": "linear search"
+        "ja_typings": [
+          "senkeitansaku"
+        ]
       },
       {
+        "en": "binary search",
         "ja": "にぶんたんさく",
-        "en": "binary search"
+        "ja_typings": [
+          "nibuntansaku"
+        ]
       },
       {
+        "en": "hash search",
         "ja": "はっしゅたんさく",
-        "en": "hash search"
+        "ja_typings": [
+          "hasshutansaku"
+        ]
       },
       {
+        "en": "exhaustive search",
         "ja": "ぜんたんさく",
-        "en": "exhaustive search"
+        "ja_typings": [
+          "zentansaku"
+        ]
       }
     ],
     "correct_answer_index": 1,
-    "image_path": null
+    "genre": "programming",
+    "id": "q00004",
+    "image_path": null,
+    "question_text": {
+      "en": "Which search algorithm has O(log n) complexity?",
+      "ja": "O(log n)の計算量を持つ探索アルゴリズムは？"
+    }
   },
   {
-    "id": "q00005",
-    "genre": "programming",
-    "question_text": {
-      "ja": "デザインパターンのシングルトンの目的は？",
-      "en": "What is the purpose of Singleton pattern?"
-    },
     "choices": [
       {
+        "en": "Only one instance",
         "ja": "インスタンスを1つだけにする",
-        "en": "Only one instance"
+        "ja_typings": [
+          "insutansuo1tsudakenisuru"
+        ]
       },
       {
+        "en": "Easy inheritance",
         "ja": "けいしょうをかんたんにする",
-        "en": "Easy inheritance"
+        "ja_typings": [
+          "keishookantannisuru",
+          "keishouokantannisuru"
+        ]
       },
       {
+        "en": "Parallel processing",
         "ja": "へいれつしょりをする",
-        "en": "Parallel processing"
+        "ja_typings": [
+          "heiretsushoriosuru"
+        ]
       },
       {
+        "en": "Save memory",
         "ja": "めもりをせつやくする",
-        "en": "Save memory"
+        "ja_typings": [
+          "memoriosetsuyakusuru"
+        ]
       }
     ],
     "correct_answer_index": 0,
-    "image_path": null
+    "genre": "programming",
+    "id": "q00005",
+    "image_path": null,
+    "question_text": {
+      "en": "What is the purpose of Singleton pattern?",
+      "ja": "デザインパターンのシングルトンの目的は？"
+    }
   },
   {
-    "id": "q00006",
-    "genre": "programming",
-    "question_text": {
-      "ja": "関数型プログラミングで避けるべきものは？",
-      "en": "What should be avoided in functional programming?"
-    },
     "choices": [
       {
+        "en": "side effects",
         "ja": "ふくさよう",
-        "en": "side effects"
+        "ja_typings": [
+          "fukusayo",
+          "fukusayou"
+        ]
       },
       {
+        "en": "recursion",
         "ja": "さいきてきよびだし",
-        "en": "recursion"
+        "ja_typings": [
+          "saikitekiyobidashi"
+        ]
       },
       {
+        "en": "higher-order functions",
         "ja": "こうかいかんすう",
-        "en": "higher-order functions"
+        "ja_typings": [
+          "kokaikansuu",
+          "koukaikansuu"
+        ]
       },
       {
+        "en": "immutability",
         "ja": "ふへんせい",
-        "en": "immutability"
+        "ja_typings": [
+          "fuhensei"
+        ]
       }
     ],
     "correct_answer_index": 0,
-    "image_path": null
+    "genre": "programming",
+    "id": "q00006",
+    "image_path": null,
+    "question_text": {
+      "en": "What should be avoided in functional programming?",
+      "ja": "関数型プログラミングで避けるべきものは？"
+    }
   },
   {
-    "id": "q00007",
-    "genre": "programming",
-    "question_text": {
-      "ja": "Pythonでディクショナリのキーを取得するメソッドは？",
-      "en": "Method to get dictionary keys in Python?"
-    },
     "choices": [
       {
+        "en": "keys()",
         "ja": "keys()",
-        "en": "keys()"
+        "ja_typings": [
+          "keys()"
+        ]
       },
       {
+        "en": "getkeys()",
         "ja": "getkeys()",
-        "en": "getkeys()"
+        "ja_typings": [
+          "getkeys()"
+        ]
       },
       {
+        "en": "keylist()",
         "ja": "keylist()",
-        "en": "keylist()"
+        "ja_typings": [
+          "keylist()"
+        ]
       },
       {
+        "en": "allkeys()",
         "ja": "allkeys()",
-        "en": "allkeys()"
+        "ja_typings": [
+          "allkeys()"
+        ]
       }
     ],
     "correct_answer_index": 0,
-    "image_path": null
+    "genre": "programming",
+    "id": "q00007",
+    "image_path": null,
+    "question_text": {
+      "en": "Method to get dictionary keys in Python?",
+      "ja": "Pythonでディクショナリのキーを取得するメソッドは？"
+    }
   },
   {
+    "choices": [
+      {
+        "en": "O(n)",
+        "ja": "O(n)",
+        "ja_typings": [
+          "o(n)"
+        ]
+      },
+      {
+        "en": "O(n log n)",
+        "ja": "O(n log n)",
+        "ja_typings": [
+          "o(n log n)"
+        ]
+      },
+      {
+        "en": "O(n^2)",
+        "ja": "O(n^2)",
+        "ja_typings": [
+          "o(n^2)"
+        ]
+      },
+      {
+        "en": "O(log n)",
+        "ja": "O(log n)",
+        "ja_typings": [
+          "o(log n)"
+        ]
+      }
+    ],
+    "correct_answer_index": 1,
+    "genre": "programming",
     "id": "q00008",
-    "genre": "programming",
+    "image_path": null,
     "question_text": {
-      "ja": "クイックソートの平均計算量は？",
-      "en": "Average time complexity of quicksort?"
-    },
-    "choices": [
-      {
-        "ja": "O(n)",
-        "en": "O(n)"
-      },
-      {
-        "ja": "O(n log n)",
-        "en": "O(n log n)"
-      },
-      {
-        "ja": "O(n^2)",
-        "en": "O(n^2)"
-      },
-      {
-        "ja": "O(log n)",
-        "en": "O(log n)"
-      }
-    ],
-    "correct_answer_index": 1,
-    "image_path": null
+      "en": "Average time complexity of quicksort?",
+      "ja": "クイックソートの平均計算量は？"
+    }
   },
   {
-    "id": "q00009",
-    "genre": "programming",
-    "question_text": {
-      "ja": "スタックのデータ構造の特徴は？",
-      "en": "Characteristic of stack data structure?"
-    },
     "choices": [
       {
+        "en": "FIFO",
         "ja": "FIFO",
-        "en": "FIFO"
+        "ja_typings": [
+          "fifo"
+        ]
       },
       {
+        "en": "LIFO",
         "ja": "LIFO",
-        "en": "LIFO"
+        "ja_typings": [
+          "lifo"
+        ]
       },
       {
+        "en": "Random access",
         "ja": "ランダムアクセス",
-        "en": "Random access"
+        "ja_typings": [
+          "randamuakusesu"
+        ]
       },
       {
+        "en": "Sorted",
         "ja": "そーとずみ",
-        "en": "Sorted"
+        "ja_typings": [
+          "sotozumi"
+        ]
       }
     ],
     "correct_answer_index": 1,
-    "image_path": null
+    "genre": "programming",
+    "id": "q00009",
+    "image_path": null,
+    "question_text": {
+      "en": "Characteristic of stack data structure?",
+      "ja": "スタックのデータ構造の特徴は？"
+    }
   },
   {
-    "id": "q00010",
-    "genre": "programming",
-    "question_text": {
-      "ja": "JavaScriptのnullとundefinedの違いは？",
-      "en": "Difference between null and undefined in JS?"
-    },
     "choices": [
       {
+        "en": "null is intentional empty",
         "ja": "nullはいとてきなくうち",
-        "en": "null is intentional empty"
+        "ja_typings": [
+          "nullhaitotekinakuuchi"
+        ]
       },
       {
+        "en": "Same meaning",
         "ja": "おなじいみ",
-        "en": "Same meaning"
+        "ja_typings": [
+          "onajiimi"
+        ]
       },
       {
+        "en": "undefined is error",
         "ja": "undefinedはえらー",
-        "en": "undefined is error"
+        "ja_typings": [
+          "undefinedhaera"
+        ]
       },
       {
+        "en": "No difference",
         "ja": "ちがいはない",
-        "en": "No difference"
+        "ja_typings": [
+          "chigaihanai"
+        ]
       }
     ],
     "correct_answer_index": 0,
-    "image_path": null
+    "genre": "programming",
+    "id": "q00010",
+    "image_path": null,
+    "question_text": {
+      "en": "Difference between null and undefined in JS?",
+      "ja": "JavaScriptのnullとundefinedの違いは？"
+    }
   },
   {
-    "id": "q00011",
-    "genre": "programming",
-    "question_text": {
-      "ja": "Gitでさいしんのこみっとをとりけすこまんどは?",
-      "en": "Which Git command undoes the latest commit?"
-    },
     "choices": [
       {
+        "en": "git reset HEAD~1",
         "ja": "git reset HEAD~1",
-        "en": "git reset HEAD~1"
+        "ja_typings": [
+          "git reset head~1"
+        ]
       },
       {
+        "en": "git revert HEAD",
         "ja": "git revert HEAD",
-        "en": "git revert HEAD"
+        "ja_typings": [
+          "git revert head"
+        ]
       },
       {
+        "en": "git undo",
         "ja": "git undo",
-        "en": "git undo"
+        "ja_typings": [
+          "git undo"
+        ]
       },
       {
+        "en": "git remove HEAD",
         "ja": "git remove HEAD",
-        "en": "git remove HEAD"
+        "ja_typings": [
+          "git remove head"
+        ]
       }
     ],
     "correct_answer_index": 0,
-    "image_path": null
+    "genre": "programming",
+    "id": "q00011",
+    "image_path": null,
+    "question_text": {
+      "en": "Which Git command undoes the latest commit?",
+      "ja": "Gitでさいしんのこみっとをとりけすこまんどは?"
+    }
   },
   {
-    "id": "q00012",
-    "genre": "programming",
-    "question_text": {
-      "ja": "Pythonでりすとないほうをつくるしんたっくすは?",
-      "en": "What is the syntax for list comprehension in Python?"
-    },
     "choices": [
       {
+        "en": "{x for x in range}",
         "ja": "{x for x in range}",
-        "en": "{x for x in range}"
+        "ja_typings": [
+          "{x for x in range}"
+        ]
       },
       {
+        "en": "[x for x in range]",
         "ja": "[x for x in range]",
-        "en": "[x for x in range]"
+        "ja_typings": [
+          "[x for x in range]"
+        ]
       },
       {
+        "en": "(x for x in range)",
         "ja": "(x for x in range)",
-        "en": "(x for x in range)"
+        "ja_typings": [
+          "(x for x in range)"
+        ]
       },
       {
+        "en": "<x for x in range>",
         "ja": "<x for x in range>",
-        "en": "<x for x in range>"
+        "ja_typings": [
+          "<x for x in range>"
+        ]
       }
     ],
     "correct_answer_index": 1,
-    "image_path": null
+    "genre": "programming",
+    "id": "q00012",
+    "image_path": null,
+    "question_text": {
+      "en": "What is the syntax for list comprehension in Python?",
+      "ja": "Pythonでりすとないほうをつくるしんたっくすは?"
+    }
   },
   {
-    "id": "q00013",
-    "genre": "web_development",
-    "question_text": {
-      "ja": "Reactでじょうたいかんりにつかうフックは?",
-      "en": "Which React hook is used for state management?"
-    },
     "choices": [
       {
+        "en": "useEffect",
         "ja": "useEffect",
-        "en": "useEffect"
+        "ja_typings": [
+          "useeffect"
+        ]
       },
       {
+        "en": "useState",
         "ja": "useState",
-        "en": "useState"
+        "ja_typings": [
+          "usestate"
+        ]
       },
       {
+        "en": "useContext",
         "ja": "useContext",
-        "en": "useContext"
+        "ja_typings": [
+          "usecontext"
+        ]
       },
       {
+        "en": "useMemo",
         "ja": "useMemo",
-        "en": "useMemo"
+        "ja_typings": [
+          "usememo"
+        ]
       }
     ],
     "correct_answer_index": 1,
-    "image_path": null
+    "genre": "web_development",
+    "id": "q00013",
+    "image_path": null,
+    "question_text": {
+      "en": "Which React hook is used for state management?",
+      "ja": "Reactでじょうたいかんりにつかうフックは?"
+    }
   },
   {
-    "id": "q00014",
-    "genre": "programming",
-    "question_text": {
-      "ja": "SQLでゆにーくなちをせいやくするのは?",
-      "en": "Which SQL constraint ensures unique values?"
-    },
     "choices": [
       {
+        "en": "PRIMARY KEY",
         "ja": "PRIMARY KEY",
-        "en": "PRIMARY KEY"
+        "ja_typings": [
+          "primary key"
+        ]
       },
       {
+        "en": "FOREIGN KEY",
         "ja": "FOREIGN KEY",
-        "en": "FOREIGN KEY"
+        "ja_typings": [
+          "foreign key"
+        ]
       },
       {
+        "en": "CHECK",
         "ja": "CHECK",
-        "en": "CHECK"
+        "ja_typings": [
+          "check"
+        ]
       },
       {
+        "en": "DEFAULT",
         "ja": "DEFAULT",
-        "en": "DEFAULT"
+        "ja_typings": [
+          "default"
+        ]
       }
     ],
     "correct_answer_index": 0,
-    "image_path": null
+    "genre": "programming",
+    "id": "q00014",
+    "image_path": null,
+    "question_text": {
+      "en": "Which SQL constraint ensures unique values?",
+      "ja": "SQLでゆにーくなちをせいやくするのは?"
+    }
   },
   {
-    "id": "q00015",
-    "genre": "web_development",
-    "question_text": {
-      "ja": "HTTPすてーたすこーど404のいみは?",
-      "en": "What does HTTP status code 404 mean?"
-    },
     "choices": [
       {
+        "en": "Server Error",
         "ja": "さーばーえらー",
-        "en": "Server Error"
+        "ja_typings": [
+          "sabaera"
+        ]
       },
       {
+        "en": "Not Found",
         "ja": "みつかりません",
-        "en": "Not Found"
+        "ja_typings": [
+          "mitsukarimasen"
+        ]
       },
       {
+        "en": "Authentication Required",
         "ja": "みにんしょうひつよう",
-        "en": "Authentication Required"
+        "ja_typings": [
+          "mininshohitsuyo",
+          "mininshouhitsuyou"
+        ]
       },
       {
+        "en": "Redirect",
         "ja": "りだいれくと",
-        "en": "Redirect"
+        "ja_typings": [
+          "ridairekuto"
+        ]
       }
     ],
     "correct_answer_index": 1,
-    "image_path": null
+    "genre": "web_development",
+    "id": "q00015",
+    "image_path": null,
+    "question_text": {
+      "en": "What does HTTP status code 404 mean?",
+      "ja": "HTTPすてーたすこーど404のいみは?"
+    }
   },
   {
-    "id": "q00016",
-    "genre": "web_development",
-    "question_text": {
-      "ja": "CSSでよこならびにするぷろぱてぃは?",
-      "en": "Which CSS property arranges items horizontally?"
-    },
     "choices": [
       {
+        "en": "display: flex",
         "ja": "display: flex",
-        "en": "display: flex"
+        "ja_typings": [
+          "display: flex"
+        ]
       },
       {
+        "en": "position: absolute",
         "ja": "position: absolute",
-        "en": "position: absolute"
+        "ja_typings": [
+          "position: absolute"
+        ]
       },
       {
+        "en": "float: left",
         "ja": "float: left",
-        "en": "float: left"
+        "ja_typings": [
+          "float: left"
+        ]
       },
       {
+        "en": "All of them",
         "ja": "すべて",
-        "en": "All of them"
+        "ja_typings": [
+          "subete"
+        ]
       }
     ],
     "correct_answer_index": 3,
-    "image_path": null
+    "genre": "web_development",
+    "id": "q00016",
+    "image_path": null,
+    "question_text": {
+      "en": "Which CSS property arranges items horizontally?",
+      "ja": "CSSでよこならびにするぷろぱてぃは?"
+    }
   },
   {
-    "id": "q00017",
-    "genre": "programming",
-    "question_text": {
-      "ja": "バブルソートのじかんけいさんりょうは?",
-      "en": "What is the time complexity of Bubble Sort?"
-    },
     "choices": [
       {
+        "en": "O(n)",
         "ja": "O(n)",
-        "en": "O(n)"
+        "ja_typings": [
+          "o(n)"
+        ]
       },
       {
+        "en": "O(n log n)",
         "ja": "O(n log n)",
-        "en": "O(n log n)"
+        "ja_typings": [
+          "o(n log n)"
+        ]
       },
       {
+        "en": "O(n^2)",
         "ja": "O(n^2)",
-        "en": "O(n^2)"
+        "ja_typings": [
+          "o(n^2)"
+        ]
       },
       {
+        "en": "O(1)",
         "ja": "O(1)",
-        "en": "O(1)"
+        "ja_typings": [
+          "o(1)"
+        ]
       }
     ],
     "correct_answer_index": 2,
-    "image_path": null
+    "genre": "programming",
+    "id": "q00017",
+    "image_path": null,
+    "question_text": {
+      "en": "What is the time complexity of Bubble Sort?",
+      "ja": "バブルソートのじかんけいさんりょうは?"
+    }
   },
   {
-    "id": "q00018",
-    "genre": "programming",
-    "question_text": {
-      "ja": "デザインパターンでシングルトンのもくてきは?",
-      "en": "What is the purpose of the Singleton pattern?"
-    },
     "choices": [
       {
+        "en": "Multiple instances",
         "ja": "ふくすうのいんすたんす",
-        "en": "Multiple instances"
+        "ja_typings": [
+          "fukusuunoinsutansu"
+        ]
       },
       {
+        "en": "Only one instance",
         "ja": "1このいんすたんすのみ",
-        "en": "Only one instance"
+        "ja_typings": [
+          "1konoinsutansunomi"
+        ]
       },
       {
+        "en": "Inheritance management",
         "ja": "けいしょうのかんり",
-        "en": "Inheritance management"
+        "ja_typings": [
+          "keishonokanri",
+          "keishounokanri"
+        ]
       },
       {
+        "en": "Undefined",
         "ja": "ひていぎ",
-        "en": "Undefined"
+        "ja_typings": [
+          "hiteigi"
+        ]
       }
     ],
     "correct_answer_index": 1,
-    "image_path": null
+    "genre": "programming",
+    "id": "q00018",
+    "image_path": null,
+    "question_text": {
+      "en": "What is the purpose of the Singleton pattern?",
+      "ja": "デザインパターンでシングルトンのもくてきは?"
+    }
   },
   {
-    "id": "q00019",
-    "genre": "technology",
-    "question_text": {
-      "ja": "Linuxでかれんとでぃれくとりをひょうじするこまんどは?",
-      "en": "Which Linux command shows the current directory?"
-    },
     "choices": [
       {
+        "en": "cd",
         "ja": "cd",
-        "en": "cd"
+        "ja_typings": [
+          "cd"
+        ]
       },
       {
+        "en": "ls",
         "ja": "ls",
-        "en": "ls"
+        "ja_typings": [
+          "ls"
+        ]
       },
       {
+        "en": "pwd",
         "ja": "pwd",
-        "en": "pwd"
+        "ja_typings": [
+          "pwd"
+        ]
       },
       {
+        "en": "mkdir",
         "ja": "mkdir",
-        "en": "mkdir"
+        "ja_typings": [
+          "mkdir"
+        ]
       }
     ],
     "correct_answer_index": 2,
-    "image_path": null
+    "genre": "technology",
+    "id": "q00019",
+    "image_path": null,
+    "question_text": {
+      "en": "Which Linux command shows the current directory?",
+      "ja": "Linuxでかれんとでぃれくとりをひょうじするこまんどは?"
+    }
   },
   {
-    "id": "q00020",
-    "genre": "programming",
-    "question_text": {
-      "ja": "Rustでしょゆうけんをうつすのは?",
-      "en": "How do you transfer ownership in Rust?"
-    },
     "choices": [
       {
+        "en": "Borrowing",
         "ja": "かりる",
-        "en": "Borrowing"
+        "ja_typings": [
+          "kariru"
+        ]
       },
       {
+        "en": "Move",
         "ja": "むーぶ",
-        "en": "Move"
+        "ja_typings": [
+          "mubu"
+        ]
       },
       {
+        "en": "Copy",
         "ja": "こぴー",
-        "en": "Copy"
+        "ja_typings": [
+          "kopi"
+        ]
       },
       {
+        "en": "Clone",
         "ja": "くろーん",
-        "en": "Clone"
+        "ja_typings": [
+          "kuron"
+        ]
       }
     ],
     "correct_answer_index": 1,
-    "image_path": null
+    "genre": "programming",
+    "id": "q00020",
+    "image_path": null,
+    "question_text": {
+      "en": "How do you transfer ownership in Rust?",
+      "ja": "Rustでしょゆうけんをうつすのは?"
+    }
   },
   {
-    "id": "q00021",
-    "genre": "web_development",
-    "question_text": {
-      "ja": "JavaScriptでひどうしょりにつかうのは?",
-      "en": "What is used for asynchronous processing in JavaScript?"
-    },
     "choices": [
       {
+        "en": "Promise",
         "ja": "Promise",
-        "en": "Promise"
+        "ja_typings": [
+          "promise"
+        ]
       },
       {
+        "en": "Array",
         "ja": "Array",
-        "en": "Array"
+        "ja_typings": [
+          "array"
+        ]
       },
       {
+        "en": "Object",
         "ja": "Object",
-        "en": "Object"
+        "ja_typings": [
+          "object"
+        ]
       },
       {
+        "en": "String",
         "ja": "String",
-        "en": "String"
+        "ja_typings": [
+          "string"
+        ]
       }
     ],
     "correct_answer_index": 0,
-    "image_path": null
+    "genre": "web_development",
+    "id": "q00021",
+    "image_path": null,
+    "question_text": {
+      "en": "What is used for asynchronous processing in JavaScript?",
+      "ja": "JavaScriptでひどうしょりにつかうのは?"
+    }
   },
   {
-    "id": "q00022",
-    "genre": "programming",
-    "question_text": {
-      "ja": "dockerでこんてなをきどうするこまんどは?",
-      "en": "Which Docker command starts a container?"
-    },
     "choices": [
       {
+        "en": "docker build",
         "ja": "docker build",
-        "en": "docker build"
+        "ja_typings": [
+          "docker build"
+        ]
       },
       {
+        "en": "docker run",
         "ja": "docker run",
-        "en": "docker run"
+        "ja_typings": [
+          "docker run"
+        ]
       },
       {
+        "en": "docker pull",
         "ja": "docker pull",
-        "en": "docker pull"
+        "ja_typings": [
+          "docker pull"
+        ]
       },
       {
+        "en": "docker push",
         "ja": "docker push",
-        "en": "docker push"
+        "ja_typings": [
+          "docker push"
+        ]
       }
     ],
     "correct_answer_index": 1,
-    "image_path": null
+    "genre": "programming",
+    "id": "q00022",
+    "image_path": null,
+    "question_text": {
+      "en": "Which Docker command starts a container?",
+      "ja": "dockerでこんてなをきどうするこまんどは?"
+    }
   },
   {
-    "id": "q00023",
-    "genre": "it_terminology",
-    "question_text": {
-      "ja": "APIのAはなにのりゃくしょう?",
-      "en": "What does the 'A' in API stand for?"
-    },
     "choices": [
       {
+        "en": "Application",
         "ja": "Application",
-        "en": "Application"
+        "ja_typings": [
+          "application"
+        ]
       },
       {
+        "en": "Algorithm",
         "ja": "Algorithm",
-        "en": "Algorithm"
+        "ja_typings": [
+          "algorithm"
+        ]
       },
       {
+        "en": "Automatic",
         "ja": "Automatic",
-        "en": "Automatic"
+        "ja_typings": [
+          "automatic"
+        ]
       },
       {
+        "en": "Advanced",
         "ja": "Advanced",
-        "en": "Advanced"
+        "ja_typings": [
+          "advanced"
+        ]
       }
     ],
     "correct_answer_index": 0,
-    "image_path": null
+    "genre": "it_terminology",
+    "id": "q00023",
+    "image_path": null,
+    "question_text": {
+      "en": "What does the 'A' in API stand for?",
+      "ja": "APIのAはなにのりゃくしょう?"
+    }
   },
   {
-    "id": "q00024",
-    "genre": "programming",
-    "question_text": {
-      "ja": "TypeScriptでかたをていぎするきーわーどは?",
-      "en": "Which keyword defines types in TypeScript?"
-    },
     "choices": [
       {
+        "en": "class",
         "ja": "class",
-        "en": "class"
+        "ja_typings": [
+          "class"
+        ]
       },
       {
+        "en": "type",
         "ja": "type",
-        "en": "type"
+        "ja_typings": [
+          "type"
+        ]
       },
       {
+        "en": "var",
         "ja": "var",
-        "en": "var"
+        "ja_typings": [
+          "var"
+        ]
       },
       {
+        "en": "const",
         "ja": "const",
-        "en": "const"
+        "ja_typings": [
+          "const"
+        ]
       }
     ],
     "correct_answer_index": 1,
-    "image_path": null
+    "genre": "programming",
+    "id": "q00024",
+    "image_path": null,
+    "question_text": {
+      "en": "Which keyword defines types in TypeScript?",
+      "ja": "TypeScriptでかたをていぎするきーわーどは?"
+    }
   },
   {
-    "id": "q00025",
-    "genre": "web_development",
-    "question_text": {
-      "ja": "RESTfulAPIでさくじょをあらわすHTTPめそっどは?",
-      "en": "Which HTTP method represents deletion in RESTful API?"
-    },
     "choices": [
       {
+        "en": "GET",
         "ja": "GET",
-        "en": "GET"
+        "ja_typings": [
+          "get"
+        ]
       },
       {
+        "en": "POST",
         "ja": "POST",
-        "en": "POST"
+        "ja_typings": [
+          "post"
+        ]
       },
       {
+        "en": "DELETE",
         "ja": "DELETE",
-        "en": "DELETE"
+        "ja_typings": [
+          "delete"
+        ]
       },
       {
+        "en": "PUT",
         "ja": "PUT",
-        "en": "PUT"
+        "ja_typings": [
+          "put"
+        ]
       }
     ],
     "correct_answer_index": 2,
-    "image_path": null
+    "genre": "web_development",
+    "id": "q00025",
+    "image_path": null,
+    "question_text": {
+      "en": "Which HTTP method represents deletion in RESTful API?",
+      "ja": "RESTfulAPIでさくじょをあらわすHTTPめそっどは?"
+    }
   },
   {
-    "id": "q00026",
-    "genre": "programming",
-    "question_text": {
-      "ja": "NoSQLでーたべーすのれいは?",
-      "en": "Which is an example of a NoSQL database?"
-    },
     "choices": [
       {
+        "en": "MySQL",
         "ja": "MySQL",
-        "en": "MySQL"
+        "ja_typings": [
+          "mysql"
+        ]
       },
       {
+        "en": "PostgreSQL",
         "ja": "PostgreSQL",
-        "en": "PostgreSQL"
+        "ja_typings": [
+          "postgresql"
+        ]
       },
       {
+        "en": "MongoDB",
         "ja": "MongoDB",
-        "en": "MongoDB"
+        "ja_typings": [
+          "mongodb"
+        ]
       },
       {
+        "en": "Oracle",
         "ja": "Oracle",
-        "en": "Oracle"
+        "ja_typings": [
+          "oracle"
+        ]
       }
     ],
     "correct_answer_index": 2,
-    "image_path": null
+    "genre": "programming",
+    "id": "q00026",
+    "image_path": null,
+    "question_text": {
+      "en": "Which is an example of a NoSQL database?",
+      "ja": "NoSQLでーたべーすのれいは?"
+    }
   },
   {
-    "id": "q00027",
-    "genre": "technology",
-    "question_text": {
-      "ja": "CI/CDのCIはなんのりゃく?",
-      "en": "What does CI stand for in CI/CD?"
-    },
     "choices": [
       {
+        "en": "Continuous Integration",
         "ja": "Continuous Integration",
-        "en": "Continuous Integration"
+        "ja_typings": [
+          "continuous integration"
+        ]
       },
       {
+        "en": "Code Inspection",
         "ja": "Code Inspection",
-        "en": "Code Inspection"
+        "ja_typings": [
+          "code inspection"
+        ]
       },
       {
+        "en": "Container Image",
         "ja": "Container Image",
-        "en": "Container Image"
+        "ja_typings": [
+          "container image"
+        ]
       },
       {
+        "en": "Cloud Infrastructure",
         "ja": "Cloud Infrastructure",
-        "en": "Cloud Infrastructure"
+        "ja_typings": [
+          "cloud infrastructure"
+        ]
       }
     ],
     "correct_answer_index": 0,
-    "image_path": null
+    "genre": "technology",
+    "id": "q00027",
+    "image_path": null,
+    "question_text": {
+      "en": "What does CI stand for in CI/CD?",
+      "ja": "CI/CDのCIはなんのりゃく?"
+    }
   },
   {
-    "id": "q00028",
-    "genre": "programming",
-    "question_text": {
-      "ja": "Pythonでれいがいしょりにつかうのは?",
-      "en": "What is used for exception handling in Python?"
-    },
     "choices": [
       {
+        "en": "if-else",
         "ja": "if-else",
-        "en": "if-else"
+        "ja_typings": [
+          "if-else"
+        ]
       },
       {
+        "en": "try-except",
         "ja": "try-except",
-        "en": "try-except"
+        "ja_typings": [
+          "try-except"
+        ]
       },
       {
+        "en": "while",
         "ja": "while",
-        "en": "while"
+        "ja_typings": [
+          "while"
+        ]
       },
       {
+        "en": "for",
         "ja": "for",
-        "en": "for"
+        "ja_typings": [
+          "for"
+        ]
       }
     ],
     "correct_answer_index": 1,
-    "image_path": null
+    "genre": "programming",
+    "id": "q00028",
+    "image_path": null,
+    "question_text": {
+      "en": "What is used for exception handling in Python?",
+      "ja": "Pythonでれいがいしょりにつかうのは?"
+    }
   },
   {
-    "id": "q00029",
-    "genre": "web_development",
-    "question_text": {
-      "ja": "Vue.jsでこんぽーねんとをさいりようするには?",
-      "en": "How do you reuse components in Vue.js?"
-    },
     "choices": [
       {
+        "en": "import",
         "ja": "import",
-        "en": "import"
+        "ja_typings": [
+          "import"
+        ]
       },
       {
+        "en": "include",
         "ja": "include",
-        "en": "include"
+        "ja_typings": [
+          "include"
+        ]
       },
       {
+        "en": "require",
         "ja": "require",
-        "en": "require"
+        "ja_typings": [
+          "require"
+        ]
       },
       {
+        "en": "All methods",
         "ja": "すべて",
-        "en": "All methods"
+        "ja_typings": [
+          "subete"
+        ]
       }
     ],
     "correct_answer_index": 0,
-    "image_path": null
+    "genre": "web_development",
+    "id": "q00029",
+    "image_path": null,
+    "question_text": {
+      "en": "How do you reuse components in Vue.js?",
+      "ja": "Vue.jsでこんぽーねんとをさいりようするには?"
+    }
   },
   {
-    "id": "q00030",
-    "genre": "programming",
-    "question_text": {
-      "ja": "くいっくそーとのへいきんけいさんりょうは?",
-      "en": "What is the average time complexity of Quick Sort?"
-    },
     "choices": [
       {
+        "en": "O(n)",
         "ja": "O(n)",
-        "en": "O(n)"
+        "ja_typings": [
+          "o(n)"
+        ]
       },
       {
+        "en": "O(n log n)",
         "ja": "O(n log n)",
-        "en": "O(n log n)"
+        "ja_typings": [
+          "o(n log n)"
+        ]
       },
       {
+        "en": "O(n^2)",
         "ja": "O(n^2)",
-        "en": "O(n^2)"
+        "ja_typings": [
+          "o(n^2)"
+        ]
       },
       {
+        "en": "O(log n)",
         "ja": "O(log n)",
-        "en": "O(log n)"
+        "ja_typings": [
+          "o(log n)"
+        ]
       }
     ],
     "correct_answer_index": 1,
-    "image_path": null
+    "genre": "programming",
+    "id": "q00030",
+    "image_path": null,
+    "question_text": {
+      "en": "What is the average time complexity of Quick Sort?",
+      "ja": "くいっくそーとのへいきんけいさんりょうは?"
+    }
   },
   {
-    "id": "q00031",
-    "genre": "it_terminology",
-    "question_text": {
-      "ja": "JSONのJはなにをいみする?",
-      "en": "What does the 'J' in JSON stand for?"
-    },
     "choices": [
       {
+        "en": "Java SE",
         "ja": "Java SE",
-        "en": "Java SE"
+        "ja_typings": [
+          "java se"
+        ]
       },
       {
+        "en": "JavaScript",
         "ja": "JavaScript",
-        "en": "JavaScript"
+        "ja_typings": [
+          "javascript"
+        ]
       },
       {
+        "en": "jQuery",
         "ja": "jQuery",
-        "en": "jQuery"
+        "ja_typings": [
+          "jquery"
+        ]
       },
       {
+        "en": "Join",
         "ja": "Join",
-        "en": "Join"
+        "ja_typings": [
+          "join"
+        ]
       }
     ],
     "correct_answer_index": 1,
-    "image_path": null
+    "genre": "it_terminology",
+    "id": "q00031",
+    "image_path": null,
+    "question_text": {
+      "en": "What does the 'J' in JSON stand for?",
+      "ja": "JSONのJはなにをいみする?"
+    }
   },
   {
-    "id": "q00032",
-    "genre": "programming",
-    "question_text": {
-      "ja": "Goげんごのどうじっせいぎのうは?",
-      "en": "What is Go's concurrency feature called?"
-    },
     "choices": [
       {
+        "en": "Thread",
         "ja": "Thread",
-        "en": "Thread"
+        "ja_typings": [
+          "thread"
+        ]
       },
       {
+        "en": "Goroutine",
         "ja": "Goroutine",
-        "en": "Goroutine"
+        "ja_typings": [
+          "goroutine"
+        ]
       },
       {
+        "en": "Process",
         "ja": "Process",
-        "en": "Process"
+        "ja_typings": [
+          "process"
+        ]
       },
       {
+        "en": "Async",
         "ja": "Async",
-        "en": "Async"
+        "ja_typings": [
+          "async"
+        ]
       }
     ],
     "correct_answer_index": 1,
-    "image_path": null
+    "genre": "programming",
+    "id": "q00032",
+    "image_path": null,
+    "question_text": {
+      "en": "What is Go's concurrency feature called?",
+      "ja": "Goげんごのどうじっせいぎのうは?"
+    }
   },
   {
-    "id": "q00033",
-    "genre": "web_development",
-    "question_text": {
-      "ja": "CSSでぼっくすもでるのそとがわまーじんは?",
-      "en": "What is the outer margin in CSS box model?"
-    },
     "choices": [
       {
+        "en": "padding",
         "ja": "padding",
-        "en": "padding"
+        "ja_typings": [
+          "padding"
+        ]
       },
       {
+        "en": "margin",
         "ja": "margin",
-        "en": "margin"
+        "ja_typings": [
+          "margin"
+        ]
       },
       {
+        "en": "border",
         "ja": "border",
-        "en": "border"
+        "ja_typings": [
+          "border"
+        ]
       },
       {
+        "en": "content",
         "ja": "content",
-        "en": "content"
+        "ja_typings": [
+          "content"
+        ]
       }
     ],
     "correct_answer_index": 1,
-    "image_path": null
+    "genre": "web_development",
+    "id": "q00033",
+    "image_path": null,
+    "question_text": {
+      "en": "What is the outer margin in CSS box model?",
+      "ja": "CSSでぼっくすもでるのそとがわまーじんは?"
+    }
   },
   {
-    "id": "q00034",
-    "genre": "programming",
-    "question_text": {
-      "ja": "C++でめもりをどうてきにかくほするのは?",
-      "en": "How do you dynamically allocate memory in C++?"
-    },
     "choices": [
       {
+        "en": "malloc",
         "ja": "malloc",
-        "en": "malloc"
+        "ja_typings": [
+          "malloc"
+        ]
       },
       {
+        "en": "new",
         "ja": "new",
-        "en": "new"
+        "ja_typings": [
+          "new"
+        ]
       },
       {
+        "en": "alloc",
         "ja": "alloc",
-        "en": "alloc"
+        "ja_typings": [
+          "alloc"
+        ]
       },
       {
+        "en": "create",
         "ja": "create",
-        "en": "create"
+        "ja_typings": [
+          "create"
+        ]
       }
     ],
     "correct_answer_index": 1,
-    "image_path": null
+    "genre": "programming",
+    "id": "q00034",
+    "image_path": null,
+    "question_text": {
+      "en": "How do you dynamically allocate memory in C++?",
+      "ja": "C++でめもりをどうてきにかくほするのは?"
+    }
   },
   {
-    "id": "q00035",
-    "genre": "technology",
-    "question_text": {
-      "ja": "kubernetesでさいしょうたんいは?",
-      "en": "What is the smallest unit in Kubernetes?"
-    },
     "choices": [
       {
+        "en": "Container",
         "ja": "Container",
-        "en": "Container"
+        "ja_typings": [
+          "container"
+        ]
       },
       {
+        "en": "Pod",
         "ja": "Pod",
-        "en": "Pod"
+        "ja_typings": [
+          "pod"
+        ]
       },
       {
+        "en": "Node",
         "ja": "Node",
-        "en": "Node"
+        "ja_typings": [
+          "node"
+        ]
       },
       {
+        "en": "Cluster",
         "ja": "Cluster",
-        "en": "Cluster"
+        "ja_typings": [
+          "cluster"
+        ]
       }
     ],
     "correct_answer_index": 1,
-    "image_path": null
-  },
-  {
-    "id": "q00036",
-    "genre": "programming",
-    "question_text": {
-      "ja": "Javaでいんたーふぇーすをていぎするきーわーどは?",
-      "en": "Which keyword defines an interface in Java?"
-    },
-    "choices": [
-      {
-        "ja": "class",
-        "en": "class"
-      },
-      {
-        "ja": "interface",
-        "en": "interface"
-      },
-      {
-        "ja": "abstract",
-        "en": "abstract"
-      },
-      {
-        "ja": "extends",
-        "en": "extends"
-      }
-    ],
-    "correct_answer_index": 1,
-    "image_path": null
-  },
-  {
-    "id": "q00037",
-    "genre": "web_development",
-    "question_text": {
-      "ja": "GraphQLのくえりでできることは?",
-      "en": "What can you do with GraphQL queries?"
-    },
-    "choices": [
-      {
-        "ja": "ひつようなでーたのみしゅとく",
-        "en": "Fetch only needed data"
-      },
-      {
-        "ja": "すべてのでーたしゅとく",
-        "en": "Fetch all data"
-      },
-      {
-        "ja": "でーたさくじょのみ",
-        "en": "Only delete data"
-      },
-      {
-        "ja": "なにもできない",
-        "en": "Nothing"
-      }
-    ],
-    "correct_answer_index": 0,
-    "image_path": null
-  },
-  {
-    "id": "q00038",
-    "genre": "it_terminology",
-    "question_text": {
-      "ja": "SSHはなんのりゃくしょう?",
-      "en": "What does SSH stand for?"
-    },
-    "choices": [
-      {
-        "ja": "Secure Shell",
-        "en": "Secure Shell"
-      },
-      {
-        "ja": "Super Shell",
-        "en": "Super Shell"
-      },
-      {
-        "ja": "System Shell",
-        "en": "System Shell"
-      },
-      {
-        "ja": "Safe Shell",
-        "en": "Safe Shell"
-      }
-    ],
-    "correct_answer_index": 0,
-    "image_path": null
-  },
-  {
-    "id": "q00039",
-    "genre": "programming",
-    "question_text": {
-      "ja": "びっとこいんでつかわれるぎじゅつは?",
-      "en": "What technology is used in Bitcoin?"
-    },
-    "choices": [
-      {
-        "ja": "Blockchain",
-        "en": "Blockchain"
-      },
-      {
-        "ja": "Cloud",
-        "en": "Cloud"
-      },
-      {
-        "ja": "IoT",
-        "en": "IoT"
-      },
-      {
-        "ja": "5G",
-        "en": "5G"
-      }
-    ],
-    "correct_answer_index": 0,
-    "image_path": null
-  },
-  {
-    "id": "q00040",
-    "genre": "web_development",
-    "question_text": {
-      "ja": "Sassはなにをかくちょうしたもの?",
-      "en": "What does Sass extend?"
-    },
-    "choices": [
-      {
-        "ja": "HTML",
-        "en": "HTML"
-      },
-      {
-        "ja": "CSS",
-        "en": "CSS"
-      },
-      {
-        "ja": "JavaScript",
-        "en": "JavaScript"
-      },
-      {
-        "ja": "XML",
-        "en": "XML"
-      }
-    ],
-    "correct_answer_index": 1,
-    "image_path": null
-  },
-  {
-    "id": "q00041",
-    "genre": "programming",
-    "question_text": {
-      "ja": "かんすうがたぷろぐらみんぐのとくちょうは?",
-      "en": "What is a characteristic of functional programming?"
-    },
-    "choices": [
-      {
-        "ja": "みゅーたぶるなじょうたい",
-        "en": "Mutable state"
-      },
-      {
-        "ja": "いみゅーたぶるなでーた",
-        "en": "Immutable data"
-      },
-      {
-        "ja": "ぐろーばるへんすう",
-        "en": "Global variables"
-      },
-      {
-        "ja": "goto ぶん",
-        "en": "goto statements"
-      }
-    ],
-    "correct_answer_index": 1,
-    "image_path": null
-  },
-  {
-    "id": "q00042",
     "genre": "technology",
+    "id": "q00035",
+    "image_path": null,
     "question_text": {
-      "ja": "AWSのS3はなにのさーびす?",
-      "en": "What service is AWS S3?"
-    },
+      "en": "What is the smallest unit in Kubernetes?",
+      "ja": "kubernetesでさいしょうたんいは?"
+    }
+  },
+  {
     "choices": [
       {
-        "ja": "こんぴゅーと",
-        "en": "Compute"
+        "en": "class",
+        "ja": "class",
+        "ja_typings": [
+          "class"
+        ]
       },
       {
-        "ja": "すとれーじ",
-        "en": "Storage"
+        "en": "interface",
+        "ja": "interface",
+        "ja_typings": [
+          "interface"
+        ]
       },
       {
-        "ja": "でーたべーす",
-        "en": "Database"
+        "en": "abstract",
+        "ja": "abstract",
+        "ja_typings": [
+          "abstract"
+        ]
       },
       {
-        "ja": "ねっとわーく",
-        "en": "Network"
+        "en": "extends",
+        "ja": "extends",
+        "ja_typings": [
+          "extends"
+        ]
       }
     ],
     "correct_answer_index": 1,
-    "image_path": null
-  },
-  {
-    "id": "q00043",
     "genre": "programming",
+    "id": "q00036",
+    "image_path": null,
     "question_text": {
-      "ja": "えむぶいしーぱたーんのVはなに?",
-      "en": "What does the 'V' in MVC pattern stand for?"
-    },
-    "choices": [
-      {
-        "ja": "Variable",
-        "en": "Variable"
-      },
-      {
-        "ja": "View",
-        "en": "View"
-      },
-      {
-        "ja": "Value",
-        "en": "Value"
-      },
-      {
-        "ja": "Vector",
-        "en": "Vector"
-      }
-    ],
-    "correct_answer_index": 1,
-    "image_path": null
+      "en": "Which keyword defines an interface in Java?",
+      "ja": "Javaでいんたーふぇーすをていぎするきーわーどは?"
+    }
   },
   {
-    "id": "q00044",
-    "genre": "web_development",
-    "question_text": {
-      "ja": "Webpackはなにをするつーる?",
-      "en": "What does Webpack do?"
-    },
     "choices": [
       {
-        "ja": "てすと",
-        "en": "Testing"
+        "en": "Fetch only needed data",
+        "ja": "ひつようなでーたのみしゅとく",
+        "ja_typings": [
+          "hitsuyonadetanomishutoku",
+          "hitsuyounadetanomishutoku"
+        ]
       },
       {
-        "ja": "ばんどる",
-        "en": "Bundling"
+        "en": "Fetch all data",
+        "ja": "すべてのでーたしゅとく",
+        "ja_typings": [
+          "subetenodetashutoku"
+        ]
       },
       {
-        "ja": "でばっぐ",
-        "en": "Debugging"
+        "en": "Only delete data",
+        "ja": "でーたさくじょのみ",
+        "ja_typings": [
+          "detasakujonomi"
+        ]
       },
       {
-        "ja": "でぷろい",
-        "en": "Deployment"
-      }
-    ],
-    "correct_answer_index": 1,
-    "image_path": null
-  },
-  {
-    "id": "q00045",
-    "genre": "programming",
-    "question_text": {
-      "ja": "Rubyのふれーむわーくでゆうめいなのは?",
-      "en": "Which is a famous Ruby framework?"
-    },
-    "choices": [
-      {
-        "ja": "Django",
-        "en": "Django"
-      },
-      {
-        "ja": "Rails",
-        "en": "Rails"
-      },
-      {
-        "ja": "Laravel",
-        "en": "Laravel"
-      },
-      {
-        "ja": "Express",
-        "en": "Express"
-      }
-    ],
-    "correct_answer_index": 1,
-    "image_path": null
-  },
-  {
-    "id": "q00046",
-    "genre": "it_terminology",
-    "question_text": {
-      "ja": "OAuthはなににつかう?",
-      "en": "What is OAuth used for?"
-    },
-    "choices": [
-      {
-        "ja": "にんしょう",
-        "en": "Authentication"
-      },
-      {
-        "ja": "あんごう",
-        "en": "Encryption"
-      },
-      {
-        "ja": "あっしゅく",
-        "en": "Compression"
-      },
-      {
-        "ja": "でばっぐ",
-        "en": "Debugging"
+        "en": "Nothing",
+        "ja": "なにもできない",
+        "ja_typings": [
+          "nanimodekinai"
+        ]
       }
     ],
     "correct_answer_index": 0,
-    "image_path": null
+    "genre": "web_development",
+    "id": "q00037",
+    "image_path": null,
+    "question_text": {
+      "en": "What can you do with GraphQL queries?",
+      "ja": "GraphQLのくえりでできることは?"
+    }
   },
   {
-    "id": "q00047",
-    "genre": "programming",
-    "question_text": {
-      "ja": "Swiftはどこのかいしゃがかいはつ?",
-      "en": "Which company developed Swift?"
-    },
     "choices": [
       {
+        "en": "Secure Shell",
+        "ja": "Secure Shell",
+        "ja_typings": [
+          "secure shell"
+        ]
+      },
+      {
+        "en": "Super Shell",
+        "ja": "Super Shell",
+        "ja_typings": [
+          "super shell"
+        ]
+      },
+      {
+        "en": "System Shell",
+        "ja": "System Shell",
+        "ja_typings": [
+          "system shell"
+        ]
+      },
+      {
+        "en": "Safe Shell",
+        "ja": "Safe Shell",
+        "ja_typings": [
+          "safe shell"
+        ]
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "it_terminology",
+    "id": "q00038",
+    "image_path": null,
+    "question_text": {
+      "en": "What does SSH stand for?",
+      "ja": "SSHはなんのりゃくしょう?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Blockchain",
+        "ja": "Blockchain",
+        "ja_typings": [
+          "blockchain"
+        ]
+      },
+      {
+        "en": "Cloud",
+        "ja": "Cloud",
+        "ja_typings": [
+          "cloud"
+        ]
+      },
+      {
+        "en": "IoT",
+        "ja": "IoT",
+        "ja_typings": [
+          "iot"
+        ]
+      },
+      {
+        "en": "5G",
+        "ja": "5G",
+        "ja_typings": [
+          "5g"
+        ]
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "programming",
+    "id": "q00039",
+    "image_path": null,
+    "question_text": {
+      "en": "What technology is used in Bitcoin?",
+      "ja": "びっとこいんでつかわれるぎじゅつは?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "HTML",
+        "ja": "HTML",
+        "ja_typings": [
+          "html"
+        ]
+      },
+      {
+        "en": "CSS",
+        "ja": "CSS",
+        "ja_typings": [
+          "css"
+        ]
+      },
+      {
+        "en": "JavaScript",
+        "ja": "JavaScript",
+        "ja_typings": [
+          "javascript"
+        ]
+      },
+      {
+        "en": "XML",
+        "ja": "XML",
+        "ja_typings": [
+          "xml"
+        ]
+      }
+    ],
+    "correct_answer_index": 1,
+    "genre": "web_development",
+    "id": "q00040",
+    "image_path": null,
+    "question_text": {
+      "en": "What does Sass extend?",
+      "ja": "Sassはなにをかくちょうしたもの?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Mutable state",
+        "ja": "みゅーたぶるなじょうたい",
+        "ja_typings": [
+          "myutaburunajotai",
+          "myutaburunajoutai"
+        ]
+      },
+      {
+        "en": "Immutable data",
+        "ja": "いみゅーたぶるなでーた",
+        "ja_typings": [
+          "imyutaburunadeta"
+        ]
+      },
+      {
+        "en": "Global variables",
+        "ja": "ぐろーばるへんすう",
+        "ja_typings": [
+          "gurobaruhensuu"
+        ]
+      },
+      {
+        "en": "goto statements",
+        "ja": "goto ぶん",
+        "ja_typings": [
+          "goto bun"
+        ]
+      }
+    ],
+    "correct_answer_index": 1,
+    "genre": "programming",
+    "id": "q00041",
+    "image_path": null,
+    "question_text": {
+      "en": "What is a characteristic of functional programming?",
+      "ja": "かんすうがたぷろぐらみんぐのとくちょうは?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Compute",
+        "ja": "こんぴゅーと",
+        "ja_typings": [
+          "konpyuto"
+        ]
+      },
+      {
+        "en": "Storage",
+        "ja": "すとれーじ",
+        "ja_typings": [
+          "sutoreji"
+        ]
+      },
+      {
+        "en": "Database",
+        "ja": "でーたべーす",
+        "ja_typings": [
+          "detabesu"
+        ]
+      },
+      {
+        "en": "Network",
+        "ja": "ねっとわーく",
+        "ja_typings": [
+          "nettowaku"
+        ]
+      }
+    ],
+    "correct_answer_index": 1,
+    "genre": "technology",
+    "id": "q00042",
+    "image_path": null,
+    "question_text": {
+      "en": "What service is AWS S3?",
+      "ja": "AWSのS3はなにのさーびす?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Variable",
+        "ja": "Variable",
+        "ja_typings": [
+          "variable"
+        ]
+      },
+      {
+        "en": "View",
+        "ja": "View",
+        "ja_typings": [
+          "view"
+        ]
+      },
+      {
+        "en": "Value",
+        "ja": "Value",
+        "ja_typings": [
+          "value"
+        ]
+      },
+      {
+        "en": "Vector",
+        "ja": "Vector",
+        "ja_typings": [
+          "vector"
+        ]
+      }
+    ],
+    "correct_answer_index": 1,
+    "genre": "programming",
+    "id": "q00043",
+    "image_path": null,
+    "question_text": {
+      "en": "What does the 'V' in MVC pattern stand for?",
+      "ja": "えむぶいしーぱたーんのVはなに?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Testing",
+        "ja": "てすと",
+        "ja_typings": [
+          "tesuto"
+        ]
+      },
+      {
+        "en": "Bundling",
+        "ja": "ばんどる",
+        "ja_typings": [
+          "bandoru"
+        ]
+      },
+      {
+        "en": "Debugging",
+        "ja": "でばっぐ",
+        "ja_typings": [
+          "debaggu"
+        ]
+      },
+      {
+        "en": "Deployment",
+        "ja": "でぷろい",
+        "ja_typings": [
+          "depuroi"
+        ]
+      }
+    ],
+    "correct_answer_index": 1,
+    "genre": "web_development",
+    "id": "q00044",
+    "image_path": null,
+    "question_text": {
+      "en": "What does Webpack do?",
+      "ja": "Webpackはなにをするつーる?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Django",
+        "ja": "Django",
+        "ja_typings": [
+          "django"
+        ]
+      },
+      {
+        "en": "Rails",
+        "ja": "Rails",
+        "ja_typings": [
+          "rails"
+        ]
+      },
+      {
+        "en": "Laravel",
+        "ja": "Laravel",
+        "ja_typings": [
+          "laravel"
+        ]
+      },
+      {
+        "en": "Express",
+        "ja": "Express",
+        "ja_typings": [
+          "express"
+        ]
+      }
+    ],
+    "correct_answer_index": 1,
+    "genre": "programming",
+    "id": "q00045",
+    "image_path": null,
+    "question_text": {
+      "en": "Which is a famous Ruby framework?",
+      "ja": "Rubyのふれーむわーくでゆうめいなのは?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Authentication",
+        "ja": "にんしょう",
+        "ja_typings": [
+          "ninsho",
+          "ninshou"
+        ]
+      },
+      {
+        "en": "Encryption",
+        "ja": "あんごう",
+        "ja_typings": [
+          "ango",
+          "angou"
+        ]
+      },
+      {
+        "en": "Compression",
+        "ja": "あっしゅく",
+        "ja_typings": [
+          "asshuku"
+        ]
+      },
+      {
+        "en": "Debugging",
+        "ja": "でばっぐ",
+        "ja_typings": [
+          "debaggu"
+        ]
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "it_terminology",
+    "id": "q00046",
+    "image_path": null,
+    "question_text": {
+      "en": "What is OAuth used for?",
+      "ja": "OAuthはなににつかう?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Google",
         "ja": "Google",
-        "en": "Google"
+        "ja_typings": [
+          "google"
+        ]
       },
       {
+        "en": "Microsoft",
         "ja": "Microsoft",
-        "en": "Microsoft"
+        "ja_typings": [
+          "microsoft"
+        ]
       },
       {
+        "en": "Apple",
         "ja": "Apple",
-        "en": "Apple"
+        "ja_typings": [
+          "apple"
+        ]
       },
       {
+        "en": "Amazon",
         "ja": "Amazon",
-        "en": "Amazon"
+        "ja_typings": [
+          "amazon"
+        ]
       }
     ],
     "correct_answer_index": 2,
-    "image_path": null
-  },
-  {
-    "id": "q00048",
-    "genre": "technology",
-    "question_text": {
-      "ja": "IoTのTはなにをいみする?",
-      "en": "What does the 'T' in IoT stand for?"
-    },
-    "choices": [
-      {
-        "ja": "Technology",
-        "en": "Technology"
-      },
-      {
-        "ja": "Things",
-        "en": "Things"
-      },
-      {
-        "ja": "Transfer",
-        "en": "Transfer"
-      },
-      {
-        "ja": "Terminal",
-        "en": "Terminal"
-      }
-    ],
-    "correct_answer_index": 1,
-    "image_path": null
-  },
-  {
-    "id": "q00049",
-    "genre": "web_development",
-    "question_text": {
-      "ja": "Next.jsのべーすになっているのは?",
-      "en": "What is Next.js based on?"
-    },
-    "choices": [
-      {
-        "ja": "Vue",
-        "en": "Vue"
-      },
-      {
-        "ja": "React",
-        "en": "React"
-      },
-      {
-        "ja": "Angular",
-        "en": "Angular"
-      },
-      {
-        "ja": "Svelte",
-        "en": "Svelte"
-      }
-    ],
-    "correct_answer_index": 1,
-    "image_path": null
-  },
-  {
-    "id": "q00050",
     "genre": "programming",
+    "id": "q00047",
+    "image_path": null,
     "question_text": {
-      "ja": "れがしーこーどのいみは?",
-      "en": "What does legacy code mean?"
-    },
+      "en": "Which company developed Swift?",
+      "ja": "Swiftはどこのかいしゃがかいはつ?"
+    }
+  },
+  {
     "choices": [
       {
+        "en": "Technology",
+        "ja": "Technology",
+        "ja_typings": [
+          "technology"
+        ]
+      },
+      {
+        "en": "Things",
+        "ja": "Things",
+        "ja_typings": [
+          "things"
+        ]
+      },
+      {
+        "en": "Transfer",
+        "ja": "Transfer",
+        "ja_typings": [
+          "transfer"
+        ]
+      },
+      {
+        "en": "Terminal",
+        "ja": "Terminal",
+        "ja_typings": [
+          "terminal"
+        ]
+      }
+    ],
+    "correct_answer_index": 1,
+    "genre": "technology",
+    "id": "q00048",
+    "image_path": null,
+    "question_text": {
+      "en": "What does the 'T' in IoT stand for?",
+      "ja": "IoTのTはなにをいみする?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Vue",
+        "ja": "Vue",
+        "ja_typings": [
+          "vue"
+        ]
+      },
+      {
+        "en": "React",
+        "ja": "React",
+        "ja_typings": [
+          "react"
+        ]
+      },
+      {
+        "en": "Angular",
+        "ja": "Angular",
+        "ja_typings": [
+          "angular"
+        ]
+      },
+      {
+        "en": "Svelte",
+        "ja": "Svelte",
+        "ja_typings": [
+          "svelte"
+        ]
+      }
+    ],
+    "correct_answer_index": 1,
+    "genre": "web_development",
+    "id": "q00049",
+    "image_path": null,
+    "question_text": {
+      "en": "What is Next.js based on?",
+      "ja": "Next.jsのべーすになっているのは?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "New code",
         "ja": "あたらしいこーど",
-        "en": "New code"
+        "ja_typings": [
+          "atarashiikodo"
+        ]
       },
       {
+        "en": "Old code",
         "ja": "ふるいこーど",
-        "en": "Old code"
+        "ja_typings": [
+          "furuikodo"
+        ]
       },
       {
+        "en": "Test code",
         "ja": "てすとこーど",
-        "en": "Test code"
+        "ja_typings": [
+          "tesutokodo"
+        ]
       },
       {
+        "en": "Sample code",
         "ja": "さんぷるこーど",
-        "en": "Sample code"
+        "ja_typings": [
+          "sanpurukodo"
+        ]
       }
     ],
     "correct_answer_index": 1,
-    "image_path": null
+    "genre": "programming",
+    "id": "q00050",
+    "image_path": null,
+    "question_text": {
+      "en": "What does legacy code mean?",
+      "ja": "れがしーこーどのいみは?"
+    }
   },
   {
-    "id": "q00051",
-    "genre": "anime",
-    "question_text": {
-      "ja": "「しんげきのきょじん」のしゅじんこうは?",
-      "en": "Who is the protagonist of 'Attack on Titan'?"
-    },
     "choices": [
+    {
+      "en": "Eren Yeager",
+      "ja": "エレン・イェーガー",
+      "ja_typings": [
+        "eren yega",
+        "eren yeager"
+      ]
+    },
+    {
+      "en": "Levi",
+      "ja": "リヴァイ",
+      "ja_typings": [
+        "rivai",
+        "levi"
+      ]
+    },
       {
-        "ja": "エレン・イェーガー",
-        "en": "Eren Yeager"
-      },
-      {
-        "ja": "リヴァイ",
-        "en": "Levi"
-      },
-      {
+        "en": "Mikasa",
         "ja": "ミカサ",
-        "en": "Mikasa"
+        "ja_typings": [
+          "mikasa"
+        ]
       },
-      {
-        "ja": "アルミン",
-        "en": "Armin"
-      }
+    {
+      "en": "Armin",
+      "ja": "アルミン",
+      "ja_typings": [
+        "arumin",
+        "armin"
+      ]
+    }
     ],
     "correct_answer_index": 0,
-    "image_path": null
+    "genre": "anime",
+    "id": "q00051",
+    "image_path": null,
+    "question_text": {
+      "en": "Who is the protagonist of 'Attack on Titan'?",
+      "ja": "「しんげきのきょじん」のしゅじんこうは?"
+    }
   },
   {
-    "id": "q00052",
-    "genre": "game",
-    "question_text": {
-      "ja": "ポケモンのタイプでみずにつよいのは?",
-      "en": "Which Pokemon type is strong against Water?"
-    },
     "choices": [
       {
+        "en": "Fire",
         "ja": "ほのお",
-        "en": "Fire"
+        "ja_typings": [
+          "hono",
+          "honoo"
+        ]
       },
       {
+        "en": "Grass",
         "ja": "くさ",
-        "en": "Grass"
+        "ja_typings": [
+          "kusa"
+        ]
       },
       {
+        "en": "Ground",
         "ja": "じめん",
-        "en": "Ground"
+        "ja_typings": [
+          "jimen"
+        ]
       },
       {
+        "en": "Flying",
         "ja": "ひこう",
-        "en": "Flying"
+        "ja_typings": [
+          "hiko",
+          "hikou"
+        ]
       }
     ],
     "correct_answer_index": 1,
-    "image_path": null
+    "genre": "game",
+    "id": "q00052",
+    "image_path": null,
+    "question_text": {
+      "en": "Which Pokemon type is strong against Water?",
+      "ja": "ポケモンのタイプでみずにつよいのは?"
+    }
   },
   {
-    "id": "q00053",
-    "genre": "manga",
-    "question_text": {
-      "ja": "「ワンピース」のしゅじんこうのゆめは?",
-      "en": "What is the protagonist's dream in 'One Piece'?"
-    },
     "choices": [
       {
+        "en": "Pirate King",
         "ja": "かいぞくおう",
-        "en": "Pirate King"
+        "ja_typings": [
+          "kaizokuo",
+          "kaizokuou"
+        ]
       },
       {
+        "en": "Marine Admiral",
         "ja": "ほかいし",
-        "en": "Marine Admiral"
+        "ja_typings": [
+          "hokaishi"
+        ]
       },
       {
+        "en": "Merchant",
         "ja": "しょうにん",
-        "en": "Merchant"
+        "ja_typings": [
+          "shonin",
+          "shounin"
+        ]
       },
       {
+        "en": "Explorer",
         "ja": "たんけんか",
-        "en": "Explorer"
+        "ja_typings": [
+          "tankenka"
+        ]
       }
     ],
     "correct_answer_index": 0,
-    "image_path": null
+    "genre": "manga",
+    "id": "q00053",
+    "image_path": null,
+    "question_text": {
+      "en": "What is the protagonist's dream in 'One Piece'?",
+      "ja": "「ワンピース」のしゅじんこうのゆめは?"
+    }
   },
   {
-    "id": "q00054",
-    "genre": "anime",
-    "question_text": {
-      "ja": "「デスノート」のしにがみのなまえは?",
-      "en": "What is the name of the Shinigami in 'Death Note'?"
-    },
     "choices": [
+    {
+      "en": "Ryuk",
+      "ja": "リューク",
+      "ja_typings": [
+        "ryuku",
+        "ryuk"
+      ]
+    },
       {
-        "ja": "リューク",
-        "en": "Ryuk"
-      },
-      {
+        "en": "Light",
         "ja": "ライト",
-        "en": "Light"
+        "ja_typings": [
+          "raito"
+        ]
       },
+    {
+      "en": "L (Lawliet)",
+      "ja": "エル（Lawliet）",
+      "ja_typings": [
+        "eru lawliet",
+        "lawliet"
+      ]
+    },
       {
-        "ja": "エル（Lawliet）",
-        "en": "L (Lawliet)"
-      },
-      {
+        "en": "Misa",
         "ja": "ミサ",
-        "en": "Misa"
+        "ja_typings": [
+          "misa"
+        ]
       }
     ],
     "correct_answer_index": 0,
-    "image_path": null
+    "genre": "anime",
+    "id": "q00054",
+    "image_path": null,
+    "question_text": {
+      "en": "What is the name of the Shinigami in 'Death Note'?",
+      "ja": "「デスノート」のしにがみのなまえは?"
+    }
   },
   {
-    "id": "q00055",
-    "genre": "game",
-    "question_text": {
-      "ja": "マリオのきょうだいのなまえは?",
-      "en": "What is Mario's brother's name?"
-    },
     "choices": [
+    {
+      "en": "Luigi",
+      "ja": "ルイージ",
+      "ja_typings": [
+        "ruiji",
+        "luigi"
+      ]
+    },
       {
-        "ja": "ルイージ",
-        "en": "Luigi"
-      },
-      {
+        "en": "Wario",
         "ja": "ワリオ",
-        "en": "Wario"
+        "ja_typings": [
+          "wario"
+        ]
       },
-      {
-        "ja": "ヨッシー",
-        "en": "Yoshi"
-      },
-      {
-        "ja": "キノピオ",
-        "en": "Toad"
-      }
+    {
+      "en": "Yoshi",
+      "ja": "ヨッシー",
+      "ja_typings": [
+        "yosshi",
+        "yoshi"
+      ]
+    },
+    {
+      "en": "Toad",
+      "ja": "キノピオ",
+      "ja_typings": [
+        "kinopio",
+        "toad"
+      ]
+    }
     ],
     "correct_answer_index": 0,
-    "image_path": null
+    "genre": "game",
+    "id": "q00055",
+    "image_path": null,
+    "question_text": {
+      "en": "What is Mario's brother's name?",
+      "ja": "マリオのきょうだいのなまえは?"
+    }
   },
   {
-    "id": "q00056",
-    "genre": "anime",
-    "question_text": {
-      "ja": "「きめつのやいば」のしゅじんこうのいもうとは?",
-      "en": "Who is the protagonist's sister in 'Demon Slayer'?"
-    },
     "choices": [
       {
+        "en": "Kanao",
         "ja": "カナヲ",
-        "en": "Kanao"
+        "ja_typings": [
+          "kanao"
+        ]
       },
       {
+        "en": "Nezuko",
         "ja": "ねずこ",
-        "en": "Nezuko"
+        "ja_typings": [
+          "nezuko"
+        ]
       },
       {
+        "en": "Shinobu",
         "ja": "しのぶ",
-        "en": "Shinobu"
+        "ja_typings": [
+          "shinobu"
+        ]
       },
       {
+        "en": "Aoi",
         "ja": "あおい",
-        "en": "Aoi"
+        "ja_typings": [
+          "aoi"
+        ]
       }
     ],
     "correct_answer_index": 1,
-    "image_path": null
-  },
-  {
-    "id": "q00057",
-    "genre": "game",
-    "question_text": {
-      "ja": "ゼルダのでんせつのしゅじんこうは?",
-      "en": "Who is the protagonist of 'The Legend of Zelda'?"
-    },
-    "choices": [
-      {
-        "ja": "ゼルダ",
-        "en": "Zelda"
-      },
-      {
-        "ja": "リンク",
-        "en": "Link"
-      },
-      {
-        "ja": "ガノン",
-        "en": "Ganon"
-      },
-      {
-        "ja": "インパ",
-        "en": "Impa"
-      }
-    ],
-    "correct_answer_index": 1,
-    "image_path": null
-  },
-  {
-    "id": "q00058",
     "genre": "anime",
+    "id": "q00056",
+    "image_path": null,
     "question_text": {
-      "ja": "「エヴァンゲリオン」のしきれいしゃは?",
-      "en": "Who is the commander in 'Evangelion'?"
+      "en": "Who is the protagonist's sister in 'Demon Slayer'?",
+      "ja": "「きめつのやいば」のしゅじんこうのいもうとは?"
+    }
+  },
+  {
+    "choices": [
+    {
+      "en": "Zelda",
+      "ja": "ゼルダ",
+      "ja_typings": [
+        "zeruda",
+        "zelda"
+      ]
     },
+    {
+      "en": "Link",
+      "ja": "リンク",
+      "ja_typings": [
+        "rinku",
+        "link"
+      ]
+    },
+      {
+        "en": "Ganon",
+        "ja": "ガノン",
+        "ja_typings": [
+          "ganon"
+        ]
+      },
+    {
+      "en": "Impa",
+      "ja": "インパ",
+      "ja_typings": [
+        "inpa",
+        "impa"
+      ]
+    }
+    ],
+    "correct_answer_index": 1,
+    "genre": "game",
+    "id": "q00057",
+    "image_path": null,
+    "question_text": {
+      "en": "Who is the protagonist of 'The Legend of Zelda'?",
+      "ja": "ゼルダのでんせつのしゅじんこうは?"
+    }
+  },
+  {
     "choices": [
       {
+        "en": "Shinji",
         "ja": "シンジ",
-        "en": "Shinji"
+        "ja_typings": [
+          "shinji"
+        ]
       },
+    {
+      "en": "Gendo",
+      "ja": "ゲンドウ",
+      "ja_typings": [
+        "gendo",
+        "gendou"
+      ]
+    },
       {
-        "ja": "ゲンドウ",
-        "en": "Gendo"
-      },
-      {
+        "en": "Misato",
         "ja": "ミサト",
-        "en": "Misato"
+        "ja_typings": [
+          "misato"
+        ]
       },
       {
+        "en": "Ritsuko",
         "ja": "リツコ",
-        "en": "Ritsuko"
+        "ja_typings": [
+          "ritsuko"
+        ]
       }
     ],
     "correct_answer_index": 1,
-    "image_path": null
+    "genre": "anime",
+    "id": "q00058",
+    "image_path": null,
+    "question_text": {
+      "en": "Who is the commander in 'Evangelion'?",
+      "ja": "「エヴァンゲリオン」のしきれいしゃは?"
+    }
   },
   {
-    "id": "q00059",
-    "genre": "game",
-    "question_text": {
-      "ja": "ファイナルファンタジーのしょくぎょうでないのは?",
-      "en": "Which is NOT a job class in Final Fantasy?"
-    },
     "choices": [
       {
+        "en": "Black Mage",
         "ja": "くろまどうし",
-        "en": "Black Mage"
+        "ja_typings": [
+          "kuromadoshi",
+          "kuromadoushi"
+        ]
       },
       {
+        "en": "White Mage",
         "ja": "しろまどうし",
-        "en": "White Mage"
+        "ja_typings": [
+          "shiromadoshi",
+          "shiromadoushi"
+        ]
       },
       {
+        "en": "Red Mage",
         "ja": "あかまどうし",
-        "en": "Red Mage"
+        "ja_typings": [
+          "akamadoshi",
+          "akamadoushi"
+        ]
       },
       {
+        "en": "Blue Mage",
         "ja": "あおまどうし",
-        "en": "Blue Mage"
+        "ja_typings": [
+          "aomadoshi",
+          "aomadoushi"
+        ]
       }
     ],
     "correct_answer_index": 3,
-    "image_path": null
+    "genre": "game",
+    "id": "q00059",
+    "image_path": null,
+    "question_text": {
+      "en": "Which is NOT a job class in Final Fantasy?",
+      "ja": "ファイナルファンタジーのしょくぎょうでないのは?"
+    }
   },
   {
-    "id": "q00060",
-    "genre": "manga",
-    "question_text": {
-      "ja": "「NARUTO」のしゅじんこうのゆめは?",
-      "en": "What is the protagonist's dream in 'NARUTO'?"
-    },
     "choices": [
       {
+        "en": "Hokage",
         "ja": "ほかげ",
-        "en": "Hokage"
+        "ja_typings": [
+          "hokage"
+        ]
       },
       {
+        "en": "ANBU",
         "ja": "あんぶ",
-        "en": "ANBU"
+        "ja_typings": [
+          "anbu"
+        ]
       },
       {
+        "en": "Jonin",
         "ja": "じょうにん",
-        "en": "Jonin"
+        "ja_typings": [
+          "jonin",
+          "jounin"
+        ]
       },
       {
+        "en": "Sannin",
         "ja": "さんにん",
-        "en": "Sannin"
+        "ja_typings": [
+          "sannin"
+        ]
       }
     ],
     "correct_answer_index": 0,
-    "image_path": null
+    "genre": "manga",
+    "id": "q00060",
+    "image_path": null,
+    "question_text": {
+      "en": "What is the protagonist's dream in 'NARUTO'?",
+      "ja": "「NARUTO」のしゅじんこうのゆめは?"
+    }
   },
   {
-    "id": "q00061",
-    "genre": "anime",
-    "question_text": {
-      "ja": "「スパイファミリー」のちちのこーどねーむは?",
-      "en": "What is the father's codename in 'Spy x Family'?"
-    },
     "choices": [
       {
+        "en": "Twilight",
         "ja": "トワイライト",
-        "en": "Twilight"
+        "ja_typings": [
+          "towairaito"
+        ]
       },
       {
+        "en": "Thorn Princess",
         "ja": "いばらひめ",
-        "en": "Thorn Princess"
+        "ja_typings": [
+          "ibarahime"
+        ]
       },
       {
+        "en": "Bond",
         "ja": "ボンド",
-        "en": "Bond"
+        "ja_typings": [
+          "bondo"
+        ]
       },
       {
+        "en": "Anya",
         "ja": "アーニャ",
-        "en": "Anya"
+        "ja_typings": [
+          "anya"
+        ]
       }
     ],
     "correct_answer_index": 0,
-    "image_path": null
+    "genre": "anime",
+    "id": "q00061",
+    "image_path": null,
+    "question_text": {
+      "en": "What is the father's codename in 'Spy x Family'?",
+      "ja": "「スパイファミリー」のちちのこーどねーむは?"
+    }
   },
   {
-    "id": "q00062",
-    "genre": "game",
-    "question_text": {
-      "ja": "マインクラフトのせいさくもーどは?",
-      "en": "What is the creative mode in Minecraft?"
-    },
     "choices": [
       {
+        "en": "Survival",
         "ja": "サバイバル",
-        "en": "Survival"
+        "ja_typings": [
+          "sabaibaru"
+        ]
       },
       {
+        "en": "Creative",
         "ja": "クリエイティブ",
-        "en": "Creative"
+        "ja_typings": [
+          "kurieitibu"
+        ]
       },
       {
+        "en": "Adventure",
         "ja": "アドベンチャー",
-        "en": "Adventure"
+        "ja_typings": [
+          "adobencha"
+        ]
       },
       {
+        "en": "Hardcore",
         "ja": "ハードコア",
-        "en": "Hardcore"
+        "ja_typings": [
+          "hadokoa"
+        ]
       }
     ],
     "correct_answer_index": 1,
-    "image_path": null
+    "genre": "game",
+    "id": "q00062",
+    "image_path": null,
+    "question_text": {
+      "en": "What is the creative mode in Minecraft?",
+      "ja": "マインクラフトのせいさくもーどは?"
+    }
   },
   {
-    "id": "q00063",
-    "genre": "anime",
-    "question_text": {
-      "ja": "「ジョジョのきみょうなぼうけん」のすたんどとは?",
-      "en": "What is a 'Stand' in 'JoJo's Bizarre Adventure'?"
-    },
     "choices": [
       {
+        "en": "Weapon",
         "ja": "ぶき",
-        "en": "Weapon"
+        "ja_typings": [
+          "buki"
+        ]
       },
       {
+        "en": "Ability",
         "ja": "のうりょく",
-        "en": "Ability"
+        "ja_typings": [
+          "noryoku",
+          "nouryoku"
+        ]
       },
       {
+        "en": "Organization",
         "ja": "そしき",
-        "en": "Organization"
+        "ja_typings": [
+          "soshiki"
+        ]
       },
       {
+        "en": "Location",
         "ja": "ばしょ",
-        "en": "Location"
+        "ja_typings": [
+          "basho"
+        ]
       }
     ],
     "correct_answer_index": 1,
-    "image_path": null
+    "genre": "anime",
+    "id": "q00063",
+    "image_path": null,
+    "question_text": {
+      "en": "What is a 'Stand' in 'JoJo's Bizarre Adventure'?",
+      "ja": "「ジョジョのきみょうなぼうけん」のすたんどとは?"
+    }
   },
   {
-    "id": "q00064",
-    "genre": "game",
-    "question_text": {
-      "ja": "ストリートファイターでしゅじんこうは?",
-      "en": "Who is the main protagonist in Street Fighter?"
-    },
     "choices": [
+    {
+      "en": "Ryu",
+      "ja": "リュウ",
+      "ja_typings": [
+        "ryuu",
+        "ryu"
+      ]
+    },
       {
-        "ja": "リュウ",
-        "en": "Ryu"
-      },
-      {
+        "en": "Ken",
         "ja": "ケン",
-        "en": "Ken"
+        "ja_typings": [
+          "ken"
+        ]
       },
-      {
-        "ja": "ベガ",
-        "en": "Vega"
-      },
-      {
-        "ja": "さがっと",
-        "en": "Sagat"
-      }
+    {
+      "en": "Vega",
+      "ja": "ベガ",
+      "ja_typings": [
+        "bega",
+        "vega"
+      ]
+    },
+    {
+      "en": "Sagat",
+      "ja": "さがっと",
+      "ja_typings": [
+        "sagatto",
+        "sagat"
+      ]
+    }
     ],
     "correct_answer_index": 0,
-    "image_path": null
+    "genre": "game",
+    "id": "q00064",
+    "image_path": null,
+    "question_text": {
+      "en": "Who is the main protagonist in Street Fighter?",
+      "ja": "ストリートファイターでしゅじんこうは?"
+    }
   },
   {
-    "id": "q00065",
-    "genre": "vtuber_net_culture",
-    "question_text": {
-      "ja": "VTuberのVはなにのりゃく?",
-      "en": "What does the 'V' in VTuber stand for?"
-    },
     "choices": [
       {
+        "en": "Video",
         "ja": "Video",
-        "en": "Video"
+        "ja_typings": [
+          "video"
+        ]
       },
       {
+        "en": "Virtual",
         "ja": "Virtual",
-        "en": "Virtual"
+        "ja_typings": [
+          "virtual"
+        ]
       },
       {
+        "en": "Voice",
         "ja": "Voice",
-        "en": "Voice"
+        "ja_typings": [
+          "voice"
+        ]
       },
       {
+        "en": "Vocal",
         "ja": "Vocal",
-        "en": "Vocal"
+        "ja_typings": [
+          "vocal"
+        ]
       }
     ],
     "correct_answer_index": 1,
-    "image_path": null
-  },
-  {
-    "id": "q00066",
-    "genre": "anime",
-    "question_text": {
-      "ja": "「ハイキュー!!」はなにのすぽーつ?",
-      "en": "What sport is featured in 'Haikyuu!!'?"
-    },
-    "choices": [
-      {
-        "ja": "バスケ",
-        "en": "Basketball"
-      },
-      {
-        "ja": "バレー",
-        "en": "Volleyball"
-      },
-      {
-        "ja": "サッカー",
-        "en": "Soccer"
-      },
-      {
-        "ja": "やきゅう",
-        "en": "Baseball"
-      }
-    ],
-    "correct_answer_index": 1,
-    "image_path": null
-  },
-  {
-    "id": "q00067",
-    "genre": "game",
-    "question_text": {
-      "ja": "Among Usでインポスターのもくてきは?",
-      "en": "What is the Impostor's objective in Among Us?"
-    },
-    "choices": [
-      {
-        "ja": "たすくをこなす",
-        "en": "Complete tasks"
-      },
-      {
-        "ja": "クルーをはいじょ",
-        "en": "Eliminate crew"
-      },
-      {
-        "ja": "しゅうり",
-        "en": "Repair"
-      },
-      {
-        "ja": "ほうこく",
-        "en": "Report"
-      }
-    ],
-    "correct_answer_index": 1,
-    "image_path": null
-  },
-  {
-    "id": "q00068",
-    "genre": "manga",
-    "question_text": {
-      "ja": "「ハンターハンター」のゴンのちちは?",
-      "en": "Who is Gon's father in 'Hunter x Hunter'?"
-    },
-    "choices": [
-      {
-        "ja": "ジン",
-        "en": "Ging"
-      },
-      {
-        "ja": "キルア",
-        "en": "Killua"
-      },
-      {
-        "ja": "クラピカ",
-        "en": "Kurapika"
-      },
-      {
-        "ja": "レオリオ",
-        "en": "Leorio"
-      }
-    ],
-    "correct_answer_index": 0,
-    "image_path": null
-  },
-  {
-    "id": "q00069",
-    "genre": "anime",
-    "question_text": {
-      "ja": "「ドラゴンボール」のかめはめはをうつのは?",
-      "en": "Who uses the Kamehameha in 'Dragon Ball'?"
-    },
-    "choices": [
-      {
-        "ja": "ベジータ",
-        "en": "Vegeta"
-      },
-      {
-        "ja": "ゴクウ",
-        "en": "Goku"
-      },
-      {
-        "ja": "フリーザ",
-        "en": "Frieza"
-      },
-      {
-        "ja": "ピッコロ",
-        "en": "Piccolo"
-      }
-    ],
-    "correct_answer_index": 1,
-    "image_path": null
-  },
-  {
-    "id": "q00070",
-    "genre": "game",
-    "question_text": {
-      "ja": "アペックスレジェンズはなにげーむ?",
-      "en": "What type of game is Apex Legends?"
-    },
-    "choices": [
-      {
-        "ja": "RPG",
-        "en": "RPG"
-      },
-      {
-        "ja": "バトルロイヤル",
-        "en": "Battle Royale"
-      },
-      {
-        "ja": "パズル",
-        "en": "Puzzle"
-      },
-      {
-        "ja": "レース",
-        "en": "Racing"
-      }
-    ],
-    "correct_answer_index": 1,
-    "image_path": null
-  },
-  {
-    "id": "q00071",
     "genre": "vtuber_net_culture",
+    "id": "q00065",
+    "image_path": null,
     "question_text": {
-      "ja": "「草」はねっとすらんぐでなに?",
-      "en": "What does 'kusa' mean in internet slang?"
-    },
+      "en": "What does the 'V' in VTuber stand for?",
+      "ja": "VTuberのVはなにのりゃく?"
+    }
+  },
+  {
     "choices": [
       {
-        "ja": "かなしい",
-        "en": "Sad"
+        "en": "Basketball",
+        "ja": "バスケ",
+        "ja_typings": [
+          "basuke"
+        ]
       },
       {
-        "ja": "わらう",
-        "en": "Laughing"
+        "en": "Volleyball",
+        "ja": "バレー",
+        "ja_typings": [
+          "bare"
+        ]
       },
       {
-        "ja": "おこる",
-        "en": "Angry"
+        "en": "Soccer",
+        "ja": "サッカー",
+        "ja_typings": [
+          "sakka"
+        ]
       },
       {
-        "ja": "ねむい",
-        "en": "Sleepy"
+        "en": "Baseball",
+        "ja": "やきゅう",
+        "ja_typings": [
+          "yakyuu"
+        ]
       }
     ],
     "correct_answer_index": 1,
-    "image_path": null
+    "genre": "anime",
+    "id": "q00066",
+    "image_path": null,
+    "question_text": {
+      "en": "What sport is featured in 'Haikyuu!!'?",
+      "ja": "「ハイキュー!!」はなにのすぽーつ?"
+    }
   },
   {
-    "id": "q00072",
-    "genre": "anime",
-    "question_text": {
-      "ja": "「ソードアート・オンライン」のしゅだいは?",
-      "en": "What is the theme of 'Sword Art Online'?"
-    },
     "choices": [
       {
-        "ja": "ばーちゃるりありてぃ",
-        "en": "Virtual Reality"
+        "en": "Complete tasks",
+        "ja": "たすくをこなす",
+        "ja_typings": [
+          "tasukuokonasu"
+        ]
       },
       {
-        "ja": "まほう",
-        "en": "Magic"
+        "en": "Eliminate crew",
+        "ja": "クルーをはいじょ",
+        "ja_typings": [
+          "kuruohaijo"
+        ]
       },
       {
-        "ja": "うちゅう",
-        "en": "Space"
+        "en": "Repair",
+        "ja": "しゅうり",
+        "ja_typings": [
+          "shuuri"
+        ]
       },
       {
-        "ja": "じだいげき",
-        "en": "Period drama"
+        "en": "Report",
+        "ja": "ほうこく",
+        "ja_typings": [
+          "hokoku",
+          "houkoku"
+        ]
       }
     ],
-    "correct_answer_index": 0,
-    "image_path": null
-  },
-  {
-    "id": "q00073",
+    "correct_answer_index": 1,
     "genre": "game",
+    "id": "q00067",
+    "image_path": null,
     "question_text": {
-      "ja": "どうぶつのもりでできないことは?",
-      "en": "What CAN'T you do in Animal Crossing?"
-    },
-    "choices": [
-      {
-        "ja": "つりをする",
-        "en": "Fishing"
-      },
-      {
-        "ja": "むしとり",
-        "en": "Bug catching"
-      },
-      {
-        "ja": "たたかう",
-        "en": "Fighting"
-      },
-      {
-        "ja": "かぐをおく",
-        "en": "Place furniture"
-      }
-    ],
-    "correct_answer_index": 2,
-    "image_path": null
+      "en": "What is the Impostor's objective in Among Us?",
+      "ja": "Among Usでインポスターのもくてきは?"
+    }
   },
   {
-    "id": "q00074",
+    "choices": [
+    {
+      "en": "Ging",
+      "ja": "ジン",
+      "ja_typings": [
+        "jin",
+        "ging"
+      ]
+    },
+    {
+      "en": "Killua",
+      "ja": "キルア",
+      "ja_typings": [
+        "kirua",
+        "killua"
+      ]
+    },
+      {
+        "en": "Kurapika",
+        "ja": "クラピカ",
+        "ja_typings": [
+          "kurapika"
+        ]
+      },
+    {
+      "en": "Leorio",
+      "ja": "レオリオ",
+      "ja_typings": [
+        "reorio",
+        "leorio"
+      ]
+    }
+    ],
+    "correct_answer_index": 0,
     "genre": "manga",
+    "id": "q00068",
+    "image_path": null,
     "question_text": {
-      "ja": "「ブリーチ」のしゅじんこうのぶきは?",
-      "en": "What is the protagonist's weapon in 'Bleach'?"
-    },
-    "choices": [
-      {
-        "ja": "ザンパクトウ",
-        "en": "Zanpakuto"
-      },
-      {
-        "ja": "くない",
-        "en": "Kunai"
-      },
-      {
-        "ja": "かたな",
-        "en": "Katana"
-      },
-      {
-        "ja": "やり",
-        "en": "Spear"
-      }
-    ],
-    "correct_answer_index": 0,
-    "image_path": null
+      "en": "Who is Gon's father in 'Hunter x Hunter'?",
+      "ja": "「ハンターハンター」のゴンのちちは?"
+    }
   },
   {
-    "id": "q00075",
+    "choices": [
+    {
+      "en": "Vegeta",
+      "ja": "ベジータ",
+      "ja_typings": [
+        "bejita",
+        "vegeta"
+      ]
+    },
+    {
+      "en": "Goku",
+      "ja": "ゴクウ",
+      "ja_typings": [
+        "gokuu",
+        "goku"
+      ]
+    },
+    {
+      "en": "Frieza",
+      "ja": "フリーザ",
+      "ja_typings": [
+        "furiza",
+        "frieza"
+      ]
+    },
+    {
+      "en": "Piccolo",
+      "ja": "ピッコロ",
+      "ja_typings": [
+        "pikkoro",
+        "piccolo"
+      ]
+    }
+    ],
+    "correct_answer_index": 1,
     "genre": "anime",
+    "id": "q00069",
+    "image_path": null,
     "question_text": {
-      "ja": "「ぼくのヒーローアカデミア」のこせいとは?",
-      "en": "What is a 'Quirk' in 'My Hero Academia'?"
-    },
+      "en": "Who uses the Kamehameha in 'Dragon Ball'?",
+      "ja": "「ドラゴンボール」のかめはめはをうつのは?"
+    }
+  },
+  {
     "choices": [
       {
+        "en": "RPG",
+        "ja": "RPG",
+        "ja_typings": [
+          "rpg"
+        ]
+      },
+      {
+        "en": "Battle Royale",
+        "ja": "バトルロイヤル",
+        "ja_typings": [
+          "batoruroiyaru"
+        ]
+      },
+      {
+        "en": "Puzzle",
+        "ja": "パズル",
+        "ja_typings": [
+          "pazuru"
+        ]
+      },
+      {
+        "en": "Racing",
+        "ja": "レース",
+        "ja_typings": [
+          "resu"
+        ]
+      }
+    ],
+    "correct_answer_index": 1,
+    "genre": "game",
+    "id": "q00070",
+    "image_path": null,
+    "question_text": {
+      "en": "What type of game is Apex Legends?",
+      "ja": "アペックスレジェンズはなにげーむ?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Sad",
+        "ja": "かなしい",
+        "ja_typings": [
+          "kanashii"
+        ]
+      },
+      {
+        "en": "Laughing",
+        "ja": "わらう",
+        "ja_typings": [
+          "warau"
+        ]
+      },
+      {
+        "en": "Angry",
+        "ja": "おこる",
+        "ja_typings": [
+          "okoru"
+        ]
+      },
+      {
+        "en": "Sleepy",
+        "ja": "ねむい",
+        "ja_typings": [
+          "nemui"
+        ]
+      }
+    ],
+    "correct_answer_index": 1,
+    "genre": "vtuber_net_culture",
+    "id": "q00071",
+    "image_path": null,
+    "question_text": {
+      "en": "What does 'kusa' mean in internet slang?",
+      "ja": "「草」はねっとすらんぐでなに?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Virtual Reality",
+        "ja": "ばーちゃるりありてぃ",
+        "ja_typings": [
+          "bacharuriariti"
+        ]
+      },
+      {
+        "en": "Magic",
+        "ja": "まほう",
+        "ja_typings": [
+          "maho",
+          "mahou"
+        ]
+      },
+      {
+        "en": "Space",
+        "ja": "うちゅう",
+        "ja_typings": [
+          "uchuu"
+        ]
+      },
+      {
+        "en": "Period drama",
+        "ja": "じだいげき",
+        "ja_typings": [
+          "jidaigeki"
+        ]
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "anime",
+    "id": "q00072",
+    "image_path": null,
+    "question_text": {
+      "en": "What is the theme of 'Sword Art Online'?",
+      "ja": "「ソードアート・オンライン」のしゅだいは?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Fishing",
+        "ja": "つりをする",
+        "ja_typings": [
+          "tsuriosuru"
+        ]
+      },
+      {
+        "en": "Bug catching",
+        "ja": "むしとり",
+        "ja_typings": [
+          "mushitori"
+        ]
+      },
+      {
+        "en": "Fighting",
+        "ja": "たたかう",
+        "ja_typings": [
+          "tatakau"
+        ]
+      },
+      {
+        "en": "Place furniture",
+        "ja": "かぐをおく",
+        "ja_typings": [
+          "kaguoku",
+          "kaguooku"
+        ]
+      }
+    ],
+    "correct_answer_index": 2,
+    "genre": "game",
+    "id": "q00073",
+    "image_path": null,
+    "question_text": {
+      "en": "What CAN'T you do in Animal Crossing?",
+      "ja": "どうぶつのもりでできないことは?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Zanpakuto",
+        "ja": "ザンパクトウ",
+        "ja_typings": [
+          "zanpakuto",
+          "zanpakutou"
+        ]
+      },
+      {
+        "en": "Kunai",
+        "ja": "くない",
+        "ja_typings": [
+          "kunai"
+        ]
+      },
+      {
+        "en": "Katana",
+        "ja": "かたな",
+        "ja_typings": [
+          "katana"
+        ]
+      },
+      {
+        "en": "Spear",
+        "ja": "やり",
+        "ja_typings": [
+          "yari"
+        ]
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "manga",
+    "id": "q00074",
+    "image_path": null,
+    "question_text": {
+      "en": "What is the protagonist's weapon in 'Bleach'?",
+      "ja": "「ブリーチ」のしゅじんこうのぶきは?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Hobby",
         "ja": "しゅみ",
-        "en": "Hobby"
+        "ja_typings": [
+          "shumi"
+        ]
       },
       {
+        "en": "Superpower",
         "ja": "ちょうのうりょく",
-        "en": "Superpower"
+        "ja_typings": [
+          "chonoryoku",
+          "chounouryoku"
+        ]
       },
       {
+        "en": "Personality",
         "ja": "せいかく",
-        "en": "Personality"
+        "ja_typings": [
+          "seikaku"
+        ]
       },
       {
+        "en": "Homework",
         "ja": "しゅくだい",
-        "en": "Homework"
+        "ja_typings": [
+          "shukudai"
+        ]
       }
     ],
     "correct_answer_index": 1,
-    "image_path": null
+    "genre": "anime",
+    "id": "q00075",
+    "image_path": null,
+    "question_text": {
+      "en": "What is a 'Quirk' in 'My Hero Academia'?",
+      "ja": "「ぼくのヒーローアカデミア」のこせいとは?"
+    }
   },
   {
-    "id": "q00076",
-    "genre": "geography",
-    "question_text": {
-      "ja": "せかいでいちばんたかいやまは?",
-      "en": "What is the world's highest mountain?"
-    },
     "choices": [
       {
+        "en": "Mount Fuji",
         "ja": "ふじさん",
-        "en": "Mount Fuji"
+        "ja_typings": [
+          "fujisan"
+        ]
       },
-      {
-        "ja": "エベレスト",
-        "en": "Everest"
-      },
-      {
-        "ja": "キリマンジャロ",
-        "en": "Kilimanjaro"
-      },
-      {
-        "ja": "マッターホルン",
-        "en": "Matterhorn"
-      }
+    {
+      "en": "Everest",
+      "ja": "エベレスト",
+      "ja_typings": [
+        "eberesuto",
+        "everest"
+      ]
+    },
+    {
+      "en": "Kilimanjaro",
+      "ja": "キリマンジャロ",
+      "ja_typings": [
+        "kirimanjaro",
+        "kilimanjaro"
+      ]
+    },
+    {
+      "en": "Matterhorn",
+      "ja": "マッターホルン",
+      "ja_typings": [
+        "mattahorun",
+        "matterhorn"
+      ]
+    }
     ],
     "correct_answer_index": 1,
-    "image_path": null
+    "genre": "geography",
+    "id": "q00076",
+    "image_path": null,
+    "question_text": {
+      "en": "What is the world's highest mountain?",
+      "ja": "せかいでいちばんたかいやまは?"
+    }
   },
   {
-    "id": "q00077",
-    "genre": "history",
-    "question_text": {
-      "ja": "だいにじせかいたいせんがおわったとしは?",
-      "en": "What year did World War II end?"
-    },
     "choices": [
       {
+        "en": "1943",
         "ja": "1943",
-        "en": "1943"
+        "ja_typings": [
+          "1943"
+        ]
       },
       {
+        "en": "1944",
         "ja": "1944",
-        "en": "1944"
+        "ja_typings": [
+          "1944"
+        ]
       },
       {
+        "en": "1945",
         "ja": "1945",
-        "en": "1945"
+        "ja_typings": [
+          "1945"
+        ]
       },
       {
+        "en": "1946",
         "ja": "1946",
-        "en": "1946"
+        "ja_typings": [
+          "1946"
+        ]
       }
     ],
     "correct_answer_index": 2,
-    "image_path": null
+    "genre": "history",
+    "id": "q00077",
+    "image_path": null,
+    "question_text": {
+      "en": "What year did World War II end?",
+      "ja": "だいにじせかいたいせんがおわったとしは?"
+    }
   },
   {
-    "id": "q00078",
-    "genre": "science",
-    "question_text": {
-      "ja": "ちきゅうからたいようまでのきょりは?",
-      "en": "What is the distance from Earth to the Sun?"
-    },
     "choices": [
       {
+        "en": "About 100 million km",
         "ja": "やく1おくkm",
-        "en": "About 100 million km"
+        "ja_typings": [
+          "yaku1okukm"
+        ]
       },
       {
+        "en": "About 150 million km",
         "ja": "やく1.5おくkm",
-        "en": "About 150 million km"
+        "ja_typings": [
+          "yaku1.5okukm"
+        ]
       },
       {
+        "en": "About 200 million km",
         "ja": "やく2おくkm",
-        "en": "About 200 million km"
+        "ja_typings": [
+          "yaku2okukm"
+        ]
       },
       {
+        "en": "About 300 million km",
         "ja": "やく3おくkm",
-        "en": "About 300 million km"
+        "ja_typings": [
+          "yaku3okukm"
+        ]
       }
     ],
     "correct_answer_index": 1,
-    "image_path": null
+    "genre": "science",
+    "id": "q00078",
+    "image_path": null,
+    "question_text": {
+      "en": "What is the distance from Earth to the Sun?",
+      "ja": "ちきゅうからたいようまでのきょりは?"
+    }
   },
   {
-    "id": "q00079",
-    "genre": "math",
-    "question_text": {
-      "ja": "えんしゅうりつπのちは?",
-      "en": "What is the approximate value of pi (π)?"
-    },
     "choices": [
       {
+        "en": "2.14",
         "ja": "2.14",
-        "en": "2.14"
+        "ja_typings": [
+          "2.14"
+        ]
       },
       {
+        "en": "3.14",
         "ja": "3.14",
-        "en": "3.14"
+        "ja_typings": [
+          "3.14"
+        ]
       },
       {
+        "en": "4.14",
         "ja": "4.14",
-        "en": "4.14"
+        "ja_typings": [
+          "4.14"
+        ]
       },
       {
+        "en": "5.14",
         "ja": "5.14",
-        "en": "5.14"
+        "ja_typings": [
+          "5.14"
+        ]
       }
     ],
     "correct_answer_index": 1,
-    "image_path": null
+    "genre": "math",
+    "id": "q00079",
+    "image_path": null,
+    "question_text": {
+      "en": "What is the approximate value of pi (π)?",
+      "ja": "えんしゅうりつπのちは?"
+    }
   },
   {
-    "id": "q00080",
-    "genre": "geography",
-    "question_text": {
-      "ja": "にほんのしゅとは?",
-      "en": "What is the capital of Japan?"
-    },
     "choices": [
       {
+        "en": "Osaka",
         "ja": "おおさか",
-        "en": "Osaka"
+        "ja_typings": [
+          "osaka",
+          "oosaka"
+        ]
       },
       {
+        "en": "Kyoto",
         "ja": "きょうと",
-        "en": "Kyoto"
+        "ja_typings": [
+          "kyoto",
+          "kyouto"
+        ]
       },
       {
+        "en": "Tokyo",
         "ja": "とうきょう",
-        "en": "Tokyo"
+        "ja_typings": [
+          "tokyo",
+          "toukyou"
+        ]
       },
       {
+        "en": "Yokohama",
         "ja": "よこはま",
-        "en": "Yokohama"
+        "ja_typings": [
+          "yokohama"
+        ]
       }
     ],
     "correct_answer_index": 2,
-    "image_path": null
+    "genre": "geography",
+    "id": "q00080",
+    "image_path": null,
+    "question_text": {
+      "en": "What is the capital of Japan?",
+      "ja": "にほんのしゅとは?"
+    }
   },
   {
-    "id": "q00081",
-    "genre": "science",
-    "question_text": {
-      "ja": "みずのふっとうてんは?",
-      "en": "What is the boiling point of water?"
-    },
     "choices": [
       {
+        "en": "0 degrees",
         "ja": "0ど",
-        "en": "0 degrees"
+        "ja_typings": [
+          "0do"
+        ]
       },
       {
+        "en": "50 degrees",
         "ja": "50ど",
-        "en": "50 degrees"
+        "ja_typings": [
+          "50do"
+        ]
       },
       {
+        "en": "100 degrees",
         "ja": "100ど",
-        "en": "100 degrees"
+        "ja_typings": [
+          "100do"
+        ]
       },
       {
+        "en": "150 degrees",
         "ja": "150ど",
-        "en": "150 degrees"
+        "ja_typings": [
+          "150do"
+        ]
       }
     ],
     "correct_answer_index": 2,
-    "image_path": null
+    "genre": "science",
+    "id": "q00081",
+    "image_path": null,
+    "question_text": {
+      "en": "What is the boiling point of water?",
+      "ja": "みずのふっとうてんは?"
+    }
   },
   {
+    "choices": [
+    {
+      "en": "Lincoln",
+      "ja": "リンカーン",
+      "ja_typings": [
+        "rinkan",
+        "lincoln"
+      ]
+    },
+    {
+      "en": "Washington",
+      "ja": "ワシントン",
+      "ja_typings": [
+        "washinton",
+        "washington"
+      ]
+    },
+    {
+      "en": "Jefferson",
+      "ja": "ジェファーソン",
+      "ja_typings": [
+        "jefason",
+        "jefferson"
+      ]
+    },
+    {
+      "en": "Kennedy",
+      "ja": "ケネディ",
+      "ja_typings": [
+        "kenedi",
+        "kennedy"
+      ]
+    }
+    ],
+    "correct_answer_index": 1,
+    "genre": "history",
     "id": "q00082",
-    "genre": "history",
+    "image_path": null,
     "question_text": {
-      "ja": "アメリカのしょだいだいとうりょうは?",
-      "en": "Who was the first U.S. President?"
-    },
-    "choices": [
-      {
-        "ja": "リンカーン",
-        "en": "Lincoln"
-      },
-      {
-        "ja": "ワシントン",
-        "en": "Washington"
-      },
-      {
-        "ja": "ジェファーソン",
-        "en": "Jefferson"
-      },
-      {
-        "ja": "ケネディ",
-        "en": "Kennedy"
-      }
-    ],
-    "correct_answer_index": 1,
-    "image_path": null
+      "en": "Who was the first U.S. President?",
+      "ja": "アメリカのしょだいだいとうりょうは?"
+    }
   },
   {
-    "id": "q00083",
-    "genre": "language",
-    "question_text": {
-      "ja": "「ありがとう」をえいごで?",
-      "en": "How do you say 'Thank you' in Japanese?"
-    },
     "choices": [
       {
+        "en": "Sumimasen",
         "ja": "Sorry",
-        "en": "Sumimasen"
+        "ja_typings": [
+          "sorry"
+        ]
       },
       {
+        "en": "Arigato",
         "ja": "Thank you",
-        "en": "Arigato"
+        "ja_typings": [
+          "thank you"
+        ]
       },
       {
+        "en": "Konnichiwa",
         "ja": "Hello",
-        "en": "Konnichiwa"
+        "ja_typings": [
+          "hello"
+        ]
       },
       {
+        "en": "Sayonara",
         "ja": "Goodbye",
-        "en": "Sayonara"
+        "ja_typings": [
+          "goodbye"
+        ]
       }
     ],
     "correct_answer_index": 1,
-    "image_path": null
-  },
-  {
-    "id": "q00084",
-    "genre": "science",
-    "question_text": {
-      "ja": "たいようけいでいちばんおおきなわくせいは?",
-      "en": "What is the largest planet in our solar system?"
-    },
-    "choices": [
-      {
-        "ja": "ちきゅう",
-        "en": "Earth"
-      },
-      {
-        "ja": "もくせい",
-        "en": "Jupiter"
-      },
-      {
-        "ja": "どせい",
-        "en": "Saturn"
-      },
-      {
-        "ja": "かせい",
-        "en": "Mars"
-      }
-    ],
-    "correct_answer_index": 1,
-    "image_path": null
-  },
-  {
-    "id": "q00085",
-    "genre": "math",
-    "question_text": {
-      "ja": "2のにじょうは?",
-      "en": "What is 2 squared?"
-    },
-    "choices": [
-      {
-        "ja": "2",
-        "en": "2"
-      },
-      {
-        "ja": "4",
-        "en": "4"
-      },
-      {
-        "ja": "6",
-        "en": "6"
-      },
-      {
-        "ja": "8",
-        "en": "8"
-      }
-    ],
-    "correct_answer_index": 1,
-    "image_path": null
-  },
-  {
-    "id": "q00086",
-    "genre": "geography",
-    "question_text": {
-      "ja": "せかいさいだいのたいりくは?",
-      "en": "What is the world's largest continent?"
-    },
-    "choices": [
-      {
-        "ja": "アフリカ",
-        "en": "Africa"
-      },
-      {
-        "ja": "アジア",
-        "en": "Asia"
-      },
-      {
-        "ja": "ヨーロッパ",
-        "en": "Europe"
-      },
-      {
-        "ja": "きたアメリカ",
-        "en": "North America"
-      }
-    ],
-    "correct_answer_index": 1,
-    "image_path": null
-  },
-  {
-    "id": "q00087",
-    "genre": "culture",
-    "question_text": {
-      "ja": "おりんぴっくはなんねんごと?",
-      "en": "How often are the Olympics held?"
-    },
-    "choices": [
-      {
-        "ja": "2ねん",
-        "en": "2 years"
-      },
-      {
-        "ja": "4ねん",
-        "en": "4 years"
-      },
-      {
-        "ja": "5ねん",
-        "en": "5 years"
-      },
-      {
-        "ja": "10ねん",
-        "en": "10 years"
-      }
-    ],
-    "correct_answer_index": 1,
-    "image_path": null
-  },
-  {
-    "id": "q00088",
-    "genre": "science",
-    "question_text": {
-      "ja": "ひかりのそくどはやく?",
-      "en": "Approximately how fast is the speed of light?"
-    },
-    "choices": [
-      {
-        "ja": "やく30まんkm/s",
-        "en": "About 300,000 km/s"
-      },
-      {
-        "ja": "やく3まんkm/s",
-        "en": "About 30,000 km/s"
-      },
-      {
-        "ja": "やく3せんkm/s",
-        "en": "About 3,000 km/s"
-      },
-      {
-        "ja": "やく300km/s",
-        "en": "About 300 km/s"
-      }
-    ],
-    "correct_answer_index": 0,
-    "image_path": null
-  },
-  {
-    "id": "q00089",
-    "genre": "history",
-    "question_text": {
-      "ja": "フランスかくめいがおきたとしは?",
-      "en": "What year did the French Revolution begin?"
-    },
-    "choices": [
-      {
-        "ja": "1689",
-        "en": "1689"
-      },
-      {
-        "ja": "1789",
-        "en": "1789"
-      },
-      {
-        "ja": "1889",
-        "en": "1889"
-      },
-      {
-        "ja": "1989",
-        "en": "1989"
-      }
-    ],
-    "correct_answer_index": 1,
-    "image_path": null
-  },
-  {
-    "id": "q00090",
-    "genre": "general_knowledge",
-    "question_text": {
-      "ja": "いちにちはなんじかん?",
-      "en": "How many hours are in a day?"
-    },
-    "choices": [
-      {
-        "ja": "12",
-        "en": "12"
-      },
-      {
-        "ja": "24",
-        "en": "24"
-      },
-      {
-        "ja": "48",
-        "en": "48"
-      },
-      {
-        "ja": "60",
-        "en": "60"
-      }
-    ],
-    "correct_answer_index": 1,
-    "image_path": null
-  },
-  {
-    "id": "q00091",
-    "genre": "science",
-    "question_text": {
-      "ja": "DNAのにじゅうらせんをはっけんしたのは?",
-      "en": "Who discovered the DNA double helix?"
-    },
-    "choices": [
-      {
-        "ja": "アインシュタイン",
-        "en": "Einstein"
-      },
-      {
-        "ja": "ワトソンとクリック",
-        "en": "Watson and Crick"
-      },
-      {
-        "ja": "ニュートン",
-        "en": "Newton"
-      },
-      {
-        "ja": "ダーウィン",
-        "en": "Darwin"
-      }
-    ],
-    "correct_answer_index": 1,
-    "image_path": null
-  },
-  {
-    "id": "q00092",
-    "genre": "geography",
-    "question_text": {
-      "ja": "ないるがわがながれるたいりくは?",
-      "en": "Which continent does the Nile River flow through?"
-    },
-    "choices": [
-      {
-        "ja": "アジア",
-        "en": "Asia"
-      },
-      {
-        "ja": "アフリカ",
-        "en": "Africa"
-      },
-      {
-        "ja": "ヨーロッパ",
-        "en": "Europe"
-      },
-      {
-        "ja": "みなみアメリカ",
-        "en": "South America"
-      }
-    ],
-    "correct_answer_index": 1,
-    "image_path": null
-  },
-  {
-    "id": "q00093",
-    "genre": "math",
-    "question_text": {
-      "ja": "さんかくけいのないかくのわは?",
-      "en": "What is the sum of angles in a triangle?"
-    },
-    "choices": [
-      {
-        "ja": "90ど",
-        "en": "90 degrees"
-      },
-      {
-        "ja": "180ど",
-        "en": "180 degrees"
-      },
-      {
-        "ja": "270ど",
-        "en": "270 degrees"
-      },
-      {
-        "ja": "360ど",
-        "en": "360 degrees"
-      }
-    ],
-    "correct_answer_index": 1,
-    "image_path": null
-  },
-  {
-    "id": "q00094",
-    "genre": "culture",
-    "question_text": {
-      "ja": "モナリザをかいたがかは?",
-      "en": "Who painted the Mona Lisa?"
-    },
-    "choices": [
-      {
-        "ja": "ピカソ",
-        "en": "Picasso"
-      },
-      {
-        "ja": "ダヴィンチ",
-        "en": "Da Vinci"
-      },
-      {
-        "ja": "ゴッホ",
-        "en": "Van Gogh"
-      },
-      {
-        "ja": "モネ",
-        "en": "Monet"
-      }
-    ],
-    "correct_answer_index": 1,
-    "image_path": null
-  },
-  {
-    "id": "q00095",
-    "genre": "science",
-    "question_text": {
-      "ja": "げんそきごう「O」がしめすげんそは?",
-      "en": "Which element does the chemical symbol 'O' represent?"
-    },
-    "choices": [
-      {
-        "ja": "酸素",
-        "en": "Oxygen"
-      },
-      {
-        "ja": "オスミウム",
-        "en": "Osmium"
-      },
-      {
-        "ja": "オガネソン",
-        "en": "Oganesson"
-      },
-      {
-        "ja": "鉄",
-        "en": "Iron"
-      }
-    ],
-    "correct_answer_index": 0,
-    "image_path": null
-  },
-  {
-    "id": "q00096",
-    "genre": "history",
-    "question_text": {
-      "ja": "コロンブスがアメリカにとうたつしたとしは?",
-      "en": "What year did Columbus reach America?"
-    },
-    "choices": [
-      {
-        "ja": "1392",
-        "en": "1392"
-      },
-      {
-        "ja": "1492",
-        "en": "1492"
-      },
-      {
-        "ja": "1592",
-        "en": "1592"
-      },
-      {
-        "ja": "1692",
-        "en": "1692"
-      }
-    ],
-    "correct_answer_index": 1,
-    "image_path": null
-  },
-  {
-    "id": "q00097",
     "genre": "language",
+    "id": "q00083",
+    "image_path": null,
     "question_text": {
-      "ja": "せかいでもっともはなされているげんごは?",
-      "en": "What is the most spoken language in the world?"
-    },
+      "en": "How do you say 'Thank you' in Japanese?",
+      "ja": "「ありがとう」をえいごで?"
+    }
+  },
+  {
     "choices": [
       {
-        "ja": "えいご",
-        "en": "English"
+        "en": "Earth",
+        "ja": "ちきゅう",
+        "ja_typings": [
+          "chikyuu"
+        ]
       },
       {
-        "ja": "ちゅうごくご",
-        "en": "Chinese"
+        "en": "Jupiter",
+        "ja": "もくせい",
+        "ja_typings": [
+          "mokusei"
+        ]
       },
       {
-        "ja": "スペインご",
-        "en": "Spanish"
+        "en": "Saturn",
+        "ja": "どせい",
+        "ja_typings": [
+          "dosei"
+        ]
       },
       {
-        "ja": "アラビアご",
-        "en": "Arabic"
+        "en": "Mars",
+        "ja": "かせい",
+        "ja_typings": [
+          "kasei"
+        ]
       }
     ],
     "correct_answer_index": 1,
-    "image_path": null
+    "genre": "science",
+    "id": "q00084",
+    "image_path": null,
+    "question_text": {
+      "en": "What is the largest planet in our solar system?",
+      "ja": "たいようけいでいちばんおおきなわくせいは?"
+    }
   },
   {
-    "id": "q00098",
-    "genre": "geography",
-    "question_text": {
-      "ja": "オーストラリアのしゅとは?",
-      "en": "What is the capital of Australia?"
-    },
     "choices": [
       {
+        "en": "2",
+        "ja": "2",
+        "ja_typings": [
+          "2"
+        ]
+      },
+      {
+        "en": "4",
+        "ja": "4",
+        "ja_typings": [
+          "4"
+        ]
+      },
+      {
+        "en": "6",
+        "ja": "6",
+        "ja_typings": [
+          "6"
+        ]
+      },
+      {
+        "en": "8",
+        "ja": "8",
+        "ja_typings": [
+          "8"
+        ]
+      }
+    ],
+    "correct_answer_index": 1,
+    "genre": "math",
+    "id": "q00085",
+    "image_path": null,
+    "question_text": {
+      "en": "What is 2 squared?",
+      "ja": "2のにじょうは?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Africa",
+        "ja": "アフリカ",
+        "ja_typings": [
+          "afurika"
+        ]
+      },
+      {
+        "en": "Asia",
+        "ja": "アジア",
+        "ja_typings": [
+          "ajia"
+        ]
+      },
+      {
+        "en": "Europe",
+        "ja": "ヨーロッパ",
+        "ja_typings": [
+          "yoroppa"
+        ]
+      },
+      {
+        "en": "North America",
+        "ja": "きたアメリカ",
+        "ja_typings": [
+          "kitaamerika"
+        ]
+      }
+    ],
+    "correct_answer_index": 1,
+    "genre": "geography",
+    "id": "q00086",
+    "image_path": null,
+    "question_text": {
+      "en": "What is the world's largest continent?",
+      "ja": "せかいさいだいのたいりくは?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "2 years",
+        "ja": "2ねん",
+        "ja_typings": [
+          "2nen"
+        ]
+      },
+      {
+        "en": "4 years",
+        "ja": "4ねん",
+        "ja_typings": [
+          "4nen"
+        ]
+      },
+      {
+        "en": "5 years",
+        "ja": "5ねん",
+        "ja_typings": [
+          "5nen"
+        ]
+      },
+      {
+        "en": "10 years",
+        "ja": "10ねん",
+        "ja_typings": [
+          "10nen"
+        ]
+      }
+    ],
+    "correct_answer_index": 1,
+    "genre": "culture",
+    "id": "q00087",
+    "image_path": null,
+    "question_text": {
+      "en": "How often are the Olympics held?",
+      "ja": "おりんぴっくはなんねんごと?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "About 300,000 km/s",
+        "ja": "やく30まんkm/s",
+        "ja_typings": [
+          "yaku30mankm/s"
+        ]
+      },
+      {
+        "en": "About 30,000 km/s",
+        "ja": "やく3まんkm/s",
+        "ja_typings": [
+          "yaku3mankm/s"
+        ]
+      },
+      {
+        "en": "About 3,000 km/s",
+        "ja": "やく3せんkm/s",
+        "ja_typings": [
+          "yaku3senkm/s"
+        ]
+      },
+      {
+        "en": "About 300 km/s",
+        "ja": "やく300km/s",
+        "ja_typings": [
+          "yaku300km/s"
+        ]
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "science",
+    "id": "q00088",
+    "image_path": null,
+    "question_text": {
+      "en": "Approximately how fast is the speed of light?",
+      "ja": "ひかりのそくどはやく?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "1689",
+        "ja": "1689",
+        "ja_typings": [
+          "1689"
+        ]
+      },
+      {
+        "en": "1789",
+        "ja": "1789",
+        "ja_typings": [
+          "1789"
+        ]
+      },
+      {
+        "en": "1889",
+        "ja": "1889",
+        "ja_typings": [
+          "1889"
+        ]
+      },
+      {
+        "en": "1989",
+        "ja": "1989",
+        "ja_typings": [
+          "1989"
+        ]
+      }
+    ],
+    "correct_answer_index": 1,
+    "genre": "history",
+    "id": "q00089",
+    "image_path": null,
+    "question_text": {
+      "en": "What year did the French Revolution begin?",
+      "ja": "フランスかくめいがおきたとしは?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "12",
+        "ja": "12",
+        "ja_typings": [
+          "12"
+        ]
+      },
+      {
+        "en": "24",
+        "ja": "24",
+        "ja_typings": [
+          "24"
+        ]
+      },
+      {
+        "en": "48",
+        "ja": "48",
+        "ja_typings": [
+          "48"
+        ]
+      },
+      {
+        "en": "60",
+        "ja": "60",
+        "ja_typings": [
+          "60"
+        ]
+      }
+    ],
+    "correct_answer_index": 1,
+    "genre": "general_knowledge",
+    "id": "q00090",
+    "image_path": null,
+    "question_text": {
+      "en": "How many hours are in a day?",
+      "ja": "いちにちはなんじかん?"
+    }
+  },
+  {
+    "choices": [
+    {
+      "en": "Einstein",
+      "ja": "アインシュタイン",
+      "ja_typings": [
+        "ainshutain",
+        "einstein"
+      ]
+    },
+    {
+      "en": "Watson and Crick",
+      "ja": "ワトソンとクリック",
+      "ja_typings": [
+        "watosontokurikku",
+        "watson and crick"
+      ]
+    },
+    {
+      "en": "Newton",
+      "ja": "ニュートン",
+      "ja_typings": [
+        "nyuton",
+        "newton"
+      ]
+    },
+    {
+      "en": "Darwin",
+      "ja": "ダーウィン",
+      "ja_typings": [
+        "dawin",
+        "darwin"
+      ]
+    }
+    ],
+    "correct_answer_index": 1,
+    "genre": "science",
+    "id": "q00091",
+    "image_path": null,
+    "question_text": {
+      "en": "Who discovered the DNA double helix?",
+      "ja": "DNAのにじゅうらせんをはっけんしたのは?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Asia",
+        "ja": "アジア",
+        "ja_typings": [
+          "ajia"
+        ]
+      },
+      {
+        "en": "Africa",
+        "ja": "アフリカ",
+        "ja_typings": [
+          "afurika"
+        ]
+      },
+      {
+        "en": "Europe",
+        "ja": "ヨーロッパ",
+        "ja_typings": [
+          "yoroppa"
+        ]
+      },
+      {
+        "en": "South America",
+        "ja": "みなみアメリカ",
+        "ja_typings": [
+          "minamiamerika"
+        ]
+      }
+    ],
+    "correct_answer_index": 1,
+    "genre": "geography",
+    "id": "q00092",
+    "image_path": null,
+    "question_text": {
+      "en": "Which continent does the Nile River flow through?",
+      "ja": "ないるがわがながれるたいりくは?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "90 degrees",
+        "ja": "90ど",
+        "ja_typings": [
+          "90do"
+        ]
+      },
+      {
+        "en": "180 degrees",
+        "ja": "180ど",
+        "ja_typings": [
+          "180do"
+        ]
+      },
+      {
+        "en": "270 degrees",
+        "ja": "270ど",
+        "ja_typings": [
+          "270do"
+        ]
+      },
+      {
+        "en": "360 degrees",
+        "ja": "360ど",
+        "ja_typings": [
+          "360do"
+        ]
+      }
+    ],
+    "correct_answer_index": 1,
+    "genre": "math",
+    "id": "q00093",
+    "image_path": null,
+    "question_text": {
+      "en": "What is the sum of angles in a triangle?",
+      "ja": "さんかくけいのないかくのわは?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Picasso",
+        "ja": "ピカソ",
+        "ja_typings": [
+          "pikaso"
+        ]
+      },
+      {
+        "en": "Da Vinci",
+        "ja": "ダヴィンチ",
+        "ja_typings": [
+          "davinchi"
+        ]
+      },
+      {
+        "en": "Van Gogh",
+        "ja": "ゴッホ",
+        "ja_typings": [
+          "gohho"
+        ]
+      },
+      {
+        "en": "Monet",
+        "ja": "モネ",
+        "ja_typings": [
+          "mone"
+        ]
+      }
+    ],
+    "correct_answer_index": 1,
+    "genre": "culture",
+    "id": "q00094",
+    "image_path": null,
+    "question_text": {
+      "en": "Who painted the Mona Lisa?",
+      "ja": "モナリザをかいたがかは?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Oxygen",
+        "ja": "酸素",
+        "ja_typings": [
+          "sanso"
+        ]
+      },
+      {
+        "en": "Osmium",
+        "ja": "オスミウム",
+        "ja_typings": [
+          "osumiumu"
+        ]
+      },
+      {
+        "en": "Oganesson",
+        "ja": "オガネソン",
+        "ja_typings": [
+          "oganeson"
+        ]
+      },
+      {
+        "en": "Iron",
+        "ja": "鉄",
+        "ja_typings": [
+          "tetsu"
+        ]
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "science",
+    "id": "q00095",
+    "image_path": null,
+    "question_text": {
+      "en": "Which element does the chemical symbol 'O' represent?",
+      "ja": "げんそきごう「O」がしめすげんそは?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "1392",
+        "ja": "1392",
+        "ja_typings": [
+          "1392"
+        ]
+      },
+      {
+        "en": "1492",
+        "ja": "1492",
+        "ja_typings": [
+          "1492"
+        ]
+      },
+      {
+        "en": "1592",
+        "ja": "1592",
+        "ja_typings": [
+          "1592"
+        ]
+      },
+      {
+        "en": "1692",
+        "ja": "1692",
+        "ja_typings": [
+          "1692"
+        ]
+      }
+    ],
+    "correct_answer_index": 1,
+    "genre": "history",
+    "id": "q00096",
+    "image_path": null,
+    "question_text": {
+      "en": "What year did Columbus reach America?",
+      "ja": "コロンブスがアメリカにとうたつしたとしは?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "English",
+        "ja": "えいご",
+        "ja_typings": [
+          "eigo"
+        ]
+      },
+      {
+        "en": "Chinese",
+        "ja": "ちゅうごくご",
+        "ja_typings": [
+          "chuugokugo"
+        ]
+      },
+      {
+        "en": "Spanish",
+        "ja": "スペインご",
+        "ja_typings": [
+          "supeingo"
+        ]
+      },
+      {
+        "en": "Arabic",
+        "ja": "アラビアご",
+        "ja_typings": [
+          "arabiago"
+        ]
+      }
+    ],
+    "correct_answer_index": 1,
+    "genre": "language",
+    "id": "q00097",
+    "image_path": null,
+    "question_text": {
+      "en": "What is the most spoken language in the world?",
+      "ja": "せかいでもっともはなされているげんごは?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Sydney",
         "ja": "シドニー",
-        "en": "Sydney"
+        "ja_typings": [
+          "shidoni"
+        ]
       },
       {
+        "en": "Melbourne",
         "ja": "メルボルン",
-        "en": "Melbourne"
+        "ja_typings": [
+          "meruborun"
+        ]
       },
       {
+        "en": "Canberra",
         "ja": "キャンベラ",
-        "en": "Canberra"
+        "ja_typings": [
+          "kyanbera"
+        ]
       },
       {
+        "en": "Brisbane",
         "ja": "ブリスベン",
-        "en": "Brisbane"
+        "ja_typings": [
+          "burisuben"
+        ]
       }
     ],
     "correct_answer_index": 2,
-    "image_path": null
+    "genre": "geography",
+    "id": "q00098",
+    "image_path": null,
+    "question_text": {
+      "en": "What is the capital of Australia?",
+      "ja": "オーストラリアのしゅとは?"
+    }
   },
   {
-    "id": "q00099",
+    "choices": [
+    {
+      "en": "Galileo",
+      "ja": "ガリレオ",
+      "ja_typings": [
+        "garireo",
+        "galileo"
+      ]
+    },
+    {
+      "en": "Newton",
+      "ja": "ニュートン",
+      "ja_typings": [
+        "nyuton",
+        "newton"
+      ]
+    },
+    {
+      "en": "Einstein",
+      "ja": "アインシュタイン",
+      "ja_typings": [
+        "ainshutain",
+        "einstein"
+      ]
+    },
+    {
+      "en": "Hawking",
+      "ja": "ホーキング",
+      "ja_typings": [
+        "hokingu",
+        "hawking"
+      ]
+    }
+    ],
+    "correct_answer_index": 1,
     "genre": "science",
+    "id": "q00099",
+    "image_path": null,
     "question_text": {
-      "ja": "じゅうりょくをはっけんしたのは?",
-      "en": "Who discovered gravity?"
-    },
-    "choices": [
-      {
-        "ja": "ガリレオ",
-        "en": "Galileo"
-      },
-      {
-        "ja": "ニュートン",
-        "en": "Newton"
-      },
-      {
-        "ja": "アインシュタイン",
-        "en": "Einstein"
-      },
-      {
-        "ja": "ホーキング",
-        "en": "Hawking"
-      }
-    ],
-    "correct_answer_index": 1,
-    "image_path": null
+      "en": "Who discovered gravity?",
+      "ja": "じゅうりょくをはっけんしたのは?"
+    }
   },
   {
-    "id": "q00100",
-    "genre": "general_knowledge",
-    "question_text": {
-      "ja": "いちねんはなんにち?",
-      "en": "How many days are in a year?"
-    },
     "choices": [
       {
+        "en": "360",
         "ja": "360",
-        "en": "360"
+        "ja_typings": [
+          "360"
+        ]
       },
       {
+        "en": "365",
         "ja": "365",
-        "en": "365"
+        "ja_typings": [
+          "365"
+        ]
       },
       {
+        "en": "366",
         "ja": "366",
-        "en": "366"
+        "ja_typings": [
+          "366"
+        ]
       },
       {
+        "en": "400",
         "ja": "400",
-        "en": "400"
+        "ja_typings": [
+          "400"
+        ]
       }
     ],
     "correct_answer_index": 1,
-    "image_path": null
+    "genre": "general_knowledge",
+    "id": "q00100",
+    "image_path": null,
+    "question_text": {
+      "en": "How many days are in a year?",
+      "ja": "いちねんはなんにち?"
+    }
   }
 ]
