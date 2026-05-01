@@ -414,6 +414,69 @@ mod tests {
     }
 
     #[test]
+    fn japanese_tokyo_tou_prefix_is_valid() {
+        // Regression for the user-reported bug: typing "tou" toward
+        // Tokyo (とうきょう) was rejected as a mistype even though
+        // "toukyou" is a legitimate alias.
+        let mut question = make_question(&["とうきょう", "おおさか", "きょうと", "なごや"], 0);
+        question.choices[0].ja_typings = vec!["tokyo".into(), "toukyou".into()];
+        let game = QuizGame::new(vec![question], Language::Japanese);
+        let cands = game.current_correct_typing_candidates();
+        eprintln!("candidates: {cands:?}");
+        assert!(game.is_valid_correct_typed_prefix("t"), "t");
+        assert!(game.is_valid_correct_typed_prefix("to"), "to");
+        assert!(game.is_valid_correct_typed_prefix("tou"), "tou");
+        assert!(game.is_valid_correct_typed_prefix("touk"), "touk");
+    }
+
+    #[test]
+    fn loaded_questions_ja_tokyo_accepts_tou_prefix() {
+        // End-to-end: load the shipped questions_ja.json, find Tokyo,
+        // and verify "tou" is a valid prefix on the live data path.
+        use crate::io::DataLoader;
+        let path = "data/questions_ja.json";
+        if !std::path::Path::new(path).exists() {
+            eprintln!("skipping: {path} not present");
+            return;
+        }
+        let questions = DataLoader::load_questions(path).expect("load");
+        let q = questions
+            .iter()
+            .find(|q| {
+                q.choices
+                    .iter()
+                    .any(|c| c.labels.get("ja").map(String::as_str) == Some("東京"))
+                    || q.choices
+                        .iter()
+                        .any(|c| c.labels.get("ja").map(String::as_str) == Some("とうきょう"))
+            })
+            .cloned()
+            .expect("a Tokyo question");
+        let game = QuizGame::new(vec![q], Language::Japanese);
+        let cands = game.current_correct_typing_candidates();
+        eprintln!("loaded candidates for Tokyo (correct): {cands:?}");
+        // The correct answer's candidates must include a path through "tou".
+        assert!(
+            game.is_valid_correct_typed_prefix("tou"),
+            "'tou' rejected against loaded candidates {cands:?}"
+        );
+    }
+
+    #[test]
+    fn japanese_tokyo_kanji_label_tou_prefix_is_valid() {
+        // Same bug, but with kanji labels (legacy data path).
+        let mut question = make_question(&["東京", "大阪", "京都", "名古屋"], 0);
+        question.choices[0].ja_typings = vec!["tokyo".into(), "toukyou".into()];
+        let game = QuizGame::new(vec![question], Language::Japanese);
+        let cands = game.current_correct_typing_candidates();
+        eprintln!("kanji candidates: {cands:?}");
+        assert!(
+            game.is_valid_correct_typed_prefix("tou"),
+            "'tou' should be a valid prefix of toukyou"
+        );
+    }
+
+    #[test]
     fn japanese_mode_accepts_long_vowel_alias() {
         let mut question = make_question(&["とうきょう", "おおさか", "きょうと", "なごや"], 0);
         question.choices[0].ja_typings = vec!["tokyo".into(), "toukyou".into()];
