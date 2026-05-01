@@ -11,7 +11,7 @@ use ratatui::{
     layout::{Alignment, Constraint, Direction, Layout, Rect},
     style::{Color, Modifier, Style},
     text::{Line, Span},
-    widgets::{Block, Borders, List, ListItem, ListState, Paragraph},
+    widgets::{Block, Borders, List, ListItem, ListState, Padding, Paragraph},
     Frame, Terminal,
 };
 use std::io;
@@ -293,7 +293,8 @@ impl MenuUI {
             .block(
                 Block::default()
                     .title("Select Language / 言語を選択してください")
-                    .borders(Borders::ALL),
+                    .borders(Borders::ALL)
+                    .padding(Padding::uniform(1)),
             )
             .highlight_style(STYLE_SELECTED);
 
@@ -327,7 +328,8 @@ impl MenuUI {
             .block(
                 Block::default()
                     .title("Select Game Mode / ゲームモードを選択してください")
-                    .borders(Borders::ALL),
+                    .borders(Borders::ALL)
+                    .padding(Padding::uniform(1)),
             )
             .highlight_style(STYLE_SELECTED);
 
@@ -367,7 +369,8 @@ impl MenuUI {
             .block(
                 Block::default()
                     .title("Details / 説明")
-                    .borders(Borders::ALL),
+                    .borders(Borders::ALL)
+                    .padding(Padding::uniform(1)),
             );
         f.render_widget(detail, area);
     }
