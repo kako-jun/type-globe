@@ -564,7 +564,7 @@ impl QuizUI {
                 .alignment(Alignment::Left)
                 .block(
                     Block::default()
-                        .title("Question")
+                        .title(" Question ")
                         .borders(Borders::ALL)
                         .padding(Padding::uniform(1)),
                 )
@@ -603,7 +603,7 @@ impl QuizUI {
 
             let choices_list = List::new(choice_items).block(
                 Block::default()
-                    .title("Choices")
+                    .title(" Choices ")
                     .borders(Borders::ALL)
                     .padding(Padding::uniform(1)),
             );
@@ -648,7 +648,7 @@ impl QuizUI {
 
         let body = Paragraph::new(lines).alignment(Alignment::Left).block(
             Block::default()
-                .title("Summary")
+                .title(" Summary ")
                 .borders(Borders::ALL)
                 .padding(Padding::uniform(1)),
         );
@@ -686,7 +686,7 @@ impl QuizUI {
 
         let body = Paragraph::new(lines).alignment(Alignment::Left).block(
             Block::default()
-                .title("Records entry")
+                .title(" Records entry ")
                 .borders(Borders::ALL)
                 .padding(Padding::uniform(1)),
         );
