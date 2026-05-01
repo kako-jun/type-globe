@@ -55,6 +55,7 @@ Quiz is paired with score-attack modes; listening is paired with the RPG. The tw
 [Esc] Quit  [Tab] Skip  [F5] Restart
 ```
 
+- **Sound cues** (Issue #73). Quiz mode synthesizes five cues at runtime via `rodio` — no asset files. The cues are: `QuestionReveal` ("ダダン") fired as each new question appears, `Correct` ("ピンポーン") fired the instant the correct answer is typed, `Wrong` ("ブブー") fired on Tab skip, `Keystroke` (quiet tick) on each accepted character, and `Mistype` (slightly louder, lower) when an off-prefix character is rejected. If no audio device is available the engine falls back to silent operation; the game stays fully playable.
 - **The four choices are shuffled per question** so the answer's display position varies. Labels A/B/C/D are positional, not identity-based; the typing match is identity-based and stays correct under any shuffle.
 - **The choices fade in after the question text.** The question reveal starts immediately; the choices block stays invisible for ~0.5 s, then all four fade in together over ~0.3 s. This frames the question first and the options second.
 - **Question text settles to a soft green** (`Rgb(160, 220, 160)`) so it stays distinct from the choices and the input echo.
