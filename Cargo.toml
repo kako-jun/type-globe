@@ -1,6 +1,6 @@
 [package]
 name = "type-globe"
-version = "0.3.0"
+version = "0.3.1"
 edition = "2021"
 authors = ["kako-jun"]
 description = "A terminal typing game where the answer is never shown before you type it"
