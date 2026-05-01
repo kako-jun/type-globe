@@ -20,7 +20,7 @@
 pub mod pulse;
 pub mod reveal;
 
-pub use reveal::{RevealHandle, RevealOpts, Rgb};
+pub use reveal::{lerp_rgb, RevealHandle, RevealOpts, Rgb};
 // `RevealedGrapheme` and `pulse::PulseFrame` are part of the public
 // surface but constructed inside their respective `snapshot` methods;
 // callers receive them by value, so they stay reachable via

@@ -187,7 +187,10 @@ fn fade_progress(age: Duration, fade: Duration) -> f32 {
     raw.clamp(0.0, 1.0) as f32
 }
 
-fn lerp_rgb(a: Rgb, b: Rgb, t: f32) -> Rgb {
+/// Linearly interpolate two RGB triples. Public so the UI layer can use
+/// the same lerp for fade-in effects elsewhere (Issue #72: menu detail
+/// panel, quiz choices block) without duplicating the channel math.
+pub fn lerp_rgb(a: Rgb, b: Rgb, t: f32) -> Rgb {
     let t = t.clamp(0.0, 1.0);
     Rgb(
         lerp_u8(a.0, b.0, t),

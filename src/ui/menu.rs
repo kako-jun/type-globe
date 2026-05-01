@@ -1,3 +1,4 @@
+use crate::jiwa_core::{lerp_rgb, Rgb};
 use crate::types::{GameMode, Language};
 use crate::ui::{HelpEntry, HelpLine};
 use crossterm::{
@@ -28,8 +29,8 @@ const REDRAW_TICK: Duration = Duration::from_millis(30);
 /// final color after a selection change (Issue #72 follow-up: jiwa across
 /// the whole UI).
 const DETAIL_FADE_MS: u64 = 320;
-const DETAIL_FADE_FROM: Color = Color::Rgb(60, 60, 60);
-const DETAIL_FADE_TO: Color = Color::Rgb(220, 220, 220);
+const DETAIL_FADE_FROM: Rgb = Rgb(60, 60, 60);
+const DETAIL_FADE_TO: Rgb = Rgb(220, 220, 220);
 
 struct LanguageOption {
     label: &'static str,
@@ -149,12 +150,22 @@ impl MenuUI {
         &mut self,
         terminal: &mut Terminal<CrosstermBackend<io::Stdout>>,
     ) -> Result<(Language, GameMode), Box<dyn std::error::Error>> {
+        // Long timeout used once the description panel has finished
+        // fading in — large enough that the menu effectively waits on
+        // input without burning a tick every 30 ms.
+        const IDLE_TIMEOUT: Duration = Duration::from_secs(60);
+
         loop {
             terminal.draw(|f| self.ui(f))?;
 
-            // Poll instead of blocking read so the description panel can
-            // re-render mid-fade without waiting for the next keypress.
-            if event::poll(REDRAW_TICK)? {
+            // Tick fast while the fade is still moving, then fall back
+            // to an input-blocking timeout so the menu is otherwise idle.
+            let timeout = if self.detail_fade_in_progress() {
+                REDRAW_TICK
+            } else {
+                IDLE_TIMEOUT
+            };
+            if event::poll(timeout)? {
                 if let Event::Key(key) = event::read()? {
                     if let Some(result) = self.handle_key(key) {
                         return Ok(result);
@@ -370,32 +381,16 @@ impl MenuUI {
         } else {
             (elapsed_ms as f32 / DETAIL_FADE_MS as f32).clamp(0.0, 1.0)
         };
-        lerp_color(DETAIL_FADE_FROM, DETAIL_FADE_TO, alpha)
+        let Rgb(r, g, b) = lerp_rgb(DETAIL_FADE_FROM, DETAIL_FADE_TO, alpha);
+        Color::Rgb(r, g, b)
     }
-}
 
-fn lerp_color(from: Color, to: Color, t: f32) -> Color {
-    let (fr, fg, fb) = unwrap_rgb(from);
-    let (tr, tg, tb) = unwrap_rgb(to);
-    let r = lerp_u8(fr, tr, t);
-    let g = lerp_u8(fg, tg, t);
-    let b = lerp_u8(fb, tb, t);
-    Color::Rgb(r, g, b)
-}
-
-fn unwrap_rgb(c: Color) -> (u8, u8, u8) {
-    match c {
-        Color::Rgb(r, g, b) => (r, g, b),
-        _ => (255, 255, 255),
+    /// True while the detail panel's fade-in is still progressing, so the
+    /// run loop can poll instead of blocking. Once it returns false the
+    /// menu can use a long-timeout poll and stay idle.
+    fn detail_fade_in_progress(&self) -> bool {
+        self.selection_changed_at.elapsed().as_millis() < (DETAIL_FADE_MS as u128)
     }
-}
-
-fn lerp_u8(a: u8, b: u8, t: f32) -> u8 {
-    let af = a as f32;
-    let bf = b as f32;
-    (af + (bf - af) * t.clamp(0.0, 1.0))
-        .round()
-        .clamp(0.0, 255.0) as u8
 }
 
 fn split_selection_area(area: Rect) -> [Rect; 2] {

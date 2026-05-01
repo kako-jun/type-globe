@@ -1,6 +1,6 @@
 use crate::game::QuizGame;
 use crate::io::Storage;
-use crate::jiwa_core::{RevealHandle, RevealOpts, Rgb};
+use crate::jiwa_core::{lerp_rgb, RevealHandle, RevealOpts, Rgb};
 use crate::types::{Language, Question, ScoreEntry};
 use crate::ui::{HelpEntry, HelpLine, InputChannel, PaneFrame, RecvOutcome, StatusPane};
 use crossterm::{
@@ -669,15 +669,10 @@ impl QuizUI {
     }
 }
 
-/// Interpolate two `Rgb` triples and return a ratatui `Color` so the
-/// quiz renderer can fade the choices block in over `CHOICES_FADE_MS`
-/// (Issue #72) without pulling in a second color helper.
+/// Interpolate two `Rgb` triples and return a ratatui `Color`. Thin
+/// wrapper over `jiwa_core::lerp_rgb` so the choices fade-in (Issue #72)
+/// uses the same channel math as the question text reveal.
 fn lerp_rgb_color(from: Rgb, to: Rgb, t: f32) -> Color {
-    let t = t.clamp(0.0, 1.0);
-    let lerp = |a: u8, b: u8| -> u8 {
-        let af = a as f32;
-        let bf = b as f32;
-        (af + (bf - af) * t).round().clamp(0.0, 255.0) as u8
-    };
-    Color::Rgb(lerp(from.0, to.0), lerp(from.1, to.1), lerp(from.2, to.2))
+    let Rgb(r, g, b) = lerp_rgb(from, to, t);
+    Color::Rgb(r, g, b)
 }
