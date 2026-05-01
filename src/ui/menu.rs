@@ -221,7 +221,7 @@ impl MenuUI {
     }
 
     fn render_title(&self, f: &mut Frame, area: Rect) {
-        let title = Paragraph::new("type-globe - The answer is never shown")
+        let title = Paragraph::new("type-globe")
             .style(STYLE_TITLE)
             .alignment(Alignment::Center)
             .block(Block::default().borders(Borders::ALL));

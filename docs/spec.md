@@ -41,7 +41,7 @@ Quiz is paired with score-attack modes; listening is paired with the RPG. The tw
 
 ```
 ┌─────────────────────────────────────┬──────────┐
-│ Q3/10                                │ Score    │
+│ 3/10                                 │ Score    │
 │ Which keyword moves ownership in     │ 12,340   │
 │ Rust?                                ├──────────┤
 │                                      │ Time     │
