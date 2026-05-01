@@ -22,7 +22,7 @@ use ratatui::{
     layout::{Alignment, Constraint, Direction, Layout, Rect},
     style::{Color, Modifier, Style},
     text::{Line, Span},
-    widgets::{Block, Borders, Paragraph},
+    widgets::{Block, Borders, Padding, Paragraph},
     Frame, Terminal,
 };
 use std::io;
@@ -204,7 +204,8 @@ impl RecordsUI {
         let body = Paragraph::new(lines).alignment(Alignment::Left).block(
             Block::default()
                 .title(Span::styled(format!(" {title} "), STYLE_SECTION))
-                .borders(Borders::ALL),
+                .borders(Borders::ALL)
+                .padding(Padding::uniform(1)),
         );
         f.render_widget(body, area);
     }
@@ -246,7 +247,8 @@ impl RecordsUI {
         let body = Paragraph::new(lines).alignment(Alignment::Left).block(
             Block::default()
                 .title(Span::styled(format!(" {title} "), STYLE_SECTION))
-                .borders(Borders::ALL),
+                .borders(Borders::ALL)
+                .padding(Padding::uniform(1)),
         );
         f.render_widget(body, area);
     }
