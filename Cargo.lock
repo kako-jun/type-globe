@@ -1406,7 +1406,7 @@ dependencies = [
 
 [[package]]
 name = "type-globe"
-version = "0.2.2"
+version = "0.3.0"
 dependencies = [
  "cargo-husky",
  "crossterm",
