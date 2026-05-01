@@ -70,7 +70,9 @@ impl RevealOpts {
             char_interval: Duration::from_millis(45),
             fade_duration: Duration::from_millis(320),
             fade_from: Rgb(60, 60, 60),
-            fade_to: Rgb(255, 255, 255),
+            // Per Issue #72 the question text settles to a soft green so
+            // it stays distinct from the choices and the input echo.
+            fade_to: Rgb(160, 220, 160),
         }
     }
 }
@@ -104,6 +106,10 @@ impl RevealHandle {
     }
 
     /// Convenience for production callers: anchors at `Instant::now()`.
+    /// Currently unused — quiz/listen pass an explicit `now` so the
+    /// question and choices reveals stay aligned to a single instant —
+    /// kept on the public API for future call sites.
+    #[allow(dead_code)]
     pub fn start(text: &str, opts: RevealOpts) -> Self {
         Self::start_at(text, opts, Instant::now())
     }
@@ -181,7 +187,10 @@ fn fade_progress(age: Duration, fade: Duration) -> f32 {
     raw.clamp(0.0, 1.0) as f32
 }
 
-fn lerp_rgb(a: Rgb, b: Rgb, t: f32) -> Rgb {
+/// Linearly interpolate two RGB triples. Public so the UI layer can use
+/// the same lerp for fade-in effects elsewhere (Issue #72: menu detail
+/// panel, quiz choices block) without duplicating the channel math.
+pub fn lerp_rgb(a: Rgb, b: Rgb, t: f32) -> Rgb {
     let t = t.clamp(0.0, 1.0);
     Rgb(
         lerp_u8(a.0, b.0, t),
