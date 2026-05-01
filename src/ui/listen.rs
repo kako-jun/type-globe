@@ -30,7 +30,7 @@ use ratatui::{
     layout::{Alignment, Rect},
     style::{Color, Modifier, Style},
     text::{Line, Span},
-    widgets::{Block, Borders, Paragraph},
+    widgets::{Block, Borders, Padding, Paragraph},
     Frame, Terminal,
 };
 use std::io;
@@ -221,7 +221,8 @@ impl ListenUI {
                 Block::default()
                     .title(title_text)
                     .title_style(STYLE_TITLE)
-                    .borders(Borders::ALL),
+                    .borders(Borders::ALL)
+                    .padding(Padding::uniform(1)),
             );
         f.render_widget(para, area);
     }
@@ -300,7 +301,12 @@ impl ListenUI {
         ];
         let para = Paragraph::new(lines)
             .alignment(Alignment::Left)
-            .block(Block::default().title("Status").borders(Borders::ALL));
+            .block(
+                Block::default()
+                    .title("Status")
+                    .borders(Borders::ALL)
+                    .padding(Padding::uniform(1)),
+            );
         f.render_widget(para, area);
     }
 

@@ -15,7 +15,7 @@ use ratatui::{
     layout::{Alignment, Constraint, Direction, Layout, Rect},
     style::{Color, Modifier, Style},
     text::{Line, Span},
-    widgets::{Block, Borders, List, ListItem, Paragraph},
+    widgets::{Block, Borders, List, ListItem, Padding, Paragraph},
     Frame, Terminal,
 };
 use std::io;
@@ -558,7 +558,12 @@ impl QuizUI {
             let question_line = self.question_reveal_line(question);
             let question_paragraph = Paragraph::new(question_line)
                 .alignment(Alignment::Left)
-                .block(Block::default().title("Question").borders(Borders::ALL))
+                .block(
+                    Block::default()
+                        .title("Question")
+                        .borders(Borders::ALL)
+                        .padding(Padding::uniform(1)),
+                )
                 .wrap(ratatui::widgets::Wrap { trim: true });
             f.render_widget(question_paragraph, chunks[0]);
 
@@ -593,7 +598,12 @@ impl QuizUI {
                 .collect();
 
             let choices_list = List::new(choice_items)
-                .block(Block::default().title("Choices").borders(Borders::ALL));
+                .block(
+                    Block::default()
+                        .title("Choices")
+                        .borders(Borders::ALL)
+                        .padding(Padding::uniform(1)),
+                );
 
             f.render_widget(choices_list, chunks[1]);
         } else {
@@ -635,7 +645,12 @@ impl QuizUI {
 
         let body = Paragraph::new(lines)
             .alignment(Alignment::Left)
-            .block(Block::default().title("Summary").borders(Borders::ALL));
+            .block(
+                Block::default()
+                    .title("Summary")
+                    .borders(Borders::ALL)
+                    .padding(Padding::uniform(1)),
+            );
         f.render_widget(body, area);
     }
 
@@ -671,7 +686,8 @@ impl QuizUI {
         let body = Paragraph::new(lines).alignment(Alignment::Left).block(
             Block::default()
                 .title("Records entry")
-                .borders(Borders::ALL),
+                .borders(Borders::ALL)
+                .padding(Padding::uniform(1)),
         );
         f.render_widget(body, area);
     }

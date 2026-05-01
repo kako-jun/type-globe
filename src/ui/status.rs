@@ -13,7 +13,7 @@ use ratatui::{
     layout::{Alignment, Constraint, Direction, Layout, Rect},
     style::{Color, Modifier, Style},
     text::{Line, Span},
-    widgets::{Block, Borders, Gauge, Paragraph},
+    widgets::{Block, Borders, Gauge, Padding, Paragraph},
     Frame,
 };
 use std::time::Duration;
@@ -133,9 +133,13 @@ impl StatusPane {
     }
 
     pub fn render(&self, f: &mut Frame, area: Rect) {
+        // Per Issue #76 the left and right content panes get 1-cell
+        // breathing room inside the border so the labels and values
+        // don't crash into the frame.
         let block = Block::default()
             .title(Span::styled(self.title.clone(), STYLE_TITLE))
-            .borders(Borders::ALL);
+            .borders(Borders::ALL)
+            .padding(Padding::uniform(1));
         let inner = block.inner(area);
         f.render_widget(block, area);
 
