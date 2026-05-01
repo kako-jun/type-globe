@@ -17,7 +17,7 @@ Two presentation styles, paired with two game structures. **They are never cross
 | **Quiz** — read the question and four choices, then type the correct one's text | Single-run, Time Attack 25, **Records** | knowledge |
 | **Listening** — hear the prompt, type what you heard | **Hack-and-slash RPG** (10 prompts = 1 run) | comprehension |
 
-Target v0.2.0 behavior: in Quiz mode, there are **no arrow keys for selection** — you select by typing the correct choice's text directly. Press Enter to confirm.
+Target v0.2.0 behavior: in Quiz mode, there are **no arrow keys for selection** — you select by typing the correct choice's text directly. An exact match auto-confirms immediately.
 
 In Listening mode, **no text appears on screen at all**. A `♪` note pulses while audio plays. You type what you heard, blind.
 
@@ -58,7 +58,7 @@ type-globe
 
 **Allowed**:
 - Question text and choice labels (Quiz only — Listening shows none)
-- Characters **you have actually typed** (echoed back so you can fix typos)
+- Characters **accepted as a valid answer prefix** (echoed back with typo feedback)
 - Status data (HP, level, EXP, time, CPM, WPM)
 
 ## Scoring
@@ -75,13 +75,12 @@ On Linux, the `speech-dispatcher` daemon must be installed and running. If it is
 
 **Quiz**
 
-Quiz answers are typed directly — there is no arrow / number-key fallback. `Enter` confirms the answer, and prefix matches do not auto-confirm (e.g. `mov` does not pick `move`). Matching is case-insensitive (`H2O` / `h2o`, `TOKYO` / `tokyo`). In JA mode, a single answer may intentionally accept multiple romanized spellings (`tokyo` / `toukyou`, `osaka` / `oosaka`, etc.), and bundled data can declare them explicitly via `ja_typings`. When a choice has a well-established official Latin spelling (for example a proper name), that spelling may also be accepted.
+Quiz answers are typed directly — there is no arrow / number-key fallback. An exact match auto-confirms immediately, and non-prefix typos are rejected on the spot instead of being inserted into the buffer. Matching is case-insensitive (`H2O` / `h2o`, `TOKYO` / `tokyo`). In JA mode, a single answer may intentionally accept multiple romanized spellings (`tokyo` / `toukyou`, `osaka` / `oosaka`, etc.), and bundled data can declare them explicitly via `ja_typings`. When a choice has a well-established official Latin spelling (for example a proper name), that spelling may also be accepted.
 
 | Key | Action |
 |---|---|
-| Letters | Append to the typed answer |
+| Letters | Append only if they keep the input on a valid answer prefix |
 | `Backspace` | Erase the last character |
-| `Enter` | Confirm — exact match against one of the four choices |
 | `Tab` | Skip the current question |
 | `Esc` / `Ctrl+C` | Quit |
 
@@ -89,8 +88,7 @@ Quiz answers are typed directly — there is no arrow / number-key fallback. `En
 
 | Key | Action |
 |---|---|
-| Letters | Type what you heard |
-| `Enter` | Confirm |
+| Letters | Append only if they keep the input on a valid answer prefix |
 | `Space` | Replay sound (unlimited, no penalty) |
 | `Esc` | Return to menu |
 

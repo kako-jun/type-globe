@@ -56,8 +56,8 @@ Quiz is paired with score-attack modes; listening is paired with the RPG. The tw
 ```
 
 - **No arrow-key selection.** Players type the correct choice's text directly; this both selects and answers.
-- **Enter to confirm.** Required because some choices may share prefixes (e.g. `move` vs `movement`).
-- Input echo shows only the characters the player has typed.
+- **Exact match auto-confirms.** Question data must avoid prefix ambiguity so the match point is deterministic.
+- Input echo shows only the characters that are still on a valid answer prefix; non-prefix typos are rejected immediately.
 - Matching is **case-insensitive**.
 - A single logical answer may accept **multiple typed spellings**.
 - In JA mode, romanized aliases may be accepted for the same answer (for example `tokyo` and `toukyou`, `osaka` and `oosaka`). Question data may declare these explicitly with `ja_typings`. When a choice has a well-established official Latin spelling (for example a proper name), that spelling may also be accepted. The implementation may also derive additional common ASCII aliases from kana as long as it never reveals the answer string before typing.
@@ -172,7 +172,7 @@ Quiz-side runs are not bound by this layout — quiz questions may freely mix ki
   kind: sentence
 ```
 
-Validation: no two choices in a question may share a prefix that would make a typed answer ambiguous before `Enter`. Enforced by `cargo run --bin lint-questions -- <files>` (CI job `lint-data`) and by the unit tests `shipped_question_data_is_clean_{ja,en}` in `src/io/validator.rs`.
+Validation: no two choices in a question may share a prefix that would make an auto-confirm ambiguous. Enforced by `cargo run --bin lint-questions -- <files>` (CI job `lint-data`) and by the unit tests `shipped_question_data_is_clean_{ja,en}` in `src/io/validator.rs`.
 
 ### Listening prompt (`data/listening_<lang>.yaml`)
 
