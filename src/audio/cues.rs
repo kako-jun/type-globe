@@ -11,7 +11,6 @@
 
 use rodio::buffer::SamplesBuffer;
 use rodio::{OutputStream, OutputStreamHandle, Sink};
-use std::sync::Mutex;
 
 const SAMPLE_RATE: u32 = 44_100;
 
@@ -27,17 +26,17 @@ pub enum Cue {
     Mistype,
 }
 
-/// Owns the rodio output stream and a single sink for cue playback.
-/// Cues are appended; long cues that overlap a fast keystroke are
-/// allowed to mix with a fresh sink so the keystroke isn't queued
-/// behind a "ピンポーン" tail.
+/// Owns the rodio output stream used to play synthesized cues. Each
+/// `play` call hands a freshly built `Sink` to a background thread via
+/// `Sink::detach`, so two cues that overlap (a keystroke during the
+/// "ピンポーン" tail) mix at the device level instead of queueing.
 pub struct CueEngine {
-    /// Held to keep the audio device open. Never read after construction.
+    /// Held to keep the audio device open. The handle below is what
+    /// playback actually goes through; `_stream` is kept to anchor the
+    /// device's lifetime to the engine's.
+    #[allow(dead_code)]
     _stream: OutputStream,
     handle: OutputStreamHandle,
-    /// Long-running sink for the rare overlapping case. Wrapped in a
-    /// `Mutex` so the engine stays `Sync` for use behind `&self` calls.
-    sink: Mutex<Option<Sink>>,
 }
 
 impl CueEngine {
@@ -49,7 +48,6 @@ impl CueEngine {
         Some(Self {
             _stream: stream,
             handle,
-            sink: Mutex::new(None),
         })
     }
 
@@ -61,20 +59,6 @@ impl CueEngine {
         if let Ok(sink) = Sink::try_new(&self.handle) {
             sink.append(buffer);
             sink.detach();
-        }
-        // Keep one sink around so repeated short cues share allocations
-        // when they don't need to overlap (typing).
-        if let Ok(mut guard) = self.sink.lock() {
-            // MSRV is 1.78; `Option::is_none_or` is 1.82, so spell it out.
-            let needs_new = match guard.as_ref() {
-                None => true,
-                Some(s) => s.empty(),
-            };
-            if needs_new {
-                if let Ok(new_sink) = Sink::try_new(&self.handle) {
-                    *guard = Some(new_sink);
-                }
-            }
         }
     }
 }
@@ -145,4 +129,102 @@ fn tone(freq: f32, duration_s: f32, gain: f32) -> Vec<f32> {
         buf.push(s);
     }
     buf
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn tone_sample_count_matches_duration() {
+        let buf = tone(440.0, 0.10, 0.5);
+        let expected = (0.10 * SAMPLE_RATE as f32) as usize;
+        assert_eq!(buf.len(), expected);
+    }
+
+    #[test]
+    fn tone_amplitude_bounded_by_gain() {
+        let gain = 0.3;
+        let buf = tone(440.0, 0.05, gain);
+        let max = buf.iter().cloned().fold(0.0_f32, f32::max);
+        let min = buf.iter().cloned().fold(0.0_f32, f32::min);
+        assert!(max <= gain + f32::EPSILON);
+        assert!(min >= -gain - f32::EPSILON);
+    }
+
+    #[test]
+    fn tone_envelope_grows_during_attack_and_settles_in_sustain() {
+        // 200 ms tone gives a wide enough attack window to sample the
+        // envelope reliably without sine-wave interference.
+        let buf = tone(440.0, 0.20, 0.5);
+        let attack = (buf.len() / 20).max(1);
+        // Compare the early part of the attack against the late part of
+        // the attack; the envelope must have ramped up.
+        let early_peak = buf[..attack / 4]
+            .iter()
+            .map(|s| s.abs())
+            .fold(0.0_f32, f32::max);
+        let late_peak = buf[attack / 4 * 3..attack]
+            .iter()
+            .map(|s| s.abs())
+            .fold(0.0_f32, f32::max);
+        assert!(
+            late_peak > early_peak,
+            "attack should ramp up: early={early_peak} late={late_peak}"
+        );
+        // Sustain region (well past the attack, before release) should
+        // hit close to the gain ceiling.
+        let release = (buf.len() / 8).max(1);
+        let sustain_start = attack;
+        let sustain_end = buf.len().saturating_sub(release);
+        if sustain_end > sustain_start {
+            let sustain_peak = buf[sustain_start..sustain_end]
+                .iter()
+                .map(|s| s.abs())
+                .fold(0.0_f32, f32::max);
+            assert!(sustain_peak > 0.4, "sustain peak too low: {sustain_peak}");
+        }
+    }
+
+    #[test]
+    fn silence_is_all_zero() {
+        let buf = silence(0.05);
+        assert!(buf.iter().all(|&s| s == 0.0));
+        assert_eq!(buf.len(), (0.05 * SAMPLE_RATE as f32) as usize);
+    }
+
+    #[test]
+    fn synthesize_question_reveal_is_two_segments_with_a_gap() {
+        let buf = synthesize(Cue::QuestionReveal);
+        // 0.10 + 0.05 + 0.18 seconds total at SAMPLE_RATE.
+        let expected = ((0.10 + 0.05 + 0.18) * SAMPLE_RATE as f32) as usize;
+        // Allow a 1-sample rounding tolerance from three independent casts.
+        assert!(
+            buf.len().abs_diff(expected) <= 3,
+            "len={} expected={}",
+            buf.len(),
+            expected
+        );
+    }
+
+    #[test]
+    fn synthesize_keystroke_is_short_and_quiet() {
+        let buf = synthesize(Cue::Keystroke);
+        let expected = (0.025 * SAMPLE_RATE as f32) as usize;
+        assert_eq!(buf.len(), expected);
+        let peak = buf.iter().map(|s| s.abs()).fold(0.0_f32, f32::max);
+        assert!(peak <= 0.05 + f32::EPSILON);
+    }
+
+    #[test]
+    fn synthesize_mistype_is_louder_than_keystroke() {
+        let key = synthesize(Cue::Keystroke);
+        let miss = synthesize(Cue::Mistype);
+        let key_peak = key.iter().map(|s| s.abs()).fold(0.0_f32, f32::max);
+        let miss_peak = miss.iter().map(|s| s.abs()).fold(0.0_f32, f32::max);
+        assert!(
+            miss_peak > key_peak,
+            "mistype peak {miss_peak} should exceed keystroke peak {key_peak}"
+        );
+    }
 }
