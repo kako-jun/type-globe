@@ -206,8 +206,8 @@ impl ListenUI {
 
     fn render_main_pane(&self, f: &mut Frame, area: Rect) {
         let title_text = match self.phase {
-            Phase::Playing => "TypeGlobe — Listening Practice",
-            Phase::Result => "TypeGlobe — Listening Practice  (result)",
+            Phase::Playing => "type-globe - Listening",
+            Phase::Result => "type-globe - Listening - Result",
         };
 
         let body_lines = match self.phase {

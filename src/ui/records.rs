@@ -126,7 +126,7 @@ impl RecordsUI {
     }
 
     fn render_title(&self, f: &mut Frame, area: Rect) {
-        let title = Paragraph::new("TypeGlobe — Records (local self-bests)")
+        let title = Paragraph::new("type-globe - Records")
             .style(STYLE_TITLE)
             .alignment(Alignment::Center)
             .block(Block::default().borders(Borders::ALL));
