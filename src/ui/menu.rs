@@ -341,12 +341,12 @@ impl MenuUI {
     fn help_line(&self) -> HelpLine {
         match self.step {
             MenuStep::LanguageSelection => HelpLine::new(vec![
-                HelpEntry::new("↑↓", "Select"),
+                HelpEntry::new("j/k, ↑/↓", "Select"),
                 HelpEntry::new("Enter", "Confirm"),
                 HelpEntry::new("q", "Quit"),
             ]),
             MenuStep::ModeSelection => HelpLine::new(vec![
-                HelpEntry::new("↑↓", "Select"),
+                HelpEntry::new("j/k, ↑/↓", "Select"),
                 HelpEntry::new("Enter", "Confirm"),
                 HelpEntry::new("Esc", "Back"),
                 HelpEntry::new("q", "Quit"),
