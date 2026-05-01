@@ -1,9 +1,9 @@
 # type-globe — Specification
 
-> Version: targeting v0.2.0 (offline-complete edition).
+> Version: v0.2.0 (offline-first blind-typing edition).
 > This document supersedes all v0.1.x specs. The previous "display-and-type" mode has been removed.
 >
-> Note: this is a **target specification** for the v0.2.0 redesign. The current `main` branch still uses JSON/`serde_json`, and some quiz interaction remains on the legacy selection model until follow-up issues land.
+> Note: `main` now ships this blind-typing interaction model. Storage still uses JSON/`serde_json` in this release line; the YAML migration remains future work.
 
 ## Core Principle
 

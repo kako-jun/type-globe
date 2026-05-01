@@ -4,7 +4,7 @@
 
 > A typing game where the string you must type is **never shown on screen**.
 
-This repository is currently in the middle of the v0.2.0 redesign. The sections below describe the **target design**, while the current `main` branch still contains some legacy quiz interaction that will be replaced in follow-up issues.
+This repository now ships the v0.2.0 blind-typing redesign. Some roadmap items (notably Time Attack 25 and the full ten-prompt RPG loop) remain follow-up work, but the core "the answer is never shown" interaction is already the live behavior.
 
 Inspired by competitive Hyakunin Isshu karuta — where the lower verse is never recited and players strike from memory — type-globe rewards **knowledge, memory, and listening comprehension** instead of visual reflex.
 
@@ -17,7 +17,7 @@ Two presentation styles, paired with two game structures. **They are never cross
 | **Quiz** — read the question and four choices, then type the correct one's text | Single-run, Time Attack 25, **Records** | knowledge |
 | **Listening** — hear the prompt, type what you heard | **Hack-and-slash RPG** (10 prompts = 1 run) | comprehension |
 
-Target v0.2.0 behavior: in Quiz mode, there are **no arrow keys for selection** — you select by typing the correct choice's text directly. An exact match auto-confirms immediately.
+In Quiz mode, there are **no arrow keys for selection** — you select by typing the correct choice's text directly. An exact match auto-confirms immediately.
 
 In Listening mode, **no text appears on screen at all**. A `♪` note pulses while audio plays. You type what you heard, blind.
 
