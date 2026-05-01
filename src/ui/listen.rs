@@ -299,14 +299,12 @@ impl ListenUI {
             Line::from(format!("Plays  : {}", self.plays)),
             Line::from(format!("Time   : {mins}:{secs:02}")),
         ];
-        let para = Paragraph::new(lines)
-            .alignment(Alignment::Left)
-            .block(
-                Block::default()
-                    .title("Status")
-                    .borders(Borders::ALL)
-                    .padding(Padding::uniform(1)),
-            );
+        let para = Paragraph::new(lines).alignment(Alignment::Left).block(
+            Block::default()
+                .title("Status")
+                .borders(Borders::ALL)
+                .padding(Padding::uniform(1)),
+        );
         f.render_widget(para, area);
     }
 

@@ -597,13 +597,12 @@ impl QuizUI {
                 })
                 .collect();
 
-            let choices_list = List::new(choice_items)
-                .block(
-                    Block::default()
-                        .title("Choices")
-                        .borders(Borders::ALL)
-                        .padding(Padding::uniform(1)),
-                );
+            let choices_list = List::new(choice_items).block(
+                Block::default()
+                    .title("Choices")
+                    .borders(Borders::ALL)
+                    .padding(Padding::uniform(1)),
+            );
 
             f.render_widget(choices_list, chunks[1]);
         } else {
@@ -643,14 +642,12 @@ impl QuizUI {
             )),
         ];
 
-        let body = Paragraph::new(lines)
-            .alignment(Alignment::Left)
-            .block(
-                Block::default()
-                    .title("Summary")
-                    .borders(Borders::ALL)
-                    .padding(Padding::uniform(1)),
-            );
+        let body = Paragraph::new(lines).alignment(Alignment::Left).block(
+            Block::default()
+                .title("Summary")
+                .borders(Borders::ALL)
+                .padding(Padding::uniform(1)),
+        );
         f.render_widget(body, area);
     }
 
