@@ -21,7 +21,7 @@ Quiz prompts lead to single-run scoring, Time Attack 25, and (in `type-globe-onl
 
 ## Game Modes
 
-- **Quiz Mode** — Read the question, see the four choices, and **type the correct one's text** (no arrow-key selection). Press Enter to confirm.
+- **Quiz Mode** — Read the question, see the four choices, and **type the correct one's text** (no arrow-key selection). Exact matches auto-confirm, and non-prefix typos are rejected immediately.
 - **Time Attack 25** — 5×5 panel battle versus CPU, inspired by the *Attack 25* TV show. Total time (thinking + typing) is the recorded result; the local self-best lands in Records.
 - **Listening RPG (TypeQuest)** — Audio-only prompts. Each prompt is an enemy; ten enemies = one run. Mistypes cost EXP, never end the run.
 

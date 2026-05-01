@@ -1,19 +1,19 @@
 //! Question-data integrity checks.
 //!
 //! With typed selection (#24), the only ambiguity that matters is when one
-//! choice is a strict prefix of another in the same question and language.
-//! Hitting Enter at the prefix point picks the shorter answer, so the player
-//! can never reach the longer one without realising the shorter one
-//! pre-empts it.
+//! typed candidate is a strict prefix of another in the same question and
+//! language. Because answers auto-confirm on exact match, the shorter one
+//! would fire before the player can reach the longer one.
 //!
 //! Per `docs/spec.md`: "no two choices in a question may share a prefix that
-//! would make a typed answer ambiguous before `Enter`." (Enforced here.)
+//! would make an auto-confirm ambiguous." (Enforced here.)
 //!
 //! Scope: this module flags prefix conflicts only. Choice-count enforcement
 //! (e.g. exactly 4 choices), correct-index range checks, and other shape
 //! validation are out of scope and left to a separate validator.
 
-use crate::types::Question;
+use super::romaji::hiragana_to_hepburn_variants;
+use crate::types::{Choice, Question};
 
 /// One detected prefix conflict between two choices of a single question.
 #[derive(Debug, Clone, PartialEq, Eq)]
@@ -42,16 +42,19 @@ pub fn find_prefix_conflicts(questions: &[Question]) -> Vec<PrefixConflict> {
             .into_iter()
             .collect();
         for language in languages {
-            let texts: Vec<(usize, &str)> = question
+            let texts: Vec<(usize, String)> = question
                 .choices
                 .iter()
                 .enumerate()
-                .filter_map(|(i, c)| c.labels.get(language).map(|t| (i, t.as_str())))
+                .flat_map(|(i, c)| typing_texts(c, language).into_iter().map(move |t| (i, t)))
                 .collect();
             for (a_pos, (a_idx, a_text)) in texts.iter().enumerate() {
                 for (b_idx, b_text) in texts.iter().skip(a_pos + 1) {
+                    if a_idx == b_idx {
+                        continue;
+                    }
                     if let Some((shorter, shorter_idx, longer, longer_idx)) =
-                        prefix_pair(a_text, *a_idx, b_text, *b_idx)
+                        prefix_pair(a_text.as_str(), *a_idx, b_text.as_str(), *b_idx)
                     {
                         conflicts.push(PrefixConflict {
                             question_id: question.id.clone(),
@@ -67,6 +70,38 @@ pub fn find_prefix_conflicts(questions: &[Question]) -> Vec<PrefixConflict> {
         }
     }
     conflicts
+}
+
+fn typing_texts(choice: &Choice, language: &str) -> Vec<String> {
+    match language {
+        "ja" => {
+            let mut variants: Vec<String> = choice
+                .ja_typings
+                .iter()
+                .map(|typing| typing.to_lowercase())
+                .collect();
+            let Some(displayed) = choice.labels.get(language) else {
+                return variants;
+            };
+            if displayed.is_ascii() {
+                variants.push(displayed.to_lowercase());
+            } else {
+                variants.extend(
+                    hiragana_to_hepburn_variants(displayed)
+                        .into_iter()
+                        .filter(|candidate| !candidate.is_empty()),
+                );
+            }
+            variants.sort();
+            variants.dedup();
+            variants
+        }
+        _ => choice
+            .labels
+            .get(language)
+            .map(|label| vec![label.to_lowercase()])
+            .unwrap_or_default(),
+    }
 }
 
 /// Return `(shorter, shorter_idx, longer, longer_idx)` if one of `a` / `b` is
@@ -242,14 +277,52 @@ mod tests {
 
     #[test]
     fn detects_multi_byte_prefix() {
-        // Multi-byte UTF-8 characters must not split — `日` is a strict
-        // prefix of `日本` at the byte level too, since UTF-8 is
-        // self-synchronizing.
-        let q = question_with_choices("q-utf8", &[("ja", &["日", "日本", "x", "y"])]);
+        let q = question_with_choices("q-utf8", &[("ja", &["A", "B", "x", "y"])]);
+        let mut q = q;
+        q.choices[0].ja_typings = vec!["ni".into()];
+        q.choices[1].ja_typings = vec!["nihon".into()];
         let conflicts = find_prefix_conflicts(&[q]);
         assert_eq!(conflicts.len(), 1);
-        assert_eq!(conflicts[0].shorter_text, "日");
-        assert_eq!(conflicts[0].longer_text, "日本");
+        assert_eq!(conflicts[0].shorter_text, "ni");
+        assert_eq!(conflicts[0].longer_text, "nihon");
+    }
+
+    #[test]
+    fn detects_prefix_conflict_in_ja_typings() {
+        let q = Question {
+            id: "q-ja-typing".into(),
+            genre: "test".into(),
+            question_text: {
+                let mut m = HashMap::new();
+                m.insert("ja".to_string(), "ダミー".to_string());
+                m
+            },
+            choices: vec![
+                {
+                    let mut labels = HashMap::new();
+                    labels.insert("ja".to_string(), "A".to_string());
+                    Choice {
+                        labels,
+                        ja_typings: vec!["to".into()],
+                    }
+                },
+                {
+                    let mut labels = HashMap::new();
+                    labels.insert("ja".to_string(), "B".to_string());
+                    Choice {
+                        labels,
+                        ja_typings: vec!["tokyo".into()],
+                    }
+                },
+            ],
+            correct_answer_index: 0,
+            image_path: None,
+        };
+        let conflicts = find_prefix_conflicts(&[q]);
+        assert_eq!(conflicts.len(), 1);
+        assert_eq!(conflicts[0].language, "ja");
+        assert_eq!(conflicts[0].shorter_text, "to");
+        assert_eq!(conflicts[0].longer_text, "tokyo");
     }
 
     #[test]

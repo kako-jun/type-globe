@@ -15,6 +15,23 @@ use crate::io::romaji::hiragana_to_hepburn_variants;
 use crate::types::{Language, ListeningPrompt};
 use rand::seq::SliceRandom;
 
+pub fn acceptable_listening_inputs(language: &Language, expected: &str) -> Vec<String> {
+    match language {
+        Language::Japanese => hiragana_to_hepburn_variants(expected),
+        Language::English => vec![expected.trim().to_lowercase()],
+    }
+}
+
+pub fn is_valid_listening_prefix(language: &Language, typed: &str, expected: &str) -> bool {
+    if typed.is_empty() {
+        return true;
+    }
+    let typed = typed.to_lowercase();
+    acceptable_listening_inputs(language, expected)
+        .iter()
+        .any(|candidate| candidate.starts_with(&typed))
+}
+
 /// Decide whether `typed` matches `expected` for a listening prompt.
 ///
 /// Per `docs/spec.md` and issue #31, the judge:
@@ -28,12 +45,9 @@ use rand::seq::SliceRandom;
 ///   skill).
 pub fn is_correct_listening_input(language: &Language, typed: &str, expected: &str) -> bool {
     let typed = typed.trim().to_lowercase();
-    match language {
-        Language::Japanese => hiragana_to_hepburn_variants(expected)
-            .iter()
-            .any(|candidate| candidate == &typed),
-        Language::English => typed == expected.trim().to_lowercase(),
-    }
+    acceptable_listening_inputs(language, expected)
+        .iter()
+        .any(|candidate| candidate == &typed)
 }
 
 /// One play-through of a single listening prompt. Tracks the active
@@ -204,6 +218,24 @@ mod tests {
     }
 
     #[test]
+    fn prefix_accepts_partial_match() {
+        assert!(is_valid_listening_prefix(
+            &Language::English,
+            "app",
+            "apple"
+        ));
+    }
+
+    #[test]
+    fn prefix_rejects_wrong_branch() {
+        assert!(!is_valid_listening_prefix(
+            &Language::English,
+            "apx",
+            "apple"
+        ));
+    }
+
+    #[test]
     fn judge_romanizes_japanese_prompts() {
         assert!(is_correct_listening_input(
             &Language::Japanese,
@@ -219,6 +251,25 @@ mod tests {
             &Language::Japanese,
             "shinbashi",
             "しんばし"
+        ));
+    }
+
+    #[test]
+    fn prefix_accepts_japanese_variants() {
+        assert!(is_valid_listening_prefix(
+            &Language::Japanese,
+            "tok",
+            "とうきょう"
+        ));
+        assert!(is_valid_listening_prefix(
+            &Language::Japanese,
+            "tou",
+            "とうきょう"
+        ));
+        assert!(!is_valid_listening_prefix(
+            &Language::Japanese,
+            "tax",
+            "とうきょう"
         ));
     }
 
