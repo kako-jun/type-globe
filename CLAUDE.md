@@ -41,7 +41,7 @@ src/
 │   ├── fade.rs          # TrueColor 段階補間
 │   └── input.rs         # 演出と並行した入力受付
 ├── game/
-│   ├── quiz.rs          # 「打って選択」+ Enter 確定
+│   ├── quiz.rs          # 「打って選択」+ exact match 自動確定
 │   ├── time_attack.rs   # 5x5 パネル + CPU 対戦
 │   └── hack.rs          # リスニング × RPG（10問サイクル）
 ├── audio/
@@ -68,7 +68,7 @@ src/
 - **演出と並行入力**：知っている人は出待ちせず先打ちできる
 - **失敗概念なし（v0.2.0）**：HP 0 で死亡などは導入しない。10問やったら必ず帰還、ミスは EXP が減るだけ
 - **音声リプレイ無制限・無ペナルティ**：タイム消費が自然なペナルティ
-- **クイズは「打って選択」**：これは v0.2.0 のターゲット。現行 `main` に残る旧矢印/数字選択は follow-up Issue で除去する
+- **クイズは「打って選択」+ 自動確定**：有効な prefix だけ受け付け、exact match になった瞬間に確定する。旧矢印/数字選択は follow-up Issue で除去する
 - **CPM / WPM 併記**
 
 ## ブランド
@@ -96,3 +96,22 @@ v0.1.x にあった以下を v0.2.0 で段階的に廃止する：
 - 既存：`scripts/generate_questions.py`、`.claude/quiz-generation-policy.md`
 - v0.2.0 ターゲット：100 → 1,000 問
 - リスニング問題セット（`data/listening_<lang>.json`）も新設
+
+## JA ローマ字入力ルール
+
+- `data/questions_ja.json` の各 choice は `ja_typings: string[]` を持つ
+- `ja_typings` は **小文字 ASCII のみ**
+- 許可する揺れは **ヘボン式ベース + 長音の潰し/非潰し** のみ
+  - 例: `tokyo` / `toukyou`
+  - 例: `osaka` / `oosaka`
+  - 例: `kyoto` / `kyouto`
+- **Wapuro 系の子音揺れは不許可**
+  - 不許可例: `si`, `ti`, `tu`, `hu`, `zi`
+  - 正規形は `shi`, `chi`, `tsu`, `fu`, `ji`
+- 外来語・固有名詞で **公式の英字綴りがあるなら、それも `ja_typings` に追加してよい**
+  - 例: `エル（Lawliet）` → `lawliet`
+- かな・カタカナ・ASCII だけの choice は自動生成でよい
+  - `cargo run --bin backfill-ja-typing -- data/questions_ja.json`
+- 漢字を含む choice は読みを人間が判断して `ja_typings` を手で入れる
+- 検査は必ず実行する
+  - `cargo run --bin lint-questions -- data/questions_ja.json data/questions_en.json`

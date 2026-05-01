@@ -11,8 +11,26 @@
 //! - The blind-input judge (`is_correct_listening_input`, #31) is a
 //!   free function so the unit tests don't need a session at all.
 
-use crate::types::ListeningPrompt;
+use crate::io::romaji::hiragana_to_hepburn_variants;
+use crate::types::{Language, ListeningPrompt};
 use rand::seq::SliceRandom;
+
+pub fn acceptable_listening_inputs(language: &Language, expected: &str) -> Vec<String> {
+    match language {
+        Language::Japanese => hiragana_to_hepburn_variants(expected),
+        Language::English => vec![expected.trim().to_lowercase()],
+    }
+}
+
+pub fn is_valid_listening_prefix(language: &Language, typed: &str, expected: &str) -> bool {
+    if typed.is_empty() {
+        return true;
+    }
+    let typed = typed.to_lowercase();
+    acceptable_listening_inputs(language, expected)
+        .iter()
+        .any(|candidate| candidate.starts_with(&typed))
+}
 
 /// Decide whether `typed` matches `expected` for a listening prompt.
 ///
@@ -25,8 +43,11 @@ use rand::seq::SliceRandom;
 /// - keeps **internal spacing exact** (two-word phrases must be typed
 ///   with the right number of spaces — that's part of the listening
 ///   skill).
-pub fn is_correct_listening_input(typed: &str, expected: &str) -> bool {
-    typed.trim().to_lowercase() == expected.trim().to_lowercase()
+pub fn is_correct_listening_input(language: &Language, typed: &str, expected: &str) -> bool {
+    let typed = typed.trim().to_lowercase();
+    acceptable_listening_inputs(language, expected)
+        .iter()
+        .any(|candidate| candidate == &typed)
 }
 
 /// One play-through of a single listening prompt. Tracks the active
@@ -36,6 +57,7 @@ pub fn is_correct_listening_input(typed: &str, expected: &str) -> bool {
 /// asked the TTS engine to speak again.
 pub struct ListeningSession {
     prompt: ListeningPrompt,
+    language: Language,
     input: String,
     submitted: Option<SubmissionResult>,
 }
@@ -50,9 +72,10 @@ pub struct SubmissionResult {
 }
 
 impl ListeningSession {
-    pub fn new(prompt: ListeningPrompt) -> Self {
+    pub fn new(prompt: ListeningPrompt, language: Language) -> Self {
         Self {
             prompt,
+            language,
             input: String::new(),
             submitted: None,
         }
@@ -61,9 +84,11 @@ impl ListeningSession {
     /// Pick a random prompt from `pool`. Returns `None` when the pool
     /// is empty so the caller can show a "no listening data" message
     /// instead of panicking.
-    pub fn from_pool(pool: &[ListeningPrompt]) -> Option<Self> {
+    pub fn from_pool(pool: &[ListeningPrompt], language: Language) -> Option<Self> {
         let mut rng = rand::thread_rng();
-        pool.choose(&mut rng).cloned().map(Self::new)
+        pool.choose(&mut rng)
+            .cloned()
+            .map(|prompt| Self::new(prompt, language))
     }
 
     pub fn prompt(&self) -> &ListeningPrompt {
@@ -91,7 +116,7 @@ impl ListeningSession {
     /// Apply the blind-input judge. Once submitted the session is
     /// frozen — further `push_char` / `pop_char` are no-ops.
     pub fn submit(&mut self) -> &SubmissionResult {
-        let is_correct = is_correct_listening_input(&self.input, &self.prompt.text);
+        let is_correct = is_correct_listening_input(&self.language, &self.input, &self.prompt.text);
         self.submitted = Some(SubmissionResult {
             is_correct,
             expected: self.prompt.text.clone(),
@@ -128,33 +153,56 @@ mod tests {
 
     #[test]
     fn judge_accepts_exact_match() {
-        assert!(is_correct_listening_input("apple", "apple"));
+        assert!(is_correct_listening_input(
+            &Language::English,
+            "apple",
+            "apple"
+        ));
     }
 
     #[test]
     fn judge_is_case_insensitive() {
-        assert!(is_correct_listening_input("Apple", "apple"));
-        assert!(is_correct_listening_input("APPLE", "apple"));
+        assert!(is_correct_listening_input(
+            &Language::English,
+            "Apple",
+            "apple"
+        ));
+        assert!(is_correct_listening_input(
+            &Language::English,
+            "APPLE",
+            "apple"
+        ));
     }
 
     #[test]
     fn judge_trims_surrounding_whitespace() {
-        assert!(is_correct_listening_input("  apple ", "apple"));
-        assert!(is_correct_listening_input("apple\n", "apple"));
+        assert!(is_correct_listening_input(
+            &Language::English,
+            "  apple ",
+            "apple"
+        ));
+        assert!(is_correct_listening_input(
+            &Language::English,
+            "apple\n",
+            "apple"
+        ));
     }
 
     #[test]
     fn judge_keeps_internal_spacing_exact() {
         // Listening is *part of* the skill: drop a space and it's wrong.
         assert!(is_correct_listening_input(
+            &Language::English,
             "George Washington",
             "George Washington"
         ));
         assert!(!is_correct_listening_input(
+            &Language::English,
             "GeorgeWashington",
             "George Washington"
         ));
         assert!(!is_correct_listening_input(
+            &Language::English,
             "George  Washington",
             "George Washington"
         ));
@@ -162,12 +210,72 @@ mod tests {
 
     #[test]
     fn judge_rejects_different_word() {
-        assert!(!is_correct_listening_input("orange", "apple"));
+        assert!(!is_correct_listening_input(
+            &Language::English,
+            "orange",
+            "apple"
+        ));
+    }
+
+    #[test]
+    fn prefix_accepts_partial_match() {
+        assert!(is_valid_listening_prefix(
+            &Language::English,
+            "app",
+            "apple"
+        ));
+    }
+
+    #[test]
+    fn prefix_rejects_wrong_branch() {
+        assert!(!is_valid_listening_prefix(
+            &Language::English,
+            "apx",
+            "apple"
+        ));
+    }
+
+    #[test]
+    fn judge_romanizes_japanese_prompts() {
+        assert!(is_correct_listening_input(
+            &Language::Japanese,
+            "tokyo",
+            "とうきょう"
+        ));
+        assert!(is_correct_listening_input(
+            &Language::Japanese,
+            "toukyou",
+            "とうきょう"
+        ));
+        assert!(is_correct_listening_input(
+            &Language::Japanese,
+            "shinbashi",
+            "しんばし"
+        ));
+    }
+
+    #[test]
+    fn prefix_accepts_japanese_variants() {
+        assert!(is_valid_listening_prefix(
+            &Language::Japanese,
+            "tok",
+            "とうきょう"
+        ));
+        assert!(is_valid_listening_prefix(
+            &Language::Japanese,
+            "tou",
+            "とうきょう"
+        ));
+        assert!(!is_valid_listening_prefix(
+            &Language::Japanese,
+            "tax",
+            "とうきょう"
+        ));
     }
 
     #[test]
     fn session_records_correct_submission() {
-        let mut s = ListeningSession::new(p("apple"));
+        let mut s = ListeningSession::new(p("apple"), Language::English);
         for c in "apple".chars() {
             s.push_char(c);
         }
@@ -179,7 +287,7 @@ mod tests {
 
     #[test]
     fn session_freezes_after_submit() {
-        let mut s = ListeningSession::new(p("apple"));
+        let mut s = ListeningSession::new(p("apple"), Language::English);
         s.push_char('a');
         s.submit();
         s.push_char('b');
@@ -188,7 +296,7 @@ mod tests {
 
     #[test]
     fn session_records_incorrect_submission() {
-        let mut s = ListeningSession::new(p("apple"));
+        let mut s = ListeningSession::new(p("apple"), Language::English);
         for c in "orange".chars() {
             s.push_char(c);
         }
@@ -200,13 +308,13 @@ mod tests {
     #[test]
     fn from_pool_returns_none_on_empty() {
         let pool: Vec<ListeningPrompt> = Vec::new();
-        assert!(ListeningSession::from_pool(&pool).is_none());
+        assert!(ListeningSession::from_pool(&pool, Language::English).is_none());
     }
 
     #[test]
     fn from_pool_picks_one_when_available() {
         let pool = vec![p("apple"), p("river")];
-        let s = ListeningSession::from_pool(&pool).expect("pool non-empty");
+        let s = ListeningSession::from_pool(&pool, Language::English).expect("pool non-empty");
         assert!(matches!(s.prompt().text.as_str(), "apple" | "river"));
     }
 }

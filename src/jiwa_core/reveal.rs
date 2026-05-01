@@ -63,12 +63,12 @@ pub struct RevealOpts {
 
 impl RevealOpts {
     /// Defaults tuned for Quiz-mode question text on a typical terminal:
-    /// ~25 chars/sec typewriter, ~180 ms fade per grapheme, dim grey →
-    /// white.
+    /// slightly slower than before plus a longer fade so the in-between
+    /// color reads as an afterimage instead of a blink.
     pub const fn default_quiz() -> Self {
         Self {
-            char_interval: Duration::from_millis(40),
-            fade_duration: Duration::from_millis(180),
+            char_interval: Duration::from_millis(45),
+            fade_duration: Duration::from_millis(320),
             fade_from: Rgb(60, 60, 60),
             fade_to: Rgb(255, 255, 255),
         }

@@ -98,43 +98,79 @@ impl QuizGame {
             .collect()
     }
 
+    /// All currently acceptable typed strings for the active question.
+    /// Used by the UI for live prefix validation so a mistyped suffix
+    /// is rejected immediately instead of forcing a Backspace recovery.
+    pub fn current_typing_candidates(&self) -> Vec<String> {
+        let Some(question) = self.get_current_question() else {
+            return Vec::new();
+        };
+        let mut candidates: Vec<String> = question
+            .choices
+            .iter()
+            .flat_map(|choice| DataLoader::get_choice_typing_texts(choice, &self.language))
+            .map(|candidate| candidate.to_lowercase())
+            .collect();
+        candidates.sort();
+        candidates.dedup();
+        candidates
+    }
+
+    /// Whether `typed` is still a valid prefix of at least one answer
+    /// candidate for the active question. Empty input is always valid.
+    pub fn is_valid_typed_prefix(&self, typed: &str) -> bool {
+        if typed.is_empty() {
+            return true;
+        }
+        let typed = typed.to_lowercase();
+        self.current_typing_candidates()
+            .iter()
+            .any(|candidate| candidate.starts_with(&typed))
+    }
+
     /// Resolve the typed text against the current question's choices and
     /// answer with the matching index. Per `docs/spec.md`, only an **exact**
     /// match counts — prefix matches do nothing (so `mov` does not auto-pick
     /// `move`). A non-matching string yields an incorrect answer.
     pub fn answer_question_typed(&mut self, typed: &str) -> Option<QuizResult> {
-        let index = self.get_current_question().and_then(|question| {
-            self.get_choice_texts(question)
+        let typed = typed.to_lowercase();
+        let matched = self.get_current_question().and_then(|question| {
+            question
+                .choices
                 .iter()
-                .position(|choice| choice == typed)
+                .enumerate()
+                .find_map(|(idx, choice)| {
+                    DataLoader::get_choice_typing_texts(choice, &self.language)
+                        .into_iter()
+                        .find(|candidate| candidate.to_lowercase() == typed)
+                        .map(|candidate| (idx, candidate.chars().count() as u32))
+                })
         });
         // usize::MAX guarantees a non-match against any valid index.
-        self.answer_question(index.unwrap_or(usize::MAX))
+        let (index, typed_chars) = matched.unwrap_or((usize::MAX, 0));
+        self.answer_question(index, typed_chars)
     }
 
     /// Index-based answer recorder. Prefer `answer_question_typed` from the
     /// UI layer — `usize::MAX` is the documented "no-match" sentinel.
-    pub(crate) fn answer_question(&mut self, answer_index: usize) -> Option<QuizResult> {
+    pub(crate) fn answer_question(
+        &mut self,
+        answer_index: usize,
+        typed_chars: u32,
+    ) -> Option<QuizResult> {
         let question_start_time = Instant::now();
 
         let snapshot = self.get_current_question().map(|question| {
             let correct_answer_index = question.correct_answer_index;
             let is_correct = answer_index == correct_answer_index;
-            let correct_chars = if is_correct {
-                DataLoader::get_choice_text(&question.choices[correct_answer_index], &self.language)
-                    .chars()
-                    .count() as u32
-            } else {
-                0
-            };
-            (correct_answer_index, is_correct, correct_chars)
+            (correct_answer_index, is_correct)
         });
 
-        if let Some((correct_answer_index, is_correct, correct_chars)) = snapshot {
+        if let Some((correct_answer_index, is_correct)) = snapshot {
             if is_correct {
                 self.correct_answers += 1;
                 self.score += self.calculate_score_for_question();
-                self.typed_correct_chars = self.typed_correct_chars.saturating_add(correct_chars);
+                self.typed_correct_chars = self.typed_correct_chars.saturating_add(typed_chars);
             }
 
             self.total_answers += 1;
@@ -223,6 +259,7 @@ impl QuizGame {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use crate::types::Choice;
     use std::collections::HashMap;
 
     fn make_question(choices: &[&str], correct: usize) -> Question {
@@ -233,10 +270,13 @@ mod tests {
         let choices = choices
             .iter()
             .map(|text| {
-                let mut h = HashMap::new();
-                h.insert("ja".to_string(), text.to_string());
-                h.insert("en".to_string(), text.to_string());
-                h
+                let mut labels = HashMap::new();
+                labels.insert("ja".to_string(), text.to_string());
+                labels.insert("en".to_string(), text.to_string());
+                Choice {
+                    labels,
+                    ja_typings: Vec::new(),
+                }
             })
             .collect();
 
@@ -292,13 +332,12 @@ mod tests {
     }
 
     #[test]
-    fn typed_is_case_sensitive() {
-        // Documents the current contract: matching is byte-exact, no folding.
+    fn typed_is_case_insensitive() {
         let question = make_question(&["borrow", "move", "ref", "clone"], 1);
         let mut game = QuizGame::new(vec![question], Language::English);
         game.start();
         let result = game.answer_question_typed("Move").expect("result");
-        assert!(!result.is_correct);
+        assert!(result.is_correct);
     }
 
     #[test]
@@ -329,6 +368,63 @@ mod tests {
             .expect("result");
         assert!(result.is_correct);
         assert_eq!(result.selected_answer_index, 0);
+    }
+
+    #[test]
+    fn japanese_mode_accepts_explicit_romaji() {
+        let mut question = make_question(&["東京", "大阪", "京都", "名古屋"], 0);
+        question.choices[0].ja_typings = vec!["tokyo".into(), "toukyou".into()];
+        question.choices[1].ja_typings = vec!["osaka".into(), "oosaka".into()];
+        question.choices[2].ja_typings = vec!["kyoto".into(), "kyouto".into()];
+        question.choices[3].ja_typings = vec!["nagoya".into()];
+        let mut game = QuizGame::new(vec![question], Language::Japanese);
+        game.start();
+        let result = game.answer_question_typed("tokyo").expect("result");
+        assert!(result.is_correct);
+    }
+
+    #[test]
+    fn japanese_mode_accepts_uppercase_romaji() {
+        let mut question = make_question(&["東京", "大阪", "京都", "名古屋"], 0);
+        question.choices[0].ja_typings = vec!["tokyo".into(), "toukyou".into()];
+        let mut game = QuizGame::new(vec![question], Language::Japanese);
+        game.start();
+        let result = game.answer_question_typed("TOKYO").expect("result");
+        assert!(result.is_correct);
+    }
+
+    #[test]
+    fn japanese_mode_accepts_long_vowel_alias() {
+        let mut question = make_question(&["とうきょう", "おおさか", "きょうと", "なごや"], 0);
+        question.choices[0].ja_typings = vec!["tokyo".into(), "toukyou".into()];
+        let mut game = QuizGame::new(vec![question], Language::Japanese);
+        game.start();
+        let result = game.answer_question_typed("toukyou").expect("result");
+        assert!(result.is_correct);
+    }
+
+    #[test]
+    fn valid_prefix_accepts_partial_match() {
+        let question = make_question(&["borrow", "move", "ref", "clone"], 1);
+        let game = QuizGame::new(vec![question], Language::English);
+        assert!(game.is_valid_typed_prefix("mo"));
+    }
+
+    #[test]
+    fn valid_prefix_rejects_wrong_branch() {
+        let question = make_question(&["borrow", "move", "ref", "clone"], 1);
+        let game = QuizGame::new(vec![question], Language::English);
+        assert!(!game.is_valid_typed_prefix("mx"));
+    }
+
+    #[test]
+    fn valid_prefix_handles_japanese_romaji_variants() {
+        let mut question = make_question(&["東京", "大阪", "京都", "名古屋"], 0);
+        question.choices[0].ja_typings = vec!["tokyo".into(), "toukyou".into()];
+        let game = QuizGame::new(vec![question], Language::Japanese);
+        assert!(game.is_valid_typed_prefix("tok"));
+        assert!(game.is_valid_typed_prefix("tou"));
+        assert!(!game.is_valid_typed_prefix("tax"));
     }
 
     #[test]
@@ -398,6 +494,16 @@ mod tests {
     }
 
     #[test]
+    fn cpm_counts_typed_variant_length_for_japanese() {
+        let mut question = make_question(&["東京", "大阪", "京都", "名古屋"], 0);
+        question.choices[0].ja_typings = vec!["tokyo".into(), "toukyou".into()];
+        let mut game = QuizGame::new(vec![question], Language::Japanese);
+        game.start();
+        game.answer_question_typed("toukyou");
+        assert_eq!(game.typed_correct_chars, 7);
+    }
+
+    #[test]
     fn get_answered_question_points_at_just_answered_question() {
         // Regression for the H2O / Tokyo result-screen bug: `answer_question`
         // advances `current_question_index`, but the result screen needs the
@@ -419,12 +525,15 @@ mod tests {
         let answered = game
             .get_answered_question()
             .expect("just-answered question is set");
-        assert_eq!(answered.choices[result.correct_answer_index]["en"], "H2O");
+        assert_eq!(
+            answered.choices[result.correct_answer_index].labels["en"],
+            "H2O"
+        );
 
         // And `get_current_question` correctly points at Q2 for the
         // next round — the two getters are not interchangeable.
         let current = game.get_current_question().expect("next question");
-        assert_eq!(current.choices[1]["en"], "Tokyo");
+        assert_eq!(current.choices[1].labels["en"], "Tokyo");
     }
 
     #[test]
