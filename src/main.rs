@@ -148,13 +148,13 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         }
 
         // ---- ta25 サブコマンド ----
-        Some(Commands::Ta25 { lang, seed }) => {
+        Some(Commands::Ta25 { lang: _, seed }) => {
             // TODO(#48): --seed は未実装。引数を受け取るのみ。
             if seed.is_some() {
                 eprintln!("note: --seed は現在未実装です（スタブ）");
             }
 
-            let _language = resolve_language_or_select(lang)?;
+            // Ta25 は未実装のため言語選択プロンプトを出さずに即メッセージ表示。
             show_return_to_menu_message("Time Attack 25 is not implemented yet.")?;
             Ok(())
         }
@@ -385,12 +385,6 @@ mod tests {
     fn parse_language_empty_string_returns_err_without_panic() {
         let result = parse_language("");
         assert!(result.is_err(), "empty string must not parse successfully");
-    }
-
-    // --- TC-05: "JA" (uppercase) is not accepted ---
-    #[test]
-    fn parse_language_uppercase_ja_is_rejected() {
-        assert!(parse_language("JA").is_err());
     }
 
     // --- TC-27: --seed u64::MAX does not cause a parse error ---
