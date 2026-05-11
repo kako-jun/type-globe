@@ -14,6 +14,6 @@ pub use listen::{tts_unavailable_message, ListenUI};
 pub use menu::MenuUI;
 pub use quiz::QuizUI;
 pub use records::RecordsUI;
-// TODO(#11): drop this allow once hack UI wires up ProgressBar / StatusItem.
+// TODO(#11): drop this allow once rpg UI wires up ProgressBar / StatusItem.
 #[allow(unused_imports)]
 pub use status::{ProgressBar, StatusItem, StatusPane};

@@ -2,7 +2,7 @@
 //!
 //! Single-prompt foundation that exercises the TTS engine (#28), the
 //! listening data structure (#29), and the blind-input judge (#31)
-//! end-to-end. The full hack-and-slash run (#32-#37) will compose
+//! end-to-end. The full RPG run (#32-#37) will compose
 //! `ListeningSession` repeatedly inside this same 4-pane layout; for
 //! now the side pane shows placeholder run info ("Practice — RPG run
 //! lands in #32+").
@@ -53,7 +53,8 @@ enum Phase {
 
 pub struct ListenUI {
     session: ListeningSession,
-    tts: TtsEngine,
+    /// `None` when the caller passed `--no-tts` (#48).
+    tts: Option<TtsEngine>,
     language: Language,
     phase: Phase,
     /// `♪` pulse for the active prompt — anchors per-frame color.
@@ -64,7 +65,7 @@ pub struct ListenUI {
     /// Number of times the player has triggered audio (initial play +
     /// each Space replay). Per spec there is no penalty, but exposing
     /// the count for the next UI iteration is cheap and mirrors what
-    /// the hack-and-slash run is going to want for telemetry.
+    /// the RPG run is going to want for telemetry.
     plays: u32,
     rejected_char: Option<char>,
     reject_flash_until: Option<Instant>,
@@ -74,7 +75,23 @@ impl ListenUI {
     pub fn new(session: ListeningSession, tts: TtsEngine, language: Language) -> Self {
         Self {
             session,
-            tts,
+            tts: Some(tts),
+            language,
+            phase: Phase::Playing,
+            pulse: Some(PulseHandle::start("♪", PulseOpts::default_listening())),
+            started_at: Instant::now(),
+            plays: 0,
+            rejected_char: None,
+            reject_flash_until: None,
+        }
+    }
+
+    /// Construct a `ListenUI` without a TTS engine. Audio calls are
+    /// silently skipped. Activated by `rpg --no-tts` (#48).
+    pub fn new_without_tts(session: ListeningSession, language: Language) -> Self {
+        Self {
+            session,
+            tts: None,
             language,
             phase: Phase::Playing,
             pulse: Some(PulseHandle::start("♪", PulseOpts::default_listening())),
@@ -95,16 +112,20 @@ impl ListenUI {
         // Speak the prompt once on entry. Failure here is non-fatal —
         // the player can still try Space-replay, and the result screen
         // works even if no audio came out (helps debug TTS issues).
-        if let Err(err) = self.tts.speak(&self.session.prompt().text, &self.language) {
-            eprintln!("warning: initial TTS speak failed: {err}");
-        } else {
-            self.plays += 1;
+        if let Some(tts) = self.tts.as_mut() {
+            if let Err(err) = tts.speak(&self.session.prompt().text, &self.language) {
+                eprintln!("warning: initial TTS speak failed: {err}");
+            } else {
+                self.plays += 1;
+            }
         }
 
         let result = self.run_app(&mut terminal);
 
         // Stop any in-flight utterance so the terminal returns silently.
-        let _ = self.tts.stop();
+        if let Some(tts) = self.tts.as_mut() {
+            let _ = tts.stop();
+        }
         disable_raw_mode()?;
         execute!(terminal.backend_mut(), LeaveAlternateScreen)?;
         terminal.show_cursor()?;
@@ -183,10 +204,13 @@ impl ListenUI {
     }
 
     fn replay(&mut self) {
-        if let Err(err) = self.tts.speak(&self.session.prompt().text, &self.language) {
-            eprintln!("warning: TTS replay failed: {err}");
-            return;
+        if let Some(tts) = self.tts.as_mut() {
+            if let Err(err) = tts.speak(&self.session.prompt().text, &self.language) {
+                eprintln!("warning: TTS replay failed: {err}");
+                return;
+            }
         }
+        // plays counts replay attempts regardless of TTS availability.
         self.plays += 1;
         // Restart the visual pulse on each replay so the breathing
         // anchors to the new utterance.
@@ -194,7 +218,7 @@ impl ListenUI {
     }
 
     fn ui(&mut self, f: &mut Frame) {
-        let frame = PaneFrame::hack(f.area());
+        let frame = PaneFrame::rpg(f.area());
         self.render_main_pane(f, frame.main);
         self.render_status_pane(f, frame.side);
         self.render_input_echo(f, frame.input_echo);
@@ -416,7 +440,9 @@ impl ListenUI {
             self.session.submit();
             self.pulse = None;
             self.phase = Phase::Result;
-            let _ = self.tts.stop();
+            if let Some(tts) = self.tts.as_mut() {
+                let _ = tts.stop();
+            }
         }
     }
 
@@ -445,6 +471,73 @@ impl ListenUI {
                 self.reject_flash_is_active() && remaining_ticks % 2 == 0
             })
             .unwrap_or(false)
+    }
+}
+
+// ---------------------------------------------------------------------------
+// Tests
+// ---------------------------------------------------------------------------
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use crate::game::ListeningSession;
+    use crate::types::{AnswerKind, Language, ListeningPrompt};
+
+    fn stub_prompt() -> ListeningPrompt {
+        ListeningPrompt {
+            id: "test".into(),
+            text: "apple".into(),
+            kind: AnswerKind::Word,
+        }
+    }
+
+    fn stub_session() -> ListeningSession {
+        ListeningSession::new(stub_prompt(), Language::English)
+    }
+
+    // --- TC-12: new_without_tts → tts field is None ---
+    #[test]
+    fn new_without_tts_has_no_tts_engine() {
+        let ui = ListenUI::new_without_tts(stub_session(), Language::English);
+        assert!(
+            ui.tts.is_none(),
+            "tts should be None when built without TTS"
+        );
+    }
+
+    // --- TC-13: new (with TTS engine) → tts field is Some ---
+    #[test]
+    fn new_with_tts_engine_has_some_tts() {
+        // We cannot guarantee TtsEngine::new() succeeds in all CI environments,
+        // so we skip this test if TTS initialisation fails.
+        match crate::audio::TtsEngine::new() {
+            Ok(tts) => {
+                let ui = ListenUI::new(stub_session(), tts, Language::English);
+                assert!(
+                    ui.tts.is_some(),
+                    "tts should be Some when built with a TTS engine"
+                );
+            }
+            Err(_) => {
+                // TTS unavailable in this environment — skip rather than fail.
+                eprintln!("TC-13: TtsEngine::new() failed; skipping assertion (TTS unavailable)");
+            }
+        }
+    }
+
+    // --- TC-14: replay() without TTS increments plays (bug-fix guard) ---
+    #[test]
+    fn replay_without_tts_increments_plays_count() {
+        let mut ui = ListenUI::new_without_tts(stub_session(), Language::English);
+        assert_eq!(ui.plays, 0);
+        ui.replay();
+        assert_eq!(
+            ui.plays, 1,
+            "plays should be +1 after replay() even without TTS"
+        );
+        ui.replay();
+        assert_eq!(ui.plays, 2, "plays should be +2 after second replay()");
     }
 }
 

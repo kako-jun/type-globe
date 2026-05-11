@@ -256,7 +256,7 @@ src/
 │   ├── mod.rs
 │   ├── quiz.rs          # quiz presentation + "type-to-select" logic
 │   ├── time_attack.rs   # 5x5 panel battle
-│   └── hack.rs          # listening × RPG run loop
+│   └── rpg.rs           # listening × RPG run loop
 ├── audio/
 │   ├── mod.rs
 │   └── tts.rs           # `tts` crate wrapper, language routing
@@ -268,7 +268,7 @@ src/
     ├── mod.rs
     ├── menu.rs
     ├── quiz.rs          # 3-pane layout
-    ├── hack.rs          # 4-pane layout
+    ├── rpg.rs           # 4-pane layout
     ├── time_attack.rs
     ├── records.rs
     └── help_line.rs     # always-on bottom helpline

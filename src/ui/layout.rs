@@ -14,10 +14,10 @@
 //!
 //! ## Bottom stack
 //!
-//! Both quiz and hack frames carry a 1-line `input_echo` (renders the
+//! Both quiz and rpg frames carry a 1-line `input_echo` (renders the
 //! typed answer / sentence) immediately below the top panes, and an
 //! always-on 1-line `help_line` at the very bottom rendered by the
-//! `ui::HelpLine` component (#18). For hack mode, a 5-line `log` slot
+//! `ui::HelpLine` component (#18). For rpg mode, a 5-line `log` slot
 //! sits between the input echo and the help line.
 
 use ratatui::layout::{Constraint, Direction, Layout, Rect};
@@ -25,7 +25,7 @@ use ratatui::layout::{Constraint, Direction, Layout, Rect};
 /// Geometric breakdown of a mode's screen.
 ///
 /// `main`, `side`, `input_echo`, and `help_line` are always present;
-/// `log` is filled only by hack-and-slash runs (it carries the battle log
+/// `log` is filled only by RPG runs (it carries the battle log
 /// per `docs/spec.md`).
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub struct PaneFrame {
@@ -69,12 +69,12 @@ impl PaneFrame {
         }
     }
 
-    /// 4-pane layout for the hack-and-slash listening RPG.
+    /// 4-pane layout for the listening RPG.
     ///
-    /// TODO(#11): wire this up once the hack UI lands; the `#[allow(dead_code)]`
+    /// TODO(#11): wire this up once the rpg UI lands; the `#[allow(dead_code)]`
     /// can come off then.
     #[allow(dead_code)]
-    pub fn hack(area: Rect) -> Self {
+    pub fn rpg(area: Rect) -> Self {
         let outer = Layout::default()
             .direction(Direction::Vertical)
             .margin(1)
@@ -132,16 +132,16 @@ mod tests {
     }
 
     #[test]
-    fn hack_layout_has_four_panes() {
+    fn rpg_layout_has_four_panes() {
         let area = Rect::new(0, 0, 100, 30);
-        let frame = PaneFrame::hack(area);
+        let frame = PaneFrame::rpg(area);
 
         let inner_width = area.width - MARGIN * 2;
         assert_eq!(frame.side.width, SIDE_WIDTH);
         assert_eq!(frame.main.width, inner_width - SIDE_WIDTH);
         assert_eq!(frame.input_echo.height, INPUT_ECHO_HEIGHT);
         assert_eq!(frame.help_line.height, HELP_LINE_HEIGHT);
-        let log = frame.log.expect("hack log pane");
+        let log = frame.log.expect("rpg log pane");
         assert_eq!(log.height, HACK_LOG_HEIGHT);
         assert_eq!(log.width, inner_width);
         assert!(frame.input_echo.y < log.y);
@@ -156,8 +156,8 @@ mod tests {
     }
 
     #[test]
-    fn hack_layout_does_not_panic_on_small_terminal() {
-        let frame = PaneFrame::hack(Rect::new(0, 0, 60, 24));
+    fn rpg_layout_does_not_panic_on_small_terminal() {
+        let frame = PaneFrame::rpg(Rect::new(0, 0, 60, 24));
         assert!(frame.main.width >= 1);
         assert!(frame.log.is_some());
     }
