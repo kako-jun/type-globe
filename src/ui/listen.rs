@@ -53,7 +53,8 @@ enum Phase {
 
 pub struct ListenUI {
     session: ListeningSession,
-    tts: TtsEngine,
+    /// `None` when the caller passed `--no-tts` (#48).
+    tts: Option<TtsEngine>,
     language: Language,
     phase: Phase,
     /// `♪` pulse for the active prompt — anchors per-frame color.
@@ -74,7 +75,23 @@ impl ListenUI {
     pub fn new(session: ListeningSession, tts: TtsEngine, language: Language) -> Self {
         Self {
             session,
-            tts,
+            tts: Some(tts),
+            language,
+            phase: Phase::Playing,
+            pulse: Some(PulseHandle::start("♪", PulseOpts::default_listening())),
+            started_at: Instant::now(),
+            plays: 0,
+            rejected_char: None,
+            reject_flash_until: None,
+        }
+    }
+
+    /// Construct a `ListenUI` without a TTS engine. Audio calls are
+    /// silently skipped. Activated by `rpg --no-tts` (#48).
+    pub fn new_without_tts(session: ListeningSession, language: Language) -> Self {
+        Self {
+            session,
+            tts: None,
             language,
             phase: Phase::Playing,
             pulse: Some(PulseHandle::start("♪", PulseOpts::default_listening())),
@@ -95,16 +112,20 @@ impl ListenUI {
         // Speak the prompt once on entry. Failure here is non-fatal —
         // the player can still try Space-replay, and the result screen
         // works even if no audio came out (helps debug TTS issues).
-        if let Err(err) = self.tts.speak(&self.session.prompt().text, &self.language) {
-            eprintln!("warning: initial TTS speak failed: {err}");
-        } else {
-            self.plays += 1;
+        if let Some(tts) = self.tts.as_mut() {
+            if let Err(err) = tts.speak(&self.session.prompt().text, &self.language) {
+                eprintln!("warning: initial TTS speak failed: {err}");
+            } else {
+                self.plays += 1;
+            }
         }
 
         let result = self.run_app(&mut terminal);
 
         // Stop any in-flight utterance so the terminal returns silently.
-        let _ = self.tts.stop();
+        if let Some(tts) = self.tts.as_mut() {
+            let _ = tts.stop();
+        }
         disable_raw_mode()?;
         execute!(terminal.backend_mut(), LeaveAlternateScreen)?;
         terminal.show_cursor()?;
@@ -183,11 +204,13 @@ impl ListenUI {
     }
 
     fn replay(&mut self) {
-        if let Err(err) = self.tts.speak(&self.session.prompt().text, &self.language) {
-            eprintln!("warning: TTS replay failed: {err}");
-            return;
+        if let Some(tts) = self.tts.as_mut() {
+            if let Err(err) = tts.speak(&self.session.prompt().text, &self.language) {
+                eprintln!("warning: TTS replay failed: {err}");
+                return;
+            }
+            self.plays += 1;
         }
-        self.plays += 1;
         // Restart the visual pulse on each replay so the breathing
         // anchors to the new utterance.
         self.pulse = Some(PulseHandle::start("♪", PulseOpts::default_listening()));
@@ -416,7 +439,9 @@ impl ListenUI {
             self.session.submit();
             self.pulse = None;
             self.phase = Phase::Result;
-            let _ = self.tts.stop();
+            if let Some(tts) = self.tts.as_mut() {
+                let _ = tts.stop();
+            }
         }
     }
 

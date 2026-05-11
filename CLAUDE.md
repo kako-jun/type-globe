@@ -43,7 +43,7 @@ src/
 ├── game/
 │   ├── quiz.rs          # 「打って選択」+ exact match 自動確定
 │   ├── time_attack.rs   # 5x5 パネル + CPU 対戦
-│   └── hack.rs          # リスニング × RPG（10問サイクル）
+│   └── rpg.rs           # リスニング × RPG（10問サイクル）
 ├── audio/
 │   └── tts.rs           # `tts` crate ラッパー、言語ルーティング
 ├── io/
@@ -52,7 +52,7 @@ src/
 └── ui/
     ├── menu.rs
     ├── quiz.rs          # 3ペイン
-    ├── hack.rs          # 4ペイン
+    ├── rpg.rs           # 4ペイン
     ├── time_attack.rs
     ├── records.rs
     └── help_line.rs     # 常時表示ヘルプ
