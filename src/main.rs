@@ -356,13 +356,19 @@ mod tests {
     #[test]
     fn parse_language_zh_returns_err_containing_input() {
         let err = parse_language("zh").unwrap_err();
-        assert!(err.contains("zh"), "error message should contain input 'zh': {err}");
+        assert!(
+            err.contains("zh"),
+            "error message should contain input 'zh': {err}"
+        );
     }
 
     #[test]
     fn parse_language_uppercase_ja_returns_err_containing_input() {
         let err = parse_language("JA").unwrap_err();
-        assert!(err.contains("JA"), "error message should contain input 'JA': {err}");
+        assert!(
+            err.contains("JA"),
+            "error message should contain input 'JA': {err}"
+        );
     }
 
     #[test]

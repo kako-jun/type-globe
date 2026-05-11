@@ -500,7 +500,10 @@ mod tests {
     #[test]
     fn new_without_tts_has_no_tts_engine() {
         let ui = ListenUI::new_without_tts(stub_session(), Language::English);
-        assert!(ui.tts.is_none(), "tts should be None when built without TTS");
+        assert!(
+            ui.tts.is_none(),
+            "tts should be None when built without TTS"
+        );
     }
 
     // --- TC-13: new (with TTS engine) → tts field is Some ---
@@ -511,7 +514,10 @@ mod tests {
         match crate::audio::TtsEngine::new() {
             Ok(tts) => {
                 let ui = ListenUI::new(stub_session(), tts, Language::English);
-                assert!(ui.tts.is_some(), "tts should be Some when built with a TTS engine");
+                assert!(
+                    ui.tts.is_some(),
+                    "tts should be Some when built with a TTS engine"
+                );
             }
             Err(_) => {
                 // TTS unavailable in this environment — skip rather than fail.
@@ -526,7 +532,10 @@ mod tests {
         let mut ui = ListenUI::new_without_tts(stub_session(), Language::English);
         assert_eq!(ui.plays, 0);
         ui.replay();
-        assert_eq!(ui.plays, 1, "plays should be +1 after replay() even without TTS");
+        assert_eq!(
+            ui.plays, 1,
+            "plays should be +1 after replay() even without TTS"
+        );
         ui.replay();
         assert_eq!(ui.plays, 2, "plays should be +2 after second replay()");
     }
