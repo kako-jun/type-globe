@@ -2,7 +2,7 @@
 //!
 //! Single-prompt foundation that exercises the TTS engine (#28), the
 //! listening data structure (#29), and the blind-input judge (#31)
-//! end-to-end. The full hack-and-slash run (#32-#37) will compose
+//! end-to-end. The full RPG run (#32-#37) will compose
 //! `ListeningSession` repeatedly inside this same 4-pane layout; for
 //! now the side pane shows placeholder run info ("Practice — RPG run
 //! lands in #32+").
@@ -65,7 +65,7 @@ pub struct ListenUI {
     /// Number of times the player has triggered audio (initial play +
     /// each Space replay). Per spec there is no penalty, but exposing
     /// the count for the next UI iteration is cheap and mirrors what
-    /// the hack-and-slash run is going to want for telemetry.
+    /// the RPG run is going to want for telemetry.
     plays: u32,
     rejected_char: Option<char>,
     reject_flash_until: Option<Instant>,
@@ -218,7 +218,7 @@ impl ListenUI {
     }
 
     fn ui(&mut self, f: &mut Frame) {
-        let frame = PaneFrame::hack(f.area());
+        let frame = PaneFrame::rpg(f.area());
         self.render_main_pane(f, frame.main);
         self.render_status_pane(f, frame.side);
         self.render_input_echo(f, frame.input_echo);
