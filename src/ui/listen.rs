@@ -209,8 +209,9 @@ impl ListenUI {
                 eprintln!("warning: TTS replay failed: {err}");
                 return;
             }
-            self.plays += 1;
         }
+        // plays counts replay attempts regardless of TTS availability.
+        self.plays += 1;
         // Restart the visual pulse on each replay so the breathing
         // anchors to the new utterance.
         self.pulse = Some(PulseHandle::start("♪", PulseOpts::default_listening()));
