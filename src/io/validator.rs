@@ -171,6 +171,7 @@ mod tests {
             id: id.into(),
             genre: "test".into(),
             question_text,
+            question_text_reading: HashMap::new(),
             choices,
             correct_answer_index: 0,
             image_path: None,
@@ -297,6 +298,7 @@ mod tests {
                 m.insert("ja".to_string(), "ダミー".to_string());
                 m
             },
+            question_text_reading: HashMap::new(),
             choices: vec![
                 {
                     let mut labels = HashMap::new();
@@ -338,6 +340,7 @@ mod tests {
                 m.insert("ja".to_string(), "ダミー".to_string());
                 m
             },
+            question_text_reading: HashMap::new(),
             choices: vec![
                 {
                     let mut labels = HashMap::new();

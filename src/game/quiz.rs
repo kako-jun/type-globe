@@ -304,6 +304,7 @@ mod tests {
             id: "q-test".into(),
             genre: "test".into(),
             question_text,
+            question_text_reading: HashMap::new(),
             choices,
             correct_answer_index: correct,
             image_path: None,

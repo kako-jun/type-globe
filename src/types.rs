@@ -6,6 +6,12 @@ pub struct Question {
     pub id: String,
     pub genre: String,
     pub question_text: HashMap<String, String>,
+    /// Per-language reading form (hiragana for ja, identical to display for en).
+    /// Used by TTS / future RPG audio paths and as a safety net if `question_text`
+    /// gets rewritten by a migration. Optional for backwards compatibility with
+    /// older question files.
+    #[serde(default, skip_serializing_if = "HashMap::is_empty")]
+    pub question_text_reading: HashMap<String, String>,
     pub choices: Vec<Choice>,
     pub correct_answer_index: usize,
     pub image_path: Option<String>,
