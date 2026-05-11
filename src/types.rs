@@ -37,6 +37,8 @@ pub enum AnswerKind {
 /// `text_reading` is hiragana-only (JA) or plain English, used for TTS
 /// and romaji conversion. `text_display` is the human-readable form
 /// (kanji/katakana for JA; identical to `text_reading` for EN).
+/// `text_display` is shown on the result screen after the player answers.
+/// TODO(#33): wire `text_display` into the result/log pane of the RPG UI.
 #[derive(Debug, Clone, Deserialize, Serialize)]
 pub struct ListeningPrompt {
     pub id: String,

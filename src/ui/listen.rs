@@ -424,7 +424,11 @@ impl ListenUI {
     fn handle_playing_char(&mut self, c: char) {
         let mut attempted = self.session.input().to_string();
         attempted.push(c);
-        if !is_valid_listening_prefix(&self.language, &attempted, &self.session.prompt().text_reading) {
+        if !is_valid_listening_prefix(
+            &self.language,
+            &attempted,
+            &self.session.prompt().text_reading,
+        ) {
             self.note_rejected_char(c);
             return;
         }

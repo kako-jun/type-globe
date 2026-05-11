@@ -119,7 +119,7 @@ Both **CPM** (characters per minute) and **WPM** (words per minute) are displaye
 
 ## Data Structures
 
-All persistent data files use **YAML** (`serde_yaml`). Question banks (`data/questions_<lang>.json`, `data/listening_<lang>.json`) remain JSON because they are authored/generated externally.
+All persistent data files use **YAML** (`serde_yaml`). Question banks (`data/questions_<lang>.json`) remain JSON because they are authored/generated externally. Listening prompt banks (`data/listening_<lang>.yaml`) use YAML.
 
 ### Answer-form classification (`kind`)
 
@@ -179,20 +179,23 @@ Validation: no two choices in a question may share a prefix that would make an a
 ### Listening prompt (`data/listening_<lang>.yaml`)
 
 ```yaml
-- id: l001
-  text: Tokyo
+- id: l-en-001
+  text_reading: apple
+  text_display: apple
   kind: word
 
-- id: l050
-  text: George Washington
+- id: l-ja-071
+  text_reading: とうきょう えき
+  text_display: 東京駅
   kind: phrase
 
-- id: l100
-  text: the quick brown fox jumps over the lazy dog
+- id: l-en-091
+  text_reading: the quick brown fox jumps over the lazy dog
+  text_display: the quick brown fox jumps over the lazy dog
   kind: sentence
 ```
 
-The TTS layer turns `text` into audio at runtime via the `tts` crate (#28); no audio files are shipped. The current `main` ships `data/listening_<lang>.json` (JSON during the JSON-era of v0.2.0); the YAML migration renames `.json` → `.yaml` 1:1 with no schema change.
+`text_reading` is passed to TTS and used for romaji conversion (hiragana-only for JA). `text_display` is shown on screen (kanji/katakana for JA; same as `text_reading` for EN). Prompt banks live in `data/listening_<lang>.yaml` (100 items each: word×70 / phrase×20 / sentence×10).
 
 #### Linux runtime requirement
 
@@ -202,7 +205,7 @@ The `tts` crate's Linux backend is `speech-dispatcher`, which must be installed 
 
 The foundation epic ships:
 - `tts` crate integration (`src/audio/tts.rs`),
-- the listening prompt schema and bilingual data (`data/listening_<lang>.json`),
+- the listening prompt schema and bilingual data (`data/listening_<lang>.yaml`),
 - a single-prompt practice flow under the **Listening RPG** menu entry that exercises the blind-input judge end-to-end.
 
 The ten-prompt run loop with HP / EXP and the fixed boss placement (1-7 word, 8-9 phrase, 10 sentence) is the next epic (#32-#37). Until then, the practice mode filters the pool to `word`-kind prompts because `Space` is reserved for replay (per the key bindings above) and a phrase / sentence answer cannot be typed without rebinding the input model — that rebinding is part of #32-#37.

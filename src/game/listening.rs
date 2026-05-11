@@ -116,7 +116,8 @@ impl ListeningSession {
     /// Apply the blind-input judge. Once submitted the session is
     /// frozen — further `push_char` / `pop_char` are no-ops.
     pub fn submit(&mut self) -> &SubmissionResult {
-        let is_correct = is_correct_listening_input(&self.language, &self.input, &self.prompt.text_reading);
+        let is_correct =
+            is_correct_listening_input(&self.language, &self.input, &self.prompt.text_reading);
         self.submitted = Some(SubmissionResult {
             is_correct,
             expected: self.prompt.text_reading.clone(),
@@ -316,6 +317,9 @@ mod tests {
     fn from_pool_picks_one_when_available() {
         let pool = vec![p("apple"), p("river")];
         let s = ListeningSession::from_pool(&pool, Language::English).expect("pool non-empty");
-        assert!(matches!(s.prompt().text_reading.as_str(), "apple" | "river"));
+        assert!(matches!(
+            s.prompt().text_reading.as_str(),
+            "apple" | "river"
+        ));
     }
 }
