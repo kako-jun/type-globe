@@ -122,6 +122,113 @@ impl Records {
     }
 }
 
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    fn score_entry(name: &str, score: u32) -> ScoreEntry {
+        ScoreEntry {
+            name: name.into(),
+            score,
+            cpm: 0,
+            wpm: 0,
+            ts: "2025-01-01T00:00:00Z".into(),
+        }
+    }
+
+    fn time_entry(name: &str, time_seconds: u32) -> TimeEntry {
+        TimeEntry {
+            name: name.into(),
+            time_seconds,
+            ts: "2025-01-01T00:00:00Z".into(),
+        }
+    }
+
+    #[test]
+    fn push_quiz_11_entries_truncates_to_10() {
+        let mut records = Records::default();
+        for i in 0..11 {
+            records.push_quiz(score_entry(&format!("p{i}"), i as u32 * 10));
+        }
+        assert_eq!(records.quiz_mode.len(), 10);
+    }
+
+    #[test]
+    fn push_quiz_sorted_score_descending() {
+        let mut records = Records::default();
+        records.push_quiz(score_entry("low", 100));
+        records.push_quiz(score_entry("high", 500));
+        records.push_quiz(score_entry("mid", 300));
+        assert_eq!(records.quiz_mode[0].score, 500);
+        assert_eq!(records.quiz_mode[1].score, 300);
+        assert_eq!(records.quiz_mode[2].score, 100);
+    }
+
+    #[test]
+    fn push_quiz_lowest_score_is_dropped() {
+        let mut records = Records::default();
+        for i in 0..10 {
+            records.push_quiz(score_entry(&format!("p{i}"), (i as u32 + 1) * 100));
+        }
+        // Score 50 is below the minimum (100), should be discarded
+        records.push_quiz(score_entry("loser", 50));
+        assert_eq!(records.quiz_mode.len(), 10);
+        assert!(records.quiz_mode.iter().all(|e| e.score >= 100));
+    }
+
+    #[test]
+    fn push_rpg_11_entries_truncates_to_10() {
+        let mut records = Records::default();
+        for i in 0..11 {
+            records.push_rpg(score_entry(&format!("p{i}"), i as u32 * 10));
+        }
+        assert_eq!(records.rpg.len(), 10);
+    }
+
+    #[test]
+    fn push_rpg_sorted_score_descending() {
+        let mut records = Records::default();
+        records.push_rpg(score_entry("low", 200));
+        records.push_rpg(score_entry("high", 800));
+        records.push_rpg(score_entry("mid", 500));
+        assert_eq!(records.rpg[0].score, 800);
+        assert_eq!(records.rpg[1].score, 500);
+        assert_eq!(records.rpg[2].score, 200);
+    }
+
+    #[test]
+    fn push_ta25_11_entries_truncates_to_10() {
+        let mut records = Records::default();
+        for i in 0..11 {
+            records.push_ta25(time_entry(&format!("p{i}"), (i as u32 + 1) * 10));
+        }
+        assert_eq!(records.time_attack_25.len(), 10);
+    }
+
+    #[test]
+    fn push_ta25_sorted_time_ascending() {
+        let mut records = Records::default();
+        records.push_ta25(time_entry("slow", 120));
+        records.push_ta25(time_entry("fast", 40));
+        records.push_ta25(time_entry("mid", 80));
+        assert_eq!(records.time_attack_25[0].time_seconds, 40);
+        assert_eq!(records.time_attack_25[1].time_seconds, 80);
+        assert_eq!(records.time_attack_25[2].time_seconds, 120);
+    }
+
+    #[test]
+    fn push_ta25_slowest_is_dropped() {
+        let mut records = Records::default();
+        for i in 0..10 {
+            records.push_ta25(time_entry(&format!("p{i}"), (i as u32 + 1) * 10));
+        }
+        // Time 9999 is above the maximum kept (100s), should be discarded
+        records.push_ta25(time_entry("tortoise", 9999));
+        assert_eq!(records.time_attack_25.len(), 10);
+        assert!(records.time_attack_25.iter().all(|e| e.time_seconds <= 100));
+    }
+}
+
 #[derive(Debug, Clone)]
 pub enum GameMode {
     Quiz,

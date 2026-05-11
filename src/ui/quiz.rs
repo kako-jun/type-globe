@@ -744,3 +744,26 @@ fn lerp_rgb_color(from: Rgb, to: Rgb, t: f32) -> Color {
     let Rgb(r, g, b) = lerp_rgb(from, to, t);
     Color::Rgb(r, g, b)
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn now_rfc3339_matches_format() {
+        let ts = now_rfc3339();
+        // Expected: YYYY-MM-DDTHH:MM:SSZ (20 chars)
+        assert_eq!(ts.len(), 20, "unexpected length: {ts}");
+        assert_eq!(&ts[4..5], "-", "missing dash after year: {ts}");
+        assert_eq!(&ts[7..8], "-", "missing dash after month: {ts}");
+        assert_eq!(&ts[10..11], "T", "missing T separator: {ts}");
+        assert_eq!(&ts[13..14], ":", "missing colon after hour: {ts}");
+        assert_eq!(&ts[16..17], ":", "missing colon after minute: {ts}");
+        assert_eq!(&ts[19..20], "Z", "missing Z suffix: {ts}");
+        // All digit positions must be numeric
+        for pos in [0, 1, 2, 3, 5, 6, 8, 9, 11, 12, 14, 15, 17, 18] {
+            let ch = ts.as_bytes()[pos];
+            assert!(ch.is_ascii_digit(), "non-digit at pos {pos} in {ts}");
+        }
+    }
+}
