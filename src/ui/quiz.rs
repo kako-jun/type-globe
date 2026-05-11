@@ -21,8 +21,38 @@ use ratatui::{
 use std::io;
 use std::time::{Duration, Instant, SystemTime, UNIX_EPOCH};
 
-/// Top-N self-best entries kept per mode in `records_<lang>.json`.
-const RECORDS_TOP_N: usize = 10;
+fn now_rfc3339() -> String {
+    let secs = SystemTime::now()
+        .duration_since(UNIX_EPOCH)
+        .map(|d| d.as_secs())
+        .unwrap_or(0);
+    // Format as RFC3339 UTC: YYYY-MM-DDTHH:MM:SSZ
+    let s = secs;
+    let sec = s % 60;
+    let min = (s / 60) % 60;
+    let hour = (s / 3600) % 24;
+    let days = s / 86400;
+    // Days since Unix epoch → Gregorian date (proleptic)
+    let (year, month, day) = days_to_ymd(days);
+    format!("{year:04}-{month:02}-{day:02}T{hour:02}:{min:02}:{sec:02}Z")
+}
+
+fn days_to_ymd(days: u64) -> (u64, u64, u64) {
+    // Algorithm from https://howardhinnant.github.io/date_algorithms.html
+    // Uses i64 internally to avoid underflow in intermediate subtractions.
+    let z = days as i64 + 719468;
+    let era = z.div_euclid(146097);
+    let doe = z.rem_euclid(146097);
+    let yoe = (doe - doe / 1460 + doe / 36524 - doe / 146096) / 365;
+    let y = yoe + era * 400;
+    let doy = doe - (365 * yoe + yoe / 4 - yoe / 100);
+    let mp = (5 * doy + 2) / 153;
+    let d = doy - (153 * mp + 2) / 5 + 1;
+    let m = if mp < 10 { mp + 3 } else { mp - 9 };
+    let y = if m <= 2 { y + 1 } else { y };
+    (y as u64, m as u64, d as u64)
+}
+
 /// Maximum characters the player can type into the name-entry field.
 /// Sized to fit comfortably in the side pane / Records list rendering.
 const NAME_MAX_CHARS: usize = 16;
@@ -279,18 +309,9 @@ impl QuizUI {
             score: self.quiz_game.get_final_score(),
             cpm: self.quiz_game.get_cpm(),
             wpm: self.quiz_game.get_wpm(),
-            ts: SystemTime::now()
-                .duration_since(UNIX_EPOCH)
-                .map(|d| d.as_secs())
-                .unwrap_or(0),
+            ts: now_rfc3339(),
         };
-        records.quiz_mode.push(entry);
-        // Highest score first, then ts descending as a stable tiebreaker
-        // so the most recent attempt at a tied score wins display order.
-        records
-            .quiz_mode
-            .sort_by(|a, b| b.score.cmp(&a.score).then(b.ts.cmp(&a.ts)));
-        records.quiz_mode.truncate(RECORDS_TOP_N);
+        records.push_quiz(entry);
         Storage::save_records(&self.records_file_path, &records)?;
         Ok(())
     }
@@ -723,4 +744,27 @@ impl QuizUI {
 fn lerp_rgb_color(from: Rgb, to: Rgb, t: f32) -> Color {
     let Rgb(r, g, b) = lerp_rgb(from, to, t);
     Color::Rgb(r, g, b)
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn now_rfc3339_matches_format() {
+        let ts = now_rfc3339();
+        // Expected: YYYY-MM-DDTHH:MM:SSZ (20 chars)
+        assert_eq!(ts.len(), 20, "unexpected length: {ts}");
+        assert_eq!(&ts[4..5], "-", "missing dash after year: {ts}");
+        assert_eq!(&ts[7..8], "-", "missing dash after month: {ts}");
+        assert_eq!(&ts[10..11], "T", "missing T separator: {ts}");
+        assert_eq!(&ts[13..14], ":", "missing colon after hour: {ts}");
+        assert_eq!(&ts[16..17], ":", "missing colon after minute: {ts}");
+        assert_eq!(&ts[19..20], "Z", "missing Z suffix: {ts}");
+        // All digit positions must be numeric
+        for pos in [0, 1, 2, 3, 5, 6, 8, 9, 11, 12, 14, 15, 17, 18] {
+            let ch = ts.as_bytes()[pos];
+            assert!(ch.is_ascii_digit(), "non-digit at pos {pos} in {ts}");
+        }
+    }
 }

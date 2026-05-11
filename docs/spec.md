@@ -3,7 +3,7 @@
 > Version: v0.2.0 (offline-first blind-typing edition).
 > This document supersedes all v0.1.x specs. The previous "display-and-type" mode has been removed.
 >
-> Note: `main` now ships this blind-typing interaction model. Storage still uses JSON/`serde_json` in this release line; the YAML migration remains future work.
+> Note: `main` now ships this blind-typing interaction model. Storage uses YAML/`serde_yaml` for Player and Records files; question banks remain JSON.
 
 ## Core Principle
 
@@ -66,7 +66,7 @@ Quiz is paired with score-attack modes; listening is paired with the RPG. The tw
 - A single logical answer may accept **multiple typed spellings**.
 - In JA mode, romanized aliases may be accepted for the same answer (for example `tokyo` and `toukyou`, `osaka` and `oosaka`). Question data may declare these explicitly with `ja_typings`. When a choice has a well-established official Latin spelling (for example a proper name), that spelling may also be accepted. The implementation may also derive additional common ASCII aliases from kana as long as it never reveals the answer string before typing.
 - Score = function(CPM, accuracy, correctness).
-- One run is fixed at **10 questions** (constant `QUIZ_RUN_LENGTH`), sampled from the language's question pool. The total Time is **frozen at the last correct keystroke** of the final question (or at the moment the final question is skipped via Tab) — it does not keep ticking on the Summary / Records-entry screens. After the 10th question, the UI shows a Summary (Score / Correct / Accuracy / CPM / WPM / Time), then a Records-entry screen prompts for a name and writes a `ScoreEntry` to `records_<lang>.json` (Top 10 by score; ts as tiebreaker). Esc on either screen returns to the menu without saving.
+- One run is fixed at **10 questions** (constant `QUIZ_RUN_LENGTH`), sampled from the language's question pool. The total Time is **frozen at the last correct keystroke** of the final question (or at the moment the final question is skipped via Tab) — it does not keep ticking on the Summary / Records-entry screens. After the 10th question, the UI shows a Summary (Score / Correct / Accuracy / CPM / WPM / Time), then a Records-entry screen prompts for a name and writes a `ScoreEntry` to `records_<lang>.yaml` (Top 10 by score; ts as tiebreaker). Esc on either screen returns to the menu without saving.
 
 ### Time Attack 25
 
@@ -119,13 +119,11 @@ Both **CPM** (characters per minute) and **WPM** (words per minute) are displaye
 
 ## Data Structures
 
-Target v0.2.0 direction: all data files use **YAML** for readability and inline comments, with Rust side moved to `serde_yaml`.
-
-Current `main` branch status: question banks / player progress / records are still JSON-backed and use `serde_json`.
+All persistent data files use **YAML** (`serde_yaml`). Question banks (`data/questions_<lang>.json`, `data/listening_<lang>.json`) remain JSON because they are authored/generated externally.
 
 ### Answer-form classification (`kind`)
 
-Every answer string is classified into one of three forms. This drives the hack-and-slash boss placement and lets the renderer choose appropriate enemy visuals.
+Every answer string is classified into one of three forms. This drives the RPG boss placement and lets the renderer choose appropriate enemy visuals.
 
 | kind | form | examples | role |
 |---|---|---|---|
@@ -224,7 +222,7 @@ rpg_stats:
 ### Records (`records_<lang>.yaml`)
 
 ```yaml
-quiz_single:
+quiz_mode:
   - name: Player1
     score: 1500
     cpm: 230
@@ -234,6 +232,12 @@ time_attack_25:
   - name: PlayerX
     time_seconds: 180
     ts: 2026-04-30T10:05:00Z
+rpg:
+  - name: Player1
+    score: 800
+    cpm: 180
+    wpm: 36
+    ts: 2026-04-30T10:10:00Z
 ```
 
 Top 10 per mode per language. This is a local self-best file — never call it a "ranking". World ranking (Nostralgic Ranking) is wired in the v0.3.0+ `type-globe-online` build and submits the same entries to a Nostr-relay-backed feed.

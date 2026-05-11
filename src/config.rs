@@ -18,8 +18,8 @@ impl Default for Config {
             data_dir: "data".to_string(),
             default_language: Language::Japanese,
             questions_file_pattern: "questions_{}.json".to_string(),
-            player_data_file: "player.json".to_string(),
-            records_file_pattern: "records_{}.json".to_string(),
+            player_data_file: "player.yaml".to_string(),
+            records_file_pattern: "records_{}.yaml".to_string(),
             listening_file_pattern: "listening_{}.json".to_string(),
         }
     }

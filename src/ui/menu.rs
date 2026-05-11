@@ -222,7 +222,7 @@ impl MenuUI {
                     let mode = match self.selected_mode {
                         0 => GameMode::Quiz,
                         1 => GameMode::TimeAttack25,
-                        2 => GameMode::HackAndSlashRpg,
+                        2 => GameMode::Rpg,
                         3 => GameMode::Records,
                         _ => GameMode::Quiz,
                     };
