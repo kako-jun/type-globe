@@ -86,7 +86,9 @@ fn parse_language(s: &str) -> Result<Language, String> {
     match s {
         "ja" => Ok(Language::Japanese),
         "en" => Ok(Language::English),
-        other => Err(format!("不明な言語コード: '{other}'. ja または en を指定してください")),
+        other => Err(format!(
+            "不明な言語コード: '{other}'. ja または en を指定してください"
+        )),
     }
 }
 
@@ -105,7 +107,11 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         None => run_menu_loop(&config),
 
         // ---- quiz サブコマンド ----
-        Some(Commands::Quiz { lang, seed, question }) => {
+        Some(Commands::Quiz {
+            lang,
+            seed,
+            question,
+        }) => {
             // TODO(#48): --seed は未実装。引数を受け取るのみ。
             if seed.is_some() {
                 eprintln!("note: --seed は現在未実装です（スタブ）");
@@ -121,7 +127,12 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         }
 
         // ---- rpg サブコマンド ----
-        Some(Commands::Rpg { lang, seed, floor, no_tts }) => {
+        Some(Commands::Rpg {
+            lang,
+            seed,
+            floor,
+            no_tts,
+        }) => {
             // TODO(#48): --seed は未実装。引数を受け取るのみ。
             if seed.is_some() {
                 eprintln!("note: --seed は現在未実装です（スタブ）");
@@ -160,7 +171,9 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 }
 
 /// サブコマンドで --lang が省略された場合、簡易選択プロンプトを表示する。
-fn resolve_language_or_select(lang: Option<Language>) -> Result<Language, Box<dyn std::error::Error>> {
+fn resolve_language_or_select(
+    lang: Option<Language>,
+) -> Result<Language, Box<dyn std::error::Error>> {
     if let Some(l) = lang {
         return Ok(l);
     }
@@ -316,4 +329,95 @@ fn run_listening_practice(
     let mut ui = ListenUI::new(session, tts, language.clone());
     let _ = ui.run()?;
     Ok(())
+}
+
+// ---------------------------------------------------------------------------
+// Tests
+// ---------------------------------------------------------------------------
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use clap::Parser;
+
+    // --- TC-01: "ja" → Language::Japanese ---
+    #[test]
+    fn parse_language_ja_returns_japanese() {
+        assert!(matches!(parse_language("ja"), Ok(Language::Japanese)));
+    }
+
+    // --- TC-02: "en" → Language::English ---
+    #[test]
+    fn parse_language_en_returns_english() {
+        assert!(matches!(parse_language("en"), Ok(Language::English)));
+    }
+
+    // --- TC-03: invalid inputs return Err containing the input value ---
+    #[test]
+    fn parse_language_zh_returns_err_containing_input() {
+        let err = parse_language("zh").unwrap_err();
+        assert!(err.contains("zh"), "error message should contain input 'zh': {err}");
+    }
+
+    #[test]
+    fn parse_language_uppercase_ja_returns_err_containing_input() {
+        let err = parse_language("JA").unwrap_err();
+        assert!(err.contains("JA"), "error message should contain input 'JA': {err}");
+    }
+
+    #[test]
+    fn parse_language_spelled_out_returns_err_containing_input() {
+        let err = parse_language("japanese").unwrap_err();
+        assert!(
+            err.contains("japanese"),
+            "error message should contain input 'japanese': {err}"
+        );
+    }
+
+    // --- TC-04: empty string returns Err without panicking ---
+    #[test]
+    fn parse_language_empty_string_returns_err_without_panic() {
+        let result = parse_language("");
+        assert!(result.is_err(), "empty string must not parse successfully");
+    }
+
+    // --- TC-05: "JA" (uppercase) is not accepted ---
+    #[test]
+    fn parse_language_uppercase_ja_is_rejected() {
+        assert!(parse_language("JA").is_err());
+    }
+
+    // --- TC-27: --seed u64::MAX does not cause a parse error ---
+    #[test]
+    fn cli_seed_u64_max_parses_without_error() {
+        let args = ["type-globe", "quiz", "--seed", "18446744073709551615"];
+        let cli = Cli::parse_from(args);
+        match cli.command {
+            Some(Commands::Quiz { seed, .. }) => {
+                assert_eq!(seed, Some(u64::MAX));
+            }
+            other => panic!("expected Quiz subcommand, got {:?}", other),
+        }
+    }
+
+    // --- TC-28: --floor u32::MAX does not cause a parse error ---
+    #[test]
+    fn cli_floor_u32_max_parses_without_error() {
+        let args = ["type-globe", "rpg", "--floor", "4294967295"];
+        let cli = Cli::parse_from(args);
+        match cli.command {
+            Some(Commands::Rpg { floor, .. }) => {
+                assert_eq!(floor, Some(u32::MAX));
+            }
+            other => panic!("expected Rpg subcommand, got {:?}", other),
+        }
+    }
+
+    // --- TC-29: --seed -1 causes clap to return an error (negative not accepted for u64) ---
+    #[test]
+    fn cli_seed_negative_one_fails_to_parse() {
+        let args = ["type-globe", "quiz", "--seed", "-1"];
+        let result = Cli::try_parse_from(args);
+        assert!(result.is_err(), "--seed -1 should be rejected by clap");
+    }
 }

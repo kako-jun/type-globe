@@ -474,6 +474,64 @@ impl ListenUI {
     }
 }
 
+// ---------------------------------------------------------------------------
+// Tests
+// ---------------------------------------------------------------------------
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use crate::game::ListeningSession;
+    use crate::types::{AnswerKind, Language, ListeningPrompt};
+
+    fn stub_prompt() -> ListeningPrompt {
+        ListeningPrompt {
+            id: "test".into(),
+            text: "apple".into(),
+            kind: AnswerKind::Word,
+        }
+    }
+
+    fn stub_session() -> ListeningSession {
+        ListeningSession::new(stub_prompt(), Language::English)
+    }
+
+    // --- TC-12: new_without_tts → tts field is None ---
+    #[test]
+    fn new_without_tts_has_no_tts_engine() {
+        let ui = ListenUI::new_without_tts(stub_session(), Language::English);
+        assert!(ui.tts.is_none(), "tts should be None when built without TTS");
+    }
+
+    // --- TC-13: new (with TTS engine) → tts field is Some ---
+    #[test]
+    fn new_with_tts_engine_has_some_tts() {
+        // We cannot guarantee TtsEngine::new() succeeds in all CI environments,
+        // so we skip this test if TTS initialisation fails.
+        match crate::audio::TtsEngine::new() {
+            Ok(tts) => {
+                let ui = ListenUI::new(stub_session(), tts, Language::English);
+                assert!(ui.tts.is_some(), "tts should be Some when built with a TTS engine");
+            }
+            Err(_) => {
+                // TTS unavailable in this environment — skip rather than fail.
+                eprintln!("TC-13: TtsEngine::new() failed; skipping assertion (TTS unavailable)");
+            }
+        }
+    }
+
+    // --- TC-14: replay() without TTS increments plays (bug-fix guard) ---
+    #[test]
+    fn replay_without_tts_increments_plays_count() {
+        let mut ui = ListenUI::new_without_tts(stub_session(), Language::English);
+        assert_eq!(ui.plays, 0);
+        ui.replay();
+        assert_eq!(ui.plays, 1, "plays should be +1 after replay() even without TTS");
+        ui.replay();
+        assert_eq!(ui.plays, 2, "plays should be +2 after second replay()");
+    }
+}
+
 /// Build a one-line message for callers that want to surface a TTS
 /// init failure to the player without crashing the run. Shared so the
 /// menu and any future entry points format it consistently.
