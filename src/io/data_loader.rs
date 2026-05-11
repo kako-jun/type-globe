@@ -145,7 +145,6 @@ impl DataLoader {
             Language::English => vec![Self::get_choice_text(choice, language)],
         }
     }
-
 }
 
 #[cfg(test)]
