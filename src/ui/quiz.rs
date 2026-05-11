@@ -21,8 +21,37 @@ use ratatui::{
 use std::io;
 use std::time::{Duration, Instant, SystemTime, UNIX_EPOCH};
 
-/// Top-N self-best entries kept per mode in `records_<lang>.json`.
-const RECORDS_TOP_N: usize = 10;
+fn now_rfc3339() -> String {
+    let secs = SystemTime::now()
+        .duration_since(UNIX_EPOCH)
+        .map(|d| d.as_secs())
+        .unwrap_or(0);
+    // Format as RFC3339 UTC: YYYY-MM-DDTHH:MM:SSZ
+    let s = secs;
+    let sec = s % 60;
+    let min = (s / 60) % 60;
+    let hour = (s / 3600) % 24;
+    let days = s / 86400;
+    // Days since Unix epoch → Gregorian date (proleptic)
+    let (year, month, day) = days_to_ymd(days);
+    format!("{year:04}-{month:02}-{day:02}T{hour:02}:{min:02}:{sec:02}Z")
+}
+
+fn days_to_ymd(days: u64) -> (u64, u64, u64) {
+    // Algorithm from https://howardhinnant.github.io/date_algorithms.html
+    let z = days + 719468;
+    let era = z / 146097;
+    let doe = z % 146097;
+    let yoe = (doe - doe / 1460 + doe / 36524 - doe / 146096) / 365;
+    let y = yoe + era * 400;
+    let doy = doe - (365 * yoe + yoe / 4 - yoe / 100);
+    let mp = (5 * doy + 2) / 153;
+    let d = doy - (153 * mp + 2) / 5 + 1;
+    let m = if mp < 10 { mp + 3 } else { mp - 9 };
+    let y = if m <= 2 { y + 1 } else { y };
+    (y, m, d)
+}
+
 /// Maximum characters the player can type into the name-entry field.
 /// Sized to fit comfortably in the side pane / Records list rendering.
 const NAME_MAX_CHARS: usize = 16;
@@ -279,18 +308,9 @@ impl QuizUI {
             score: self.quiz_game.get_final_score(),
             cpm: self.quiz_game.get_cpm(),
             wpm: self.quiz_game.get_wpm(),
-            ts: SystemTime::now()
-                .duration_since(UNIX_EPOCH)
-                .map(|d| d.as_secs())
-                .unwrap_or(0),
+            ts: now_rfc3339(),
         };
-        records.quiz_mode.push(entry);
-        // Highest score first, then ts descending as a stable tiebreaker
-        // so the most recent attempt at a tied score wins display order.
-        records
-            .quiz_mode
-            .sort_by(|a, b| b.score.cmp(&a.score).then(b.ts.cmp(&a.ts)));
-        records.quiz_mode.truncate(RECORDS_TOP_N);
+        records.push_quiz(entry);
         Storage::save_records(&self.records_file_path, &records)?;
         Ok(())
     }
