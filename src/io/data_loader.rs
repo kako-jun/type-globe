@@ -109,6 +109,18 @@ impl DataLoader {
             })
     }
 
+    /// Phonetic reading form (hiragana for ja). Falls back to display text when
+    /// the reading field is absent so older question files keep working.
+    /// Used by TTS / RPG audio paths.
+    #[allow(dead_code)]
+    pub fn get_question_reading_text(question: &Question, language: &Language) -> String {
+        question
+            .question_text_reading
+            .get(language.code())
+            .cloned()
+            .unwrap_or_else(|| Self::get_question_text(question, language))
+    }
+
     pub fn get_choice_text(choice: &Choice, language: &Language) -> String {
         choice
             .labels

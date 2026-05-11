@@ -131,6 +131,33 @@ cargo build --release
 - An OS TTS backend for Listening mode (macOS / Windows work out of the box; on Linux, install and start `speech-dispatcher`)
 - Rust 1.78+ to build from source (Linux build also needs `libspeechd-dev`)
 
+## Maintenance scripts
+
+The bundled question banks (`data/questions_<lang>.json`) ship with both a
+display form (`question_text.<lang>`) and a phonetic reading
+(`question_text_reading.<lang>`). When the JA display form drifts toward
+hiragana-heavy phrasing, refresh it with the migration scripts under
+`scripts/`. They expect a local Ollama at `http://127.0.0.1:11434` running
+`gemma4:e4b` (or a model name you pass via `--model`).
+
+```sh
+# 1. preserve current display as reading (idempotent, safe to re-run)
+uv run python3 scripts/backfill_question_text_reading.py data/questions_ja.json data/questions_en.json
+
+# 2. survey what needs work
+uv run python3 scripts/question_text_stats.py data/questions_ja.json
+
+# 3. rewrite hiragana-heavy display forms via local LLM (reading is preserved)
+uv run python3 scripts/restore_ja_question_texts_with_ollama.py data/questions_ja.json --dry-run
+uv run python3 scripts/restore_ja_question_texts_with_ollama.py data/questions_ja.json
+
+# 4. list any stragglers for manual review
+uv run python3 scripts/list_suspect_question_texts.py data/questions_ja.json
+
+# 5. final lint
+cargo run --bin lint-questions -- data/questions_ja.json data/questions_en.json
+```
+
 ## License
 
 MIT

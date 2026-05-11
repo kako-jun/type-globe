@@ -141,38 +141,48 @@ Within one 10-prompt run:
 
 Quiz-side runs are not bound by this layout — quiz questions may freely mix kinds.
 
-### Quiz question (`data/questions_<lang>.yaml`)
+### Quiz question (`data/questions_<lang>.json`)
 
-```yaml
-- id: q001
-  genre: programming
-  question: Which keyword moves ownership in Rust?
-  choices: [borrow, move, ref, clone]
-  correct: 1                # 0-indexed
-  kind: word
+Bilingual quiz banks live in JSON (one file per language, but each entry carries every language). The schema:
 
-- id: q050
-  genre: history
-  question: Who was the first president of the United States?
-  choices:
-    - George Washington
-    - Abraham Lincoln
-    - Thomas Jefferson
-    - John Adams
-  correct: 0
-  kind: phrase
-
-- id: q099
-  genre: literature
-  question: How does Descartes' famous proposition begin in English?
-  choices:
-    - I think therefore I am
-    - I drink therefore I sleep
-    - I see therefore I know
-    - I am therefore I think
-  correct: 0
-  kind: sentence
+```json
+{
+  "id": "q001",
+  "genre": "science",
+  "question_text": {
+    "en": "What is the chemical formula for water?",
+    "ja": "水の化学式は？"
+  },
+  "question_text_reading": {
+    "en": "What is the chemical formula for water?",
+    "ja": "みずのかがくしきは？"
+  },
+  "choices": [
+    { "en": "CO2", "ja": "CO2", "ja_typings": ["co2"] },
+    { "en": "H2O", "ja": "H2O", "ja_typings": ["h2o"] },
+    { "en": "O2",  "ja": "O2",  "ja_typings": ["o2"] },
+    { "en": "N2",  "ja": "N2",  "ja_typings": ["n2"] }
+  ],
+  "correct_answer_index": 1,
+  "image_path": null
+}
 ```
+
+Field roles:
+
+| field | role |
+|---|---|
+| `question_text.<lang>` | **display** form. Quiz UI shows this. JA aims for natural kanji-kana mixed text. |
+| `question_text_reading.<lang>` | **reading** form. Hiragana for JA. Used by TTS / future RPG audio paths and as a safety net for the migration that rewrites `question_text.ja`. Optional (defaults to display when absent). |
+| `choices[].<lang>` | per-language choice label. JA stays hiragana / katakana / ASCII because it doubles as the typing target. |
+| `choices[].ja_typings` | extra accepted JA typings (Hepburn variants, official spellings). |
+
+Migration recipe (`scripts/`, see README for full chain):
+
+1. `backfill_question_text_reading.py` — copies current `question_text` into `question_text_reading` (idempotent).
+2. `restore_ja_question_texts_with_ollama.py` — rewrites only `question_text.ja` for hiragana-heavy entries via local Gemma. Reading is preserved.
+3. `question_text_stats.py` / `list_suspect_question_texts.py` — diagnostics.
+4. `cargo run --bin lint-questions -- data/questions_ja.json data/questions_en.json` — final lint.
 
 Validation: no two choices in a question may share a prefix that would make an auto-confirm ambiguous. Enforced by `cargo run --bin lint-questions -- <files>` (CI job `lint-data`) and by the unit tests `shipped_question_data_is_clean_{ja,en}` in `src/io/validator.rs`.
 
