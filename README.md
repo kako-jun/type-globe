@@ -15,7 +15,7 @@ Two presentation styles, paired with two game structures. **They are never cross
 | Presentation | Paired with | What it rewards |
 |---|---|---|
 | **Quiz** — read the question and four choices, then type the correct one's text | Single-run, Time Attack 25, **Records** | knowledge |
-| **Listening** — hear the prompt, type what you heard | **Hack-and-slash RPG** (10 prompts = 1 run) | comprehension |
+| **Listening** — hear the prompt, type what you heard | **Listening RPG** (10 prompts = 1 run) | comprehension |
 
 In Quiz mode, there are **no arrow keys for selection** — you select by typing the correct choice's text directly. An exact match auto-confirms immediately.
 
@@ -33,8 +33,22 @@ In Listening mode, **no text appears on screen at all**. A `♪` note pulses whi
 
 ```sh
 cargo install type-globe
-type-globe
+type-globe          # main menu
 ```
+
+You can also jump directly into a mode:
+
+```sh
+type-globe quiz             # Quiz mode, language selected at startup
+type-globe rpg              # Listening RPG, language selected at startup
+type-globe ta25             # Time Attack 25 (coming in v0.2.0)
+type-globe ranking          # View local Records
+
+type-globe quiz --lang ja   # Jump straight to Japanese Quiz
+type-globe rpg  --lang en --no-tts  # Listening RPG without TTS (silent mode)
+```
+
+Run `type-globe --help` or `type-globe <subcommand> --help` for all options.
 
 ## Game Modes
 
@@ -73,7 +87,7 @@ On Linux, the `speech-dispatcher` daemon must be installed and running. If it is
 
 ## Key Bindings
 
-**Quiz**
+**Quiz** (`type-globe quiz`)
 
 Quiz answers are typed directly — there is no arrow / number-key fallback. An exact match auto-confirms immediately, and non-prefix typos are rejected on the spot instead of being inserted into the buffer. Matching is case-insensitive (`H2O` / `h2o`, `TOKYO` / `tokyo`). In JA mode, a single answer may intentionally accept multiple romanized spellings (`tokyo` / `toukyou`, `osaka` / `oosaka`, etc.), and bundled data can declare them explicitly via `ja_typings`. When a choice has a well-established official Latin spelling (for example a proper name), that spelling may also be accepted.
 
@@ -84,7 +98,7 @@ Quiz answers are typed directly — there is no arrow / number-key fallback. An 
 | `Tab` | Skip the current question |
 | `Esc` / `Ctrl+C` | Quit |
 
-**Listening RPG**
+**Listening RPG** (`type-globe rpg`)
 
 | Key | Action |
 |---|---|
