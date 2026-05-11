@@ -6,16 +6,16 @@
 # sentence: l-ja-091 to l-ja-100
 
 - id: l-ja-001
-  text_reading: あ
-  text_display: あ
+  text_reading: あめ
+  text_display: 雨
   kind: word
 - id: l-ja-002
-  text_reading: め
-  text_display: め
+  text_reading: ひ
+  text_display: 火
   kind: word
 - id: l-ja-003
-  text_reading: き
-  text_display: き
+  text_reading: きり
+  text_display: 霧
   kind: word
 - id: l-ja-004
   text_reading: ほん
