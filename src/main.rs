@@ -234,13 +234,6 @@ fn run_menu_loop(config: &Config) -> Result<(), Box<dyn std::error::Error>> {
 fn run_quiz_mode(config: &Config, language: &Language) -> Result<(), Box<dyn std::error::Error>> {
     let questions_file = config.questions_file_path(language);
 
-    if !std::path::Path::new(&questions_file).exists() {
-        println!("問題ファイルが見つかりません。サンプル問題を作成しています...");
-        let sample_questions = DataLoader::create_sample_questions();
-        Storage::save_sample_questions(&questions_file, &sample_questions)?;
-        println!("サンプル問題を作成しました: {questions_file}");
-    }
-
     let questions = load_questions_with_warnings(&questions_file)?;
     if questions.is_empty() {
         println!("問題が見つかりません。");
