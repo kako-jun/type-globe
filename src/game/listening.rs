@@ -1,7 +1,7 @@
 //! Listening-mode game logic (#30 / #31).
 //!
 //! Single-prompt session for the v0.2.0 "listening foundation" epic.
-//! The full hack-and-slash run (10 prompts, HP/EXP, boss placement)
+//! The full RPG run (10 prompts, HP/EXP, boss placement)
 //! lives in #32-#37 and will compose this module rather than replacing
 //! it.
 //!

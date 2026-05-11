@@ -19,7 +19,7 @@ pub struct Choice {
     pub ja_typings: Vec<String>,
 }
 
-/// Answer-form classification per `docs/spec.md`. Drives hack-and-slash
+/// Answer-form classification per `docs/spec.md`. Drives the RPG
 /// boss placement (#33-#37: prompts 1-7 word, 8-9 phrase, 10 sentence)
 /// and gives the renderer a hint for enemy size / visuals. `Question`
 /// will gain this field when the YAML migration lands; `ListeningPrompt`

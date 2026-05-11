@@ -47,8 +47,8 @@ pub enum StatusItem {
         label: String,
         value: String,
     },
-    /// Used by hack-and-slash; quiz mode never produces bars.
-    /// TODO(#11): drop this allow when hack UI lands.
+    /// Used by RPG mode; quiz mode never produces bars.
+    /// TODO(#11): drop this allow when rpg UI lands.
     #[allow(dead_code)]
     Bar(ProgressBar),
 }
@@ -61,7 +61,7 @@ impl StatusItem {
         }
     }
 
-    /// TODO(#11): drop this `allow(dead_code)` once the hack UI wires it up.
+    /// TODO(#11): drop this `allow(dead_code)` once the rpg UI wires it up.
     #[allow(dead_code)]
     pub fn bar(label: impl Into<String>, current: u32, max: u32) -> Self {
         Self::Bar(ProgressBar {
@@ -110,9 +110,9 @@ impl StatusPane {
     /// Hack-and-slash status: Lv / EXP / HP / Floor / Run time
     /// (per `docs/spec.md`).
     ///
-    /// TODO(#11): drop this `allow(dead_code)` once the hack UI wires it up.
+    /// TODO(#11): drop this `allow(dead_code)` once the rpg UI wires it up.
     #[allow(dead_code)]
-    pub fn hack(
+    pub fn rpg(
         level: u32,
         exp: ProgressBar,
         hp: ProgressBar,
@@ -246,8 +246,8 @@ mod tests {
     }
 
     #[test]
-    fn hack_pane_mixes_values_and_bars() {
-        let pane = StatusPane::hack(
+    fn rpg_pane_mixes_values_and_bars() {
+        let pane = StatusPane::rpg(
             5,
             ProgressBar {
                 label: "EXP".into(),
@@ -299,8 +299,8 @@ mod tests {
     }
 
     #[test]
-    fn hack_pane_renders_lv_and_floor() {
-        let pane = StatusPane::hack(
+    fn rpg_pane_renders_lv_and_floor() {
+        let pane = StatusPane::rpg(
             5,
             ProgressBar {
                 label: "EXP".into(),

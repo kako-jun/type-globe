@@ -41,7 +41,7 @@ pub struct RecordsUI {
     /// spot "the run I just saved" without scrolling.
     latest_quiz_ts: Option<u64>,
     latest_ta25_ts: Option<u64>,
-    latest_hack_ts: Option<u64>,
+    latest_rpg_ts: Option<u64>,
 }
 
 impl RecordsUI {
@@ -56,12 +56,12 @@ impl RecordsUI {
     fn from_records(records: Records) -> Self {
         let latest_quiz_ts = records.quiz_mode.iter().map(|e| e.ts).max();
         let latest_ta25_ts = records.time_attack_25.iter().map(|e| e.ts).max();
-        let latest_hack_ts = records.hack_and_slash_rpg.iter().map(|e| e.ts).max();
+        let latest_rpg_ts = records.hack_and_slash_rpg.iter().map(|e| e.ts).max();
         Self {
             records,
             latest_quiz_ts,
             latest_ta25_ts,
-            latest_hack_ts,
+            latest_rpg_ts,
         }
     }
 
@@ -162,7 +162,7 @@ impl RecordsUI {
             chunks[2],
             "Listening RPG",
             &self.records.hack_and_slash_rpg,
-            self.latest_hack_ts,
+            self.latest_rpg_ts,
         );
     }
 
@@ -304,7 +304,7 @@ mod tests {
 
         let ui = RecordsUI::from_records(records);
         assert_eq!(ui.latest_quiz_ts, Some(30));
-        assert_eq!(ui.latest_hack_ts, Some(5));
+        assert_eq!(ui.latest_rpg_ts, Some(5));
         assert_eq!(ui.latest_ta25_ts, None);
     }
 
@@ -313,7 +313,7 @@ mod tests {
         let ui = RecordsUI::from_records(Records::default());
         assert_eq!(ui.latest_quiz_ts, None);
         assert_eq!(ui.latest_ta25_ts, None);
-        assert_eq!(ui.latest_hack_ts, None);
+        assert_eq!(ui.latest_rpg_ts, None);
     }
 
     #[test]
