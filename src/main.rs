@@ -213,7 +213,7 @@ fn run_menu_loop(config: &Config) -> Result<(), Box<dyn std::error::Error>> {
                 show_return_to_menu_message("Time Attack 25 is not implemented yet.")?;
                 menu.return_to_mode_selection(language);
             }
-            GameMode::HackAndSlashRpg => {
+            GameMode::Rpg => {
                 run_listening_practice(config, &language, false)?;
                 menu.return_to_mode_selection(language);
             }

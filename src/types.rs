@@ -233,7 +233,7 @@ mod tests {
 pub enum GameMode {
     Quiz,
     TimeAttack25,
-    HackAndSlashRpg,
+    Rpg,
     Records,
 }
 
