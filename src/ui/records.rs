@@ -36,12 +36,12 @@ const STYLE_HIGHLIGHT: Style = Style::new().fg(Color::Yellow).add_modifier(Modif
 
 pub struct RecordsUI {
     records: Records,
-    /// `ts` (epoch seconds) of the latest entry in each section. Each
+    /// `ts` (RFC3339) of the latest entry in each section. Each
     /// section's row carrying that ts is highlighted, so the user can
     /// spot "the run I just saved" without scrolling.
-    latest_quiz_ts: Option<u64>,
-    latest_ta25_ts: Option<u64>,
-    latest_rpg_ts: Option<u64>,
+    latest_quiz_ts: Option<String>,
+    latest_ta25_ts: Option<String>,
+    latest_rpg_ts: Option<String>,
 }
 
 impl RecordsUI {
@@ -54,9 +54,9 @@ impl RecordsUI {
     }
 
     fn from_records(records: Records) -> Self {
-        let latest_quiz_ts = records.quiz_mode.iter().map(|e| e.ts).max();
-        let latest_ta25_ts = records.time_attack_25.iter().map(|e| e.ts).max();
-        let latest_rpg_ts = records.hack_and_slash_rpg.iter().map(|e| e.ts).max();
+        let latest_quiz_ts = records.quiz_mode.iter().map(|e| e.ts.clone()).max();
+        let latest_ta25_ts = records.time_attack_25.iter().map(|e| e.ts.clone()).max();
+        let latest_rpg_ts = records.rpg.iter().map(|e| e.ts.clone()).max();
         Self {
             records,
             latest_quiz_ts,
@@ -148,21 +148,21 @@ impl RecordsUI {
             chunks[0],
             "Quiz (single-run)",
             &self.records.quiz_mode,
-            self.latest_quiz_ts,
+            self.latest_quiz_ts.as_deref(),
         );
         self.render_time_section(
             f,
             chunks[1],
             "Time Attack 25",
             &self.records.time_attack_25,
-            self.latest_ta25_ts,
+            self.latest_ta25_ts.as_deref(),
         );
         self.render_score_section(
             f,
             chunks[2],
             "Listening RPG",
-            &self.records.hack_and_slash_rpg,
-            self.latest_rpg_ts,
+            &self.records.rpg,
+            self.latest_rpg_ts.as_deref(),
         );
     }
 
@@ -172,7 +172,7 @@ impl RecordsUI {
         area: Rect,
         title: &str,
         entries: &[ScoreEntry],
-        highlight_ts: Option<u64>,
+        highlight_ts: Option<&str>,
     ) {
         let lines = if entries.is_empty() {
             vec![Line::from(Span::styled("  (no records yet)", STYLE_DIM))]
@@ -181,7 +181,7 @@ impl RecordsUI {
                 .iter()
                 .enumerate()
                 .map(|(i, e)| {
-                    let style = if Some(e.ts) == highlight_ts {
+                    let style = if highlight_ts.is_some() && e.ts.as_str() == highlight_ts.unwrap() {
                         STYLE_HIGHLIGHT
                     } else {
                         STYLE_NORMAL
@@ -216,7 +216,7 @@ impl RecordsUI {
         area: Rect,
         title: &str,
         entries: &[TimeEntry],
-        highlight_ts: Option<u64>,
+        highlight_ts: Option<&str>,
     ) {
         let lines = if entries.is_empty() {
             vec![Line::from(Span::styled("  (no records yet)", STYLE_DIM))]
@@ -225,7 +225,8 @@ impl RecordsUI {
                 .iter()
                 .enumerate()
                 .map(|(i, e)| {
-                    let style = if Some(e.ts) == highlight_ts {
+                    let style = if highlight_ts.is_some() && e.ts.as_str() == highlight_ts.unwrap()
+                    {
                         STYLE_HIGHLIGHT
                     } else {
                         STYLE_NORMAL
@@ -290,7 +291,7 @@ mod tests {
             score,
             cpm: 0,
             wpm: 0,
-            ts,
+            ts: format!("1970-01-01T{:02}:00:00Z", ts),
         }
     }
 
@@ -300,11 +301,11 @@ mod tests {
         records.quiz_mode.push(entry("a", 100, 10));
         records.quiz_mode.push(entry("b", 200, 30));
         records.quiz_mode.push(entry("c", 150, 20));
-        records.hack_and_slash_rpg.push(entry("z", 50, 5));
+        records.rpg.push(entry("z", 50, 5));
 
         let ui = RecordsUI::from_records(records);
-        assert_eq!(ui.latest_quiz_ts, Some(30));
-        assert_eq!(ui.latest_rpg_ts, Some(5));
+        assert_eq!(ui.latest_quiz_ts, Some("1970-01-01T30:00:00Z".to_string()));
+        assert_eq!(ui.latest_rpg_ts, Some("1970-01-01T05:00:00Z".to_string()));
         assert_eq!(ui.latest_ta25_ts, None);
     }
 

@@ -56,8 +56,7 @@ pub struct RpgStats {
     pub exp: u32,
 }
 
-/// One row in a Records list. `ts` is Unix epoch seconds; the v0.2.0 YAML
-/// migration will format it as RFC3339 per `docs/spec.md`.
+/// One row in a Records list. `ts` is RFC3339 format (e.g. "2025-05-11T12:34:56Z").
 #[derive(Debug, Clone, Deserialize, Serialize)]
 pub struct ScoreEntry {
     pub name: String,
@@ -67,7 +66,7 @@ pub struct ScoreEntry {
     #[serde(default)]
     pub wpm: u32,
     #[serde(default)]
-    pub ts: u64,
+    pub ts: String,
 }
 
 #[derive(Debug, Clone, Deserialize, Serialize)]
@@ -75,7 +74,7 @@ pub struct TimeEntry {
     pub name: String,
     pub time_seconds: u32,
     #[serde(default)]
-    pub ts: u64,
+    pub ts: String,
 }
 
 /// Self-best history per language. Local file only — global ordering of
@@ -87,7 +86,40 @@ pub struct TimeEntry {
 pub struct Records {
     pub quiz_mode: Vec<ScoreEntry>,
     pub time_attack_25: Vec<TimeEntry>,
-    pub hack_and_slash_rpg: Vec<ScoreEntry>,
+    pub rpg: Vec<ScoreEntry>,
+}
+
+const RECORDS_TOP_N: usize = 10;
+
+impl Records {
+    /// Insert into `quiz_mode`, sort by score descending (ts descending as
+    /// tiebreaker), and keep only the top 10.
+    pub fn push_quiz(&mut self, entry: ScoreEntry) {
+        self.quiz_mode.push(entry);
+        self.quiz_mode
+            .sort_by(|a, b| b.score.cmp(&a.score).then(b.ts.cmp(&a.ts)));
+        self.quiz_mode.truncate(RECORDS_TOP_N);
+    }
+
+    /// Insert into `rpg`, sort by score descending (ts descending as
+    /// tiebreaker), and keep only the top 10.
+    #[allow(dead_code)]
+    pub fn push_rpg(&mut self, entry: ScoreEntry) {
+        self.rpg.push(entry);
+        self.rpg
+            .sort_by(|a, b| b.score.cmp(&a.score).then(b.ts.cmp(&a.ts)));
+        self.rpg.truncate(RECORDS_TOP_N);
+    }
+
+    /// Insert into `time_attack_25`, sort by time ascending (shorter = better,
+    /// ts descending as tiebreaker), and keep only the top 10.
+    #[allow(dead_code)]
+    pub fn push_ta25(&mut self, entry: TimeEntry) {
+        self.time_attack_25.push(entry);
+        self.time_attack_25
+            .sort_by(|a, b| a.time_seconds.cmp(&b.time_seconds).then(b.ts.cmp(&a.ts)));
+        self.time_attack_25.truncate(RECORDS_TOP_N);
+    }
 }
 
 #[derive(Debug, Clone)]
