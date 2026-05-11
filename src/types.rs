@@ -32,14 +32,16 @@ pub enum AnswerKind {
     Sentence,
 }
 
-/// One audio-only listening prompt. The TTS layer turns `text` into
-/// audio at runtime (#28) — no audio files are shipped. The on-disk
-/// shape mirrors the v0.2.0 YAML target in `docs/spec.md` so the eventual
-/// JSON→YAML migration is a 1:1 rename.
+/// One audio-only listening prompt. The TTS layer turns `text_reading`
+/// into audio at runtime (#28) — no audio files are shipped.
+/// `text_reading` is hiragana-only (JA) or plain English, used for TTS
+/// and romaji conversion. `text_display` is the human-readable form
+/// (kanji/katakana for JA; identical to `text_reading` for EN).
 #[derive(Debug, Clone, Deserialize, Serialize)]
 pub struct ListeningPrompt {
     pub id: String,
-    pub text: String,
+    pub text_reading: String,
+    pub text_display: String,
     pub kind: AnswerKind,
 }
 
