@@ -1,0 +1,406 @@
+# listening_en.yaml — English listening prompts (100 items)
+# text_reading = text_display for English
+# word: l-en-001 to l-en-070
+# phrase: l-en-071 to l-en-090
+# sentence: l-en-091 to l-en-100
+
+- id: l-en-001
+  text_reading: cat
+  text_display: cat
+  kind: word
+- id: l-en-002
+  text_reading: dog
+  text_display: dog
+  kind: word
+- id: l-en-003
+  text_reading: sun
+  text_display: sun
+  kind: word
+- id: l-en-004
+  text_reading: map
+  text_display: map
+  kind: word
+- id: l-en-005
+  text_reading: cup
+  text_display: cup
+  kind: word
+- id: l-en-006
+  text_reading: box
+  text_display: box
+  kind: word
+- id: l-en-007
+  text_reading: key
+  text_display: key
+  kind: word
+- id: l-en-008
+  text_reading: hat
+  text_display: hat
+  kind: word
+- id: l-en-009
+  text_reading: pen
+  text_display: pen
+  kind: word
+- id: l-en-010
+  text_reading: bag
+  text_display: bag
+  kind: word
+- id: l-en-011
+  text_reading: fish
+  text_display: fish
+  kind: word
+- id: l-en-012
+  text_reading: bird
+  text_display: bird
+  kind: word
+- id: l-en-013
+  text_reading: tree
+  text_display: tree
+  kind: word
+- id: l-en-014
+  text_reading: book
+  text_display: book
+  kind: word
+- id: l-en-015
+  text_reading: door
+  text_display: door
+  kind: word
+- id: l-en-016
+  text_reading: fire
+  text_display: fire
+  kind: word
+- id: l-en-017
+  text_reading: moon
+  text_display: moon
+  kind: word
+- id: l-en-018
+  text_reading: rain
+  text_display: rain
+  kind: word
+- id: l-en-019
+  text_reading: snow
+  text_display: snow
+  kind: word
+- id: l-en-020
+  text_reading: wind
+  text_display: wind
+  kind: word
+- id: l-en-021
+  text_reading: apple
+  text_display: apple
+  kind: word
+- id: l-en-022
+  text_reading: river
+  text_display: river
+  kind: word
+- id: l-en-023
+  text_reading: water
+  text_display: water
+  kind: word
+- id: l-en-024
+  text_reading: house
+  text_display: house
+  kind: word
+- id: l-en-025
+  text_reading: light
+  text_display: light
+  kind: word
+- id: l-en-026
+  text_reading: music
+  text_display: music
+  kind: word
+- id: l-en-027
+  text_reading: cloud
+  text_display: cloud
+  kind: word
+- id: l-en-028
+  text_reading: smile
+  text_display: smile
+  kind: word
+- id: l-en-029
+  text_reading: bread
+  text_display: bread
+  kind: word
+- id: l-en-030
+  text_reading: chair
+  text_display: chair
+  kind: word
+- id: l-en-031
+  text_reading: clock
+  text_display: clock
+  kind: word
+- id: l-en-032
+  text_reading: dream
+  text_display: dream
+  kind: word
+- id: l-en-033
+  text_reading: earth
+  text_display: earth
+  kind: word
+- id: l-en-034
+  text_reading: field
+  text_display: field
+  kind: word
+- id: l-en-035
+  text_reading: glass
+  text_display: glass
+  kind: word
+- id: l-en-036
+  text_reading: heart
+  text_display: heart
+  kind: word
+- id: l-en-037
+  text_reading: paper
+  text_display: paper
+  kind: word
+- id: l-en-038
+  text_reading: stone
+  text_display: stone
+  kind: word
+- id: l-en-039
+  text_reading: table
+  text_display: table
+  kind: word
+- id: l-en-040
+  text_reading: world
+  text_display: world
+  kind: word
+- id: l-en-041
+  text_reading: bridge
+  text_display: bridge
+  kind: word
+- id: l-en-042
+  text_reading: castle
+  text_display: castle
+  kind: word
+- id: l-en-043
+  text_reading: forest
+  text_display: forest
+  kind: word
+- id: l-en-044
+  text_reading: garden
+  text_display: garden
+  kind: word
+- id: l-en-045
+  text_reading: island
+  text_display: island
+  kind: word
+- id: l-en-046
+  text_reading: letter
+  text_display: letter
+  kind: word
+- id: l-en-047
+  text_reading: mirror
+  text_display: mirror
+  kind: word
+- id: l-en-048
+  text_reading: orange
+  text_display: orange
+  kind: word
+- id: l-en-049
+  text_reading: pencil
+  text_display: pencil
+  kind: word
+- id: l-en-050
+  text_reading: purple
+  text_display: purple
+  kind: word
+- id: l-en-051
+  text_reading: shadow
+  text_display: shadow
+  kind: word
+- id: l-en-052
+  text_reading: silver
+  text_display: silver
+  kind: word
+- id: l-en-053
+  text_reading: spring
+  text_display: spring
+  kind: word
+- id: l-en-054
+  text_reading: summer
+  text_display: summer
+  kind: word
+- id: l-en-055
+  text_reading: winter
+  text_display: winter
+  kind: word
+- id: l-en-056
+  text_reading: autumn
+  text_display: autumn
+  kind: word
+- id: l-en-057
+  text_reading: candle
+  text_display: candle
+  kind: word
+- id: l-en-058
+  text_reading: flower
+  text_display: flower
+  kind: word
+- id: l-en-059
+  text_reading: freedom
+  text_display: freedom
+  kind: word
+- id: l-en-060
+  text_reading: history
+  text_display: history
+  kind: word
+- id: l-en-061
+  text_reading: journey
+  text_display: journey
+  kind: word
+- id: l-en-062
+  text_reading: lantern
+  text_display: lantern
+  kind: word
+- id: l-en-063
+  text_reading: morning
+  text_display: morning
+  kind: word
+- id: l-en-064
+  text_reading: mystery
+  text_display: mystery
+  kind: word
+- id: l-en-065
+  text_reading: rainbow
+  text_display: rainbow
+  kind: word
+- id: l-en-066
+  text_reading: silence
+  text_display: silence
+  kind: word
+- id: l-en-067
+  text_reading: language
+  text_display: language
+  kind: word
+- id: l-en-068
+  text_reading: mountain
+  text_display: mountain
+  kind: word
+- id: l-en-069
+  text_reading: treasure
+  text_display: treasure
+  kind: word
+- id: l-en-070
+  text_reading: wonderful
+  text_display: wonderful
+  kind: word
+- id: l-en-071
+  text_reading: good morning
+  text_display: good morning
+  kind: phrase
+- id: l-en-072
+  text_reading: good evening
+  text_display: good evening
+  kind: phrase
+- id: l-en-073
+  text_reading: thank you very much
+  text_display: thank you very much
+  kind: phrase
+- id: l-en-074
+  text_reading: nice to meet you
+  text_display: nice to meet you
+  kind: phrase
+- id: l-en-075
+  text_reading: how are you
+  text_display: how are you
+  kind: phrase
+- id: l-en-076
+  text_reading: take care of yourself
+  text_display: take care of yourself
+  kind: phrase
+- id: l-en-077
+  text_reading: see you later
+  text_display: see you later
+  kind: phrase
+- id: l-en-078
+  text_reading: have a good day
+  text_display: have a good day
+  kind: phrase
+- id: l-en-079
+  text_reading: excuse me please
+  text_display: excuse me please
+  kind: phrase
+- id: l-en-080
+  text_reading: once more please
+  text_display: once more please
+  kind: phrase
+- id: l-en-081
+  text_reading: long time no see
+  text_display: long time no see
+  kind: phrase
+- id: l-en-082
+  text_reading: well done
+  text_display: well done
+  kind: phrase
+- id: l-en-083
+  text_reading: best of luck
+  text_display: best of luck
+  kind: phrase
+- id: l-en-084
+  text_reading: keep it up
+  text_display: keep it up
+  kind: phrase
+- id: l-en-085
+  text_reading: you are welcome
+  text_display: you are welcome
+  kind: phrase
+- id: l-en-086
+  text_reading: not at all
+  text_display: not at all
+  kind: phrase
+- id: l-en-087
+  text_reading: by all means
+  text_display: by all means
+  kind: phrase
+- id: l-en-088
+  text_reading: after you
+  text_display: after you
+  kind: phrase
+- id: l-en-089
+  text_reading: on the other hand
+  text_display: on the other hand
+  kind: phrase
+- id: l-en-090
+  text_reading: all the best
+  text_display: all the best
+  kind: phrase
+- id: l-en-091
+  text_reading: practice makes perfect
+  text_display: practice makes perfect
+  kind: sentence
+- id: l-en-092
+  text_reading: actions speak louder than words
+  text_display: actions speak louder than words
+  kind: sentence
+- id: l-en-093
+  text_reading: every cloud has a silver lining
+  text_display: every cloud has a silver lining
+  kind: sentence
+- id: l-en-094
+  text_reading: the early bird catches the worm
+  text_display: the early bird catches the worm
+  kind: sentence
+- id: l-en-095
+  text_reading: better late than never
+  text_display: better late than never
+  kind: sentence
+- id: l-en-096
+  text_reading: where there is a will there is a way
+  text_display: where there is a will there is a way
+  kind: sentence
+- id: l-en-097
+  text_reading: a journey of a thousand miles begins with a single step
+  text_display: a journey of a thousand miles begins with a single step
+  kind: sentence
+- id: l-en-098
+  text_reading: no pain no gain
+  text_display: no pain no gain
+  kind: sentence
+- id: l-en-099
+  text_reading: time flies when you are having fun
+  text_display: time flies when you are having fun
+  kind: sentence
+- id: l-en-100
+  text_reading: the more you learn the more you grow
+  text_display: the more you learn the more you grow
+  kind: sentence

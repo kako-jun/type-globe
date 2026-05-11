@@ -20,7 +20,7 @@ impl Default for Config {
             questions_file_pattern: "questions_{}.json".to_string(),
             player_data_file: "player.yaml".to_string(),
             records_file_pattern: "records_{}.yaml".to_string(),
-            listening_file_pattern: "listening_{}.json".to_string(),
+            listening_file_pattern: "listening_{}.yaml".to_string(),
         }
     }
 }
@@ -66,11 +66,11 @@ mod tests {
         let cfg = Config::default();
         assert_eq!(
             cfg.listening_file_path(&Language::Japanese),
-            "data/listening_ja.json"
+            "data/listening_ja.yaml"
         );
         assert_eq!(
             cfg.listening_file_path(&Language::English),
-            "data/listening_en.json"
+            "data/listening_en.yaml"
         );
     }
 

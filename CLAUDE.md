@@ -95,7 +95,7 @@ v0.1.x にあった以下を v0.2.0 で段階的に廃止する：
 
 - 既存：`scripts/generate_questions.py`、`.claude/quiz-generation-policy.md`
 - v0.2.0 ターゲット：100 → 1,000 問
-- リスニング問題セット（`data/listening_<lang>.json`）も新設
+- リスニング問題セット（`data/listening_<lang>.yaml`）も新設
 
 ## JA ローマ字入力ルール
 
