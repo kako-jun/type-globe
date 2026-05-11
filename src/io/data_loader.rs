@@ -28,7 +28,7 @@ impl DataLoader {
             return Ok(Vec::new());
         }
         let content = fs::read_to_string(file_path)?;
-        let prompts: Vec<ListeningPrompt> = serde_json::from_str(&content)?;
+        let prompts: Vec<ListeningPrompt> = serde_yaml::from_str(&content)?;
         Ok(prompts)
     }
 
@@ -217,8 +217,8 @@ mod tests {
         // future change accidentally breaks the schema (e.g. missing
         // `kind`, typo'd serde rename) this test fails at PR time rather
         // than at runtime when the player picks Listening Practice.
-        let ja = DataLoader::load_listening_prompts("data/listening_ja.json").expect("ja loads");
-        let en = DataLoader::load_listening_prompts("data/listening_en.json").expect("en loads");
+        let ja = DataLoader::load_listening_prompts("data/listening_ja.yaml").expect("ja loads");
+        let en = DataLoader::load_listening_prompts("data/listening_en.yaml").expect("en loads");
         assert!(!ja.is_empty(), "ja prompts non-empty");
         assert!(!en.is_empty(), "en prompts non-empty");
         // Foundation flow only exposes word-kind prompts (Space is
@@ -236,7 +236,7 @@ mod tests {
 
     #[test]
     fn load_listening_prompts_returns_empty_when_missing() {
-        let prompts = DataLoader::load_listening_prompts("data/__does_not_exist__.json")
+        let prompts = DataLoader::load_listening_prompts("data/__does_not_exist__.yaml")
             .expect("missing file is not an error");
         assert!(prompts.is_empty());
     }

@@ -113,7 +113,7 @@ impl ListenUI {
         // the player can still try Space-replay, and the result screen
         // works even if no audio came out (helps debug TTS issues).
         if let Some(tts) = self.tts.as_mut() {
-            if let Err(err) = tts.speak(&self.session.prompt().text, &self.language) {
+            if let Err(err) = tts.speak(&self.session.prompt().text_reading, &self.language) {
                 eprintln!("warning: initial TTS speak failed: {err}");
             } else {
                 self.plays += 1;
@@ -205,7 +205,7 @@ impl ListenUI {
 
     fn replay(&mut self) {
         if let Some(tts) = self.tts.as_mut() {
-            if let Err(err) = tts.speak(&self.session.prompt().text, &self.language) {
+            if let Err(err) = tts.speak(&self.session.prompt().text_reading, &self.language) {
                 eprintln!("warning: TTS replay failed: {err}");
                 return;
             }
@@ -424,7 +424,11 @@ impl ListenUI {
     fn handle_playing_char(&mut self, c: char) {
         let mut attempted = self.session.input().to_string();
         attempted.push(c);
-        if !is_valid_listening_prefix(&self.language, &attempted, &self.session.prompt().text) {
+        if !is_valid_listening_prefix(
+            &self.language,
+            &attempted,
+            &self.session.prompt().text_reading,
+        ) {
             self.note_rejected_char(c);
             return;
         }
@@ -433,7 +437,7 @@ impl ListenUI {
         self.clear_reject_flash();
 
         let typed = self.session.input().to_lowercase();
-        if acceptable_listening_inputs(&self.language, &self.session.prompt().text)
+        if acceptable_listening_inputs(&self.language, &self.session.prompt().text_reading)
             .iter()
             .any(|candidate| candidate == &typed)
         {
@@ -487,7 +491,8 @@ mod tests {
     fn stub_prompt() -> ListeningPrompt {
         ListeningPrompt {
             id: "test".into(),
-            text: "apple".into(),
+            text_reading: "apple".into(),
+            text_display: "apple".into(),
             kind: AnswerKind::Word,
         }
     }
