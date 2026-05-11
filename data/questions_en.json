@@ -114,8 +114,8 @@
         "ja_typings": []
       },
       {
-        "en": "function",
-        "ja": "function",
+        "en": "lambda",
+        "ja": "lambda",
         "ja_typings": []
       },
       {
@@ -124,8 +124,8 @@
         "ja_typings": []
       },
       {
-        "en": "func",
-        "ja": "func",
+        "en": "fun",
+        "ja": "fun",
         "ja_typings": []
       }
     ],
@@ -242,8 +242,8 @@
         "ja_typings": []
       },
       {
-        "en": "/",
-        "ja": "/",
+        "en": "mod",
+        "ja": "mod",
         "ja_typings": []
       },
       {
@@ -274,18 +274,18 @@
         "ja_typings": []
       },
       {
-        "en": "1,2,3,4,5",
-        "ja": "1,2,3,4,5",
+        "en": "1 to 5",
+        "ja": "1 to 5",
         "ja_typings": []
       },
       {
-        "en": "0,1,2,3,4,5",
-        "ja": "0,1,2,3,4,5",
+        "en": "0 to 5",
+        "ja": "0 to 5",
         "ja_typings": []
       },
       {
-        "en": "1,2,3,4",
-        "ja": "1,2,3,4",
+        "en": "1 to 4",
+        "ja": "1 to 4",
         "ja_typings": []
       }
     ],
@@ -20727,12 +20727,12 @@
         "ja_typings": []
       },
       {
-        "en": "US president during WWI",
+        "en": "US president during World War 1",
         "ja": "だいいちじたいせんのアメリカだいとうりょう",
         "ja_typings": []
       },
       {
-        "en": "US president during WWII",
+        "en": "US president during World War 2",
         "ja": "だいにじたいせんのアメリカだいとうりょう",
         "ja_typings": []
       }
@@ -20941,12 +20941,12 @@
   {
     "choices": [
       {
-        "en": "peace treaty ending World War I",
+        "en": "peace treaty ending World War 1",
         "ja": "だいいちじたいせんをおわらせるわへいじょうやく",
         "ja_typings": []
       },
       {
-        "en": "peace treaty ending World War II",
+        "en": "peace treaty ending World War 2",
         "ja": "だいにじたいせんをおわらせるわへいじょうやく",
         "ja_typings": []
       },
@@ -20973,12 +20973,12 @@
   {
     "choices": [
       {
-        "en": "British PM during World War II",
+        "en": "British PM during World War 2",
         "ja": "だいにじたいせんのえいこくしゅしょう",
         "ja_typings": []
       },
       {
-        "en": "British PM during World War I",
+        "en": "British PM during World War 1",
         "ja": "だいいちじたいせんのえいこくしゅしょう",
         "ja_typings": []
       },
@@ -21047,8 +21047,8 @@
         "ja_typings": []
       },
       {
-        "en": "H₂O₂",
-        "ja": "H₂O₂",
+        "en": "NaOH",
+        "ja": "NaOH",
         "ja_typings": []
       },
       {
@@ -22871,13 +22871,13 @@
         "ja_typings": []
       },
       {
-        "en": "36288000",
-        "ja": "さんぜんろっぴゃくにじゅうはちまん",
+        "en": "40320",
+        "ja": "よんまんさんびゃくにじゅう",
         "ja_typings": []
       },
       {
-        "en": "362880",
-        "ja": "さんじゅうろくまんにせんはっぴゃくはちじゅう",
+        "en": "5040",
+        "ja": "ごせんよんじゅう",
         "ja_typings": []
       }
     ],
@@ -22935,8 +22935,8 @@
         "ja_typings": []
       },
       {
-        "en": "πr",
-        "ja": "ぱいあーる",
+        "en": "2r",
+        "ja": "にあーる",
         "ja_typings": []
       },
       {
@@ -22967,8 +22967,8 @@
         "ja_typings": []
       },
       {
-        "en": "πr",
-        "ja": "ぱいあーる",
+        "en": "r²",
+        "ja": "あーるじじょう",
         "ja_typings": []
       },
       {
@@ -26616,7 +26616,7 @@
       },
       {
         "en": "30",
-        "ja": "さんじゅう",
+        "ja": "みそじ",
         "ja_typings": []
       },
       {
@@ -26674,18 +26674,18 @@
         "ja_typings": []
       },
       {
-        "en": "Ox",
-        "ja": "おっくす",
+        "en": "Cu",
+        "ja": "Cu",
         "ja_typings": []
       },
       {
-        "en": "Og",
-        "ja": "おーじー",
+        "en": "Au",
+        "ja": "Au",
         "ja_typings": []
       },
       {
-        "en": "On",
-        "ja": "おーえぬ",
+        "en": "Pt",
+        "ja": "Pt",
         "ja_typings": []
       }
     ],

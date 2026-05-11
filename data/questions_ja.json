@@ -44,22 +44,33 @@
       {
         "en": "Osaka",
         "ja": "大阪",
-        "ja_typings": []
+        "ja_typings": [
+          "osaka",
+          "oosaka"
+        ]
       },
       {
         "en": "Tokyo",
         "ja": "東京",
-        "ja_typings": []
+        "ja_typings": [
+          "tokyo",
+          "toukyou"
+        ]
       },
       {
         "en": "Kyoto",
         "ja": "京都",
-        "ja_typings": []
+        "ja_typings": [
+          "kyoto",
+          "kyouto"
+        ]
       },
       {
         "en": "Nagoya",
         "ja": "名古屋",
-        "ja_typings": []
+        "ja_typings": [
+          "nagoya"
+        ]
       }
     ],
     "correct_answer_index": 1,
