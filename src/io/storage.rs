@@ -53,7 +53,6 @@ impl Storage {
         fs::write(file_path, content)?;
         Ok(())
     }
-
 }
 
 #[cfg(test)]
