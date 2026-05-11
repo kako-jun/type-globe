@@ -3,17 +3,56 @@ use crate::types::{Choice, Language, ListeningPrompt, Question};
 use std::fs;
 use std::path::Path;
 
+// Embedded question banks — shipped inside the binary so `cargo install`
+// users don't need to supply external data files.
+const BUNDLED_QUESTIONS_JA: &str = include_str!("../../data/questions_ja.json");
+const BUNDLED_QUESTIONS_EN: &str = include_str!("../../data/questions_en.json");
+const BUNDLED_LISTENING_JA: &str = include_str!("../../data/listening_ja.yaml");
+const BUNDLED_LISTENING_EN: &str = include_str!("../../data/listening_en.yaml");
+
 pub struct DataLoader;
 
 impl DataLoader {
+    /// Return the bundled question JSON for `language`, or `None` for
+    /// languages that have no bundled data.
+    fn bundled_questions_json(language: &Language) -> Option<&'static str> {
+        match language {
+            Language::Japanese => Some(BUNDLED_QUESTIONS_JA),
+            Language::English => Some(BUNDLED_QUESTIONS_EN),
+        }
+    }
+
+    /// Return the bundled listening YAML for `language`, or `None` for
+    /// languages that have no bundled data.
+    fn bundled_listening_yaml(language: &Language) -> Option<&'static str> {
+        match language {
+            Language::Japanese => Some(BUNDLED_LISTENING_JA),
+            Language::English => Some(BUNDLED_LISTENING_EN),
+        }
+    }
+
     pub fn load_questions(file_path: &str) -> Result<Vec<Question>, Box<dyn std::error::Error>> {
-        if !Path::new(file_path).exists() {
-            return Ok(Vec::new());
+        // Prefer the on-disk file (allows users to add/override questions).
+        if Path::new(file_path).exists() {
+            let content = fs::read_to_string(file_path)?;
+            let questions: Vec<Question> = serde_json::from_str(&content)?;
+            return Ok(questions);
         }
 
-        let content = fs::read_to_string(file_path)?;
-        let questions: Vec<Question> = serde_json::from_str(&content)?;
-        Ok(questions)
+        // Fall back to bundled data keyed by the language suffix in the path.
+        let lang = if file_path.contains("_en") {
+            Language::English
+        } else if file_path.contains("_ja") {
+            Language::Japanese
+        } else {
+            return Ok(Vec::new());
+        };
+        if let Some(json) = Self::bundled_questions_json(&lang) {
+            let questions: Vec<Question> = serde_json::from_str(json)?;
+            return Ok(questions);
+        }
+
+        Ok(Vec::new())
     }
 
     /// Load a listening-prompt bank for a single language (#29). The
@@ -24,12 +63,27 @@ impl DataLoader {
     pub fn load_listening_prompts(
         file_path: &str,
     ) -> Result<Vec<ListeningPrompt>, Box<dyn std::error::Error>> {
-        if !Path::new(file_path).exists() {
-            return Ok(Vec::new());
+        // Prefer the on-disk file.
+        if Path::new(file_path).exists() {
+            let content = fs::read_to_string(file_path)?;
+            let prompts: Vec<ListeningPrompt> = serde_yaml::from_str(&content)?;
+            return Ok(prompts);
         }
-        let content = fs::read_to_string(file_path)?;
-        let prompts: Vec<ListeningPrompt> = serde_yaml::from_str(&content)?;
-        Ok(prompts)
+
+        // Fall back to bundled data.
+        let lang = if file_path.contains("_en") {
+            Language::English
+        } else if file_path.contains("_ja") {
+            Language::Japanese
+        } else {
+            return Ok(Vec::new());
+        };
+        if let Some(yaml) = Self::bundled_listening_yaml(&lang) {
+            let prompts: Vec<ListeningPrompt> = serde_yaml::from_str(yaml)?;
+            return Ok(prompts);
+        }
+
+        Ok(Vec::new())
     }
 
     #[allow(dead_code)]
@@ -92,118 +146,6 @@ impl DataLoader {
         }
     }
 
-    pub fn create_sample_questions() -> Vec<Question> {
-        use std::collections::HashMap;
-
-        vec![
-            Question {
-                id: "q001".to_string(),
-                genre: "science".to_string(),
-                question_text: {
-                    let mut map = HashMap::new();
-                    map.insert("ja".to_string(), "水の化学式は？".to_string());
-                    map.insert(
-                        "en".to_string(),
-                        "What is the chemical formula for water?".to_string(),
-                    );
-                    map
-                },
-                choices: vec![
-                    {
-                        let mut labels = HashMap::new();
-                        labels.insert("ja".to_string(), "CO2".to_string());
-                        labels.insert("en".to_string(), "CO2".to_string());
-                        Choice {
-                            labels,
-                            ja_typings: Vec::new(),
-                        }
-                    },
-                    {
-                        let mut labels = HashMap::new();
-                        labels.insert("ja".to_string(), "H2O".to_string());
-                        labels.insert("en".to_string(), "H2O".to_string());
-                        Choice {
-                            labels,
-                            ja_typings: Vec::new(),
-                        }
-                    },
-                    {
-                        let mut labels = HashMap::new();
-                        labels.insert("ja".to_string(), "O2".to_string());
-                        labels.insert("en".to_string(), "O2".to_string());
-                        Choice {
-                            labels,
-                            ja_typings: Vec::new(),
-                        }
-                    },
-                    {
-                        let mut labels = HashMap::new();
-                        labels.insert("ja".to_string(), "N2".to_string());
-                        labels.insert("en".to_string(), "N2".to_string());
-                        Choice {
-                            labels,
-                            ja_typings: Vec::new(),
-                        }
-                    },
-                ],
-                correct_answer_index: 1,
-                image_path: None,
-            },
-            Question {
-                id: "q002".to_string(),
-                genre: "geography".to_string(),
-                question_text: {
-                    let mut map = HashMap::new();
-                    map.insert("ja".to_string(), "日本の首都は？".to_string());
-                    map.insert(
-                        "en".to_string(),
-                        "What is the capital of Japan?".to_string(),
-                    );
-                    map
-                },
-                choices: vec![
-                    {
-                        let mut labels = HashMap::new();
-                        labels.insert("ja".to_string(), "大阪".to_string());
-                        labels.insert("en".to_string(), "Osaka".to_string());
-                        Choice {
-                            labels,
-                            ja_typings: vec!["osaka".to_string(), "oosaka".to_string()],
-                        }
-                    },
-                    {
-                        let mut labels = HashMap::new();
-                        labels.insert("ja".to_string(), "東京".to_string());
-                        labels.insert("en".to_string(), "Tokyo".to_string());
-                        Choice {
-                            labels,
-                            ja_typings: vec!["tokyo".to_string(), "toukyou".to_string()],
-                        }
-                    },
-                    {
-                        let mut labels = HashMap::new();
-                        labels.insert("ja".to_string(), "京都".to_string());
-                        labels.insert("en".to_string(), "Kyoto".to_string());
-                        Choice {
-                            labels,
-                            ja_typings: vec!["kyoto".to_string(), "kyouto".to_string()],
-                        }
-                    },
-                    {
-                        let mut labels = HashMap::new();
-                        labels.insert("ja".to_string(), "名古屋".to_string());
-                        labels.insert("en".to_string(), "Nagoya".to_string());
-                        Choice {
-                            labels,
-                            ja_typings: vec!["nagoya".to_string()],
-                        }
-                    },
-                ],
-                correct_answer_index: 1,
-                image_path: None,
-            },
-        ]
-    }
 }
 
 #[cfg(test)]

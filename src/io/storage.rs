@@ -54,14 +54,6 @@ impl Storage {
         Ok(())
     }
 
-    pub fn save_sample_questions(
-        file_path: &str,
-        questions: &[crate::types::Question],
-    ) -> Result<(), Box<dyn std::error::Error>> {
-        let content = serde_json::to_string_pretty(questions)?;
-        fs::write(file_path, content)?;
-        Ok(())
-    }
 }
 
 #[cfg(test)]
