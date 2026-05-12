@@ -97,31 +97,40 @@ v0.1.x にあった以下を v0.2.0 で段階的に廃止する：
 - v0.2.0 ターゲット：100 → 1,000 問
 - リスニング問題セット（`data/listening_<lang>.yaml`）も新設
 
-## JA ローマ字入力ルール
+## JA ローマ字入力ルール (v0.5.x 以降の strict 仕様)
 
 - `data/questions_ja.json` の各 choice は `ja_typings: string[]` を持つ
 - `ja_typings` は **小文字 ASCII のみ**
-- 許可する揺れは **ヘボン式ベース + 長音の潰し/非潰し** のみ
-  - 例: `tokyo` / `toukyou`
-  - 例: `osaka` / `oosaka`
-  - 例: `kyoto` / `kyouto`
-- **Wapuro 系の子音揺れは不許可**
+- 登録は **IME で実際に打鍵する形 (ヘボン式 + 長音保持)** に統一
+  - カタカナ長音 `ー` は `-` キー必須: `サーバー` → `sa-ba-`, `ボール` → `bo-ru`
+  - ひらがな長音 `おう` / `おお` / `うう` も保持: `東京` → `toukyou` (×`tokyo`), `大阪` → `oosaka` (×`osaka`), `空気` → `kuuki` (×`kuki`)
+  - ン+母音/y: `nn` 二重: `観音` → `kannon`, `翻訳` → `honnyaku`
+  - ン+子音 / 末尾: `n` 単数: `ドラゴン` → `doragon`, `東京` → `toukyou`
+- **collapsed 形 (`tokyo`, `osaka`, `boru` 等) は data に登録しない**(プレイヤーが入力しても不正解になる、IME 入力の strict 仕様に合わせる)
+- **Wapuro 系の子音揺れは data に登録しない**
   - 不許可例: `si`, `ti`, `tu`, `hu`, `zi`
   - 正規形は `shi`, `chi`, `tsu`, `fu`, `ji`
 - 外来語・固有名詞で **公式の英字綴りがあるなら、それも `ja_typings` に追加してよい**
   - 例: `エル（Lawliet）` → `lawliet`
-- かな・カタカナ・ASCII だけの choice は自動生成でよい
-  - `cargo run --bin backfill-ja-typing -- data/questions_ja.json`
+- 漢字読みの真の揺れ (`日本` = `nihon` も `nippon` も実在) は両方登録
+- かな・カタカナ・ASCII だけの choice は自動生成でよい (`hiragana_to_hepburn` が長音保持版を出す)
 - 漢字を含む choice は読みを人間が判断して `ja_typings` を手で入れる
 - 検査は必ず実行する
   - `cargo run --bin lint-questions -- data/questions_ja.json data/questions_en.json`
 
 ### ローマ字バリアントの runtime 吸収（#96）
 
-- ローマ字表記の揺れ（shi/si, chi/ti, tsu/tu, ji/zi, fu/hu, wo/o, thi/texi/teli, dji/di, dzu/du）は `src/io/normalize.rs::canonical_romaji` が runtime で吸収する
-- **データ側は引き続きヘボン式の1通りで登録する**（`shi` を登録、`si` は登録しない）
-- プレイヤー入力は両方受理される
-- これにより「じが4個ある単語に 2^4=16通りを登録する」必要はない
+`src/io/normalize.rs::canonical_romaji` が runtime で以下を吸収する。**データ側は1通りで登録**、プレイヤー入力は揺れて入っても通る。
+
+- ヘボン式 ↔ kunrei: `shi/si`, `chi/ti`, `tsu/tu`, `ji/zi`, `fu/hu`, `wo/o`
+- ティ Wapuro: `thi/texi/teli` → `thi`
+- ディ / ぢ Wapuro: `di/dji/dhi/dexi/deli/dzi` → `di` (じ=`ji`→`zi` とは別キーなので区別される)
+- ヅ collapse: `dzu` → `du`
+- ン+子音/末尾の `nn`: 冗長な `nn` を `n` に畳む (ン+母音/y/n は残す)
+- カタカナ ー の `-` は **畳まない** (データ側も `-` 入り)
+- ひらがな長音も **畳まない** (データ側も `ou` / `oo` / `uu` 入り)
+
+これにより「じが4個ある単語に 2^4=16通りを登録する」必要はない。
 
 ### かな読み揺れは複数登録（#98）
 

@@ -271,16 +271,14 @@
         "ja": "海王星",
         "en": "Neptune",
         "ja_typings": [
-          "kaiousei",
-          "kaio-sei"
+          "kaiousei"
         ]
       },
       {
         "ja": "天王星",
         "en": "Uranus",
         "ja_typings": [
-          "tennousei",
-          "tenno-sei"
+          "tennousei"
         ]
       }
     ],
@@ -314,8 +312,7 @@
         "ja": "地球",
         "en": "Earth",
         "ja_typings": [
-          "chikyuu",
-          "chikyu-"
+          "chikyuu"
         ]
       },
       {
@@ -718,8 +715,7 @@
         "ja": "肝臓",
         "en": "Liver",
         "ja_typings": [
-          "kanzou",
-          "kanzo-"
+          "kanzou"
         ]
       },
       {
@@ -733,8 +729,7 @@
         "ja": "脳",
         "en": "Brain",
         "ja_typings": [
-          "nou",
-          "no-"
+          "nou"
         ]
       }
     ],
@@ -754,8 +749,7 @@
         "ja": "太陽",
         "en": "Sun",
         "ja_typings": [
-          "taiyou",
-          "taiyo-"
+          "taiyou"
         ]
       },
       {
@@ -1336,24 +1330,21 @@
         "ja": "陽子",
         "en": "Proton",
         "ja_typings": [
-          "youshi",
-          "yo-shi"
+          "youshi"
         ]
       },
       {
         "ja": "中性子",
         "en": "Neutron",
         "ja_typings": [
-          "chuuseishi",
-          "chu-seishi"
+          "chuuseishi"
         ]
       },
       {
         "ja": "光子",
         "en": "Photon",
         "ja_typings": [
-          "koushi",
-          "ko-shi"
+          "koushi"
         ]
       }
     ],
@@ -1380,8 +1371,7 @@
         "ja": "万有引力",
         "en": "Gravity",
         "ja_typings": [
-          "banyuuinryoku",
-          "banyu-inryoku"
+          "banyuuinryoku"
         ]
       },
       {
@@ -1579,24 +1569,21 @@
         "ja": "放電現象",
         "en": "Electric discharge",
         "ja_typings": [
-          "houdengenshou",
-          "ho-dengensho-"
+          "houdengenshou"
         ]
       },
       {
         "ja": "燃焼現象",
         "en": "Combustion",
         "ja_typings": [
-          "nenshougenshou",
-          "nensho-gensho-"
+          "nenshougenshou"
         ]
       },
       {
         "ja": "核反応",
         "en": "Nuclear reaction",
         "ja_typings": [
-          "kakuhannou",
-          "kakuhanno-"
+          "kakuhannou"
         ]
       },
       {
@@ -1726,8 +1713,7 @@
         "ja": "硫黄",
         "en": "Sulfur",
         "ja_typings": [
-          "iou",
-          "io-"
+          "iou"
         ]
       }
     ],
@@ -1768,8 +1754,7 @@
         "ja": "蜃気楼",
         "en": "Mirage",
         "ja_typings": [
-          "shinkirou",
-          "shinkiro-"
+          "shinkirou"
         ]
       }
     ],
@@ -1878,24 +1863,21 @@
         "ja": "肝臓",
         "en": "Liver",
         "ja_typings": [
-          "kanzou",
-          "kanzo-"
+          "kanzou"
         ]
       },
       {
         "ja": "腎臓",
         "en": "Kidney",
         "ja_typings": [
-          "jinzou",
-          "jinzo-"
+          "jinzou"
         ]
       },
       {
         "ja": "脾臓",
         "en": "Spleen",
         "ja_typings": [
-          "hizou",
-          "hizo-"
+          "hizou"
         ]
       }
     ],
@@ -1977,8 +1959,7 @@
         "ja": "干渉",
         "en": "Interference",
         "ja_typings": [
-          "kanshou",
-          "kansho-"
+          "kanshou"
         ]
       }
     ],
@@ -2012,8 +1993,7 @@
         "ja": "三畳紀",
         "en": "Triassic",
         "ja_typings": [
-          "sanjouki",
-          "sanjo-ki"
+          "sanjouki"
         ]
       },
       {
@@ -6196,7 +6176,7 @@
         "ja": "ダイクストラ法",
         "en": "Dijkstra's algorithm",
         "ja_typings": [
-          "daikusutoraho-"
+          "daikusutorahou"
         ]
       },
       {
@@ -21707,7 +21687,7 @@
         "ja": "ケネディとフルシチョフ",
         "en": "Kennedy and Khrushchev",
         "ja_typings": [
-          "kenedi-tofurushichofu"
+          "keneditofurushichofu"
         ]
       },
       {
@@ -26651,7 +26631,6 @@
         "ja": "エッフェル塔",
         "en": "Eiffel Tower",
         "ja_typings": [
-          "efferuto-",
           "efferutou"
         ]
       },
