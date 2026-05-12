@@ -19,6 +19,8 @@ Two presentation styles, paired with two game structures. **They are never cross
 
 In Quiz mode, there are **no arrow keys for selection** — you select by typing the correct choice's text directly. An exact match auto-confirms immediately.
 
+Japanese quiz data may keep two parallel question strings: `question_text` for the visible prompt (kanji/katakana mixed) and `question_text_reading` for reading-preservation workflows. Choice labels stay input-oriented, so Japanese answers remain hiragana / katakana / ASCII rather than kanji.
+
 In Listening mode, **no text appears on screen at all**. A `♪` note pulses while audio plays. You type what you heard, blind.
 
 ## Why type-globe?
@@ -49,6 +51,12 @@ type-globe rpg  --lang en --no-tts  # Listening RPG without TTS (silent mode)
 ```
 
 Run `type-globe --help` or `type-globe <subcommand> --help` for all options.
+
+For quiz-data migration work, the repository also ships:
+- `uv run python3 scripts/backfill_question_text_reading.py data/questions_ja.json --dry-run`
+- `uv run python3 scripts/question_text_stats.py data/questions_ja.json`
+- `uv run python3 scripts/list_suspect_question_texts.py data/questions_ja.json`
+- `uv run python3 scripts/restore_ja_question_texts_with_ollama.py data/questions_ja.json --dry-run`
 
 ## Game Modes
 

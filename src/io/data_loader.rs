@@ -168,6 +168,7 @@ impl DataLoader {
 mod tests {
     use super::*;
     use crate::types::AnswerKind;
+    use std::collections::HashMap;
 
     #[test]
     fn shipped_listening_data_loads_for_both_languages() {
@@ -226,6 +227,43 @@ mod tests {
         assert_eq!(
             DataLoader::get_choice_typing_texts(&choice, &Language::Japanese),
             vec!["tokyo".to_string(), "toukyou".to_string()]
+        );
+    }
+
+    #[test]
+    fn question_reading_falls_back_to_display_text() {
+        let question = Question {
+            id: "q-reading-fallback".into(),
+            genre: "test".into(),
+            question_text: HashMap::from([("ja".to_string(), "東京駅".to_string())]),
+            question_text_reading: HashMap::new(),
+            choices: Vec::new(),
+            correct_answer_index: 0,
+            image_path: None,
+        };
+        assert_eq!(
+            DataLoader::get_question_reading_text(&question, &Language::Japanese),
+            "東京駅"
+        );
+    }
+
+    #[test]
+    fn question_reading_prefers_explicit_reading_text() {
+        let question = Question {
+            id: "q-reading-explicit".into(),
+            genre: "test".into(),
+            question_text: HashMap::from([("ja".to_string(), "東京駅".to_string())]),
+            question_text_reading: HashMap::from([(
+                "ja".to_string(),
+                "とうきょうえき".to_string(),
+            )]),
+            choices: Vec::new(),
+            correct_answer_index: 0,
+            image_path: None,
+        };
+        assert_eq!(
+            DataLoader::get_question_reading_text(&question, &Language::Japanese),
+            "とうきょうえき"
         );
     }
 }

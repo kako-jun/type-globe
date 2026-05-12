@@ -127,6 +127,9 @@ def generate_questions_batch(client: anthropic.Anthropic, genre: str, topic: str
 
 【重要な入力仕様】
 ユーザーはフリック入力やキーボードで回答します。漢字変換は不要です。
+- 日本語の問題文は2系統で出力する
+  - `question_text.ja`: 画面表示用。漢字かな交じりを優先する
+  - `question_text_reading.ja`: 読み保持用。ひらがな主体で出力する
 - 日本語の選択肢: ひらがな、カタカナ、アルファベットのみ使用（漢字は使わない）
   例: ✓「とうきょう」「トウキョウ」「Tokyo」
       ✗「東京」（漢字は不可）
@@ -142,7 +145,11 @@ def generate_questions_batch(client: anthropic.Anthropic, genre: str, topic: str
     "id": "q{start_id:05d}",
     "genre": "{genre}",
     "question_text": {{
-      "ja": "日本語の問題文",
+      "ja": "日本語の問題文（表示用。漢字かな交じり）",
+      "en": "English question text"
+    }},
+    "question_text_reading": {{
+      "ja": "にほんごのもんだいぶん",
       "en": "English question text"
     }},
     "choices": [
