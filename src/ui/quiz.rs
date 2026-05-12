@@ -456,12 +456,15 @@ impl QuizUI {
     fn handle_playing_char(&mut self, c: char) {
         let mut attempted = self.input_buffer.clone();
         attempted.push(c);
-        // Per Issue #70 only the correct answer's typings are accepted;
-        // any divergence is treated as a mistype that flashes red and
-        // resets the buffer to zero so the player retries from scratch.
+        // Per Issue #70 only the correct answer's typings are accepted.
+        // Issue #94: a mistype flashes red but the input buffer is *kept*
+        // at the last valid prefix; clearing it back to zero forced the
+        // player to retype a long word from scratch for a single slip,
+        // which made long answers feel hostile. The buffer is already at
+        // the last valid prefix at this point (we only push validated
+        // characters), so leaving it alone is the correct behaviour.
         if !self.quiz_game.is_valid_correct_typed_prefix(&attempted) {
             self.note_rejected_char(c);
-            self.input_buffer.clear();
             // Mistype cue (Issue #73) — slightly louder than the
             // keystroke tick so the player can tell them apart.
             self.play_cue(Cue::Mistype);
