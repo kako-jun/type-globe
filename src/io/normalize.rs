@@ -157,5 +157,4 @@ mod tests {
         assert_eq!(canonical_romaji("tennen"), "tennen");
         assert_eq!(canonical_romaji("honnyaku"), "honnyaku");
     }
-
 }
