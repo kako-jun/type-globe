@@ -478,6 +478,17 @@ impl ListenUI {
     }
 }
 
+/// Build a one-line message for callers that want to surface a TTS
+/// init failure to the player without crashing the run. Shared so the
+/// menu and any future entry points format it consistently.
+pub fn tts_unavailable_message(err: &dyn std::error::Error) -> String {
+    format!(
+        "Listening mode is unavailable on this system: {err}\n\
+         (On Linux, install and start `speech-dispatcher`.)\n\
+         Press Enter to return to the menu."
+    )
+}
+
 // ---------------------------------------------------------------------------
 // Tests
 // ---------------------------------------------------------------------------
@@ -544,15 +555,4 @@ mod tests {
         ui.replay();
         assert_eq!(ui.plays, 2, "plays should be +2 after second replay()");
     }
-}
-
-/// Build a one-line message for callers that want to surface a TTS
-/// init failure to the player without crashing the run. Shared so the
-/// menu and any future entry points format it consistently.
-pub fn tts_unavailable_message(err: &dyn std::error::Error) -> String {
-    format!(
-        "Listening mode is unavailable on this system: {err}\n\
-         (On Linux, install and start `speech-dispatcher`.)\n\
-         Press Enter to return to the menu."
-    )
 }

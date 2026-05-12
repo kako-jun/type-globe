@@ -291,7 +291,7 @@ mod tests {
             score,
             cpm: 0,
             wpm: 0,
-            ts: format!("1970-01-01T{:02}:00:00Z", ts),
+            ts: format!("1970-01-01T{ts:02}:00:00Z"),
         }
     }
 
