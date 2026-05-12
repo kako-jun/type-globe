@@ -3172,7 +3172,7 @@
         "ja": "メキシコシティ",
         "en": "Mexico City",
         "ja_typings": [
-          "mekishikoshiti",
+          "mekishikoshithi",
           "mekishikoshitei"
         ]
       },
@@ -3877,7 +3877,7 @@
         "ja": "サンティアゴ",
         "en": "Santiago",
         "ja_typings": [
-          "santiago",
+          "santhiago",
           "santeiago"
         ]
       },
@@ -18075,7 +18075,6 @@
         "ja": "桃太郎電鉄",
         "en": "Momotaro Dentetsu",
         "ja_typings": [
-          "momotaroudensetsu",
           "momotaroudentetsu"
         ]
       },
@@ -19239,7 +19238,7 @@
         "ja": "ゆうきまさみ",
         "en": "Masami Yuki",
         "ja_typings": [
-          "yukimasami"
+          "yuukimasami"
         ]
       },
       {
@@ -19284,10 +19283,10 @@
         ]
       },
       {
-        "ja": "原作:不明",
-        "en": "Unknown",
+        "ja": "武論尊",
+        "en": "Buronson",
         "ja_typings": [
-          "fumei"
+          "buronson"
         ]
       }
     ],
@@ -24980,7 +24979,7 @@
         "ja": "ピンイン",
         "en": "Pinyin",
         "ja_typings": [
-          "pinnyin"
+          "pinnin"
         ]
       },
       {
@@ -26016,7 +26015,7 @@
         "ja": "ドーティ",
         "en": "Dhoti",
         "ja_typings": [
-          "do-ti"
+          "do-thi"
         ]
       },
       {
@@ -28797,17 +28796,18 @@
     },
     "choices": [
       {
+        "ja": "(笑)",
+        "en": "(笑)",
+        "ja_typings": [
+          "(wara)",
+          "wara"
+        ]
+      },
+      {
         "ja": "wwwww",
         "en": "wwwww",
         "ja_typings": [
           "wwwww"
-        ]
-      },
-      {
-        "ja": "(笑)",
-        "en": "(lol)",
-        "ja_typings": [
-          "wara"
         ]
       },
       {
@@ -29436,7 +29436,6 @@
         "ja": "DeNA",
         "en": "DeNA",
         "ja_typings": [
-          "dena",
           "di-i-enue-"
         ]
       }
@@ -29969,10 +29968,10 @@
         ]
       },
       {
-        "ja": "上の",
-        "en": "Ueno",
+        "ja": "黒幕",
+        "en": "Kuromaku",
         "ja_typings": [
-          "ueno"
+          "kuromaku"
         ]
       }
     ],
