@@ -4,6 +4,12 @@ on:
   push:
     tags:
       - 'v*'
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag to build (e.g. v0.6.0)'
+        required: true
+        type: string
 
 env:
   CARGO_TERM_COLOR: always
@@ -43,13 +49,15 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.tag || github.ref }}
       - name: Install Rust
         uses: dtolnay/rust-toolchain@stable
         with:
           targets: ${{ matrix.target }}
-      - name: Install speech-dispatcher headers (Linux gnu, tts crate)
+      - name: Install Linux audio + TTS headers (libasound2-dev for rodio, libspeechd-dev for tts)
         if: matrix.target == 'x86_64-unknown-linux-gnu'
-        run: sudo apt-get update && sudo apt-get install -y libspeechd-dev
+        run: sudo apt-get update && sudo apt-get install -y libasound2-dev libspeechd-dev
       - name: Build
         run: cargo build --release --target ${{ matrix.target }}
       - name: Strip binary (Unix)
@@ -79,6 +87,7 @@ jobs:
       - name: Publish to GitHub Releases
         uses: softprops/action-gh-release@v2
         with:
+          tag_name: ${{ github.event.inputs.tag || github.ref_name }}
           files: dist/*
           generate_release_notes: true
           fail_on_unmatched_files: true
