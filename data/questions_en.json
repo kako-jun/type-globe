@@ -2300,36 +2300,36 @@
     "id": "q0057",
     "genre": "geography",
     "question_text": {
-      "ja": "南アメリカ大陸で話されている主な言語はどれか",
-      "en": "What is the main language spoken in most of South America?"
+      "ja": "世界で最も島が多いとされる国 (約 17,000島) は?",
+      "en": "Which country has the most islands (about 17,000)?"
     },
     "choices": [
       {
-        "ja": "スペイン語",
-        "en": "Spanish",
+        "ja": "インドネシア",
+        "en": "Indonesia",
         "ja_typings": [
-          "supeingo"
+          "indoneshia"
         ]
       },
       {
-        "ja": "ポルトガル語",
-        "en": "Portuguese",
+        "ja": "フィリピン",
+        "en": "Philippines",
         "ja_typings": [
-          "porutogarugo"
+          "firipin"
         ]
       },
       {
-        "ja": "英語",
-        "en": "English",
+        "ja": "日本",
+        "en": "Japan",
         "ja_typings": [
-          "eigo"
+          "nihon"
         ]
       },
       {
-        "ja": "フランス語",
-        "en": "French",
+        "ja": "グリーンランド",
+        "en": "Greenland",
         "ja_typings": [
-          "furansugo"
+          "guri-nrando"
         ]
       }
     ],
@@ -5015,36 +5015,36 @@
     "id": "q0123",
     "genre": "programming",
     "question_text": {
-      "ja": "Node.js の標準パッケージマネージャは？",
-      "en": "What is the default package manager for Node.js?"
+      "ja": "Java の代表的なビルド・依存管理ツールは？",
+      "en": "Which is a representative build and dependency management tool for Java?"
     },
     "choices": [
       {
-        "ja": "npm",
-        "en": "npm",
+        "ja": "Maven",
+        "en": "Maven",
         "ja_typings": [
-          "npm"
+          "maven"
         ]
       },
       {
-        "ja": "pip",
-        "en": "pip",
+        "ja": "Gradle",
+        "en": "Gradle",
         "ja_typings": [
-          "pip"
+          "gradle"
         ]
       },
       {
-        "ja": "Cargo",
-        "en": "Cargo",
+        "ja": "Ant",
+        "en": "Ant",
         "ja_typings": [
-          "cargo"
+          "ant"
         ]
       },
       {
-        "ja": "Composer",
-        "en": "Composer",
+        "ja": "Make",
+        "en": "Make",
         "ja_typings": [
-          "composer"
+          "make"
         ]
       }
     ],
@@ -6538,36 +6538,36 @@
     "id": "q0160",
     "genre": "programming",
     "question_text": {
-      "ja": "コンテナ仮想化の事実上の標準ツールは？",
-      "en": "What is the de facto container virtualization tool?"
+      "ja": "JavaScript の代表的なモジュールバンドラは？",
+      "en": "Which is a representative module bundler for JavaScript?"
     },
     "choices": [
       {
-        "ja": "Docker",
-        "en": "Docker",
+        "ja": "Webpack",
+        "en": "Webpack",
         "ja_typings": [
-          "docker"
+          "webpack"
         ]
       },
       {
-        "ja": "VirtualBox",
-        "en": "VirtualBox",
+        "ja": "Vite",
+        "en": "Vite",
         "ja_typings": [
-          "virtualbox"
+          "vite"
         ]
       },
       {
-        "ja": "VMware",
-        "en": "VMware",
+        "ja": "Rollup",
+        "en": "Rollup",
         "ja_typings": [
-          "vmware"
+          "rollup"
         ]
       },
       {
-        "ja": "QEMU",
-        "en": "QEMU",
+        "ja": "Parcel",
+        "en": "Parcel",
         "ja_typings": [
-          "qemu"
+          "parcel"
         ]
       }
     ],
@@ -6620,10 +6620,17 @@
     "id": "q0162",
     "genre": "programming",
     "question_text": {
-      "ja": "REST API で「リソースを取得する」HTTP メソッドは？",
-      "en": "Which HTTP method retrieves a resource in REST?"
+      "ja": "REST API でリソースを削除する HTTP メソッドは？",
+      "en": "Which HTTP method deletes a resource in REST API?"
     },
     "choices": [
+      {
+        "ja": "DELETE",
+        "en": "DELETE",
+        "ja_typings": [
+          "delete"
+        ]
+      },
       {
         "ja": "GET",
         "en": "GET",
@@ -6643,13 +6650,6 @@
         "en": "PUT",
         "ja_typings": [
           "put"
-        ]
-      },
-      {
-        "ja": "DELETE",
-        "en": "DELETE",
-        "ja_typings": [
-          "delete"
         ]
       }
     ],
@@ -7774,36 +7774,37 @@
     "id": "q0190",
     "genre": "web_development",
     "question_text": {
-      "ja": "HTTPS で通信を暗号化するプロトコルは?",
-      "en": "Which protocol encrypts HTTPS communication?"
+      "ja": "Twitter (現 X) が公開した代表的な CSS フレームワークは?",
+      "en": "Which popular CSS framework was released by Twitter (now X)?"
     },
     "choices": [
       {
-        "ja": "TLS",
-        "en": "TLS",
+        "ja": "Bootstrap",
+        "en": "Bootstrap",
         "ja_typings": [
-          "tls"
+          "bootstrap"
         ]
       },
       {
-        "ja": "SSH",
-        "en": "SSH",
+        "ja": "Tailwind CSS",
+        "en": "Tailwind CSS",
         "ja_typings": [
-          "ssh"
+          "tailwindcss",
+          "tailwind css"
         ]
       },
       {
-        "ja": "FTP",
-        "en": "FTP",
+        "ja": "Bulma",
+        "en": "Bulma",
         "ja_typings": [
-          "ftp"
+          "bulma"
         ]
       },
       {
-        "ja": "SMTP",
-        "en": "SMTP",
+        "ja": "Foundation",
+        "en": "Foundation",
         "ja_typings": [
-          "smtp"
+          "foundation"
         ]
       }
     ],
@@ -27092,36 +27093,36 @@
     "id": "q0660",
     "genre": "general_knowledge",
     "question_text": {
-      "ja": "万有引力を発見した物理学者は?",
-      "en": "Which physicist discovered universal gravitation?"
+      "ja": "「ノーベル賞」を創設したスウェーデンの実業家・発明家は?",
+      "en": "Which Swedish industrialist and inventor founded the Nobel Prize?"
     },
     "choices": [
       {
-        "ja": "ニュートン",
-        "en": "Isaac Newton",
+        "ja": "アルフレッド・ノーベル",
+        "en": "Alfred Nobel",
         "ja_typings": [
-          "nyu-ton"
+          "arufureddono-beru"
         ]
       },
       {
-        "ja": "ガリレオ",
-        "en": "Galileo Galilei",
+        "ja": "トーマス・エジソン",
+        "en": "Thomas Edison",
         "ja_typings": [
-          "garireo"
+          "to-masuejison"
         ]
       },
       {
-        "ja": "ケプラー",
-        "en": "Johannes Kepler",
-        "ja_typings": [
-          "kepura-"
-        ]
-      },
-      {
-        "ja": "アインシュタイン",
+        "ja": "アルバート・アインシュタイン",
         "en": "Albert Einstein",
         "ja_typings": [
-          "ainshutain"
+          "aruba-toainshutain"
+        ]
+      },
+      {
+        "ja": "マリー・キュリー",
+        "en": "Marie Curie",
+        "ja_typings": [
+          "mari-kyuri-"
         ]
       }
     ],
@@ -27133,37 +27134,36 @@
     "id": "q0661",
     "genre": "general_knowledge",
     "question_text": {
-      "ja": "世界で最も高い山は?",
-      "en": "What is the tallest mountain in the world?"
+      "ja": "アジアで初めて夏季オリンピックが開催された年は?",
+      "en": "In which year was the first Summer Olympics held in Asia?"
     },
     "choices": [
       {
-        "ja": "エベレスト",
-        "en": "Mount Everest",
+        "ja": "1964年",
+        "en": "1964",
         "ja_typings": [
-          "eberesuto"
+          "1964nen"
         ]
       },
       {
-        "ja": "K2",
-        "en": "K2",
+        "ja": "1956年",
+        "en": "1956",
         "ja_typings": [
-          "k2",
-          "ke-tsu-"
+          "1956nen"
         ]
       },
       {
-        "ja": "キリマンジャロ",
-        "en": "Kilimanjaro",
+        "ja": "1968年",
+        "en": "1968",
         "ja_typings": [
-          "kirimanjaro"
+          "1968nen"
         ]
       },
       {
-        "ja": "モンブラン",
-        "en": "Mont Blanc",
+        "ja": "1972年",
+        "en": "1972",
         "ja_typings": [
-          "monburan"
+          "1972nen"
         ]
       }
     ],
@@ -27175,36 +27175,36 @@
     "id": "q0662",
     "genre": "general_knowledge",
     "question_text": {
-      "ja": "世界で最も長い川は?",
-      "en": "What is the longest river in the world?"
+      "ja": "世界一深いとされる海溝の名前は?",
+      "en": "What is the name of the deepest known oceanic trench?"
     },
     "choices": [
       {
-        "ja": "ナイル川",
-        "en": "Nile River",
+        "ja": "マリアナ海溝",
+        "en": "Mariana Trench",
         "ja_typings": [
-          "nairugawa"
+          "marianakaikou"
         ]
       },
       {
-        "ja": "アマゾン川",
-        "en": "Amazon River",
+        "ja": "日本海溝",
+        "en": "Japan Trench",
         "ja_typings": [
-          "amazongawa"
+          "nihonkaikou"
         ]
       },
       {
-        "ja": "長江",
-        "en": "Yangtze River",
+        "ja": "プエルトリコ海溝",
+        "en": "Puerto Rico Trench",
         "ja_typings": [
-          "choukou"
+          "puerutorikokaikou"
         ]
       },
       {
-        "ja": "ミシシッピ川",
-        "en": "Mississippi River",
+        "ja": "トンガ海溝",
+        "en": "Tonga Trench",
         "ja_typings": [
-          "mishishippigawa"
+          "tongakaikou"
         ]
       }
     ],
@@ -27298,36 +27298,36 @@
     "id": "q0665",
     "genre": "general_knowledge",
     "question_text": {
-      "ja": "イタリア発祥のパスタ料理は?",
-      "en": "Which pasta dish originated in Italy?"
+      "ja": "ボルシチの鮮やかな赤色を引き出す根菜は?",
+      "en": "Which root vegetable gives borscht its vivid red color?"
     },
     "choices": [
       {
-        "ja": "カルボナーラ",
-        "en": "carbonara",
+        "ja": "ビーツ",
+        "en": "Beetroot",
         "ja_typings": [
-          "karubona-ra"
+          "bi-tsu"
         ]
       },
       {
-        "ja": "パエリア",
-        "en": "paella",
+        "ja": "トマト",
+        "en": "Tomato",
         "ja_typings": [
-          "paeria"
+          "tomato"
         ]
       },
       {
-        "ja": "ボルシチ",
-        "en": "borscht",
+        "ja": "赤キャベツ",
+        "en": "Red cabbage",
         "ja_typings": [
-          "borushichi"
+          "akakyabetsu"
         ]
       },
       {
-        "ja": "クスクス",
-        "en": "couscous",
+        "ja": "紅大根",
+        "en": "Red radish",
         "ja_typings": [
-          "kusukusu"
+          "benidaikon"
         ]
       }
     ],
@@ -27874,36 +27874,36 @@
     "id": "q0679",
     "genre": "general_knowledge",
     "question_text": {
-      "ja": "ペニシリンを発見した科学者は?",
-      "en": "Which scientist discovered penicillin?"
+      "ja": "ペスト菌を発見し、北里研究所を創設した日本人医学者は?",
+      "en": "Which Japanese physician discovered the plague bacterium and founded the Kitasato Institute?"
     },
     "choices": [
       {
-        "ja": "フレミング",
-        "en": "Alexander Fleming",
+        "ja": "北里柴三郎",
+        "en": "Shibasaburo Kitasato",
         "ja_typings": [
-          "furemingu"
+          "kitasatoshibasaburou"
         ]
       },
       {
-        "ja": "パスツール",
-        "en": "Louis Pasteur",
+        "ja": "野口英世",
+        "en": "Hideyo Noguchi",
         "ja_typings": [
-          "pasutsu-ru"
+          "noguchihideyo"
         ]
       },
       {
-        "ja": "コッホ",
-        "en": "Robert Koch",
+        "ja": "志賀潔",
+        "en": "Kiyoshi Shiga",
         "ja_typings": [
-          "kohho"
+          "shigakiyoshi"
         ]
       },
       {
-        "ja": "メンデル",
-        "en": "Gregor Mendel",
+        "ja": "高峰譲吉",
+        "en": "Jokichi Takamine",
         "ja_typings": [
-          "menderu"
+          "takaminejoukichi"
         ]
       }
     ],
