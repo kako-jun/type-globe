@@ -16902,7 +16902,7 @@
     "id": "q0412",
     "genre": "game",
     "question_text": {
-      "ja": "カプコンが展開する村人狩猟生活がテーマのアクションシリーズは?",
+      "ja": "カプコンが展開するモンスター狩猟がテーマのアクションシリーズは?",
       "en": "Which Capcom action series is themed on monster hunting?"
     },
     "choices": [
@@ -28018,10 +28018,10 @@
         ]
       },
       {
-        "ja": "ウメ科",
-        "en": "Prunus family",
+        "ja": "マメ科",
+        "en": "Fabaceae",
         "ja_typings": [
-          "umeka"
+          "mameka"
         ]
       },
       {
