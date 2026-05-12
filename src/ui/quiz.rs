@@ -4,7 +4,10 @@ use crate::io::Storage;
 use crate::jiwa_core::{lerp_rgb, RevealHandle, RevealOpts, Rgb};
 use crate::types::{Language, Question, ScoreEntry};
 use crate::ui::inline_code;
-use crate::ui::{HelpEntry, HelpLine, InputChannel, PaneFrame, RecvOutcome, StatusPane};
+use crate::ui::{
+    DemoInputSource, HelpEntry, HelpLine, InputChannel, KeyEventSource, MultiplexedSource,
+    PaneFrame, RecvOutcome, StatusPane,
+};
 use crossterm::{
     event::{KeyCode, KeyEvent, KeyModifiers},
     execute,
@@ -92,6 +95,43 @@ enum Phase {
     NamingForRecord,
 }
 
+/// Result of one demo session (#106 review: M-2/S-1).
+///
+/// The caller (`run_quiz_demo` in `main.rs`) needs to distinguish three
+/// outcomes so it can react correctly inside `--demo-loop`:
+///   - normal completion → keep looping
+///   - the user pressed Esc / Ctrl+C → break out of the outer loop too
+///   - no typing target could be derived for the current question
+///     (data hole) → count it toward the consecutive-abort breaker so a
+///     pathological pool can't busy-loop the kiosk forever
+///
+/// Carrying these flags as data (rather than printing `eprintln!`
+/// straight from inside the alt screen, which used to corrupt the TUI
+/// output) lets `run_quiz_demo` emit warnings *after* the terminal has
+/// been restored.
+#[derive(Debug, Clone, Default)]
+pub struct DemoOutcome {
+    /// Final score of the run. Currently unused by `run_quiz_demo` (the
+    /// kiosk demo intentionally discards scores) but kept on the
+    /// outcome so future callers — e.g. a "demo + record to disk"
+    /// mode — don't have to break the return type again.
+    #[allow(dead_code)]
+    pub score: u32,
+    /// `true` when the player hit Esc / Ctrl+C during the session.
+    pub user_aborted: bool,
+    /// `true` when the demo had to abort the session because no typing
+    /// target was available for the current question (ja_typings empty
+    /// and label not convertible). The loop driver should warn the user
+    /// after leaving the alt screen, and break after enough consecutive
+    /// hits to avoid an infinite kiosk loop on a broken question pool.
+    pub no_target_abort: bool,
+    /// Optional human-readable warnings collected during the run that
+    /// the caller should `eprintln!` *after* the alt screen has been
+    /// torn down. Currently used for `persist_record` failures so the
+    /// disk error reaches the user without corrupting the TUI.
+    pub warnings: Vec<String>,
+}
+
 pub struct QuizUI {
     quiz_game: QuizGame,
     /// Characters the player has typed for the current question. Per
@@ -129,6 +169,23 @@ pub struct QuizUI {
     /// Sound-effect engine (Issue #73). `None` when audio output is
     /// unavailable — Quiz still works silently in that case.
     cues: Option<CueEngine>,
+    /// Warnings collected during the run that must be surfaced to the
+    /// user *after* the alt screen has been torn down (M-2). Examples:
+    /// `persist_record` disk-write failures. Plain `eprintln!` while
+    /// the alt screen is active would either be hidden by ratatui's
+    /// next redraw or visibly tear the TUI when it scrolls into view.
+    pending_warnings: Vec<String>,
+    /// Set to `true` when the demo path discovered the current question
+    /// has no usable typing target. Signals `run_app` to break out of
+    /// the loop without delivering more synthetic input. Distinct from
+    /// `user_aborted` so the loop driver can apply the consecutive-
+    /// abort breaker (M-3).
+    no_target_abort: bool,
+    /// Set to `true` when the player pressed Esc / Ctrl+C. Propagated
+    /// up through `DemoOutcome` so `--demo-loop` can break the outer
+    /// loop too (S-1) rather than restarting another session right
+    /// after the user already asked to leave.
+    user_aborted: bool,
 }
 
 impl QuizUI {
@@ -138,6 +195,23 @@ impl QuizUI {
     pub fn from_pool(pool: &[Question], language: Language, records_file_path: String) -> Self {
         let mut quiz_game = QuizGame::from_pool(pool, language);
         quiz_game.start();
+        Self::wrap_started_game(quiz_game, records_file_path)
+    }
+
+    /// Variant of [`from_pool`] that lets the caller pin the run length.
+    /// The auto-demo (#106) uses this to honour `--demo-count`.
+    pub fn from_pool_with_count(
+        pool: &[Question],
+        language: Language,
+        records_file_path: String,
+        count: usize,
+    ) -> Self {
+        let mut quiz_game = QuizGame::from_pool_with_count(pool, language, count);
+        quiz_game.start();
+        Self::wrap_started_game(quiz_game, records_file_path)
+    }
+
+    fn wrap_started_game(quiz_game: QuizGame, records_file_path: String) -> Self {
         Self {
             quiz_game,
             input_buffer: String::new(),
@@ -153,6 +227,9 @@ impl QuizUI {
             rejected_char: None,
             reject_flash_until: None,
             cues: CueEngine::new(),
+            pending_warnings: Vec::new(),
+            no_target_abort: false,
+            user_aborted: false,
         }
     }
 
@@ -169,18 +246,64 @@ impl QuizUI {
         let backend = CrosstermBackend::new(stdout);
         let mut terminal = Terminal::new(backend)?;
 
-        let result = self.run_app(&mut terminal);
+        let input = InputChannel::spawn();
+        let result = self.run_app(&mut terminal, &input, None);
 
         disable_raw_mode()?;
         execute!(terminal.backend_mut(), LeaveAlternateScreen)?;
         terminal.show_cursor()?;
 
+        // M-2: flush warnings (e.g. persist_record disk failure) only
+        // after the alt screen is gone so the message survives in the
+        // user's scrollback.
+        for w in self.pending_warnings.drain(..) {
+            eprintln!("{w}");
+        }
+
         result
     }
 
-    fn run_app(
+    /// Run the quiz under auto-demo control (#106). The `demo` source
+    /// drives typing; a real-keyboard `InputChannel` is multiplexed on
+    /// top so Esc / Ctrl+C still aborts. The session itself is unchanged —
+    /// reveal, sound, auto-confirm and result screen all flow through
+    /// the same code path as a human run.
+    ///
+    /// Returns a [`DemoOutcome`] carrying the score plus abort flags and
+    /// any deferred warnings the caller should print after restoring
+    /// the terminal (M-2/S-1).
+    pub fn run_with_demo(
+        &mut self,
+        demo: DemoInputSource,
+    ) -> Result<DemoOutcome, Box<dyn std::error::Error>> {
+        enable_raw_mode()?;
+        let mut stdout = io::stdout();
+        execute!(stdout, EnterAlternateScreen)?;
+        let backend = CrosstermBackend::new(stdout);
+        let mut terminal = Terminal::new(backend)?;
+
+        let human = InputChannel::spawn();
+        let source = MultiplexedSource { a: human, b: demo };
+        let result = self.run_app(&mut terminal, &source, Some(&source.b));
+
+        disable_raw_mode()?;
+        execute!(terminal.backend_mut(), LeaveAlternateScreen)?;
+        terminal.show_cursor()?;
+
+        let score = result?;
+        Ok(DemoOutcome {
+            score,
+            user_aborted: self.user_aborted,
+            no_target_abort: self.no_target_abort,
+            warnings: std::mem::take(&mut self.pending_warnings),
+        })
+    }
+
+    fn run_app<S: KeyEventSource>(
         &mut self,
         terminal: &mut Terminal<CrosstermBackend<io::Stdout>>,
+        input: &S,
+        demo: Option<&DemoInputSource>,
     ) -> Result<u32, Box<dyn std::error::Error>> {
         // Redraw cadence is short enough that the typewriter / fade
         // reveal (#19/#20/#21) renders smoothly (~33 fps). The actual
@@ -189,10 +312,52 @@ impl QuizUI {
         // without waiting for the next redraw tick.
         const REDRAW: Duration = Duration::from_millis(30);
 
-        let input = InputChannel::spawn();
+        // Track which question the demo has already been primed for, so
+        // we re-prime exactly once per question (right after the reveal
+        // anchor is established for the new question).
+        let mut demo_primed_for: Option<usize> = None;
 
         loop {
             terminal.draw(|f| self.ui(f))?;
+
+            // Demo: keep the synthetic input source pointed at the
+            // currently-active question. We re-prime whenever the
+            // question index changes; once the buffer is consumed the
+            // session will auto-confirm and move on naturally via the
+            // existing correct-answer path.
+            if let Some(demo) = demo {
+                if self.phase == Phase::Playing {
+                    let (current_idx, _) = self.quiz_game.get_progress();
+                    if demo_primed_for != Some(current_idx) {
+                        match self.demo_target_for_current_question() {
+                            Some(target) => {
+                                demo.set_target(&target);
+                                demo_primed_for = Some(current_idx);
+                            }
+                            None => {
+                                // R-2 フェイルセーフ (M-2): 該当
+                                // question の打鍵対象が生成できない
+                                // (ja_typings 未登録 + 漢字ラベルなど)。
+                                // MultiplexedSource は human 入力を
+                                // 待ち続けるため、無人だと無限ハングに
+                                // 倒れる。session を即時中断する。
+                                //
+                                // 警告メッセージは alt screen 内で
+                                // `eprintln!` すると次の redraw に
+                                // 上書きされたり TUI を縦に汚すので、
+                                // `pending_warnings` に積んで
+                                // `run_with_demo` が alt screen を
+                                // 抜けた後に呼び出し側で表示する。
+                                self.pending_warnings.push(format!(
+                                    "warn: demo skipped — no typing target for question (idx {current_idx}); aborting session"
+                                ));
+                                self.no_target_abort = true;
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
 
             match input.recv_until(REDRAW) {
                 RecvOutcome::Key(key) => {
@@ -207,20 +372,59 @@ impl QuizUI {
                 }
                 RecvOutcome::Disconnected => break, // Worker thread exited.
             }
+
+            // Demo: in Summary / Naming phases, the session has nothing
+            // left to do — exit immediately so the demo loop driver can
+            // start the next run (or end if non-looping).
+            if demo.is_some() && matches!(self.phase, Phase::Summary | Phase::NamingForRecord) {
+                break;
+            }
         }
-        // `input` drops here → shutdown flag flipped → worker joins.
 
         Ok(self.quiz_game.get_final_score())
+    }
+
+    /// Pick the string the auto-demo should type for the current
+    /// question. Returns the first entry of
+    /// `current_correct_typing_candidates()`, which is the same set the
+    /// input validator (`is_valid_correct_typed_prefix`) checks against
+    /// — so whatever we hand the demo here is guaranteed to be
+    /// accepted by the prefix matcher.
+    ///
+    /// Returns `None` when no candidate exists (e.g. `ja_typings` empty
+    /// and the JA label has no Hepburn conversion). The caller is
+    /// expected to treat `None` as "ja_typings 未登録の問題" and abort
+    /// the demo session — otherwise the synthetic source would type a
+    /// string the validator rejects, causing an infinite mistype flash.
+    ///
+    /// Note (S-3/S-6): an earlier revision had an `en` label fallback
+    /// (lowercase + whitespace stripped) so demo could at least "type
+    /// something" when typing candidates were missing. That fallback
+    /// was removed because the typed string then bypassed the
+    /// validator's candidate list, producing exactly the infinite-loop
+    /// failure mode the fallback was supposed to avoid.
+    fn demo_target_for_current_question(&self) -> Option<String> {
+        self.quiz_game
+            .current_correct_typing_candidates()
+            .into_iter()
+            .find(|s| !s.is_empty())
     }
 
     fn handle_key(&mut self, key: KeyEvent) -> bool {
         // Quit keys: Esc, and Ctrl+C as the standard terminal escape.
         // Printable characters (including 'q') are part of typed selection
         // and must reach the buffer.
+        //
+        // S-1: record the explicit user abort so `run_with_demo` can
+        // forward the signal up to the `--demo-loop` driver and break
+        // the outer loop, rather than restarting another session right
+        // after the user already asked to leave.
         if matches!(key.code, KeyCode::Esc) {
+            self.user_aborted = true;
             return true;
         }
         if matches!(key.code, KeyCode::Char('c')) && key.modifiers.contains(KeyModifiers::CONTROL) {
+            self.user_aborted = true;
             return true;
         }
 
@@ -292,10 +496,13 @@ impl QuizUI {
                     return false;
                 }
                 if let Err(err) = self.persist_record() {
-                    // Surfacing the failure inline keeps the run from
-                    // silently dropping on a disk error — Esc / next Enter
-                    // still exits regardless.
-                    eprintln!("warning: failed to save records: {err}");
+                    // M-2: alt screen 内で `eprintln!` すると次の redraw
+                    // で隠れたり画面が縦に汚れるので、警告を
+                    // `pending_warnings` に積んで run path 終了後に
+                    // 呼び出し側で表示する。Esc / 次の Enter で
+                    // session を抜ける動作は維持する。
+                    self.pending_warnings
+                        .push(format!("warning: failed to save records: {err}"));
                     return false;
                 }
                 self.saved = true;
@@ -876,6 +1083,132 @@ mod tests {
             .filter(|s| s.style.fg == Some(INLINE_CODE_COLOR))
             .collect();
         assert_eq!(code_spans.len(), 2);
+    }
+
+    /// Build a single-question `QuizUI` for the demo-target fallback tests.
+    /// `ja_typings`, `ja` label, `en` label の任意組合せを差し込んで
+    /// `demo_target_for_current_question()` の挙動を直接観察する。
+    fn make_quiz_ui_with_choice(
+        ja_label: &str,
+        en_label: &str,
+        ja_typings: Vec<String>,
+        language: Language,
+    ) -> QuizUI {
+        use crate::types::{Choice, Question};
+        use std::collections::HashMap;
+
+        let mut labels = HashMap::new();
+        if !ja_label.is_empty() {
+            labels.insert("ja".to_string(), ja_label.to_string());
+        }
+        if !en_label.is_empty() {
+            labels.insert("en".to_string(), en_label.to_string());
+        }
+        let correct = Choice { labels, ja_typings };
+        // Add a second dummy choice so multiple-choice display still works
+        // in case any code path peeks at choices.len(); not strictly
+        // required for the target lookup which only reads
+        // correct_answer_index.
+        let dummy = Choice {
+            labels: HashMap::from([("ja".to_string(), "dummy".to_string())]),
+            ja_typings: vec!["dummy".to_string()],
+        };
+
+        let mut question_text = HashMap::new();
+        question_text.insert("ja".to_string(), "テスト".to_string());
+        question_text.insert("en".to_string(), "test".to_string());
+
+        let question = Question {
+            id: "q-demo-fallback".into(),
+            genre: "test".into(),
+            question_text,
+            question_text_reading: HashMap::new(),
+            choices: vec![correct, dummy],
+            correct_answer_index: 0,
+            image_path: None,
+            ja_reviewed: false,
+        };
+
+        QuizUI::from_pool_with_count(&[question], language, "/tmp/records-demo.yaml".into(), 1)
+    }
+
+    #[test]
+    fn demo_target_returns_none_when_ja_typings_empty_and_label_not_convertible() {
+        // S-3/S-6: 漢字のみの ja ラベル + ja_typings 空 のとき、
+        // `current_correct_typing_candidates` は empty を返す。
+        // 旧実装は en ラベルから「打鍵だけ進む」フォールバックを生成
+        // していたが、その文字列は validator の candidate list には
+        // 含まれず無限ミスタイプフラッシュの原因になっていた。
+        // 現実装ではこのケースを None として返し、run_with_demo 側で
+        // session abort に倒す。
+        let ui = make_quiz_ui_with_choice("漢字", "Hello World", Vec::new(), Language::Japanese);
+        assert!(
+            ui.demo_target_for_current_question().is_none(),
+            "ja_typings 空 + 変換不能ラベルは fallback せず None"
+        );
+    }
+
+    #[test]
+    fn demo_target_returns_none_when_both_typings_and_en_empty() {
+        // S-3/S-6: ja_typings 空 + ja は変換不能の漢字のみ + en ラベル空 =
+        // どこからも打鍵対象を取り出せない。run_with_demo 側でこれを
+        // 検出して session を中断する。
+        let ui = make_quiz_ui_with_choice("漢字", "", Vec::new(), Language::Japanese);
+        assert!(
+            ui.demo_target_for_current_question().is_none(),
+            "no usable target → None"
+        );
+    }
+
+    #[test]
+    fn handle_key_esc_sets_user_aborted_flag() {
+        // S-7: pressing Esc must flag `user_aborted` so run_with_demo
+        // propagates the abort up to the --demo-loop driver, which can
+        // then break the outer loop rather than restarting another
+        // session right after the user asked to leave.
+        let mut ui = make_quiz_ui_with_choice(
+            "東京",
+            "Tokyo",
+            vec!["tokyo".to_string()],
+            Language::Japanese,
+        );
+        assert!(!ui.user_aborted, "user_aborted starts false");
+        let esc = KeyEvent::new(KeyCode::Esc, KeyModifiers::NONE);
+        let quit = ui.handle_key(esc);
+        assert!(quit, "Esc must request quit");
+        assert!(ui.user_aborted, "Esc must record user abort");
+    }
+
+    #[test]
+    fn handle_key_ctrl_c_sets_user_aborted_flag() {
+        // S-7: Ctrl+C is the other documented quit binding; it must
+        // set the same flag so the loop driver treats it identically.
+        let mut ui = make_quiz_ui_with_choice(
+            "東京",
+            "Tokyo",
+            vec!["tokyo".to_string()],
+            Language::Japanese,
+        );
+        let ctrl_c = KeyEvent::new(KeyCode::Char('c'), KeyModifiers::CONTROL);
+        let quit = ui.handle_key(ctrl_c);
+        assert!(quit, "Ctrl+C must request quit");
+        assert!(ui.user_aborted, "Ctrl+C must record user abort");
+    }
+
+    #[test]
+    fn demo_target_uses_ja_typings_when_registered() {
+        // ja_typings が登録されていれば通常パスでそれを採用する。
+        // S-3/S-6 の fallback 撤廃でも通常パスは壊れていないことを保証。
+        let ui = make_quiz_ui_with_choice(
+            "東京",
+            "Tokyo",
+            vec!["tokyo".to_string()],
+            Language::Japanese,
+        );
+        let target = ui
+            .demo_target_for_current_question()
+            .expect("ja_typings path must yield a target");
+        assert_eq!(target, "tokyo");
     }
 
     #[test]
