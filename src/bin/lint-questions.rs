@@ -19,6 +19,10 @@ mod types;
 #[allow(dead_code)]
 mod romaji;
 
+#[path = "../io/normalize.rs"]
+#[allow(dead_code)]
+mod normalize;
+
 #[path = "../io/validator.rs"]
 mod validator;
 

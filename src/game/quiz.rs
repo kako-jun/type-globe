@@ -1,3 +1,4 @@
+use crate::io::normalize::canonical_romaji;
 use crate::io::DataLoader;
 use crate::types::{Language, Question};
 use rand::seq::SliceRandom;
@@ -97,6 +98,11 @@ impl QuizGame {
     /// question. Per Issue #70 the player can only advance by typing the
     /// correct choice — wrong choices' typings are not accepted, so the
     /// candidate list is intentionally narrow.
+    ///
+    /// Returned strings are the *original* lowercased candidates, not the
+    /// canonical form. Callers that compare against player input should
+    /// normalise both sides via `canonical_romaji` (see #96); the raw form
+    /// is still useful for display and length-based metrics.
     pub fn current_correct_typing_candidates(&self) -> Vec<String> {
         let Some(question) = self.get_current_question() else {
             return Vec::new();
@@ -118,22 +124,35 @@ impl QuizGame {
     /// for the active question. Empty input is always valid. Anything that
     /// diverges from the correct prefix is rejected like a mistype, which
     /// is the contract Issue #70 asks for.
+    ///
+    /// Comparison is done on the *canonical* romaji form (#96), so the
+    /// player can type either Hepburn (`shi`/`chi`/`tsu`/`wo`) or kunrei
+    /// (`si`/`ti`/`tu`/`o`) regardless of which variant was registered in
+    /// `ja_typings`.
     pub fn is_valid_correct_typed_prefix(&self, typed: &str) -> bool {
         if typed.is_empty() {
             return true;
         }
-        let typed = typed.to_lowercase();
+        let typed_canon = canonical_romaji(typed);
         self.current_correct_typing_candidates()
             .iter()
-            .any(|candidate| candidate.starts_with(&typed))
+            .any(|candidate| canonical_romaji(candidate).starts_with(&typed_canon))
     }
 
     /// Resolve the typed text against the current question's choices and
     /// answer with the matching index. Per `docs/spec.md`, only an **exact**
     /// match counts — prefix matches do nothing (so `mov` does not auto-pick
     /// `move`). A non-matching string yields an incorrect answer.
+    ///
+    /// Equality is checked on the canonical romaji form (#96): a player
+    /// typing `tsuru` against a `turu` candidate (or vice versa) is treated
+    /// as an exact match. CPM accounting uses the *player's* typed length,
+    /// which reflects actual keystrokes regardless of which variant the
+    /// data file happened to register.
     pub fn answer_question_typed(&mut self, typed: &str) -> Option<QuizResult> {
-        let typed = typed.to_lowercase();
+        let typed_lower = typed.to_lowercase();
+        let typed_canon = canonical_romaji(&typed_lower);
+        let typed_chars = typed_lower.chars().count() as u32;
         let matched = self.get_current_question().and_then(|question| {
             question
                 .choices
@@ -142,8 +161,8 @@ impl QuizGame {
                 .find_map(|(idx, choice)| {
                     DataLoader::get_choice_typing_texts(choice, &self.language)
                         .into_iter()
-                        .find(|candidate| candidate.to_lowercase() == typed)
-                        .map(|candidate| (idx, candidate.chars().count() as u32))
+                        .find(|candidate| canonical_romaji(candidate) == typed_canon)
+                        .map(|_| (idx, typed_chars))
                 })
         });
         // usize::MAX guarantees a non-match against any valid index.
@@ -623,6 +642,58 @@ mod tests {
         game.start();
         game.answer_question_typed("toukyou");
         assert_eq!(game.typed_correct_chars, 7);
+    }
+
+    #[test]
+    fn issue_96_accepts_hepburn_when_data_has_kunrei() {
+        // ja_typings に kunrei が登録されていても shi/chi/tsu の Hepburn が通る
+        let mut question = make_question(&["はし", "つる", "ちば", "おおさか"], 0);
+        question.choices[0].ja_typings = vec!["hasi".into()];
+        let game = QuizGame::new(vec![question], Language::Japanese);
+        assert!(game.is_valid_correct_typed_prefix("ha"));
+        assert!(game.is_valid_correct_typed_prefix("has"));
+        assert!(game.is_valid_correct_typed_prefix("hashi"));
+        assert!(game.is_valid_correct_typed_prefix("hasi"));
+    }
+
+    #[test]
+    fn issue_96_accepts_kunrei_when_data_has_hepburn() {
+        let mut question = make_question(&["ちば", "はし", "つる", "おおさか"], 0);
+        question.choices[0].ja_typings = vec!["chiba".into()];
+        let game = QuizGame::new(vec![question], Language::Japanese);
+        assert!(game.is_valid_correct_typed_prefix("chiba"));
+        assert!(game.is_valid_correct_typed_prefix("tiba"));
+    }
+
+    #[test]
+    fn issue_96_accepts_wo_for_o() {
+        // を が選択肢に含まれるケース。ja_typings に "kawao" だけ登録されていても "kawawo" が通る。
+        let mut question = make_question(&["かわを", "はし", "つる", "ちば"], 0);
+        question.choices[0].ja_typings = vec!["kawao".into()];
+        let game = QuizGame::new(vec![question], Language::Japanese);
+        assert!(game.is_valid_correct_typed_prefix("kawao"));
+        assert!(game.is_valid_correct_typed_prefix("kawawo"));
+    }
+
+    #[test]
+    fn issue_96_accepts_thi_variants() {
+        let mut question = make_question(&["パティ", "はし", "つる", "ちば"], 0);
+        question.choices[0].ja_typings = vec!["pathi".into()];
+        let game = QuizGame::new(vec![question], Language::Japanese);
+        assert!(game.is_valid_correct_typed_prefix("pathi"));
+        assert!(game.is_valid_correct_typed_prefix("patexi"));
+        assert!(game.is_valid_correct_typed_prefix("pateli"));
+    }
+
+    #[test]
+    fn issue_96_answer_typed_accepts_variants() {
+        // exact match レベルでも変換が効いていることを確認
+        let mut question = make_question(&["つる", "はし", "ちば", "おおさか"], 0);
+        question.choices[0].ja_typings = vec!["tsuru".into()];
+        let mut game = QuizGame::new(vec![question], Language::Japanese);
+        game.start();
+        let result = game.answer_question_typed("turu").expect("result");
+        assert!(result.is_correct);
     }
 
     #[test]

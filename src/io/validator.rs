@@ -12,6 +12,7 @@
 //! (e.g. exactly 4 choices), correct-index range checks, and other shape
 //! validation are out of scope and left to a separate validator.
 
+use super::normalize::canonical_romaji;
 use super::romaji::hiragana_to_hepburn_variants;
 use crate::types::{Choice, Question};
 
@@ -75,10 +76,14 @@ pub fn find_prefix_conflicts(questions: &[Question]) -> Vec<PrefixConflict> {
 fn typing_texts(choice: &Choice, language: &str) -> Vec<String> {
     match language {
         "ja" => {
+            // For #96: canonicalise every candidate before prefix comparison
+            // so that spelling variants (`shi`/`si`, `chi`/`ti`, …) don't
+            // produce false "conflict" reports — but a *real* conflict in
+            // canonical space still surfaces (e.g. `to` vs `tokyo`).
             let mut variants: Vec<String> = choice
                 .ja_typings
                 .iter()
-                .map(|typing| typing.to_lowercase())
+                .map(|typing| canonical_romaji(typing))
                 .collect();
             if !variants.is_empty() {
                 variants.sort();
@@ -89,12 +94,13 @@ fn typing_texts(choice: &Choice, language: &str) -> Vec<String> {
                 return variants;
             };
             if displayed.is_ascii() {
-                variants.push(displayed.to_lowercase());
+                variants.push(canonical_romaji(displayed));
             } else {
                 variants.extend(
                     hiragana_to_hepburn_variants(displayed)
                         .into_iter()
-                        .filter(|candidate| !candidate.is_empty()),
+                        .filter(|candidate| !candidate.is_empty())
+                        .map(|candidate| canonical_romaji(&candidate)),
                 );
             }
             variants.sort();
