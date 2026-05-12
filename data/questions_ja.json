@@ -3049,8 +3049,8 @@
         "en": "Test Driven Development",
         "ja": "テスト駆動開発",
         "ja_typings": [
-          "tesutokidokaihatsu",
-          "tesutokidoukaihatsu"
+          "tesutokudokaihatsu",
+          "tesutokudoukaihatsu"
         ]
       },
       {
