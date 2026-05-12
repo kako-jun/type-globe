@@ -361,6 +361,7 @@
         "en": "integers 0 to 4",
         "ja": "0から4の整数",
         "ja_typings": [
+          "0kara4noseisuu",
           "reikarayonnoseisuu"
         ]
       },
@@ -368,6 +369,7 @@
         "en": "integers 1 to 5",
         "ja": "1から5の整数",
         "ja_typings": [
+          "1kara5noseisuu",
           "ichikaragonoseisuu"
         ]
       },
@@ -375,6 +377,7 @@
         "en": "integers 0 to 5",
         "ja": "0から5の整数",
         "ja_typings": [
+          "0kara5noseisuu",
           "reikaragonoseisuu"
         ]
       },
@@ -382,6 +385,7 @@
         "en": "integers 1 to 4",
         "ja": "1から4の整数",
         "ja_typings": [
+          "1kara4noseisuu",
           "ichikarayonnoseisuu"
         ]
       }
@@ -589,8 +593,10 @@
         "en": "values are shared freely",
         "ja": "値は自由に共有される",
         "ja_typings": [
-          "chihajiyuunikyoyuusareru",
-          "chihajiyuunikyouyuusareru"
+          "ataihajiyuunikyouyuusareru",
+          "ataihajiyuunikyoyuusareru",
+          "chihajiyuunikyouyuusareru",
+          "chihajiyuunikyoyuusareru"
         ]
       },
       {
@@ -671,7 +677,8 @@
         "en": "nullable value",
         "ja": "null許容の値",
         "ja_typings": [
-          "nullno"
+          "nullkyoyonoatai",
+          "nullkyoyounoatai"
         ]
       },
       {
@@ -808,8 +815,8 @@
         "en": "growable array",
         "ja": "可変長の配列",
         "ja_typings": [
-          "kachokanonahairetsu",
-          "kachoukanounahairetsu"
+          "kahenchonohairetsu",
+          "kahenchounohairetsu"
         ]
       },
       {
@@ -919,6 +926,7 @@
         "en": "creates enum",
         "ja": "enumを作成",
         "ja_typings": [
+          "enumosakusei",
           "enumuosakusei"
         ]
       }
@@ -1030,8 +1038,8 @@
         "en": "strict equality",
         "ja": "厳密な等値",
         "ja_typings": [
-          "genmitsunadochi",
-          "genmitsunadouchi"
+          "genmitsunatochi",
+          "genmitsunatouchi"
         ]
       },
       {
@@ -1045,8 +1053,8 @@
         "en": "loose equality",
         "ja": "緩やかな等値",
         "ja_typings": [
-          "yuruyakanadochi",
-          "yuruyakanadouchi"
+          "yuruyakanatochi",
+          "yuruyakanatouchi"
         ]
       },
       {
@@ -1222,8 +1230,8 @@
         "en": "runs promises in series",
         "ja": "プロミスを順次実行",
         "ja_typings": [
-          "puromisuojunjinijikko",
-          "puromisuojunjinijikkou"
+          "puromisuojunjijikko",
+          "puromisuojunjijikkou"
         ]
       },
       {
@@ -1524,6 +1532,7 @@
         "en": "key and value",
         "ja": "キーと値",
         "ja_typings": [
+          "kitoatai",
           "kitochi"
         ]
       },
@@ -1531,6 +1540,7 @@
         "en": "index and value",
         "ja": "インデックスと値",
         "ja_typings": [
+          "indekkusutoatai",
           "indekusutochi"
         ]
       },
@@ -1614,6 +1624,7 @@
         "en": "hash value is zero",
         "ja": "ハッシュ値がゼロになる",
         "ja_typings": [
+          "hasshuataigazeroninaru",
           "hasshugazeroninaru"
         ]
       },
@@ -1753,7 +1764,7 @@
         "en": "all nodes equal",
         "ja": "すべてのノードが等しい",
         "ja_typings": [
-          "subetenodogahitoshii"
+          "subetenonodogahitoshii"
         ]
       },
       {
@@ -1806,6 +1817,7 @@
         "en": "random value",
         "ja": "ランダム値",
         "ja_typings": [
+          "randamuatai",
           "randamuchi"
         ]
       }
@@ -1829,6 +1841,7 @@
         "en": "adjacency list",
         "ja": "隣接リスト",
         "ja_typings": [
+          "rinsetsurisuto",
           "tonariairisuto"
         ]
       },
@@ -1836,6 +1849,8 @@
         "en": "adjacency matrix",
         "ja": "隣接行列",
         "ja_typings": [
+          "rinsetsugyoretsu",
+          "rinsetsugyouretsu",
           "tonariaigyoretsu",
           "tonariaigyouretsu"
         ]
@@ -1851,8 +1866,8 @@
         "en": "incidence matrix",
         "ja": "側面行列",
         "ja_typings": [
-          "sokushigyoretsu",
-          "sokushigyouretsu"
+          "sokumengyoretsu",
+          "sokumengyouretsu"
         ]
       }
     ],
@@ -1875,7 +1890,7 @@
         "en": "solving by storing subproblem results",
         "ja": "部分問題を保存して解く",
         "ja_typings": [
-          "bubunmondaiohozonshitekaiku"
+          "bubunmondaiohozonshitetoku"
         ]
       },
       {
@@ -1889,7 +1904,7 @@
         "en": "brute force search",
         "ja": "全探索",
         "ja_typings": [
-          "zenkensaku"
+          "zentansaku"
         ]
       },
       {
@@ -2025,7 +2040,8 @@
         "en": "topological order",
         "ja": "位相幾何学順序",
         "ja_typings": [
-          "isogakijun"
+          "isokikagakujunjo",
+          "isoukikagakujunjo"
         ]
       },
       {
@@ -2160,7 +2176,8 @@
         "en": "a data type",
         "ja": "データ型",
         "ja_typings": [
-          "detagata"
+          "detagata",
+          "detakata"
         ]
       },
       {
@@ -2191,7 +2208,9 @@
         "ja": "再帰を止める条件",
         "ja_typings": [
           "saikiotomerujoken",
-          "saikiotomerujouken"
+          "saikiotomerujouken",
+          "saikioyamerujoken",
+          "saikioyamerujouken"
         ]
       },
       {
@@ -2347,7 +2366,7 @@
         "en": "creating instances",
         "ja": "インスタンスを生成",
         "ja_typings": [
-          "insutansuosakusei"
+          "insutansuoseisei"
         ]
       }
     ],
@@ -2393,6 +2412,7 @@
         "en": "static typing",
         "ja": "静的型付け",
         "ja_typings": [
+          "seitekigatatsuke",
           "seitekigatazuke"
         ]
       }
@@ -2461,7 +2481,7 @@
         "en": "cannot be instantiated directly",
         "ja": "直接して記述化できない",
         "ja_typings": [
-          "chokusetsushitekiretsukadekinai"
+          "chokusetsushitekijutsukadekinai"
         ]
       },
       {
@@ -2506,15 +2526,15 @@
         "en": "contract of method signatures",
         "ja": "メソッドシグネチャの契約",
         "ja_typings": [
-          "mesoddoshigunichanokeiyaku"
+          "mesoddoshigunechanokeiyaku"
         ]
       },
       {
         "en": "a concrete class",
         "ja": "具象的なクラス",
         "ja_typings": [
-          "kyuushotekinakurasu",
-          "kyuushoutekinakurasu"
+          "gushotekinakurasu",
+          "gushoutekinakurasu"
         ]
       },
       {
@@ -2777,8 +2797,8 @@
         "en": "saves work temporarily",
         "ja": "作業を一時保存",
         "ja_typings": [
-          "sagyooijitekihozon",
-          "sagyouoijitekihozon"
+          "sagyooichijihozon",
+          "sagyouoichijihozon"
         ]
       },
       {
@@ -2959,8 +2979,8 @@
         "en": "reapplies commits on new base",
         "ja": "コミットを新しい基底条件に適用",
         "ja_typings": [
-          "komittoatarashiikiteinitekiyo",
-          "komittooatarashiikiteinitekiyou"
+          "komittoatarashiikiteijokennitekiyo",
+          "komittooatarashiikiteijoukennitekiyou"
         ]
       },
       {
@@ -3071,8 +3091,7 @@
         "en": "Total Data Delivery",
         "ja": "データ配信",
         "ja_typings": [
-          "sodetahaiso",
-          "soudetahaisou"
+          "detahaishin"
         ]
       }
     ],
@@ -3095,7 +3114,7 @@
         "en": "simulated dependency",
         "ja": "基底依存関係",
         "ja_typings": [
-          "gisonoizonkankei"
+          "kiteiizonkankei"
         ]
       },
       {
@@ -3231,8 +3250,8 @@
         "en": "no side effects, same input = same output",
         "ja": "副作用なし、同一入力=同一出力",
         "ja_typings": [
-          "fukusayounashi donyuuryokudoshutsuryoku",
-          "fukusayouunashi dounyuuryokudoushutsuryoku"
+          "fukusayonashi doitsunyuuryokudoitsushutsuryoku",
+          "fukusayounashi douitsunyuuryokudouitsushutsuryoku"
         ]
       },
       {
@@ -3240,7 +3259,9 @@
         "ja": "グローバルステートを変更",
         "ja_typings": [
           "gurobarujotaiohenko",
-          "gurobarujoutaiohenkou"
+          "gurobarujoutaiohenkou",
+          "gurobarusutetohenko",
+          "gurobarusutetoohenkou"
         ]
       },
       {
@@ -3325,7 +3346,9 @@
         "en": "combining elements into one value",
         "ja": "要素を一つの値にまとめる",
         "ja_typings": [
+          "yosohitotsunoatainimatomeru",
           "yosohitotsunochinimatomeru",
+          "yousoohitotsunoatainimatomeru",
           "yousoohitotsunochinimatomeru"
         ]
       },
@@ -3461,7 +3484,7 @@
         "en": "types checked at compile time",
         "ja": "コンパイル時に型を確認",
         "ja_typings": [
-          "kanpairujinigataokakunin"
+          "konpairutokinikataokakunin"
         ]
       },
       {
@@ -3469,20 +3492,24 @@
         "ja": "実行時に型を確認",
         "ja_typings": [
           "jikkojinigataokakunin",
-          "jikkoujinigataokakunin"
+          "jikkojinikataokakunin",
+          "jikkoujinigataokakunin",
+          "jikkoujinikataokakunin"
         ]
       },
       {
         "en": "no type checking",
         "ja": "型確認なし",
         "ja_typings": [
-          "gatakakuninnashi"
+          "gatakakuninnashi",
+          "katakakuninnashi"
         ]
       },
       {
         "en": "types inferred by AI",
         "ja": "AIが型を推論",
         "ja_typings": [
+          "aigakataosuiron",
           "aigataosuiron"
         ]
       }
@@ -3506,14 +3533,16 @@
         "en": "compiler deduces type from context",
         "ja": "コンパイラが文脈から型を推定",
         "ja_typings": [
-          "konpairagabunmyakukaragataosuitei"
+          "konpairagabunmyakukaragataosuitei",
+          "konpairagabunmyakukarakataosuitei"
         ]
       },
       {
         "en": "developer declares every type",
         "ja": "開発者がすべての型を宣言",
         "ja_typings": [
-          "kaihatsushagasubetenogataosengen"
+          "kaihatsushagasubetenogataosengen",
+          "kaihatsushagasubetenokataosengen"
         ]
       },
       {
@@ -3521,14 +3550,17 @@
         "ja": "実行時に型を割り当て",
         "ja_typings": [
           "jikkojinigataowariate",
-          "jikkoujinigataowariate"
+          "jikkojinikataowariate",
+          "jikkoujinigataowariate",
+          "jikkoujinikataowariate"
         ]
       },
       {
         "en": "types are always strings",
         "ja": "型は常に文字列",
         "ja_typings": [
-          "gatahatsunenimojiretsu"
+          "gatahatsunenimojiretsu",
+          "katahatsunenimojiretsu"
         ]
       }
     ],
@@ -3552,7 +3584,9 @@
         "ja": "多くの型に対応する型",
         "ja_typings": [
           "okunogatanitaiosurugata",
-          "ookunogatanitaiousurugata"
+          "okunokatanitaiosurukata",
+          "ookunogatanitaiousurugata",
+          "ookunokatanitaiousurukata"
         ]
       },
       {
@@ -3573,7 +3607,8 @@
         "en": "a null type",
         "ja": "null型",
         "ja_typings": [
-          "nullgata"
+          "nullgata",
+          "nullkata"
         ]
       }
     ],
@@ -3657,7 +3692,7 @@
         "en": "memory allocation unit",
         "ja": "メモリ割り当てユニット",
         "ja_typings": [
-          "memorikakuhotani"
+          "memoriwariateyunitto"
         ]
       },
       {
@@ -3702,7 +3737,7 @@
         "en": "process priority conflict",
         "ja": "プロセス優先度のコンフリクト",
         "ja_typings": [
-          "purosesuyuusendonokongurikuto"
+          "purosesuyuusendonokonfurikuto"
         ]
       },
       {
@@ -3732,8 +3767,8 @@
         "en": "non-blocking asynchronous code",
         "ja": "ノンブロッキングの非同期コード",
         "ja_typings": [
-          "fuburokkingunohidokikodo",
-          "fuburokkingunohidoukikodo"
+          "nonburokkingunohidokikodo",
+          "nonburokkingunohidoukikodo"
         ]
       },
       {
@@ -3748,8 +3783,8 @@
         "en": "synchronous locking",
         "ja": "同期ロック",
         "ja_typings": [
-          "dokitekirokku",
-          "doukitekirokku"
+          "dokirokku",
+          "doukirokku"
         ]
       },
       {
@@ -3839,7 +3874,7 @@
         "en": "writing beyond array bounds",
         "ja": "配列範囲外記憶",
         "ja_typings": [
-          "hairetsuhanigaihekioku"
+          "hairetsuhanigaikioku"
         ]
       },
       {
@@ -3877,8 +3912,8 @@
         "en": "manual memory freeing",
         "ja": "手動メモリ解放",
         "ja_typings": [
-          "tedomemorikaiho",
-          "tedoumemorikaihou"
+          "shudomemorikaiho",
+          "shudoumemorikaihou"
         ]
       },
       {
@@ -4016,7 +4051,8 @@
         "ja": "高トラフィックTCPプロトコル",
         "ja_typings": [
           "kotorafikkutcppurotokoru",
-          "koutorafikkutcppurotokoru"
+          "koutorafikkutcppurotokoru",
+          "takatorafikkutcppurotokoru"
         ]
       },
       {
@@ -4056,7 +4092,9 @@
         "ja": "ネットワーク上のユニークな装置識別子",
         "ja_typings": [
           "nettowakujonoyunikunasochishikibetsushi",
-          "nettowakujounoyunikunasouchishikibetsushi"
+          "nettowakujounoyunikunasouchishikibetsushi",
+          "nettowakuuenoyunikunasochishikibetsushi",
+          "nettowakuuenoyunikunasouchishikibetsushi"
         ]
       },
       {
@@ -4145,8 +4183,8 @@
         "en": "stateless web API standard",
         "ja": "無状態のウェブAPI標準",
         "ja_typings": [
-          "mujotainowebuapikijun",
-          "mujoutainowebuapikijun"
+          "mujotainowebuapihyojun",
+          "mujoutainowebuapihyoujun"
         ]
       },
       {
@@ -4412,6 +4450,7 @@
         "en": "sends output to next command",
         "ja": "出力を次のコマンドへ送る",
         "ja_typings": [
+          "shutsuryokuotsuginokomandoheokuru",
           "shutsuryokuotsuginokomandoniokuru"
         ]
       },
@@ -4480,6 +4519,7 @@
         "en": "Stored Query Library",
         "ja": "保存済みクエリライブラリ",
         "ja_typings": [
+          "hozonsumikueriraiburari",
           "hozonzumikueriraiburari"
         ]
       }
@@ -4703,7 +4743,9 @@
         "en": "Automatic Cache Index Design",
         "ja": "自動キャッシュインデックス設計",
         "ja_typings": [
+          "jidokyasshuindekkususekkei",
           "jidokyasshuindekususekkei",
+          "jidoukyasshuindekkususekkei",
           "jidoukyasshuindekususekkei"
         ]
       },
@@ -4834,8 +4876,8 @@
         "en": "HTTP with speed boost",
         "ja": "速度向上HTTP",
         "ja_typings": [
-          "sokudokokahttp",
-          "sokudokoukahttp"
+          "sokudokojohttp",
+          "sokudokoujouhttp"
         ]
       },
       {
@@ -4873,8 +4915,8 @@
         "en": "forcing user to make unintended request",
         "ja": "ユーザーに意図しないリクエストをさせる",
         "ja_typings": [
-          "yuzanihitoshirazunorikuesutosaseru",
-          "yuzanihitoshirazunorikuesutoosaseru"
+          "yuzaniitoshinairikuesutoosaseru",
+          "yuzaniitoshinairikuesutosaseru"
         ]
       },
       {
@@ -4889,8 +4931,8 @@
         "en": "injecting scripts into pages",
         "ja": "ページにスクリプトを注入",
         "ja_typings": [
-          "pejinisukuriputosonyuu",
-          "pejinisukuriputoosounyuu"
+          "pejinisukuriputochuunyuu",
+          "pejinisukuriputoochuunyuu"
         ]
       },
       {
@@ -4920,8 +4962,8 @@
         "en": "one-way transformation of data",
         "ja": "データの一方方向変換",
         "ja_typings": [
-          "detanoippokohenkan",
-          "detanoippoukouhenkan"
+          "detanoippohokohenkan",
+          "detanoippouhoukouhenkan"
         ]
       },
       {
@@ -5055,16 +5097,16 @@
         "en": "Continuous Integration/Delivery",
         "ja": "継続的統合/配信",
         "ja_typings": [
-          "keizokutekitogo/haiso",
-          "keizokutekitougou/haisou"
+          "keizokutekitogo/haishin",
+          "keizokutekitougou/haishin"
         ]
       },
       {
         "en": "Code Inspection/Change Deploy",
         "ja": "コード検査/変更配備",
         "ja_typings": [
-          "kodokensa/henkohaihi",
-          "kodokensa/henkouhaihi"
+          "kodokensa/henkohaibi",
+          "kodokensa/henkouhaibi"
         ]
       },
       {
@@ -5150,16 +5192,16 @@
         "en": "small independently deployable service",
         "ja": "小型の独立配備可能サービス",
         "ja_typings": [
-          "shokibonodokuritsuhaihikanonasabisu",
-          "shoukibonodokuritsuhaihikanounasabisu"
+          "kogatanodokuritsuhaibikanosabisu",
+          "kogatanodokuritsuhaibikanousabisu"
         ]
       },
       {
         "en": "a small VM",
         "ja": "小型仮想マシン",
         "ja_typings": [
-          "shokibokasomashin",
-          "shoukibokasoumashin"
+          "kogatakasomashin",
+          "kogatakasoumashin"
         ]
       },
       {
@@ -5289,7 +5331,9 @@
         "ja": "MAJOR.MINOR.PATCH番号付け",
         "ja_typings": [
           "major.minor.patchbangotsuke",
-          "major.minor.patchbangoutsuke"
+          "major.minor.patchbangoutsuke",
+          "major.minor.patchbangouzuke",
+          "major.minor.patchbangozuke"
         ]
       },
       {
@@ -5304,14 +5348,15 @@
         "en": "date-based versioning",
         "ja": "日付バージョン管理",
         "ja_typings": [
-          "nichitsukibajoningu"
+          "hizukebajonkanri"
         ]
       },
       {
         "en": "letter-based versioning",
         "ja": "文字付きバージョンニング",
         "ja_typings": [
-          "mojitsukibajoningu"
+          "mojitsukibajoningu",
+          "mojitsukibajonningu"
         ]
       }
     ],
@@ -5357,8 +5402,8 @@
         "en": "tool that deploys code",
         "ja": "コードを配備するツール",
         "ja_typings": [
-          "kodohaihisurutsuru",
-          "kodoohaihisurutsuru"
+          "kodohaibisurutsuru",
+          "kodoohaibisurutsuru"
         ]
       }
     ],
@@ -5449,6 +5494,7 @@
         "en": "outdated documentation",
         "ja": "古いドキュメント書",
         "ja_typings": [
+          "furuidokyumentokaki",
           "furuidokyumentosho"
         ]
       }
@@ -5488,8 +5534,8 @@
         "en": "deploying code to production",
         "ja": "コードを本番に入力",
         "ja_typings": [
-          "kodohonbannihaihi",
-          "kodoohonbannihaihi"
+          "kodohonbanninyuuryoku",
+          "kodoohonbanninyuuryoku"
         ]
       },
       {
@@ -5712,7 +5758,8 @@
         "en": "events are queued",
         "ja": "イベントがキューに入る",
         "ja_typings": [
-          "ibentogakyunihairu"
+          "ibentogakyunihairu",
+          "ibentogakyuniiru"
         ]
       },
       {
@@ -5840,8 +5887,8 @@
         "en": "indication of deeper problem in code",
         "ja": "コードの深い問題の兆候",
         "ja_typings": [
-          "kodonofukaimondainoshoko",
-          "kodonofukaimondainoshoukou"
+          "kodonofukaimondainochoko",
+          "kodonofukaimondainochoukou"
         ]
       },
       {
@@ -5909,8 +5956,8 @@
         "en": "writing code twice for safety",
         "ja": "安全のためコードを書きかく",
         "ja_typings": [
-          "anzennotamekodonikaikaku",
-          "anzennotamekodoonikaikaku"
+          "anzennotamekodokakikaku",
+          "anzennotamekodookakikaku"
         ]
       }
     ],
@@ -5949,7 +5996,7 @@
         "en": "Internal Deploy Engine",
         "ja": "内部デプロイエンジン",
         "ja_typings": [
-          "naibuhaihienjin"
+          "naibudepuroienjin"
         ]
       },
       {
@@ -5980,13 +6027,15 @@
         "en": "type determined by interface not class",
         "ja": "クラスでなくインターフェースで型を判定",
         "ja_typings": [
-          "kurasudenakuintafesudegataohantei"
+          "kurasudenakuintafesudegataohantei",
+          "kurasudenakuintafesudekataohantei"
         ]
       },
       {
         "en": "converting string to number",
         "ja": "文字列を数値へ変換",
         "ja_typings": [
+          "mojiretsuosuuchihehenkan",
           "mojiretsuosuuchinihenkan"
         ]
       },
@@ -6001,7 +6050,8 @@
         "en": "defining types at compile time",
         "ja": "コンパイル時に型を定義",
         "ja_typings": [
-          "kanpairujinigataoteigi"
+          "kanpairujinigataoteigi",
+          "konpairutokinikataoteigi"
         ]
       }
     ],
@@ -6032,7 +6082,8 @@
         "en": "a sealed class",
         "ja": "封印されたクラス",
         "ja_typings": [
-          "fuinsaretakurasu"
+          "fuinsaretakurasu",
+          "fuuinsaretakurasu"
         ]
       },
       {
@@ -6077,7 +6128,7 @@
         "en": "adding curry to code",
         "ja": "コードにカレーを追加",
         "ja_typings": [
-          "kodonikariotsuika"
+          "kodonikareotsuika"
         ]
       },
       {
@@ -6091,7 +6142,7 @@
         "en": "defining variadic functions",
         "ja": "可変数関数を定義",
         "ja_typings": [
-          "kaheisuukansuuoteigi"
+          "kahenkazukansuuoteigi"
         ]
       }
     ],
@@ -6229,8 +6280,8 @@
         "en": "calling same method twice",
         "ja": "同じソッドを二回呼び出す",
         "ja_typings": [
-          "dojimesoddonikaiyobidasu",
-          "doujimesoddoonikaiyobidasu"
+          "onajisoddonikaiyobidasu",
+          "onajisoddoonikaiyobidasu"
         ]
       }
     ],
@@ -6253,8 +6304,8 @@
         "en": "five OOP design principles",
         "ja": "五つのOOP設計原則",
         "ja_typings": [
-          "gotsunoopsekkeigensoku",
-          "gotsunooopsekkeigensoku"
+          "itsutsunooopsekkeigensoku",
+          "itsutsunoopsekkeigensoku"
         ]
       },
       {
@@ -6313,7 +6364,7 @@
         "en": "Deploy Rapidly Yearly",
         "ja": "毎年速く配備",
         "ja_typings": [
-          "maitoshihayakuhaihi"
+          "maitoshihayakuhaibi"
         ]
       },
       {
@@ -6489,7 +6540,7 @@
         "en": "processing data on client",
         "ja": "クライアントでデータを処理",
         "ja_typings": [
-          "kuraiantodemonyorioshori"
+          "kuraiantodedetaoshori"
         ]
       },
       {
@@ -6629,8 +6680,8 @@
         "en": "shipping software updates",
         "ja": "ソフトウェア更新の配信",
         "ja_typings": [
-          "sofutoweakoshinnohaiso",
-          "sofutoweakoushinnohaisou"
+          "sofutoweakoshinnohaishin",
+          "sofutoweakoushinnohaishin"
         ]
       }
     ],
@@ -6653,7 +6704,7 @@
         "en": "OS-level configuration value",
         "ja": "OSレベルの設定値",
         "ja_typings": [
-          "osreberunosettechichi"
+          "osreberunosetteichi"
         ]
       },
       {
@@ -6713,6 +6764,8 @@
         "en": "index corruption",
         "ja": "インデックスの損傷",
         "ja_typings": [
+          "indekkusunosonsho",
+          "indekkusunosonshou",
           "indekusunosonsho",
           "indekusunosonshou"
         ]
@@ -6744,8 +6797,8 @@
         "en": "organizing data to reduce redundancy",
         "ja": "冗長性を減らすデータの整理",
         "ja_typings": [
-          "jochooherasudetanoseiri",
-          "jouchouoherasudetanoseiri"
+          "jochoseioherasudetanoseiri",
+          "jouchouseioherasudetanoseiri"
         ]
       },
       {
@@ -7105,8 +7158,8 @@
         "en": "JavaScript XML syntax extension",
         "ja": "JavaScript XML構文拡張",
         "ja_typings": [
-          "javascript xmlkomonkakucho",
-          "javascript xmlkoumonkakuchou"
+          "javascript xmlkobunkakucho",
+          "javascript xmlkoubunkakuchou"
         ]
       },
       {
@@ -7197,7 +7250,9 @@
         "ja": "コンポーネントのローカルステートを管理",
         "ja_typings": [
           "konponentonorokarujotaiokanri",
-          "konponentonorokarujoutaiokanri"
+          "konponentonorokarujoutaiokanri",
+          "konponentonorokarusutetokanri",
+          "konponentonorokarusutetookanri"
         ]
       },
       {
@@ -7243,7 +7298,9 @@
         "ja": "レンダー後に副作用を実行",
         "ja_typings": [
           "rendagonifukusayoojikko",
-          "rendagonifukusayouojikkou"
+          "rendagonifukusayouojikkou",
+          "rendanochinifukusayoojikko",
+          "rendanochinifukusayouojikkou"
         ]
       },
       {
@@ -7259,7 +7316,9 @@
         "ja": "グローバルステートを作成",
         "ja_typings": [
           "gurobarujotaiosakusei",
-          "gurobarujoutaiosakusei"
+          "gurobarujoutaiosakusei",
+          "gurobarusutetoosakusei",
+          "gurobarusutetosakusei"
         ]
       },
       {
@@ -7333,7 +7392,8 @@
         "en": "typed superset of JavaScript",
         "ja": "型付きJavaScriptのスーパーセット",
         "ja_typings": [
-          "gatatsukijavascriptnosupasetto"
+          "gatatsukijavascriptnosupasetto",
+          "katazukijavascriptnosupasetto"
         ]
       },
       {
@@ -7601,8 +7661,7 @@
         "en": "small data stored in browser",
         "ja": "ブラウザに保存される少なデータ",
         "ja_typings": [
-          "burauzanihozonsarerushosanadeta",
-          "burauzanihozonsarerushousanadeta"
+          "burauzanihozonsarerusukunadeta"
         ]
       },
       {
@@ -7647,7 +7706,7 @@
         "en": "browser-based persistent key-value store",
         "ja": "ブラウザのキー値ストア",
         "ja_typings": [
-          "burauzanokichisutoreji"
+          "burauzanokiataisutoa"
         ]
       },
       {
@@ -7790,8 +7849,8 @@
         "en": "Centralized Data Node",
         "ja": "中央データノード",
         "ja_typings": [
-          "chuuokadetanodo",
-          "chuuoukadetanodo"
+          "chuuodetanodo",
+          "chuuoudetanodo"
         ]
       },
       {
@@ -7931,8 +7990,8 @@
         "en": "preloads all images",
         "ja": "すべての画像をプリロード",
         "ja_typings": [
-          "subetenogazoojizenrodo",
-          "subetenogazouojizenrodo"
+          "subetenogazoopurirodo",
+          "subetenogazouopurirodo"
         ]
       },
       {
@@ -7963,8 +8022,8 @@
         "en": "build from basic to enhanced",
         "ja": "基本から高機能へ構築",
         "ja_typings": [
-          "kihonkarakokinohekichiku",
-          "kihonkarakoukinouhekichiku"
+          "kihonkarakokinohekochiku",
+          "kihonkarakoukinouhekouchiku"
         ]
       },
       {
@@ -8210,7 +8269,9 @@
         "ja": "他の要素と積層する",
         "ja_typings": [
           "hokanoyosotokasanaru",
-          "hokanoyousotokasanaru"
+          "hokanoyosotosekisosuru",
+          "hokanoyousotokasanaru",
+          "hokanoyousotosekisousuru"
         ]
       },
       {
@@ -8335,6 +8396,7 @@
         "en": "custom property storing a value",
         "ja": "値を保存するカスタムプロパティ",
         "ja_typings": [
+          "ataiohozonsurukasutamupuropati",
           "chiohozonsurukasutamupuropati"
         ]
       },
@@ -8349,6 +8411,7 @@
         "en": "random CSS value",
         "ja": "ランダムCSS値",
         "ja_typings": [
+          "randamucssatai",
           "randamucsschi"
         ]
       },
@@ -8380,8 +8443,8 @@
         "en": "making web usable for everyone",
         "ja": "ウェブをすべての人が使えるよう",
         "ja_typings": [
-          "webuosubetenogaeruyo",
-          "webuosubetenogaeruyou"
+          "webuosubetenoningatsukaeruyo",
+          "webuosubetenoningatsukaeruyou"
         ]
       },
       {
@@ -8440,8 +8503,8 @@
         "en": "Advanced Resource Integration Architecture",
         "ja": "高度リソース統合アーキテクチャ",
         "ja_typings": [
-          "kokyuurisosutogoakitekucha",
-          "koukyuurisosutougouakitekucha"
+          "kodorisosutogoakitekucha",
+          "koudorisosutougouakitekucha"
         ]
       },
       {
@@ -8745,16 +8808,15 @@
         "en": "full-duplex communication protocol",
         "ja": "全二重通信プロトコル",
         "ja_typings": [
-          "zennihokotsuushinpurotokoru",
-          "zennihoukoutsuushinpurotokoru"
+          "zennijuutsuushinpurotokoru"
         ]
       },
       {
         "en": "unidirectional HTTP streaming",
         "ja": "一方通行HTTPストリーミング",
         "ja_typings": [
-          "ippokohttpsutorimingu",
-          "ippoukouhttpsutorimingu"
+          "ippotsuukohttpsutorimingu",
+          "ippoutsuukouhttpsutorimingu"
         ]
       },
       {
@@ -8883,8 +8945,10 @@
         "en": "loads script after HTML parsing",
         "ja": "HTML解析後にスクリプトをロード",
         "ja_typings": [
+          "htmlkaisekigonisukuriputoorodo",
           "htmlkaisekigonisukuriputorodo",
-          "htmlkaisekigonisukuriputoorodo"
+          "htmlkaisekinochinisukuriputoorodo",
+          "htmlkaisekinochinisukuriputorodo"
         ]
       },
       {
@@ -9036,7 +9100,8 @@
         "en": "full page width",
         "ja": "ページの全幅",
         "ja_typings": [
-          "pejinozenhaba"
+          "pejinozenhaba",
+          "pejinozenpuku"
         ]
       },
       {
@@ -9066,7 +9131,8 @@
         "en": "removing unnecessary characters from code",
         "ja": "コードから不要文字を取り除く",
         "ja_typings": [
-          "kodokaraotorinozoku"
+          "kodokarafuyomojiotorinozoku",
+          "kodokarafuyoumojiotorinozoku"
         ]
       },
       {
@@ -9112,8 +9178,7 @@
         "en": "dividing bundle into smaller chunks",
         "ja": "バンドルを小さなチャンクに分割",
         "ja_typings": [
-          "bandoruoshosanachankunibunkatsu",
-          "bandoruoshousanachankunibunkatsu"
+          "bandoruochiisanachankunibunkatsu"
         ]
       },
       {
@@ -9206,8 +9271,8 @@
         "en": "open standard for authorization",
         "ja": "認可のオープン標準",
         "ja_typings": [
-          "ninkanopunkijun",
-          "ninkanoopunkijun"
+          "ninkanoopunhyoujun",
+          "ninkanopunhyojun"
         ]
       },
       {
@@ -9525,14 +9590,14 @@
         "en": "JSON file describing PWA app",
         "ja": "PWAを説明するJSONファイル",
         "ja_typings": [
-          "pwaosurujsonfairu"
+          "pwaosetsumeisurujsonfairu"
         ]
       },
       {
         "en": "CSS configuration file",
         "ja": "CSS設定ファイル",
         "ja_typings": [
-          "cssfairu"
+          "csssetteifairu"
         ]
       },
       {
@@ -9591,8 +9656,7 @@
         "en": "rendering in parallel",
         "ja": "並列レンダリング",
         "ja_typings": [
-          "heikorenda",
-          "heikourenda"
+          "heiretsurendaringu"
         ]
       }
     ],
@@ -9705,7 +9769,8 @@
         "en": "opinionated code formatter",
         "ja": "独自方針のコードフォーマッター",
         "ja_typings": [
-          "nokodofomatta"
+          "dokujihoshinnokodofomatta",
+          "dokujihoushinnokodofomatta"
         ]
       },
       {
@@ -9750,7 +9815,8 @@
         "ja": "リクエスト/レスポンスとともに送るメタデータ",
         "ja_typings": [
           "rikuesuto/otototomoniokurumetadeta",
-          "rikuesuto/outoutotomoniokurumetadeta"
+          "rikuesuto/outoutotomoniokurumetadeta",
+          "rikuesuto/resuponsutotomoniokurumetadeta"
         ]
       },
       {
@@ -9907,8 +9973,8 @@
         "en": "blocking client request",
         "ja": "ブロッキングクライアントリクエストを阻止",
         "ja_typings": [
-          "kuraiantorikuesutososho",
-          "kuraiantorikuesutoososho"
+          "burokkingukuraiantorikuesutoososhi",
+          "burokkingukuraiantorikuesutososhi"
         ]
       }
     ],
@@ -10139,6 +10205,8 @@
         "en": "filtering duplicate events",
         "ja": "重複イベントをフィルタリング",
         "ja_typings": [
+          "chofukuibentofirutaringu",
+          "choufukuibentoofirutaringu",
           "juufukuibentofiruta",
           "juufukuibentoofiruta"
         ]
@@ -10256,8 +10324,8 @@
         "en": "storing responses to avoid refetching",
         "ja": "再取得を避ける応答の保存",
         "ja_typings": [
-          "saitorikomiosakeruotonohozon",
-          "saitorikomiosakeruoutounohozon"
+          "saishutokuosakeruotonohozon",
+          "saishutokuosakeruoutounohozon"
         ]
       },
       {
@@ -10271,7 +10339,7 @@
         "en": "browser memory allocation",
         "ja": "ブラウザメモリ割り当て",
         "ja_typings": [
-          "burauzamemorikakuho"
+          "burauzamemoriwariate"
         ]
       },
       {
@@ -10436,8 +10504,8 @@
         "en": "single repo containing multiple projects",
         "ja": "複数のプロジェクトを含む一つのリポジトリ",
         "ja_typings": [
-          "fukusuupurojekutofukumuhitotsunoripo",
-          "fukusuupurojekutoofukumuhitotsunoripo"
+          "fukusuunopurojekutofukumuhitotsunoripojitori",
+          "fukusuunopurojekutoofukumuhitotsunoripojitori"
         ]
       },
       {
@@ -10481,7 +10549,8 @@
         "en": "tool for developing UI components in isolation",
         "ja": "コンポーネントを独立して開発するためのツール",
         "ja_typings": [
-          "konponentaotokuritsukaihatsusurutsuru"
+          "konponentodokuritsushitekaihatsusurutamenotsuru",
+          "konponentoodokuritsushitekaihatsusurutamenotsuru"
         ]
       },
       {
@@ -10570,7 +10639,8 @@
         "en": "end-to-end type-safe API",
         "ja": "エンドツーエンド型安全API",
         "ja_typings": [
-          "endotsuendogataanzenapi"
+          "endotsuendogataanzenapi",
+          "endotsuendokataanzenapi"
         ]
       },
       {
@@ -10761,7 +10831,8 @@
         "en": "open source API standard",
         "ja": "オープンソースAPI標準",
         "ja_typings": [
-          "opunsosuapikijun"
+          "opunsosuapihyojun",
+          "opunsosuapihyoujun"
         ]
       },
       {
@@ -10859,7 +10930,7 @@
         "en": "networking two computers",
         "ja": "二台のPCをつなぐ",
         "ja_typings": [
-          "nitainopcotsunagu"
+          "nidainopcotsunagu"
         ]
       }
     ],
@@ -11154,7 +11225,7 @@
         "en": "internet communication protocol suite",
         "ja": "インターネット通信プロトコルスイート",
         "ja_typings": [
-          "intanettotsuushinpurotokorugun"
+          "intanettotsuushinpurotokorusuito"
         ]
       },
       {
@@ -11168,8 +11239,8 @@
         "en": "file transfer standard",
         "ja": "ファイル転送標準",
         "ja_typings": [
-          "fairutensokijun",
-          "fairutensoukijun"
+          "fairutensohyojun",
+          "fairutensouhyoujun"
         ]
       },
       {
@@ -11427,7 +11498,7 @@
         "en": "logical subdivision of a network",
         "ja": "ネットワークの論理的な細分",
         "ja_typings": [
-          "nettowakunona"
+          "nettowakunoronritekinasaibun"
         ]
       },
       {
@@ -11612,7 +11683,7 @@
         "en": "sits in front of clients",
         "ja": "クライアントの前に座る",
         "ja_typings": [
-          "kuraiantonomaeniichisuru"
+          "kuraiantonomaenisuwaru"
         ]
       },
       {
@@ -11873,7 +11944,7 @@
         "en": "delivering content with low latency",
         "ja": "低遅延でコンテンツ配信",
         "ja_typings": [
-          "teireitenshidekontentsuhaishin"
+          "teichiendekontentsuhaishin"
         ]
       },
       {
@@ -11964,7 +12035,8 @@
         "en": "async communication buffer between services",
         "ja": "サービス間の非同期通信バッファ",
         "ja_typings": [
-          "sabisunobaffa"
+          "sabisumanohidokitsuushinbaffa",
+          "sabisumanohidoukitsuushinbaffa"
         ]
       },
       {
@@ -11978,7 +12050,7 @@
         "en": "database write buffer",
         "ja": "データベース書き込みバッファ",
         "ja_typings": [
-          "detabesukiomikomibaffa"
+          "detabesukakikomibaffa"
         ]
       },
       {
@@ -12017,15 +12089,14 @@
         "en": "point-to-point messaging",
         "ja": "点対点メッセージング",
         "ja_typings": [
-          "ichitaiichimessejingu"
+          "tentsuitenmessejingu"
         ]
       },
       {
         "en": "broadcast to all users",
         "ja": "全ユーザーにブロードキャスト",
         "ja_typings": [
-          "zenyuzanihoso",
-          "zenyuzanihousou"
+          "zenyuzaniburodokyasuto"
         ]
       },
       {
@@ -12107,8 +12178,8 @@
         "en": "upgrading existing server",
         "ja": "既存サーバーを強化",
         "ja_typings": [
-          "kisonsabaokyoka",
-          "kisonsabaokyouka"
+          "kizonsabaokyoka",
+          "kizonsabaokyouka"
         ]
       },
       {
@@ -12145,8 +12216,8 @@
         "en": "upgrading existing server resources",
         "ja": "既存サーバーのリソースを強化",
         "ja_typings": [
-          "kisonsabanorisosuokyoka",
-          "kisonsabanorisosuokyouka"
+          "kizonsabanorisosuokyoka",
+          "kizonsabanorisosuokyouka"
         ]
       },
       {
@@ -12237,8 +12308,8 @@
         "en": "time system runs without failure",
         "ja": "システムが不具合なく動作している時間",
         "ja_typings": [
-          "shisutemugafugunakudosashiteirujikan",
-          "shisutemugafugunakudousashiteirujikan"
+          "shisutemugafuguainakudosashiteirujikan",
+          "shisutemugafuguainakudousashiteirujikan"
         ]
       },
       {
@@ -12389,7 +12460,7 @@
         "en": "color-coded code deployment",
         "ja": "色分けのコード配備",
         "ja_typings": [
-          "irowakenokodohaihi"
+          "irowakenokodohaibi"
         ]
       },
       {
@@ -12427,7 +12498,7 @@
         "en": "deploying to all users at once",
         "ja": "一度に全ユーザーに配備",
         "ja_typings": [
-          "ichidonizenyuzanihaihi"
+          "ichidonizenyuzanihaibi"
         ]
       },
       {
@@ -12441,8 +12512,8 @@
         "en": "automated rollback deployment",
         "ja": "自動ロールバックデプロイ",
         "ja_typings": [
-          "jidororubakkuhaihi",
-          "jidourorubakkuhaihi"
+          "jidororubakkudepuroi",
+          "jidourorubakkudepuroi"
         ]
       }
     ],
@@ -12511,7 +12582,7 @@
         "en": "infrastructure as code tool",
         "ja": "インフラをコードで管理するツール",
         "ja_typings": [
-          "infuraokododesurutsuru"
+          "infuraokododekanrisurutsuru"
         ]
       },
       {
@@ -12556,8 +12627,8 @@
         "en": "IT automation and config management tool",
         "ja": "IT自動化と設定管理ツール",
         "ja_typings": [
-          "itjidokatosettekanritsuru",
-          "itjidoukatosettekanritsuru"
+          "itjidokatosetteikanritsuru",
+          "itjidoukatosetteikanritsuru"
         ]
       },
       {
@@ -12666,7 +12737,7 @@
         "en": "network configuration tool",
         "ja": "ネットワーク設定ツール",
         "ja_typings": [
-          "nettowakusettetsuru"
+          "nettowakusetteitsuru"
         ]
       }
     ],
@@ -12741,7 +12812,8 @@
         "en": "ability to monitor CPU usage",
         "ja": "CPU使用率を監視できること",
         "ja_typings": [
-          "cpuokanshidekirukoto"
+          "cpushiyoritsuokanshidekirukoto",
+          "cpushiyouritsuokanshidekirukoto"
         ]
       },
       {
@@ -12779,8 +12851,8 @@
         "en": "smallest deployable unit in K8s",
         "ja": "K8sの最小配備単位",
         "ja_typings": [
-          "k8snosaishohaihitani",
-          "k8snosaishouhaihitani"
+          "k8snosaishohaibitani",
+          "k8snosaishouhaibitani"
         ]
       },
       {
@@ -12868,7 +12940,7 @@
         "en": "tool for multi-container applications",
         "ja": "複数コンテナアプリケーションのツール",
         "ja_typings": [
-          "fukusuukontenaapurinotsuru"
+          "fukusuukontenaapurikeshonnotsuru"
         ]
       },
       {
@@ -13000,7 +13072,7 @@
         "en": "using Git as source of truth for infra",
         "ja": "基盤の真実としてGitを使う",
         "ja_typings": [
-          "kibannoseishintoshitegitotsukau"
+          "kibannoshinjitsutoshitegitotsukau"
         ]
       },
       {
@@ -13046,8 +13118,8 @@
         "en": "intentionally injecting failures to test resilience",
         "ja": "耐久性をためすために意図的に障害を注入",
         "ja_typings": [
-          "taikyuuseiotamesutameniitotekinishogaisonyuu",
-          "taikyuuseiotamesutameniitotekinishougaisounyuu"
+          "taikyuuseiotamesutameniitotekinishogaiochuunyuu",
+          "taikyuuseiotamesutameniitotekinishougaiochuunyuu"
         ]
       },
       {
@@ -13062,7 +13134,7 @@
         "en": "disorganized development process",
         "ja": "不整な開発プロセス",
         "ja_typings": [
-          "fuseirinakaihatsupurosesu"
+          "fuseinakaihatsupurosesu"
         ]
       },
       {
@@ -13136,8 +13208,8 @@
         "en": "time delay before transfer begins",
         "ja": "転送が始まるまでの時間遅延",
         "ja_typings": [
-          "tensogamarumadeno",
-          "tensougamarumadeno"
+          "tensogahajimarumadenojikanchien",
+          "tensougahajimarumadenojikanchien"
         ]
       },
       {
@@ -13191,7 +13263,9 @@
         "ja": "一作業の処理時間",
         "ja_typings": [
           "ichisagyonoshorijikan",
-          "ichisagyounoshorijikan"
+          "ichisagyounoshorijikan",
+          "issakugyonoshorijikan",
+          "issakugyounoshorijikan"
         ]
       },
       {
@@ -13236,8 +13310,8 @@
         "en": "Advanced Protocol Integration",
         "ja": "高度プロトコル統合",
         "ja_typings": [
-          "kokyuupurotokorutogo",
-          "koukyuupurotokorutougou"
+          "kodopurotokorutogo",
+          "koudopurotokorutougou"
         ]
       },
       {
@@ -13275,8 +13349,8 @@
         "en": "Uniform Resource Locator",
         "ja": "統一資源ロケータ",
         "ja_typings": [
-          "toitsurisosuichishikashi",
-          "touitsurisosuichishikashi"
+          "toitsushigenroketa",
+          "touitsushigenroketa"
         ]
       },
       {
@@ -13345,7 +13419,7 @@
         "en": "Iterative Deployment Engine",
         "ja": "反復配備エンジン",
         "ja_typings": [
-          "hanpukuhaihienjin"
+          "hanpukuhaibienjin"
         ]
       }
     ],
@@ -13383,7 +13457,8 @@
         "en": "Optimized Request Module",
         "ja": "最適要求モジュール",
         "ja_typings": [
-          "saitekikarikuesutomojuru"
+          "saitekiyokyuumojuru",
+          "saitekiyoukyuumojuru"
         ]
       },
       {
@@ -13599,8 +13674,8 @@
         "en": "Copy Refresh Update Deploy",
         "ja": "コピー更新配備",
         "ja_typings": [
-          "kopikoshinhaihi",
-          "kopikoushinhaihi"
+          "kopikoshinhaibi",
+          "kopikoushinhaibi"
         ]
       },
       {
@@ -13707,7 +13782,7 @@
         "en": "Compiled Language Input",
         "ja": "コンパイル言語入力",
         "ja_typings": [
-          "konpairudegonyuuryoku"
+          "konpairugengonyuuryoku"
         ]
       }
     ],
@@ -13737,8 +13812,10 @@
         "en": "General Utility Index",
         "ja": "汎用ユーティリティインデックス",
         "ja_typings": [
-          "hanyoyutiritiindekusu",
-          "hanyouyutiritiindekusu"
+          "hanyouyutiritiindekkusu",
+          "hanyouyutiritiindekusu",
+          "hanyoyutiritiindekkusu",
+          "hanyoyutiritiindekusu"
         ]
       },
       {
@@ -13867,7 +13944,7 @@
         "en": "true/false data type",
         "ja": "真偽データ型",
         "ja_typings": [
-          "shingyakunodetagata"
+          "shingidetakata"
         ]
       },
       {
@@ -13888,7 +13965,8 @@
         "en": "array type",
         "ja": "配列型",
         "ja_typings": [
-          "hairetsugata"
+          "hairetsugata",
+          "hairetsukei"
         ]
       }
     ],
@@ -13911,7 +13989,7 @@
         "en": "absence of a value",
         "ja": "値の不在",
         "ja_typings": [
-          "chigashinaikoto"
+          "atainofuzai"
         ]
       },
       {
@@ -13999,6 +14077,7 @@
         "en": "converting a value to another type",
         "ja": "値を別の型へ変換",
         "ja_typings": [
+          "ataiobetsunokatahehenkan",
           "chiobetsunokatanihenkan"
         ]
       },
@@ -14104,7 +14183,9 @@
         "ja": "エラー番号型",
         "ja_typings": [
           "erabangogata",
-          "erabangougata"
+          "erabangokata",
+          "erabangougata",
+          "erabangoukata"
         ]
       },
       {
@@ -14135,21 +14216,23 @@
         "ja": "フィールドをまとめたカスタムデータ型",
         "ja_typings": [
           "firudomatometakasutamudetagata",
-          "firudoomatometakasutamudetagata"
+          "firudomatometakasutamudetakata",
+          "firudoomatometakasutamudetagata",
+          "firudoomatometakasutamudetakata"
         ]
       },
       {
         "en": "built-in array type",
         "ja": "組み込み配列型",
         "ja_typings": [
-          "sonawattahairetsugata"
+          "kumikomihairetsukei"
         ]
       },
       {
         "en": "function signature",
         "ja": "関数のシグネチャ",
         "ja_typings": [
-          "kansuunoshigunicha"
+          "kansuunoshigunecha"
         ]
       },
       {
@@ -14186,7 +14269,7 @@
         "en": "reads formatted input",
         "ja": "書式指定入力読み込み",
         "ja_typings": [
-          "shoshikitsukinyuuryokuyomikomi"
+          "shoshikishiteinyuuryokuyomikomi"
         ]
       },
       {
@@ -14230,6 +14313,7 @@
         "en": "index into an array",
         "ja": "配列のインデックス",
         "ja_typings": [
+          "hairetsunoindekkusu",
           "hairetsunoindekusu"
         ]
       },
@@ -14368,7 +14452,7 @@
         "en": "error before compilation",
         "ja": "コンパイル前のエラー",
         "ja_typings": [
-          "kanpairumaenoera"
+          "konpairumaenoera"
         ]
       },
       {
@@ -14405,15 +14489,15 @@
         "en": "program runs but produces wrong results",
         "ja": "実行はするが結果が間違い",
         "ja_typings": [
-          "jikkohasurugagamachigai",
-          "jikkouhasurugagamachigai"
+          "jikkohasurugakekkagamachigai",
+          "jikkouhasurugakekkagamachigai"
         ]
       },
       {
         "en": "program fails to compile",
         "ja": "コンパイルに失敗",
         "ja_typings": [
-          "kanpairuni"
+          "konpairunishippai"
         ]
       },
       {
@@ -14428,8 +14512,8 @@
         "en": "program has syntax error",
         "ja": "構文エラーがある",
         "ja_typings": [
-          "komoneragaaru",
-          "koumoneragaaru"
+          "kobuneragaaru",
+          "koubuneragaaru"
         ]
       }
     ],
@@ -14552,7 +14636,8 @@
         "ja": "静的エラーレポート",
         "ja_typings": [
           "seitekierahokoku",
-          "seitekierahoukoku"
+          "seitekierahoukoku",
+          "seitekierarepoto"
         ]
       },
       {
@@ -14633,20 +14718,21 @@
         "en": "value that cannot change",
         "ja": "不変値",
         "ja_typings": [
-          "kaerarenaichi"
+          "fuhenatai"
         ]
       },
       {
         "en": "variable with fixed type",
         "ja": "固定型の変数",
         "ja_typings": [
-          "katakoteinohensuu"
+          "koteigatanohensuu"
         ]
       },
       {
         "en": "loop limit value",
         "ja": "ループの限り値",
         "ja_typings": [
+          "rupunokagiriatai",
           "rupunokagirichi"
         ]
       },
@@ -14725,7 +14811,9 @@
         "ja": "結果が決まると評価を止める",
         "ja_typings": [
           "kekkagakimarutohyokaotomeru",
-          "kekkagakimarutohyoukaotomeru"
+          "kekkagakimarutohyokaoyameru",
+          "kekkagakimarutohyoukaotomeru",
+          "kekkagakimarutohyoukaoyameru"
         ]
       },
       {
@@ -14772,7 +14860,9 @@
         "en": "condition ? value_if_true : value_if_false",
         "ja": "条件?真の値:偽の値",
         "ja_typings": [
+          "joken makotonoatai nisenoatai",
           "joken shinnochi ginochi",
+          "jouken makotonoatai nisenoatai",
           "jouken shinnochi ginochi"
         ]
       },
@@ -14780,8 +14870,8 @@
         "en": "operator with three operands only",
         "ja": "三つのオペランドのみの演算子",
         "ja_typings": [
-          "santsunoperandonominoenzanshi",
-          "santsunooperandonominoenzanshi"
+          "mittsunooperandonominoenzanshi",
+          "mittsunoperandonominoenzanshi"
         ]
       },
       {
@@ -15760,8 +15850,8 @@
         "en": "Shiketsu High",
         "ja": "式鉄高校",
         "ja_typings": [
-          "shiketsukoko",
-          "shiketsukoukou"
+          "shikitetsukoko",
+          "shikitetsukoukou"
         ]
       },
       {
@@ -16079,6 +16169,7 @@
         "en": "anime for adult men",
         "ja": "大人男性向けアニメ",
         "ja_typings": [
+          "otonadanseimukeanime",
           "otonanodanseimukeanime"
         ]
       },
@@ -16130,8 +16221,8 @@
         "en": "anime with female protagonists only",
         "ja": "女子主人公のみのアニメ",
         "ja_typings": [
-          "joshujinkonominoanime",
-          "joshujinkounominoanime"
+          "joshishujinkonominoanime",
+          "joshishujinkounominoanime"
         ]
       }
     ],
@@ -16205,8 +16296,8 @@
         "en": "Official Voice Acting",
         "ja": "公式ボイスアクト",
         "ja_typings": [
-          "koshikiseiyuuengi",
-          "koushikiseiyuuengi"
+          "koshikiboisuakuto",
+          "koushikiboisuakuto"
         ]
       },
       {
@@ -16332,7 +16423,8 @@
         "en": "a quirk that can be passed to others",
         "ja": "人に渡せる個性",
         "ja_typings": [
-          "hitoniwataserukosei"
+          "hitoniwataserukosei",
+          "ninniwataserukosei"
         ]
       },
       {
@@ -16483,7 +16575,9 @@
         "ja": "葡萄流派",
         "ja_typings": [
           "budonoryuuha",
-          "budounoryuuha"
+          "budoryuuha",
+          "budounoryuuha",
+          "budouryuuha"
         ]
       },
       {
@@ -16823,8 +16917,7 @@
         "en": "writing names to kill people",
         "ja": "名前を書いて人を殺す",
         "ja_typings": [
-          "namaeokaitehitokorosu",
-          "namaeokaitehitookorosu"
+          "namaeokaiteninokorosu"
         ]
       },
       {
@@ -16938,8 +17031,7 @@
         "en": "a fighting technique",
         "ja": "戦う技",
         "ja_typings": [
-          "butonowaza",
-          "butounowaza"
+          "tatakauwaza"
         ]
       }
     ],
@@ -17007,7 +17099,8 @@
         "en": "giant humanoid creature",
         "ja": "巨大な人間型生物",
         "ja_typings": [
-          "kyodainaningengataikimono"
+          "kyodainaningengataikimono",
+          "kyodainaningengataseibutsu"
         ]
       },
       {
@@ -17584,8 +17677,8 @@
         "en": "seasonal broadcast unit (~13 episodes)",
         "ja": "季節放送の単位（約13話）",
         "ja_typings": [
-          "kisetsuhosonotani yaku13wa",
-          "kisetsuhousounotani yaku13wa"
+          "kisetsuhosonotani yaku13hanashi",
+          "kisetsuhousounotani yaku13hanashi"
         ]
       },
       {
@@ -17606,7 +17699,7 @@
         "en": "streaming season format",
         "ja": "配信シーズンフォーマット",
         "ja_typings": [
-          "haishinkisetsukeishiki"
+          "haishinshizunfomatto"
         ]
       }
     ],
@@ -17673,8 +17766,8 @@
         "en": "high-quality animation and emotional stories",
         "ja": "高品質なアニメーションと感動的な物語",
         "ja_typings": [
-          "kohinnaanimeshontokandotekinahanashi",
-          "kouhinnaanimeshontokandoutekinahanashi"
+          "kohinshitsunaanimeshontokandotekinamonogatari",
+          "kouhinshitsunaanimeshontokandoutekinamonogatari"
         ]
       },
       {
@@ -17696,7 +17789,8 @@
         "en": "violent horror anime",
         "ja": "暴力的なホラーアニメ",
         "ja_typings": [
-          "hakyokutekinahoraanime"
+          "boryokutekinahoraanime",
+          "bouryokutekinahoraanime"
         ]
       }
     ],
@@ -17962,7 +18056,7 @@
         "en": "Neon Genesis Evangelion",
         "ja": "新世紀エヴァンゲリオン",
         "ja_typings": [
-          "shinseikiengaerion"
+          "shinseikievangerion"
         ]
       }
     ],
@@ -17999,7 +18093,8 @@
         "en": "futuristic Japan",
         "ja": "未来の日本",
         "ja_typings": [
-          "mirainonihon"
+          "mirainonihon",
+          "mirainonippon"
         ]
       },
       {
@@ -18213,6 +18308,7 @@
         "en": "Yu Yu Hakusho",
         "ja": "幽遊白書",
         "ja_typings": [
+          "yuuyuuhakusho",
           "yuyuhakusho"
         ]
       },
@@ -18250,7 +18346,8 @@
         "en": "Edward's automail limbs",
         "ja": "エドワードの自動メール肢",
         "ja_typings": [
-          "edowadonogisokushishi"
+          "edowadonojidomerushi",
+          "edowadonojidoumerushi"
         ]
       },
       {
@@ -18309,7 +18406,8 @@
         "en": "That Time I Got Reincarnated as a Slime",
         "ja": "転生したらスライムだった件",
         "ja_typings": [
-          "tenseishitarasuraimudattaken"
+          "tenshoshitarasuraimudattaken",
+          "tenshoushitarasuraimudattaken"
         ]
       },
       {
@@ -18346,7 +18444,8 @@
         "en": "only Japanese animation",
         "ja": "日本のアニメのみ",
         "ja_typings": [
-          "nihonnoanimenomi"
+          "nihonnoanimenomi",
+          "nipponnoanimenomi"
         ]
       },
       {
@@ -18560,7 +18659,7 @@
         "en": "psychological thriller",
         "ja": "心理スリラー",
         "ja_typings": [
-          "shinrisasupensu"
+          "shinrisurira"
         ]
       },
       {
@@ -18606,7 +18705,9 @@
         "en": "Nintendo 64",
         "ja": "任天堂64",
         "ja_typings": [
+          "nintendo64",
           "nintendorokujuuyon",
+          "nintendou64",
           "nintendourokujuuyon"
         ]
       },
@@ -19227,15 +19328,15 @@
         "en": "clear lines by filling them",
         "ja": "列を埋めて消す",
         "ja_typings": [
-          "retsuometekiesu",
-          "retsuoumetekiesu"
+          "retsuometekesu",
+          "retsuoumetekesu"
         ]
       },
       {
         "en": "defeat enemies",
         "ja": "敵を倒す",
         "ja_typings": [
-          "tekiotaosu"
+          "kanaotaosu"
         ]
       },
       {
@@ -19739,6 +19840,8 @@
         "en": "linear adventure game",
         "ja": "一次純の冒険ゲーム",
         "ja_typings": [
+          "ichijijunnobokengemu",
+          "ichijijunnoboukengemu",
           "ichijunnobokengemu",
           "ichijunnoboukengemu"
         ]
@@ -19763,6 +19866,7 @@
         "en": "checkmate opponent's king",
         "ja": "相手のキングをチェックメイト",
         "ja_typings": [
+          "aitenokinguochekkumeito",
           "aitenokinguochekkumeto"
         ]
       },
@@ -19770,8 +19874,8 @@
         "en": "capture all pieces",
         "ja": "全手つきょうする",
         "ja_typings": [
-          "zentehatsukyosuru",
-          "zentehatsukyousuru"
+          "zentetsukyosuru",
+          "zentetsukyousuru"
         ]
       },
       {
@@ -20206,8 +20310,8 @@
         "en": "Downloadable Content",
         "ja": "ダウンロード可能コンテンツ",
         "ja_typings": [
-          "daunrodokanonakontentsu",
-          "daunrodokanounakontentsu"
+          "daunrodokanokontentsu",
+          "daunrodokanoukontentsu"
         ]
       },
       {
@@ -20479,7 +20583,8 @@
         "en": "Multiplayer Online Battle Arena",
         "ja": "他人プレイオンラインバトルアリーナ",
         "ja_typings": [
-          "taninpureionrainbatoruarena"
+          "taninpureionrainbatoruarena",
+          "taninpureionrainbatoruarina"
         ]
       },
       {
@@ -20500,8 +20605,8 @@
         "en": "Multi-Object Battle Assignment",
         "ja": "複数目標バトルアサインメント",
         "ja_typings": [
-          "fukusuumokuhyobatorukadai",
-          "fukusuumokuhyoubatorukadai"
+          "fukusuumokuhyobatoruasainmento",
+          "fukusuumokuhyoubatoruasainmento"
         ]
       }
     ],
@@ -20582,8 +20687,8 @@
         "en": "a battle anthem",
         "ja": "戦闘の主題",
         "ja_typings": [
-          "sentonohimei",
-          "sentounohimei"
+          "sentonoshudai",
+          "sentounoshudai"
         ]
       },
       {
@@ -20673,15 +20778,15 @@
         "en": "a multiplayer session ends",
         "ja": "他人プレイのセッションが終わった",
         "ja_typings": [
-          "taninpureinosesshongawatta"
+          "taninpureinosesshongaowatta"
         ]
       },
       {
         "en": "a loading screen appears",
         "ja": "ローディング画面が表示",
         "ja_typings": [
-          "rodogamengahyoji",
-          "rodogamengahyouji"
+          "rodingugamengahyoji",
+          "rodingugamengahyouji"
         ]
       }
     ],
@@ -20704,7 +20809,9 @@
         "en": "cooperative multiplayer gameplay",
         "ja": "協力多人プレイ",
         "ja_typings": [
+          "kyoryokutajinpurei",
           "kyoryokutaninpurei",
+          "kyouryokutajinpurei",
           "kyouryokutaninpurei"
         ]
       },
@@ -20712,7 +20819,9 @@
         "en": "competitive multiplayer",
         "ja": "競争多人プレイ",
         "ja_typings": [
+          "kyosotajinpurei",
           "kyosotaninpurei",
+          "kyousoutajinpurei",
           "kyousoutaninpurei"
         ]
       },
@@ -20839,8 +20948,8 @@
         "en": "instant hit detection along line of sight",
         "ja": "視野の秒速当たり判定",
         "ja_typings": [
-          "shiyanobyoshokunisokujiatarihantei",
-          "shiyanobyoushokunisokujiatarihantei"
+          "shiyanobyosokuatarihantei",
+          "shiyanobyousokuatarihantei"
         ]
       },
       {
@@ -20886,8 +20995,7 @@
         "en": "high latency causing delay",
         "ja": "高レイテンシーによる遅れ",
         "ja_typings": [
-          "koreitenshiniyoruokure",
-          "koureitenshiniyoruokure"
+          "takareitenshiniyoruokure"
         ]
       },
       {
@@ -20901,7 +21009,8 @@
         "en": "server maintenance window",
         "ja": "サーバーメンテナンスウィンドウの時間",
         "ja_typings": [
-          "sabamentenansunojikan"
+          "sabamentenansuwindonojikan",
+          "sabamentenansuwindounojikan"
         ]
       },
       {
@@ -21035,8 +21144,8 @@
         "en": "reach opponent's back row",
         "ja": "相手の後ろの列に届く",
         "ja_typings": [
-          "aitenoshironoretsunitodoku",
-          "aitenoushironoretsunitodoku"
+          "aitenoshironotsuranitodoku",
+          "aitenoushironotsuranitodoku"
         ]
       },
       {
@@ -21066,28 +21175,30 @@
         "en": "Player versus Player",
         "ja": "プレイヤー対プレイヤー",
         "ja_typings": [
-          "pureiyapureiya"
+          "pureiyatsuipureiya"
         ]
       },
       {
         "en": "Platform versus Platform",
         "ja": "プラットフォーム対プラットフォーム",
         "ja_typings": [
-          "purattofomutaipurattofomu"
+          "purattofomutsuipurattofomu"
         ]
       },
       {
         "en": "Points versus Progress",
         "ja": "点数対進捗",
         "ja_typings": [
-          "tensuutaishinchoku"
+          "tensuutsuishinchoku"
         ]
       },
       {
         "en": "Procedural versus Pre-made",
         "ja": "自動体づくり",
         "ja_typings": [
+          "jidokaradazukuri",
           "jidotaitezukuri",
+          "jidoukaradazukuri",
           "jidoutaitezukuri"
         ]
       }
@@ -21111,29 +21222,29 @@
         "en": "Player versus Environment",
         "ja": "プレイヤー対環境",
         "ja_typings": [
-          "pureiyakankyo",
-          "pureiyakankyou"
+          "pureiyatsuikankyo",
+          "pureiyatsuikankyou"
         ]
       },
       {
         "en": "Player versus Enemy",
         "ja": "プレイヤー対敵",
         "ja_typings": [
-          "pureiyateki"
+          "pureiyataiteki"
         ]
       },
       {
         "en": "Player versus Events",
         "ja": "プレイヤー対イベント",
         "ja_typings": [
-          "pureiyaibento"
+          "pureiyatsuiibento"
         ]
       },
       {
         "en": "Points versus Experience",
         "ja": "点数対体験値",
         "ja_typings": [
-          "tensuutaitaikenchi"
+          "tensuutsuitaikenatai"
         ]
       }
     ],
@@ -21157,7 +21268,9 @@
         "ja": "キャラのステータスの一時的向上",
         "ja_typings": [
           "kyaranosutatsunoichijitekikojo",
-          "kyaranosutatsunoichijitekikoujou"
+          "kyaranosutatsunoichijitekikoujou",
+          "kyaranosutetasunoichijitekikojo",
+          "kyaranosutetasunoichijitekikoujou"
         ]
       },
       {
@@ -21219,7 +21332,7 @@
         "en": "removing a character",
         "ja": "文字を削除",
         "ja_typings": [
-          "kyaraosakujo"
+          "mojiosakujo"
         ]
       },
       {
@@ -21381,7 +21494,7 @@
         "en": "dark fantasy medieval world",
         "ja": "ダークファンタジーの中世世界",
         "ja_typings": [
-          "kuraifantajinochuuseisekai"
+          "dakufantajinochuuseisekai"
         ]
       },
       {
@@ -21395,6 +21508,7 @@
         "en": "ancient Japan",
         "ja": "古代日本",
         "ja_typings": [
+          "kodainippon",
           "kodainonihon"
         ]
       },
@@ -21470,6 +21584,7 @@
         "en": "Wood, Stone, Metal",
         "ja": "木、石、金属",
         "ja_typings": [
+          "ki ishi kinzoku",
           "moku ishi kinzoku"
         ]
       },
@@ -21515,7 +21630,9 @@
         "ja": "チャレンジクリアのゲーム内報酬",
         "ja_typings": [
           "charenjikurianogemunaihosho",
-          "charenjikurianogemunaihoushou"
+          "charenjikurianogemunaihoshuu",
+          "charenjikurianogemunaihoushou",
+          "charenjikurianogemunaihoushuu"
         ]
       },
       {
@@ -21559,7 +21676,9 @@
         "en": "number of frames rendered per second",
         "ja": "一秒あたりのフレーム数",
         "ja_typings": [
+          "ichibyoatarinofuremukazu",
           "ichibyoatarinofuremusuu",
+          "ichibyouatarinofuremukazu",
           "ichibyouatarinofuremusuu"
         ]
       },
@@ -21581,7 +21700,8 @@
         "en": "animation smoothness setting",
         "ja": "アニメーションの滑らかさの設定",
         "ja_typings": [
-          "animeshonnamerakasanosettei"
+          "animeshonnamerakasanosettei",
+          "animeshonnonamerakasanosettei"
         ]
       }
     ],
@@ -21604,8 +21724,8 @@
         "en": "synchronizing frame rate with display refresh",
         "ja": "フレームレートをディスプレイのリフレッシュに同期",
         "ja_typings": [
-          "furemuretotisupureinorifuresshunidoki",
-          "furemuretootisupureinorifuresshunidouki"
+          "furemuretodisupureinorifuresshunidoki",
+          "furemuretoodisupureinorifuresshunidouki"
         ]
       },
       {
@@ -21628,7 +21748,9 @@
         "ja": "動画品質設定",
         "ja_typings": [
           "dogahinshitsunosettei",
-          "dougahinshitsunosettei"
+          "dogahinshitsusettei",
+          "dougahinshitsunosettei",
+          "dougahinshitsusettei"
         ]
       }
     ],
@@ -21651,7 +21773,7 @@
         "en": "one of the first arcade video games",
         "ja": "最初のアーケードビデオゲーム",
         "ja_typings": [
-          "saishokinoakedobideogemu"
+          "saishonoakedobideogemu"
         ]
       },
       {
@@ -21696,7 +21818,7 @@
         "en": "shooter genre with extremely dense projectiles",
         "ja": "弾がん密度のシューターゲーム",
         "ja_typings": [
-          "danganbisshirinoshutagemu"
+          "danganmitsudonoshutagemu"
         ]
       },
       {
@@ -21711,7 +21833,7 @@
         "en": "physical shooting game",
         "ja": "物理的シューティングゲーム",
         "ja_typings": [
-          "butsuritekishagekigemu"
+          "butsuritekishutingugemu"
         ]
       },
       {
@@ -21855,7 +21977,7 @@
         "en": "time-limited battle mode",
         "ja": "時間制限バトルモード",
         "ja_typings": [
-          "jikanseinobatorumodo"
+          "jikanseigenbatorumodo"
         ]
       }
     ],
@@ -21988,8 +22110,7 @@
         "en": "platform-agnostic",
         "ja": "プラットフォーム非依存",
         "ja_typings": [
-          "purattofomugyotoku",
-          "purattofomugyoutoku"
+          "purattofomuhiizon"
         ]
       }
     ],
@@ -22019,7 +22140,7 @@
         "en": "game played on game console platform",
         "ja": "ゲームプラットフォームで遊ぶゲーム",
         "ja_typings": [
-          "gemukipurattofomudebugemu"
+          "gemupurattofomudeasobugemu"
         ]
       },
       {
@@ -22034,7 +22155,9 @@
         "ja": "オンラインプラットフォーム機能付きゲーム",
         "ja_typings": [
           "onrainpurattofamukinotsukigemu",
-          "onrainpurattofamukinoutsukigemu"
+          "onrainpurattofamukinoutsukigemu",
+          "onrainpurattofomukinotsukikigemu",
+          "onrainpurattofomukinoutsukikigemu"
         ]
       }
     ],
@@ -22057,22 +22180,23 @@
         "en": "exploration game with abilities unlocking new areas",
         "ja": "能力解除で新エリアを探索",
         "ja_typings": [
-          "noryokukaijodeeriao",
-          "nouryokukaijodeeriao"
+          "noryokukaijodeshineriaotansaku",
+          "nouryokukaijodeshineriaotansaku"
         ]
       },
       {
         "en": "space exploration game",
         "ja": "宇宙探査ゲーム",
         "ja_typings": [
-          "uchuutansakugemu"
+          "uchuutansagemu"
         ]
       },
       {
         "en": "game combining Metroid and Castlevania mechanics",
         "ja": "メトロイドとキャスティーヴァニアのゲームシステムを合わせたゲーム",
         "ja_typings": [
-          "metoroidotokasutorubanianogemushisutemuowasetagemu"
+          "metoroidotokasutorubanianogemushisutemuowasetagemu",
+          "metoroidotokyasutivanianogemushisutemuoawasetagemu"
         ]
       },
       {
@@ -22109,21 +22233,24 @@
         "en": "8th generation",
         "ja": "八世代",
         "ja_typings": [
-          "hachisedai"
+          "hachisedai",
+          "hasseidai"
         ]
       },
       {
         "en": "10th generation",
         "ja": "十世代",
         "ja_typings": [
-          "jussedai"
+          "jussedai",
+          "juusedai"
         ]
       },
       {
         "en": "7th generation",
         "ja": "七世代",
         "ja_typings": [
-          "nanasedai"
+          "nanasedai",
+          "shichisedai"
         ]
       }
     ],
@@ -22146,7 +22273,8 @@
         "en": "game made without major publisher",
         "ja": "大手パブリッシャーなしのゲーム",
         "ja_typings": [
-          "paburisshanashinogemu"
+          "ootepaburisshanashinogemu",
+          "otepaburisshanashinogemu"
         ]
       },
       {
@@ -22190,14 +22318,15 @@
         "en": "PC game distribution platform",
         "ja": "PCゲーム配信プラットフォーム",
         "ja_typings": [
-          "pcgemuhaishinpurattofamu"
+          "pcgemuhaishinpurattofamu",
+          "pcgemuhaishinpurattofomu"
         ]
       },
       {
         "en": "game development engine",
         "ja": "ゲーム開発エンジン",
         "ja_typings": [
-          "gemuenjin"
+          "gemukaihatsuenjin"
         ]
       },
       {
@@ -22234,14 +22363,16 @@
         "en": "Japanese comic book style",
         "ja": "日本の漫画スタイル",
         "ja_typings": [
-          "nihonnomangasutairu"
+          "nihonnomangasutairu",
+          "nipponnomangasutairu"
         ]
       },
       {
         "en": "Japanese animation",
         "ja": "日本のアニメーション",
         "ja_typings": [
-          "nihonnoanimeshon"
+          "nihonnoanimeshon",
+          "nipponnoanimeshon"
         ]
       },
       {
@@ -22249,14 +22380,17 @@
         "ja": "日本の小説",
         "ja_typings": [
           "nihonnoshosetsu",
-          "nihonnoshousetsu"
+          "nihonnoshousetsu",
+          "nipponnoshosetsu",
+          "nipponnoshousetsu"
         ]
       },
       {
         "en": "Japanese film",
         "ja": "日本の映画",
         "ja_typings": [
-          "nihonnoeiga"
+          "nihonnoeiga",
+          "nipponnoeiga"
         ]
       }
     ],
@@ -22430,8 +22564,8 @@
         "en": "limited edition release",
         "ja": "書いて版の発表",
         "ja_typings": [
-          "kaiteibannohappyo",
-          "kaiteibannohappyou"
+          "kaitehannohappyo",
+          "kaitehannohappyou"
         ]
       },
       {
@@ -22597,15 +22731,16 @@
         "en": "reading guide for kanji",
         "ja": "漢字の読み方の手引き",
         "ja_typings": [
-          "kanjinoyomigatanotebiki"
+          "kanjinoyomigatanotebiki",
+          "kanjinoyomikatanotebiki"
         ]
       },
       {
         "en": "sound effect text",
         "ja": "音響効果テキスト",
         "ja_typings": [
-          "onsayonotekisuto",
-          "onsayounotekisuto"
+          "onkyokokatekisuto",
+          "onkyoukoukatekisuto"
         ]
       },
       {
@@ -22619,7 +22754,7 @@
         "en": "character name label",
         "ja": "キャラの名のラベル",
         "ja_typings": [
-          "kyaranonamaenoraberu"
+          "kyaranomeinoraberu"
         ]
       }
     ],
@@ -22687,7 +22822,7 @@
         "en": "a hero so powerful he defeats enemies in one punch",
         "ja": "一撃で敵を倒すヒーロー",
         "ja_typings": [
-          "ichigekidetekiotaosuhiro"
+          "ichigekidekanaotaosuhiro"
         ]
       },
       {
@@ -22701,8 +22836,8 @@
         "en": "a cook who fights with food",
         "ja": "食べ物で戦う料理人",
         "ja_typings": [
-          "tabemonodeuryorinin",
-          "tabemonodeuryourinin"
+          "tabemonodetatakauryorinin",
+          "tabemonodetatakauryourinin"
         ]
       },
       {
@@ -22754,7 +22889,8 @@
         "en": "Yotsuba",
         "ja": "四つ葉と",
         "ja_typings": [
-          "yotsubato"
+          "yotsubato",
+          "yotsuhato"
         ]
       }
     ],
@@ -22913,7 +23049,7 @@
         "en": "Korean-style digital vertical scroll comic",
         "ja": "韓国式の縦長電子漫画",
         "ja_typings": [
-          "kankokushikinotatenagamanga"
+          "kankokushikinotatenagadenshimanga"
         ]
       },
       {
@@ -22927,7 +23063,8 @@
         "en": "Japanese manga on web",
         "ja": "ウェブの日本漫画",
         "ja_typings": [
-          "webunonihonmanga"
+          "webunonihonmanga",
+          "webunonipponmanga"
         ]
       },
       {
@@ -23047,7 +23184,7 @@
         "en": "self-published fan comic",
         "ja": "自販のファン漫画",
         "ja_typings": [
-          "jigannofanmanga"
+          "jihannofanmanga"
         ]
       },
       {
@@ -23199,8 +23336,8 @@
         "en": "Lone Wolf and Cub",
         "ja": "骨喰いの狼",
         "ja_typings": [
-          "kokaminookami",
-          "kokaminoookami"
+          "honekuinookami",
+          "honekuinoookami"
         ]
       },
       {
@@ -23282,14 +23419,16 @@
         "en": "Vikings in ancient Japan",
         "ja": "古代日本のバイキング",
         "ja_typings": [
-          "kodainihonnobaikingu"
+          "kodainihonnobaikingu",
+          "kodainipponnobaikingu"
         ]
       },
       {
         "en": "Samurai in medieval Japan",
         "ja": "中世日本のサムライ",
         "ja_typings": [
-          "chuuseinihonnosamurai"
+          "chuuseinihonnosamurai",
+          "chuuseinipponnosamurai"
         ]
       },
       {
@@ -23319,15 +23458,15 @@
         "en": "dramatic realist manga for adults",
         "ja": "大人のための写実的な漫画",
         "ja_typings": [
-          "otonanotamenoshijitsutekinamanga"
+          "otonanotamenoshajitsutekinamanga"
         ]
       },
       {
         "en": "funny children's manga",
         "ja": "子供のための面白い漫画",
         "ja_typings": [
-          "kodomonotamenomoshiromanga",
-          "kodomonotamenoomoshiromanga"
+          "kodomonotamenomoshiroimanga",
+          "kodomonotamenoomoshiroimanga"
         ]
       },
       {
@@ -23341,7 +23480,7 @@
         "en": "animated manga format",
         "ja": "アニメ形式",
         "ja_typings": [
-          "animekakeishiki"
+          "animekeishiki"
         ]
       }
     ],
@@ -23477,7 +23616,8 @@
         "en": "That Time I Got Reincarnated as a Slime",
         "ja": "転生スライム",
         "ja_typings": [
-          "tenseisuraimu"
+          "tenshosuraimu",
+          "tenshousuraimu"
         ]
       }
     ],
@@ -23740,14 +23880,14 @@
         "en": "remix version of original",
         "ja": "オリジナルのリミックス版",
         "ja_typings": [
-          "orijinarunorimikkusuban"
+          "orijinarunorimikkusuhan"
         ]
       },
       {
         "en": "overseas licensed version",
         "ja": "海外許可版",
         "ja_typings": [
-          "kaigaikyokaban"
+          "kaigaikyokahan"
         ]
       }
     ],
@@ -23873,7 +24013,7 @@
         "en": "historical epics",
         "ja": "歴史の対作",
         "ja_typings": [
-          "rekishinotaisaku"
+          "rekishinotsuisaku"
         ]
       },
       {
@@ -24215,14 +24355,15 @@
         "en": "complex psychological thriller manga",
         "ja": "複雑心理スリラーマンガ",
         "ja_typings": [
-          "fukuzatsunashinrisuriramanga"
+          "fukuzatsunashinrisuriramanga",
+          "fukuzatsushinrisuriramanga"
         ]
       },
       {
         "en": "simple action manga",
         "ja": "単純なアクション漫画",
         "ja_typings": [
-          "kantannaakushonmanga"
+          "tanjunnaakushonmanga"
         ]
       },
       {
@@ -24366,8 +24507,8 @@
         "en": "a shonen manga artist's life",
         "ja": "少年漫画家の生活",
         "ja_typings": [
-          "shonenmangakanoseikatsu",
-          "shounenmangakanoseikatsu"
+          "shonenmangaienoseikatsu",
+          "shounenmangaienoseikatsu"
         ]
       },
       {
@@ -24405,6 +24546,7 @@
         "en": "Yu Yu Hakusho",
         "ja": "幽遊白書",
         "ja_typings": [
+          "yuuyuuhakusho",
           "yuyuhakusho"
         ]
       },
@@ -24442,7 +24584,7 @@
         "en": "four-panel comic strip",
         "ja": "四コマの漫画",
         "ja_typings": [
-          "yonkomanomanga"
+          "shikomanomanga"
         ]
       },
       {
@@ -24456,7 +24598,7 @@
         "en": "manga spanning four volumes",
         "ja": "四巻の漫画",
         "ja_typings": [
-          "yonkannomanga"
+          "shikannomanga"
         ]
       },
       {
@@ -24621,15 +24763,16 @@
         "en": "mature themes for adult men",
         "ja": "成人男性のためのテーマ",
         "ja_typings": [
-          "seijindanseinotamenotonanotema",
-          "seijindanseinotamenootonanotema"
+          "seijindanseinotamenotema"
         ]
       },
       {
         "en": "school romance stories",
         "ja": "学校の恋愛話",
         "ja_typings": [
+          "gakkonorenaibanashi",
           "gakkonorenaihanashi",
+          "gakkounorenaibanashi",
           "gakkounorenaihanashi"
         ]
       },
@@ -24645,7 +24788,7 @@
         "en": "tournament battle arcs",
         "ja": "大会バトルアークス",
         "ja_typings": [
-          "taikaibatoruhen"
+          "taikaibatoruakusu"
         ]
       }
     ],
@@ -24668,6 +24811,7 @@
         "en": "distinctive flamboyant art style",
         "ja": "独特な華やかな絵のスタイル",
         "ja_typings": [
+          "dokutokunahanayakanaenosutairu",
           "dokutokunohanayakanaenosutairu"
         ]
       },
@@ -24894,7 +25038,7 @@
         "en": "Mount Everest",
         "ja": "エベレスト山",
         "ja_typings": [
-          "eberesutosan"
+          "eberesutoyama"
         ]
       },
       {
@@ -25043,15 +25187,14 @@
         "en": "Indian Ocean",
         "ja": "インド洋",
         "ja_typings": [
-          "indoyo",
-          "indoyou"
+          "indohiroshi"
         ]
       },
       {
         "en": "Southern Ocean",
         "ja": "南極海",
         "ja_typings": [
-          "nankyokukai"
+          "nankyokuumi"
         ]
       }
     ],
@@ -25295,7 +25438,8 @@
         "en": "7",
         "ja": "七",
         "ja_typings": [
-          "nana"
+          "nana",
+          "shichi"
         ]
       },
       {
@@ -25567,21 +25711,21 @@
         "en": "Busan",
         "ja": "釜山",
         "ja_typings": [
-          "pusan"
+          "fuzan"
         ]
       },
       {
         "en": "Incheon",
         "ja": "仁川",
         "ja_typings": [
-          "incheon"
+          "nikawa"
         ]
       },
       {
         "en": "Daegu",
         "ja": "大邱",
         "ja_typings": [
-          "tegu"
+          "taikyuu"
         ]
       }
     ],
@@ -25846,7 +25990,7 @@
         "en": "Caspian Sea",
         "ja": "カスピ海",
         "ja_typings": [
-          "kasupikai"
+          "kasupiumi"
         ]
       }
     ],
@@ -25957,7 +26101,7 @@
         "en": "Lake Baikal",
         "ja": "バイカル湖",
         "ja_typings": [
-          "baikaruko"
+          "baikarumizuumi"
         ]
       },
       {
@@ -25971,7 +26115,7 @@
         "en": "Caspian Sea",
         "ja": "カスピ海",
         "ja_typings": [
-          "kasupikai"
+          "kasupiumi"
         ]
       },
       {
@@ -26061,15 +26205,14 @@
         "en": "Indian Ocean",
         "ja": "インド洋",
         "ja_typings": [
-          "indoyo",
-          "indoyou"
+          "indohiroshi"
         ]
       },
       {
         "en": "Arctic Ocean",
         "ja": "北極海",
         "ja_typings": [
-          "hokkyokukai"
+          "hokkyokuumi"
         ]
       }
     ],
@@ -26137,7 +26280,8 @@
         "en": "Japan",
         "ja": "日本",
         "ja_typings": [
-          "nihon"
+          "nihon",
+          "nippon"
         ]
       },
       {
@@ -26686,7 +26830,8 @@
         "en": "Japan",
         "ja": "日本",
         "ja_typings": [
-          "nihon"
+          "nihon",
+          "nippon"
         ]
       }
     ],
@@ -27304,7 +27449,9 @@
         "ja": "秦始皇帝だけ",
         "ja_typings": [
           "shikoteidake",
-          "shikouteidake"
+          "shikouteidake",
+          "shinshikoteidake",
+          "shinshikouteidake"
         ]
       }
     ],
@@ -27327,28 +27474,28 @@
         "en": "Ancient Egyptians",
         "ja": "古代エジプト人",
         "ja_typings": [
-          "kodaiejiputojin"
+          "kodaiejiputonin"
         ]
       },
       {
         "en": "Ancient Romans",
         "ja": "古代ローマ人",
         "ja_typings": [
-          "kodairomajin"
+          "kodairomanin"
         ]
       },
       {
         "en": "Ancient Greeks",
         "ja": "古代ギリシャ人",
         "ja_typings": [
-          "kodaigirishiajin"
+          "kodaigirishanin"
         ]
       },
       {
         "en": "Ancient Mesopotamians",
         "ja": "古代メソポタミア人",
         "ja_typings": [
-          "kodaimesopotamiajin"
+          "kodaimesopotamianin"
         ]
       }
     ],
@@ -27415,8 +27562,8 @@
         "en": "French military leader and emperor",
         "ja": "フランスの軍指導者と皇帝",
         "ja_typings": [
-          "furansunogunjidoshatokotei",
-          "furansunogunjidoushatokoutei"
+          "furansunogunshidoshatokotei",
+          "furansunogunshidoushatokoutei"
         ]
       },
       {
@@ -27505,15 +27652,16 @@
         "en": "political tension between USA and USSR",
         "ja": "アメリカとソ連の政治的緊張",
         "ja_typings": [
-          "amerikatosono"
+          "amerikatosotsuranoseijitekikincho",
+          "amerikatosotsuranoseijitekikinchou"
         ]
       },
       {
         "en": "war fought in cold climates",
         "ja": "寒冷気候での戦争",
         "ja_typings": [
-          "samuikikodenosenso",
-          "samuikikoudenosensou"
+          "kanreikikodenosenso",
+          "kanreikikoudenosensou"
         ]
       },
       {
@@ -27528,8 +27676,8 @@
         "en": "war without weapons",
         "ja": "武器なき戦争",
         "ja_typings": [
-          "bukinashinosenso",
-          "bukinashinosensou"
+          "bukinakisenso",
+          "bukinakisensou"
         ]
       }
     ],
@@ -27552,14 +27700,14 @@
         "en": "Cleopatra VII",
         "ja": "クレオパトラ7世",
         "ja_typings": [
-          "kureopatora7sei"
+          "kureopatora7yo"
         ]
       },
       {
         "en": "Ramesses II",
         "ja": "ラメセス2世",
         "ja_typings": [
-          "ramesesu2sei"
+          "ramesesu2yo"
         ]
       },
       {
@@ -27822,8 +27970,8 @@
         "en": "colonial protest against British taxation",
         "ja": "英国税への植民地の抗議",
         "ja_typings": [
-          "eikokukazeihenoshokuminchinokogi",
-          "eikokukazeihenoshokuminchinokougi"
+          "eikokuzeihenoshokuminchinokogi",
+          "eikokuzeihenoshokuminchinokougi"
         ]
       },
       {
@@ -27845,7 +27993,8 @@
         "en": "American tea company celebration",
         "ja": "アメリカの茶会社のお祝い",
         "ja_typings": [
-          "amerikanochakaishanosaiten"
+          "amerikanochakaishanoiwai",
+          "amerikanochakaishanooiwai"
         ]
       }
     ],
@@ -27912,8 +28061,8 @@
         "en": "ancient trade routes connecting East and West",
         "ja": "東と西をつなぐ古代の貿易路",
         "ja_typings": [
-          "higashitonishiotsunagukodainoboekiro",
-          "higashitonishiotsunagukodainobouekiro"
+          "higashitonishiotsunagukodainoboekimichi",
+          "higashitonishiotsunagukodainobouekimichi"
         ]
       },
       {
@@ -27936,8 +28085,8 @@
         "en": "Indian spice trade route",
         "ja": "インドの香辛料貿易路",
         "ja_typings": [
-          "indonokoshinryoboekiro",
-          "indonokoushinryoubouekiro"
+          "indonokoshinryoboekimichi",
+          "indonokoushinryoubouekimichi"
         ]
       }
     ],
@@ -27968,6 +28117,7 @@
         "en": "Greek philosopher",
         "ja": "ギリシャの哲学者",
         "ja_typings": [
+          "girishanotetsugakusha",
           "girishianotetsugakusha"
         ]
       },
@@ -27982,8 +28132,10 @@
         "en": "Persian king",
         "ja": "ペルシャの王",
         "ja_typings": [
-          "perushianou",
-          "perushianoou"
+          "perushanoou",
+          "perushanou",
+          "perushianoou",
+          "perushianou"
         ]
       }
     ],
@@ -28050,7 +28202,7 @@
         "en": "founder of Mongol Empire",
         "ja": "モンゴル帝国の基礎者",
         "ja_typings": [
-          "mongoruteikokunokisosha"
+          "mongoruteikokunokisomono"
         ]
       },
       {
@@ -28066,13 +28218,16 @@
         "ja": "日本の将軍",
         "ja_typings": [
           "nihonnoshogun",
-          "nihonnoshougun"
+          "nihonnoshougun",
+          "nipponnoshogun",
+          "nipponnoshougun"
         ]
       },
       {
         "en": "Persian conqueror",
         "ja": "ペルシャの征服者",
         "ja_typings": [
+          "perushanoseifukusha",
           "perushianoseifukusha"
         ]
       }
@@ -28202,7 +28357,7 @@
         "en": "1867",
         "ja": "一八六七年",
         "ja_typings": [
-          "1867nen"
+          "ichihatsurokushichinen"
         ]
       },
       {
@@ -28283,8 +28438,8 @@
         "en": "World War I battle",
         "ja": "第一次世界大戦の戦闘",
         "ja_typings": [
-          "daiichijitaisennosento",
-          "daiichijitaisennosentou"
+          "daiichijisekaitaisennosento",
+          "daiichijisekaitaisennosentou"
         ]
       },
       {
@@ -28337,7 +28492,7 @@
         "en": "German reformer",
         "ja": "ドイツの改革者",
         "ja_typings": [
-          "doitsunokaikakusha"
+          "doitsunokaikakumono"
         ]
       },
       {
@@ -28456,8 +28611,8 @@
         "en": "Allied invasion of Normandy in 1944",
         "ja": "1944年のノルマンディー上陸作戦",
         "ja_typings": [
-          "1944nennodorunodansenjorikusakusen",
-          "1944nennodorunodansenjourikusakusen"
+          "1944nennonorumandijorikusakusen",
+          "1944nennonorumandijourikusakusen"
         ]
       },
       {
@@ -28465,7 +28620,9 @@
         "ja": "日本のパールハーバー攻撃",
         "ja_typings": [
           "nihonnoparuhabakogeki",
-          "nihonnoparuhabakougeki"
+          "nihonnoparuhabakougeki",
+          "nipponnoparuhabakogeki",
+          "nipponnoparuhabakougeki"
         ]
       },
       {
@@ -28480,8 +28637,8 @@
         "en": "End of World War II",
         "ja": "第二次世界大戦の終わり",
         "ja_typings": [
-          "dainijitaisennowari",
-          "dainijitaisennoowari"
+          "dainijisekaitaisennoowari",
+          "dainijisekaitaisennowari"
         ]
       }
     ],
@@ -28548,7 +28705,8 @@
         "en": "founder of modern nursing",
         "ja": "近代看護の創始者",
         "ja_typings": [
-          "kindaikangonososha"
+          "kindaikangonososhisha",
+          "kindaikangonosoushisha"
         ]
       },
       {
@@ -28593,6 +28751,7 @@
         "en": "vast empire from Greece to India",
         "ja": "ギリシャからインドまでの巨大な帝国",
         "ja_typings": [
+          "girishakaraindomadenokyodainateikoku",
           "girishiakaraindomadenokyodainateikoku"
         ]
       },
@@ -28607,6 +28766,7 @@
         "en": "Persian Empire",
         "ja": "ペルシャ帝国",
         "ja_typings": [
+          "perushateikoku",
           "perushiateikoku"
         ]
       },
@@ -28725,14 +28885,16 @@
         "en": "Medieval European religious military campaigns",
         "ja": "中世ヨーロッパの宗教的軍事遠征",
         "ja_typings": [
-          "chuuseioshuunoshuukyotekigunjiensei",
-          "chuuseioushuunoshuukyoutekigunjiensei"
+          "chuuseiyoroppanoshuukyotekigunjiensei",
+          "chuuseiyoroppanoshuukyoutekigunjiensei"
         ]
       },
       {
         "en": "Ancient Greek military alliance",
         "ja": "古代ギリシャの軍事同盟",
         "ja_typings": [
+          "kodaigirishanogunjidomei",
+          "kodaigirishanogunjidoumei",
           "kodaigirishianogunjidomei",
           "kodaigirishianogunjidoumei"
         ]
@@ -28749,7 +28911,7 @@
         "en": "Viking raids on Europe",
         "ja": "ヨーロッパへのヴァイキングの襲撃",
         "ja_typings": [
-          "eikokuhenobaikingunoshuugeki"
+          "yoroppahenovaikingunoshuugeki"
         ]
       }
     ],
@@ -28819,8 +28981,8 @@
         "en": "South African anti-apartheid leader and president",
         "ja": "南アフリカの反アパルトヘイト指導者と大統領",
         "ja_typings": [
-          "minamiafurikanohanaparutoheitodoshatodaitoryo",
-          "minamiafurikanohanaparutoheitoudoushatodaitouryou"
+          "minamiafurikanohanaparutoheitoshidoshatodaitoryo",
+          "minamiafurikanohanaparutoheitoshidoushatodaitouryou"
         ]
       },
       {
@@ -28843,7 +29005,7 @@
         "en": "Egyptian revolutionary",
         "ja": "エジプトの革命家",
         "ja_typings": [
-          "ejiputonokakumeika"
+          "ejiputonokakumeiie"
         ]
       }
     ],
@@ -28932,8 +29094,8 @@
         "en": "industrial nations forming alliance",
         "ja": "工業国の同盟形成",
         "ja_typings": [
-          "kogyokokunodomeikessei",
-          "kougyoukokunodoumeikessei"
+          "kogyokuninodomeikeisei",
+          "kougyoukuninodoumeikeisei"
         ]
       }
     ],
@@ -28956,8 +29118,8 @@
         "en": "founder of People's Republic of China",
         "ja": "中国人民共和国の基礎者",
         "ja_typings": [
-          "chuukajinminkyowakokunokisosha",
-          "chuukajinminkyouwakokunokisosha"
+          "chuugokujinminkyouwakokunokisomono",
+          "chuugokujinminkyowakokunokisomono"
         ]
       },
       {
@@ -28965,7 +29127,9 @@
         "ja": "日本の天皇",
         "ja_typings": [
           "nihonnotenno",
-          "nihonnotennou"
+          "nihonnotennou",
+          "nipponnotenno",
+          "nipponnotennou"
         ]
       },
       {
@@ -29063,6 +29227,7 @@
         "en": "Greek goddess",
         "ja": "ギリシャの女神",
         "ja_typings": [
+          "girishanomegami",
           "girishianomegami"
         ]
       },
@@ -29070,8 +29235,10 @@
         "en": "Persian queen",
         "ja": "ペルシャの女王",
         "ja_typings": [
-          "perushianojou",
-          "perushianojoou"
+          "perushanojoou",
+          "perushanojou",
+          "perushianojoou",
+          "perushianojou"
         ]
       }
     ],
@@ -29118,8 +29285,8 @@
         "en": "war in British India",
         "ja": "イギリス領インドの戦争",
         "ja_typings": [
-          "eiryoindonosenso",
-          "eiryouindonosensou"
+          "igirisuryoindonosenso",
+          "igirisuryouindonosensou"
         ]
       }
     ],
@@ -29143,7 +29310,9 @@
         "ja": "奴隷制を廃止した第16代アメリカ大統領",
         "ja_typings": [
           "doreiseiohaishishita16daiamerikadaitoryo",
-          "doreiseiohaishishita16daiamerikadaitouryou"
+          "doreiseiohaishishita16daiamerikadaitouryou",
+          "doreiseiohaishishitadai16daiamerikadaitoryo",
+          "doreiseiohaishishitadai16daiamerikadaitouryou"
         ]
       },
       {
@@ -29158,16 +29327,16 @@
         "en": "US president in WWI era",
         "ja": "第一次世界線のアメリカ大統領",
         "ja_typings": [
-          "daiichijitaisenkinoamerikadaitoryo",
-          "daiichijitaisenkinoamerikadaitouryou"
+          "daiichijisekaisennoamerikadaitoryo",
+          "daiichijisekaisennoamerikadaitouryou"
         ]
       },
       {
         "en": "US president in WWII era",
         "ja": "第二次世界線のアメリカ大統領",
         "ja_typings": [
-          "dainijitaisenkinoamerikadaitoryo",
-          "dainijitaisenkinoamerikadaitouryou"
+          "dainijisekaisennoamerikadaitoryo",
+          "dainijisekaisennoamerikadaitouryou"
         ]
       }
     ],
@@ -29234,15 +29403,14 @@
         "en": "WWII US program to develop atomic bomb",
         "ja": "第二次大戦のアメリカの原爆開発",
         "ja_typings": [
-          "dainijitaisennoamerikanogenshibakudankaihatsu"
+          "dainijitaisennoamerikanogenbakukaihatsu"
         ]
       },
       {
         "en": "construction of Manhattan island",
         "ja": "マンハッタン島の建設",
         "ja_typings": [
-          "manhattantonokensetsu",
-          "manhattantounokensetsu"
+          "manhattanshimanokensetsu"
         ]
       },
       {
@@ -29256,7 +29424,7 @@
         "en": "space exploration program",
         "ja": "宇宙探査計画",
         "ja_typings": [
-          "uchuutansakukeikaku"
+          "uchuutansakeikaku"
         ]
       }
     ],
@@ -29325,8 +29493,8 @@
         "en": "military government led by a shogun",
         "ja": "将軍に引きいられた武家政権",
         "ja_typings": [
-          "shogunnihikiiraretabugatekuseiken",
-          "shougunnihikiiraretabugatekuseiken"
+          "shogunnihikiiraretabukeseiken",
+          "shougunnihikiiraretabukeseiken"
         ]
       },
       {
@@ -29350,7 +29518,9 @@
         "ja": "仏教寺の組織",
         "ja_typings": [
           "bukkyojinososhiki",
-          "bukkyoujinososhiki"
+          "bukkyoteranososhiki",
+          "bukkyoujinososhiki",
+          "bukkyouteranososhiki"
         ]
       }
     ],
@@ -29373,8 +29543,8 @@
         "en": "series of conflicts between England and France",
         "ja": "イングランドとフランスの一連の紛争",
         "ja_typings": [
-          "eifurankannoichirennobunso",
-          "eifurankannoichirennobunsou"
+          "ingurandotofuransunoichirennofunso",
+          "ingurandotofuransunoichirennofunsou"
         ]
       },
       {
@@ -29421,6 +29591,7 @@
         "en": "founder of the Edo shogunate",
         "ja": "江戸幕府の基礎者",
         "ja_typings": [
+          "edobakufunokisomono",
           "edobakufunokisosha"
         ]
       },
@@ -29429,7 +29600,9 @@
         "ja": "日本の初代天皇",
         "ja_typings": [
           "nihonnoshodaitenno",
-          "nihonnoshodaitennou"
+          "nihonnoshodaitennou",
+          "nipponnoshodaitenno",
+          "nipponnoshodaitennou"
         ]
       },
       {
@@ -29437,13 +29610,16 @@
         "ja": "日本を単独で統一した侍",
         "ja_typings": [
           "nihonotandokudetoitsushitasamurai",
-          "nihonotandokudetouitsushitasamurai"
+          "nihonotandokudetouitsushitasamurai",
+          "nipponotandokudetoitsushitasamurai",
+          "nipponotandokudetouitsushitasamurai"
         ]
       },
       {
         "en": "reformer of the Meiji era",
         "ja": "明治時代の改革者",
         "ja_typings": [
+          "meijijidainokaikakumono",
           "meijijidainokaikakusha"
         ]
       }
@@ -29877,8 +30053,10 @@
         "en": "table organizing chemical elements",
         "ja": "化学元素を整理した表",
         "ja_typings": [
+          "kagakugensooseirishitahyou",
+          "kagakugensooseirishitaomote",
           "kagakugensoseirishitahyo",
-          "kagakugensooseirishitahyou"
+          "kagakugensoseirishitaomote"
         ]
       },
       {
@@ -29886,7 +30064,9 @@
         "ja": "化学反応の表",
         "ja_typings": [
           "kagakuhannonohyo",
-          "kagakuhannounohyou"
+          "kagakuhannonomote",
+          "kagakuhannounohyou",
+          "kagakuhannounoomote"
         ]
       },
       {
@@ -29894,7 +30074,9 @@
         "ja": "原子量のみの表",
         "ja_typings": [
           "genshiryonominohyo",
-          "genshiryounominohyou"
+          "genshiryonominomote",
+          "genshiryounominohyou",
+          "genshiryounominoomote"
         ]
       },
       {
@@ -29925,7 +30107,8 @@
         "en": "rapid air expansion from lightning heat",
         "ja": "稲光の熱による急速な空気膨張",
         "ja_typings": [
-          "inabikarinoniyoruna"
+          "inemitsunonetsuniyorukyuusokunakuukibocho",
+          "inemitsunonetsuniyorukyuusokunakuukibouchou"
         ]
       },
       {
@@ -29971,7 +30154,8 @@
         "en": "region where gravity is so strong light cannot escape",
         "ja": "光が脱出できないほど重力が強い領域",
         "ja_typings": [
-          "gadekinaihodogai"
+          "hikarigadasshutsudekinaihodojuuryokugatsuyoiryoiki",
+          "hikarigadasshutsudekinaihodojuuryokugatsuyoiryouiki"
         ]
       },
       {
@@ -29993,7 +30177,9 @@
         "ja": "超新星の残り",
         "ja_typings": [
           "choshinseinonagori",
-          "choushinseinonagori"
+          "choshinseinonokori",
+          "choushinseinonagori",
+          "choushinseinonokori"
         ]
       }
     ],
@@ -30251,14 +30437,16 @@
         "ja": "筋細胞",
         "ja_typings": [
           "kinnikusaibo",
-          "kinnikusaibou"
+          "kinnikusaibou",
+          "sujisaibo",
+          "sujisaibou"
         ]
       },
       {
         "en": "blood cell",
         "ja": "血液",
         "ja_typings": [
-          "kekkyuu"
+          "ketsueki"
         ]
       },
       {
@@ -30350,8 +30538,8 @@
         "en": "cell's genetic material storage",
         "ja": "細胞の遺伝子環理",
         "ja_typings": [
-          "saibonoidenjikanri",
-          "saibounoidenjikanri"
+          "saibonoidenshikanri",
+          "saibounoidenshikanri"
         ]
       },
       {
@@ -30444,8 +30632,8 @@
         "en": "ocean warming by sun",
         "ja": "太陽による海のあたたまり",
         "ja_typings": [
-          "taiyoniyorunoatatamari",
-          "taiyouniyourunoatatamari"
+          "taiyoniyoruuminoatatamari",
+          "taiyouniyoruuminoatatamari"
         ]
       },
       {
@@ -30568,8 +30756,8 @@
         "en": "smallest unit of an element",
         "ja": "原子の最小単位",
         "ja_typings": [
-          "gensonosaishotani",
-          "gensonosaishoutani"
+          "genshinosaishotani",
+          "genshinosaishoutani"
         ]
       },
       {
@@ -30584,8 +30772,7 @@
         "en": "subatomic particle",
         "ja": "素粒子",
         "ja_typings": [
-          "soatomikkuryuushi",
-          "souatomikkuryuushi"
+          "soryuushi"
         ]
       },
       {
@@ -30659,8 +30846,8 @@
         "en": "negatively charged particle orbiting nucleus",
         "ja": "核を崩壊する負の電粒子",
         "ja_typings": [
-          "kakuokokaisurufunodenkaryuushi",
-          "kakuokoukaisurufunodenkaryuushi"
+          "kakuohokaisurufunodenryuushi",
+          "kakuohoukaisurufunodenryuushi"
         ]
       },
       {
@@ -30718,8 +30905,8 @@
         "en": "negatively charged orbital particle",
         "ja": "負電荷軌道粒子",
         "ja_typings": [
-          "funodenkakokairyuushi",
-          "funodenkakoukairyuushi"
+          "fudenkakidoryuushi",
+          "fudenkakidouryuushi"
         ]
       },
       {
@@ -30757,6 +30944,7 @@
         "en": "visible path of the moon",
         "ja": "月の道筋",
         "ja_typings": [
+          "gatsunomichisuji",
           "tsukinomichisuji"
         ]
       },
@@ -30771,8 +30959,8 @@
         "en": "region of dense stars near Sun",
         "ja": "太陽近傍の恒星域",
         "ja_typings": [
-          "taiyokinkunokomitsuhoshiiki",
-          "taiyoukinkunokoumitsuhoshiiki"
+          "taiyokinbonokoseiiki",
+          "taiyoukinbounokouseiiki"
         ]
       }
     ],
@@ -30889,8 +31077,8 @@
         "en": "testable proposed explanation",
         "ja": "検証可能な過程の説明",
         "ja_typings": [
-          "kenshonakateino",
-          "kenshounakateino"
+          "kenshokanonakateinosetsumei",
+          "kenshoukanounakateinosetsumei"
         ]
       },
       {
@@ -30984,7 +31172,8 @@
         "ja": "DNA上の遺伝の単位",
         "ja_typings": [
           "dnajonoidennotani",
-          "dnajounoidennotani"
+          "dnajounoidennotani",
+          "dnauenoidennotani"
         ]
       },
       {
@@ -31267,7 +31456,7 @@
         "en": "stored potential energy",
         "ja": "蓄えられたエネルギー",
         "ja_typings": [
-          "takuwaeraretainerugi"
+          "takuwaeraretaenerugi"
         ]
       },
       {
@@ -31358,7 +31547,7 @@
         "en": "energy increases in closed systems",
         "ja": "閉鎖系でエネルギーは増える",
         "ja_typings": [
-          "heisaikeideenerugihafueru"
+          "heisakeideenerugihafueru"
         ]
       },
       {
@@ -31642,6 +31831,8 @@
         "en": "measure of temperature",
         "ja": "温度の測り方",
         "ja_typings": [
+          "ondonohakariho",
+          "ondonohakarihou",
           "ondonohakarikata"
         ]
       },
@@ -31649,6 +31840,8 @@
         "en": "measure of pressure",
         "ja": "圧力の測り方",
         "ja_typings": [
+          "atsuryokunohakariho",
+          "atsuryokunohakarihou",
           "atsuryokunohakarikata"
         ]
       }
@@ -31694,7 +31887,8 @@
         "en": "rain during volcanic eruption",
         "ja": "火山噴火中の雨",
         "ja_typings": [
-          "kazanfunkachuunoame"
+          "kazanfunkachuunoame",
+          "kazanfunkanakanoame"
         ]
       }
     ],
@@ -31780,8 +31974,8 @@
         "en": "radioactive emission from nucleus",
         "ja": "核からの放射性崩壊",
         "ja_typings": [
-          "kakukaranohoshaseihassha",
-          "kakukaranohoushaseihassha"
+          "kakukaranohoshaseihokai",
+          "kakukaranohoushaseihoukai"
         ]
       },
       {
@@ -31834,6 +32028,7 @@
         "en": "continental shelf regions",
         "ja": "大陸棚地域",
         "ja_typings": [
+          "tairikudanachiiki",
           "tairikudananoryoiki",
           "tairikudananoryouiki"
         ]
@@ -31996,6 +32191,7 @@
         "en": "4",
         "ja": "四",
         "ja_typings": [
+          "shi",
           "yon"
         ]
       },
@@ -32061,7 +32257,8 @@
         "en": "14",
         "ja": "十四",
         "ja_typings": [
-          "juushi"
+          "juushi",
+          "juuyon"
         ]
       }
     ],
@@ -32263,6 +32460,7 @@
         "en": "180 degrees",
         "ja": "180度",
         "ja_typings": [
+          "180do",
           "hyakuhachijuudo"
         ]
       },
@@ -32277,6 +32475,7 @@
         "en": "270 degrees",
         "ja": "270度",
         "ja_typings": [
+          "270do",
           "nihyakunanajuudo"
         ]
       },
@@ -32284,6 +32483,7 @@
         "en": "360 degrees",
         "ja": "360度",
         "ja_typings": [
+          "360do",
           "sanbyakurokujuudo"
         ]
       }
@@ -32544,6 +32744,7 @@
         "en": "middle value",
         "ja": "中間の地",
         "ja_typings": [
+          "chuukannochi",
           "nakamanochi"
         ]
       },
@@ -32575,7 +32776,9 @@
         "ja": "x²を含む方程式",
         "ja_typings": [
           "ekkusujijoofukumuhoteishiki",
-          "ekkusujijouofukumuhouteishiki"
+          "ekkusujijouofukumuhouteishiki",
+          "xofukumuhoteishiki",
+          "xofukumuhouteishiki"
         ]
       },
       {
@@ -32583,7 +32786,9 @@
         "ja": "x³を含む方程式",
         "ja_typings": [
           "ekkususanjoofukumuhoteishiki",
-          "ekkususanjouofukumuhouteishiki"
+          "ekkususanjouofukumuhouteishiki",
+          "xofukumuhoteishiki",
+          "xofukumuhouteishiki"
         ]
       },
       {
@@ -32667,8 +32872,8 @@
         "en": "inverse of exponentiation",
         "ja": "べき乗の逆関数",
         "ja_typings": [
-          "bekijonogyakusan",
-          "bekijounogyakusan"
+          "bekijonogyakukansuu",
+          "bekijounogyakukansuu"
         ]
       },
       {
@@ -32690,6 +32895,7 @@
         "en": "ratio of two numbers",
         "ja": "二数の比",
         "ja_typings": [
+          "nikazunohi",
           "nisuunohi"
         ]
       }
@@ -32848,14 +33054,16 @@
         "en": "rectangular array of numbers",
         "ja": "数値の長方形の配列",
         "ja_typings": [
-          "suunochohokeinohairetsu",
-          "suunochouhoukeinohairetsu"
+          "suuchinochohokeinohairetsu",
+          "suuchinochouhoukeinohairetsu"
         ]
       },
       {
         "en": "single row of numbers",
         "ja": "数の一行",
         "ja_typings": [
+          "kazunoichigyo",
+          "kazunoichigyou",
           "suunoichigyo",
           "suunoichigyou"
         ]
@@ -32941,7 +33149,8 @@
         "en": "1/6",
         "ja": "六分のいち",
         "ja_typings": [
-          "rokubunnoichi"
+          "rokubunnoichi",
+          "rokufunnoichi"
         ]
       },
       {
@@ -32955,7 +33164,8 @@
         "en": "1/3",
         "ja": "三分のいち",
         "ja_typings": [
-          "sanbunnoichi"
+          "sanbunnoichi",
+          "sanpunnoichi"
         ]
       },
       {
@@ -33006,6 +33216,7 @@
         "en": "pair of numbers",
         "ja": "数の組",
         "ja_typings": [
+          "kazunokumi",
           "suunokumi"
         ]
       }
@@ -33264,7 +33475,8 @@
         "en": "7",
         "ja": "七",
         "ja_typings": [
-          "nana"
+          "nana",
+          "shichi"
         ]
       },
       {
@@ -33404,8 +33616,8 @@
         "en": "sequence where each term adds a constant",
         "ja": "各項一定数を足す数列",
         "ja_typings": [
-          "kakukoniteisuuotasusuuretsu",
-          "kakukouniteisuuotasusuuretsu"
+          "kakukoitteisuuotasusuuretsu",
+          "kakukouitteisuuotasusuuretsu"
         ]
       },
       {
@@ -33443,8 +33655,8 @@
         "en": "sequence where each term adds a constant",
         "ja": "各項一定数とする数列",
         "ja_typings": [
-          "kakukoniteisuuotasusuuretsu",
-          "kakukouniteisuuotasusuuretsu"
+          "kakukoitteisuutosurusuuretsu",
+          "kakukouitteisuutosurusuuretsu"
         ]
       },
       {
@@ -33582,15 +33794,16 @@
         "en": "triangular array of binomial coefficients",
         "ja": "二項係数の三角配列",
         "ja_typings": [
-          "nikokeisuunosankakkeihairetsu",
-          "nikoukeisuunosankakkeihairetsu"
+          "nikokeisuunosankakuhairetsu",
+          "nikoukeisuunosankakuhairetsu"
         ]
       },
       {
         "en": "triangle with all sides equal",
         "ja": "すべての辺が等しい三角形",
         "ja_typings": [
-          "subetenohengahitoshiisankakkei"
+          "subetenohengahitoshiisankakkei",
+          "subetenohengahitoshiisankakukei"
         ]
       },
       {
@@ -33598,7 +33811,9 @@
         "ja": "幾何学の証明に使う三角形",
         "ja_typings": [
           "kikagakunoshomeinitsukausankakkei",
-          "kikagakunoshoumeinitsukausankakkei"
+          "kikagakunoshomeinitsukausankakukei",
+          "kikagakunoshoumeinitsukausankakkei",
+          "kikagakunoshoumeinitsukausankakukei"
         ]
       },
       {
@@ -33683,6 +33898,8 @@
         "en": "arrangement in specific order",
         "ja": "特定の順序による並べ方",
         "ja_typings": [
+          "tokuteinojunjoniyorunarabeho",
+          "tokuteinojunjoniyorunarabehou",
           "tokuteinojunjoniyorunarabekata"
         ]
       },
@@ -33875,6 +34092,7 @@
         "en": "Persian",
         "ja": "ペルシャ語",
         "ja_typings": [
+          "perushago",
           "perushiago"
         ]
       }
@@ -33956,7 +34174,8 @@
         "en": "word that sounds the same",
         "ja": "同じ音の単語",
         "ja_typings": [
-          "onajiotonokotoba"
+          "onajiotonokotoba",
+          "onajiotonotango"
         ]
       },
       {
@@ -34052,7 +34271,7 @@
         "en": "rhyming couplet",
         "ja": "韻をそろえた二連句",
         "ja_typings": [
-          "guinosoroetanirenku"
+          "inosoroetanirenku"
         ]
       }
     ],
@@ -34217,21 +34436,24 @@
         "en": "Afro-Asiatic",
         "ja": "アフロアジア諸族",
         "ja_typings": [
-          "afuroajiagozoku"
+          "afuroajiagozoku",
+          "afuroajiashozoku"
         ]
       },
       {
         "en": "Sino-Tibetan",
         "ja": "中国チベット諸族",
         "ja_typings": [
-          "chuugokuchibettogozoku"
+          "chuugokuchibettogozoku",
+          "chuugokuchibettoshozoku"
         ]
       },
       {
         "en": "Austronesian",
         "ja": "オストロネシアン語族",
         "ja_typings": [
-          "osutoroneshiagozoku"
+          "osutoroneshiagozoku",
+          "osutoroneshiangozoku"
         ]
       }
     ],
@@ -34255,7 +34477,8 @@
         "ja": "前から後ろからも読める言葉",
         "ja_typings": [
           "maekaramoshirokaramoyomerukotoba",
-          "maekaramoushirokaramoyomerukotoba"
+          "maekaramoushirokaramoyomerukotoba",
+          "zenkaraushirokaramoyomerukotoba"
         ]
       },
       {
@@ -34389,6 +34612,7 @@
         "en": "study of word origins",
         "ja": "言葉の起源の学問",
         "ja_typings": [
+          "kotobanokigennogakumon",
           "kotobanokorinogakumon",
           "kotobanookorinogakumon"
         ]
@@ -34504,6 +34728,7 @@
         "en": "origin of words",
         "ja": "言葉の起源",
         "ja_typings": [
+          "kotobanokigen",
           "kotobanokori",
           "kotobanookori"
         ]
@@ -34595,7 +34820,7 @@
         "en": "written form of language",
         "ja": "語の記述体系",
         "ja_typings": [
-          "gonokijutsukei"
+          "gonokijutsutaikei"
         ]
       }
     ],
@@ -34665,7 +34890,8 @@
         "en": "smallest unit of sound in language",
         "ja": "言語でもっとも小さい音の単位",
         "ja_typings": [
-          "gengodemottomochiisanaotonotani"
+          "gengodemottomochiisanaotonotani",
+          "gengodemottomochisaiotonotani"
         ]
       },
       {
@@ -34717,6 +34943,7 @@
         "en": "Greek",
         "ja": "ギリシャ語",
         "ja_typings": [
+          "girishago",
           "girishiago"
         ]
       },
@@ -34769,7 +34996,8 @@
         "en": "name of a person or thing",
         "ja": "人やものの名前",
         "ja_typings": [
-          "hitoyamonono namae"
+          "hitoyamonono namae",
+          "ninyamonononamae"
         ]
       },
       {
@@ -34891,7 +35119,8 @@
         "en": "word showing relationship between nouns",
         "ja": "名詞間の関係を示す言葉",
         "ja_typings": [
-          "meishikannokankeioshimesukotoba"
+          "meishikannokankeioshimesukotoba",
+          "meishimanokankeioshimesukotoba"
         ]
       },
       {
@@ -34906,6 +35135,7 @@
         "en": "plural noun form",
         "ja": "名の複数形",
         "ja_typings": [
+          "meinofukusuukei",
           "meishinofukusuukei"
         ]
       },
@@ -34996,7 +35226,8 @@
         "en": "repetition of initial sounds",
         "ja": "初期音の繰り返し",
         "ja_typings": [
-          "shokionnokurikaeshi"
+          "shokionnokurikaeshi",
+          "shokiotonokurikaeshi"
         ]
       },
       {
@@ -35071,7 +35302,8 @@
         "en": "Japan",
         "ja": "日本",
         "ja_typings": [
-          "nihon"
+          "nihon",
+          "nippon"
         ]
       },
       {
@@ -35129,6 +35361,7 @@
         "en": "erhu",
         "ja": "二子",
         "ja_typings": [
+          "futako",
           "niko"
         ]
       },
@@ -35220,7 +35453,8 @@
         "en": "harvest festival",
         "ja": "収穫祭",
         "ja_typings": [
-          "shuukakumatsuri"
+          "shuukakumatsuri",
+          "shuukakusai"
         ]
       },
       {
@@ -35251,7 +35485,9 @@
         "ja": "古ローマの円形競技場",
         "ja_typings": [
           "kodairomanoenkeikyogijo",
-          "kodairomanoenkeikyougijou"
+          "kodairomanoenkeikyougijou",
+          "koromanoenkeikyogijo",
+          "koromanoenkeikyougijou"
         ]
       },
       {
@@ -35265,6 +35501,7 @@
         "en": "Greek temple",
         "ja": "ギリシャの神殿",
         "ja_typings": [
+          "girishanoshinden",
           "girishianoshinden"
         ]
       },
@@ -35296,14 +35533,17 @@
         "ja": "日本のかどう",
         "ja_typings": [
           "nihonnokado",
-          "nihonnokadou"
+          "nihonnokadou",
+          "nipponnokado",
+          "nipponnokadou"
         ]
       },
       {
         "en": "Japanese sword art",
         "ja": "日本の剣術",
         "ja_typings": [
-          "nihonnokenjutsu"
+          "nihonnokenjutsu",
+          "nipponnokenjutsu"
         ]
       },
       {
@@ -35386,7 +35626,9 @@
         "ja": "茶道",
         "ja_typings": [
           "chado",
-          "chadou"
+          "chadou",
+          "sado",
+          "sadou"
         ]
       },
       {
@@ -35500,7 +35742,9 @@
         "ja": "シク教の水祭り",
         "ja_typings": [
           "shikkyonomizumatsuri",
-          "shikkyounomizumatsuri"
+          "shikkyounomizumatsuri",
+          "shikukyonomizumatsuri",
+          "shikukyounomizumatsuri"
         ]
       }
     ],
@@ -35546,7 +35790,8 @@
         "en": "South American harvest day",
         "ja": "南米の収穫の日",
         "ja_typings": [
-          "nanbeinoshuukakunohi"
+          "nanbeinoshuukakunohi",
+          "nanbeinoshuukakunonichi"
         ]
       }
     ],
@@ -35569,8 +35814,10 @@
         "en": "Japanese art of paper folding",
         "ja": "紙を折る日本の芸術",
         "ja_typings": [
+          "kamioorunihonnogeijutsu",
+          "kamioorunipponnogeijutsu",
           "kamiorunihonnogeijutsu",
-          "kamioorunihonnogeijutsu"
+          "kamiorunipponnogeijutsu"
         ]
       },
       {
@@ -35593,7 +35840,9 @@
         "ja": "日本のもくちょう",
         "ja_typings": [
           "nihonnomokucho",
-          "nihonnomokuchou"
+          "nihonnomokuchou",
+          "nipponnomokucho",
+          "nipponnomokuchou"
         ]
       }
     ],
@@ -35623,6 +35872,7 @@
         "en": "Moon Festival",
         "ja": "月祭",
         "ja_typings": [
+          "gatsumatsuri",
           "tsukimatsuri"
         ]
       },
@@ -35637,7 +35887,8 @@
         "en": "Harvest Festival",
         "ja": "収穫祭",
         "ja_typings": [
-          "shuukakumatsuri"
+          "shuukakumatsuri",
+          "shuukakusai"
         ]
       }
     ],
@@ -35711,7 +35962,8 @@
         "en": "hanbok",
         "ja": "韓服",
         "ja_typings": [
-          "hanboku"
+          "hanboku",
+          "kanfuku"
         ]
       },
       {
@@ -35765,7 +36017,9 @@
         "ja": "日本のメディテーション技法",
         "ja_typings": [
           "nihonnomediteshongiho",
-          "nihonnomediteshongihou"
+          "nihonnomediteshongihou",
+          "nipponnomediteshongiho",
+          "nipponnomediteshongihou"
         ]
       },
       {
@@ -35804,7 +36058,8 @@
         "en": "Japanese pickled vegetables",
         "ja": "日本の漬物",
         "ja_typings": [
-          "nihonnotsukemono"
+          "nihonnotsukemono",
+          "nipponnotsukemono"
         ]
       },
       {
@@ -35819,7 +36074,8 @@
         "en": "Thai spicy soup",
         "ja": "タイの辛いスープ",
         "ja_typings": [
-          "tainokaraisupu"
+          "tainokaraisupu",
+          "tainotsuraisupu"
         ]
       }
     ],
@@ -35940,6 +36196,8 @@
         "en": "ancient Greek sculpture",
         "ja": "古代ギリシャの彫刻",
         "ja_typings": [
+          "kodaigirishanochokoku",
+          "kodaigirishanochoukoku",
           "kodaigirishianochokoku",
           "kodaigirishianochoukoku"
         ]
@@ -35948,6 +36206,7 @@
         "en": "Renaissance building",
         "ja": "ルネサンス建築",
         "ja_typings": [
+          "runesansukenchiku",
           "runessansukenchiku"
         ]
       },
@@ -35979,8 +36238,8 @@
         "en": "mausoleum in India",
         "ja": "インドの廟堂",
         "ja_typings": [
-          "indonobyobyo",
-          "indonobyoubyou"
+          "indonobyodo",
+          "indonobyoudou"
         ]
       },
       {
@@ -36024,6 +36283,8 @@
         "en": "Russian nesting doll",
         "ja": "ロシアのダッルマ人形",
         "ja_typings": [
+          "roshianodarrumaningyo",
+          "roshianodarrumaningyou",
           "roshianodarumaningyo",
           "roshianodarumaningyou"
         ]
@@ -36032,7 +36293,8 @@
         "en": "Japanese puzzle box",
         "ja": "日本の秘密箱",
         "ja_typings": [
-          "nihonnohimitsuhako"
+          "nihonnohimitsuhako",
+          "nipponnohimitsuhako"
         ]
       },
       {
@@ -36122,7 +36384,7 @@
         "en": "painted silk art",
         "ja": "塗り絵を描く芸術",
         "ja_typings": [
-          "nunonieokakugeijutsu"
+          "nurieoegakugeijutsu"
         ]
       },
       {
@@ -36160,7 +36422,8 @@
         "en": "Japanese warrior class",
         "ja": "日本の武士",
         "ja_typings": [
-          "nihonnobushi"
+          "nihonnobushi",
+          "nipponnobushi"
         ]
       },
       {
@@ -36182,6 +36445,7 @@
         "ja": "モンゴル騎兵兵士",
         "ja_typings": [
           "mokonokiheiheishi",
+          "mongorukiheiheishi",
           "moukonokiheiheishi"
         ]
       }
@@ -36213,21 +36477,23 @@
         "en": "torch used to signal race start",
         "ja": "レースのスタートの信号対物",
         "ja_typings": [
-          "resunosutatonoshingotaimatsu",
-          "resunosutatonoshingoutaimatsu"
+          "resunosutatonoshingotaibutsu",
+          "resunosutatonoshingoutaibutsu"
         ]
       },
       {
         "en": "fire kept in ancient Rome",
         "ja": "古代ローマとされた日",
         "ja_typings": [
-          "kodairomadetomosaretahi"
+          "kodairomatosaretanichi"
         ]
       },
       {
         "en": "eternal flame of peace",
         "ja": "永遠平和の炎",
         "ja_typings": [
+          "eienheiwanohono",
+          "eienheiwanohonoo",
           "eikyuuheiwanohono",
           "eikyuuheiwanohonoo"
         ]
@@ -36252,7 +36518,8 @@
         "en": "Japanese style comics",
         "ja": "日本スタイルの漫画",
         "ja_typings": [
-          "nihonsutairunomanga"
+          "nihonsutairunomanga",
+          "nipponsutairunomanga"
         ]
       },
       {
@@ -36274,7 +36541,8 @@
         "en": "Japanese film genre",
         "ja": "日本の映画ジャンル",
         "ja_typings": [
-          "nihonnoeigajanru"
+          "nihonnoeigajanru",
+          "nipponnoeigajanru"
         ]
       }
     ],
@@ -36304,7 +36572,8 @@
         "en": "Japanese street fashion",
         "ja": "日本のストリートファッション",
         "ja_typings": [
-          "nihonnosutoritofasshon"
+          "nihonnosutoritofasshon",
+          "nipponnosutoritofasshon"
         ]
       },
       {
@@ -36342,7 +36611,8 @@
         "en": "7",
         "ja": "七",
         "ja_typings": [
-          "nana"
+          "nana",
+          "shichi"
         ]
       },
       {
@@ -36521,7 +36791,8 @@
         "en": "Mount Everest",
         "ja": "エベレスト山",
         "ja_typings": [
-          "eberesutosan"
+          "eberesutosan",
+          "eberesutoyama"
         ]
       },
       {
@@ -36610,7 +36881,9 @@
         "ja": "約30万km/秒",
         "ja_typings": [
           "yaku30mankiro/byo",
-          "yaku30mankiro/byou"
+          "yaku30mankiro/byou",
+          "yaku30mankm/byo",
+          "yaku30mankm/byou"
         ]
       },
       {
@@ -36618,7 +36891,9 @@
         "ja": "約15万km/秒",
         "ja_typings": [
           "yaku15mankiro/byo",
-          "yaku15mankiro/byou"
+          "yaku15mankiro/byou",
+          "yaku15mankm/byo",
+          "yaku15mankm/byou"
         ]
       },
       {
@@ -36626,7 +36901,9 @@
         "ja": "約60万km/秒",
         "ja_typings": [
           "yaku60mankiro/byo",
-          "yaku60mankiro/byou"
+          "yaku60mankiro/byou",
+          "yaku60mankm/byo",
+          "yaku60mankm/byou"
         ]
       },
       {
@@ -36634,7 +36911,8 @@
         "ja": "約10万km/s",
         "ja_typings": [
           "yaku10mankiro/byo",
-          "yaku10mankiro/byou"
+          "yaku10mankiro/byou",
+          "yaku10mankm/s"
         ]
       }
     ],
@@ -36671,7 +36949,8 @@
         "en": "7",
         "ja": "七",
         "ja_typings": [
-          "nana"
+          "nana",
+          "shichi"
         ]
       },
       {
@@ -36924,6 +37203,7 @@
         "en": "4",
         "ja": "四",
         "ja_typings": [
+          "shi",
           "yon"
         ]
       },
@@ -36982,7 +37262,8 @@
         "en": "yuan",
         "ja": "元",
         "ja_typings": [
-          "gen"
+          "gen",
+          "moto"
         ]
       },
       {
@@ -37233,7 +37514,9 @@
         "ja": "植物が太陽の光から食物をつくる過程",
         "ja_typings": [
           "shokubutsugataiyonohikarikarashokumotsuotsukurukatei",
-          "shokubutsugataiyounohikarikarashokumotsuotsukurukatei"
+          "shokubutsugataiyonohikarikaratabemonotsukurukatei",
+          "shokubutsugataiyounohikarikarashokumotsuotsukurukatei",
+          "shokubutsugataiyounohikarikaratabemonootsukurukatei"
         ]
       },
       {
@@ -37336,8 +37619,10 @@
         "en": "humerus (upper arm)",
         "ja": "上腕骨",
         "ja_typings": [
-          "jowankotsu",
-          "jouwankotsu"
+          "jouwanhone",
+          "jouwankotsu",
+          "jowanhone",
+          "jowankotsu"
         ]
       },
       {
@@ -37462,7 +37747,7 @@
         "en": "14",
         "ja": "十五",
         "ja_typings": [
-          "juushi"
+          "juugo"
         ]
       },
       {
@@ -37506,6 +37791,7 @@
         "en": "28",
         "ja": "二十八本",
         "ja_typings": [
+          "nijuuhachihon",
           "nijuuhappon"
         ]
       },
@@ -37557,8 +37843,8 @@
         "en": "Neptune",
         "ja": "海洋性",
         "ja_typings": [
-          "kaiosei",
-          "kaiousei"
+          "kaiyosei",
+          "kaiyousei"
         ]
       },
       {
@@ -37589,7 +37875,7 @@
         "en": "O (oxygen)",
         "ja": "酸素",
         "ja_typings": [
-          "osanso"
+          "sanso"
         ]
       },
       {
@@ -37677,7 +37963,8 @@
         "en": "Vatican City",
         "ja": "バチカン市国",
         "ja_typings": [
-          "bachikanshikokka"
+          "bachikanshikokka",
+          "bachikanshikuni"
         ]
       },
       {
@@ -37728,6 +38015,7 @@
         "en": "4",
         "ja": "四",
         "ja_typings": [
+          "shi",
           "yon"
         ]
       },
@@ -38123,6 +38411,8 @@
         "en": "virtual YouTuber using avatar",
         "ja": "アバターを使うバーチャルYouTuber",
         "ja_typings": [
+          "abataotsukaubacharuyotuber",
+          "abataotsukaubacharuyoutuber",
           "abataotsukaubacharuyuchuba"
         ]
       },
@@ -38225,6 +38515,7 @@
         "en": "game development company",
         "ja": "ゲーム開発会社",
         "ja_typings": [
+          "gemukaihatsugaisha",
           "gemukaihatsukaisha"
         ]
       },
@@ -38262,7 +38553,8 @@
         "en": "Japanese idol fans",
         "ja": "日本のアイドルファン",
         "ja_typings": [
-          "nihonnoaidorufan"
+          "nihonnoaidorufan",
+          "nipponnoaidorufan"
         ]
       },
       {
@@ -38301,6 +38593,8 @@
         "en": "paid donation message on YouTube",
         "ja": "YouTubeでの有料寄付メッセージ",
         "ja_typings": [
+          "yotubedenoyuuryokifumesseji",
+          "youtubedenoyuuryoukifumesseji",
           "yuchubudenoyuuryokifumesseji",
           "yuchubudenoyuuryoukifumesseji"
         ]
@@ -38348,7 +38642,9 @@
         "ja": "人の心情をネットにばらすこと",
         "ja_typings": [
           "hitonoshinjoonettonibarasukoto",
-          "hitonoshinjouonettonibarasukoto"
+          "hitonoshinjouonettonibarasukoto",
+          "ninnoshinjoonettonibarasukoto",
+          "ninnoshinjouonettonibarasukoto"
         ]
       },
       {
@@ -38370,8 +38666,8 @@
         "en": "mass following on social media",
         "ja": "ソーシャルメディアで大量フォロー",
         "ja_typings": [
-          "susharumediadetairyoforo",
-          "susharumediadetairyouforo"
+          "sosharumediadetairyoforo",
+          "sosharumediadetairyouforo"
         ]
       }
     ],
@@ -38446,7 +38742,8 @@
         "en": "downloading large files",
         "ja": "大きなファイルのダウンロード",
         "ja_typings": [
-          "daikinafairunodaunrodo"
+          "okinafairunodaunrodo",
+          "ookinafairunodaunrodo"
         ]
       },
       {
@@ -38679,6 +38976,7 @@
         "en": "a new debut",
         "ja": "新デビュー",
         "ja_typings": [
+          "shindebyu",
           "shinkidebyu"
         ]
       },
@@ -38756,7 +39054,9 @@
         "ja": "日本のネット文化での熱心な超ファン",
         "ja_typings": [
           "nihonnonettobunkadenonesshinnachofan",
-          "nihonnonettobunkadenonesshinnachoufan"
+          "nihonnonettobunkadenonesshinnachoufan",
+          "nipponnonettobunkadenonesshinnachofan",
+          "nipponnonettobunkadenonesshinnachoufan"
         ]
       },
       {
@@ -38892,7 +39192,8 @@
         "en": "favorite VTuber or idol",
         "ja": "お気に入りのVTuberやアイドル",
         "ja_typings": [
-          "okiniirinobuichubayaaidoru"
+          "okiniirinobuichubayaaidoru",
+          "okiniirinovtuberyaaidoru"
         ]
       },
       {
@@ -39001,6 +39302,7 @@
         "en": "drawing stream",
         "ja": "絵描きストリーム",
         "ja_typings": [
+          "ekakisutorimu",
           "oekakisutorimu"
         ]
       }
@@ -39071,7 +39373,8 @@
         "en": "laughing emote on Twitch",
         "ja": "Twitchでの笑いのエモート",
         "ja_typings": [
-          "tsuitchidenowarainoemoto"
+          "tsuitchidenowarainoemoto",
+          "twitchdenowarainoemoto"
         ]
       },
       {
@@ -39085,6 +39388,7 @@
         "en": "angry emote",
         "ja": "怒りのエモート",
         "ja_typings": [
+          "ikarinoemoto",
           "okorinoemoto"
         ]
       },
@@ -39130,7 +39434,7 @@
         "en": "copyright striking content",
         "ja": "著作権侵害コンテンツ",
         "ja_typings": [
-          "chosakukenshinkoku"
+          "chosakukenshingaikontentsu"
         ]
       },
       {
@@ -39218,6 +39522,7 @@
         "en": "debut in 3D VR world",
         "ja": "3D VR世界にデビュー",
         "ja_typings": [
+          "3d vrsekainidebyu",
           "3dbuiarusekainidebyu"
         ]
       },
@@ -39271,8 +39576,8 @@
         "en": "Interactive Reality Layer",
         "ja": "方法的リアレイヤー",
         "ja_typings": [
-          "sohotekiriaru",
-          "souhoutekiriaru"
+          "hohotekiriareiya",
+          "houhoutekiriareiya"
         ]
       }
     ],
@@ -39296,21 +39601,25 @@
         "ja": "日本の動画共有サイト",
         "ja_typings": [
           "nihonnodogakyoyuusaito",
-          "nihonnodougakyouyuusaito"
+          "nihonnodougakyouyuusaito",
+          "nipponnodogakyoyuusaito",
+          "nipponnodougakyouyuusaito"
         ]
       },
       {
         "en": "Japanese social media",
         "ja": "日本のソーシャルメディア",
         "ja_typings": [
-          "nihonnososharumedia"
+          "nihonnososharumedia",
+          "nipponnososharumedia"
         ]
       },
       {
         "en": "Japanese streaming platform",
         "ja": "日本のストリーミングプラットフォーム",
         "ja_typings": [
-          "nihonnosutorimingupurattofomu"
+          "nihonnosutorimingupurattofomu",
+          "nipponnosutorimingupurattofomu"
         ]
       },
       {
@@ -39318,7 +39627,9 @@
         "ja": "日本の音楽プラットフォーム",
         "ja_typings": [
           "nihonnongakupurattofomu",
-          "nihonnoongakupurattofomu"
+          "nihonnoongakupurattofomu",
+          "nipponnongakupurattofomu",
+          "nipponnoongakupurattofomu"
         ]
       }
     ],
@@ -39477,7 +39788,9 @@
         "ja": "オンラインで意図的に人を挑発すること",
         "ja_typings": [
           "onraindeitotekinihitochohatsusurukoto",
-          "onraindeitotekinihitoochohatsusurukoto"
+          "onraindeitotekinihitoochohatsusurukoto",
+          "onraindeitotekinininochohatsusurukoto",
+          "onraindeitotekinininochouhatsusurukoto"
         ]
       },
       {
@@ -39537,14 +39850,16 @@
         "en": "Awaiting Feedback Kindly",
         "ja": "返事待ちの領域モード",
         "ja_typings": [
-          "henjimachinoreikinmodo"
+          "henjimachinoryoikimodo",
+          "henjimachinoryouikimodo"
         ]
       },
       {
         "en": "All Friends Known",
         "ja": "全ての友達は一同",
         "ja_typings": [
-          "subetenotomodachihaidoku"
+          "subetenotomodachihaichido",
+          "subetenotomodachihaichidou"
         ]
       }
     ],
@@ -39575,7 +39890,7 @@
         "en": "guaranteed rare item drop",
         "ja": "必ずレアアイテムが出るシステム",
         "ja_typings": [
-          "kanarazureaaitemugaderujisutemu"
+          "kanarazureaaitemugaderushisutemu"
         ]
       },
       {
@@ -39589,6 +39904,7 @@
         "en": "game difficulty system",
         "ja": "難しさのシステム",
         "ja_typings": [
+          "mutsukashisanoshisutemu",
           "muzukashisanoshisutemu"
         ]
       }
@@ -39657,13 +39973,15 @@
         "en": "latency between player and server",
         "ja": "プレイヤーとサーバー間の遅延",
         "ja_typings": [
-          "pureiyatosabakannochien"
+          "pureiyatosabakannochien",
+          "pureiyatosabamanochien"
         ]
       },
       {
         "en": "number of players online",
         "ja": "オンラインのプレイヤー数",
         "ja_typings": [
+          "onrainnopureiyakazu",
           "onrainnopureiyasuu"
         ]
       },
@@ -39852,7 +40170,8 @@
         "ja": "高フレームレートでストリーミング",
         "ja_typings": [
           "kofuremuretodesutorimu",
-          "koufuremuretodesutorimu"
+          "koufuremuretodesutorimu",
+          "takafuremuretodesutorimingu"
         ]
       },
       {
