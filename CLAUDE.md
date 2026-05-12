@@ -122,7 +122,7 @@ v0.1.x にあった以下を v0.2.0 で段階的に廃止する：
 
 `src/io/normalize.rs::canonical_romaji` が runtime で以下を吸収する。**データ側は1通りで登録**、プレイヤー入力は揺れて入っても通る。
 
-- ヘボン式 ↔ kunrei: `shi/si`, `chi/ti`, `tsu/tu`, `ji/zi`, `fu/hu`, `wo/o`
+- ヘボン式 ↔ kunrei: `shi/si`, `chi/ti`, `tsu/tu`, `ji/zi`, `fu/hu` (※ `wo/o` は IME で別キーで別の文字 (`wo`→を, `o`→お) なので **吸収しない**)
 - ティ Wapuro: `thi/texi/teli` → `thi`
 - ディ / ぢ Wapuro: `di/dji/dhi/dexi/deli/dzi` → `di` (じ=`ji`→`zi` とは別キーなので区別される)
 - ヅ collapse: `dzu` → `du`

@@ -28103,28 +28103,28 @@
         "ja": "単打・二塁打・三塁打・本塁打",
         "en": "single, double, triple, home run",
         "ja_typings": [
-          "tandanirudasanrudahonruda"
+          "tandaniruidasanruidahonruida"
         ]
       },
       {
         "ja": "二塁打を4本",
         "en": "four doubles",
         "ja_typings": [
-          "nirudaoyonhon"
+          "niruidawoyonhon"
         ]
       },
       {
         "ja": "本塁打を4本",
         "en": "four home runs",
         "ja_typings": [
-          "honrudaoyonhon"
+          "honruidawoyonhon"
         ]
       },
       {
         "ja": "三振を3つ",
         "en": "three strikeouts",
         "ja_typings": [
-          "sanshinnomittsu"
+          "sanshinwomittsu"
         ]
       }
     ],
