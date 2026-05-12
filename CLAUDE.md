@@ -115,3 +115,73 @@ v0.1.x にあった以下を v0.2.0 で段階的に廃止する：
 - 漢字を含む choice は読みを人間が判断して `ja_typings` を手で入れる
 - 検査は必ず実行する
   - `cargo run --bin lint-questions -- data/questions_ja.json data/questions_en.json`
+
+### ローマ字バリアントの runtime 吸収（#96）
+
+- ローマ字表記の揺れ（shi/si, chi/ti, tsu/tu, ji/zi, fu/hu, wo/o, thi/texi/teli, dji/di, dzu/du）は `src/io/normalize.rs::canonical_romaji` が runtime で吸収する
+- **データ側は引き続きヘボン式の1通りで登録する**（`shi` を登録、`si` は登録しない）
+- プレイヤー入力は両方受理される
+- これにより「じが4個ある単語に 2^4=16通りを登録する」必要はない
+
+### かな読み揺れは複数登録（#98）
+
+- 漢字 → かな の段階で**複数の自然な読みがある**ものは、`ja_typings` に**両方登録する**
+  - 例: 日本 = `nihon` / `nippon` → 両方
+  - 例: 七人 = `shichinin` / `nananin` → 両方
+- ローマ字バリアントとは別軸の問題なので、#96 では救えない
+
+## ja_typings 全件チェック手順（新規問題追加時・定期保守時）
+
+**前提**: `scripts/check_ja_typings.py` は pykakasi で粗く比較するだけの**事前フィルタ**。最終判定はフリーザ様が per-entry で全件行う。スクリプトを信用しすぎて一括処理しないこと。
+
+### 手順
+
+1. **粗フィルタを実行**
+   ```bash
+   cd /home/d131/repos/2025/type-globe
+   uv run --with pykakasi python3 scripts/check_ja_typings.py
+   ```
+   → `scripts/suspicious_ja_typings.json` に「pykakasi 読み ≠ 登録 ja_typings」の不一致が出力される
+
+2. **per-entry で3カテゴリに判定**
+
+   各 entry を `{question_id, choice_index, ja, ja_reading_hira (pykakasi), expected_typings, actual_typings}` で確認:
+
+   | カテゴリ | 条件 | 行動 |
+   |---|---|---|
+   | **A 修正** | 既存 actual が明確な誤読、pykakasi が正しい | actual を削除、pykakasi 読みに置換 |
+   | **B 追加** | 既存 actual も pykakasi 読みも**両方実在する正しい読み** | actual を残し、pykakasi 読みを追加（dedup） |
+   | **C スキップ** | pykakasi が誤読、または出題者が意図的に変則表記を使った | 何もしない |
+
+   **判定基準**:
+   - 既存 actual が日本語として読み得ない → A
+   - 両方読みうる（日本=にほん/にっぽん、型=かた/がた、行=いく/ゆく/ぎょう、人=にん/じん/ひと） → B
+   - pykakasi が固有名詞・専門用語・造語を一般読みで誤読 → C
+   - choice text に英数字・カタカナ混じりで pykakasi が混乱 → C
+   - 出題者が意図的に英単語綴りで答えさせている（`define`, `null` 等）→ C
+   - **迷ったら C**（変更しないのが最安全）
+
+3. **prefix conflict のチェック**
+
+   B で読みを追加した結果、同じ問題内の選択肢同士で prefix 衝突が起きる場合がある:
+   - 例: choice0 に `sanjuhon`、choice1 に `sanjuhonni` が並ぶと、入力が確定しない
+   - 衝突したら、その読みは追加せず C 扱いに格下げする
+
+4. **適用と検証**
+   ```bash
+   cargo run --bin lint-questions data/questions_ja.json data/questions_en.json
+   uv run --with pykakasi python3 scripts/check_ja_typings.py
+   ```
+   - lint-questions が通る（conflict 0）
+   - 再 check の suspicious は C 件数まで減る
+
+5. **コミット**
+   - 適用スクリプト（あれば）: `feat: ja_typings 判定スクリプト追加`
+   - データ修正: `fix: ja_typings 誤読修正と読み揺れ追加（N件、A:n B:n C:n）`
+   - docs: 必要があれば spec.md / CLAUDE.md 追記
+
+### サブエージェント運用の注意
+
+- **「迷ったら B（追加）」をデフォルトにすると寛容になりすぎる**（例: 既存=きそんが正しいのに、kison も正解として登録されてしまう）
+- サブエージェントに任せるなら、**全 entry に対して明示的に A/B/C を返させる**プロンプトにする
+- 「default = B」みたいなショートカットを許さない
