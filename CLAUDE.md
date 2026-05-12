@@ -175,7 +175,13 @@ v0.1.x にあった以下を v0.2.0 で段階的に廃止する：
    - lint-questions が通る（conflict 0）
    - 再 check の suspicious は C 件数まで減る
 
-5. **コミット**
+5. **`ja_reviewed: true` を立てる**
+
+   per-entry 判定が完了した問題は `Question.ja_reviewed` を `true` にする。
+   - 新規問題は default `false`
+   - `cargo run --bin lint-questions data/questions_ja.json` が unreviewed 件数を表示する
+
+6. **コミット**
    - 適用スクリプト（あれば）: `feat: ja_typings 判定スクリプト追加`
    - データ修正: `fix: ja_typings 誤読修正と読み揺れ追加（N件、A:n B:n C:n）`
    - docs: 必要があれば spec.md / CLAUDE.md 追記

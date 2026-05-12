@@ -41,7 +41,8 @@
     "question_text_reading": {
       "en": "What is the chemical formula for water?",
       "ja": "水の化学式は？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -88,7 +89,8 @@
     "question_text_reading": {
       "en": "What is the capital of Japan?",
       "ja": "日本の首都は？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -132,7 +134,8 @@
     "question_text_reading": {
       "en": "What is the output of `print(type([]))`?",
       "ja": "Pythonで`print(type([]))`の出力は？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -176,7 +179,8 @@
     "question_text_reading": {
       "en": "Which keyword defines a function in Python?",
       "ja": "Pythonで関数を定義するキーワードは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -220,7 +224,8 @@
     "question_text_reading": {
       "en": "What does `len([1,2,3])` return?",
       "ja": "`len([1,2,3])`の戻り値は？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -264,7 +269,8 @@
     "question_text_reading": {
       "en": "Which Python data structure uses key-value pairs?",
       "ja": "Pythonでキーと値のペアを使うデータ構造は？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -308,7 +314,8 @@
     "question_text_reading": {
       "en": "What is the correct way to open a file in Python?",
       "ja": "Pythonでファイルを開く正しい方法は？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -353,7 +360,8 @@
     "question_text_reading": {
       "en": "Which operator is used for floor division in Python?",
       "ja": "Pythonで切り捨て除算に使う演算子は？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -401,7 +409,8 @@
     "question_text_reading": {
       "en": "What does `range(5)` produce?",
       "ja": "`range(5)`が生成するのは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -445,7 +454,8 @@
     "question_text_reading": {
       "en": "Which method adds an element to a list in Python?",
       "ja": "Pythonでリストに要素を追加するメソッドは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -489,7 +499,8 @@
     "question_text_reading": {
       "en": "What is a lambda in Python?",
       "ja": "Pythonのlambdaとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -533,7 +544,8 @@
     "question_text_reading": {
       "en": "Which built-in function returns the largest value?",
       "ja": "最大値を返すpython組み込み関数は？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -577,7 +589,8 @@
     "question_text_reading": {
       "en": "What keyword declares an immutable variable in Rust?",
       "ja": "Rustで不変変数を宣言するキーワードは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -625,7 +638,8 @@
     "question_text_reading": {
       "en": "What is the Rust ownership rule?",
       "ja": "Rustのオーナーシップの基本ルールは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -669,7 +683,8 @@
     "question_text_reading": {
       "en": "Which symbol denotes a reference in Rust?",
       "ja": "Rustで参照を示す記号は？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -715,7 +730,8 @@
     "question_text_reading": {
       "en": "What is `Option<T>` used for in Rust?",
       "ja": "Rustの`Option<T>`の用途は？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -763,7 +779,8 @@
     "question_text_reading": {
       "en": "What does `cargo build` do?",
       "ja": "`cargo build`は何をするコマンドか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -807,7 +824,8 @@
     "question_text_reading": {
       "en": "Which trait enables printing with `{:?}` in Rust?",
       "ja": "Rustで`{:?}`による表示を可能にするとれーとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -852,7 +870,8 @@
     "question_text_reading": {
       "en": "What is a `Vec<T>` in Rust?",
       "ja": "Rustの`Vec<T>`とは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -896,7 +915,8 @@
     "question_text_reading": {
       "en": "How do you handle errors in Rust idiomatically?",
       "ja": "Rustでエラーを慣用的に扱う方法は？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -942,7 +962,8 @@
     "question_text_reading": {
       "en": "What does `impl` keyword do in Rust?",
       "ja": "Rustの`impl`キーワードの役割は？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -986,7 +1007,8 @@
     "question_text_reading": {
       "en": "What is the entry point of a Rust program?",
       "ja": "Rustプログラムのエントリーポイントは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -1030,7 +1052,8 @@
     "question_text_reading": {
       "en": "Which keyword declares a block-scoped variable in JS?",
       "ja": "JSでブロックスコープ変数を宣言するキーワードは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -1076,7 +1099,8 @@
     "question_text_reading": {
       "en": "What does `===` check in JavaScript?",
       "ja": "JavaScriptの`===`は何を確認するか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -1120,7 +1144,8 @@
     "question_text_reading": {
       "en": "How do you create an arrow function in JS?",
       "ja": "JSでアロー関数を作る構文は？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -1164,7 +1189,8 @@
     "question_text_reading": {
       "en": "What is `NaN` in JavaScript?",
       "ja": "JavaScriptの`NaN`とは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -1208,7 +1234,8 @@
     "question_text_reading": {
       "en": "Which method converts JSON string to object?",
       "ja": "JSON文字列をオブジェクトに変換するメソッドは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -1253,7 +1280,8 @@
     "question_text_reading": {
       "en": "What does `Promise.all()` do?",
       "ja": "`Promise.all()`は何をするか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -1297,7 +1325,8 @@
     "question_text_reading": {
       "en": "Which keyword is used for class inheritance in JS?",
       "ja": "JSでクラスの継承に使うキーワードは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -1341,7 +1370,8 @@
     "question_text_reading": {
       "en": "What is `typeof null` in JavaScript?",
       "ja": "JavaScriptで`typeof null`の結果は？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -1385,7 +1415,8 @@
     "question_text_reading": {
       "en": "Which array method creates a new array by transforming each element?",
       "ja": "各要素を変換して新配列を作るはいれつメソッドは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -1429,7 +1460,8 @@
     "question_text_reading": {
       "en": "What does `Array.isArray([])` return?",
       "ja": "`Array.isArray([])`の戻り値は？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -1473,7 +1505,8 @@
     "question_text_reading": {
       "en": "What is the time complexity of accessing an array element by index?",
       "ja": "はいれつのいんでくすによるアクセスの計算量は？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -1517,7 +1550,8 @@
     "question_text_reading": {
       "en": "Which data structure uses LIFO order?",
       "ja": "LIFO順を使うでーたこうぞうは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -1563,7 +1597,8 @@
     "question_text_reading": {
       "en": "What is a linked list node composed of?",
       "ja": "れんけつりすとののーどは何で構成されるか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -1608,7 +1643,8 @@
     "question_text_reading": {
       "en": "Which tree traversal visits root first?",
       "ja": "ねをさいしょにたどる木の探索順は？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -1654,7 +1690,8 @@
     "question_text_reading": {
       "en": "What is a hash collision?",
       "ja": "はっしゅしょうとつとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -1698,7 +1735,8 @@
     "question_text_reading": {
       "en": "What is the worst-case complexity of quicksort?",
       "ja": "くいっくそーとの最悪計算量は？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -1742,7 +1780,8 @@
     "question_text_reading": {
       "en": "Which data structure supports BFS traversal naturally?",
       "ja": "はばゆうせんたんさくを自然にサポートするでーたこうぞうは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -1787,7 +1826,8 @@
     "question_text_reading": {
       "en": "What is a binary search tree property?",
       "ja": "にぶんたんさくきのせいしつは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -1833,7 +1873,8 @@
     "question_text_reading": {
       "en": "What does a min-heap guarantee at the root?",
       "ja": "みにひーぷはねに何を保証するか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -1882,7 +1923,8 @@
     "question_text_reading": {
       "en": "Which graph representation uses adjacency lists?",
       "ja": "となりあいりすとをつかうグラフひょうげんは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -1927,7 +1969,8 @@
     "question_text_reading": {
       "en": "What is dynamic programming?",
       "ja": "どうてきけいかくほうとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -1971,7 +2014,8 @@
     "question_text_reading": {
       "en": "Which sorting algorithm is stable and O(n log n)?",
       "ja": "あんていでO(n log n)のせいれつあるごりずむは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -2017,7 +2061,8 @@
     "question_text_reading": {
       "en": "What is Big O notation used for?",
       "ja": "Big O記法は何のために使うか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -2064,7 +2109,8 @@
     "question_text_reading": {
       "en": "What does Dijkstra's algorithm find?",
       "ja": "ダイクストラのあるごりずむは何を求めるか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -2108,7 +2154,8 @@
     "question_text_reading": {
       "en": "What is memoization?",
       "ja": "めもいぜーしょんとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -2153,7 +2200,8 @@
     "question_text_reading": {
       "en": "Which algorithm uses divide and conquer?",
       "ja": "ぶんちしほうを使うあるごりずむは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -2199,7 +2247,8 @@
     "question_text_reading": {
       "en": "What is recursion?",
       "ja": "さいきとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -2246,7 +2295,8 @@
     "question_text_reading": {
       "en": "What is the base case in recursion?",
       "ja": "さいきのきていじょうけんとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -2290,7 +2340,8 @@
     "question_text_reading": {
       "en": "Which search requires a sorted array?",
       "ja": "せいれつされたはいれつが必要な探索は？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -2334,7 +2385,8 @@
     "question_text_reading": {
       "en": "What is the time complexity of bubble sort?",
       "ja": "ばぶるそーとの計算量は？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -2381,7 +2433,8 @@
     "question_text_reading": {
       "en": "What is encapsulation?",
       "ja": "かぷせるかとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -2428,7 +2481,8 @@
     "question_text_reading": {
       "en": "What is polymorphism?",
       "ja": "たたいせいとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -2473,7 +2527,8 @@
     "question_text_reading": {
       "en": "What does `super()` do in OOP?",
       "ja": "OOPで`super()`は何をするか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -2518,7 +2573,8 @@
     "question_text_reading": {
       "en": "What is an abstract class?",
       "ja": "ちゅうしょうくらすとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -2563,7 +2619,8 @@
     "question_text_reading": {
       "en": "What is an interface in OOP?",
       "ja": "OOPのいんたーふぇーすとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -2607,7 +2664,8 @@
     "question_text_reading": {
       "en": "What pattern ensures a class has only one instance?",
       "ja": "クラスのいんすたんすをひとつにするぱたーんは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -2651,7 +2709,8 @@
     "question_text_reading": {
       "en": "What pattern defines a family of algorithms?",
       "ja": "あるごりずむのかぞくをていぎするぱたーんは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -2698,7 +2757,8 @@
     "question_text_reading": {
       "en": "What does the Observer pattern do?",
       "ja": "おぶざーばーぱたーんは何をするか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -2745,7 +2805,8 @@
     "question_text_reading": {
       "en": "What is the Factory pattern?",
       "ja": "ふぁくとりーぱたーんとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -2789,7 +2850,8 @@
     "question_text_reading": {
       "en": "Which pattern adds behavior without modifying class?",
       "ja": "くらすをへんこうせずにどうさをついかするぱたーんは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -2834,7 +2896,8 @@
     "question_text_reading": {
       "en": "What does `git stash` do?",
       "ja": "`git stash`は何をするか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -2879,7 +2942,8 @@
     "question_text_reading": {
       "en": "What is a git fork?",
       "ja": "git forkとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -2926,7 +2990,8 @@
     "question_text_reading": {
       "en": "What does `git cherry-pick` do?",
       "ja": "`git cherry-pick`は何をするか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -2971,7 +3036,8 @@
     "question_text_reading": {
       "en": "What is a git tag?",
       "ja": "git tagとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -3017,7 +3083,8 @@
     "question_text_reading": {
       "en": "What does `git rebase` do?",
       "ja": "`git rebase`は何をするか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -3061,7 +3128,8 @@
     "question_text_reading": {
       "en": "What is unit testing?",
       "ja": "ゆにっとてすととは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -3106,7 +3174,8 @@
     "question_text_reading": {
       "en": "What does TDD stand for?",
       "ja": "TDDの略語の意味は？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -3151,7 +3220,8 @@
     "question_text_reading": {
       "en": "What is a mock in testing?",
       "ja": "テストのもっくとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -3195,7 +3265,8 @@
     "question_text_reading": {
       "en": "What is integration testing?",
       "ja": "とうごうてすととは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -3242,7 +3313,8 @@
     "question_text_reading": {
       "en": "What does `assert` do in testing?",
       "ja": "テストで`assert`は何をするか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -3291,7 +3363,8 @@
     "question_text_reading": {
       "en": "What is a pure function?",
       "ja": "じゅんすいかんすうとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -3338,7 +3411,8 @@
     "question_text_reading": {
       "en": "What is a higher-order function?",
       "ja": "こうかいかんすうとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -3388,7 +3462,8 @@
     "question_text_reading": {
       "en": "What is `reduce` used for?",
       "ja": "`reduce`は何に使うか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -3432,7 +3507,8 @@
     "question_text_reading": {
       "en": "What is immutability?",
       "ja": "ふへんせいとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -3476,7 +3552,8 @@
     "question_text_reading": {
       "en": "What is function composition?",
       "ja": "かんすうごうせいとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -3525,7 +3602,8 @@
     "question_text_reading": {
       "en": "What is static typing?",
       "ja": "せいてきがたずけとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -3575,7 +3653,8 @@
     "question_text_reading": {
       "en": "What is type inference?",
       "ja": "がたすいろんとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -3623,7 +3702,8 @@
     "question_text_reading": {
       "en": "What is a generic type?",
       "ja": "じぇねりっくがたとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -3668,7 +3748,8 @@
     "question_text_reading": {
       "en": "What is a deadlock?",
       "ja": "でっどろっくとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -3714,7 +3795,8 @@
     "question_text_reading": {
       "en": "What is a mutex?",
       "ja": "みゅーてっくすとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -3759,7 +3841,8 @@
     "question_text_reading": {
       "en": "What is a race condition?",
       "ja": "れーすじょうけんとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -3806,7 +3889,8 @@
     "question_text_reading": {
       "en": "What is async/await used for?",
       "ja": "async/awaitは何のために使うか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -3851,7 +3935,8 @@
     "question_text_reading": {
       "en": "What is a thread?",
       "ja": "すれっどとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -3896,7 +3981,8 @@
     "question_text_reading": {
       "en": "What is a memory leak?",
       "ja": "めもりりーくとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -3943,7 +4029,8 @@
     "question_text_reading": {
       "en": "What is garbage collection?",
       "ja": "がーびっじこれくしょんとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -3988,7 +4075,8 @@
     "question_text_reading": {
       "en": "What is a stack overflow?",
       "ja": "すたっくおーばーふろーとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -4034,7 +4122,8 @@
     "question_text_reading": {
       "en": "What is the heap in memory?",
       "ja": "めもりのひーぷとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -4083,7 +4172,8 @@
     "question_text_reading": {
       "en": "What does HTTP stand for?",
       "ja": "HTTPの略語の意味は？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -4130,7 +4220,8 @@
     "question_text_reading": {
       "en": "What is an IP address?",
       "ja": "IPあどれすとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -4175,7 +4266,8 @@
     "question_text_reading": {
       "en": "What does DNS do?",
       "ja": "DNSは何をするか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -4220,7 +4312,8 @@
     "question_text_reading": {
       "en": "What is a REST API?",
       "ja": "REST APIとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -4264,7 +4357,8 @@
     "question_text_reading": {
       "en": "What HTTP method is used to update a resource?",
       "ja": "りそーすをこうしんするHTTPめそっどは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -4308,7 +4402,8 @@
     "question_text_reading": {
       "en": "Which command lists files in Linux?",
       "ja": "Linuxでふぁいるをいちらんするこまんどは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -4353,7 +4448,8 @@
     "question_text_reading": {
       "en": "What does `chmod 755` do?",
       "ja": "`chmod 755`は何をするか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -4398,7 +4494,8 @@
     "question_text_reading": {
       "en": "What is a shebang line?",
       "ja": "しぇばんらいんとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -4442,7 +4539,8 @@
     "question_text_reading": {
       "en": "What does `grep` do?",
       "ja": "`grep`は何をするか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -4488,7 +4586,8 @@
     "question_text_reading": {
       "en": "What does `|` (pipe) do in shell?",
       "ja": "しぇるの`|`（ぱいぷ）は何をするか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -4535,7 +4634,8 @@
     "question_text_reading": {
       "en": "What does SQL stand for?",
       "ja": "SQLの略語の意味は？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -4582,7 +4682,8 @@
     "question_text_reading": {
       "en": "What is a primary key?",
       "ja": "しゅきーとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -4628,7 +4729,8 @@
     "question_text_reading": {
       "en": "What is a JOIN in SQL?",
       "ja": "SQLのJOINとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -4674,7 +4776,8 @@
     "question_text_reading": {
       "en": "What is indexing in databases?",
       "ja": "でーたべーすのいんでくすとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -4720,7 +4823,8 @@
     "question_text_reading": {
       "en": "What is a transaction in databases?",
       "ja": "でーたべーすのとらんざくしょんとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -4768,7 +4872,8 @@
     "question_text_reading": {
       "en": "What does ACID stand for?",
       "ja": "ACIDの略語の意味は？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -4814,7 +4919,8 @@
     "question_text_reading": {
       "en": "What is SQL injection?",
       "ja": "SQLいんじぇくしょんとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -4860,7 +4966,8 @@
     "question_text_reading": {
       "en": "What is XSS?",
       "ja": "XSSとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -4907,7 +5014,8 @@
     "question_text_reading": {
       "en": "What is HTTPS?",
       "ja": "HTTPSとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -4954,7 +5062,8 @@
     "question_text_reading": {
       "en": "What is a CSRF attack?",
       "ja": "CSRF攻撃とは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -5000,7 +5109,8 @@
     "question_text_reading": {
       "en": "What is hashing in security?",
       "ja": "せきゅりてぃのはっしゅかとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -5045,7 +5155,8 @@
     "question_text_reading": {
       "en": "What is Docker?",
       "ja": "Dockerとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -5089,7 +5200,8 @@
     "question_text_reading": {
       "en": "What is Kubernetes?",
       "ja": "Kubernetesとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -5136,7 +5248,8 @@
     "question_text_reading": {
       "en": "What is CI/CD?",
       "ja": "CI/CDとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -5184,7 +5297,8 @@
     "question_text_reading": {
       "en": "What is Infrastructure as Code?",
       "ja": "Infrastructure as Codeとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -5231,7 +5345,8 @@
     "question_text_reading": {
       "en": "What is a microservice?",
       "ja": "まいくろさーびすとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -5275,7 +5390,8 @@
     "question_text_reading": {
       "en": "What is an API?",
       "ja": "APIとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -5322,7 +5438,8 @@
     "question_text_reading": {
       "en": "What is open source software?",
       "ja": "おーぷんそーすそふとうぇあとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -5371,7 +5488,8 @@
     "question_text_reading": {
       "en": "What is semantic versioning?",
       "ja": "せまんてぃっくばーじょにんぐとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -5418,7 +5536,8 @@
     "question_text_reading": {
       "en": "What is a linter?",
       "ja": "りんたーとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -5464,7 +5583,8 @@
     "question_text_reading": {
       "en": "What is refactoring?",
       "ja": "りふぁくたりんぐとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -5510,7 +5630,8 @@
     "question_text_reading": {
       "en": "What is technical debt?",
       "ja": "ぎじゅつてきふさいとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -5558,7 +5679,8 @@
     "question_text_reading": {
       "en": "What is code review?",
       "ja": "こーどれびゅーとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -5606,7 +5728,8 @@
     "question_text_reading": {
       "en": "What is a build system?",
       "ja": "びるどしすてむとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -5652,7 +5775,8 @@
     "question_text_reading": {
       "en": "What is dependency injection?",
       "ja": "いぞんせいのちゅうにゅうとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -5697,7 +5821,8 @@
     "question_text_reading": {
       "en": "What is an event loop?",
       "ja": "いべんとるーぷとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -5743,7 +5868,8 @@
     "question_text_reading": {
       "en": "What is the DOM?",
       "ja": "DOMとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -5788,7 +5914,8 @@
     "question_text_reading": {
       "en": "What is event bubbling?",
       "ja": "いべんとばぶりんぐとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -5834,7 +5961,8 @@
     "question_text_reading": {
       "en": "What is lazy loading?",
       "ja": "れいじーろーでぃんぐとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -5879,7 +6007,8 @@
     "question_text_reading": {
       "en": "What is tree shaking?",
       "ja": "つりーしぇいきんぐとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -5925,7 +6054,8 @@
     "question_text_reading": {
       "en": "What is a code smell?",
       "ja": "こーどすめるとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -5972,7 +6102,8 @@
     "question_text_reading": {
       "en": "What is pair programming?",
       "ja": "ぺあぷろぐらみんぐとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -6019,7 +6150,8 @@
     "question_text_reading": {
       "en": "What is an IDE?",
       "ja": "IDEとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -6066,7 +6198,8 @@
     "question_text_reading": {
       "en": "What is duck typing?",
       "ja": "だっくたいぴんぐとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -6113,7 +6246,8 @@
     "question_text_reading": {
       "en": "What is a closure?",
       "ja": "くろーじゃとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -6157,7 +6291,8 @@
     "question_text_reading": {
       "en": "What is currying?",
       "ja": "かりーかとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -6203,7 +6338,8 @@
     "question_text_reading": {
       "en": "What is WebAssembly (WASM)?",
       "ja": "WebAssembly (WASM)とは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -6248,7 +6384,8 @@
     "question_text_reading": {
       "en": "What is a prototype in JavaScript?",
       "ja": "JavaScriptのぷろとたいぷとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -6296,7 +6433,8 @@
     "question_text_reading": {
       "en": "What is method chaining?",
       "ja": "めそっどちぇーにんぐとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -6341,7 +6479,8 @@
     "question_text_reading": {
       "en": "What is the SOLID principle?",
       "ja": "SOLIDげんそくとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -6386,7 +6525,8 @@
     "question_text_reading": {
       "en": "What is DRY principle?",
       "ja": "DRYげんそくとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -6430,7 +6570,8 @@
     "question_text_reading": {
       "en": "What is KISS principle?",
       "ja": "KISSげんそくとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -6474,7 +6615,8 @@
     "question_text_reading": {
       "en": "What is a webhook?",
       "ja": "うぇぶふっくとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -6518,7 +6660,8 @@
     "question_text_reading": {
       "en": "What is GraphQL?",
       "ja": "GraphQLとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -6562,7 +6705,8 @@
     "question_text_reading": {
       "en": "What is server-side rendering?",
       "ja": "さーばーさいどれんだりんぐとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -6607,7 +6751,8 @@
     "question_text_reading": {
       "en": "What is hydration in web development?",
       "ja": "うぇぶかいはつのはいどれーしょんとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -6651,7 +6796,8 @@
     "question_text_reading": {
       "en": "What is a module in programming?",
       "ja": "ぷろぐらみんぐのもじゅーるとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -6696,7 +6842,8 @@
     "question_text_reading": {
       "en": "What is package management?",
       "ja": "ぱっけーじかんりとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -6740,7 +6887,8 @@
     "question_text_reading": {
       "en": "What is environment variable?",
       "ja": "かんきょうへんすうとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -6789,7 +6937,8 @@
     "question_text_reading": {
       "en": "What is a race condition in databases?",
       "ja": "でーたべーすのれーすじょうけんとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -6836,7 +6985,8 @@
     "question_text_reading": {
       "en": "What is normalization in databases?",
       "ja": "でーたべーすのせいきかとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -6881,7 +7031,8 @@
     "question_text_reading": {
       "en": "What does CSS stand for?",
       "ja": "CSSのふりがなの意味は？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -6925,7 +7076,8 @@
     "question_text_reading": {
       "en": "Which HTML tag creates a hyperlink?",
       "ja": "ハイパーリンクをつくるHTMLたぐは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -6970,7 +7122,8 @@
     "question_text_reading": {
       "en": "What is the CSS box model?",
       "ja": "CSSのぼっくすもでるとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -7014,7 +7167,8 @@
     "question_text_reading": {
       "en": "What does `display: flex` enable?",
       "ja": "`display: flex`は何を可能にするか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -7060,7 +7214,8 @@
     "question_text_reading": {
       "en": "What is media query in CSS?",
       "ja": "CSSのめでぃあくえりとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -7105,7 +7260,8 @@
     "question_text_reading": {
       "en": "What is React?",
       "ja": "Reactとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -7150,7 +7306,8 @@
     "question_text_reading": {
       "en": "What is a React component?",
       "ja": "Reactこんぽーねんととは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -7197,7 +7354,8 @@
     "question_text_reading": {
       "en": "What is JSX?",
       "ja": "JSXとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -7241,7 +7399,8 @@
     "question_text_reading": {
       "en": "What is the virtual DOM in React?",
       "ja": "Reactのばーちゃるどむとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -7289,7 +7448,8 @@
     "question_text_reading": {
       "en": "What does `useState` do in React?",
       "ja": "Reactの`useState`は何をするか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -7340,7 +7500,8 @@
     "question_text_reading": {
       "en": "What does `useEffect` do in React?",
       "ja": "Reactの`useEffect`は何をするか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -7384,7 +7545,8 @@
     "question_text_reading": {
       "en": "What is Vue.js?",
       "ja": "Vue.jsとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -7430,7 +7592,8 @@
     "question_text_reading": {
       "en": "What is TypeScript?",
       "ja": "TypeScriptとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -7474,7 +7637,8 @@
     "question_text_reading": {
       "en": "What is npm?",
       "ja": "npmとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -7519,7 +7683,8 @@
     "question_text_reading": {
       "en": "What is Node.js?",
       "ja": "Node.jsとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -7563,7 +7728,8 @@
     "question_text_reading": {
       "en": "What is Webpack?",
       "ja": "Webpackとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -7607,7 +7773,8 @@
     "question_text_reading": {
       "en": "What is a SPA?",
       "ja": "SPAとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -7653,7 +7820,8 @@
     "question_text_reading": {
       "en": "What is SSR in web?",
       "ja": "うぇぶのSSRとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -7698,7 +7866,8 @@
     "question_text_reading": {
       "en": "What is a cookie?",
       "ja": "くっきーとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -7742,7 +7911,8 @@
     "question_text_reading": {
       "en": "What is localStorage?",
       "ja": "localStorageとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -7787,7 +7957,8 @@
     "question_text_reading": {
       "en": "What does `fetch()` do in JS?",
       "ja": "JSの`fetch()`は何をするか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -7834,7 +8005,8 @@
     "question_text_reading": {
       "en": "What is CORS?",
       "ja": "CORSとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -7879,7 +8051,8 @@
     "question_text_reading": {
       "en": "What is a CDN?",
       "ja": "CDNとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -7923,7 +8096,8 @@
     "question_text_reading": {
       "en": "What is semantic HTML?",
       "ja": "せまんてぃっくHTMLとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -7967,7 +8141,8 @@
     "question_text_reading": {
       "en": "What is the purpose of `<meta charset>`?",
       "ja": "`<meta charset>`の目的は？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -8014,7 +8189,8 @@
     "question_text_reading": {
       "en": "What is lazy loading in web?",
       "ja": "うぇぶのれいじーろーでぃんぐとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -8062,7 +8238,8 @@
     "question_text_reading": {
       "en": "What is progressive enhancement?",
       "ja": "ぷろぐれっしぶえんはんすめんととは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -8108,7 +8285,8 @@
     "question_text_reading": {
       "en": "What is a CSS preprocessor?",
       "ja": "CSSぷりぷろせっさとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -8153,7 +8331,8 @@
     "question_text_reading": {
       "en": "What is Tailwind CSS?",
       "ja": "Tailwind CSSとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -8199,7 +8378,8 @@
     "question_text_reading": {
       "en": "What is tree shaking in frontend?",
       "ja": "ふろんとえんどのつりーしぇいきんぐとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -8244,7 +8424,8 @@
     "question_text_reading": {
       "en": "What is the purpose of `<head>` in HTML?",
       "ja": "HTMLの`<head>`の役割は？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -8294,7 +8475,8 @@
     "question_text_reading": {
       "en": "What does `position: absolute` do in CSS?",
       "ja": "CSSの`position: absolute`は何をするか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -8341,7 +8523,8 @@
     "question_text_reading": {
       "en": "What is z-index in CSS?",
       "ja": "CSSのz-indexとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -8388,7 +8571,8 @@
     "question_text_reading": {
       "en": "What is BEM in CSS?",
       "ja": "CSSのBEMとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -8435,7 +8619,8 @@
     "question_text_reading": {
       "en": "What is a CSS variable?",
       "ja": "CSS変数とは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -8480,7 +8665,8 @@
     "question_text_reading": {
       "en": "What is accessibility (a11y) in web?",
       "ja": "うぇぶのアクセシビリティとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -8526,7 +8712,8 @@
     "question_text_reading": {
       "en": "What is ARIA in web accessibility?",
       "ja": "うぇぶのARIAとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -8571,7 +8758,8 @@
     "question_text_reading": {
       "en": "What is PWA?",
       "ja": "PWAとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -8616,7 +8804,8 @@
     "question_text_reading": {
       "en": "What is a service worker?",
       "ja": "さーびすわーかーとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -8661,7 +8850,8 @@
     "question_text_reading": {
       "en": "What is Next.js?",
       "ja": "Next.jsとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -8705,7 +8895,8 @@
     "question_text_reading": {
       "en": "What is SvelteKit?",
       "ja": "SvelteKitとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -8753,7 +8944,8 @@
     "question_text_reading": {
       "en": "What is the purpose of `alt` attribute in `<img>`?",
       "ja": "`<img>`の`alt`属性の目的は？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -8800,7 +8992,8 @@
     "question_text_reading": {
       "en": "What is HTTP/2 improvement?",
       "ja": "HTTP/2の改善点は？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -8845,7 +9038,8 @@
     "question_text_reading": {
       "en": "What is WebSocket?",
       "ja": "WebSocketとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -8890,7 +9084,8 @@
     "question_text_reading": {
       "en": "What is the Shadow DOM?",
       "ja": "シャドウDOMとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -8937,7 +9132,8 @@
     "question_text_reading": {
       "en": "What is a custom HTML element?",
       "ja": "かすたむHTMLようそとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -8986,7 +9182,8 @@
     "question_text_reading": {
       "en": "What is `defer` attribute in `<script>`?",
       "ja": "`<script>`の`defer`属性は何をするか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -9032,7 +9229,8 @@
     "question_text_reading": {
       "en": "What is the difference between `em` and `rem` in CSS?",
       "ja": "CSSの`em`と`rem`のちがいは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -9076,7 +9274,8 @@
     "question_text_reading": {
       "en": "What is a CSS grid?",
       "ja": "CSSぐりっどとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -9123,7 +9322,8 @@
     "question_text_reading": {
       "en": "What is viewport in CSS?",
       "ja": "CSSのびゅーぽーととは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -9170,7 +9370,8 @@
     "question_text_reading": {
       "en": "What is minification in web?",
       "ja": "うぇぶのみにふぁいとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -9215,7 +9416,8 @@
     "question_text_reading": {
       "en": "What is code splitting?",
       "ja": "こーどすぷりってぃんぐとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -9263,7 +9465,8 @@
     "question_text_reading": {
       "en": "What does `async` attribute do in `<script>`?",
       "ja": "`<script>`の`async`属性は何をするか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -9310,7 +9513,8 @@
     "question_text_reading": {
       "en": "What is OAuth?",
       "ja": "OAuthとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -9355,7 +9559,8 @@
     "question_text_reading": {
       "en": "What is JWT?",
       "ja": "JWTとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -9399,7 +9604,8 @@
     "question_text_reading": {
       "en": "What is a headless CMS?",
       "ja": "へっどれすCMSとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -9444,7 +9650,8 @@
     "question_text_reading": {
       "en": "What is a sitemap?",
       "ja": "さいとまっぷとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -9490,7 +9697,8 @@
     "question_text_reading": {
       "en": "What is SEO?",
       "ja": "SEOとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -9536,7 +9744,8 @@
     "question_text_reading": {
       "en": "What is Core Web Vitals?",
       "ja": "コアうぇぶばいたるずとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -9582,7 +9791,8 @@
     "question_text_reading": {
       "en": "What does LCP stand for in web performance?",
       "ja": "うぇぶぱふぉーまんすのLCPとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -9626,7 +9836,8 @@
     "question_text_reading": {
       "en": "What is a web manifest file?",
       "ja": "うぇぶましふぇすとふぁいるとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -9671,7 +9882,8 @@
     "question_text_reading": {
       "en": "What is isomorphic rendering?",
       "ja": "あいそもーふぃっくれんだりんぐとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -9717,7 +9929,8 @@
     "question_text_reading": {
       "en": "What is Vite?",
       "ja": "Viteとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -9761,7 +9974,8 @@
     "question_text_reading": {
       "en": "What is ESLint?",
       "ja": "ESLintとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -9806,7 +10020,8 @@
     "question_text_reading": {
       "en": "What is Prettier?",
       "ja": "Prettierとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -9852,7 +10067,8 @@
     "question_text_reading": {
       "en": "What is an HTTP header?",
       "ja": "HTTPへっだーとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -9896,7 +10112,8 @@
     "question_text_reading": {
       "en": "What is a 404 error?",
       "ja": "404えらーとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -9941,7 +10158,8 @@
     "question_text_reading": {
       "en": "What is a 500 error?",
       "ja": "500えらーとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -9989,7 +10207,8 @@
     "question_text_reading": {
       "en": "What is a redirect in HTTP?",
       "ja": "HTTPのりだいれくととは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -10035,7 +10254,8 @@
     "question_text_reading": {
       "en": "What is Cross-Site Scripting (XSS) prevented by?",
       "ja": "XSSを防ぐには何をするか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -10081,7 +10301,8 @@
     "question_text_reading": {
       "en": "What is Content Security Policy?",
       "ja": "コンテンツせきゅりてぃぽりしーとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -10126,7 +10347,8 @@
     "question_text_reading": {
       "en": "What is a REST endpoint?",
       "ja": "RESTえんどぽいんととは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -10174,7 +10396,8 @@
     "question_text_reading": {
       "en": "What is event delegation in JS?",
       "ja": "JSのいべんとでりげーしょんとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -10223,7 +10446,8 @@
     "question_text_reading": {
       "en": "What is debouncing in JS?",
       "ja": "JSのでばうんすとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -10271,7 +10495,8 @@
     "question_text_reading": {
       "en": "What is throttling in JS?",
       "ja": "JSのすろっとりんぐとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -10316,7 +10541,8 @@
     "question_text_reading": {
       "en": "What is a web component?",
       "ja": "うぇぶこんぽーねんととは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -10361,7 +10587,8 @@
     "question_text_reading": {
       "en": "What is an HTTP cache?",
       "ja": "HTTPきゃっしゅとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -10407,7 +10634,8 @@
     "question_text_reading": {
       "en": "What is JSON Web Token (JWT) used for?",
       "ja": "JWTは何のために使うか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -10451,7 +10679,8 @@
     "question_text_reading": {
       "en": "What is Nuxt.js?",
       "ja": "Nuxt.jsとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -10496,7 +10725,8 @@
     "question_text_reading": {
       "en": "What is Astro?",
       "ja": "Astroとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -10541,7 +10771,8 @@
     "question_text_reading": {
       "en": "What is a monorepo?",
       "ja": "ものりぽとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -10586,7 +10817,8 @@
     "question_text_reading": {
       "en": "What is Storybook?",
       "ja": "Storybookとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -10631,7 +10863,8 @@
     "question_text_reading": {
       "en": "What is Playwright?",
       "ja": "Playwrightとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -10677,7 +10910,8 @@
     "question_text_reading": {
       "en": "What is tRPC?",
       "ja": "tRPCとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -10721,7 +10955,8 @@
     "question_text_reading": {
       "en": "What is Cloudflare Workers?",
       "ja": "Cloudflare Workersとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -10765,7 +11000,8 @@
     "question_text_reading": {
       "en": "What is Vercel?",
       "ja": "Vercelとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -10809,7 +11045,8 @@
     "question_text_reading": {
       "en": "What is the purpose of `robots.txt`?",
       "ja": "`robots.txt`の目的は？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -10854,7 +11091,8 @@
     "question_text_reading": {
       "en": "What is open graph protocol?",
       "ja": "おーぷんぐらふぷろとこるとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -10899,7 +11137,8 @@
     "question_text_reading": {
       "en": "What is an operating system?",
       "ja": "おぺれーてぃんぐしすてむとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -10945,7 +11184,8 @@
     "question_text_reading": {
       "en": "What is virtualization?",
       "ja": "かそうかとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -10989,7 +11229,8 @@
     "question_text_reading": {
       "en": "What is a kernel?",
       "ja": "かーねるとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -11034,7 +11275,8 @@
     "question_text_reading": {
       "en": "What is BIOS?",
       "ja": "BIOSとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -11079,7 +11321,8 @@
     "question_text_reading": {
       "en": "What is SSD?",
       "ja": "SSDとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -11124,7 +11367,8 @@
     "question_text_reading": {
       "en": "What is RAM?",
       "ja": "RAMとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -11170,7 +11414,8 @@
     "question_text_reading": {
       "en": "What is CPU?",
       "ja": "CPUとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -11217,7 +11462,8 @@
     "question_text_reading": {
       "en": "What is GPU?",
       "ja": "GPUとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -11262,7 +11508,8 @@
     "question_text_reading": {
       "en": "What is TCP/IP?",
       "ja": "TCP/IPとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -11306,7 +11553,8 @@
     "question_text_reading": {
       "en": "What is a firewall?",
       "ja": "ふぁいあうぉーるとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -11353,7 +11601,8 @@
     "question_text_reading": {
       "en": "What is DHCP?",
       "ja": "DHCPとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -11397,7 +11646,8 @@
     "question_text_reading": {
       "en": "What is a MAC address?",
       "ja": "MACあどれすとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -11444,7 +11694,8 @@
     "question_text_reading": {
       "en": "What is a VPN?",
       "ja": "VPNとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -11490,7 +11741,8 @@
     "question_text_reading": {
       "en": "What is NAT in networking?",
       "ja": "ねっとわーくのNATとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -11534,7 +11786,8 @@
     "question_text_reading": {
       "en": "What is a subnet?",
       "ja": "さぶねっととは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -11579,7 +11832,8 @@
     "question_text_reading": {
       "en": "What is RAID in storage?",
       "ja": "すとれーじのRAIDとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -11624,7 +11878,8 @@
     "question_text_reading": {
       "en": "What is a load balancer?",
       "ja": "ろーどばらんさーとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -11668,7 +11923,8 @@
     "question_text_reading": {
       "en": "What is a proxy server?",
       "ja": "ぷろくしさーばーとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -11712,7 +11968,8 @@
     "question_text_reading": {
       "en": "What is a reverse proxy?",
       "ja": "りばーすぷろくしとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -11757,7 +12014,8 @@
     "question_text_reading": {
       "en": "What is SSH?",
       "ja": "SSHとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -11802,7 +12060,8 @@
     "question_text_reading": {
       "en": "What is a hypervisor?",
       "ja": "はいぱーばいざーとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -11847,7 +12106,8 @@
     "question_text_reading": {
       "en": "What is a container image?",
       "ja": "こんてないめーじとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -11892,7 +12152,8 @@
     "question_text_reading": {
       "en": "What is serverless computing?",
       "ja": "さーばーれすけいさんとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -11936,7 +12197,8 @@
     "question_text_reading": {
       "en": "What is edge computing?",
       "ja": "えっじけいさんとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -11981,7 +12243,8 @@
     "question_text_reading": {
       "en": "What is a content delivery network optimized for?",
       "ja": "CDNは何のために最適化されているか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -12027,7 +12290,8 @@
     "question_text_reading": {
       "en": "What is caching in computing?",
       "ja": "けいさんきのきゃっしゅとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -12073,7 +12337,8 @@
     "question_text_reading": {
       "en": "What is a message queue?",
       "ja": "めっせーじきゅーとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -12119,7 +12384,8 @@
     "question_text_reading": {
       "en": "What is pub/sub messaging?",
       "ja": "pub/subめっせーじんぐとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -12163,7 +12429,8 @@
     "question_text_reading": {
       "en": "What is a CDN edge node?",
       "ja": "CDNのえっじのーどとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -12208,7 +12475,8 @@
     "question_text_reading": {
       "en": "What is horizontal scaling?",
       "ja": "すいへいすけーりんぐとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -12254,7 +12522,8 @@
     "question_text_reading": {
       "en": "What is vertical scaling?",
       "ja": "すいちょくすけーりんぐとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -12300,7 +12569,8 @@
     "question_text_reading": {
       "en": "What is a data center?",
       "ja": "でーたせんたーとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -12346,7 +12616,8 @@
     "question_text_reading": {
       "en": "What is uptime in computing?",
       "ja": "けいさんきのあっぷたいむとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -12390,7 +12661,8 @@
     "question_text_reading": {
       "en": "What is SLA?",
       "ja": "SLAとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -12437,7 +12709,8 @@
     "question_text_reading": {
       "en": "What is monitoring in DevOps?",
       "ja": "DevOpsのもにたりんぐとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -12482,7 +12755,8 @@
     "question_text_reading": {
       "en": "What is blue-green deployment?",
       "ja": "ぶるーぐりーんはいひとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -12528,7 +12802,8 @@
     "question_text_reading": {
       "en": "What is canary deployment?",
       "ja": "かなりあはいひとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -12574,7 +12849,8 @@
     "question_text_reading": {
       "en": "What is a container registry?",
       "ja": "こんてなれじすとりとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -12619,7 +12895,8 @@
     "question_text_reading": {
       "en": "What is Terraform?",
       "ja": "Terraformとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -12664,7 +12941,8 @@
     "question_text_reading": {
       "en": "What is Ansible?",
       "ja": "Ansibleとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -12708,7 +12986,8 @@
     "question_text_reading": {
       "en": "What is Prometheus?",
       "ja": "Prometheusとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -12752,7 +13031,8 @@
     "question_text_reading": {
       "en": "What is Grafana?",
       "ja": "Grafanaとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -12796,7 +13076,8 @@
     "question_text_reading": {
       "en": "What is ELK stack?",
       "ja": "ELKすたっくとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -12843,7 +13124,8 @@
     "question_text_reading": {
       "en": "What is observability in systems?",
       "ja": "しすてむのかんそくかのうせいとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -12888,7 +13170,8 @@
     "question_text_reading": {
       "en": "What is a container pod in Kubernetes?",
       "ja": "Kubernetesのぽっどとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -12932,7 +13215,8 @@
     "question_text_reading": {
       "en": "What is a Dockerfile?",
       "ja": "Dockerfileとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -12976,7 +13260,8 @@
     "question_text_reading": {
       "en": "What is `docker-compose`?",
       "ja": "`docker-compose`とは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -13020,7 +13305,8 @@
     "question_text_reading": {
       "en": "What is a Kubernetes namespace?",
       "ja": "Kubernetesのなめすぺーすとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -13064,7 +13350,8 @@
     "question_text_reading": {
       "en": "What is a Helm chart?",
       "ja": "Helmちゃーととは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -13110,7 +13397,8 @@
     "question_text_reading": {
       "en": "What is GitOps?",
       "ja": "GitOpsとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -13156,7 +13444,8 @@
     "question_text_reading": {
       "en": "What is chaos engineering?",
       "ja": "かおすえんじにありんぐとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -13200,7 +13489,8 @@
     "question_text_reading": {
       "en": "What is a webhook?",
       "ja": "うぇぶふっくとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -13246,7 +13536,8 @@
     "question_text_reading": {
       "en": "What is latency in computing?",
       "ja": "けいさんきのれいてんしーとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -13295,7 +13586,8 @@
     "question_text_reading": {
       "en": "What is throughput in computing?",
       "ja": "けいさんきのすいとうっぷりょうとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -13341,7 +13633,8 @@
     "question_text_reading": {
       "en": "What does API stand for?",
       "ja": "APIのりゃくごのいみは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -13388,7 +13681,8 @@
     "question_text_reading": {
       "en": "What does URL stand for?",
       "ja": "URLのりゃくごのいみは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -13434,7 +13728,8 @@
     "question_text_reading": {
       "en": "What does IDE stand for?",
       "ja": "IDEのりゃくごのいみは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -13481,7 +13776,8 @@
     "question_text_reading": {
       "en": "What does ORM stand for?",
       "ja": "ORMのりゃくごのいみは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -13525,7 +13821,8 @@
     "question_text_reading": {
       "en": "What does MVC stand for?",
       "ja": "MVCのりゃくごのいみは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -13569,7 +13866,8 @@
     "question_text_reading": {
       "en": "What does SaaS stand for?",
       "ja": "SaaSのりゃくごのいみは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -13614,7 +13912,8 @@
     "question_text_reading": {
       "en": "What does IaaS stand for?",
       "ja": "IaaSのりゃくごのいみは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -13658,7 +13957,8 @@
     "question_text_reading": {
       "en": "What does PaaS stand for?",
       "ja": "PaaSのりゃくごのいみは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -13706,7 +14006,8 @@
     "question_text_reading": {
       "en": "What does CRUD stand for?",
       "ja": "CRUDのりゃくごのいみは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -13752,7 +14053,8 @@
     "question_text_reading": {
       "en": "What does OOP stand for?",
       "ja": "OOPのりゃくごのいみは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -13797,7 +14099,8 @@
     "question_text_reading": {
       "en": "What does CLI stand for?",
       "ja": "CLIのりゃくごのいみは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -13846,7 +14149,8 @@
     "question_text_reading": {
       "en": "What does GUI stand for?",
       "ja": "GUIのりゃくごのいみは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -13890,7 +14194,8 @@
     "question_text_reading": {
       "en": "What does SDK stand for?",
       "ja": "SDKのりゃくごのいみは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -13936,7 +14241,8 @@
     "question_text_reading": {
       "en": "What does EOF stand for in programming?",
       "ja": "ぷろぐらみんぐのEOFのりゃくごのいみは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -13981,7 +14287,8 @@
     "question_text_reading": {
       "en": "What is a boolean?",
       "ja": "ぶーりあんとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -14025,7 +14332,8 @@
     "question_text_reading": {
       "en": "What is null?",
       "ja": "nullとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -14069,7 +14377,8 @@
     "question_text_reading": {
       "en": "What is undefined in JavaScript?",
       "ja": "JavaScriptのundefinedとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -14114,7 +14423,8 @@
     "question_text_reading": {
       "en": "What is type casting?",
       "ja": "かたへんかんとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -14159,7 +14469,8 @@
     "question_text_reading": {
       "en": "What is a namespace?",
       "ja": "なめすぺーすとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -14207,7 +14518,8 @@
     "question_text_reading": {
       "en": "What is an enum?",
       "ja": "えぬむとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -14254,7 +14566,8 @@
     "question_text_reading": {
       "en": "What is a struct?",
       "ja": "すとらくととは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -14298,7 +14611,8 @@
     "question_text_reading": {
       "en": "What does `printf` do in C?",
       "ja": "Cの`printf`は何をするか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -14344,7 +14658,8 @@
     "question_text_reading": {
       "en": "What is a pointer in C?",
       "ja": "Cのぽいんたーとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -14390,7 +14705,8 @@
     "question_text_reading": {
       "en": "What does `#include` do in C?",
       "ja": "Cの`#include`は何をするか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -14436,7 +14752,8 @@
     "question_text_reading": {
       "en": "What is a compile error?",
       "ja": "かんぱいるえらーとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -14481,7 +14798,8 @@
     "question_text_reading": {
       "en": "What is a runtime error?",
       "ja": "じっこうじえらーとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -14528,7 +14846,8 @@
     "question_text_reading": {
       "en": "What is a logic error?",
       "ja": "ろじっくえらーとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -14574,7 +14893,8 @@
     "question_text_reading": {
       "en": "What is `stdin`?",
       "ja": "`stdin`とは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -14619,7 +14939,8 @@
     "question_text_reading": {
       "en": "What is `stdout`?",
       "ja": "`stdout`とは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -14666,7 +14987,8 @@
     "question_text_reading": {
       "en": "What is `stderr`?",
       "ja": "`stderr`とは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -14710,7 +15032,8 @@
     "question_text_reading": {
       "en": "What is a variable?",
       "ja": "へんすうとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -14755,7 +15078,8 @@
     "question_text_reading": {
       "en": "What is a constant?",
       "ja": "ていすうとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -14802,7 +15126,8 @@
     "question_text_reading": {
       "en": "What is operator precedence?",
       "ja": "えんざんしのゆうせんじゅんいとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -14852,7 +15177,8 @@
     "question_text_reading": {
       "en": "What is short-circuit evaluation?",
       "ja": "たんらくひょうかとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -14900,7 +15226,8 @@
     "question_text_reading": {
       "en": "What is a ternary operator?",
       "ja": "さんこうえんざんしとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -14944,7 +15271,8 @@
     "question_text_reading": {
       "en": "Which anime features a boy who gains power from a Death Note?",
       "ja": "しのちょうからちからをえる少年のアニメは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -14988,7 +15316,8 @@
     "question_text_reading": {
       "en": "What is the name of the protagonist in Naruto?",
       "ja": "Narutoのしゅじんこうのなまえは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -15033,7 +15362,8 @@
     "question_text_reading": {
       "en": "Which anime is set in a world where humans live inside walls to avoid Titans?",
       "ja": "きょじんからのがれるためにかべのなかでくらすせかいのアニメは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -15078,7 +15408,8 @@
     "question_text_reading": {
       "en": "Which Studio Ghibli film features a girl who works in a bathhouse for spirits?",
       "ja": "せいれいのゆやではたらくしょうじょのスタジオジブリえいがは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -15124,7 +15455,8 @@
     "question_text_reading": {
       "en": "What power does Saitama from One Punch Man have?",
       "ja": "わんぱんまんのさいたまのちからは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -15168,7 +15500,8 @@
     "question_text_reading": {
       "en": "Which anime features the Straw Hat Pirates?",
       "ja": "むぎわらかいぞくだんのアニメは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -15213,7 +15546,8 @@
     "question_text_reading": {
       "en": "Who is the author of Dragon Ball?",
       "ja": "ドラゴンボールのさくしゃは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -15257,7 +15591,8 @@
     "question_text_reading": {
       "en": "Which anime is about a boy named Tanjiro fighting demons?",
       "ja": "たんじろうというしょうねんがおにとたたかうアニメは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -15302,7 +15637,8 @@
     "question_text_reading": {
       "en": "What is the setting of Sword Art Online?",
       "ja": "ソードアートオンラインのぶたいは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -15346,7 +15682,8 @@
     "question_text_reading": {
       "en": "Which anime follows a boy who wants to be the best Pokemon trainer?",
       "ja": "さいきょうのぽけもんとれーなーをめざすしょうねんのアニメは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -15390,7 +15727,8 @@
     "question_text_reading": {
       "en": "Who created the Evangelion series?",
       "ja": "えんがえりおんしりーずをつくったのは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -15434,7 +15772,8 @@
     "question_text_reading": {
       "en": "Which anime features the Survey Corps?",
       "ja": "ちょうさへいだんがとうじょうするアニメは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -15480,7 +15819,8 @@
     "question_text_reading": {
       "en": "What is the full name of the protagonist in My Hero Academia?",
       "ja": "ぼくのひーろーあかでみあのしゅじんこうのフルネームは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -15524,7 +15864,8 @@
     "question_text_reading": {
       "en": "Which anime features ninjas with special chakra abilities?",
       "ja": "とくべつなちゃくらのうりょくをもつにんじゃのアニメは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -15569,7 +15910,8 @@
     "question_text_reading": {
       "en": "What studio produced Neon Genesis Evangelion?",
       "ja": "しんせいきえんがえりおんをせいさくしたすたじおは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -15613,7 +15955,8 @@
     "question_text_reading": {
       "en": "Which anime series is known for the 'Kamehameha' attack?",
       "ja": "かめはめはこうげきでゆうめいなアニメは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -15658,7 +16001,8 @@
     "question_text_reading": {
       "en": "What genre is Sailor Moon?",
       "ja": "せーらーむーんのジャンルは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -15702,7 +16046,8 @@
     "question_text_reading": {
       "en": "Who is Pikachu's trainer in Pokemon anime?",
       "ja": "ポケモンアニメでぴかちゅうのとれーなーは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -15746,7 +16091,8 @@
     "question_text_reading": {
       "en": "Which anime is set in a sports high school for volleyball?",
       "ja": "ばれーぼーるのこうこうのアニメは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -15790,7 +16136,8 @@
     "question_text_reading": {
       "en": "What is isekai?",
       "ja": "いせかいとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -15834,7 +16181,8 @@
     "question_text_reading": {
       "en": "Which anime features Monkey D. Luffy?",
       "ja": "もんきーでぃーるふぃーがとうじょうするアニメは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -15880,7 +16228,8 @@
     "question_text_reading": {
       "en": "What is the name of the school in My Hero Academia?",
       "ja": "ぼくのひーろーあかでみあのがっこうのなまえは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -15924,7 +16273,8 @@
     "question_text_reading": {
       "en": "Which anime follows L and Light's cat-and-mouse detective game?",
       "ja": "Lとライトのかくれんぼのようなすいりのアニメは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -15968,7 +16318,8 @@
     "question_text_reading": {
       "en": "Which anime is set in the fictional Konoha village?",
       "ja": "かそうのこのははのむらが舞台のアニメは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -16012,7 +16363,8 @@
     "question_text_reading": {
       "en": "What is the 'Big Three' of older Shonen Jump anime?",
       "ja": "むかしのじゃんぷのさんだいアニメは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -16059,7 +16411,8 @@
     "question_text_reading": {
       "en": "What is a mecha anime?",
       "ja": "めかアニメとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -16103,7 +16456,8 @@
     "question_text_reading": {
       "en": "Which Ghibli film features a young witch who delivers by broomstick?",
       "ja": "ほうきではいたつするわかいまじょのジブリえいがは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -16147,7 +16501,8 @@
     "question_text_reading": {
       "en": "Which anime follows Ichigo Kurosaki, a Soul Reaper?",
       "ja": "いちごくろさきというしにがみのアニメは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -16192,7 +16547,8 @@
     "question_text_reading": {
       "en": "What is a 'shonen' anime?",
       "ja": "しょうねんアニメとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -16237,7 +16593,8 @@
     "question_text_reading": {
       "en": "What is a 'shoujo' anime?",
       "ja": "しょうじょアニメとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -16281,7 +16638,8 @@
     "question_text_reading": {
       "en": "Which anime is about a boy named Goku who trains in martial arts?",
       "ja": "ごくうというしょうねんがぶどうをきわめるアニメは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -16326,7 +16684,8 @@
     "question_text_reading": {
       "en": "What does 'OVA' stand for in anime?",
       "ja": "アニメのOVAのりゃくごのいみは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -16370,7 +16729,8 @@
     "question_text_reading": {
       "en": "Which anime is famous for the 'Thousand Sunny' ship?",
       "ja": "さうざんどさにーごうでゆうめいなアニメは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -16415,7 +16775,8 @@
     "question_text_reading": {
       "en": "Which anime series has 'Stand' abilities as its main power system?",
       "ja": "すたんどのうりょくがメインのアニメシリーズは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -16462,7 +16823,8 @@
     "question_text_reading": {
       "en": "What is 'One For All' in My Hero Academia?",
       "ja": "ぼくのひーろーあかでみあのわんふぉーおーるとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -16507,7 +16869,8 @@
     "question_text_reading": {
       "en": "Which anime is set in a cooking high school?",
       "ja": "りょうりのこうこうのアニメは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -16551,7 +16914,8 @@
     "question_text_reading": {
       "en": "Who is the villain in the first arc of Dragon Ball Z?",
       "ja": "ドラゴンボールZさいしょのあーくのヴィランは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -16599,7 +16963,8 @@
     "question_text_reading": {
       "en": "What is 'Alchemy' in Fullmetal Alchemist?",
       "ja": "はがねのれんきんじゅつしのれんきんじゅつとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -16643,7 +17008,8 @@
     "question_text_reading": {
       "en": "Which anime features the 'Survey Corps' fighting Titans?",
       "ja": "ちょうさへいだんがきょじんとたたかうアニメは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -16688,7 +17054,8 @@
     "question_text_reading": {
       "en": "What genre is 'Your Name (Kimi no Na wa)'?",
       "ja": "きみのなわのジャンルは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -16732,7 +17099,8 @@
     "question_text_reading": {
       "en": "Who directed Spirited Away?",
       "ja": "もののけひめをかんとくしたのは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -16776,7 +17144,8 @@
     "question_text_reading": {
       "en": "What is the name of the cat bus in My Neighbor Totoro?",
       "ja": "となりのトトロのねこばすのなまえは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -16820,7 +17189,8 @@
     "question_text_reading": {
       "en": "Which anime features heroes called 'Hashira'?",
       "ja": "はしらとよばれるひーろーたちのアニメは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -16864,7 +17234,8 @@
     "question_text_reading": {
       "en": "What is the name of Naruto's signature technique?",
       "ja": "なるとのとくいわざのなまえは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -16909,7 +17280,8 @@
     "question_text_reading": {
       "en": "Which anime is about a virtual game where dying in-game means death in real life?",
       "ja": "げーむないしすると現実でもしぬアニメは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -16955,7 +17327,8 @@
     "question_text_reading": {
       "en": "What power does Light Yagami use in Death Note?",
       "ja": "デスノートでやがみらいとが使うちからは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -16999,7 +17372,8 @@
     "question_text_reading": {
       "en": "Which anime is set in the Hidden Leaf Village?",
       "ja": "かくれこのはのさとをぶたいにしたアニメは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -17046,7 +17420,8 @@
     "question_text_reading": {
       "en": "What is the 'Quirk' in My Hero Academia?",
       "ja": "ぼくのひーろーあかでみあのこせいとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -17091,7 +17466,8 @@
     "question_text_reading": {
       "en": "Which anime features Ryuk, a death god?",
       "ja": "りゅーくというしにがみがとうじょうするアニメは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -17137,7 +17513,8 @@
     "question_text_reading": {
       "en": "What is 'Titan' in Attack on Titan?",
       "ja": "しんげきのきょじんのきょじんとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -17181,7 +17558,8 @@
     "question_text_reading": {
       "en": "Which anime is based on a card game?",
       "ja": "かーどげーむをもとにしたアニメは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -17225,7 +17603,8 @@
     "question_text_reading": {
       "en": "Who is the main antagonist of the Frieza arc in Dragon Ball Z?",
       "ja": "ドラゴンボールZのふりーざへんのしゅてきは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -17270,7 +17649,8 @@
     "question_text_reading": {
       "en": "What is the setting of 'No Game No Life'?",
       "ja": "のーげーむのーらいふの舞台は？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -17314,7 +17694,8 @@
     "question_text_reading": {
       "en": "Who wrote the manga 'Fullmetal Alchemist'?",
       "ja": "はがねのれんきんじゅつしをかいたのは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -17358,7 +17739,8 @@
     "question_text_reading": {
       "en": "What is a 'seiyuu' in anime?",
       "ja": "アニメのせいゆうとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -17403,7 +17785,8 @@
     "question_text_reading": {
       "en": "What is the difference between dubbed and subbed anime?",
       "ja": "だぶどとさぶどのアニメのちがいは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -17447,7 +17830,8 @@
     "question_text_reading": {
       "en": "Which anime series is set in 19th century England with a demon butler?",
       "ja": "あくまのしつじがいる19せいきえいこくのアニメは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -17491,7 +17875,8 @@
     "question_text_reading": {
       "en": "What is 'Shounen Jump'?",
       "ja": "しょうねんじゃんぷとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -17536,7 +17921,8 @@
     "question_text_reading": {
       "en": "Which anime follows a group of exorcists called 'jujutsu sorcerers'?",
       "ja": "じゅじゅつしのようしゃたちのアニメは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -17580,7 +17966,8 @@
     "question_text_reading": {
       "en": "What is the name of Tanjiro's sister in Demon Slayer?",
       "ja": "きめつのやいばでたんじろうのいもうとのなまえは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -17624,7 +18011,8 @@
     "question_text_reading": {
       "en": "Which anime features the 'Nine-Tails Fox' sealed inside a character?",
       "ja": "きゅうびがふういんされたキャラのアニメは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -17669,7 +18057,8 @@
     "question_text_reading": {
       "en": "What is the anime genre 'slice of life'?",
       "ja": "あにめのすらいすおぶらいふジャンルとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -17714,7 +18103,8 @@
     "question_text_reading": {
       "en": "What is 'cour' in anime terminology?",
       "ja": "アニメようごのくーるとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -17758,7 +18148,8 @@
     "question_text_reading": {
       "en": "Which anime is produced by MAPPA?",
       "ja": "MAPPAがせいさくしたアニメは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -17805,7 +18196,8 @@
     "question_text_reading": {
       "en": "What is Kyoto Animation known for?",
       "ja": "きょーとあにめーしょんはなにでゆうめいか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -17849,7 +18241,8 @@
     "question_text_reading": {
       "en": "Which anime features Satoru Gojo?",
       "ja": "ごじょうさとるがとうじょうするアニメは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -17894,7 +18287,8 @@
     "question_text_reading": {
       "en": "Who is the creator of One Piece?",
       "ja": "ワンピースのさくしゃは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -17939,7 +18333,8 @@
     "question_text_reading": {
       "en": "What is 'Dattebayo' associated with in Naruto?",
       "ja": "ナルトで「だってばよ」はなにと関係するか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -17983,7 +18378,8 @@
     "question_text_reading": {
       "en": "Which Ghibli film features a flying island called Laputa?",
       "ja": "ラピュタというとぶしまのジブリえいがは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -18027,7 +18423,8 @@
     "question_text_reading": {
       "en": "What is the name of the robot in Doraemon?",
       "ja": "ドラえもんのろぼっとのなまえは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -18071,7 +18468,8 @@
     "question_text_reading": {
       "en": "Which anime is set in a world with 'Titans' and 3D Maneuver Gear?",
       "ja": "きょじんと立体機動装置のせかいのアニメは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -18117,7 +18515,8 @@
     "question_text_reading": {
       "en": "What is the setting of 'Re:Zero'?",
       "ja": "りぜろの舞台は？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -18161,7 +18560,8 @@
     "question_text_reading": {
       "en": "Which anime features the 'Akatsuki' organization?",
       "ja": "あかつきというそしきがとうじょうするアニメは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -18205,7 +18605,8 @@
     "question_text_reading": {
       "en": "What is 'Ghibli Museum' famous for?",
       "ja": "ジブリびじゅつかんはなにでゆうめいか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -18249,7 +18650,8 @@
     "question_text_reading": {
       "en": "Which anime has 'Zanpakuto' as spirit swords?",
       "ja": "ざんぱくとうというせいれいけんのアニメは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -18293,7 +18695,8 @@
     "question_text_reading": {
       "en": "What year did the original Pokemon anime first air in Japan?",
       "ja": "ぽけもんアニメがにほんではじめてほうそうされたのはなんねんか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -18338,7 +18741,8 @@
     "question_text_reading": {
       "en": "Which anime features characters fighting with 'Nen' energy?",
       "ja": "ねんをつかってたたかうアニメは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -18384,7 +18788,8 @@
     "question_text_reading": {
       "en": "What is 'Fullmetal' referring to in Fullmetal Alchemist?",
       "ja": "はがねのれんきんじゅつしの「はがねの」はなにをさすか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -18429,7 +18834,8 @@
     "question_text_reading": {
       "en": "Which anime features the character Rem?",
       "ja": "れむがとうじょうするアニメは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -18474,7 +18880,8 @@
     "question_text_reading": {
       "en": "What is 'Anime' literally referring to in Japanese?",
       "ja": "にほんごで「アニメ」はもともと何をさすか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -18518,7 +18925,8 @@
     "question_text_reading": {
       "en": "Which anime is famous for the phrase 'Plus Ultra'?",
       "ja": "ぷらすうるとらというフレーズでゆうめいなアニメは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -18562,7 +18970,8 @@
     "question_text_reading": {
       "en": "Which anime is about a boy who discovers he can become a hero by training hard?",
       "ja": "はげんれんしゅうでひーろーになれることをしったしょうねんのアニメは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -18606,7 +19015,8 @@
     "question_text_reading": {
       "en": "What is 'Shingeki no Kyojin' in English?",
       "ja": "しんげきのきょじんの英語タイトルは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -18651,7 +19061,8 @@
     "question_text_reading": {
       "en": "What is the name of Satoru Gojo's special ability?",
       "ja": "ごじょうさとるの特殊能力のなまえは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -18697,7 +19108,8 @@
     "question_text_reading": {
       "en": "Which anime is a psychological thriller with 'Death Note'?",
       "ja": "デスノートはどんなジャンルのアニメか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -18744,7 +19156,8 @@
     "question_text_reading": {
       "en": "What console launched the modern era of 3D gaming?",
       "ja": "3Dげーむのしんじだいをひらいたてゆきとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -18788,7 +19201,8 @@
     "question_text_reading": {
       "en": "What game features Link as the protagonist?",
       "ja": "りんくがしゅじんこうのげーむは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -18832,7 +19246,8 @@
     "question_text_reading": {
       "en": "What is the best-selling video game of all time (as of 2024)?",
       "ja": "2024ねんじてんでもっともうれたびでおげーむは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -18877,7 +19292,8 @@
     "question_text_reading": {
       "en": "Which company makes the PlayStation?",
       "ja": "ぷれいすてーしょんをつくっているかいしゃは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -18921,7 +19337,8 @@
     "question_text_reading": {
       "en": "Which game features Mario and Luigi?",
       "ja": "まりおとるいーじがとうじょうするげーむは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -18965,7 +19382,8 @@
     "question_text_reading": {
       "en": "What is the iconic yellow ghost-eating character?",
       "ja": "おばけをたべるきいろいキャラクターは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -19009,7 +19427,8 @@
     "question_text_reading": {
       "en": "Which game series features Master Chief?",
       "ja": "ますたーちいふがとうじょうするげーむシリーズは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -19053,7 +19472,8 @@
     "question_text_reading": {
       "en": "What game popularized the battle royale genre?",
       "ja": "ばとるろわいやるジャンルをひろめたげーむは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -19098,7 +19518,8 @@
     "question_text_reading": {
       "en": "Which company made Sonic the Hedgehog?",
       "ja": "そにっくざへっじほっぐをつくったかいしゃは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -19142,7 +19563,8 @@
     "question_text_reading": {
       "en": "What game series features the Covenant as enemies?",
       "ja": "こべナントがてきとしてとうじょうするげーむシリーズは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -19186,7 +19608,8 @@
     "question_text_reading": {
       "en": "Which game is famous for the phrase 'The Cake is a Lie'?",
       "ja": "「けーきはうそだ」というフレーズでゆうめいなげーむは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -19232,7 +19655,8 @@
     "question_text_reading": {
       "en": "What is the setting of the Dark Souls series?",
       "ja": "ダークソウルシリーズの舞台は？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -19276,7 +19700,8 @@
     "question_text_reading": {
       "en": "What game created the 'survival horror' genre?",
       "ja": "さばいばるほらーというジャンルをつくったげーむは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -19320,7 +19745,8 @@
     "question_text_reading": {
       "en": "What year was the original Minecraft released to the public?",
       "ja": "おりじなるまいんくらふとがこうかいされたのはなんねんか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -19366,7 +19792,8 @@
     "question_text_reading": {
       "en": "What is the objective in Tetris?",
       "ja": "テトリスのもくてきは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -19412,7 +19839,8 @@
     "question_text_reading": {
       "en": "Which game series features Arthur Morgan or John Marston?",
       "ja": "あーさーもるがんまたはじょんまーすとんがとうじょうするシリーズは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -19456,7 +19884,8 @@
     "question_text_reading": {
       "en": "What genre is 'The Sims'?",
       "ja": "ざしむずのジャンルは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -19500,7 +19929,8 @@
     "question_text_reading": {
       "en": "Which Nintendo franchise features Link and Zelda?",
       "ja": "りんくとぜるだのにんてんどうフランチャイズは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -19544,7 +19974,8 @@
     "question_text_reading": {
       "en": "What type of game is 'Among Us'?",
       "ja": "あまんぐあすのゲームジャンルは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -19588,7 +20019,8 @@
     "question_text_reading": {
       "en": "What was Nintendo's first game console?",
       "ja": "にんてんどうのはじめてのゲームきは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -19632,7 +20064,8 @@
     "question_text_reading": {
       "en": "Which game series features Commander Shepard?",
       "ja": "しぇぱーどさがおのシリーズは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -19676,7 +20109,8 @@
     "question_text_reading": {
       "en": "What is the name of Link's fairy companion in Ocarina of Time?",
       "ja": "時のオカリナでりんくのようせいのなまえは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -19720,7 +20154,8 @@
     "question_text_reading": {
       "en": "What is a JRPG?",
       "ja": "JRPGとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -19764,7 +20199,8 @@
     "question_text_reading": {
       "en": "Which game company made Final Fantasy?",
       "ja": "ふぁいなるふぁんたじーをつくったかいしゃは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -19809,7 +20245,8 @@
     "question_text_reading": {
       "en": "What is 'permadeath' in games?",
       "ja": "ゲームのぱーまですとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -19858,7 +20295,8 @@
     "question_text_reading": {
       "en": "What is a roguelike game?",
       "ja": "ろーぐらいくゲームとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -19905,7 +20343,8 @@
     "question_text_reading": {
       "en": "What is the objective in chess (video game version)?",
       "ja": "チェスのもくてきは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -19949,7 +20388,8 @@
     "question_text_reading": {
       "en": "What year was the first Super Mario Bros released?",
       "ja": "はつのすーぱーまりおぶらざーずはいつはつばいされたか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -19993,7 +20433,8 @@
     "question_text_reading": {
       "en": "Which game features the Covenant, Flood, and Forerunners?",
       "ja": "こべナント、ふらっど、ふぉーらんなーがとうじょうするゲームは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -20037,7 +20478,8 @@
     "question_text_reading": {
       "en": "What type of game is 'SimCity'?",
       "ja": "しむしてぃのゲームジャンルは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -20081,7 +20523,8 @@
     "question_text_reading": {
       "en": "What is the main currency in Animal Crossing?",
       "ja": "あつまれどうぶつのもりのつうかは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -20125,7 +20568,8 @@
     "question_text_reading": {
       "en": "Which game is known for the catchphrase 'Gotta Catch 'Em All'?",
       "ja": "「ぜんぶつかまえろ」というキャッチフレーズのゲームは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -20170,7 +20614,8 @@
     "question_text_reading": {
       "en": "Which company makes the Xbox?",
       "ja": "えっくすぼっくすをつくっているかいしゃは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -20214,7 +20659,8 @@
     "question_text_reading": {
       "en": "What is 'health points' abbreviated as in games?",
       "ja": "ゲームでヘルスポイントのりゃくごは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -20258,7 +20704,8 @@
     "question_text_reading": {
       "en": "What is 'magic points' abbreviated as in games?",
       "ja": "ゲームでまほうぽいんとのりゃくごは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -20302,7 +20749,8 @@
     "question_text_reading": {
       "en": "What does 'NPC' mean in video games?",
       "ja": "ビデオゲームのNPCのいみは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -20348,7 +20796,8 @@
     "question_text_reading": {
       "en": "What is 'DLC' in gaming?",
       "ja": "ゲームのDLCのいみは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -20394,7 +20843,8 @@
     "question_text_reading": {
       "en": "What is 'grinding' in RPGs?",
       "ja": "RPGの「ぐらいんど」とは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -20440,7 +20890,8 @@
     "question_text_reading": {
       "en": "What is a 'loot box'?",
       "ja": "るーとぼっくすとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -20484,7 +20935,8 @@
     "question_text_reading": {
       "en": "What is an 'Easter egg' in games?",
       "ja": "ゲームのイースターたまごとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -20529,7 +20981,8 @@
     "question_text_reading": {
       "en": "What is 'speedrunning'?",
       "ja": "すぴーどらんとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -20575,7 +21028,8 @@
     "question_text_reading": {
       "en": "What is 'FPS' as a game genre?",
       "ja": "ゲームジャンルとしてのFPSとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -20621,7 +21075,8 @@
     "question_text_reading": {
       "en": "What is 'MOBA' as a game genre?",
       "ja": "ゲームジャンルとしてのMOBAとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -20665,7 +21120,8 @@
     "question_text_reading": {
       "en": "Which game has 'Creepers' as enemies?",
       "ja": "クリーパーがてきとしてとうじょうするゲームは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -20710,7 +21166,8 @@
     "question_text_reading": {
       "en": "What is the iconic opening music of the original Legend of Zelda?",
       "ja": "ゼルダのでんせつのアイコニックなオープニング音楽は？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -20756,7 +21213,8 @@
     "question_text_reading": {
       "en": "What does it mean to 'no-hit' a boss?",
       "ja": "ボスを「のーひっと」するとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -20801,7 +21259,8 @@
     "question_text_reading": {
       "en": "What is 'Game Over' traditionally?",
       "ja": "「ゲームオーバー」はどういいみか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -20851,7 +21310,8 @@
     "question_text_reading": {
       "en": "What is 'co-op' gaming?",
       "ja": "こおぷゲームとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -20896,7 +21356,8 @@
     "question_text_reading": {
       "en": "What is a 'sandbox' game?",
       "ja": "さんどぼっくすゲームとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -20940,7 +21401,8 @@
     "question_text_reading": {
       "en": "Which Capcom game series features Leon Kennedy and Chris Redfield?",
       "ja": "れおんけねでぃとくりすれっどふぃーるどのカプコンシリーズは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -20987,7 +21449,8 @@
     "question_text_reading": {
       "en": "What is a 'hit scan' in FPS games?",
       "ja": "FPSのひっとすきゃんとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -21032,7 +21495,8 @@
     "question_text_reading": {
       "en": "What is 'lag' in online gaming?",
       "ja": "おんらいんゲームのらぐとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -21077,7 +21541,8 @@
     "question_text_reading": {
       "en": "Which game is famous for 'The Legend of Zelda: Breath of the Wild'?",
       "ja": "ゼルダのでんせつ ブレスオブザワイルドはどんなゲームか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -21122,7 +21587,8 @@
     "question_text_reading": {
       "en": "What console is the Switch?",
       "ja": "スイッチはどのゲームきか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -21167,7 +21633,8 @@
     "question_text_reading": {
       "en": "What is the objective in chess?",
       "ja": "チェスのもくてきは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -21214,7 +21681,8 @@
     "question_text_reading": {
       "en": "What is 'PvP' in games?",
       "ja": "ゲームのPvPとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -21259,7 +21727,8 @@
     "question_text_reading": {
       "en": "What is 'PvE' in games?",
       "ja": "ゲームのPvEとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -21308,7 +21777,8 @@
     "question_text_reading": {
       "en": "What is a 'buff' in games?",
       "ja": "ゲームのばふとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -21354,7 +21824,8 @@
     "question_text_reading": {
       "en": "What is a 'nerf' in game balance?",
       "ja": "ゲームバランスのなーふとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -21398,7 +21869,8 @@
     "question_text_reading": {
       "en": "Which company made Street Fighter?",
       "ja": "すとりーとふぁいたーをつくったかいしゃは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -21442,7 +21914,8 @@
     "question_text_reading": {
       "en": "What is the classic arcade game where you break bricks with a ball?",
       "ja": "ぼーるでれんがをこわすクラシックアーケードゲームは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -21486,7 +21959,8 @@
     "question_text_reading": {
       "en": "What is the most popular MOBA game?",
       "ja": "もっとにんきのあるMOBAゲームは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -21532,7 +22006,8 @@
     "question_text_reading": {
       "en": "What is the setting of 'The Witcher' series?",
       "ja": "ウィッチャーシリーズの舞台は？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -21576,7 +22051,8 @@
     "question_text_reading": {
       "en": "What is 'respawning' in games?",
       "ja": "ゲームのりすぽーんとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -21621,7 +22097,8 @@
     "question_text_reading": {
       "en": "What is the main resource in Fortnite for building?",
       "ja": "フォートナイトでけんちくにつかうまいんりそーすは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -21668,7 +22145,8 @@
     "question_text_reading": {
       "en": "What is an 'achievement' in games?",
       "ja": "ゲームのあちーぶめんととは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -21716,7 +22194,8 @@
     "question_text_reading": {
       "en": "What is 'frame rate' in games?",
       "ja": "ゲームのふれーむれーととは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -21765,7 +22244,8 @@
     "question_text_reading": {
       "en": "What is 'V-sync' in gaming?",
       "ja": "ゲームのVsyncとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -21810,7 +22290,8 @@
     "question_text_reading": {
       "en": "What was Pong?",
       "ja": "ぽんぐとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -21856,7 +22337,8 @@
     "question_text_reading": {
       "en": "What is 'bullet hell' in games?",
       "ja": "ゲームのたんまくとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -21900,7 +22382,8 @@
     "question_text_reading": {
       "en": "What is a 'save point'?",
       "ja": "せーぶぽいんととは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -21945,7 +22428,8 @@
     "question_text_reading": {
       "en": "What is 'open world' in games?",
       "ja": "ゲームのおーぷんわーるどとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -21992,7 +22476,8 @@
     "question_text_reading": {
       "en": "What is 'turn-based' combat?",
       "ja": "ターンせいせんとうとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -22036,7 +22521,8 @@
     "question_text_reading": {
       "en": "What is 'real-time strategy' (RTS)?",
       "ja": "りあるたいむすとらてじーとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -22081,7 +22567,8 @@
     "question_text_reading": {
       "en": "What is a 'patch' in gaming?",
       "ja": "ゲームのぱっちとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -22125,7 +22612,8 @@
     "question_text_reading": {
       "en": "What is the term for games released on multiple platforms?",
       "ja": "ふくすうぷらっとふぉームでリリースされるゲームのようごは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -22172,7 +22660,8 @@
     "question_text_reading": {
       "en": "What is a 'platformer' game?",
       "ja": "ぷらっとふぉーまーゲームとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -22218,7 +22707,8 @@
     "question_text_reading": {
       "en": "What is 'Metroidvania' genre?",
       "ja": "めとろいどばにあジャンルとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -22265,7 +22755,8 @@
     "question_text_reading": {
       "en": "What console generation is the PlayStation 5?",
       "ja": "プレイステーション5は何世代目のゲームきか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -22310,7 +22801,8 @@
     "question_text_reading": {
       "en": "What is an 'indie game'?",
       "ja": "いんでぃゲームとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -22355,7 +22847,8 @@
     "question_text_reading": {
       "en": "What is Steam?",
       "ja": "Steamとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -22405,7 +22898,8 @@
     "question_text_reading": {
       "en": "What is manga?",
       "ja": "まんがとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -22450,7 +22944,8 @@
     "question_text_reading": {
       "en": "Who created Dragon Ball manga?",
       "ja": "ドラゴンボールのまんがをかいたのは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -22494,7 +22989,8 @@
     "question_text_reading": {
       "en": "What is the best-selling manga of all time?",
       "ja": "もっともうれたまんがは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -22541,7 +23037,8 @@
     "question_text_reading": {
       "en": "What magazine did Naruto run in?",
       "ja": "ナルトが掲載されていたざっしは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -22587,7 +23084,8 @@
     "question_text_reading": {
       "en": "What is 'tankoubon'?",
       "ja": "たんこうぼんとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -22633,7 +23131,8 @@
     "question_text_reading": {
       "en": "What is 'seinen' manga targeted at?",
       "ja": "せいねんまんがはなにをたいしょうとしているか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -22679,7 +23178,8 @@
     "question_text_reading": {
       "en": "What is 'josei' manga targeted at?",
       "ja": "じょせいまんがはなにをたいしょうとしているか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -22723,7 +23223,8 @@
     "question_text_reading": {
       "en": "What does 'manga-ka' mean?",
       "ja": "まんがかとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -22769,7 +23270,8 @@
     "question_text_reading": {
       "en": "What is 'furigana' in manga?",
       "ja": "まんがのふりがなとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -22814,7 +23316,8 @@
     "question_text_reading": {
       "en": "Who created the manga 'Berserk'?",
       "ja": "まんが「ベルセルク」をかいたのは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -22860,7 +23363,8 @@
     "question_text_reading": {
       "en": "What is the manga 'One Punch Man' about?",
       "ja": "まんが「ワンパンマン」はなにについてか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -22905,7 +23409,8 @@
     "question_text_reading": {
       "en": "Which manga is known for its intricate artwork style?",
       "ja": "ふくざつなえのまんがで知られるのは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -22949,7 +23454,8 @@
     "question_text_reading": {
       "en": "What is the most famous work of Osamu Tezuka?",
       "ja": "てづかおさむのもっともゆうめいなさくひんは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -22996,7 +23502,8 @@
     "question_text_reading": {
       "en": "What is 'Shonen' manga primarily about?",
       "ja": "しょうねんまんがのおもなないようは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -23041,7 +23548,8 @@
     "question_text_reading": {
       "en": "Which manga follows the Joestars across multiple generations?",
       "ja": "じょえすたーけのものがたりのまんがは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -23086,7 +23594,8 @@
     "question_text_reading": {
       "en": "What is 'webtoon'?",
       "ja": "うぇぶとぅーんとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -23131,7 +23640,8 @@
     "question_text_reading": {
       "en": "Who created Bleach?",
       "ja": "ブリーチをかいたのは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -23176,7 +23686,8 @@
     "question_text_reading": {
       "en": "What type of story is 'Monster' by Naoki Urasawa?",
       "ja": "うらさわなおきのモンスターはどんなものがたりか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -23222,7 +23733,8 @@
     "question_text_reading": {
       "en": "What is 'doujinshi'?",
       "ja": "どうじんしとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -23267,7 +23779,8 @@
     "question_text_reading": {
       "en": "Which manga is about a time-traveling story in feudal Japan?",
       "ja": "せんごくじだいのにほんにタイムトラベルするまんがは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -23314,7 +23827,8 @@
     "question_text_reading": {
       "en": "What is the manga 'Yotsubato!' about?",
       "ja": "まんが「よつばと!」はなにについてか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -23359,7 +23873,8 @@
     "question_text_reading": {
       "en": "Which manga series is set in ancient China?",
       "ja": "こだいちゅうごくをぶたいにしたまんがシリーズは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -23404,7 +23919,8 @@
     "question_text_reading": {
       "en": "Who draws One Piece?",
       "ja": "ワンピースをかいているのは誰か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -23450,7 +23966,8 @@
     "question_text_reading": {
       "en": "What is the premise of Vinland Saga?",
       "ja": "ゔぃんらんどさがのせっていは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -23495,7 +24012,8 @@
     "question_text_reading": {
       "en": "What is 'gekiga'?",
       "ja": "げきがとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -23540,7 +24058,8 @@
     "question_text_reading": {
       "en": "What manga features Edward and Alphonse Elric?",
       "ja": "えどわーどとあるふぉんすえるりっくのまんがは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -23586,7 +24105,8 @@
     "question_text_reading": {
       "en": "What is Kimetsu no Yaiba known as in English?",
       "ja": "きめつのやいばの英語タイトルは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -23632,7 +24152,8 @@
     "question_text_reading": {
       "en": "Which manga is drawn by Hajime Isayama?",
       "ja": "いさやまはじめがかいたまんがは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -23678,7 +24199,8 @@
     "question_text_reading": {
       "en": "What is 'Josei' manga magazine aimed at?",
       "ja": "じょせいまんがざっしのたいしょうは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -23723,7 +24245,8 @@
     "question_text_reading": {
       "en": "What is the manga equivalent of a light novel?",
       "ja": "らいとのべるのまんがそうとうは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -23767,7 +24290,8 @@
     "question_text_reading": {
       "en": "Which manga features the Elric brothers searching for the Philosopher's Stone?",
       "ja": "けんじゃのいしをさがすえるりっくきょうだいのまんがは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -23813,7 +24337,8 @@
     "question_text_reading": {
       "en": "Who created Doraemon?",
       "ja": "ドラえもんをかいたのは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -23858,7 +24383,8 @@
     "question_text_reading": {
       "en": "What is the genre of 'Vagabond'?",
       "ja": "バガボンドのジャンルは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -23902,7 +24428,8 @@
     "question_text_reading": {
       "en": "What is a 'spin-off' manga?",
       "ja": "スピンオフまんがとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -23946,7 +24473,8 @@
     "question_text_reading": {
       "en": "What makes manga read differently from Western comics?",
       "ja": "まんがが西洋まんがとちがうよみかたは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -23990,7 +24518,8 @@
     "question_text_reading": {
       "en": "Which manga has the longest running story?",
       "ja": "もっともちょうへんのまんがは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -24035,7 +24564,8 @@
     "question_text_reading": {
       "en": "What is 'shojo manga' famous for?",
       "ja": "しょうじょまんがはなにでゆうめいか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -24079,7 +24609,8 @@
     "question_text_reading": {
       "en": "Who is the creator of Sailor Moon manga?",
       "ja": "セーラームーンまんがのさくしゃは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -24125,7 +24656,8 @@
     "question_text_reading": {
       "en": "What is the manga 'Uzumaki' known for?",
       "ja": "まんが「うずまき」はなにでゆうめいか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -24169,7 +24701,8 @@
     "question_text_reading": {
       "en": "What manga features Kenshiro as the main character?",
       "ja": "けんしろうがしゅじんこうのまんがは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -24213,7 +24746,8 @@
     "question_text_reading": {
       "en": "What year was the first chapter of One Piece published?",
       "ja": "ワンピースのさいしょのかいがしゅっぱんされたのはなんねんか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -24258,7 +24792,8 @@
     "question_text_reading": {
       "en": "What is the manga about Yuji Itadori eating a cursed finger?",
       "ja": "ゆうじいただりがじゅのゆびをたべるまんがは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -24302,7 +24837,8 @@
     "question_text_reading": {
       "en": "What is the main theme of 'Slam Dunk'?",
       "ja": "スラムダンクのメインテーマは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -24347,7 +24883,8 @@
     "question_text_reading": {
       "en": "Which manga features time-travel murder mystery?",
       "ja": "タイムトラベルのさつじんミステリーのまんがは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -24392,7 +24929,8 @@
     "question_text_reading": {
       "en": "What is Naoki Urasawa known for?",
       "ja": "うらさわなおきはなにでゆうめいか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -24440,7 +24978,8 @@
     "question_text_reading": {
       "en": "What is the manga that Chainsaw Man is serialized in?",
       "ja": "チェーンソーマンがけいさいされているまんがは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -24484,7 +25023,8 @@
     "question_text_reading": {
       "en": "Who created 'Hunter x Hunter'?",
       "ja": "ハンターハンターをかいたのは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -24531,7 +25071,8 @@
     "question_text_reading": {
       "en": "What is 'Gekkan Shounen Nozaki-kun' about?",
       "ja": "「げっかんしょうねんのざきくん」はなにについてか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -24576,7 +25117,8 @@
     "question_text_reading": {
       "en": "Which manga ran from 1999 and features Gon Freecss as protagonist?",
       "ja": "1999ねんかられんさいのごんふりーくすがしゅじんこうのまんがは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -24620,7 +25162,8 @@
     "question_text_reading": {
       "en": "What is 'yonkoma' manga?",
       "ja": "よんこままんがとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -24665,7 +25208,8 @@
     "question_text_reading": {
       "en": "What type of manga is 'Yuru Camp'?",
       "ja": "ゆるキャンのまんがのしゅるいは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -24710,7 +25254,8 @@
     "question_text_reading": {
       "en": "Who is the creator of Fairy Tail?",
       "ja": "フェアリーテイルをかいたのは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -24755,7 +25300,8 @@
     "question_text_reading": {
       "en": "What is the famous manga by CLAMP?",
       "ja": "CLAMPのゆうめいなまんがは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -24803,7 +25349,8 @@
     "question_text_reading": {
       "en": "What is 'Seinen' manga known for?",
       "ja": "せいねんまんがはなにでゆうめいか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -24850,7 +25397,8 @@
     "question_text_reading": {
       "en": "What makes Hirohiko Araki unique as a manga artist?",
       "ja": "まんがかとしてのあらきひろひこのとくちょうは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -24894,7 +25442,8 @@
     "question_text_reading": {
       "en": "What is the capital of France?",
       "ja": "ふらんすのしゅとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -24941,7 +25490,8 @@
     "question_text_reading": {
       "en": "What is the capital of Japan?",
       "ja": "にほんのしゅとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -24985,7 +25535,8 @@
     "question_text_reading": {
       "en": "What is the largest country by area?",
       "ja": "めんせきがもっともおおきいくには？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -25030,7 +25581,8 @@
     "question_text_reading": {
       "en": "What is the longest river in the world?",
       "ja": "せかいでもっともながいかわは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -25074,7 +25626,8 @@
     "question_text_reading": {
       "en": "What is the highest mountain in the world?",
       "ja": "せかいでもっともたかいやまは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -25119,7 +25672,8 @@
     "question_text_reading": {
       "en": "What continent is Egypt in?",
       "ja": "えじぷとはどのたいりくにあるか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -25163,7 +25717,8 @@
     "question_text_reading": {
       "en": "What is the capital of Germany?",
       "ja": "どいつのしゅとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -25209,7 +25764,8 @@
     "question_text_reading": {
       "en": "What ocean separates Africa from South America?",
       "ja": "あふりかとみなみあめりかをへだてるうみは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -25253,7 +25809,8 @@
     "question_text_reading": {
       "en": "What is the capital of Australia?",
       "ja": "おーすとらりあのしゅとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -25297,7 +25854,8 @@
     "question_text_reading": {
       "en": "What is the smallest country in the world?",
       "ja": "せかいでもっともちいさいくには？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -25341,7 +25899,8 @@
     "question_text_reading": {
       "en": "What is the capital of Brazil?",
       "ja": "ぶらじるのしゅとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -25386,7 +25945,8 @@
     "question_text_reading": {
       "en": "What is the capital of China?",
       "ja": "ちゅうごくのしゅとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -25430,7 +25990,8 @@
     "question_text_reading": {
       "en": "What is the largest desert in the world?",
       "ja": "せかいでもっともおおきいさばくは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -25475,7 +26036,8 @@
     "question_text_reading": {
       "en": "How many continents are there?",
       "ja": "たいりくはいくつあるか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -25519,7 +26081,8 @@
     "question_text_reading": {
       "en": "What is the capital of the USA?",
       "ja": "アメリカのしゅとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -25563,7 +26126,8 @@
     "question_text_reading": {
       "en": "What is the capital of Italy?",
       "ja": "いたりあのしゅとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -25607,7 +26171,8 @@
     "question_text_reading": {
       "en": "What is the capital of Spain?",
       "ja": "すぺいんのしゅとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -25651,7 +26216,8 @@
     "question_text_reading": {
       "en": "What is the capital of Canada?",
       "ja": "かなだのしゅとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -25695,7 +26261,8 @@
     "question_text_reading": {
       "en": "What is the capital of Russia?",
       "ja": "ろしあのしゅとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -25740,7 +26307,8 @@
     "question_text_reading": {
       "en": "What is the capital of South Korea?",
       "ja": "かんこくのしゅとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -25784,7 +26352,8 @@
     "question_text_reading": {
       "en": "What is the capital of India?",
       "ja": "いんどのしゅとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -25828,7 +26397,8 @@
     "question_text_reading": {
       "en": "What is the capital of Mexico?",
       "ja": "めきしこのしゅとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -25872,7 +26442,8 @@
     "question_text_reading": {
       "en": "What country has the Eiffel Tower?",
       "ja": "えっふぇるとうはどのくににあるか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -25916,7 +26487,8 @@
     "question_text_reading": {
       "en": "What country has the Colosseum?",
       "ja": "ころっせおはどのくににあるか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -25960,7 +26532,8 @@
     "question_text_reading": {
       "en": "What country is the Amazon rainforest mostly in?",
       "ja": "あまぞんのねったいうりんはおもにどのくににあるか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -26005,7 +26578,8 @@
     "question_text_reading": {
       "en": "What sea is between Europe and Africa?",
       "ja": "ゆーろっぱとあふりかのあいだのうみは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -26049,7 +26623,8 @@
     "question_text_reading": {
       "en": "What country owns the Galapagos Islands?",
       "ja": "がらぱごすとうはどのくにのりょうどか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -26093,7 +26668,8 @@
     "question_text_reading": {
       "en": "What is the longest mountain range?",
       "ja": "せかいでもっともながいさんみゃくは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -26137,7 +26713,8 @@
     "question_text_reading": {
       "en": "What is the deepest lake in the world?",
       "ja": "せかいでもっともふかいみずうみは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -26181,7 +26758,8 @@
     "question_text_reading": {
       "en": "What country has the most natural UNESCO World Heritage Sites?",
       "ja": "しぜんのユネスコせかいいさんがもっともおおいくには？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -26227,7 +26805,8 @@
     "question_text_reading": {
       "en": "What is the largest ocean?",
       "ja": "もっともおおきいうみは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -26272,7 +26851,8 @@
     "question_text_reading": {
       "en": "What continent is Argentina in?",
       "ja": "あるぜんちんはどのたいりくにあるか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -26317,7 +26897,8 @@
     "question_text_reading": {
       "en": "What country is known as the Land of the Rising Sun?",
       "ja": "ひのでのくにといわれるのはどのくにか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -26361,7 +26942,8 @@
     "question_text_reading": {
       "en": "What is the capital of Egypt?",
       "ja": "えじぷとのしゅとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -26405,7 +26987,8 @@
     "question_text_reading": {
       "en": "What mountain range separates Europe and Asia?",
       "ja": "ゆーろっぱとあじあをへだてるさんみゃくは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -26449,7 +27032,8 @@
     "question_text_reading": {
       "en": "What country has the Great Barrier Reef?",
       "ja": "グレートバリアリーフはどのくににあるか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -26493,7 +27077,8 @@
     "question_text_reading": {
       "en": "What is the capital of Turkey?",
       "ja": "とるこのしゅとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -26537,7 +27122,8 @@
     "question_text_reading": {
       "en": "What is the capital of South Africa?",
       "ja": "みなみあふりかのしゅとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -26581,7 +27167,8 @@
     "question_text_reading": {
       "en": "What country is the Sahara Desert mostly in?",
       "ja": "さはらさばくはおもにどのくににあるか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -26625,7 +27212,8 @@
     "question_text_reading": {
       "en": "What is the capital of Argentina?",
       "ja": "あるぜんちんのしゅとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -26669,7 +27257,8 @@
     "question_text_reading": {
       "en": "What is the capital of Sweden?",
       "ja": "すうぇーでんのしゅとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -26713,7 +27302,8 @@
     "question_text_reading": {
       "en": "What is the capital of Greece?",
       "ja": "ぎりしあのしゅとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -26757,7 +27347,8 @@
     "question_text_reading": {
       "en": "What is the capital of Netherlands?",
       "ja": "おらんだのしゅとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -26801,7 +27392,8 @@
     "question_text_reading": {
       "en": "What is the capital of Poland?",
       "ja": "ぽーらんどのしゅとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -26846,7 +27438,8 @@
     "question_text_reading": {
       "en": "What country has the most islands?",
       "ja": "もっともおおいしまのあるくには？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -26890,7 +27483,8 @@
     "question_text_reading": {
       "en": "What is the capital of New Zealand?",
       "ja": "にゅーじーらんどのしゅとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -26934,7 +27528,8 @@
     "question_text_reading": {
       "en": "What is the capital of Nigeria?",
       "ja": "ないじぇりあのしゅとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -26978,7 +27573,8 @@
     "question_text_reading": {
       "en": "What is the capital of Thailand?",
       "ja": "たいらんどのしゅとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -27022,7 +27618,8 @@
     "question_text_reading": {
       "en": "What country is the Taj Mahal in?",
       "ja": "たじまはるはどのくににあるか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -27066,7 +27663,8 @@
     "question_text_reading": {
       "en": "What is the capital of Saudi Arabia?",
       "ja": "さうじあらびあのしゅとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -27110,7 +27708,8 @@
     "question_text_reading": {
       "en": "What is the capital of Kenya?",
       "ja": "けにあのしゅとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -27154,7 +27753,8 @@
     "question_text_reading": {
       "en": "What is the largest city in Africa by population?",
       "ja": "じんこうがもっともおおいあふりかのとしは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -27198,7 +27798,8 @@
     "question_text_reading": {
       "en": "What two countries share Niagara Falls?",
       "ja": "ないあがらのたきをきょうゆうするふたつのくには？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -27242,7 +27843,8 @@
     "question_text_reading": {
       "en": "What is the capital of Portugal?",
       "ja": "ぽるとがるのしゅとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -27286,7 +27888,8 @@
     "question_text_reading": {
       "en": "What is the capital of Austria?",
       "ja": "おーすとりあのしゅとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -27330,7 +27933,8 @@
     "question_text_reading": {
       "en": "In what year did World War II end?",
       "ja": "だいにじせかいたいせんはなんねんにおわったか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -27374,7 +27978,8 @@
     "question_text_reading": {
       "en": "Who was the first President of the United States?",
       "ja": "アメリカのしょだいだいとうりょうは誰か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -27418,7 +28023,8 @@
     "question_text_reading": {
       "en": "What year did the French Revolution begin?",
       "ja": "ふらんすかくめいはなんねんにはじまったか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -27466,7 +28072,8 @@
     "question_text_reading": {
       "en": "Who built the Great Wall of China?",
       "ja": "ちゅうごくのばんりのちょうじょうをきずいたのは誰か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -27510,7 +28117,8 @@
     "question_text_reading": {
       "en": "What civilization built the pyramids of Giza?",
       "ja": "ぎざのぴらみっどをきずいたぶんめいは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -27554,7 +28162,8 @@
     "question_text_reading": {
       "en": "When did the Roman Empire fall?",
       "ja": "ろーまていこくはいつほろんだか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -27600,7 +28209,8 @@
     "question_text_reading": {
       "en": "Who was Napoleon Bonaparte?",
       "ja": "なぽれおんぼなぱるととは誰か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -27644,7 +28254,8 @@
     "question_text_reading": {
       "en": "What year did Columbus reach the Americas?",
       "ja": "ころんぶすがアメリカにたっしたのはなんねんか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -27692,7 +28303,8 @@
     "question_text_reading": {
       "en": "What was the Cold War?",
       "ja": "れいせんとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -27736,7 +28348,8 @@
     "question_text_reading": {
       "en": "Who was the last Pharaoh of ancient Egypt?",
       "ja": "こだいえじぷとのさいごのふぁらおは誰か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -27780,7 +28393,8 @@
     "question_text_reading": {
       "en": "In what year did Japan's Meiji Restoration begin?",
       "ja": "にほんのめいじいしんははじまったのはなんねんか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -27827,7 +28441,8 @@
     "question_text_reading": {
       "en": "What was the Magna Carta?",
       "ja": "まぐなかるたとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -27871,7 +28486,8 @@
     "question_text_reading": {
       "en": "Who led the Indian independence movement against Britain?",
       "ja": "えいこくにたいするいんどどくりつうんどうをひきいたのは誰か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -27918,7 +28534,8 @@
     "question_text_reading": {
       "en": "What was the Renaissance?",
       "ja": "るねさんすとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -27962,7 +28579,8 @@
     "question_text_reading": {
       "en": "When did the Berlin Wall fall?",
       "ja": "べるりんのかべはいつたおれたか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -28009,7 +28627,8 @@
     "question_text_reading": {
       "en": "What was the Boston Tea Party?",
       "ja": "ぼすとんてぃーぱーてぃーとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -28053,7 +28672,8 @@
     "question_text_reading": {
       "en": "Who wrote the Communist Manifesto?",
       "ja": "きょうさんとうせんげんをかいたのは誰か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -28101,7 +28721,8 @@
     "question_text_reading": {
       "en": "What was the Silk Road?",
       "ja": "しるくろーどとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -28150,7 +28771,8 @@
     "question_text_reading": {
       "en": "Who was Julius Caesar?",
       "ja": "じゅりあすかいさーとは誰か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -28194,7 +28816,8 @@
     "question_text_reading": {
       "en": "What year did the first World War begin?",
       "ja": "だいいちじせかいたいせんはなんねんにはじまったか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -28243,7 +28866,8 @@
     "question_text_reading": {
       "en": "Who was Genghis Khan?",
       "ja": "ちんぎすかんとは誰か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -28289,7 +28913,8 @@
     "question_text_reading": {
       "en": "What ended the feudal period in Japan?",
       "ja": "にほんのほうけんじだいをおわらせたのは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -28335,7 +28960,8 @@
     "question_text_reading": {
       "en": "What was apartheid?",
       "ja": "あぱるとへいととは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -28379,7 +29005,8 @@
     "question_text_reading": {
       "en": "When did the American Civil War end?",
       "ja": "アメリカなんぼくせんそうはなんねんにおわったか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -28423,7 +29050,8 @@
     "question_text_reading": {
       "en": "Who invented the printing press?",
       "ja": "いんさつきをはつめいしたのは誰か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -28468,7 +29096,8 @@
     "question_text_reading": {
       "en": "What was the Black Death?",
       "ja": "ぺすととは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -28515,7 +29144,8 @@
     "question_text_reading": {
       "en": "Who was Martin Luther King Jr.?",
       "ja": "まーてぃんるーさーきんぐじゅにあとは誰か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -28559,7 +29189,8 @@
     "question_text_reading": {
       "en": "What year did the Soviet Union collapse?",
       "ja": "ソヴィエトれんぽうはなんねんにほうかいしたか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -28603,7 +29234,8 @@
     "question_text_reading": {
       "en": "Who led the Cuban Revolution?",
       "ja": "きゅーばかくめいをひきいたのは誰か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -28653,7 +29285,8 @@
     "question_text_reading": {
       "en": "What was D-Day?",
       "ja": "でぃーでーとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -28697,7 +29330,8 @@
     "question_text_reading": {
       "en": "When did the Titanic sink?",
       "ja": "たいたにっくはなんねんにしずんだか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -28743,7 +29377,8 @@
     "question_text_reading": {
       "en": "Who was Florence Nightingale?",
       "ja": "ふろれんすないちんげーるとは誰か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -28789,7 +29424,8 @@
     "question_text_reading": {
       "en": "What empire did Alexander the Great build?",
       "ja": "アレクサンドロスだいおうはどのようなていこくをきずいたか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -28833,7 +29469,8 @@
     "question_text_reading": {
       "en": "When did Japan attack Pearl Harbor?",
       "ja": "にほんはなんねんにぱーるはーばーをこうげきしたか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -28877,7 +29514,8 @@
     "question_text_reading": {
       "en": "Who was the first man on the moon?",
       "ja": "はじめて月にたったのは誰か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -28926,7 +29564,8 @@
     "question_text_reading": {
       "en": "What was the Crusades?",
       "ja": "じゅうじぐんとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -28973,7 +29612,8 @@
     "question_text_reading": {
       "en": "What was the Enlightenment?",
       "ja": "けいもうじだいとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -29020,7 +29660,8 @@
     "question_text_reading": {
       "en": "Who was Nelson Mandela?",
       "ja": "ねるそんまんでらとは誰か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -29064,7 +29705,8 @@
     "question_text_reading": {
       "en": "When was the United Nations founded?",
       "ja": "こくさいれんごうはなんねんにせつりつされたか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -29110,7 +29752,8 @@
     "question_text_reading": {
       "en": "What was the Industrial Revolution?",
       "ja": "さんぎょうかくめいとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -29160,7 +29803,8 @@
     "question_text_reading": {
       "en": "Who was Mao Zedong?",
       "ja": "もうたくとうとは誰か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -29204,7 +29848,8 @@
     "question_text_reading": {
       "en": "When did the Korean War end?",
       "ja": "ちょうせんせんそうはなんねんにおわったか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -29253,7 +29898,8 @@
     "question_text_reading": {
       "en": "Who was Cleopatra?",
       "ja": "くれおぱとらとは誰か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -29301,7 +29947,8 @@
     "question_text_reading": {
       "en": "What was the Opium War?",
       "ja": "あへんせんそうとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -29351,7 +29998,8 @@
     "question_text_reading": {
       "en": "Who was Abraham Lincoln?",
       "ja": "えいぶらはむりんかーんとは誰か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -29395,7 +30043,8 @@
     "question_text_reading": {
       "en": "What year did the Moon landing occur?",
       "ja": "つきにひとがおりたのはなんねんか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -29439,7 +30088,8 @@
     "question_text_reading": {
       "en": "What was the Manhattan Project?",
       "ja": "まんはったんぷろじぇくととは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -29485,7 +30135,8 @@
     "question_text_reading": {
       "en": "Who was Nikola Tesla?",
       "ja": "にこらてすらとは誰か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -29535,7 +30186,8 @@
     "question_text_reading": {
       "en": "What is the Shogunate in Japanese history?",
       "ja": "にほんのしょうぐんとはどのようなものか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -29583,7 +30235,8 @@
     "question_text_reading": {
       "en": "What was the Hundred Years' War?",
       "ja": "ひゃくねんせんそうとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -29635,7 +30288,8 @@
     "question_text_reading": {
       "en": "Who was Tokugawa Ieyasu?",
       "ja": "とくがわいえやすとは誰か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -29683,7 +30337,8 @@
     "question_text_reading": {
       "en": "What was the Treaty of Versailles?",
       "ja": "べるさいゆじょうやくとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -29731,7 +30386,8 @@
     "question_text_reading": {
       "en": "Who was Winston Churchill?",
       "ja": "うぃんすとんちゃーちるとは誰か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -29775,7 +30431,8 @@
     "question_text_reading": {
       "en": "When did World War I end?",
       "ja": "だいいちじせかいたいせんはなんねんにおわったか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -29819,7 +30476,8 @@
     "question_text_reading": {
       "en": "What is the chemical symbol for water?",
       "ja": "みずのかがくしきは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -29865,7 +30523,8 @@
     "question_text_reading": {
       "en": "What is Newton's first law of motion?",
       "ja": "にゅーとんのうんどうのだいいちほうそくは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -29909,7 +30568,8 @@
     "question_text_reading": {
       "en": "What planet is known as the Red Planet?",
       "ja": "あかいわくせいとよばれるのは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -29955,7 +30615,8 @@
     "question_text_reading": {
       "en": "What is photosynthesis?",
       "ja": "こうごうせいとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -29999,7 +30660,8 @@
     "question_text_reading": {
       "en": "What is the speed of light?",
       "ja": "ひかりのそくどは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -30045,7 +30707,8 @@
     "question_text_reading": {
       "en": "What is DNA?",
       "ja": "DNAとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -30099,7 +30762,8 @@
     "question_text_reading": {
       "en": "What is the periodic table?",
       "ja": "げんそのしゅうきひょうとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -30146,7 +30810,8 @@
     "question_text_reading": {
       "en": "What causes thunder?",
       "ja": "かみなりがなるりゆうは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -30194,7 +30859,8 @@
     "question_text_reading": {
       "en": "What is a black hole?",
       "ja": "ぶらっくほーるとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -30241,7 +30907,8 @@
     "question_text_reading": {
       "en": "What is evolution?",
       "ja": "しんかとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -30285,7 +30952,8 @@
     "question_text_reading": {
       "en": "What is the atomic number of Carbon?",
       "ja": "たんそのげんしばんごうは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -30330,7 +30998,8 @@
     "question_text_reading": {
       "en": "What is gravity?",
       "ja": "じゅうりょくとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -30376,7 +31045,8 @@
     "question_text_reading": {
       "en": "What is the theory of relativity?",
       "ja": "そうたいせいりろんとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -30420,7 +31090,8 @@
     "question_text_reading": {
       "en": "What gas is most abundant in Earth's atmosphere?",
       "ja": "ちきゅうのたいきにもっともおおいきたいは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -30469,7 +31140,8 @@
     "question_text_reading": {
       "en": "What is a neuron?",
       "ja": "にゅーろんとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -30514,7 +31186,8 @@
     "question_text_reading": {
       "en": "What is the Big Bang theory?",
       "ja": "びっぐばんりろんとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -30562,7 +31235,8 @@
     "question_text_reading": {
       "en": "What is the mitochondria?",
       "ja": "みとこんどりあとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -30609,7 +31283,8 @@
     "question_text_reading": {
       "en": "What is osmosis?",
       "ja": "しんとうとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -30656,7 +31331,8 @@
     "question_text_reading": {
       "en": "What is the greenhouse effect?",
       "ja": "おんしつこうかとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -30700,7 +31376,8 @@
     "question_text_reading": {
       "en": "What force keeps planets in orbit?",
       "ja": "わくせいをきどうにたもつりょくは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -30748,7 +31425,8 @@
     "question_text_reading": {
       "en": "What is the function of the nucleus in a cell?",
       "ja": "さいぼうのかくのやくわりは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -30794,7 +31472,8 @@
     "question_text_reading": {
       "en": "What is an atom?",
       "ja": "げんしとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -30838,7 +31517,8 @@
     "question_text_reading": {
       "en": "What is a proton?",
       "ja": "ようしとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -30883,7 +31563,8 @@
     "question_text_reading": {
       "en": "What is an electron?",
       "ja": "でんしとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -30928,7 +31609,8 @@
     "question_text_reading": {
       "en": "What is a neutron?",
       "ja": "ちゅうせいしとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -30975,7 +31657,8 @@
     "question_text_reading": {
       "en": "What is the Milky Way?",
       "ja": "あまのがわとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -31022,7 +31705,8 @@
     "question_text_reading": {
       "en": "What is electromagnetic radiation?",
       "ja": "でんじほうしゃとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -31069,7 +31753,8 @@
     "question_text_reading": {
       "en": "What is chemical bonding?",
       "ja": "かがくけつごうとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -31116,7 +31801,8 @@
     "question_text_reading": {
       "en": "What is a hypothesis?",
       "ja": "かせつとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -31163,7 +31849,8 @@
     "question_text_reading": {
       "en": "What is the scientific method?",
       "ja": "かがくてきほうほうとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -31210,7 +31897,8 @@
     "question_text_reading": {
       "en": "What is a gene?",
       "ja": "いでんしとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -31256,7 +31944,8 @@
     "question_text_reading": {
       "en": "What is the food chain?",
       "ja": "しょくもつれんさとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -31300,7 +31989,8 @@
     "question_text_reading": {
       "en": "What is the boiling point of water at sea level?",
       "ja": "かいめんでのみずのふってんは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -31345,7 +32035,8 @@
     "question_text_reading": {
       "en": "What is a chemical reaction?",
       "ja": "かがくはんのうとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -31392,7 +32083,8 @@
     "question_text_reading": {
       "en": "What is the half-life of a radioactive element?",
       "ja": "ほうしゃせいげんそのはんぶんきとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -31440,7 +32132,8 @@
     "question_text_reading": {
       "en": "What is a catalyst?",
       "ja": "しょくばいとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -31485,7 +32178,8 @@
     "question_text_reading": {
       "en": "What is kinetic energy?",
       "ja": "うんどうえねるぎーとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -31531,7 +32225,8 @@
     "question_text_reading": {
       "en": "What is potential energy?",
       "ja": "いねるぎーとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -31576,7 +32271,8 @@
     "question_text_reading": {
       "en": "What is the law of conservation of energy?",
       "ja": "えねるぎーほぞんのほうそくとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -31622,7 +32318,8 @@
     "question_text_reading": {
       "en": "What is the role of red blood cells?",
       "ja": "せっけっきゅうのやくわりは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -31669,7 +32366,8 @@
     "question_text_reading": {
       "en": "What is the function of white blood cells?",
       "ja": "はっけっきゅうのやくわりは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -31717,7 +32415,8 @@
     "question_text_reading": {
       "en": "What organ produces insulin?",
       "ja": "いんすりんをせいさんするきかんは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -31764,7 +32463,8 @@
     "question_text_reading": {
       "en": "What is the function of the kidney?",
       "ja": "じんぞうのやくわりは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -31809,7 +32509,8 @@
     "question_text_reading": {
       "en": "What is a vaccine?",
       "ja": "ワクチンとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -31857,7 +32558,8 @@
     "question_text_reading": {
       "en": "What is the pH scale?",
       "ja": "pHすけーるとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -31903,7 +32605,8 @@
     "question_text_reading": {
       "en": "What is acid rain?",
       "ja": "さんせいうとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -31950,7 +32653,8 @@
     "question_text_reading": {
       "en": "What is nuclear fission?",
       "ja": "かくぶんれつとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -31998,7 +32702,8 @@
     "question_text_reading": {
       "en": "What is nuclear fusion?",
       "ja": "かくゆうごうとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -32045,7 +32750,8 @@
     "question_text_reading": {
       "en": "What is tectonic plates?",
       "ja": "プレートとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -32091,7 +32797,8 @@
     "question_text_reading": {
       "en": "What causes an earthquake?",
       "ja": "じしんのげんいんは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -32139,7 +32846,8 @@
     "question_text_reading": {
       "en": "What is the ozone layer?",
       "ja": "おぞんそうとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -32183,7 +32891,8 @@
     "question_text_reading": {
       "en": "What is a renewable energy source?",
       "ja": "さいせいかのうなえねるぎーとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -32228,7 +32937,8 @@
     "question_text_reading": {
       "en": "What is 2 + 2?",
       "ja": "2たす2はいくつ？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -32273,7 +32983,8 @@
     "question_text_reading": {
       "en": "What is the square root of 144?",
       "ja": "144のへいほうこんは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -32317,7 +33028,8 @@
     "question_text_reading": {
       "en": "What is pi approximately equal to?",
       "ja": "えんしゅうりつπはおよそいくつ？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -32363,7 +33075,8 @@
     "question_text_reading": {
       "en": "What is the Pythagorean theorem?",
       "ja": "ぴたごらすのていりとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -32408,7 +33121,8 @@
     "question_text_reading": {
       "en": "What is a prime number?",
       "ja": "そすうとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -32452,7 +33166,8 @@
     "question_text_reading": {
       "en": "What is 10 factorial (10!)?",
       "ja": "10の かいじょう(10!)はいくつ？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -32499,7 +33214,8 @@
     "question_text_reading": {
       "en": "What is the sum of angles in a triangle?",
       "ja": "さんかっけいのないかくのわは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -32544,7 +33260,8 @@
     "question_text_reading": {
       "en": "What is the area of a circle?",
       "ja": "えんのめんせきは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -32589,7 +33306,8 @@
     "question_text_reading": {
       "en": "What is the circumference of a circle?",
       "ja": "えんのしゅうちょうは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -32633,7 +33351,8 @@
     "question_text_reading": {
       "en": "What is the Fibonacci sequence starting with?",
       "ja": "ふぃぼなっちすうれつのはじまりは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -32677,7 +33396,8 @@
     "question_text_reading": {
       "en": "What does 'mean' refer to in statistics?",
       "ja": "とうけいでのへいきんとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -32722,7 +33442,8 @@
     "question_text_reading": {
       "en": "What is the median?",
       "ja": "ちゅうおうちとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -32767,7 +33488,8 @@
     "question_text_reading": {
       "en": "What is the mode in statistics?",
       "ja": "とうけいでのさいひんちとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -32819,7 +33541,8 @@
     "question_text_reading": {
       "en": "What is a quadratic equation?",
       "ja": "にじほうていしきとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -32864,7 +33587,8 @@
     "question_text_reading": {
       "en": "What is the quadratic formula?",
       "ja": "にじほうていしきのかいのこうしきは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -32911,7 +33635,8 @@
     "question_text_reading": {
       "en": "What is a logarithm?",
       "ja": "たいすうとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -32955,7 +33680,8 @@
     "question_text_reading": {
       "en": "What is the derivative in calculus?",
       "ja": "びぶんとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -32999,7 +33725,8 @@
     "question_text_reading": {
       "en": "What is integration in calculus?",
       "ja": "せきぶんとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -33046,7 +33773,8 @@
     "question_text_reading": {
       "en": "What is a vector?",
       "ja": "べくとるとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -33096,7 +33824,8 @@
     "question_text_reading": {
       "en": "What is a matrix in mathematics?",
       "ja": "すうがくでのぎょうれつとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -33141,7 +33870,8 @@
     "question_text_reading": {
       "en": "What is probability?",
       "ja": "かくりつとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -33187,7 +33917,8 @@
     "question_text_reading": {
       "en": "What is the probability of rolling a 6 on a die?",
       "ja": "さいころで6がでるかくりつは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -33232,7 +33963,8 @@
     "question_text_reading": {
       "en": "What is a set in mathematics?",
       "ja": "すうがくでのしゅうごうとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -33280,7 +34012,8 @@
     "question_text_reading": {
       "en": "What is the union of two sets?",
       "ja": "につのしゅうごうのわしゅうごうとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -33328,7 +34061,8 @@
     "question_text_reading": {
       "en": "What is the intersection of two sets?",
       "ja": "につのしゅうごうのせきしゅうごうとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -33376,7 +34110,8 @@
     "question_text_reading": {
       "en": "What is a function in math?",
       "ja": "すうがくでのかんすうとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -33421,7 +34156,8 @@
     "question_text_reading": {
       "en": "What is a complex number?",
       "ja": "ふくそすうとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -33467,7 +34203,8 @@
     "question_text_reading": {
       "en": "What is an irrational number?",
       "ja": "むりすうとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -33512,7 +34249,8 @@
     "question_text_reading": {
       "en": "What is the absolute value of -7?",
       "ja": "-7のぜったいちは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -33556,7 +34294,8 @@
     "question_text_reading": {
       "en": "What is the slope of a horizontal line?",
       "ja": "すいへいせんのかたむきは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -33600,7 +34339,8 @@
     "question_text_reading": {
       "en": "What is the slope of a vertical line?",
       "ja": "すいちょくせんのかたむきは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -33647,7 +34387,8 @@
     "question_text_reading": {
       "en": "What is a geometric progression?",
       "ja": "とうひすうれつとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -33694,7 +34435,8 @@
     "question_text_reading": {
       "en": "What is an arithmetic progression?",
       "ja": "とうさすうれつとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -33742,7 +34484,8 @@
     "question_text_reading": {
       "en": "What is the formula for the volume of a sphere?",
       "ja": "きゅうのたいせきのこうしきは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -33786,7 +34529,8 @@
     "question_text_reading": {
       "en": "What is Euler's number 'e'?",
       "ja": "おいらーのすうeはおよそいくつ？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -33836,7 +34580,8 @@
     "question_text_reading": {
       "en": "What is Pascal's triangle?",
       "ja": "ぱすかるのさんかっけいとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -33882,7 +34627,8 @@
     "question_text_reading": {
       "en": "What is a permutation?",
       "ja": "じゅんれつとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -33931,7 +34677,8 @@
     "question_text_reading": {
       "en": "What is a combination?",
       "ja": "くみあわせとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -33975,7 +34722,8 @@
     "question_text_reading": {
       "en": "What language has the most native speakers?",
       "ja": "もっともおおくのぼごわしゃをもつげんごは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -34019,7 +34767,8 @@
     "question_text_reading": {
       "en": "How many letters are in the English alphabet?",
       "ja": "えいごのあるふぁべっとはなんもじ？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -34063,7 +34812,8 @@
     "question_text_reading": {
       "en": "What is the official language of Brazil?",
       "ja": "ぶらじるのこうようごは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -34108,7 +34858,8 @@
     "question_text_reading": {
       "en": "What language is spoken in Egypt?",
       "ja": "えじぷとでつかわれるげんごは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -34152,7 +34903,8 @@
     "question_text_reading": {
       "en": "What script is used for Japanese?",
       "ja": "にほんごではどのもじをつかうか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -34197,7 +34949,8 @@
     "question_text_reading": {
       "en": "What is a synonym?",
       "ja": "どうぎごとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -34241,7 +34994,8 @@
     "question_text_reading": {
       "en": "What is an antonym?",
       "ja": "はんたいごとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -34286,7 +35040,8 @@
     "question_text_reading": {
       "en": "What is a haiku?",
       "ja": "はいくとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -34331,7 +35086,8 @@
     "question_text_reading": {
       "en": "What does 'loanword' mean?",
       "ja": "がいらいごとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -34377,7 +35133,8 @@
     "question_text_reading": {
       "en": "What is onomatopoeia?",
       "ja": "おのまとぺとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -34421,7 +35178,8 @@
     "question_text_reading": {
       "en": "What is the Latin word for water?",
       "ja": "みずのらてんごは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -34468,7 +35226,8 @@
     "question_text_reading": {
       "en": "What language family does English belong to?",
       "ja": "えいごはどのごぞくか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -34515,7 +35274,8 @@
     "question_text_reading": {
       "en": "What is a palindrome?",
       "ja": "かいぶんとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -34560,7 +35320,8 @@
     "question_text_reading": {
       "en": "What language did Shakespeare write in?",
       "ja": "しぇいくすぴあはなにごでかいたか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -34604,7 +35365,8 @@
     "question_text_reading": {
       "en": "What is the most studied second language globally?",
       "ja": "せかいでもっともまなばれているだいにげんごは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -34652,7 +35414,8 @@
     "question_text_reading": {
       "en": "What does 'etymology' mean?",
       "ja": "ごげんがくとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -34698,7 +35461,8 @@
     "question_text_reading": {
       "en": "What is grammar?",
       "ja": "ぶんぽうとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -34745,7 +35509,8 @@
     "question_text_reading": {
       "en": "What is syntax?",
       "ja": "こうぶんとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -34791,7 +35556,8 @@
     "question_text_reading": {
       "en": "What is semantics?",
       "ja": "いみろんとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -34835,7 +35601,8 @@
     "question_text_reading": {
       "en": "What is a dialect?",
       "ja": "ほうげんとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -34882,7 +35649,8 @@
     "question_text_reading": {
       "en": "What is Esperanto?",
       "ja": "えすぺらんととは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -34928,7 +35696,8 @@
     "question_text_reading": {
       "en": "What is a phoneme?",
       "ja": "おんそとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -34973,7 +35742,8 @@
     "question_text_reading": {
       "en": "What language uses the Cyrillic alphabet?",
       "ja": "きりるもじをつかうげんごは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -35019,7 +35789,8 @@
     "question_text_reading": {
       "en": "What is a verb?",
       "ja": "どうしとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -35064,7 +35835,8 @@
     "question_text_reading": {
       "en": "What is an adjective?",
       "ja": "けいようしとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -35111,7 +35883,8 @@
     "question_text_reading": {
       "en": "What is a noun?",
       "ja": "めいしとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -35159,7 +35932,8 @@
     "question_text_reading": {
       "en": "What is a preposition?",
       "ja": "ぜんちしとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -35204,7 +35978,8 @@
     "question_text_reading": {
       "en": "What is metaphor?",
       "ja": "いんゆとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -35250,7 +36025,8 @@
     "question_text_reading": {
       "en": "What is a simile?",
       "ja": "しみりとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -35294,7 +36070,8 @@
     "question_text_reading": {
       "en": "What is alliteration?",
       "ja": "どうじしゅんぷうとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -35339,7 +36116,8 @@
     "question_text_reading": {
       "en": "What country is sushi originally from?",
       "ja": "すしのげんちはどこ？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -35384,7 +36162,8 @@
     "question_text_reading": {
       "en": "What is the traditional instrument of India?",
       "ja": "いんどのでんとうがっきは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -35431,7 +36210,8 @@
     "question_text_reading": {
       "en": "What is flamenco?",
       "ja": "ふらめんことは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -35476,7 +36256,8 @@
     "question_text_reading": {
       "en": "What is Carnival in Brazil?",
       "ja": "ぶらじるのかーにばるとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -35524,7 +36305,8 @@
     "question_text_reading": {
       "en": "What is the Colosseum?",
       "ja": "ころっせうむとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -35573,7 +36355,8 @@
     "question_text_reading": {
       "en": "What is ikebana?",
       "ja": "いけばなとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -35617,7 +36400,8 @@
     "question_text_reading": {
       "en": "What country does the kilt come from?",
       "ja": "きるとはどこのくにのもの？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -35666,7 +36450,8 @@
     "question_text_reading": {
       "en": "What is the traditional Japanese tea ceremony called?",
       "ja": "にほんのちゃどうのこうしきめいしょうは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -35710,7 +36495,8 @@
     "question_text_reading": {
       "en": "What festival is celebrated on October 31?",
       "ja": "10がつ31にちにいわわれるまつりは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -35759,7 +36545,8 @@
     "question_text_reading": {
       "en": "What is Diwali?",
       "ja": "でぃわりとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -35806,7 +36593,8 @@
     "question_text_reading": {
       "en": "What is the Day of the Dead (Día de los Muertos)?",
       "ja": "しゃのひ（でぃーあでろすむえるとす）とは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -35857,7 +36645,8 @@
     "question_text_reading": {
       "en": "What is origami?",
       "ja": "おりがみとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -35903,7 +36692,8 @@
     "question_text_reading": {
       "en": "What is the Chinese New Year also called?",
       "ja": "ちゅうごくのしんねんはなんともいわれるか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -35947,7 +36737,8 @@
     "question_text_reading": {
       "en": "What sport is most popular globally?",
       "ja": "せかいでもっとものきんのすぽーつは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -35992,7 +36783,8 @@
     "question_text_reading": {
       "en": "What is the traditional clothing of Japan?",
       "ja": "にほんのでんとうてきなぎは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -36042,7 +36834,8 @@
     "question_text_reading": {
       "en": "What is yoga?",
       "ja": "よがとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -36090,7 +36883,8 @@
     "question_text_reading": {
       "en": "What is kimchi?",
       "ja": "きむちとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -36137,7 +36931,8 @@
     "question_text_reading": {
       "en": "What is the meaning of 'namaste'?",
       "ja": "なますてのいみは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -36181,7 +36976,8 @@
     "question_text_reading": {
       "en": "What country did pasta originally come from?",
       "ja": "ぱすたのげんちはどこ？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -36230,7 +37026,8 @@
     "question_text_reading": {
       "en": "What is the Mona Lisa?",
       "ja": "もなりざとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -36275,7 +37072,8 @@
     "question_text_reading": {
       "en": "What is the Taj Mahal?",
       "ja": "たじまはるとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -36324,7 +37122,8 @@
     "question_text_reading": {
       "en": "What is a matryoshka?",
       "ja": "まとりょーしかとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -36369,7 +37168,8 @@
     "question_text_reading": {
       "en": "What country is known for inventing gunpowder?",
       "ja": "かやくをはつめいしたとされるくには？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -36414,7 +37214,8 @@
     "question_text_reading": {
       "en": "What is the art of calligraphy?",
       "ja": "しょどうとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -36461,7 +37262,8 @@
     "question_text_reading": {
       "en": "What is a samurai?",
       "ja": "さむらいとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -36510,7 +37312,8 @@
     "question_text_reading": {
       "en": "What is the Olympic flame?",
       "ja": "おりんぴっくのほのおとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -36557,7 +37360,8 @@
     "question_text_reading": {
       "en": "What is manga?",
       "ja": "まんがとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -36603,7 +37407,8 @@
     "question_text_reading": {
       "en": "What is hip-hop culture?",
       "ja": "ひっぷほっぷぶんかとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -36648,7 +37453,8 @@
     "question_text_reading": {
       "en": "How many continents are there on Earth?",
       "ja": "ちきゅうにはいくつのたいりくがあるか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -36695,7 +37501,8 @@
     "question_text_reading": {
       "en": "What is the largest ocean?",
       "ja": "もっともおおきなうみは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -36739,7 +37546,8 @@
     "question_text_reading": {
       "en": "How many days are in a leap year?",
       "ja": "うるうどしはなんにち？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -36783,7 +37591,8 @@
     "question_text_reading": {
       "en": "What is the chemical symbol for gold?",
       "ja": "きんのかがくきごうは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -36828,7 +37637,8 @@
     "question_text_reading": {
       "en": "What is the tallest mountain in the world?",
       "ja": "せかいでもっともたかいやまは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -36872,7 +37682,8 @@
     "question_text_reading": {
       "en": "How many bones are in the adult human body?",
       "ja": "おとなのにんげんのほねはいくつ？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -36927,7 +37738,8 @@
     "question_text_reading": {
       "en": "What is the speed of light?",
       "ja": "ひかりのそくどは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -36972,7 +37784,8 @@
     "question_text_reading": {
       "en": "How many planets are in our solar system?",
       "ja": "たいようけいにはなんこのわくせいがあるか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -37016,7 +37829,8 @@
     "question_text_reading": {
       "en": "What gas do plants absorb from the air?",
       "ja": "しょくぶつはくうきからなにをきゅうしゅうするか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -37060,7 +37874,8 @@
     "question_text_reading": {
       "en": "What is the largest country by area?",
       "ja": "めんせきでもっともおおきなくには？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -37104,7 +37919,8 @@
     "question_text_reading": {
       "en": "What is the capital of Australia?",
       "ja": "おーすとらりあのしゅとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -37150,7 +37966,8 @@
     "question_text_reading": {
       "en": "What is the Amazon River known for?",
       "ja": "あまぞんがわはなにでゆうめい？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -37195,7 +38012,8 @@
     "question_text_reading": {
       "en": "What is the hardest natural substance?",
       "ja": "しぜんかいでもっともかたいぶっしつは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -37240,7 +38058,8 @@
     "question_text_reading": {
       "en": "How many chambers does a human heart have?",
       "ja": "にんげんのこころはいくつのへやにわかれているか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -37285,7 +38104,8 @@
     "question_text_reading": {
       "en": "What is the currency of Japan?",
       "ja": "にほんのつうかは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -37329,7 +38149,8 @@
     "question_text_reading": {
       "en": "What is the largest desert in the world?",
       "ja": "せかいさいだいのさばくは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -37373,7 +38194,8 @@
     "question_text_reading": {
       "en": "What year did World War II end?",
       "ja": "だいにじせかいたいせんはなんねんにおわったか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -37417,7 +38239,8 @@
     "question_text_reading": {
       "en": "What is the boiling point of water at sea level?",
       "ja": "かいめいでのみずのふってんは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -37461,7 +38284,8 @@
     "question_text_reading": {
       "en": "What is the freezing point of water?",
       "ja": "みずのこおりはじめるおんどは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -37505,7 +38329,8 @@
     "question_text_reading": {
       "en": "What element has the atomic number 1?",
       "ja": "げんしばんごう1のげんそは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -37553,7 +38378,8 @@
     "question_text_reading": {
       "en": "What is photosynthesis?",
       "ja": "こうごうせいとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -37597,7 +38423,8 @@
     "question_text_reading": {
       "en": "What is the main language spoken in Argentina?",
       "ja": "あるぜんちんでつかわれるしゅのことばは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -37644,7 +38471,8 @@
     "question_text_reading": {
       "en": "What is the longest bone in the human body?",
       "ja": "にんげんのからだでもっともながいほねは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -37688,7 +38516,8 @@
     "question_text_reading": {
       "en": "Who invented the telephone?",
       "ja": "でんわをはつめいしたのはだれ？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -37732,7 +38561,8 @@
     "question_text_reading": {
       "en": "What is the most abundant gas in Earth's atmosphere?",
       "ja": "ちきゅうのたいきでもっともおおいきたいは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -37776,7 +38606,8 @@
     "question_text_reading": {
       "en": "What is the square root of 256?",
       "ja": "256のへいほうこんは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -37821,7 +38652,8 @@
     "question_text_reading": {
       "en": "How many teeth does an adult human have?",
       "ja": "おとなのにんげんのはは何本？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -37867,7 +38699,8 @@
     "question_text_reading": {
       "en": "What is the largest planet in our solar system?",
       "ja": "たいようけいでもっともおおきいわくせいは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -37911,7 +38744,8 @@
     "question_text_reading": {
       "en": "What is the symbol for the element oxygen?",
       "ja": "さんそのげんそきごうは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -37955,7 +38789,8 @@
     "question_text_reading": {
       "en": "Which planet is closest to the sun?",
       "ja": "もっともたいようにちかいわくせいは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -38000,7 +38835,8 @@
     "question_text_reading": {
       "en": "What is the smallest country in the world?",
       "ja": "せかいでもっともちいさなくには？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -38045,7 +38881,8 @@
     "question_text_reading": {
       "en": "How many strings does a standard guitar have?",
       "ja": "ふつうのぎたーはなんほんのげんをもつか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -38089,7 +38926,8 @@
     "question_text_reading": {
       "en": "What does DNA stand for?",
       "ja": "DNAのりゃくしょうのせいしきめいは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -38133,7 +38971,8 @@
     "question_text_reading": {
       "en": "What is the chemical formula for table salt?",
       "ja": "しょくえんのかがくしきは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -38180,7 +39019,8 @@
     "question_text_reading": {
       "en": "What is the national sport of Japan?",
       "ja": "にほんのこくぎは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -38225,7 +39065,8 @@
     "question_text_reading": {
       "en": "What does the Richter scale measure?",
       "ja": "りひたーすけーるはなにをはかるか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -38269,7 +39110,8 @@
     "question_text_reading": {
       "en": "What year did the first moon landing occur?",
       "ja": "はつのつきへのちゃくりくはなんねん？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -38313,7 +39155,8 @@
     "question_text_reading": {
       "en": "What is the symbol for the element iron?",
       "ja": "てつのげんそきごうは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -38359,7 +39202,8 @@
     "question_text_reading": {
       "en": "What is the loudest animal on Earth?",
       "ja": "ちきゅうでもっともおおきなこえをだすどうぶつは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -38403,7 +39247,8 @@
     "question_text_reading": {
       "en": "What is the unit of electric current?",
       "ja": "でんりゅうのたんいは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -38449,7 +39294,8 @@
     "question_text_reading": {
       "en": "What is a VTuber?",
       "ja": "ぶいちゅーばーとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -38493,7 +39339,8 @@
     "question_text_reading": {
       "en": "What company is Hololive associated with?",
       "ja": "ほろらいぶはどのかいしゃ？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -38538,7 +39385,8 @@
     "question_text_reading": {
       "en": "What is Nijisanji?",
       "ja": "にじさんじとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -38585,7 +39433,8 @@
     "question_text_reading": {
       "en": "What does 'kaigai niki' mean?",
       "ja": "かいがいにきとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -38633,7 +39482,8 @@
     "question_text_reading": {
       "en": "What is 'superchat'?",
       "ja": "すーぱーちゃっととは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -38682,7 +39532,8 @@
     "question_text_reading": {
       "en": "What is 'doxxing'?",
       "ja": "どっくしんぐとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -38726,7 +39577,8 @@
     "question_text_reading": {
       "en": "What does 'GG' stand for in gaming?",
       "ja": "げーみんぐでGGとはどういういみ？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -38772,7 +39624,8 @@
     "question_text_reading": {
       "en": "What is 'streaming'?",
       "ja": "すとりーみんぐとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -38818,7 +39671,8 @@
     "question_text_reading": {
       "en": "What is a 'clip' in VTuber culture?",
       "ja": "ぶいちゅーばーぶんかでのくりっぷとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -38865,7 +39719,8 @@
     "question_text_reading": {
       "en": "What is 'fan art'?",
       "ja": "ふぁんあーととは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -38910,7 +39765,8 @@
     "question_text_reading": {
       "en": "What is Twitch?",
       "ja": "ついっちとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -38954,7 +39810,8 @@
     "question_text_reading": {
       "en": "What is Discord?",
       "ja": "でぃすこーどとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -39000,7 +39857,8 @@
     "question_text_reading": {
       "en": "What is 'yab' in VTuber slang?",
       "ja": "ぶいちゅーばーすらんぐでやばいとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -39045,7 +39903,8 @@
     "question_text_reading": {
       "en": "What is a 'debut' for a VTuber?",
       "ja": "ぶいちゅーばーのでびゅーとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -39093,7 +39952,8 @@
     "question_text_reading": {
       "en": "What does 'GachiBASS' mean?",
       "ja": "がちばすとはどんないみ？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -39137,7 +39997,8 @@
     "question_text_reading": {
       "en": "What is 'live2D'?",
       "ja": "らいぶつーでぃーとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -39184,7 +40045,8 @@
     "question_text_reading": {
       "en": "What is a 'membership' on YouTube?",
       "ja": "ゆーちゅーぶでのめんばーしっぷとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -39229,7 +40091,8 @@
     "question_text_reading": {
       "en": "What is 'oshi'?",
       "ja": "おしとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -39273,7 +40136,8 @@
     "question_text_reading": {
       "en": "What is the term for simultaneous translator in VTuber culture?",
       "ja": "ぶいちゅーばーぶんかでどうじほんやくしゃのことをなんというか？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -39318,7 +40182,8 @@
     "question_text_reading": {
       "en": "What is 'zatsudan'?",
       "ja": "ざつだんとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -39365,7 +40230,8 @@
     "question_text_reading": {
       "en": "What does 'pog' or 'poggers' mean in chat?",
       "ja": "ちゃっとでぽぐやぽがーずとはどういういみ？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -39411,7 +40277,8 @@
     "question_text_reading": {
       "en": "What is 'KEKW'?",
       "ja": "けくわとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -39456,7 +40323,8 @@
     "question_text_reading": {
       "en": "What is a 'raid' on Twitch?",
       "ja": "ついっちでのれいどとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -39500,7 +40368,8 @@
     "question_text_reading": {
       "en": "What is 'lore' in VTuber context?",
       "ja": "ぶいちゅーばーぶんみゃくでのろあとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -39546,7 +40415,8 @@
     "question_text_reading": {
       "en": "What is '3D debut' for a VTuber?",
       "ja": "ぶいちゅーばーのさんでぃーでびゅーとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -39592,7 +40462,8 @@
     "question_text_reading": {
       "en": "What does 'IRL' stand for?",
       "ja": "IRLとはなにのりゃく？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -39644,7 +40515,8 @@
     "question_text_reading": {
       "en": "What is 'NicoNico Douga'?",
       "ja": "にこにこどうがとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -39689,7 +40561,8 @@
     "question_text_reading": {
       "en": "What is 'Vocaloid'?",
       "ja": "ぼーかろいどとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -39733,7 +40606,8 @@
     "question_text_reading": {
       "en": "What character is the most famous Vocaloid?",
       "ja": "もっともゆうめいなぼーかろいどのきゃらくたーは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -39779,7 +40653,8 @@
     "question_text_reading": {
       "en": "What is 'meme' on the internet?",
       "ja": "いんたーねっとでみーむとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -39827,7 +40702,8 @@
     "question_text_reading": {
       "en": "What is 'trolling' online?",
       "ja": "おんらいんでとろーりんぐとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -39874,7 +40750,8 @@
     "question_text_reading": {
       "en": "What does AFK stand for?",
       "ja": "AFKとはなにのりゃく？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -39920,7 +40797,8 @@
     "question_text_reading": {
       "en": "What is 'gacha' in gaming?",
       "ja": "げーみんぐでがちゃとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -39965,7 +40843,8 @@
     "question_text_reading": {
       "en": "What is 'MMO'?",
       "ja": "えむえむおーとはなに？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -40011,7 +40890,8 @@
     "question_text_reading": {
       "en": "What is 'ping' in online gaming?",
       "ja": "おんらいんげーみんぐでぴんぐとは？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -40058,7 +40938,8 @@
     "question_text_reading": {
       "en": "What is 'esports'?",
       "ja": "いーすぽーつとは何か？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -40102,7 +40983,8 @@
     "question_text_reading": {
       "en": "What does FPS stand for in gaming?",
       "ja": "げーみんぐでFPSとはなにのりゃく？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -40146,7 +41028,8 @@
     "question_text_reading": {
       "en": "What does HP stand for in games?",
       "ja": "げーむでHPとはなにのりゃく？"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -40193,6 +41076,7 @@
     "question_text_reading": {
       "en": "What is 'speedrunning'?",
       "ja": "すぴーどらんにんぐとは何か？"
-    }
+    },
+    "ja_reviewed": true
   }
 ]
