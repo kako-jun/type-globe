@@ -136,23 +136,10 @@ impl QuizGame {
         if typed.is_empty() {
             return true;
         }
-        let typed_lower = typed.to_lowercase();
-        let is_ja = matches!(self.language, Language::Japanese);
-        let typed_key = if is_ja {
-            canonical_romaji(&typed_lower)
-        } else {
-            typed_lower
-        };
+        let typed_key = self.canonical_key(typed);
         self.current_correct_typing_candidates()
             .iter()
-            .any(|candidate| {
-                let candidate_key = if is_ja {
-                    canonical_romaji(candidate)
-                } else {
-                    candidate.clone()
-                };
-                candidate_key.starts_with(&typed_key)
-            })
+            .any(|candidate| self.canonical_key(candidate).starts_with(&typed_key))
     }
 
     /// Resolve the typed text against the current question's choices and
@@ -166,16 +153,10 @@ impl QuizGame {
     /// which reflects actual keystrokes regardless of which variant the
     /// data file happened to register.
     pub fn answer_question_typed(&mut self, typed: &str) -> Option<QuizResult> {
-        let typed_lower = typed.to_lowercase();
-        let is_ja = matches!(self.language, Language::Japanese);
-        let typed_key = if is_ja {
-            canonical_romaji(&typed_lower)
-        } else {
-            typed_lower.clone()
-        };
+        let typed_key = self.canonical_key(typed);
         // ja_typings / choice labels are ASCII in practice, so char count
         // and byte count coincide; we use char count for safety.
-        let typed_chars = typed_lower.chars().count() as u32;
+        let typed_chars = typed.chars().count() as u32;
         let matched = self.get_current_question().and_then(|question| {
             question
                 .choices
@@ -184,20 +165,25 @@ impl QuizGame {
                 .find_map(|(idx, choice)| {
                     DataLoader::get_choice_typing_texts(choice, &self.language)
                         .into_iter()
-                        .find(|candidate| {
-                            let candidate_key = if is_ja {
-                                canonical_romaji(candidate)
-                            } else {
-                                candidate.to_lowercase()
-                            };
-                            candidate_key == typed_key
-                        })
+                        .find(|candidate| self.canonical_key(candidate) == typed_key)
                         .map(|_| (idx, typed_chars))
                 })
         });
         // usize::MAX guarantees a non-match against any valid index.
         let (index, typed_chars) = matched.unwrap_or((usize::MAX, 0));
         self.answer_question(index, typed_chars)
+    }
+
+    /// Lower-case the input and, in JA mode only, apply the canonical-romaji
+    /// rewrites from #96 so Hepburn/kunrei variants compare equal. Non-JA
+    /// modes get plain lowercase to avoid harmful collapses like `wolf`→`olf`.
+    fn canonical_key(&self, s: &str) -> String {
+        let lower = s.to_lowercase();
+        if matches!(self.language, Language::Japanese) {
+            canonical_romaji(&lower)
+        } else {
+            lower
+        }
     }
 
     /// Index-based answer recorder. Prefer `answer_question_typed` from the
