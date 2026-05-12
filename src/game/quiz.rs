@@ -558,6 +558,45 @@ mod tests {
     }
 
     #[test]
+    fn valid_prefix_accepts_long_vowel_dash_against_collapsed_data() {
+        // Issue #93: データは長音を畳んで登録している (サーバー → `saba`) ので、
+        // 母音直後の `-` を `ー` の意図として受理する。
+        let mut question = make_question(&["サーバー", "クライアント", "DB", "API"], 0);
+        question.choices[0].ja_typings = vec!["saba".into()];
+        let game = QuizGame::new(vec![question], Language::Japanese);
+        assert!(game.is_valid_correct_typed_prefix("sa-"));
+        assert!(game.is_valid_correct_typed_prefix("sa-b"));
+        assert!(game.is_valid_correct_typed_prefix("sa-ba"));
+        // 子音直後の `-` は無効入力として弾かれる。
+        assert!(!game.is_valid_correct_typed_prefix("s-"));
+    }
+
+    #[test]
+    fn answer_question_typed_accepts_long_vowel_dash() {
+        // Issue #93: prefix だけでなく exact match の経路でも `-` が通ること。
+        let mut question = make_question(&["サーバー", "クライアント", "DB", "API"], 0);
+        question.choices[0].ja_typings = vec!["saba".into()];
+        let mut game = QuizGame::new(vec![question], Language::Japanese);
+        game.start();
+        let result = game.answer_question_typed("sa-ba-").expect("result");
+        assert!(result.is_correct);
+        assert_eq!(result.selected_answer_index, 0);
+    }
+
+    #[test]
+    fn en_mode_does_not_collapse_dash() {
+        // Issue #93 のルールは JA 専用 (canonical_key が言語で分岐する)。
+        // English の選択肢で `-` を含むものはハイフンとして打鍵が必須。
+        let mut question = make_question(&["a-b", "cd", "ef", "gh"], 0);
+        question.choices[0].ja_typings = vec![];
+        let game = QuizGame::new(vec![question], Language::English);
+        assert!(game.is_valid_correct_typed_prefix("a-"));
+        assert!(game.is_valid_correct_typed_prefix("a-b"));
+        // 英語モードでは `a` のあと `-` を抜いた `ab` は別物。
+        assert!(!game.is_valid_correct_typed_prefix("ab"));
+    }
+
+    #[test]
     fn final_time_is_frozen_at_last_correct_answer() {
         // Two questions; after answering both, get_total_time() must return
         // a stable value even after additional time elapses.
