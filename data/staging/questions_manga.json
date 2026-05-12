@@ -1,0 +1,702 @@
+[
+  {
+    "id": "q0446",
+    "genre": "manga",
+    "question_text": {"ja": "『ONE PIECE』の作者は?", "en": "Who is the author of 'ONE PIECE'?"},
+    "choices": [
+      {"ja": "尾田栄一郎", "en": "Eiichiro Oda", "ja_typings": ["odaeiichiro", "odaeiichirou"]},
+      {"ja": "鳥山明", "en": "Akira Toriyama", "ja_typings": ["toriyamaakira"]},
+      {"ja": "岸本斉史", "en": "Masashi Kishimoto", "ja_typings": ["kishimotomasashi"]},
+      {"ja": "久保帯人", "en": "Tite Kubo", "ja_typings": ["kubotaito"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0447",
+    "genre": "manga",
+    "question_text": {"ja": "『NARUTO -ナルト-』の作者は?", "en": "Who is the author of 'NARUTO'?"},
+    "choices": [
+      {"ja": "岸本斉史", "en": "Masashi Kishimoto", "ja_typings": ["kishimotomasashi"]},
+      {"ja": "尾田栄一郎", "en": "Eiichiro Oda", "ja_typings": ["odaeiichiro", "odaeiichirou"]},
+      {"ja": "井上雄彦", "en": "Takehiko Inoue", "ja_typings": ["inouetakehiko"]},
+      {"ja": "冨樫義博", "en": "Yoshihiro Togashi", "ja_typings": ["togashiyoshihiro"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0448",
+    "genre": "manga",
+    "question_text": {"ja": "『BLEACH』の作者は?", "en": "Who is the author of 'BLEACH'?"},
+    "choices": [
+      {"ja": "久保帯人", "en": "Tite Kubo", "ja_typings": ["kubotaito"]},
+      {"ja": "尾田栄一郎", "en": "Eiichiro Oda", "ja_typings": ["odaeiichiro", "odaeiichirou"]},
+      {"ja": "岸本斉史", "en": "Masashi Kishimoto", "ja_typings": ["kishimotomasashi"]},
+      {"ja": "和月伸宏", "en": "Nobuhiro Watsuki", "ja_typings": ["watsukinobuhiro"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0449",
+    "genre": "manga",
+    "question_text": {"ja": "『ドラゴンボール』の作者は?", "en": "Who is the author of 'Dragon Ball'?"},
+    "choices": [
+      {"ja": "鳥山明", "en": "Akira Toriyama", "ja_typings": ["toriyamaakira"]},
+      {"ja": "桂正和", "en": "Masakazu Katsura", "ja_typings": ["katsuramasakazu"]},
+      {"ja": "ゆでたまご", "en": "Yudetamago", "ja_typings": ["yudetamago"]},
+      {"ja": "車田正美", "en": "Masami Kurumada", "ja_typings": ["kurumadamasami"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0450",
+    "genre": "manga",
+    "question_text": {"ja": "『鉄腕アトム』の作者は?", "en": "Who is the author of 'Astro Boy'?"},
+    "choices": [
+      {"ja": "手塚治虫", "en": "Osamu Tezuka", "ja_typings": ["tezukaosamu"]},
+      {"ja": "石ノ森章太郎", "en": "Shotaro Ishinomori", "ja_typings": ["ishinomorishotaro", "ishinomorishoutarou"]},
+      {"ja": "藤子・F・不二雄", "en": "Fujiko F. Fujio", "ja_typings": ["fujikoefufujio"]},
+      {"ja": "赤塚不二夫", "en": "Fujio Akatsuka", "ja_typings": ["akatsukafujio"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0451",
+    "genre": "manga",
+    "question_text": {"ja": "『ドラえもん』の作者は?", "en": "Who is the author of 'Doraemon'?"},
+    "choices": [
+      {"ja": "藤子・F・不二雄", "en": "Fujiko F. Fujio", "ja_typings": ["fujikoefufujio"]},
+      {"ja": "手塚治虫", "en": "Osamu Tezuka", "ja_typings": ["tezukaosamu"]},
+      {"ja": "石ノ森章太郎", "en": "Shotaro Ishinomori", "ja_typings": ["ishinomorishotaro", "ishinomorishoutarou"]},
+      {"ja": "藤子不二雄Ⓐ", "en": "Fujiko Fujio A", "ja_typings": ["fujikofujioe-"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0452",
+    "genre": "manga",
+    "question_text": {"ja": "『ジョジョの奇妙な冒険』の作者は?", "en": "Who is the author of 'JoJo's Bizarre Adventure'?"},
+    "choices": [
+      {"ja": "荒木飛呂彦", "en": "Hirohiko Araki", "ja_typings": ["arakihirohiko"]},
+      {"ja": "原哲夫", "en": "Tetsuo Hara", "ja_typings": ["haratetsuo"]},
+      {"ja": "三浦建太郎", "en": "Kentaro Miura", "ja_typings": ["miurakentaro", "miurakentarou"]},
+      {"ja": "冨樫義博", "en": "Yoshihiro Togashi", "ja_typings": ["togashiyoshihiro"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0453",
+    "genre": "manga",
+    "question_text": {"ja": "『MONSTER』『20世紀少年』の作者は?", "en": "Who is the author of 'MONSTER' and '20th Century Boys'?"},
+    "choices": [
+      {"ja": "浦沢直樹", "en": "Naoki Urasawa", "ja_typings": ["urasawanaoki"]},
+      {"ja": "井上雄彦", "en": "Takehiko Inoue", "ja_typings": ["inouetakehiko"]},
+      {"ja": "弘兼憲史", "en": "Kenshi Hirokane", "ja_typings": ["hirokanekenshi"]},
+      {"ja": "高橋留美子", "en": "Rumiko Takahashi", "ja_typings": ["takahashirumiko"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0454",
+    "genre": "manga",
+    "question_text": {"ja": "『SLAM DUNK』『バガボンド』の作者は?", "en": "Who is the author of 'SLAM DUNK' and 'Vagabond'?"},
+    "choices": [
+      {"ja": "井上雄彦", "en": "Takehiko Inoue", "ja_typings": ["inouetakehiko"]},
+      {"ja": "浦沢直樹", "en": "Naoki Urasawa", "ja_typings": ["urasawanaoki"]},
+      {"ja": "森田まさのり", "en": "Masanori Morita", "ja_typings": ["moritamasanori"]},
+      {"ja": "高橋陽一", "en": "Yoichi Takahashi", "ja_typings": ["takahashiyoichi", "takahashiyouichi"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0455",
+    "genre": "manga",
+    "question_text": {"ja": "『進撃の巨人』の作者は?", "en": "Who is the author of 'Attack on Titan'?"},
+    "choices": [
+      {"ja": "諫山創", "en": "Hajime Isayama", "ja_typings": ["isayamahajime"]},
+      {"ja": "芥見下々", "en": "Gege Akutami", "ja_typings": ["akutamigege"]},
+      {"ja": "吾峠呼世晴", "en": "Koyoharu Gotouge", "ja_typings": ["gotougekoyoharu"]},
+      {"ja": "堀越耕平", "en": "Kohei Horikoshi", "ja_typings": ["horikoshikohei", "horikoshikouhei"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0456",
+    "genre": "manga",
+    "question_text": {"ja": "『呪術廻戦』の作者は?", "en": "Who is the author of 'Jujutsu Kaisen'?"},
+    "choices": [
+      {"ja": "芥見下々", "en": "Gege Akutami", "ja_typings": ["akutamigege"]},
+      {"ja": "諫山創", "en": "Hajime Isayama", "ja_typings": ["isayamahajime"]},
+      {"ja": "吾峠呼世晴", "en": "Koyoharu Gotouge", "ja_typings": ["gotougekoyoharu"]},
+      {"ja": "藤本タツキ", "en": "Tatsuki Fujimoto", "ja_typings": ["fujimototatsuki"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0457",
+    "genre": "manga",
+    "question_text": {"ja": "『鬼滅の刃』の作者は?", "en": "Who is the author of 'Demon Slayer'?"},
+    "choices": [
+      {"ja": "吾峠呼世晴", "en": "Koyoharu Gotouge", "ja_typings": ["gotougekoyoharu"]},
+      {"ja": "芥見下々", "en": "Gege Akutami", "ja_typings": ["akutamigege"]},
+      {"ja": "諫山創", "en": "Hajime Isayama", "ja_typings": ["isayamahajime"]},
+      {"ja": "藤本タツキ", "en": "Tatsuki Fujimoto", "ja_typings": ["fujimototatsuki"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0458",
+    "genre": "manga",
+    "question_text": {"ja": "『ブラック・ジャック』の作者は?", "en": "Who is the author of 'Black Jack'?"},
+    "choices": [
+      {"ja": "手塚治虫", "en": "Osamu Tezuka", "ja_typings": ["tezukaosamu"]},
+      {"ja": "横山光輝", "en": "Mitsuteru Yokoyama", "ja_typings": ["yokoyamamitsuteru"]},
+      {"ja": "石ノ森章太郎", "en": "Shotaro Ishinomori", "ja_typings": ["ishinomorishotaro", "ishinomorishoutarou"]},
+      {"ja": "ちばてつや", "en": "Tetsuya Chiba", "ja_typings": ["chibatetsuya"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0459",
+    "genre": "manga",
+    "question_text": {"ja": "『北斗の拳』の作画を担当した漫画家は?", "en": "Who illustrated 'Fist of the North Star'?"},
+    "choices": [
+      {"ja": "原哲夫", "en": "Tetsuo Hara", "ja_typings": ["haratetsuo"]},
+      {"ja": "車田正美", "en": "Masami Kurumada", "ja_typings": ["kurumadamasami"]},
+      {"ja": "本宮ひろ志", "en": "Hiroshi Motomiya", "ja_typings": ["motomiyahiroshi"]},
+      {"ja": "高橋よしひろ", "en": "Yoshihiro Takahashi", "ja_typings": ["takahashiyoshihiro"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0460",
+    "genre": "manga",
+    "question_text": {"ja": "『美少女戦士セーラームーン』の作者は?", "en": "Who is the author of 'Sailor Moon'?"},
+    "choices": [
+      {"ja": "武内直子", "en": "Naoko Takeuchi", "ja_typings": ["takeuchinaoko"]},
+      {"ja": "高橋留美子", "en": "Rumiko Takahashi", "ja_typings": ["takahashirumiko"]},
+      {"ja": "CLAMP", "en": "CLAMP", "ja_typings": ["clamp"]},
+      {"ja": "矢沢あい", "en": "Ai Yazawa", "ja_typings": ["yazawaai"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0461",
+    "genre": "manga",
+    "question_text": {"ja": "『うる星やつら』『犬夜叉』の作者は?", "en": "Who is the author of 'Urusei Yatsura' and 'Inuyasha'?"},
+    "choices": [
+      {"ja": "高橋留美子", "en": "Rumiko Takahashi", "ja_typings": ["takahashirumiko"]},
+      {"ja": "武内直子", "en": "Naoko Takeuchi", "ja_typings": ["takeuchinaoko"]},
+      {"ja": "あだち充", "en": "Mitsuru Adachi", "ja_typings": ["adachimitsuru"]},
+      {"ja": "細野不二彦", "en": "Fujihiko Hosono", "ja_typings": ["hosonofujihiko"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0462",
+    "genre": "manga",
+    "question_text": {"ja": "『タッチ』『H2』の作者は?", "en": "Who is the author of 'Touch' and 'H2'?"},
+    "choices": [
+      {"ja": "あだち充", "en": "Mitsuru Adachi", "ja_typings": ["adachimitsuru"]},
+      {"ja": "高橋留美子", "en": "Rumiko Takahashi", "ja_typings": ["takahashirumiko"]},
+      {"ja": "ちばあきお", "en": "Akio Chiba", "ja_typings": ["chibaakio"]},
+      {"ja": "水島新司", "en": "Shinji Mizushima", "ja_typings": ["mizushimashinji"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0463",
+    "genre": "manga",
+    "question_text": {"ja": "『HUNTER×HUNTER』『幽☆遊☆白書』の作者は?", "en": "Who is the author of 'HUNTER×HUNTER' and 'YuYu Hakusho'?"},
+    "choices": [
+      {"ja": "冨樫義博", "en": "Yoshihiro Togashi", "ja_typings": ["togashiyoshihiro"]},
+      {"ja": "荒木飛呂彦", "en": "Hirohiko Araki", "ja_typings": ["arakihirohiko"]},
+      {"ja": "井上雄彦", "en": "Takehiko Inoue", "ja_typings": ["inouetakehiko"]},
+      {"ja": "桂正和", "en": "Masakazu Katsura", "ja_typings": ["katsuramasakazu"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0464",
+    "genre": "manga",
+    "question_text": {"ja": "『るろうに剣心』の作者は?", "en": "Who is the author of 'Rurouni Kenshin'?"},
+    "choices": [
+      {"ja": "和月伸宏", "en": "Nobuhiro Watsuki", "ja_typings": ["watsukinobuhiro"]},
+      {"ja": "原泰久", "en": "Yasuhisa Hara", "ja_typings": ["harayasuhisa"]},
+      {"ja": "井上雄彦", "en": "Takehiko Inoue", "ja_typings": ["inouetakehiko"]},
+      {"ja": "森田まさのり", "en": "Masanori Morita", "ja_typings": ["moritamasanori"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0465",
+    "genre": "manga",
+    "question_text": {"ja": "『キングダム』の作者は?", "en": "Who is the author of 'Kingdom'?"},
+    "choices": [
+      {"ja": "原泰久", "en": "Yasuhisa Hara", "ja_typings": ["harayasuhisa"]},
+      {"ja": "和月伸宏", "en": "Nobuhiro Watsuki", "ja_typings": ["watsukinobuhiro"]},
+      {"ja": "井上雄彦", "en": "Takehiko Inoue", "ja_typings": ["inouetakehiko"]},
+      {"ja": "三浦建太郎", "en": "Kentaro Miura", "ja_typings": ["miurakentaro", "miurakentarou"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0466",
+    "genre": "manga",
+    "question_text": {"ja": "『ベルセルク』の作者は?", "en": "Who is the author of 'Berserk'?"},
+    "choices": [
+      {"ja": "三浦建太郎", "en": "Kentaro Miura", "ja_typings": ["miurakentaro", "miurakentarou"]},
+      {"ja": "原泰久", "en": "Yasuhisa Hara", "ja_typings": ["harayasuhisa"]},
+      {"ja": "荒木飛呂彦", "en": "Hirohiko Araki", "ja_typings": ["arakihirohiko"]},
+      {"ja": "大友克洋", "en": "Katsuhiro Otomo", "ja_typings": ["otomokatsuhiro", "ootomokatsuhiro"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0467",
+    "genre": "manga",
+    "question_text": {"ja": "『AKIRA』の作者は?", "en": "Who is the author of 'AKIRA'?"},
+    "choices": [
+      {"ja": "大友克洋", "en": "Katsuhiro Otomo", "ja_typings": ["otomokatsuhiro", "ootomokatsuhiro"]},
+      {"ja": "士郎正宗", "en": "Masamune Shirow", "ja_typings": ["shiromasamune", "shiroumasamune"]},
+      {"ja": "浦沢直樹", "en": "Naoki Urasawa", "ja_typings": ["urasawanaoki"]},
+      {"ja": "松本零士", "en": "Leiji Matsumoto", "ja_typings": ["matsumotoleiji", "matsumotoreiji"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0468",
+    "genre": "manga",
+    "question_text": {"ja": "『攻殻機動隊』の原作者は?", "en": "Who is the original author of 'Ghost in the Shell'?"},
+    "choices": [
+      {"ja": "士郎正宗", "en": "Masamune Shirow", "ja_typings": ["shiromasamune", "shiroumasamune"]},
+      {"ja": "大友克洋", "en": "Katsuhiro Otomo", "ja_typings": ["otomokatsuhiro", "ootomokatsuhiro"]},
+      {"ja": "ゆうきまさみ", "en": "Masami Yuki", "ja_typings": ["yukimasami"]},
+      {"ja": "結城正美", "en": "Masami Yuki (alt)", "ja_typings": ["yuukimasami"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0469",
+    "genre": "manga",
+    "question_text": {"ja": "『DEATH NOTE』の原作者は?", "en": "Who wrote the story of 'DEATH NOTE'?"},
+    "choices": [
+      {"ja": "大場つぐみ", "en": "Tsugumi Ohba", "ja_typings": ["obatsugumi", "oobatsugumi"]},
+      {"ja": "小畑健", "en": "Takeshi Obata", "ja_typings": ["obatatakeshi"]},
+      {"ja": "梶原一騎", "en": "Ikki Kajiwara", "ja_typings": ["kajiwaraikki"]},
+      {"ja": "原作:不明", "en": "Unknown", "ja_typings": ["fumei"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0470",
+    "genre": "manga",
+    "question_text": {"ja": "『DEATH NOTE』の作画を担当したのは?", "en": "Who illustrated 'DEATH NOTE'?"},
+    "choices": [
+      {"ja": "小畑健", "en": "Takeshi Obata", "ja_typings": ["obatatakeshi"]},
+      {"ja": "大場つぐみ", "en": "Tsugumi Ohba", "ja_typings": ["obatsugumi", "oobatsugumi"]},
+      {"ja": "井上雄彦", "en": "Takehiko Inoue", "ja_typings": ["inouetakehiko"]},
+      {"ja": "桂正和", "en": "Masakazu Katsura", "ja_typings": ["katsuramasakazu"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0471",
+    "genre": "manga",
+    "question_text": {"ja": "『週刊少年ジャンプ』の出版社は?", "en": "Which publisher issues 'Weekly Shonen Jump'?"},
+    "choices": [
+      {"ja": "集英社", "en": "Shueisha", "ja_typings": ["shueisha", "shuueisha"]},
+      {"ja": "講談社", "en": "Kodansha", "ja_typings": ["kodansha", "koudansha"]},
+      {"ja": "小学館", "en": "Shogakukan", "ja_typings": ["shogakukan", "shougakukan"]},
+      {"ja": "秋田書店", "en": "Akita Shoten", "ja_typings": ["akitashoten"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0472",
+    "genre": "manga",
+    "question_text": {"ja": "『週刊少年マガジン』の出版社は?", "en": "Which publisher issues 'Weekly Shonen Magazine'?"},
+    "choices": [
+      {"ja": "講談社", "en": "Kodansha", "ja_typings": ["kodansha", "koudansha"]},
+      {"ja": "集英社", "en": "Shueisha", "ja_typings": ["shueisha", "shuueisha"]},
+      {"ja": "小学館", "en": "Shogakukan", "ja_typings": ["shogakukan", "shougakukan"]},
+      {"ja": "白泉社", "en": "Hakusensha", "ja_typings": ["hakusensha"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0473",
+    "genre": "manga",
+    "question_text": {"ja": "『週刊少年サンデー』の出版社は?", "en": "Which publisher issues 'Weekly Shonen Sunday'?"},
+    "choices": [
+      {"ja": "小学館", "en": "Shogakukan", "ja_typings": ["shogakukan", "shougakukan"]},
+      {"ja": "集英社", "en": "Shueisha", "ja_typings": ["shueisha", "shuueisha"]},
+      {"ja": "講談社", "en": "Kodansha", "ja_typings": ["kodansha", "koudansha"]},
+      {"ja": "秋田書店", "en": "Akita Shoten", "ja_typings": ["akitashoten"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0474",
+    "genre": "manga",
+    "question_text": {"ja": "『週刊少年チャンピオン』の出版社は?", "en": "Which publisher issues 'Weekly Shonen Champion'?"},
+    "choices": [
+      {"ja": "秋田書店", "en": "Akita Shoten", "ja_typings": ["akitashoten"]},
+      {"ja": "小学館", "en": "Shogakukan", "ja_typings": ["shogakukan", "shougakukan"]},
+      {"ja": "集英社", "en": "Shueisha", "ja_typings": ["shueisha", "shuueisha"]},
+      {"ja": "講談社", "en": "Kodansha", "ja_typings": ["kodansha", "koudansha"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0475",
+    "genre": "manga",
+    "question_text": {"ja": "『月刊アフタヌーン』の出版社は?", "en": "Which publisher issues 'Monthly Afternoon'?"},
+    "choices": [
+      {"ja": "講談社", "en": "Kodansha", "ja_typings": ["kodansha", "koudansha"]},
+      {"ja": "集英社", "en": "Shueisha", "ja_typings": ["shueisha", "shuueisha"]},
+      {"ja": "小学館", "en": "Shogakukan", "ja_typings": ["shogakukan", "shougakukan"]},
+      {"ja": "KADOKAWA", "en": "KADOKAWA", "ja_typings": ["kadokawa"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0476",
+    "genre": "manga",
+    "question_text": {"ja": "『ヤングマガジン』の出版社は?", "en": "Which publisher issues 'Young Magazine'?"},
+    "choices": [
+      {"ja": "講談社", "en": "Kodansha", "ja_typings": ["kodansha", "koudansha"]},
+      {"ja": "集英社", "en": "Shueisha", "ja_typings": ["shueisha", "shuueisha"]},
+      {"ja": "小学館", "en": "Shogakukan", "ja_typings": ["shogakukan", "shougakukan"]},
+      {"ja": "白泉社", "en": "Hakusensha", "ja_typings": ["hakusensha"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0477",
+    "genre": "manga",
+    "question_text": {"ja": "『ビッグコミックスピリッツ』の出版社は?", "en": "Which publisher issues 'Big Comic Spirits'?"},
+    "choices": [
+      {"ja": "小学館", "en": "Shogakukan", "ja_typings": ["shogakukan", "shougakukan"]},
+      {"ja": "講談社", "en": "Kodansha", "ja_typings": ["kodansha", "koudansha"]},
+      {"ja": "集英社", "en": "Shueisha", "ja_typings": ["shueisha", "shuueisha"]},
+      {"ja": "双葉社", "en": "Futabasha", "ja_typings": ["futabasha"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0478",
+    "genre": "manga",
+    "question_text": {"ja": "『ONE PIECE』が連載されている雑誌は?", "en": "In which magazine is 'ONE PIECE' serialized?"},
+    "choices": [
+      {"ja": "週刊少年ジャンプ", "en": "Weekly Shonen Jump", "ja_typings": ["shuukanshounenjanpu"]},
+      {"ja": "週刊少年マガジン", "en": "Weekly Shonen Magazine", "ja_typings": ["shuukanshounenmagajin"]},
+      {"ja": "週刊少年サンデー", "en": "Weekly Shonen Sunday", "ja_typings": ["shuukanshounensande-"]},
+      {"ja": "週刊少年チャンピオン", "en": "Weekly Shonen Champion", "ja_typings": ["shuukanshounenchanpion"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0479",
+    "genre": "manga",
+    "question_text": {"ja": "『進撃の巨人』が連載されていた雑誌は?", "en": "In which magazine was 'Attack on Titan' serialized?"},
+    "choices": [
+      {"ja": "別冊少年マガジン", "en": "Bessatsu Shonen Magazine", "ja_typings": ["bessatsushounenmagajin"]},
+      {"ja": "週刊少年ジャンプ", "en": "Weekly Shonen Jump", "ja_typings": ["shuukanshounenjanpu"]},
+      {"ja": "週刊少年サンデー", "en": "Weekly Shonen Sunday", "ja_typings": ["shuukanshounensande-"]},
+      {"ja": "月刊アフタヌーン", "en": "Monthly Afternoon", "ja_typings": ["gekkanafutanu-n"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0480",
+    "genre": "manga",
+    "question_text": {"ja": "『名探偵コナン』が連載されている雑誌は?", "en": "In which magazine is 'Detective Conan' serialized?"},
+    "choices": [
+      {"ja": "週刊少年サンデー", "en": "Weekly Shonen Sunday", "ja_typings": ["shuukanshounensande-"]},
+      {"ja": "週刊少年ジャンプ", "en": "Weekly Shonen Jump", "ja_typings": ["shuukanshounenjanpu"]},
+      {"ja": "週刊少年マガジン", "en": "Weekly Shonen Magazine", "ja_typings": ["shuukanshounenmagajin"]},
+      {"ja": "ビッグコミックオリジナル", "en": "Big Comic Original", "ja_typings": ["biggukomikkuorijinaru"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0481",
+    "genre": "manga",
+    "question_text": {"ja": "『名探偵コナン』の作者は?", "en": "Who is the author of 'Detective Conan'?"},
+    "choices": [
+      {"ja": "青山剛昌", "en": "Gosho Aoyama", "ja_typings": ["aoyamagosho", "aoyamagoushou"]},
+      {"ja": "あだち充", "en": "Mitsuru Adachi", "ja_typings": ["adachimitsuru"]},
+      {"ja": "高橋留美子", "en": "Rumiko Takahashi", "ja_typings": ["takahashirumiko"]},
+      {"ja": "藤田和日郎", "en": "Kazuhiro Fujita", "ja_typings": ["fujitakazuhiro"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0482",
+    "genre": "manga",
+    "question_text": {"ja": "『ガラスの仮面』の作者は?", "en": "Who is the author of 'Glass Mask'?"},
+    "choices": [
+      {"ja": "美内すずえ", "en": "Suzue Miuchi", "ja_typings": ["miuchisuzue"]},
+      {"ja": "池田理代子", "en": "Riyoko Ikeda", "ja_typings": ["ikedariyoko"]},
+      {"ja": "萩尾望都", "en": "Moto Hagio", "ja_typings": ["hagiomoto"]},
+      {"ja": "竹宮惠子", "en": "Keiko Takemiya", "ja_typings": ["takemiyakeiko"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0483",
+    "genre": "manga",
+    "question_text": {"ja": "『ベルサイユのばら』の作者は?", "en": "Who is the author of 'The Rose of Versailles'?"},
+    "choices": [
+      {"ja": "池田理代子", "en": "Riyoko Ikeda", "ja_typings": ["ikedariyoko"]},
+      {"ja": "美内すずえ", "en": "Suzue Miuchi", "ja_typings": ["miuchisuzue"]},
+      {"ja": "萩尾望都", "en": "Moto Hagio", "ja_typings": ["hagiomoto"]},
+      {"ja": "里中満智子", "en": "Machiko Satonaka", "ja_typings": ["satonakamachiko"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0484",
+    "genre": "manga",
+    "question_text": {"ja": "『NANA』『天使なんかじゃない』の作者は?", "en": "Who is the author of 'NANA' and 'I'm Not an Angel'?"},
+    "choices": [
+      {"ja": "矢沢あい", "en": "Ai Yazawa", "ja_typings": ["yazawaai"]},
+      {"ja": "槙村さとる", "en": "Satoru Makimura", "ja_typings": ["makimurasatoru"]},
+      {"ja": "くらもちふさこ", "en": "Fusako Kuramochi", "ja_typings": ["kuramochifusako"]},
+      {"ja": "吉田秋生", "en": "Akimi Yoshida", "ja_typings": ["yoshidaakimi"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0485",
+    "genre": "manga",
+    "question_text": {"ja": "『鋼の錬金術師』の作者は?", "en": "Who is the author of 'Fullmetal Alchemist'?"},
+    "choices": [
+      {"ja": "荒川弘", "en": "Hiromu Arakawa", "ja_typings": ["arakawahiromu"]},
+      {"ja": "和月伸宏", "en": "Nobuhiro Watsuki", "ja_typings": ["watsukinobuhiro"]},
+      {"ja": "椎名軽穂", "en": "Karuho Shiina", "ja_typings": ["shiinakaruho"]},
+      {"ja": "久米田康治", "en": "Koji Kumeta", "ja_typings": ["kumetakoji", "kumetakouji"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0486",
+    "genre": "manga",
+    "question_text": {"ja": "『鋼の錬金術師』が連載されていた雑誌は?", "en": "In which magazine was 'Fullmetal Alchemist' serialized?"},
+    "choices": [
+      {"ja": "月刊少年ガンガン", "en": "Monthly Shonen Gangan", "ja_typings": ["gekkanshounengangan"]},
+      {"ja": "週刊少年ジャンプ", "en": "Weekly Shonen Jump", "ja_typings": ["shuukanshounenjanpu"]},
+      {"ja": "週刊少年マガジン", "en": "Weekly Shonen Magazine", "ja_typings": ["shuukanshounenmagajin"]},
+      {"ja": "月刊アフタヌーン", "en": "Monthly Afternoon", "ja_typings": ["gekkanafutanu-n"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0487",
+    "genre": "manga",
+    "question_text": {"ja": "『月刊少年ガンガン』の出版社は?", "en": "Which publisher issues 'Monthly Shonen Gangan'?"},
+    "choices": [
+      {"ja": "スクウェア・エニックス", "en": "Square Enix", "ja_typings": ["sukueaenikkusu"]},
+      {"ja": "集英社", "en": "Shueisha", "ja_typings": ["shueisha", "shuueisha"]},
+      {"ja": "講談社", "en": "Kodansha", "ja_typings": ["kodansha", "koudansha"]},
+      {"ja": "角川書店", "en": "Kadokawa Shoten", "ja_typings": ["kadokawashoten"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0488",
+    "genre": "manga",
+    "question_text": {"ja": "手塚治虫文化賞を主催している新聞社は?", "en": "Which newspaper hosts the Tezuka Osamu Cultural Prize?"},
+    "choices": [
+      {"ja": "朝日新聞社", "en": "The Asahi Shimbun", "ja_typings": ["asahishinbunsha"]},
+      {"ja": "読売新聞社", "en": "The Yomiuri Shimbun", "ja_typings": ["yomiurishinbunsha"]},
+      {"ja": "毎日新聞社", "en": "The Mainichi Shimbun", "ja_typings": ["mainichishinbunsha"]},
+      {"ja": "日本経済新聞社", "en": "Nikkei", "ja_typings": ["nihonkeizaishinbunsha", "nipponkeizaishinbunsha"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0489",
+    "genre": "manga",
+    "question_text": {"ja": "講談社漫画賞を主催している出版社は?", "en": "Which publisher hosts the Kodansha Manga Award?"},
+    "choices": [
+      {"ja": "講談社", "en": "Kodansha", "ja_typings": ["kodansha", "koudansha"]},
+      {"ja": "集英社", "en": "Shueisha", "ja_typings": ["shueisha", "shuueisha"]},
+      {"ja": "小学館", "en": "Shogakukan", "ja_typings": ["shogakukan", "shougakukan"]},
+      {"ja": "秋田書店", "en": "Akita Shoten", "ja_typings": ["akitashoten"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0490",
+    "genre": "manga",
+    "question_text": {"ja": "『花とゆめ』を発行している出版社は?", "en": "Which publisher issues 'Hana to Yume'?"},
+    "choices": [
+      {"ja": "白泉社", "en": "Hakusensha", "ja_typings": ["hakusensha"]},
+      {"ja": "集英社", "en": "Shueisha", "ja_typings": ["shueisha", "shuueisha"]},
+      {"ja": "講談社", "en": "Kodansha", "ja_typings": ["kodansha", "koudansha"]},
+      {"ja": "小学館", "en": "Shogakukan", "ja_typings": ["shogakukan", "shougakukan"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0491",
+    "genre": "manga",
+    "question_text": {"ja": "『ガラスの仮面』のヒロインの名前は?", "en": "What is the name of the heroine of 'Glass Mask'?"},
+    "choices": [
+      {"ja": "北島マヤ", "en": "Maya Kitajima", "ja_typings": ["kitajimamaya"]},
+      {"ja": "姫川亜弓", "en": "Ayumi Himekawa", "ja_typings": ["himekawaayumi"]},
+      {"ja": "月影千草", "en": "Chigusa Tsukikage", "ja_typings": ["tsukikagechigusa"]},
+      {"ja": "速水真澄", "en": "Masumi Hayami", "ja_typings": ["hayamimasumi"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0492",
+    "genre": "manga",
+    "question_text": {"ja": "『チェンソーマン』『ファイアパンチ』の作者は?", "en": "Who is the author of 'Chainsaw Man' and 'Fire Punch'?"},
+    "choices": [
+      {"ja": "藤本タツキ", "en": "Tatsuki Fujimoto", "ja_typings": ["fujimototatsuki"]},
+      {"ja": "芥見下々", "en": "Gege Akutami", "ja_typings": ["akutamigege"]},
+      {"ja": "堀越耕平", "en": "Kohei Horikoshi", "ja_typings": ["horikoshikohei", "horikoshikouhei"]},
+      {"ja": "古舘春一", "en": "Haruichi Furudate", "ja_typings": ["furudateharuichi"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0493",
+    "genre": "manga",
+    "question_text": {"ja": "『僕のヒーローアカデミア』の作者は?", "en": "Who is the author of 'My Hero Academia'?"},
+    "choices": [
+      {"ja": "堀越耕平", "en": "Kohei Horikoshi", "ja_typings": ["horikoshikohei", "horikoshikouhei"]},
+      {"ja": "藤本タツキ", "en": "Tatsuki Fujimoto", "ja_typings": ["fujimototatsuki"]},
+      {"ja": "古舘春一", "en": "Haruichi Furudate", "ja_typings": ["furudateharuichi"]},
+      {"ja": "芥見下々", "en": "Gege Akutami", "ja_typings": ["akutamigege"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0494",
+    "genre": "manga",
+    "question_text": {"ja": "『ハイキュー!!』の作者は?", "en": "Who is the author of 'Haikyu!!'?"},
+    "choices": [
+      {"ja": "古舘春一", "en": "Haruichi Furudate", "ja_typings": ["furudateharuichi"]},
+      {"ja": "堀越耕平", "en": "Kohei Horikoshi", "ja_typings": ["horikoshikohei", "horikoshikouhei"]},
+      {"ja": "井上雄彦", "en": "Takehiko Inoue", "ja_typings": ["inouetakehiko"]},
+      {"ja": "森田まさのり", "en": "Masanori Morita", "ja_typings": ["moritamasanori"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0495",
+    "genre": "manga",
+    "question_text": {"ja": "「ストーリー漫画の神様」と呼ばれた漫画家は?", "en": "Which manga artist is called the 'God of Manga'?"},
+    "choices": [
+      {"ja": "手塚治虫", "en": "Osamu Tezuka", "ja_typings": ["tezukaosamu"]},
+      {"ja": "石ノ森章太郎", "en": "Shotaro Ishinomori", "ja_typings": ["ishinomorishotaro", "ishinomorishoutarou"]},
+      {"ja": "藤子・F・不二雄", "en": "Fujiko F. Fujio", "ja_typings": ["fujikoefufujio"]},
+      {"ja": "赤塚不二夫", "en": "Fujio Akatsuka", "ja_typings": ["akatsukafujio"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  }
+]

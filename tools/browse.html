@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>type-globe — Question Browser</title>
+<style>
+  :root {
+    --bg: #0b0d10;
+    --panel: #151922;
+    --panel-2: #1b2030;
+    --line: #2a3140;
+    --text: #f5f7fb;
+    --muted: #a8b0bf;
+    --accent: #67e8f9;
+    --ok: #86efac;
+    --warn: #fbbf24;
+    --bad: #f87171;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Yu Gothic", system-ui, sans-serif; }
+  header {
+    position: sticky; top: 0; z-index: 10;
+    background: var(--panel); border-bottom: 1px solid var(--line);
+    padding: 12px 16px;
+  }
+  h1 { margin: 0 0 8px 0; font-size: 16px; font-weight: 600; }
+  h1 .count { color: var(--muted); font-weight: 400; font-size: 13px; margin-left: 8px; }
+  .filters { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .filters label { color: var(--muted); font-size: 12px; }
+  .filters select, .filters input[type=search] {
+    background: var(--panel-2); color: var(--text);
+    border: 1px solid var(--line); border-radius: 6px;
+    padding: 6px 10px; font: inherit; min-width: 140px;
+  }
+  .filters input[type=search] { min-width: 240px; }
+  .seg { display: inline-flex; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+  .seg button {
+    background: var(--panel-2); color: var(--text);
+    border: 0; padding: 6px 12px; font: inherit; cursor: pointer;
+    border-right: 1px solid var(--line);
+  }
+  .seg button:last-child { border-right: 0; }
+  .seg button.active { background: var(--accent); color: #052e16; font-weight: 600; }
+  main { padding: 16px; }
+  .genre-group { margin-bottom: 24px; }
+  .genre-head {
+    display: flex; align-items: baseline; gap: 12px;
+    padding: 8px 0; margin-bottom: 8px; border-bottom: 1px solid var(--line);
+  }
+  .genre-head h2 { margin: 0; font-size: 15px; font-weight: 600; }
+  .genre-head .n { color: var(--muted); font-size: 12px; }
+  .grid {
+    display: grid; gap: 12px;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  }
+  .card {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 8px;
+    padding: 12px;
+  }
+  .card.suspicious { border-color: var(--bad); }
+  .card.unreviewed { border-color: var(--warn); }
+  .card .row1 { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+  .id { color: var(--muted); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; }
+  .badge {
+    display: inline-block; padding: 1px 6px; border-radius: 4px;
+    font-size: 11px; font-weight: 600; line-height: 1.5;
+  }
+  .badge.ok { background: rgba(134,239,172,0.15); color: var(--ok); }
+  .badge.warn { background: rgba(251,191,36,0.18); color: var(--warn); }
+  .badge.bad { background: rgba(248,113,113,0.18); color: var(--bad); }
+  .badge.genre { background: rgba(103,232,249,0.12); color: var(--accent); }
+  .q-ja { margin: 4px 0 8px 0; font-size: 14px; }
+  .q-en { color: var(--muted); font-size: 12px; margin: -4px 0 8px 0; }
+  ol.choices { list-style: none; padding: 0; margin: 0; }
+  ol.choices li {
+    border: 1px solid var(--line); border-radius: 6px;
+    padding: 6px 8px; margin-bottom: 4px;
+    display: grid; grid-template-columns: 18px 1fr; gap: 8px; align-items: start;
+    background: var(--panel-2);
+  }
+  ol.choices li.correct { border-color: var(--ok); }
+  ol.choices li.suspicious { border-color: var(--bad); }
+  .choice-num { color: var(--muted); font-family: ui-monospace, monospace; font-size: 12px; }
+  .choice-ja { font-weight: 500; }
+  .choice-en { color: var(--muted); font-size: 12px; }
+  .typings { margin-top: 2px; }
+  .typings code {
+    display: inline-block; background: rgba(255,255,255,0.06); color: var(--text);
+    padding: 1px 6px; margin: 1px 4px 1px 0; border-radius: 3px;
+    font-size: 11px; font-family: ui-monospace, monospace;
+  }
+  .susp-hint {
+    margin-top: 4px; font-size: 11px; color: var(--bad);
+    background: rgba(248,113,113,0.08); border: 1px solid rgba(248,113,113,0.3);
+    border-radius: 4px; padding: 4px 6px;
+  }
+  .susp-hint .label { color: var(--muted); margin-right: 4px; }
+  .empty, .error { padding: 32px; text-align: center; color: var(--muted); }
+  .error { color: var(--bad); }
+  .error code { background: rgba(248,113,113,0.1); padding: 2px 6px; border-radius: 3px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>type-globe — Question Browser <span class="count" id="count"></span></h1>
+  <div class="filters">
+    <label>Genre
+      <select id="filter-genre"><option value="">all</option></select>
+    </label>
+    <div class="seg" id="filter-status" role="group" aria-label="status">
+      <button data-v="all" class="active">All</button>
+      <button data-v="unreviewed">Unreviewed</button>
+      <button data-v="suspicious">Suspicious</button>
+    </div>
+    <label>Search
+      <input id="filter-q" type="search" placeholder="質問文 / 選択肢 / id">
+    </label>
+  </div>
+</header>
+<main id="main">
+  <div class="empty">loading…</div>
+</main>
+<script>
+const DATA_URL = "../data/questions_ja.json";
+const SUSPICIOUS_URL = "../scripts/suspicious_ja_typings.json";
+
+let questions = [];
+let suspiciousByQid = new Map(); // qid -> Map(choiceIdx -> entry)
+let suspiciousQids = new Set();
+
+async function fetchJson(url) {
+  const res = await fetch(url, { cache: "no-store" });
+  if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+  return res.json();
+}
+
+async function load() {
+  try {
+    questions = await fetchJson(DATA_URL);
+  } catch (e) {
+    document.getElementById("main").innerHTML =
+      `<div class="error">questions_ja.json を読めませんでした。<br>
+       ローカル HTTP サーバから開いてください:<br>
+       <code>cd ${location.pathname.split("/tools/")[0]} && python3 -m http.server 8000</code><br>
+       のあと <code>http://localhost:8000/tools/browse.html</code><br><br>
+       error: ${e.message}</div>`;
+    return;
+  }
+
+  try {
+    const sus = await fetchJson(SUSPICIOUS_URL);
+    for (const e of sus) {
+      const qid = e.question_id;
+      suspiciousQids.add(qid);
+      if (!suspiciousByQid.has(qid)) suspiciousByQid.set(qid, new Map());
+      suspiciousByQid.get(qid).set(e.choice_index, e);
+    }
+  } catch (e) {
+    // suspicious file is optional (gitignored). silent fail.
+  }
+
+  populateGenres();
+  render();
+}
+
+function populateGenres() {
+  const genres = [...new Set(questions.map(q => q.genre))].sort();
+  const sel = document.getElementById("filter-genre");
+  for (const g of genres) {
+    const o = document.createElement("option");
+    o.value = g; o.textContent = g;
+    sel.appendChild(o);
+  }
+}
+
+function currentFilters() {
+  const status = document.querySelector("#filter-status .active").dataset.v;
+  return {
+    genre: document.getElementById("filter-genre").value,
+    status,
+    q: document.getElementById("filter-q").value.trim().toLowerCase(),
+  };
+}
+
+function passFilter(q, f) {
+  if (f.genre && q.genre !== f.genre) return false;
+  if (f.status === "unreviewed" && q.ja_reviewed === true) return false;
+  if (f.status === "suspicious" && !suspiciousQids.has(q.id)) return false;
+  if (f.q) {
+    const hay = [
+      q.id,
+      q.question_text?.ja, q.question_text?.en,
+      ...(q.choices ?? []).flatMap(c => [c.ja, c.en, ...(c.ja_typings ?? [])])
+    ].filter(Boolean).join(" ").toLowerCase();
+    if (!hay.includes(f.q)) return false;
+  }
+  return true;
+}
+
+function render() {
+  const f = currentFilters();
+  const matched = questions.filter(q => passFilter(q, f));
+  document.getElementById("count").textContent =
+    `${matched.length} / ${questions.length}`;
+
+  const main = document.getElementById("main");
+  main.innerHTML = "";
+
+  if (matched.length === 0) {
+    main.innerHTML = `<div class="empty">条件に一致する問題はありません。</div>`;
+    return;
+  }
+
+  const byGenre = new Map();
+  for (const q of matched) {
+    if (!byGenre.has(q.genre)) byGenre.set(q.genre, []);
+    byGenre.get(q.genre).push(q);
+  }
+  const sortedGenres = [...byGenre.keys()].sort();
+
+  for (const g of sortedGenres) {
+    const items = byGenre.get(g);
+    const group = document.createElement("section");
+    group.className = "genre-group";
+    group.innerHTML = `
+      <div class="genre-head">
+        <h2>${escapeHtml(g)}</h2>
+        <span class="n">${items.length} 問</span>
+      </div>
+      <div class="grid"></div>
+    `;
+    const grid = group.querySelector(".grid");
+    for (const q of items) grid.appendChild(card(q));
+    main.appendChild(group);
+  }
+}
+
+function card(q) {
+  const el = document.createElement("article");
+  const isSusp = suspiciousQids.has(q.id);
+  const isUnreviewed = q.ja_reviewed !== true;
+  el.className = "card" +
+    (isSusp ? " suspicious" : "") +
+    (isUnreviewed ? " unreviewed" : "");
+
+  const reviewBadge = isUnreviewed
+    ? `<span class="badge warn">unreviewed</span>`
+    : `<span class="badge ok">✓ reviewed</span>`;
+  const suspBadge = isSusp
+    ? `<span class="badge bad">suspicious</span>` : "";
+
+  const row1 = `
+    <div class="row1">
+      <span class="id">${escapeHtml(q.id)}</span>
+      <span class="badge genre">${escapeHtml(q.genre)}</span>
+      ${reviewBadge}
+      ${suspBadge}
+    </div>`;
+
+  const qja = q.question_text?.ja ?? "";
+  const qen = q.question_text?.en ?? "";
+  const qHead = `
+    <div class="q-ja">${escapeHtml(qja)}</div>
+    ${qen && qen !== qja ? `<div class="q-en">${escapeHtml(qen)}</div>` : ""}
+  `;
+
+  const susMap = suspiciousByQid.get(q.id);
+  const choices = (q.choices ?? []).map((c, i) => {
+    const correct = i === q.correct_answer_index;
+    const susp = susMap?.get(i);
+    const typings = (c.ja_typings ?? [])
+      .map(t => `<code>${escapeHtml(t)}</code>`).join("");
+    const sHint = susp ? `
+      <div class="susp-hint">
+        <div><span class="label">pykakasi 読み:</span>${escapeHtml(susp.ja_reading_hira ?? "")}</div>
+        <div><span class="label">expected:</span>${(susp.expected_typings ?? []).map(t => `<code>${escapeHtml(t)}</code>`).join("")}</div>
+      </div>` : "";
+    return `
+      <li class="${correct ? "correct" : ""} ${susp ? "suspicious" : ""}">
+        <span class="choice-num">${i}${correct ? "★" : ""}</span>
+        <div>
+          <div class="choice-ja">${escapeHtml(c.ja ?? "")}</div>
+          ${c.en && c.en !== c.ja ? `<div class="choice-en">${escapeHtml(c.en)}</div>` : ""}
+          <div class="typings">${typings}</div>
+          ${sHint}
+        </div>
+      </li>`;
+  }).join("");
+
+  el.innerHTML = row1 + qHead + `<ol class="choices">${choices}</ol>`;
+  return el;
+}
+
+function escapeHtml(s) {
+  if (s == null) return "";
+  return String(s)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
+}
+
+document.getElementById("filter-genre").addEventListener("change", render);
+document.getElementById("filter-q").addEventListener("input", debounce(render, 100));
+document.querySelectorAll("#filter-status button").forEach(b => {
+  b.addEventListener("click", () => {
+    document.querySelectorAll("#filter-status button").forEach(x => x.classList.remove("active"));
+    b.classList.add("active");
+    render();
+  });
+});
+
+function debounce(fn, ms) {
+  let t;
+  return (...args) => { clearTimeout(t); t = setTimeout(() => fn(...args), ms); };
+}
+
+load();
+</script>
+</body>
+</html>

@@ -1,0 +1,1122 @@
+[
+  {
+    "id": "q0101",
+    "genre": "programming",
+    "question_text": {"ja": "LIFO (後入れ先出し) のデータ構造は？", "en": "Which data structure follows LIFO (Last In First Out)?"},
+    "choices": [
+      {"ja": "スタック", "en": "Stack", "ja_typings": ["sutakku"]},
+      {"ja": "キュー", "en": "Queue", "ja_typings": ["kyu-"]},
+      {"ja": "ヒープ", "en": "Heap", "ja_typings": ["hi-pu"]},
+      {"ja": "リンクトリスト", "en": "Linked List", "ja_typings": ["rinnkutorisuto"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0102",
+    "genre": "programming",
+    "question_text": {"ja": "FIFO (先入れ先出し) のデータ構造は？", "en": "Which data structure follows FIFO (First In First Out)?"},
+    "choices": [
+      {"ja": "キュー", "en": "Queue", "ja_typings": ["kyu-"]},
+      {"ja": "スタック", "en": "Stack", "ja_typings": ["sutakku"]},
+      {"ja": "ツリー", "en": "Tree", "ja_typings": ["tsuri-"]},
+      {"ja": "グラフ", "en": "Graph", "ja_typings": ["gurafu"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0103",
+    "genre": "programming",
+    "question_text": {"ja": "二分探索の計算量は？", "en": "What is the time complexity of binary search?"},
+    "choices": [
+      {"ja": "O(log n)", "en": "O(log n)", "ja_typings": ["o(logn)"]},
+      {"ja": "O(n)", "en": "O(n)", "ja_typings": ["o(n)"]},
+      {"ja": "O(n^2)", "en": "O(n^2)", "ja_typings": ["o(n^2)"]},
+      {"ja": "O(1)", "en": "O(1)", "ja_typings": ["o(1)"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0104",
+    "genre": "programming",
+    "question_text": {"ja": "線形探索の計算量は？", "en": "What is the time complexity of linear search?"},
+    "choices": [
+      {"ja": "O(n)", "en": "O(n)", "ja_typings": ["o(n)"]},
+      {"ja": "O(log n)", "en": "O(log n)", "ja_typings": ["o(logn)"]},
+      {"ja": "O(1)", "en": "O(1)", "ja_typings": ["o(1)"]},
+      {"ja": "O(n log n)", "en": "O(n log n)", "ja_typings": ["o(nlogn)"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0105",
+    "genre": "programming",
+    "question_text": {"ja": "クイックソートの平均計算量は？", "en": "What is the average time complexity of quicksort?"},
+    "choices": [
+      {"ja": "O(n log n)", "en": "O(n log n)", "ja_typings": ["o(nlogn)"]},
+      {"ja": "O(n^2)", "en": "O(n^2)", "ja_typings": ["o(n^2)"]},
+      {"ja": "O(n)", "en": "O(n)", "ja_typings": ["o(n)"]},
+      {"ja": "O(log n)", "en": "O(log n)", "ja_typings": ["o(logn)"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0106",
+    "genre": "programming",
+    "question_text": {"ja": "バブルソートの最悪計算量は？", "en": "What is the worst-case time complexity of bubble sort?"},
+    "choices": [
+      {"ja": "O(n^2)", "en": "O(n^2)", "ja_typings": ["o(n^2)"]},
+      {"ja": "O(n log n)", "en": "O(n log n)", "ja_typings": ["o(nlogn)"]},
+      {"ja": "O(n)", "en": "O(n)", "ja_typings": ["o(n)"]},
+      {"ja": "O(1)", "en": "O(1)", "ja_typings": ["o(1)"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0107",
+    "genre": "programming",
+    "question_text": {"ja": "ハッシュテーブルの平均アクセス計算量は？", "en": "What is the average access time complexity of a hash table?"},
+    "choices": [
+      {"ja": "O(1)", "en": "O(1)", "ja_typings": ["o(1)"]},
+      {"ja": "O(n)", "en": "O(n)", "ja_typings": ["o(n)"]},
+      {"ja": "O(log n)", "en": "O(log n)", "ja_typings": ["o(logn)"]},
+      {"ja": "O(n^2)", "en": "O(n^2)", "ja_typings": ["o(n^2)"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0108",
+    "genre": "programming",
+    "question_text": {"ja": "ノードと枝で構成される非線形データ構造は？", "en": "Which non-linear data structure consists of nodes and edges?"},
+    "choices": [
+      {"ja": "グラフ", "en": "Graph", "ja_typings": ["gurafu"]},
+      {"ja": "配列", "en": "Array", "ja_typings": ["hairetsu"]},
+      {"ja": "スタック", "en": "Stack", "ja_typings": ["sutakku"]},
+      {"ja": "キュー", "en": "Queue", "ja_typings": ["kyu-"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0109",
+    "genre": "programming",
+    "question_text": {"ja": "根を持つ階層型データ構造は？", "en": "Which hierarchical data structure has a root?"},
+    "choices": [
+      {"ja": "ツリー", "en": "Tree", "ja_typings": ["tsuri-"]},
+      {"ja": "キュー", "en": "Queue", "ja_typings": ["kyu-"]},
+      {"ja": "スタック", "en": "Stack", "ja_typings": ["sutakku"]},
+      {"ja": "ハッシュ", "en": "Hash", "ja_typings": ["hasshu"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0110",
+    "genre": "programming",
+    "question_text": {"ja": "各ノードが最大2つの子を持つ木構造は？", "en": "Which tree has at most two children per node?"},
+    "choices": [
+      {"ja": "二分木", "en": "Binary Tree", "ja_typings": ["nibunngi", "nibunki"]},
+      {"ja": "B木", "en": "B-tree", "ja_typings": ["bi-ki"]},
+      {"ja": "三分木", "en": "Ternary Tree", "ja_typings": ["sanbunngi", "sanbunki"]},
+      {"ja": "完全グラフ", "en": "Complete Graph", "ja_typings": ["kannzenngurafu"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0111",
+    "genre": "programming",
+    "question_text": {"ja": "オブジェクト指向の3大要素に含まれないものは？", "en": "Which is NOT one of the three pillars of OOP?"},
+    "choices": [
+      {"ja": "再帰", "en": "Recursion", "ja_typings": ["saiki"]},
+      {"ja": "継承", "en": "Inheritance", "ja_typings": ["keishou", "keisho"]},
+      {"ja": "カプセル化", "en": "Encapsulation", "ja_typings": ["kapuseruka"]},
+      {"ja": "ポリモーフィズム", "en": "Polymorphism", "ja_typings": ["porimo-fizumu"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0112",
+    "genre": "programming",
+    "question_text": {"ja": "オブジェクトの内部を隠蔽する OOP 概念は？", "en": "Which OOP concept hides an object's internals?"},
+    "choices": [
+      {"ja": "カプセル化", "en": "Encapsulation", "ja_typings": ["kapuseruka"]},
+      {"ja": "継承", "en": "Inheritance", "ja_typings": ["keishou", "keisho"]},
+      {"ja": "多態性", "en": "Polymorphism", "ja_typings": ["tataisei"]},
+      {"ja": "抽象化", "en": "Abstraction", "ja_typings": ["chuushouka", "chushoka"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0113",
+    "genre": "programming",
+    "question_text": {"ja": "同名メソッドが異なる挙動をする OOP 概念は？", "en": "Which OOP concept lets a single name behave differently?"},
+    "choices": [
+      {"ja": "ポリモーフィズム", "en": "Polymorphism", "ja_typings": ["porimo-fizumu"]},
+      {"ja": "カプセル化", "en": "Encapsulation", "ja_typings": ["kapuseruka"]},
+      {"ja": "継承", "en": "Inheritance", "ja_typings": ["keishou", "keisho"]},
+      {"ja": "委譲", "en": "Delegation", "ja_typings": ["ijou", "ijo"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0114",
+    "genre": "programming",
+    "question_text": {"ja": "唯一のインスタンスを保証するデザインパターンは？", "en": "Which design pattern ensures only one instance?"},
+    "choices": [
+      {"ja": "シングルトン", "en": "Singleton", "ja_typings": ["shinngurutonn"]},
+      {"ja": "ファクトリー", "en": "Factory", "ja_typings": ["fakutori-"]},
+      {"ja": "オブザーバー", "en": "Observer", "ja_typings": ["obuza-ba-"]},
+      {"ja": "アダプター", "en": "Adapter", "ja_typings": ["adaputa-"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0115",
+    "genre": "programming",
+    "question_text": {"ja": "状態変化を購読者に通知するデザインパターンは？", "en": "Which design pattern notifies subscribers of state changes?"},
+    "choices": [
+      {"ja": "オブザーバー", "en": "Observer", "ja_typings": ["obuza-ba-"]},
+      {"ja": "シングルトン", "en": "Singleton", "ja_typings": ["shinngurutonn"]},
+      {"ja": "ストラテジー", "en": "Strategy", "ja_typings": ["sutoratesi-", "sutorateji-"]},
+      {"ja": "デコレーター", "en": "Decorator", "ja_typings": ["dekore-ta-"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0116",
+    "genre": "programming",
+    "question_text": {"ja": "インスタンス生成を専門に行うデザインパターンは？", "en": "Which design pattern is dedicated to creating instances?"},
+    "choices": [
+      {"ja": "ファクトリー", "en": "Factory", "ja_typings": ["fakutori-"]},
+      {"ja": "プロキシ", "en": "Proxy", "ja_typings": ["purokishi"]},
+      {"ja": "コンポジット", "en": "Composite", "ja_typings": ["konnpojitto"]},
+      {"ja": "ビジター", "en": "Visitor", "ja_typings": ["bijita-"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0117",
+    "genre": "programming",
+    "question_text": {"ja": "Rust で所有権を共有するスマートポインタは？", "en": "Which Rust smart pointer shares ownership?"},
+    "choices": [
+      {"ja": "Rc", "en": "Rc", "ja_typings": ["rc"]},
+      {"ja": "Box", "en": "Box", "ja_typings": ["box"]},
+      {"ja": "Cell", "en": "Cell", "ja_typings": ["cell"]},
+      {"ja": "Vec", "en": "Vec", "ja_typings": ["vec"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0118",
+    "genre": "programming",
+    "question_text": {"ja": "Rust でヒープに値を確保する基本スマートポインタは？", "en": "Which basic Rust smart pointer allocates on the heap?"},
+    "choices": [
+      {"ja": "Box", "en": "Box", "ja_typings": ["box"]},
+      {"ja": "Rc", "en": "Rc", "ja_typings": ["rc"]},
+      {"ja": "Arc", "en": "Arc", "ja_typings": ["arc"]},
+      {"ja": "RefCell", "en": "RefCell", "ja_typings": ["refcell"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0119",
+    "genre": "programming",
+    "question_text": {"ja": "Rust でスレッド間で安全に共有できるスマートポインタは？", "en": "Which Rust smart pointer is safe to share across threads?"},
+    "choices": [
+      {"ja": "Arc", "en": "Arc", "ja_typings": ["arc"]},
+      {"ja": "Rc", "en": "Rc", "ja_typings": ["rc"]},
+      {"ja": "Box", "en": "Box", "ja_typings": ["box"]},
+      {"ja": "Cell", "en": "Cell", "ja_typings": ["cell"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0120",
+    "genre": "programming",
+    "question_text": {"ja": "Rust の `mut` キーワードの意味は？", "en": "What does Rust's `mut` keyword mean?"},
+    "choices": [
+      {"ja": "可変", "en": "Mutable", "ja_typings": ["kahen"]},
+      {"ja": "不変", "en": "Immutable", "ja_typings": ["fuhen"]},
+      {"ja": "静的", "en": "Static", "ja_typings": ["seiteki"]},
+      {"ja": "動的", "en": "Dynamic", "ja_typings": ["douteki", "doteki"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0121",
+    "genre": "programming",
+    "question_text": {"ja": "Rust のパッケージマネージャは？", "en": "What is Rust's package manager?"},
+    "choices": [
+      {"ja": "Cargo", "en": "Cargo", "ja_typings": ["cargo"]},
+      {"ja": "npm", "en": "npm", "ja_typings": ["npm"]},
+      {"ja": "pip", "en": "pip", "ja_typings": ["pip"]},
+      {"ja": "Maven", "en": "Maven", "ja_typings": ["maven"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0122",
+    "genre": "programming",
+    "question_text": {"ja": "Python のパッケージインストーラは？", "en": "What is Python's package installer?"},
+    "choices": [
+      {"ja": "pip", "en": "pip", "ja_typings": ["pip"]},
+      {"ja": "npm", "en": "npm", "ja_typings": ["npm"]},
+      {"ja": "Cargo", "en": "Cargo", "ja_typings": ["cargo"]},
+      {"ja": "Gradle", "en": "Gradle", "ja_typings": ["gradle"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0123",
+    "genre": "programming",
+    "question_text": {"ja": "Node.js の標準パッケージマネージャは？", "en": "What is the default package manager for Node.js?"},
+    "choices": [
+      {"ja": "npm", "en": "npm", "ja_typings": ["npm"]},
+      {"ja": "pip", "en": "pip", "ja_typings": ["pip"]},
+      {"ja": "Cargo", "en": "Cargo", "ja_typings": ["cargo"]},
+      {"ja": "Composer", "en": "Composer", "ja_typings": ["composer"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0124",
+    "genre": "programming",
+    "question_text": {"ja": "Python でインデントが構文上重要である理由は？", "en": "Why is indentation syntactically important in Python?"},
+    "choices": [
+      {"ja": "ブロック構造を示すため", "en": "It defines block structure", "ja_typings": ["burokkukouzouwoshimesutame", "burokkukozowoshimesutame"]},
+      {"ja": "コメントを示すため", "en": "It indicates comments", "ja_typings": ["komenntowoshimesutame"]},
+      {"ja": "型を示すため", "en": "It indicates types", "ja_typings": ["katawoshimesutame"]},
+      {"ja": "戻り値を示すため", "en": "It indicates return values", "ja_typings": ["modoriatiwoshimesutame", "modoriachiwoshimesutame"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0125",
+    "genre": "programming",
+    "question_text": {"ja": "JavaScript で型と値の両方を厳密に比較する演算子は？", "en": "Which JavaScript operator strictly compares both type and value?"},
+    "choices": [
+      {"ja": "厳密等価演算子", "en": "Strict equality", "ja_typings": ["gennmitsutoukaennzannshi", "genmitsutokaenzanshi"]},
+      {"ja": "代入演算子", "en": "Assignment", "ja_typings": ["dainyuuennzannshi", "dainyuenzanshi"]},
+      {"ja": "論理積演算子", "en": "Logical AND", "ja_typings": ["ronnrisekiennzannshi", "ronrisekienzanshi"]},
+      {"ja": "ビット和演算子", "en": "Bitwise OR", "ja_typings": ["bittowaennzannshi", "bittowaenzanshi"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0126",
+    "genre": "programming",
+    "question_text": {"ja": "Java のソースコードをコンパイルした中間形式は？", "en": "What is the intermediate form of compiled Java source?"},
+    "choices": [
+      {"ja": "バイトコード", "en": "Bytecode", "ja_typings": ["baitoko-do"]},
+      {"ja": "機械語", "en": "Machine Code", "ja_typings": ["kikaigo"]},
+      {"ja": "アセンブリ", "en": "Assembly", "ja_typings": ["asennburi"]},
+      {"ja": "ソースマップ", "en": "Source Map", "ja_typings": ["so-sumappu"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0127",
+    "genre": "programming",
+    "question_text": {"ja": "Java バイトコードを実行する仮想マシンは？", "en": "Which virtual machine runs Java bytecode?"},
+    "choices": [
+      {"ja": "JVM", "en": "JVM", "ja_typings": ["jvm"]},
+      {"ja": "CLR", "en": "CLR", "ja_typings": ["clr"]},
+      {"ja": "V8", "en": "V8", "ja_typings": ["v8"]},
+      {"ja": "LLVM", "en": "LLVM", "ja_typings": ["llvm"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0128",
+    "genre": "programming",
+    "question_text": {"ja": "Google が開発したシンプルさを重視した静的型言語は？", "en": "Which statically typed language emphasizing simplicity was created by Google?"},
+    "choices": [
+      {"ja": "Go", "en": "Go", "ja_typings": ["go"]},
+      {"ja": "Rust", "en": "Rust", "ja_typings": ["rust"]},
+      {"ja": "Kotlin", "en": "Kotlin", "ja_typings": ["kotlin"]},
+      {"ja": "Swift", "en": "Swift", "ja_typings": ["swift"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0129",
+    "genre": "programming",
+    "question_text": {"ja": "Apple が開発した iOS / macOS 向け言語は？", "en": "Which language for iOS/macOS was created by Apple?"},
+    "choices": [
+      {"ja": "Swift", "en": "Swift", "ja_typings": ["swift"]},
+      {"ja": "Kotlin", "en": "Kotlin", "ja_typings": ["kotlin"]},
+      {"ja": "Go", "en": "Go", "ja_typings": ["go"]},
+      {"ja": "Dart", "en": "Dart", "ja_typings": ["dart"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0130",
+    "genre": "programming",
+    "question_text": {"ja": "JetBrains が開発した JVM 言語は？", "en": "Which JVM language was created by JetBrains?"},
+    "choices": [
+      {"ja": "Kotlin", "en": "Kotlin", "ja_typings": ["kotlin"]},
+      {"ja": "Scala", "en": "Scala", "ja_typings": ["scala"]},
+      {"ja": "Clojure", "en": "Clojure", "ja_typings": ["clojure"]},
+      {"ja": "Groovy", "en": "Groovy", "ja_typings": ["groovy"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0131",
+    "genre": "programming",
+    "question_text": {"ja": "Go の軽量並行処理単位は？", "en": "What is Go's lightweight concurrency unit?"},
+    "choices": [
+      {"ja": "ゴルーチン", "en": "Goroutine", "ja_typings": ["goru-chinn"]},
+      {"ja": "スレッド", "en": "Thread", "ja_typings": ["sureddo"]},
+      {"ja": "プロセス", "en": "Process", "ja_typings": ["purosesu"]},
+      {"ja": "ファイバー", "en": "Fiber", "ja_typings": ["faiba-"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0132",
+    "genre": "programming",
+    "question_text": {"ja": "Go のゴルーチン間通信に使う仕組みは？", "en": "What is used to communicate between goroutines in Go?"},
+    "choices": [
+      {"ja": "チャネル", "en": "Channel", "ja_typings": ["chaneru"]},
+      {"ja": "ミューテックス", "en": "Mutex", "ja_typings": ["myu-tekkusu"]},
+      {"ja": "セマフォ", "en": "Semaphore", "ja_typings": ["semafo"]},
+      {"ja": "シグナル", "en": "Signal", "ja_typings": ["shigunaru"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0133",
+    "genre": "programming",
+    "question_text": {"ja": "C++ の参照を表す記号は？", "en": "Which symbol denotes a reference in C++?"},
+    "choices": [
+      {"ja": "`&`", "en": "`&`", "ja_typings": ["&"]},
+      {"ja": "`*`", "en": "`*`", "ja_typings": ["*"]},
+      {"ja": "`#`", "en": "`#`", "ja_typings": ["#"]},
+      {"ja": "`@`", "en": "`@`", "ja_typings": ["@"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0134",
+    "genre": "programming",
+    "question_text": {"ja": "C / C++ でポインタを宣言する記号は？", "en": "Which symbol declares a pointer in C/C++?"},
+    "choices": [
+      {"ja": "`*`", "en": "`*`", "ja_typings": ["*"]},
+      {"ja": "`&`", "en": "`&`", "ja_typings": ["&"]},
+      {"ja": "`%`", "en": "`%`", "ja_typings": ["%"]},
+      {"ja": "`$`", "en": "`$`", "ja_typings": ["$"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0135",
+    "genre": "programming",
+    "question_text": {"ja": "JavaScript で非同期処理を待つキーワードは？", "en": "Which JavaScript keyword waits for an async operation?"},
+    "choices": [
+      {"ja": "`await`", "en": "`await`", "ja_typings": ["await"]},
+      {"ja": "`yield`", "en": "`yield`", "ja_typings": ["yield"]},
+      {"ja": "`return`", "en": "`return`", "ja_typings": ["return"]},
+      {"ja": "`defer`", "en": "`defer`", "ja_typings": ["defer"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0136",
+    "genre": "programming",
+    "question_text": {"ja": "JavaScript で非同期関数を定義するキーワードは？", "en": "Which JavaScript keyword defines an async function?"},
+    "choices": [
+      {"ja": "`async`", "en": "`async`", "ja_typings": ["async"]},
+      {"ja": "`await`", "en": "`await`", "ja_typings": ["await"]},
+      {"ja": "`def`", "en": "`def`", "ja_typings": ["def"]},
+      {"ja": "`fn`", "en": "`fn`", "ja_typings": ["fn"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0137",
+    "genre": "programming",
+    "question_text": {"ja": "Python で関数を定義するキーワードは？", "en": "Which Python keyword defines a function?"},
+    "choices": [
+      {"ja": "`def`", "en": "`def`", "ja_typings": ["def"]},
+      {"ja": "`fn`", "en": "`fn`", "ja_typings": ["fn"]},
+      {"ja": "`sub`", "en": "`sub`", "ja_typings": ["sub"]},
+      {"ja": "`function`", "en": "`function`", "ja_typings": ["function"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0138",
+    "genre": "programming",
+    "question_text": {"ja": "Rust で関数を定義するキーワードは？", "en": "Which Rust keyword defines a function?"},
+    "choices": [
+      {"ja": "`fn`", "en": "`fn`", "ja_typings": ["fn"]},
+      {"ja": "`def`", "en": "`def`", "ja_typings": ["def"]},
+      {"ja": "`sub`", "en": "`sub`", "ja_typings": ["sub"]},
+      {"ja": "`function`", "en": "`function`", "ja_typings": ["function"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0139",
+    "genre": "programming",
+    "question_text": {"ja": "Go で関数を定義するキーワードは？", "en": "Which Go keyword defines a function?"},
+    "choices": [
+      {"ja": "`func`", "en": "`func`", "ja_typings": ["func"]},
+      {"ja": "`def`", "en": "`def`", "ja_typings": ["def"]},
+      {"ja": "`fn`", "en": "`fn`", "ja_typings": ["fn"]},
+      {"ja": "`sub`", "en": "`sub`", "ja_typings": ["sub"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0140",
+    "genre": "programming",
+    "question_text": {"ja": "C 言語の生みの親は？", "en": "Who created the C language?"},
+    "choices": [
+      {"ja": "デニス・リッチー", "en": "Dennis Ritchie", "ja_typings": ["denisuritchi-"]},
+      {"ja": "ビャーネ・ストロヴストルップ", "en": "Bjarne Stroustrup", "ja_typings": ["bya-nesutorovusutoruppu"]},
+      {"ja": "ジェームズ・ゴスリン", "en": "James Gosling", "ja_typings": ["je-muzugosurinn"]},
+      {"ja": "グイド・ヴァン・ロッサム", "en": "Guido van Rossum", "ja_typings": ["guidovanrossamu"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0141",
+    "genre": "programming",
+    "question_text": {"ja": "Python を作った人物は？", "en": "Who created Python?"},
+    "choices": [
+      {"ja": "グイド・ヴァン・ロッサム", "en": "Guido van Rossum", "ja_typings": ["guidovanrossamu"]},
+      {"ja": "デニス・リッチー", "en": "Dennis Ritchie", "ja_typings": ["denisuritchi-"]},
+      {"ja": "ラリー・ウォール", "en": "Larry Wall", "ja_typings": ["rari-uo-ru"]},
+      {"ja": "リーナス・トーバルズ", "en": "Linus Torvalds", "ja_typings": ["ri-nasuto-baruzu"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0142",
+    "genre": "programming",
+    "question_text": {"ja": "Linux カーネルを作った人物は？", "en": "Who created the Linux kernel?"},
+    "choices": [
+      {"ja": "リーナス・トーバルズ", "en": "Linus Torvalds", "ja_typings": ["ri-nasuto-baruzu"]},
+      {"ja": "リチャード・ストールマン", "en": "Richard Stallman", "ja_typings": ["richa-dosuto-rumann"]},
+      {"ja": "ケン・トンプソン", "en": "Ken Thompson", "ja_typings": ["kenntonnpusonn"]},
+      {"ja": "ビル・ジョイ", "en": "Bill Joy", "ja_typings": ["birujoi"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0143",
+    "genre": "programming",
+    "question_text": {"ja": "C++ を設計した人物は？", "en": "Who designed C++?"},
+    "choices": [
+      {"ja": "ビャーネ・ストロヴストルップ", "en": "Bjarne Stroustrup", "ja_typings": ["bya-nesutorovusutoruppu"]},
+      {"ja": "デニス・リッチー", "en": "Dennis Ritchie", "ja_typings": ["denisuritchi-"]},
+      {"ja": "ジェームズ・ゴスリン", "en": "James Gosling", "ja_typings": ["je-muzugosurinn"]},
+      {"ja": "ブレンダン・アイク", "en": "Brendan Eich", "ja_typings": ["burenndannaiku"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0144",
+    "genre": "programming",
+    "question_text": {"ja": "JavaScript の生みの親は？", "en": "Who created JavaScript?"},
+    "choices": [
+      {"ja": "ブレンダン・アイク", "en": "Brendan Eich", "ja_typings": ["burenndannaiku"]},
+      {"ja": "ジェームズ・ゴスリン", "en": "James Gosling", "ja_typings": ["je-muzugosurinn"]},
+      {"ja": "ティム・バーナーズ＝リー", "en": "Tim Berners-Lee", "ja_typings": ["timuba-na-zuri-"]},
+      {"ja": "ラリー・ウォール", "en": "Larry Wall", "ja_typings": ["rari-uo-ru"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0145",
+    "genre": "programming",
+    "question_text": {"ja": "Java を開発した会社 (当時) は？", "en": "Which company developed Java?"},
+    "choices": [
+      {"ja": "サン・マイクロシステムズ", "en": "Sun Microsystems", "ja_typings": ["sannmaikuroshisutemuzu"]},
+      {"ja": "マイクロソフト", "en": "Microsoft", "ja_typings": ["maikurosofuto"]},
+      {"ja": "アップル", "en": "Apple", "ja_typings": ["appuru"]},
+      {"ja": "IBM", "en": "IBM", "ja_typings": ["ibm"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0146",
+    "genre": "programming",
+    "question_text": {"ja": "現在 Java のリファレンス実装を保有する企業は？", "en": "Which company now owns Java's reference implementation?"},
+    "choices": [
+      {"ja": "オラクル", "en": "Oracle", "ja_typings": ["orakuru"]},
+      {"ja": "Google", "en": "Google", "ja_typings": ["google"]},
+      {"ja": "アップル", "en": "Apple", "ja_typings": ["appuru"]},
+      {"ja": "IBM", "en": "IBM", "ja_typings": ["ibm"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0147",
+    "genre": "programming",
+    "question_text": {"ja": "Git の作者は？", "en": "Who created Git?"},
+    "choices": [
+      {"ja": "リーナス・トーバルズ", "en": "Linus Torvalds", "ja_typings": ["ri-nasuto-baruzu"]},
+      {"ja": "リチャード・ストールマン", "en": "Richard Stallman", "ja_typings": ["richa-dosuto-rumann"]},
+      {"ja": "ジュニオ・ハマノ", "en": "Junio Hamano", "ja_typings": ["junioohamano", "juniohamano"]},
+      {"ja": "ブライアン・カーニハン", "en": "Brian Kernighan", "ja_typings": ["buraiannka-nihann"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0148",
+    "genre": "programming",
+    "question_text": {"ja": "GNU プロジェクトの創始者は？", "en": "Who founded the GNU project?"},
+    "choices": [
+      {"ja": "リチャード・ストールマン", "en": "Richard Stallman", "ja_typings": ["richa-dosuto-rumann"]},
+      {"ja": "リーナス・トーバルズ", "en": "Linus Torvalds", "ja_typings": ["ri-nasuto-baruzu"]},
+      {"ja": "ケン・トンプソン", "en": "Ken Thompson", "ja_typings": ["kenntonnpusonn"]},
+      {"ja": "デニス・リッチー", "en": "Dennis Ritchie", "ja_typings": ["denisuritchi-"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0149",
+    "genre": "programming",
+    "question_text": {"ja": "深さ優先探索の英略は？", "en": "What is the abbreviation for depth-first search?"},
+    "choices": [
+      {"ja": "DFS", "en": "DFS", "ja_typings": ["dfs"]},
+      {"ja": "BFS", "en": "BFS", "ja_typings": ["bfs"]},
+      {"ja": "DPS", "en": "DPS", "ja_typings": ["dps"]},
+      {"ja": "FFS", "en": "FFS", "ja_typings": ["ffs"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0150",
+    "genre": "programming",
+    "question_text": {"ja": "幅優先探索の英略は？", "en": "What is the abbreviation for breadth-first search?"},
+    "choices": [
+      {"ja": "BFS", "en": "BFS", "ja_typings": ["bfs"]},
+      {"ja": "DFS", "en": "DFS", "ja_typings": ["dfs"]},
+      {"ja": "BPS", "en": "BPS", "ja_typings": ["bps"]},
+      {"ja": "WFS", "en": "WFS", "ja_typings": ["wfs"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0151",
+    "genre": "programming",
+    "question_text": {"ja": "最短経路問題で有名なアルゴリズムは？", "en": "Which algorithm is famous for shortest path?"},
+    "choices": [
+      {"ja": "ダイクストラ法", "en": "Dijkstra's algorithm", "ja_typings": ["daikusutoraho-"]},
+      {"ja": "クイックソート", "en": "Quicksort", "ja_typings": ["kuikkuso-to"]},
+      {"ja": "マージソート", "en": "Mergesort", "ja_typings": ["ma-jiso-to"]},
+      {"ja": "ヒープソート", "en": "Heapsort", "ja_typings": ["hi-puso-to"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0152",
+    "genre": "programming",
+    "question_text": {"ja": "プログラム中で自分自身を呼び出す技法は？", "en": "Which technique calls a function from within itself?"},
+    "choices": [
+      {"ja": "再帰", "en": "Recursion", "ja_typings": ["saiki"]},
+      {"ja": "反復", "en": "Iteration", "ja_typings": ["hannpuku"]},
+      {"ja": "委譲", "en": "Delegation", "ja_typings": ["ijou", "ijo"]},
+      {"ja": "継承", "en": "Inheritance", "ja_typings": ["keishou", "keisho"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0153",
+    "genre": "programming",
+    "question_text": {"ja": "Big-O 表記が表すのは？", "en": "What does Big-O notation represent?"},
+    "choices": [
+      {"ja": "計算量の上限", "en": "Upper bound of complexity", "ja_typings": ["keisannryounojougenn", "keisanryonojogen"]},
+      {"ja": "計算量の下限", "en": "Lower bound of complexity", "ja_typings": ["keisannryounokagenn", "keisanryonokagen"]},
+      {"ja": "メモリ使用量", "en": "Memory usage", "ja_typings": ["memorishiyouryou", "memorishiyoryo"]},
+      {"ja": "実行回数の平均", "en": "Average run count", "ja_typings": ["jikkoukaisuunoheikinn", "jikkokaisunoheikin"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0154",
+    "genre": "programming",
+    "question_text": {"ja": "HTML / CSS でレイアウトを担うのはどちら？", "en": "Which one handles layout: HTML or CSS?"},
+    "choices": [
+      {"ja": "CSS", "en": "CSS", "ja_typings": ["css"]},
+      {"ja": "HTML", "en": "HTML", "ja_typings": ["html"]},
+      {"ja": "JSON", "en": "JSON", "ja_typings": ["json"]},
+      {"ja": "XML", "en": "XML", "ja_typings": ["xml"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0155",
+    "genre": "programming",
+    "question_text": {"ja": "Web ページの構造を記述するマークアップ言語は？", "en": "Which markup language describes web page structure?"},
+    "choices": [
+      {"ja": "HTML", "en": "HTML", "ja_typings": ["html"]},
+      {"ja": "CSS", "en": "CSS", "ja_typings": ["css"]},
+      {"ja": "JavaScript", "en": "JavaScript", "ja_typings": ["javascript"]},
+      {"ja": "SQL", "en": "SQL", "ja_typings": ["sql"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0156",
+    "genre": "programming",
+    "question_text": {"ja": "リレーショナルデータベースの問い合わせ言語は？", "en": "Which language queries relational databases?"},
+    "choices": [
+      {"ja": "SQL", "en": "SQL", "ja_typings": ["sql"]},
+      {"ja": "HTML", "en": "HTML", "ja_typings": ["html"]},
+      {"ja": "XML", "en": "XML", "ja_typings": ["xml"]},
+      {"ja": "YAML", "en": "YAML", "ja_typings": ["yaml"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0157",
+    "genre": "programming",
+    "question_text": {"ja": "RDB でテーブル間を繋ぐ操作の総称は？", "en": "What is the general term for combining tables in an RDB?"},
+    "choices": [
+      {"ja": "JOIN", "en": "JOIN", "ja_typings": ["join"]},
+      {"ja": "MERGE", "en": "MERGE", "ja_typings": ["merge"]},
+      {"ja": "FETCH", "en": "FETCH", "ja_typings": ["fetch"]},
+      {"ja": "GROUP", "en": "GROUP", "ja_typings": ["group"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0158",
+    "genre": "programming",
+    "question_text": {"ja": "ドキュメント指向 NoSQL の代表例は？", "en": "Which is a representative document-oriented NoSQL database?"},
+    "choices": [
+      {"ja": "MongoDB", "en": "MongoDB", "ja_typings": ["mongodb"]},
+      {"ja": "PostgreSQL", "en": "PostgreSQL", "ja_typings": ["postgresql"]},
+      {"ja": "MySQL", "en": "MySQL", "ja_typings": ["mysql"]},
+      {"ja": "SQLite", "en": "SQLite", "ja_typings": ["sqlite"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0159",
+    "genre": "programming",
+    "question_text": {"ja": "キーバリュー型 NoSQL の代表で、インメモリに保持する DB は？", "en": "Which in-memory key-value NoSQL database is widely used?"},
+    "choices": [
+      {"ja": "Redis", "en": "Redis", "ja_typings": ["redis"]},
+      {"ja": "MongoDB", "en": "MongoDB", "ja_typings": ["mongodb"]},
+      {"ja": "Cassandra", "en": "Cassandra", "ja_typings": ["cassandra"]},
+      {"ja": "Neo4j", "en": "Neo4j", "ja_typings": ["neo4j"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0160",
+    "genre": "programming",
+    "question_text": {"ja": "コンテナ仮想化の事実上の標準ツールは？", "en": "What is the de facto container virtualization tool?"},
+    "choices": [
+      {"ja": "Docker", "en": "Docker", "ja_typings": ["docker"]},
+      {"ja": "VirtualBox", "en": "VirtualBox", "ja_typings": ["virtualbox"]},
+      {"ja": "VMware", "en": "VMware", "ja_typings": ["vmware"]},
+      {"ja": "QEMU", "en": "QEMU", "ja_typings": ["qemu"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0161",
+    "genre": "programming",
+    "question_text": {"ja": "コンテナオーケストレーションのデファクトは？", "en": "What is the de facto container orchestration platform?"},
+    "choices": [
+      {"ja": "Kubernetes", "en": "Kubernetes", "ja_typings": ["kubernetes"]},
+      {"ja": "Docker Compose", "en": "Docker Compose", "ja_typings": ["dockercompose"]},
+      {"ja": "Ansible", "en": "Ansible", "ja_typings": ["ansible"]},
+      {"ja": "Terraform", "en": "Terraform", "ja_typings": ["terraform"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0162",
+    "genre": "programming",
+    "question_text": {"ja": "REST API で「リソースを取得する」HTTP メソッドは？", "en": "Which HTTP method retrieves a resource in REST?"},
+    "choices": [
+      {"ja": "GET", "en": "GET", "ja_typings": ["get"]},
+      {"ja": "POST", "en": "POST", "ja_typings": ["post"]},
+      {"ja": "PUT", "en": "PUT", "ja_typings": ["put"]},
+      {"ja": "DELETE", "en": "DELETE", "ja_typings": ["delete"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0163",
+    "genre": "programming",
+    "question_text": {"ja": "REST API で「新規作成」によく使う HTTP メソッドは？", "en": "Which HTTP method is commonly used to create resources?"},
+    "choices": [
+      {"ja": "POST", "en": "POST", "ja_typings": ["post"]},
+      {"ja": "GET", "en": "GET", "ja_typings": ["get"]},
+      {"ja": "PATCH", "en": "PATCH", "ja_typings": ["patch"]},
+      {"ja": "HEAD", "en": "HEAD", "ja_typings": ["head"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0164",
+    "genre": "programming",
+    "question_text": {"ja": "HTTP ステータス 404 の意味は？", "en": "What does HTTP status 404 mean?"},
+    "choices": [
+      {"ja": "Not Found", "en": "Not Found", "ja_typings": ["notfound"]},
+      {"ja": "OK", "en": "OK", "ja_typings": ["ok"]},
+      {"ja": "Forbidden", "en": "Forbidden", "ja_typings": ["forbidden"]},
+      {"ja": "Internal Server Error", "en": "Internal Server Error", "ja_typings": ["internalservererror"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0165",
+    "genre": "programming",
+    "question_text": {"ja": "HTTP ステータス 200 の意味は？", "en": "What does HTTP status 200 mean?"},
+    "choices": [
+      {"ja": "OK", "en": "OK", "ja_typings": ["ok"]},
+      {"ja": "Not Found", "en": "Not Found", "ja_typings": ["notfound"]},
+      {"ja": "Bad Request", "en": "Bad Request", "ja_typings": ["badrequest"]},
+      {"ja": "Unauthorized", "en": "Unauthorized", "ja_typings": ["unauthorized"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0166",
+    "genre": "programming",
+    "question_text": {"ja": "HTTP ステータス 500 番台が示すのは？", "en": "What do HTTP 5xx codes indicate?"},
+    "choices": [
+      {"ja": "サーバーエラー", "en": "Server Error", "ja_typings": ["sa-ba-era-"]},
+      {"ja": "クライアントエラー", "en": "Client Error", "ja_typings": ["kuraiannutoera-", "kuraianntoera-"]},
+      {"ja": "リダイレクト", "en": "Redirect", "ja_typings": ["ridairekuto"]},
+      {"ja": "成功", "en": "Success", "ja_typings": ["seikou", "seiko"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0167",
+    "genre": "programming",
+    "question_text": {"ja": "TCP / UDP のうちコネクション指向なのは？", "en": "Which is connection-oriented: TCP or UDP?"},
+    "choices": [
+      {"ja": "TCP", "en": "TCP", "ja_typings": ["tcp"]},
+      {"ja": "UDP", "en": "UDP", "ja_typings": ["udp"]},
+      {"ja": "ICMP", "en": "ICMP", "ja_typings": ["icmp"]},
+      {"ja": "ARP", "en": "ARP", "ja_typings": ["arp"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0168",
+    "genre": "programming",
+    "question_text": {"ja": "Web の暗号化通信で使われるプロトコルは？", "en": "Which protocol encrypts web traffic?"},
+    "choices": [
+      {"ja": "HTTPS", "en": "HTTPS", "ja_typings": ["https"]},
+      {"ja": "FTP", "en": "FTP", "ja_typings": ["ftp"]},
+      {"ja": "SMTP", "en": "SMTP", "ja_typings": ["smtp"]},
+      {"ja": "Telnet", "en": "Telnet", "ja_typings": ["telnet"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0169",
+    "genre": "programming",
+    "question_text": {"ja": "代表的なバージョン管理システムは？", "en": "Which is a popular version control system?"},
+    "choices": [
+      {"ja": "Git", "en": "Git", "ja_typings": ["git"]},
+      {"ja": "Make", "en": "Make", "ja_typings": ["make"]},
+      {"ja": "Bash", "en": "Bash", "ja_typings": ["bash"]},
+      {"ja": "Vim", "en": "Vim", "ja_typings": ["vim"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0170",
+    "genre": "programming",
+    "question_text": {"ja": "JSON は何の略？", "en": "What does JSON stand for?"},
+    "choices": [
+      {"ja": "JavaScript Object Notation", "en": "JavaScript Object Notation", "ja_typings": ["javascriptobjectnotation"]},
+      {"ja": "Java Source Object Network", "en": "Java Source Object Network", "ja_typings": ["javasourceobjectnetwork"]},
+      {"ja": "Joint Standard Object Notation", "en": "Joint Standard Object Notation", "ja_typings": ["jointstandardobjectnotation"]},
+      {"ja": "JavaScript Open Network", "en": "JavaScript Open Network", "ja_typings": ["javascriptopennetwork"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0171",
+    "genre": "programming",
+    "question_text": {"ja": "整数を 2 の冪で表す内部表現は？", "en": "Which internal representation uses powers of two?"},
+    "choices": [
+      {"ja": "二進数", "en": "Binary", "ja_typings": ["nishinnsuu", "nishinsu"]},
+      {"ja": "十進数", "en": "Decimal", "ja_typings": ["jisshinnsuu", "jisshinsu"]},
+      {"ja": "八進数", "en": "Octal", "ja_typings": ["hasshinnsuu", "hasshinsu"]},
+      {"ja": "十六進数", "en": "Hexadecimal", "ja_typings": ["jurokushinnsuu", "jurokushinsu"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0172",
+    "genre": "programming",
+    "question_text": {"ja": "1 バイトは何ビット？", "en": "How many bits are in one byte?"},
+    "choices": [
+      {"ja": "8", "en": "8", "ja_typings": ["8"]},
+      {"ja": "16", "en": "16", "ja_typings": ["16"]},
+      {"ja": "4", "en": "4", "ja_typings": ["4"]},
+      {"ja": "32", "en": "32", "ja_typings": ["32"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0173",
+    "genre": "programming",
+    "question_text": {"ja": "符号無し 8 ビット整数の最大値は？", "en": "What is the maximum value of an unsigned 8-bit integer?"},
+    "choices": [
+      {"ja": "255", "en": "255", "ja_typings": ["255"]},
+      {"ja": "127", "en": "127", "ja_typings": ["127"]},
+      {"ja": "256", "en": "256", "ja_typings": ["256"]},
+      {"ja": "128", "en": "128", "ja_typings": ["128"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0174",
+    "genre": "programming",
+    "question_text": {"ja": "プログラムが使う「未使用メモリの自動回収」を何と呼ぶ？", "en": "What is the automatic reclamation of unused memory called?"},
+    "choices": [
+      {"ja": "ガベージコレクション", "en": "Garbage Collection", "ja_typings": ["gabe-jikorekushonn"]},
+      {"ja": "メモリリーク", "en": "Memory Leak", "ja_typings": ["memori-ku"]},
+      {"ja": "スタックオーバーフロー", "en": "Stack Overflow", "ja_typings": ["sutakkuo-ba-furo-"]},
+      {"ja": "セグメンテーション違反", "en": "Segmentation Fault", "ja_typings": ["segumente-shonniihann", "segumente-shoniihan"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0175",
+    "genre": "programming",
+    "question_text": {"ja": "ソースを実行時に逐次解釈する方式は？", "en": "Which approach interprets source code at runtime?"},
+    "choices": [
+      {"ja": "インタプリタ", "en": "Interpreter", "ja_typings": ["inntapurita"]},
+      {"ja": "コンパイラ", "en": "Compiler", "ja_typings": ["konnpaira"]},
+      {"ja": "リンカ", "en": "Linker", "ja_typings": ["rinnka"]},
+      {"ja": "アセンブラ", "en": "Assembler", "ja_typings": ["asennbura"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0176",
+    "genre": "programming",
+    "question_text": {"ja": "ソース全体を実行前に機械語へ変換するのは？", "en": "Which translates entire source to machine code beforehand?"},
+    "choices": [
+      {"ja": "コンパイラ", "en": "Compiler", "ja_typings": ["konnpaira"]},
+      {"ja": "インタプリタ", "en": "Interpreter", "ja_typings": ["inntapurita"]},
+      {"ja": "デバッガ", "en": "Debugger", "ja_typings": ["debagga"]},
+      {"ja": "プロファイラ", "en": "Profiler", "ja_typings": ["purofaira"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0177",
+    "genre": "programming",
+    "question_text": {"ja": "純粋関数型プログラミングで知られる言語は？", "en": "Which language is known for pure functional programming?"},
+    "choices": [
+      {"ja": "Haskell", "en": "Haskell", "ja_typings": ["haskell"]},
+      {"ja": "Java", "en": "Java", "ja_typings": ["java"]},
+      {"ja": "C", "en": "C", "ja_typings": ["c"]},
+      {"ja": "PHP", "en": "PHP", "ja_typings": ["php"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0178",
+    "genre": "programming",
+    "question_text": {"ja": "S 式で知られる古典的言語は？", "en": "Which classic language is known for S-expressions?"},
+    "choices": [
+      {"ja": "Lisp", "en": "Lisp", "ja_typings": ["lisp"]},
+      {"ja": "Pascal", "en": "Pascal", "ja_typings": ["pascal"]},
+      {"ja": "Fortran", "en": "Fortran", "ja_typings": ["fortran"]},
+      {"ja": "COBOL", "en": "COBOL", "ja_typings": ["cobol"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0179",
+    "genre": "programming",
+    "question_text": {"ja": "Ruby を開発した人物は？", "en": "Who created Ruby?"},
+    "choices": [
+      {"ja": "まつもとゆきひろ", "en": "Yukihiro Matsumoto", "ja_typings": ["matsumotoyukihiro"]},
+      {"ja": "リーナス・トーバルズ", "en": "Linus Torvalds", "ja_typings": ["ri-nasuto-baruzu"]},
+      {"ja": "ラリー・ウォール", "en": "Larry Wall", "ja_typings": ["rari-uo-ru"]},
+      {"ja": "グイド・ヴァン・ロッサム", "en": "Guido van Rossum", "ja_typings": ["guidovanrossamu"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0180",
+    "genre": "programming",
+    "question_text": {"ja": "Perl を開発した人物は？", "en": "Who created Perl?"},
+    "choices": [
+      {"ja": "ラリー・ウォール", "en": "Larry Wall", "ja_typings": ["rari-uo-ru"]},
+      {"ja": "まつもとゆきひろ", "en": "Yukihiro Matsumoto", "ja_typings": ["matsumotoyukihiro"]},
+      {"ja": "ブレンダン・アイク", "en": "Brendan Eich", "ja_typings": ["burenndannaiku"]},
+      {"ja": "デニス・リッチー", "en": "Dennis Ritchie", "ja_typings": ["denisuritchi-"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  }
+]

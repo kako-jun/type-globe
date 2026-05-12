@@ -1,0 +1,492 @@
+[
+  {
+    "id": "q0621",
+    "genre": "culture",
+    "question_text": {"ja": "茶の湯を芸道として大成させた人物は誰?", "en": "Who perfected the tea ceremony as an art?"},
+    "choices": [
+      {"ja": "千利休", "en": "Sen no Rikyu", "ja_typings": ["sennorikyu", "sennorikyuu"]},
+      {"ja": "世阿弥", "en": "Zeami", "ja_typings": ["zeami"]},
+      {"ja": "松尾芭蕉", "en": "Matsuo Basho", "ja_typings": ["matsuobasho", "matsuobashou"]},
+      {"ja": "雪舟", "en": "Sesshu", "ja_typings": ["sesshu", "sesshuu"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0622",
+    "genre": "culture",
+    "question_text": {"ja": "ブラジルで毎年開催される世界最大級のカーニバルが行われる都市は?", "en": "In which city is the world-famous carnival held in Brazil?"},
+    "choices": [
+      {"ja": "リオデジャネイロ", "en": "Rio de Janeiro", "ja_typings": ["riodejaneiro"]},
+      {"ja": "サンパウロ", "en": "Sao Paulo", "ja_typings": ["sanpauro"]},
+      {"ja": "ブラジリア", "en": "Brasilia", "ja_typings": ["burajiria"]},
+      {"ja": "サルバドール", "en": "Salvador", "ja_typings": ["sarubado-ru"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0623",
+    "genre": "culture",
+    "question_text": {"ja": "インドで春に色の粉を掛け合って祝う祭りは?", "en": "What Indian spring festival involves throwing colored powders?"},
+    "choices": [
+      {"ja": "ホーリー", "en": "Holi", "ja_typings": ["ho-ri-"]},
+      {"ja": "ディワリ", "en": "Diwali", "ja_typings": ["diwari"]},
+      {"ja": "ナヴラトリ", "en": "Navratri", "ja_typings": ["navuratori"]},
+      {"ja": "ポンガル", "en": "Pongal", "ja_typings": ["pongaru"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0624",
+    "genre": "culture",
+    "question_text": {"ja": "ドイツ・ミュンヘンで秋に開かれる世界最大のビール祭りは?", "en": "What is the world's largest beer festival held in Munich?"},
+    "choices": [
+      {"ja": "オクトーバーフェスト", "en": "Oktoberfest", "ja_typings": ["okuto-ba-fesuto"]},
+      {"ja": "カンヌ映画祭", "en": "Cannes Film Festival", "ja_typings": ["kannueigasai"]},
+      {"ja": "ベネチアの仮面祭", "en": "Venice Carnival", "ja_typings": ["benechianokamensai"]},
+      {"ja": "ロックインリオ", "en": "Rock in Rio", "ja_typings": ["rokkuinrio"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0625",
+    "genre": "culture",
+    "question_text": {"ja": "日本の伝統舞台芸術で、白塗りの隈取と見得が特徴なのは?", "en": "Which Japanese traditional theater is known for kumadori makeup and mie poses?"},
+    "choices": [
+      {"ja": "歌舞伎", "en": "Kabuki", "ja_typings": ["kabuki"]},
+      {"ja": "能", "en": "Noh", "ja_typings": ["no", "nou"]},
+      {"ja": "文楽", "en": "Bunraku", "ja_typings": ["bunraku"]},
+      {"ja": "狂言", "en": "Kyogen", "ja_typings": ["kyogen", "kyougen"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0626",
+    "genre": "culture",
+    "question_text": {"ja": "イスラム教徒が日の出から日没まで断食を行う月は?", "en": "During which month do Muslims fast from sunrise to sunset?"},
+    "choices": [
+      {"ja": "ラマダン", "en": "Ramadan", "ja_typings": ["ramadan"]},
+      {"ja": "ムハッラム", "en": "Muharram", "ja_typings": ["muharramu"]},
+      {"ja": "シャワール", "en": "Shawwal", "ja_typings": ["shawa-ru"]},
+      {"ja": "ラジャブ", "en": "Rajab", "ja_typings": ["rajabu"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0627",
+    "genre": "culture",
+    "question_text": {"ja": "韓国の伝統的な民族衣装の名称は?", "en": "What is the name of Korea's traditional clothing?"},
+    "choices": [
+      {"ja": "ハンボク", "en": "Hanbok", "ja_typings": ["hanboku"]},
+      {"ja": "アオザイ", "en": "Ao Dai", "ja_typings": ["aozai"]},
+      {"ja": "サリー", "en": "Sari", "ja_typings": ["sari-"]},
+      {"ja": "チャイナドレス", "en": "Cheongsam", "ja_typings": ["chainadoresu"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0628",
+    "genre": "culture",
+    "question_text": {"ja": "イタリア発祥の発泡しないコーヒーで、濃く抽出した一杯は?", "en": "Which strong Italian coffee is extracted under pressure into a small cup?"},
+    "choices": [
+      {"ja": "エスプレッソ", "en": "Espresso", "ja_typings": ["esupuresso"]},
+      {"ja": "カプチーノ", "en": "Cappuccino", "ja_typings": ["kapuchi-no"]},
+      {"ja": "マキアート", "en": "Macchiato", "ja_typings": ["makia-to"]},
+      {"ja": "アメリカーノ", "en": "Americano", "ja_typings": ["amerika-no"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0629",
+    "genre": "culture",
+    "question_text": {"ja": "メキシコで亡くなった家族を祝う10月末~11月初頭の祭りは?", "en": "Which Mexican festival celebrates deceased family members in early November?"},
+    "choices": [
+      {"ja": "死者の日", "en": "Day of the Dead", "ja_typings": ["shishanohi"]},
+      {"ja": "シンコ・デ・マヨ", "en": "Cinco de Mayo", "ja_typings": ["shinkodemayo"]},
+      {"ja": "サンフェルミン祭", "en": "San Fermin", "ja_typings": ["sanferuminsai"]},
+      {"ja": "ラ・トマティーナ", "en": "La Tomatina", "ja_typings": ["ratomati-na"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0630",
+    "genre": "culture",
+    "question_text": {"ja": "スペインのバレンシア地方で行われるトマト投げ祭りの名は?", "en": "What is the name of the Spanish tomato-throwing festival?"},
+    "choices": [
+      {"ja": "ラ・トマティーナ", "en": "La Tomatina", "ja_typings": ["ratomati-na"]},
+      {"ja": "サンフェルミン祭", "en": "San Fermin", "ja_typings": ["sanferuminsai"]},
+      {"ja": "セマナ・サンタ", "en": "Semana Santa", "ja_typings": ["semanasanta"]},
+      {"ja": "ファジャス", "en": "Las Fallas", "ja_typings": ["fajasu"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0631",
+    "genre": "culture",
+    "question_text": {"ja": "中国の旧暦正月を祝う祭りを何という?", "en": "What is the name of the Chinese lunar new year festival?"},
+    "choices": [
+      {"ja": "春節", "en": "Chinese New Year", "ja_typings": ["shunsetsu"]},
+      {"ja": "中秋節", "en": "Mid-Autumn Festival", "ja_typings": ["chushusetsu", "chuushuusetsu"]},
+      {"ja": "端午節", "en": "Dragon Boat Festival", "ja_typings": ["tangosetsu"]},
+      {"ja": "清明節", "en": "Qingming Festival", "ja_typings": ["seimeisetsu"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0632",
+    "genre": "culture",
+    "question_text": {"ja": "フランスのプロヴァンス地方やイタリアで広く食される、煮込み野菜料理は?", "en": "Which Provencal stewed vegetable dish is popular in France and Italy?"},
+    "choices": [
+      {"ja": "ラタトゥイユ", "en": "Ratatouille", "ja_typings": ["ratatuiyu"]},
+      {"ja": "ブイヤベース", "en": "Bouillabaisse", "ja_typings": ["buiyabe-su"]},
+      {"ja": "カスレ", "en": "Cassoulet", "ja_typings": ["kasure"]},
+      {"ja": "ポトフ", "en": "Pot-au-feu", "ja_typings": ["potofu"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0633",
+    "genre": "culture",
+    "question_text": {"ja": "インドの女性が体に巻きつけて着る一枚布の伝統衣装は?", "en": "What is the Indian women's traditional garment made of a single drape of cloth?"},
+    "choices": [
+      {"ja": "サリー", "en": "Sari", "ja_typings": ["sari-"]},
+      {"ja": "ドーティ", "en": "Dhoti", "ja_typings": ["do-ti"]},
+      {"ja": "クルタ", "en": "Kurta", "ja_typings": ["kuruta"]},
+      {"ja": "シャルワール", "en": "Shalwar", "ja_typings": ["sharuwa-ru"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0634",
+    "genre": "culture",
+    "question_text": {"ja": "スペイン・アンダルシア発祥の情熱的な民族舞踊は?", "en": "Which passionate folk dance originates in Andalusia, Spain?"},
+    "choices": [
+      {"ja": "フラメンコ", "en": "Flamenco", "ja_typings": ["furamenko"]},
+      {"ja": "タンゴ", "en": "Tango", "ja_typings": ["tango"]},
+      {"ja": "サンバ", "en": "Samba", "ja_typings": ["sanba"]},
+      {"ja": "サルサ", "en": "Salsa", "ja_typings": ["sarusa"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0635",
+    "genre": "culture",
+    "question_text": {"ja": "イスラム教徒が一生に一度を目指す、メッカへの巡礼を何という?", "en": "What is the Muslim pilgrimage to Mecca called?"},
+    "choices": [
+      {"ja": "ハッジ", "en": "Hajj", "ja_typings": ["hajji"]},
+      {"ja": "ウムラ", "en": "Umrah", "ja_typings": ["umura"]},
+      {"ja": "サラート", "en": "Salat", "ja_typings": ["sara-to"]},
+      {"ja": "ザカート", "en": "Zakat", "ja_typings": ["zaka-to"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0636",
+    "genre": "culture",
+    "question_text": {"ja": "ロシアの伝統的な、入れ子細工の人形を何という?", "en": "What is the name of Russia's traditional nesting dolls?"},
+    "choices": [
+      {"ja": "マトリョーシカ", "en": "Matryoshka", "ja_typings": ["matoryo-shika"]},
+      {"ja": "バブーシカ", "en": "Babushka", "ja_typings": ["babu-shika"]},
+      {"ja": "ピロシキ", "en": "Pirozhki", "ja_typings": ["piroshiki"]},
+      {"ja": "ホフロマ", "en": "Khokhloma", "ja_typings": ["hofuroma"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0637",
+    "genre": "culture",
+    "question_text": {"ja": "イタリア・ローマにあるカトリック教会の総本山は?", "en": "What is the main basilica of the Catholic Church in Rome?"},
+    "choices": [
+      {"ja": "サン・ピエトロ大聖堂", "en": "St. Peter's Basilica", "ja_typings": ["sanpietorodaiseidou", "sanpietorodaiseido"]},
+      {"ja": "ノートルダム大聖堂", "en": "Notre-Dame Cathedral", "ja_typings": ["no-torudamudaiseidou", "no-torudamudaiseido"]},
+      {"ja": "ケルン大聖堂", "en": "Cologne Cathedral", "ja_typings": ["kerundaiseidou", "kerundaiseido"]},
+      {"ja": "ミラノ大聖堂", "en": "Milan Cathedral", "ja_typings": ["miranodaiseidou", "miranodaiseido"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0638",
+    "genre": "culture",
+    "question_text": {"ja": "日本の生け花の伝統的な流派として最も古いとされるのは?", "en": "Which is considered the oldest school of Japanese ikebana?"},
+    "choices": [
+      {"ja": "池坊", "en": "Ikenobo", "ja_typings": ["ikenobo", "ikenobou"]},
+      {"ja": "草月流", "en": "Sogetsu", "ja_typings": ["sogetsuryu", "sougetsuryuu"]},
+      {"ja": "小原流", "en": "Ohara", "ja_typings": ["ohararyu", "ohararyuu"]},
+      {"ja": "嵯峨御流", "en": "Saga Goryu", "ja_typings": ["sagagoryu", "sagagoryuu"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0639",
+    "genre": "culture",
+    "question_text": {"ja": "ベトナム女性が着る、長い丈にスリットの入った民族衣装は?", "en": "What is the Vietnamese women's traditional long-tunic dress?"},
+    "choices": [
+      {"ja": "アオザイ", "en": "Ao Dai", "ja_typings": ["aozai"]},
+      {"ja": "ハンボク", "en": "Hanbok", "ja_typings": ["hanboku"]},
+      {"ja": "チャイナドレス", "en": "Cheongsam", "ja_typings": ["chainadoresu"]},
+      {"ja": "バロン・タガログ", "en": "Barong Tagalog", "ja_typings": ["barontagarogu"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0640",
+    "genre": "culture",
+    "question_text": {"ja": "ユダヤ教の安息日を何と呼ぶ?", "en": "What is the Jewish day of rest called?"},
+    "choices": [
+      {"ja": "シャバット", "en": "Shabbat", "ja_typings": ["shabatto"]},
+      {"ja": "ヨムキプール", "en": "Yom Kippur", "ja_typings": ["yomukipu-ru"]},
+      {"ja": "ハヌカー", "en": "Hanukkah", "ja_typings": ["hanuka-"]},
+      {"ja": "ペサハ", "en": "Pesach", "ja_typings": ["pesaha"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0641",
+    "genre": "culture",
+    "question_text": {"ja": "イスラム教徒の女性が頭髪を覆う伝統的なスカーフを何という?", "en": "What is the traditional headscarf worn by Muslim women called?"},
+    "choices": [
+      {"ja": "ヒジャブ", "en": "Hijab", "ja_typings": ["hijabu"]},
+      {"ja": "ターバン", "en": "Turban", "ja_typings": ["ta-ban"]},
+      {"ja": "ベール", "en": "Veil", "ja_typings": ["be-ru"]},
+      {"ja": "ケフィエ", "en": "Keffiyeh", "ja_typings": ["kefie"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0642",
+    "genre": "culture",
+    "question_text": {"ja": "ペルーの空中都市マチュピチュを築いた古代文明は?", "en": "Which ancient civilization built Machu Picchu in Peru?"},
+    "choices": [
+      {"ja": "インカ文明", "en": "Inca civilization", "ja_typings": ["inkabunmei"]},
+      {"ja": "マヤ文明", "en": "Maya civilization", "ja_typings": ["mayabunmei"]},
+      {"ja": "アステカ文明", "en": "Aztec civilization", "ja_typings": ["azutekabunmei"]},
+      {"ja": "オルメカ文明", "en": "Olmec civilization", "ja_typings": ["orumekabunmei"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0643",
+    "genre": "culture",
+    "question_text": {"ja": "イタリア発祥の薄い生地に具材を乗せて窯で焼く料理は?", "en": "Which Italian flatbread dish is topped with ingredients and baked?"},
+    "choices": [
+      {"ja": "ピザ", "en": "Pizza", "ja_typings": ["piza"]},
+      {"ja": "フォカッチャ", "en": "Focaccia", "ja_typings": ["fokaccha"]},
+      {"ja": "カルツォーネ", "en": "Calzone", "ja_typings": ["karutso-ne"]},
+      {"ja": "ピアディーナ", "en": "Piadina", "ja_typings": ["piadi-na"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0644",
+    "genre": "culture",
+    "question_text": {"ja": "イスラム教の聖典の名称は?", "en": "What is the name of the holy book of Islam?"},
+    "choices": [
+      {"ja": "コーラン", "en": "Quran", "ja_typings": ["ko-ran"]},
+      {"ja": "聖書", "en": "Bible", "ja_typings": ["seisho"]},
+      {"ja": "トーラー", "en": "Torah", "ja_typings": ["to-ra-"]},
+      {"ja": "ヴェーダ", "en": "Vedas", "ja_typings": ["ve-da"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0645",
+    "genre": "culture",
+    "question_text": {"ja": "スコットランドの伝統的な男性用のひだスカートは?", "en": "What is the traditional pleated skirt worn by Scottish men?"},
+    "choices": [
+      {"ja": "キルト", "en": "Kilt", "ja_typings": ["kiruto"]},
+      {"ja": "タータン", "en": "Tartan", "ja_typings": ["ta-tan"]},
+      {"ja": "ポンチョ", "en": "Poncho", "ja_typings": ["poncho"]},
+      {"ja": "トーガ", "en": "Toga", "ja_typings": ["to-ga"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0646",
+    "genre": "culture",
+    "question_text": {"ja": "アルゼンチン発祥の、男女が組んで踊る情熱的なダンスは?", "en": "Which passionate partner dance originated in Argentina?"},
+    "choices": [
+      {"ja": "タンゴ", "en": "Tango", "ja_typings": ["tango"]},
+      {"ja": "フラメンコ", "en": "Flamenco", "ja_typings": ["furamenko"]},
+      {"ja": "サンバ", "en": "Samba", "ja_typings": ["sanba"]},
+      {"ja": "ボサノヴァ", "en": "Bossa Nova", "ja_typings": ["bosanova"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0647",
+    "genre": "culture",
+    "question_text": {"ja": "中東地域で食される、ひよこ豆をすりつぶして揚げたコロッケ状の料理は?", "en": "Which Middle Eastern food consists of fried chickpea balls?"},
+    "choices": [
+      {"ja": "ファラフェル", "en": "Falafel", "ja_typings": ["faraferu"]},
+      {"ja": "フムス", "en": "Hummus", "ja_typings": ["fumusu"]},
+      {"ja": "ケバブ", "en": "Kebab", "ja_typings": ["kebabu"]},
+      {"ja": "タブーリ", "en": "Tabbouleh", "ja_typings": ["tabu-ri"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0648",
+    "genre": "culture",
+    "question_text": {"ja": "フランス・パリにある、ナポレオン戦争の勝利を記念する建造物は?", "en": "Which Parisian monument commemorates Napoleon's victories?"},
+    "choices": [
+      {"ja": "凱旋門", "en": "Arc de Triomphe", "ja_typings": ["gaisenmon"]},
+      {"ja": "エッフェル塔", "en": "Eiffel Tower", "ja_typings": ["efferuto-", "efferutou"]},
+      {"ja": "ルーヴル美術館", "en": "Louvre Museum", "ja_typings": ["ru-vurubijutsukan"]},
+      {"ja": "パンテオン", "en": "Pantheon", "ja_typings": ["panteon"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0649",
+    "genre": "culture",
+    "question_text": {"ja": "オランダの伝統的な木製の履物は?", "en": "What is the traditional Dutch wooden footwear called?"},
+    "choices": [
+      {"ja": "クロンペン", "en": "Klompen", "ja_typings": ["kuronpen"]},
+      {"ja": "サボ", "en": "Sabot", "ja_typings": ["sabo"]},
+      {"ja": "下駄", "en": "Geta", "ja_typings": ["geta"]},
+      {"ja": "モカシン", "en": "Moccasin", "ja_typings": ["mokashin"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0650",
+    "genre": "culture",
+    "question_text": {"ja": "ヒンドゥー教徒にとって最も神聖とされるインドの川は?", "en": "Which river is considered the most sacred by Hindus in India?"},
+    "choices": [
+      {"ja": "ガンジス川", "en": "Ganges River", "ja_typings": ["ganjisugawa"]},
+      {"ja": "インダス川", "en": "Indus River", "ja_typings": ["indasugawa"]},
+      {"ja": "ヤムナー川", "en": "Yamuna River", "ja_typings": ["yamuna-gawa"]},
+      {"ja": "ブラフマプトラ川", "en": "Brahmaputra River", "ja_typings": ["burafumaputoragawa"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0651",
+    "genre": "culture",
+    "question_text": {"ja": "スペイン・バルセロナのサグラダ・ファミリアを設計した建築家は?", "en": "Who designed the Sagrada Familia in Barcelona, Spain?"},
+    "choices": [
+      {"ja": "アントニ・ガウディ", "en": "Antoni Gaudi", "ja_typings": ["antonigaudi"]},
+      {"ja": "ル・コルビュジエ", "en": "Le Corbusier", "ja_typings": ["rukorubyujie"]},
+      {"ja": "フランク・ロイド・ライト", "en": "Frank Lloyd Wright", "ja_typings": ["furankuroidoraito"]},
+      {"ja": "ザハ・ハディド", "en": "Zaha Hadid", "ja_typings": ["zahahadido"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0652",
+    "genre": "culture",
+    "question_text": {"ja": "メキシコや中米で食される、トウモロコシ生地を薄く焼いた主食は?", "en": "Which corn-based flatbread is a staple in Mexico and Central America?"},
+    "choices": [
+      {"ja": "トルティーヤ", "en": "Tortilla", "ja_typings": ["toruti-ya"]},
+      {"ja": "タコス", "en": "Taco", "ja_typings": ["takosu"]},
+      {"ja": "ブリトー", "en": "Burrito", "ja_typings": ["burito-"]},
+      {"ja": "エンチラーダ", "en": "Enchilada", "ja_typings": ["enchira-da"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0653",
+    "genre": "culture",
+    "question_text": {"ja": "日本相撲協会が定める、力士の最高位は?", "en": "What is the highest rank in professional sumo?"},
+    "choices": [
+      {"ja": "横綱", "en": "Yokozuna", "ja_typings": ["yokozuna"]},
+      {"ja": "大関", "en": "Ozeki", "ja_typings": ["ozeki", "oozeki"]},
+      {"ja": "関脇", "en": "Sekiwake", "ja_typings": ["sekiwake"]},
+      {"ja": "小結", "en": "Komusubi", "ja_typings": ["komusubi"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0654",
+    "genre": "culture",
+    "question_text": {"ja": "タイの伝統的な格闘技で、ひじ・ひざも使う立ち技は?", "en": "Which traditional Thai martial art uses elbows and knees in stand-up fighting?"},
+    "choices": [
+      {"ja": "ムエタイ", "en": "Muay Thai", "ja_typings": ["muetai"]},
+      {"ja": "カポエイラ", "en": "Capoeira", "ja_typings": ["kapoeira"]},
+      {"ja": "テコンドー", "en": "Taekwondo", "ja_typings": ["tekondo-"]},
+      {"ja": "クラヴマガ", "en": "Krav Maga", "ja_typings": ["kuravumaga"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0655",
+    "genre": "culture",
+    "question_text": {"ja": "イタリア発祥の、卵・チーズ・ベーコンで作るパスタ料理は?", "en": "Which Italian pasta dish is made with eggs, cheese, and bacon?"},
+    "choices": [
+      {"ja": "カルボナーラ", "en": "Carbonara", "ja_typings": ["karubona-ra"]},
+      {"ja": "ボロネーゼ", "en": "Bolognese", "ja_typings": ["borone-ze"]},
+      {"ja": "ペスカトーレ", "en": "Pescatore", "ja_typings": ["pesukato-re"]},
+      {"ja": "アラビアータ", "en": "Arrabbiata", "ja_typings": ["arabia-ta"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  }
+]

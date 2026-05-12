@@ -1,0 +1,702 @@
+[
+  {
+    "id": "q0496",
+    "genre": "history",
+    "question_text": {"ja": "古代エジプトでクフ王が築いたとされる建造物は?", "en": "What monument is attributed to Pharaoh Khufu in ancient Egypt?"},
+    "choices": [
+      {"ja": "ギザの大ピラミッド", "en": "Great Pyramid of Giza", "ja_typings": ["gizanodaipiramiddo"]},
+      {"ja": "アブシンベル神殿", "en": "Abu Simbel Temple", "ja_typings": ["abushinnberushinnden"]},
+      {"ja": "ルクソール神殿", "en": "Luxor Temple", "ja_typings": ["rukuso-rushinnden"]},
+      {"ja": "カルナック神殿", "en": "Karnak Temple", "ja_typings": ["karunakkushinnden"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0497",
+    "genre": "history",
+    "question_text": {"ja": "ローマ帝国の初代皇帝は誰?", "en": "Who was the first emperor of the Roman Empire?"},
+    "choices": [
+      {"ja": "アウグストゥス", "en": "Augustus", "ja_typings": ["augusutusu"]},
+      {"ja": "ユリウス・カエサル", "en": "Julius Caesar", "ja_typings": ["yuriusukaesaru"]},
+      {"ja": "ネロ", "en": "Nero", "ja_typings": ["nero"]},
+      {"ja": "ハドリアヌス", "en": "Hadrian", "ja_typings": ["hadorianusu"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0498",
+    "genre": "history",
+    "question_text": {"ja": "1789年に始まったフランス革命のきっかけとなった事件は?", "en": "What event triggered the French Revolution in 1789?"},
+    "choices": [
+      {"ja": "バスティーユ牢獄襲撃", "en": "Storming of the Bastille", "ja_typings": ["basutyu-rougokushuugeki"]},
+      {"ja": "ワーテルローの戦い", "en": "Battle of Waterloo", "ja_typings": ["wa-teruro-notatakai"]},
+      {"ja": "テルミドールのクーデター", "en": "Thermidorian Reaction", "ja_typings": ["terumido-runoku-deta-"]},
+      {"ja": "ヴァルミーの戦い", "en": "Battle of Valmy", "ja_typings": ["varumi-notatakai"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0499",
+    "genre": "history",
+    "question_text": {"ja": "1492年に新大陸へ到達した航海者は?", "en": "Who reached the New World in 1492?"},
+    "choices": [
+      {"ja": "コロンブス", "en": "Columbus", "ja_typings": ["koronnbusu"]},
+      {"ja": "マゼラン", "en": "Magellan", "ja_typings": ["mazeran"]},
+      {"ja": "バスコ・ダ・ガマ", "en": "Vasco da Gama", "ja_typings": ["basukodagama"]},
+      {"ja": "アメリゴ・ヴェスプッチ", "en": "Amerigo Vespucci", "ja_typings": ["amerigovesupucchi"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0500",
+    "genre": "history",
+    "question_text": {"ja": "明治維新で江戸幕府最後の将軍だったのは誰?", "en": "Who was the last shogun of the Tokugawa shogunate?"},
+    "choices": [
+      {"ja": "徳川慶喜", "en": "Tokugawa Yoshinobu", "ja_typings": ["tokugawayoshinobu"]},
+      {"ja": "徳川家茂", "en": "Tokugawa Iemochi", "ja_typings": ["tokugawaiemochi"]},
+      {"ja": "徳川家定", "en": "Tokugawa Iesada", "ja_typings": ["tokugawaiesada"]},
+      {"ja": "徳川斉昭", "en": "Tokugawa Nariaki", "ja_typings": ["tokugawanariaki"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0501",
+    "genre": "history",
+    "question_text": {"ja": "中国で秦を建国し最初に皇帝を名乗ったのは?", "en": "Who founded the Qin dynasty and first took the title of emperor in China?"},
+    "choices": [
+      {"ja": "始皇帝", "en": "Qin Shi Huang", "ja_typings": ["shikoutei"]},
+      {"ja": "漢の武帝", "en": "Emperor Wu of Han", "ja_typings": ["kannnobutei"]},
+      {"ja": "唐の太宗", "en": "Emperor Taizong of Tang", "ja_typings": ["tounotaisou"]},
+      {"ja": "隋の煬帝", "en": "Emperor Yang of Sui", "ja_typings": ["zuinoyoudai"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0502",
+    "genre": "history",
+    "question_text": {"ja": "1215年にイングランドで署名された王権制限文書は?", "en": "What document limiting royal power was signed in England in 1215?"},
+    "choices": [
+      {"ja": "マグナ・カルタ", "en": "Magna Carta", "ja_typings": ["magunakaruta"]},
+      {"ja": "権利章典", "en": "Bill of Rights", "ja_typings": ["kennrishouten"]},
+      {"ja": "権利の請願", "en": "Petition of Right", "ja_typings": ["kennrinoseigan"]},
+      {"ja": "ナントの勅令", "en": "Edict of Nantes", "ja_typings": ["nantonochokurei"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0503",
+    "genre": "history",
+    "question_text": {"ja": "ナポレオンが流刑され最期を迎えた島は?", "en": "On which island did Napoleon die in exile?"},
+    "choices": [
+      {"ja": "セントヘレナ島", "en": "Saint Helena", "ja_typings": ["sentoherenatou"]},
+      {"ja": "エルバ島", "en": "Elba", "ja_typings": ["erubatou"]},
+      {"ja": "コルシカ島", "en": "Corsica", "ja_typings": ["korushikatou"]},
+      {"ja": "サルデーニャ島", "en": "Sardinia", "ja_typings": ["sarude-nyatou"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0504",
+    "genre": "history",
+    "question_text": {"ja": "産業革命が最初に始まった国は?", "en": "In which country did the Industrial Revolution first begin?"},
+    "choices": [
+      {"ja": "イギリス", "en": "United Kingdom", "ja_typings": ["igirisu"]},
+      {"ja": "フランス", "en": "France", "ja_typings": ["furansu"]},
+      {"ja": "ドイツ", "en": "Germany", "ja_typings": ["doitsu"]},
+      {"ja": "アメリカ", "en": "United States", "ja_typings": ["amerika"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0505",
+    "genre": "history",
+    "question_text": {"ja": "蒸気機関を改良し産業革命を加速させたのは?", "en": "Who improved the steam engine and accelerated the Industrial Revolution?"},
+    "choices": [
+      {"ja": "ジェームズ・ワット", "en": "James Watt", "ja_typings": ["je-muzuwatto"]},
+      {"ja": "トーマス・エジソン", "en": "Thomas Edison", "ja_typings": ["to-masuejison"]},
+      {"ja": "アイザック・ニュートン", "en": "Isaac Newton", "ja_typings": ["aizakkunyu-tonn"]},
+      {"ja": "マイケル・ファラデー", "en": "Michael Faraday", "ja_typings": ["maikerufarade-"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0506",
+    "genre": "history",
+    "question_text": {"ja": "アメリカ南北戦争を勝利に導いた第16代大統領は?", "en": "Which 16th US president led the Union to victory in the Civil War?"},
+    "choices": [
+      {"ja": "リンカーン", "en": "Abraham Lincoln", "ja_typings": ["rinka-nn"]},
+      {"ja": "ワシントン", "en": "George Washington", "ja_typings": ["washinntonn"]},
+      {"ja": "ジェファーソン", "en": "Thomas Jefferson", "ja_typings": ["jefa-son"]},
+      {"ja": "グラント", "en": "Ulysses S. Grant", "ja_typings": ["gurannto"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0507",
+    "genre": "history",
+    "question_text": {"ja": "第一次世界大戦の講和条約は?", "en": "What treaty ended World War I?"},
+    "choices": [
+      {"ja": "ヴェルサイユ条約", "en": "Treaty of Versailles", "ja_typings": ["verusaiyujouyaku"]},
+      {"ja": "ウェストファリア条約", "en": "Peace of Westphalia", "ja_typings": ["wesutofariajouyaku"]},
+      {"ja": "ユトレヒト条約", "en": "Treaty of Utrecht", "ja_typings": ["yutorehitojouyaku"]},
+      {"ja": "サンフランシスコ講和条約", "en": "Treaty of San Francisco", "ja_typings": ["sannfuranshisukokouwajouyaku"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0508",
+    "genre": "history",
+    "question_text": {"ja": "1939年9月に第二次世界大戦が始まった直接の原因は?", "en": "What directly started World War II in September 1939?"},
+    "choices": [
+      {"ja": "ドイツのポーランド侵攻", "en": "German invasion of Poland", "ja_typings": ["doitsunopo-rannndoshinnkou"]},
+      {"ja": "真珠湾攻撃", "en": "Attack on Pearl Harbor", "ja_typings": ["shinnjuwannkougeki"]},
+      {"ja": "ミュンヘン会談", "en": "Munich Agreement", "ja_typings": ["myunnhennkaidan"]},
+      {"ja": "スターリングラードの戦い", "en": "Battle of Stalingrad", "ja_typings": ["suta-rinngura-donotatakai"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0509",
+    "genre": "history",
+    "question_text": {"ja": "イタリア・ルネサンス期に「モナ・リザ」を描いた画家は?", "en": "Which Italian Renaissance artist painted the Mona Lisa?"},
+    "choices": [
+      {"ja": "レオナルド・ダ・ヴィンチ", "en": "Leonardo da Vinci", "ja_typings": ["reonarudodavinnchi"]},
+      {"ja": "ミケランジェロ", "en": "Michelangelo", "ja_typings": ["mikerannjero"]},
+      {"ja": "ラファエロ", "en": "Raphael", "ja_typings": ["rafaero"]},
+      {"ja": "ボッティチェリ", "en": "Botticelli", "ja_typings": ["botticheri"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0510",
+    "genre": "history",
+    "question_text": {"ja": "1517年に95か条の論題で宗教改革を始めたのは?", "en": "Who began the Reformation in 1517 with the 95 Theses?"},
+    "choices": [
+      {"ja": "マルティン・ルター", "en": "Martin Luther", "ja_typings": ["marutinnruta-"]},
+      {"ja": "ジャン・カルヴァン", "en": "John Calvin", "ja_typings": ["jannkaruvann"]},
+      {"ja": "ツヴィングリ", "en": "Huldrych Zwingli", "ja_typings": ["tsuvinnguri"]},
+      {"ja": "ヘンリー8世", "en": "Henry VIII", "ja_typings": ["henri-8sei"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0511",
+    "genre": "history",
+    "question_text": {"ja": "桶狭間の戦いで今川義元を破った戦国大名は?", "en": "Which warlord defeated Imagawa Yoshimoto at Okehazama?"},
+    "choices": [
+      {"ja": "織田信長", "en": "Oda Nobunaga", "ja_typings": ["odanobunaga"]},
+      {"ja": "豊臣秀吉", "en": "Toyotomi Hideyoshi", "ja_typings": ["toyotomihideyoshi"]},
+      {"ja": "徳川家康", "en": "Tokugawa Ieyasu", "ja_typings": ["tokugawaieyasu"]},
+      {"ja": "武田信玄", "en": "Takeda Shingen", "ja_typings": ["takedashinngen"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0512",
+    "genre": "history",
+    "question_text": {"ja": "1600年の関ヶ原の戦いで勝利したのは誰?", "en": "Who won the Battle of Sekigahara in 1600?"},
+    "choices": [
+      {"ja": "徳川家康", "en": "Tokugawa Ieyasu", "ja_typings": ["tokugawaieyasu"]},
+      {"ja": "石田三成", "en": "Ishida Mitsunari", "ja_typings": ["ishidamitsunari"]},
+      {"ja": "毛利輝元", "en": "Mori Terumoto", "ja_typings": ["mouriterumoto"]},
+      {"ja": "上杉景勝", "en": "Uesugi Kagekatsu", "ja_typings": ["uesugikagekatsu"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0513",
+    "genre": "history",
+    "question_text": {"ja": "古代ギリシャでアレクサンドロス大王の師となった哲学者は?", "en": "Which philosopher tutored Alexander the Great?"},
+    "choices": [
+      {"ja": "アリストテレス", "en": "Aristotle", "ja_typings": ["arisutoteresu"]},
+      {"ja": "プラトン", "en": "Plato", "ja_typings": ["puraton"]},
+      {"ja": "ソクラテス", "en": "Socrates", "ja_typings": ["sokuratesu"]},
+      {"ja": "ピタゴラス", "en": "Pythagoras", "ja_typings": ["pitagorasu"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0514",
+    "genre": "history",
+    "question_text": {"ja": "1453年に東ローマ帝国を滅ぼした王朝は?", "en": "Which empire conquered Constantinople in 1453?"},
+    "choices": [
+      {"ja": "オスマン帝国", "en": "Ottoman Empire", "ja_typings": ["osumanntekoku"]},
+      {"ja": "サファヴィー朝", "en": "Safavid Empire", "ja_typings": ["safavi-chou"]},
+      {"ja": "ムガル帝国", "en": "Mughal Empire", "ja_typings": ["mugarutekoku"]},
+      {"ja": "アッバース朝", "en": "Abbasid Caliphate", "ja_typings": ["abba-suchou"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0515",
+    "genre": "history",
+    "question_text": {"ja": "1969年に人類で初めて月面に降り立ったのは?", "en": "Who was the first human to set foot on the Moon in 1969?"},
+    "choices": [
+      {"ja": "ニール・アームストロング", "en": "Neil Armstrong", "ja_typings": ["ni-rua-musutoronngu"]},
+      {"ja": "バズ・オルドリン", "en": "Buzz Aldrin", "ja_typings": ["bazuorudorin"]},
+      {"ja": "ユーリイ・ガガーリン", "en": "Yuri Gagarin", "ja_typings": ["yu-riigaga-rin"]},
+      {"ja": "ジョン・グレン", "en": "John Glenn", "ja_typings": ["jonngurenn"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0516",
+    "genre": "history",
+    "question_text": {"ja": "1989年に崩壊しドイツ統一の象徴となったのは?", "en": "What symbol of division fell in 1989 leading to German reunification?"},
+    "choices": [
+      {"ja": "ベルリンの壁", "en": "Berlin Wall", "ja_typings": ["berurinnnokabe"]},
+      {"ja": "鉄のカーテン", "en": "Iron Curtain", "ja_typings": ["tetsunoka-tenn"]},
+      {"ja": "マジノ線", "en": "Maginot Line", "ja_typings": ["majinosenn"]},
+      {"ja": "万里の長城", "en": "Great Wall of China", "ja_typings": ["bannrinochoujou"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0517",
+    "genre": "history",
+    "question_text": {"ja": "1991年に解体した国家は?", "en": "Which state was dissolved in 1991?"},
+    "choices": [
+      {"ja": "ソビエト連邦", "en": "Soviet Union", "ja_typings": ["sobietorennpou"]},
+      {"ja": "ユーゴスラビア", "en": "Yugoslavia", "ja_typings": ["yu-gosurabia"]},
+      {"ja": "チェコスロバキア", "en": "Czechoslovakia", "ja_typings": ["chekosurobakia"]},
+      {"ja": "東ドイツ", "en": "East Germany", "ja_typings": ["higashidoitsu"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0518",
+    "genre": "history",
+    "question_text": {"ja": "アメリカ独立宣言が採択された年は?", "en": "In what year was the US Declaration of Independence adopted?"},
+    "choices": [
+      {"ja": "1776年", "en": "1776", "ja_typings": ["1776nen"]},
+      {"ja": "1789年", "en": "1789", "ja_typings": ["1789nen"]},
+      {"ja": "1812年", "en": "1812", "ja_typings": ["1812nen"]},
+      {"ja": "1865年", "en": "1865", "ja_typings": ["1865nen"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0519",
+    "genre": "history",
+    "question_text": {"ja": "1853年に黒船で浦賀に来航したのは?", "en": "Who arrived at Uraga with the Black Ships in 1853?"},
+    "choices": [
+      {"ja": "ペリー", "en": "Matthew Perry", "ja_typings": ["peri-"]},
+      {"ja": "ハリス", "en": "Townsend Harris", "ja_typings": ["harisu"]},
+      {"ja": "プチャーチン", "en": "Yevfimiy Putyatin", "ja_typings": ["pucha-chin"]},
+      {"ja": "ラクスマン", "en": "Adam Laxman", "ja_typings": ["rakusuman"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0520",
+    "genre": "history",
+    "question_text": {"ja": "1955年にバスの座席を譲らず公民権運動を象徴したのは?", "en": "Who refused to give up her bus seat in 1955, sparking the civil rights movement?"},
+    "choices": [
+      {"ja": "ローザ・パークス", "en": "Rosa Parks", "ja_typings": ["ro-zapa-kusu"]},
+      {"ja": "マーティン・ルーサー・キング", "en": "Martin Luther King Jr.", "ja_typings": ["ma-tinnru-sa-kinngu"]},
+      {"ja": "マルコムX", "en": "Malcolm X", "ja_typings": ["marukomux"]},
+      {"ja": "ハリエット・タブマン", "en": "Harriet Tubman", "ja_typings": ["harietto tabuman"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0521",
+    "genre": "history",
+    "question_text": {"ja": "1949年に中華人民共和国の建国を宣言したのは?", "en": "Who proclaimed the founding of the People's Republic of China in 1949?"},
+    "choices": [
+      {"ja": "毛沢東", "en": "Mao Zedong", "ja_typings": ["moutakutou"]},
+      {"ja": "周恩来", "en": "Zhou Enlai", "ja_typings": ["shuuonrai"]},
+      {"ja": "鄧小平", "en": "Deng Xiaoping", "ja_typings": ["toushouhei"]},
+      {"ja": "孫文", "en": "Sun Yat-sen", "ja_typings": ["sonbun"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0522",
+    "genre": "history",
+    "question_text": {"ja": "インド独立運動を非暴力で導いた指導者は?", "en": "Who led India's independence through nonviolent resistance?"},
+    "choices": [
+      {"ja": "ガンディー", "en": "Mahatma Gandhi", "ja_typings": ["gandhi-", "gandi-"]},
+      {"ja": "ネルー", "en": "Jawaharlal Nehru", "ja_typings": ["neru-"]},
+      {"ja": "ジンナー", "en": "Muhammad Ali Jinnah", "ja_typings": ["jinna-"]},
+      {"ja": "タゴール", "en": "Rabindranath Tagore", "ja_typings": ["tago-ru"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0523",
+    "genre": "history",
+    "question_text": {"ja": "古代ローマ最大の内戦でカエサルが渡った川は?", "en": "Which river did Caesar cross to start the Roman civil war?"},
+    "choices": [
+      {"ja": "ルビコン川", "en": "Rubicon River", "ja_typings": ["rubikonngawa"]},
+      {"ja": "テヴェレ川", "en": "Tiber River", "ja_typings": ["teveregawa"]},
+      {"ja": "ライン川", "en": "Rhine River", "ja_typings": ["rainngawa"]},
+      {"ja": "ナイル川", "en": "Nile River", "ja_typings": ["nairugawa"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0524",
+    "genre": "history",
+    "question_text": {"ja": "三国時代の蜀を建てた人物は?", "en": "Who founded Shu Han during China's Three Kingdoms period?"},
+    "choices": [
+      {"ja": "劉備", "en": "Liu Bei", "ja_typings": ["ryuubi"]},
+      {"ja": "曹操", "en": "Cao Cao", "ja_typings": ["sousou"]},
+      {"ja": "孫権", "en": "Sun Quan", "ja_typings": ["sonken"]},
+      {"ja": "諸葛亮", "en": "Zhuge Liang", "ja_typings": ["shokatsuryou"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0525",
+    "genre": "history",
+    "question_text": {"ja": "13世紀にモンゴル帝国を築いたのは?", "en": "Who founded the Mongol Empire in the 13th century?"},
+    "choices": [
+      {"ja": "チンギス・ハン", "en": "Genghis Khan", "ja_typings": ["chinngisuhan"]},
+      {"ja": "フビライ・ハン", "en": "Kublai Khan", "ja_typings": ["fubiraihan"]},
+      {"ja": "オゴデイ・ハン", "en": "Ogedei Khan", "ja_typings": ["ogodeihan"]},
+      {"ja": "ティムール", "en": "Timur", "ja_typings": ["timu-ru"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0526",
+    "genre": "history",
+    "question_text": {"ja": "1789年に発表されたフランス革命の人権宣言の正式名称は?", "en": "What is the formal name of the 1789 French revolutionary declaration of rights?"},
+    "choices": [
+      {"ja": "人間と市民の権利の宣言", "en": "Declaration of the Rights of Man and of the Citizen", "ja_typings": ["ninngennntoshiminnnokennrinosengen"]},
+      {"ja": "アメリカ独立宣言", "en": "US Declaration of Independence", "ja_typings": ["amerikadokuritsusengen"]},
+      {"ja": "世界人権宣言", "en": "Universal Declaration of Human Rights", "ja_typings": ["sekaijinkensengen"]},
+      {"ja": "ポツダム宣言", "en": "Potsdam Declaration", "ja_typings": ["potsudamusengen"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0527",
+    "genre": "history",
+    "question_text": {"ja": "1945年8月に広島に原子爆弾を投下したアメリカの爆撃機は?", "en": "Which US bomber dropped the atomic bomb on Hiroshima in August 1945?"},
+    "choices": [
+      {"ja": "エノラ・ゲイ", "en": "Enola Gay", "ja_typings": ["enoragei"]},
+      {"ja": "ボックスカー", "en": "Bockscar", "ja_typings": ["bokkusuka-"]},
+      {"ja": "メンフィス・ベル", "en": "Memphis Belle", "ja_typings": ["menfisuberu"]},
+      {"ja": "リトルボーイ", "en": "Little Boy", "ja_typings": ["ritorubo-i"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0528",
+    "genre": "history",
+    "question_text": {"ja": "1962年にキューバ危機で対立した二大国の指導者は?", "en": "Which two leaders confronted each other during the 1962 Cuban Missile Crisis?"},
+    "choices": [
+      {"ja": "ケネディとフルシチョフ", "en": "Kennedy and Khrushchev", "ja_typings": ["kenedi-tofurushichofu"]},
+      {"ja": "レーガンとゴルバチョフ", "en": "Reagan and Gorbachev", "ja_typings": ["re-gantogorubachofu"]},
+      {"ja": "ニクソンとブレジネフ", "en": "Nixon and Brezhnev", "ja_typings": ["nikusontoburejinefu"]},
+      {"ja": "トルーマンとスターリン", "en": "Truman and Stalin", "ja_typings": ["toru-mantosuta-rin"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0529",
+    "genre": "history",
+    "question_text": {"ja": "「神聖ローマ帝国」を800年に戴冠で創設したフランク王は?", "en": "Which Frankish king was crowned emperor in 800, founding what became the Holy Roman Empire?"},
+    "choices": [
+      {"ja": "カール大帝", "en": "Charlemagne", "ja_typings": ["ka-rutaitei"]},
+      {"ja": "クローヴィス", "en": "Clovis", "ja_typings": ["kuro-visu"]},
+      {"ja": "オットー1世", "en": "Otto I", "ja_typings": ["otto1sei"]},
+      {"ja": "ピピン", "en": "Pepin the Short", "ja_typings": ["pipin"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0530",
+    "genre": "history",
+    "question_text": {"ja": "1789年に大統領となったアメリカ合衆国の初代大統領は?", "en": "Who became the first US president in 1789?"},
+    "choices": [
+      {"ja": "ジョージ・ワシントン", "en": "George Washington", "ja_typings": ["jo-jiwashinntonn"]},
+      {"ja": "ジョン・アダムズ", "en": "John Adams", "ja_typings": ["jonnadamuzu"]},
+      {"ja": "ベンジャミン・フランクリン", "en": "Benjamin Franklin", "ja_typings": ["bennjaminnfurannkurin"]},
+      {"ja": "アレクサンダー・ハミルトン", "en": "Alexander Hamilton", "ja_typings": ["arekusannnda-hamiruton"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0531",
+    "genre": "history",
+    "question_text": {"ja": "古代ギリシャの「歴史の父」と呼ばれた歴史家は?", "en": "Who is called the 'Father of History' in ancient Greece?"},
+    "choices": [
+      {"ja": "ヘロドトス", "en": "Herodotus", "ja_typings": ["herodotosu"]},
+      {"ja": "トゥキディデス", "en": "Thucydides", "ja_typings": ["tukidhidesu", "thukididesu"]},
+      {"ja": "ホメロス", "en": "Homer", "ja_typings": ["homerosu"]},
+      {"ja": "ヘシオドス", "en": "Hesiod", "ja_typings": ["heshiodosu"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0532",
+    "genre": "history",
+    "question_text": {"ja": "卑弥呼が女王だったとされる古代日本の国は?", "en": "Which ancient Japanese kingdom is said to have been ruled by Queen Himiko?"},
+    "choices": [
+      {"ja": "邪馬台国", "en": "Yamatai", "ja_typings": ["yamataikoku"]},
+      {"ja": "大和朝廷", "en": "Yamato Court", "ja_typings": ["yamatochoutei"]},
+      {"ja": "奴国", "en": "Na", "ja_typings": ["nakoku"]},
+      {"ja": "出雲国", "en": "Izumo", "ja_typings": ["izumonokuni"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0533",
+    "genre": "history",
+    "question_text": {"ja": "中世ヨーロッパでカトリック教会が派遣した遠征軍を何という?", "en": "What were the military expeditions sent by the Catholic Church in medieval Europe called?"},
+    "choices": [
+      {"ja": "十字軍", "en": "Crusades", "ja_typings": ["juujigun"]},
+      {"ja": "宗教戦争", "en": "Wars of Religion", "ja_typings": ["shuukyousensou"]},
+      {"ja": "百年戦争", "en": "Hundred Years' War", "ja_typings": ["hyakunennsensou"]},
+      {"ja": "三十年戦争", "en": "Thirty Years' War", "ja_typings": ["sannjuunennsensou"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0534",
+    "genre": "history",
+    "question_text": {"ja": "1922年にイタリアでファシスト政権を樹立したのは?", "en": "Who established the Fascist government in Italy in 1922?"},
+    "choices": [
+      {"ja": "ムッソリーニ", "en": "Benito Mussolini", "ja_typings": ["mussori-ni"]},
+      {"ja": "ヒトラー", "en": "Adolf Hitler", "ja_typings": ["hitora-"]},
+      {"ja": "フランコ", "en": "Francisco Franco", "ja_typings": ["furannko"]},
+      {"ja": "サラザール", "en": "Salazar", "ja_typings": ["saraza-ru"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0535",
+    "genre": "history",
+    "question_text": {"ja": "1917年にロシア革命を主導したのは?", "en": "Who led the Russian Revolution of 1917?"},
+    "choices": [
+      {"ja": "レーニン", "en": "Vladimir Lenin", "ja_typings": ["re-nin"]},
+      {"ja": "スターリン", "en": "Joseph Stalin", "ja_typings": ["suta-rin"]},
+      {"ja": "トロツキー", "en": "Leon Trotsky", "ja_typings": ["torotsuki-"]},
+      {"ja": "ケレンスキー", "en": "Alexander Kerensky", "ja_typings": ["kerennsuki-"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0536",
+    "genre": "history",
+    "question_text": {"ja": "1789年から始まったフランス革命でギロチンで処刑された国王は?", "en": "Which king was executed by guillotine during the French Revolution?"},
+    "choices": [
+      {"ja": "ルイ16世", "en": "Louis XVI", "ja_typings": ["rui16sei"]},
+      {"ja": "ルイ14世", "en": "Louis XIV", "ja_typings": ["rui14sei"]},
+      {"ja": "ルイ15世", "en": "Louis XV", "ja_typings": ["rui15sei"]},
+      {"ja": "ルイ18世", "en": "Louis XVIII", "ja_typings": ["rui18sei"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0537",
+    "genre": "history",
+    "question_text": {"ja": "1543年に種子島へ漂着し日本に伝えられた武器は?", "en": "What weapon was introduced to Japan via Tanegashima in 1543?"},
+    "choices": [
+      {"ja": "鉄砲", "en": "Firearms", "ja_typings": ["teppou"]},
+      {"ja": "大砲", "en": "Cannon", "ja_typings": ["taihou"]},
+      {"ja": "弩", "en": "Crossbow", "ja_typings": ["ishiyumi", "do"]},
+      {"ja": "投石機", "en": "Catapult", "ja_typings": ["touseki ki", "tousekiki"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0538",
+    "genre": "history",
+    "question_text": {"ja": "1885年に日本初の内閣総理大臣となったのは?", "en": "Who became Japan's first Prime Minister in 1885?"},
+    "choices": [
+      {"ja": "伊藤博文", "en": "Ito Hirobumi", "ja_typings": ["itouhirobumi"]},
+      {"ja": "大隈重信", "en": "Okuma Shigenobu", "ja_typings": ["ookumashigenobu"]},
+      {"ja": "山県有朋", "en": "Yamagata Aritomo", "ja_typings": ["yamagataaritomo"]},
+      {"ja": "板垣退助", "en": "Itagaki Taisuke", "ja_typings": ["itagakitaisuke"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0539",
+    "genre": "history",
+    "question_text": {"ja": "古代エジプトのヒエログリフ解読に貢献した石碑は?", "en": "Which stele helped decipher Egyptian hieroglyphs?"},
+    "choices": [
+      {"ja": "ロゼッタ・ストーン", "en": "Rosetta Stone", "ja_typings": ["rozettasuto-n"]},
+      {"ja": "ハンムラビ法典碑", "en": "Code of Hammurabi stele", "ja_typings": ["hannmurabihoutennhi"]},
+      {"ja": "ベヒストゥン碑文", "en": "Behistun Inscription", "ja_typings": ["behisutunhibun"]},
+      {"ja": "パレルモ・ストーン", "en": "Palermo Stone", "ja_typings": ["parerumosuto-n"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0540",
+    "genre": "history",
+    "question_text": {"ja": "1804年に皇帝として戴冠したフランスの軍人は?", "en": "Which French general was crowned emperor in 1804?"},
+    "choices": [
+      {"ja": "ナポレオン・ボナパルト", "en": "Napoleon Bonaparte", "ja_typings": ["naporeonbonaparuto"]},
+      {"ja": "ロベスピエール", "en": "Maximilien Robespierre", "ja_typings": ["robesupie-ru"]},
+      {"ja": "ラファイエット", "en": "Marquis de Lafayette", "ja_typings": ["rafaietto"]},
+      {"ja": "タレーラン", "en": "Talleyrand", "ja_typings": ["tare-ran"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0541",
+    "genre": "history",
+    "question_text": {"ja": "1840年代にイギリスと清の間で起きた戦争は?", "en": "What war was fought between Britain and Qing China in the 1840s?"},
+    "choices": [
+      {"ja": "アヘン戦争", "en": "Opium War", "ja_typings": ["ahennsensou"]},
+      {"ja": "アロー戦争", "en": "Second Opium War", "ja_typings": ["aro-sensou"]},
+      {"ja": "義和団事件", "en": "Boxer Rebellion", "ja_typings": ["giwadannjiken"]},
+      {"ja": "太平天国の乱", "en": "Taiping Rebellion", "ja_typings": ["taiheitenngokunoran"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0542",
+    "genre": "history",
+    "question_text": {"ja": "1429年にオルレアンを解放したフランスの少女は?", "en": "Which French girl liberated Orleans in 1429?"},
+    "choices": [
+      {"ja": "ジャンヌ・ダルク", "en": "Joan of Arc", "ja_typings": ["jannnudaruku"]},
+      {"ja": "マリー・アントワネット", "en": "Marie Antoinette", "ja_typings": ["mari-antowanetto"]},
+      {"ja": "カトリーヌ・ド・メディシス", "en": "Catherine de' Medici", "ja_typings": ["katori-nudomedishisu"]},
+      {"ja": "エレオノール・ダキテーヌ", "en": "Eleanor of Aquitaine", "ja_typings": ["ereono-rudakite-nu"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0543",
+    "genre": "history",
+    "question_text": {"ja": "活版印刷術を15世紀に発明したのは?", "en": "Who invented movable-type printing in 15th-century Europe?"},
+    "choices": [
+      {"ja": "グーテンベルク", "en": "Johannes Gutenberg", "ja_typings": ["gu-tenberuku"]},
+      {"ja": "ガリレオ", "en": "Galileo Galilei", "ja_typings": ["garireo"]},
+      {"ja": "コペルニクス", "en": "Nicolaus Copernicus", "ja_typings": ["koperunikusu"]},
+      {"ja": "エラスムス", "en": "Erasmus", "ja_typings": ["erasumusu"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0544",
+    "genre": "history",
+    "question_text": {"ja": "1854年に日本とアメリカの間で結ばれた条約は?", "en": "Which treaty was signed between Japan and the US in 1854?"},
+    "choices": [
+      {"ja": "日米和親条約", "en": "Convention of Kanagawa", "ja_typings": ["nichibeiwashinjouyaku"]},
+      {"ja": "日米修好通商条約", "en": "Harris Treaty", "ja_typings": ["nichibeishuukoutsuushoujouyaku"]},
+      {"ja": "下関条約", "en": "Treaty of Shimonoseki", "ja_typings": ["shimonosekijouyaku"]},
+      {"ja": "ポーツマス条約", "en": "Treaty of Portsmouth", "ja_typings": ["po-tsumasujouyaku"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0545",
+    "genre": "history",
+    "question_text": {"ja": "1948年にイスラエルの建国を宣言した初代首相は?", "en": "Who declared the founding of Israel in 1948 as its first prime minister?"},
+    "choices": [
+      {"ja": "ベン・グリオン", "en": "David Ben-Gurion", "ja_typings": ["bengurion"]},
+      {"ja": "ゴルダ・メイア", "en": "Golda Meir", "ja_typings": ["gorudameia"]},
+      {"ja": "メナヘム・ベギン", "en": "Menachem Begin", "ja_typings": ["menahemubegin"]},
+      {"ja": "イツハク・ラビン", "en": "Yitzhak Rabin", "ja_typings": ["itsuhakurabin"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  }
+]

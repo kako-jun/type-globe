@@ -1,0 +1,702 @@
+[
+  {
+    "id": "q0001",
+    "genre": "science",
+    "question_text": {"ja": "水の化学式は?", "en": "What is the chemical formula of water?"},
+    "choices": [
+      {"ja": "エイチツーオー", "en": "H2O", "ja_typings": ["eichitsu-o-"]},
+      {"ja": "シーオーツー", "en": "CO2", "ja_typings": ["shi-o-tsu-"]},
+      {"ja": "オーツー", "en": "O2", "ja_typings": ["o-tsu-"]},
+      {"ja": "エヌエイチスリー", "en": "NH3", "ja_typings": ["enueichisuri-"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0002",
+    "genre": "science",
+    "question_text": {"ja": "金の元素記号は?", "en": "What is the chemical symbol for gold?"},
+    "choices": [
+      {"ja": "エーユー", "en": "Au", "ja_typings": ["e-yu-"]},
+      {"ja": "エージー", "en": "Ag", "ja_typings": ["e-ji-"]},
+      {"ja": "シーユー", "en": "Cu", "ja_typings": ["shi-yu-"]},
+      {"ja": "エフイー", "en": "Fe", "ja_typings": ["efui-"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0003",
+    "genre": "science",
+    "question_text": {"ja": "鉄の元素記号は?", "en": "What is the chemical symbol for iron?"},
+    "choices": [
+      {"ja": "エフイー", "en": "Fe", "ja_typings": ["efui-"]},
+      {"ja": "エーユー", "en": "Au", "ja_typings": ["e-yu-"]},
+      {"ja": "ピービー", "en": "Pb", "ja_typings": ["pi-bi-"]},
+      {"ja": "エヌエー", "en": "Na", "ja_typings": ["enue-"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0004",
+    "genre": "science",
+    "question_text": {"ja": "光の速さはおよそ秒速何キロメートル?", "en": "Approximately how many kilometers per second does light travel?"},
+    "choices": [
+      {"ja": "三十万キロメートル", "en": "300,000 km", "ja_typings": ["sanjuumankirome-toru"]},
+      {"ja": "三万キロメートル", "en": "30,000 km", "ja_typings": ["sanmankirome-toru"]},
+      {"ja": "三百万キロメートル", "en": "3,000,000 km", "ja_typings": ["sanbyakumankirome-toru"]},
+      {"ja": "三千キロメートル", "en": "3,000 km", "ja_typings": ["sanzenkirome-toru"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0005",
+    "genre": "science",
+    "question_text": {"ja": "万有引力の法則を発見した科学者は?", "en": "Who discovered the law of universal gravitation?"},
+    "choices": [
+      {"ja": "ニュートン", "en": "Newton", "ja_typings": ["nyu-ton"]},
+      {"ja": "アインシュタイン", "en": "Einstein", "ja_typings": ["ainshutain"]},
+      {"ja": "ガリレオ", "en": "Galileo", "ja_typings": ["garireo"]},
+      {"ja": "ケプラー", "en": "Kepler", "ja_typings": ["kepura-"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0006",
+    "genre": "science",
+    "question_text": {"ja": "相対性理論を提唱した物理学者は?", "en": "Who proposed the theory of relativity?"},
+    "choices": [
+      {"ja": "アインシュタイン", "en": "Einstein", "ja_typings": ["ainshutain"]},
+      {"ja": "ニュートン", "en": "Newton", "ja_typings": ["nyu-ton"]},
+      {"ja": "ボーア", "en": "Bohr", "ja_typings": ["bo-a"]},
+      {"ja": "ホーキング", "en": "Hawking", "ja_typings": ["ho-kingu"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0007",
+    "genre": "science",
+    "question_text": {"ja": "太陽系で最も大きい惑星は?", "en": "Which is the largest planet in the solar system?"},
+    "choices": [
+      {"ja": "木星", "en": "Jupiter", "ja_typings": ["mokusei"]},
+      {"ja": "土星", "en": "Saturn", "ja_typings": ["dosei"]},
+      {"ja": "海王星", "en": "Neptune", "ja_typings": ["kaiousei", "kaio-sei"]},
+      {"ja": "天王星", "en": "Uranus", "ja_typings": ["tennousei", "tenno-sei"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0008",
+    "genre": "science",
+    "question_text": {"ja": "太陽に最も近い惑星は?", "en": "Which planet is closest to the Sun?"},
+    "choices": [
+      {"ja": "水星", "en": "Mercury", "ja_typings": ["suisei"]},
+      {"ja": "金星", "en": "Venus", "ja_typings": ["kinsei"]},
+      {"ja": "地球", "en": "Earth", "ja_typings": ["chikyuu", "chikyu-"]},
+      {"ja": "火星", "en": "Mars", "ja_typings": ["kasei"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0009",
+    "genre": "science",
+    "question_text": {"ja": "酸素の元素記号は?", "en": "What is the chemical symbol for oxygen?"},
+    "choices": [
+      {"ja": "オー", "en": "O", "ja_typings": ["o-"]},
+      {"ja": "エヌ", "en": "N", "ja_typings": ["enu"]},
+      {"ja": "シー", "en": "C", "ja_typings": ["shi-"]},
+      {"ja": "エイチ", "en": "H", "ja_typings": ["eichi"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0010",
+    "genre": "science",
+    "question_text": {"ja": "DNAの二重らせん構造を発見した二人は?", "en": "Who discovered the double helix structure of DNA?"},
+    "choices": [
+      {"ja": "ワトソンとクリック", "en": "Watson and Crick", "ja_typings": ["watosontokurikku"]},
+      {"ja": "メンデルとダーウィン", "en": "Mendel and Darwin", "ja_typings": ["menderutoda-win"]},
+      {"ja": "パスツールとコッホ", "en": "Pasteur and Koch", "ja_typings": ["pasutsu-rutokohho"]},
+      {"ja": "ラマルクとリンネ", "en": "Lamarck and Linnaeus", "ja_typings": ["ramarukutorinne"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0011",
+    "genre": "science",
+    "question_text": {"ja": "進化論を提唱した生物学者は?", "en": "Who proposed the theory of evolution?"},
+    "choices": [
+      {"ja": "ダーウィン", "en": "Darwin", "ja_typings": ["da-win"]},
+      {"ja": "メンデル", "en": "Mendel", "ja_typings": ["menderu"]},
+      {"ja": "ラマルク", "en": "Lamarck", "ja_typings": ["ramaruku"]},
+      {"ja": "リンネ", "en": "Linnaeus", "ja_typings": ["rinne"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0012",
+    "genre": "science",
+    "question_text": {"ja": "遺伝の法則を発見した修道士は?", "en": "Which monk discovered the laws of heredity?"},
+    "choices": [
+      {"ja": "メンデル", "en": "Mendel", "ja_typings": ["menderu"]},
+      {"ja": "ダーウィン", "en": "Darwin", "ja_typings": ["da-win"]},
+      {"ja": "パスツール", "en": "Pasteur", "ja_typings": ["pasutsu-ru"]},
+      {"ja": "フック", "en": "Hooke", "ja_typings": ["fukku"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0013",
+    "genre": "science",
+    "question_text": {"ja": "水が沸騰する温度は何度?", "en": "At what temperature does water boil?"},
+    "choices": [
+      {"ja": "百度", "en": "100 degrees", "ja_typings": ["hyakudo"]},
+      {"ja": "九十度", "en": "90 degrees", "ja_typings": ["kyuujuudo", "kyuujuudo"]},
+      {"ja": "八十度", "en": "80 degrees", "ja_typings": ["hachijuudo"]},
+      {"ja": "百二十度", "en": "120 degrees", "ja_typings": ["hyakunijuudo"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0014",
+    "genre": "science",
+    "question_text": {"ja": "音の速さはおよそ秒速何メートル?", "en": "Approximately how many meters per second does sound travel in air?"},
+    "choices": [
+      {"ja": "三百四十メートル", "en": "340 m", "ja_typings": ["sanbyakuyonjuume-toru"]},
+      {"ja": "百メートル", "en": "100 m", "ja_typings": ["hyakume-toru"]},
+      {"ja": "千メートル", "en": "1000 m", "ja_typings": ["senme-toru"]},
+      {"ja": "三千メートル", "en": "3000 m", "ja_typings": ["sanzenme-toru"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0015",
+    "genre": "science",
+    "question_text": {"ja": "ヒトの体細胞の染色体の数は?", "en": "How many chromosomes are in a human somatic cell?"},
+    "choices": [
+      {"ja": "四十六本", "en": "46", "ja_typings": ["yonjuurokuhon"]},
+      {"ja": "二十三本", "en": "23", "ja_typings": ["nijuusanbon"]},
+      {"ja": "四十八本", "en": "48", "ja_typings": ["yonjuuhachihon"]},
+      {"ja": "二十四本", "en": "24", "ja_typings": ["nijuuyonhon"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0016",
+    "genre": "science",
+    "question_text": {"ja": "ペニシリンを発見した科学者は?", "en": "Who discovered penicillin?"},
+    "choices": [
+      {"ja": "フレミング", "en": "Fleming", "ja_typings": ["furemingu"]},
+      {"ja": "パスツール", "en": "Pasteur", "ja_typings": ["pasutsu-ru"]},
+      {"ja": "コッホ", "en": "Koch", "ja_typings": ["kohho"]},
+      {"ja": "ジェンナー", "en": "Jenner", "ja_typings": ["jenna-"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0017",
+    "genre": "science",
+    "question_text": {"ja": "周期表で原子番号1番の元素は?", "en": "What is element number 1 on the periodic table?"},
+    "choices": [
+      {"ja": "水素", "en": "Hydrogen", "ja_typings": ["suiso"]},
+      {"ja": "ヘリウム", "en": "Helium", "ja_typings": ["heriumu"]},
+      {"ja": "酸素", "en": "Oxygen", "ja_typings": ["sanso"]},
+      {"ja": "炭素", "en": "Carbon", "ja_typings": ["tanso"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0018",
+    "genre": "science",
+    "question_text": {"ja": "人体で最も大きな臓器は?", "en": "What is the largest organ in the human body?"},
+    "choices": [
+      {"ja": "皮膚", "en": "Skin", "ja_typings": ["hifu"]},
+      {"ja": "肝臓", "en": "Liver", "ja_typings": ["kanzou", "kanzo-"]},
+      {"ja": "肺", "en": "Lungs", "ja_typings": ["hai"]},
+      {"ja": "脳", "en": "Brain", "ja_typings": ["nou", "no-"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0019",
+    "genre": "science",
+    "question_text": {"ja": "地球から最も近い恒星は?", "en": "Which star is closest to Earth?"},
+    "choices": [
+      {"ja": "太陽", "en": "Sun", "ja_typings": ["taiyou", "taiyo-"]},
+      {"ja": "シリウス", "en": "Sirius", "ja_typings": ["shiriusu"]},
+      {"ja": "北極星", "en": "Polaris", "ja_typings": ["hokkyokusei"]},
+      {"ja": "ベテルギウス", "en": "Betelgeuse", "ja_typings": ["beterugiusu"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0020",
+    "genre": "science",
+    "question_text": {"ja": "塩化ナトリウムの化学式は?", "en": "What is the chemical formula of sodium chloride?"},
+    "choices": [
+      {"ja": "エヌエーシーエル", "en": "NaCl", "ja_typings": ["enue-shi-eru"]},
+      {"ja": "ケーシーエル", "en": "KCl", "ja_typings": ["ke-shi-eru"]},
+      {"ja": "シーエーシーオースリー", "en": "CaCO3", "ja_typings": ["shi-e-shi-o-suri-"]},
+      {"ja": "エヌエーオーエイチ", "en": "NaOH", "ja_typings": ["enue-o-eichi"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0021",
+    "genre": "science",
+    "question_text": {"ja": "電気抵抗の単位は?", "en": "What is the unit of electrical resistance?"},
+    "choices": [
+      {"ja": "オーム", "en": "Ohm", "ja_typings": ["o-mu"]},
+      {"ja": "ボルト", "en": "Volt", "ja_typings": ["boruto"]},
+      {"ja": "アンペア", "en": "Ampere", "ja_typings": ["anpea"]},
+      {"ja": "ワット", "en": "Watt", "ja_typings": ["watto"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0022",
+    "genre": "science",
+    "question_text": {"ja": "電流の単位は?", "en": "What is the unit of electric current?"},
+    "choices": [
+      {"ja": "アンペア", "en": "Ampere", "ja_typings": ["anpea"]},
+      {"ja": "ボルト", "en": "Volt", "ja_typings": ["boruto"]},
+      {"ja": "オーム", "en": "Ohm", "ja_typings": ["o-mu"]},
+      {"ja": "クーロン", "en": "Coulomb", "ja_typings": ["ku-ron"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0023",
+    "genre": "science",
+    "question_text": {"ja": "X線を発見した物理学者は?", "en": "Who discovered X-rays?"},
+    "choices": [
+      {"ja": "レントゲン", "en": "Roentgen", "ja_typings": ["rentogen"]},
+      {"ja": "キュリー", "en": "Curie", "ja_typings": ["kyuri-"]},
+      {"ja": "ベクレル", "en": "Becquerel", "ja_typings": ["bekureru"]},
+      {"ja": "ラザフォード", "en": "Rutherford", "ja_typings": ["razafo-do"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0024",
+    "genre": "science",
+    "question_text": {"ja": "ラジウムを発見した科学者は?", "en": "Who discovered radium?"},
+    "choices": [
+      {"ja": "キュリー夫妻", "en": "The Curies", "ja_typings": ["kyuri-fusai"]},
+      {"ja": "レントゲン", "en": "Roentgen", "ja_typings": ["rentogen"]},
+      {"ja": "ラザフォード", "en": "Rutherford", "ja_typings": ["razafo-do"]},
+      {"ja": "アインシュタイン", "en": "Einstein", "ja_typings": ["ainshutain"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0025",
+    "genre": "science",
+    "question_text": {"ja": "植物が光合成で吸収する気体は?", "en": "Which gas do plants absorb during photosynthesis?"},
+    "choices": [
+      {"ja": "二酸化炭素", "en": "Carbon dioxide", "ja_typings": ["nisankatanso"]},
+      {"ja": "酸素", "en": "Oxygen", "ja_typings": ["sanso"]},
+      {"ja": "窒素", "en": "Nitrogen", "ja_typings": ["chisso"]},
+      {"ja": "水素", "en": "Hydrogen", "ja_typings": ["suiso"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0026",
+    "genre": "science",
+    "question_text": {"ja": "地球の大気で最も多く含まれる気体は?", "en": "Which gas is most abundant in Earth's atmosphere?"},
+    "choices": [
+      {"ja": "窒素", "en": "Nitrogen", "ja_typings": ["chisso"]},
+      {"ja": "酸素", "en": "Oxygen", "ja_typings": ["sanso"]},
+      {"ja": "二酸化炭素", "en": "Carbon dioxide", "ja_typings": ["nisankatanso"]},
+      {"ja": "アルゴン", "en": "Argon", "ja_typings": ["arugon"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0027",
+    "genre": "science",
+    "question_text": {"ja": "宇宙の膨張を発見した天文学者は?", "en": "Who discovered the expansion of the universe?"},
+    "choices": [
+      {"ja": "ハッブル", "en": "Hubble", "ja_typings": ["habburu"]},
+      {"ja": "ケプラー", "en": "Kepler", "ja_typings": ["kepura-"]},
+      {"ja": "ガリレオ", "en": "Galileo", "ja_typings": ["garireo"]},
+      {"ja": "コペルニクス", "en": "Copernicus", "ja_typings": ["koperunikusu"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0028",
+    "genre": "science",
+    "question_text": {"ja": "地動説を唱えた天文学者は?", "en": "Who proposed the heliocentric model?"},
+    "choices": [
+      {"ja": "コペルニクス", "en": "Copernicus", "ja_typings": ["koperunikusu"]},
+      {"ja": "プトレマイオス", "en": "Ptolemy", "ja_typings": ["putoremaiosu"]},
+      {"ja": "ニュートン", "en": "Newton", "ja_typings": ["nyu-ton"]},
+      {"ja": "ハッブル", "en": "Hubble", "ja_typings": ["habburu"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0029",
+    "genre": "science",
+    "question_text": {"ja": "ヒトの血液型でABO式にないものは?", "en": "Which blood type is not in the ABO system?"},
+    "choices": [
+      {"ja": "シー型", "en": "C type", "ja_typings": ["shi-gata"]},
+      {"ja": "エー型", "en": "A type", "ja_typings": ["e-gata"]},
+      {"ja": "ビー型", "en": "B type", "ja_typings": ["bi-gata"]},
+      {"ja": "オー型", "en": "O type", "ja_typings": ["o-gata"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0030",
+    "genre": "science",
+    "question_text": {"ja": "ヘモグロビンが運ぶ気体は?", "en": "Which gas does hemoglobin transport?"},
+    "choices": [
+      {"ja": "酸素", "en": "Oxygen", "ja_typings": ["sanso"]},
+      {"ja": "窒素", "en": "Nitrogen", "ja_typings": ["chisso"]},
+      {"ja": "水素", "en": "Hydrogen", "ja_typings": ["suiso"]},
+      {"ja": "ヘリウム", "en": "Helium", "ja_typings": ["heriumu"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0031",
+    "genre": "science",
+    "question_text": {"ja": "ピサの斜塔で落下実験を行ったとされるのは?", "en": "Who is said to have performed falling experiments at the Leaning Tower of Pisa?"},
+    "choices": [
+      {"ja": "ガリレオ", "en": "Galileo", "ja_typings": ["garireo"]},
+      {"ja": "ニュートン", "en": "Newton", "ja_typings": ["nyu-ton"]},
+      {"ja": "ケプラー", "en": "Kepler", "ja_typings": ["kepura-"]},
+      {"ja": "アルキメデス", "en": "Archimedes", "ja_typings": ["arukimedesu"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0032",
+    "genre": "science",
+    "question_text": {"ja": "浮力の原理を発見したのは?", "en": "Who discovered the principle of buoyancy?"},
+    "choices": [
+      {"ja": "アルキメデス", "en": "Archimedes", "ja_typings": ["arukimedesu"]},
+      {"ja": "ガリレオ", "en": "Galileo", "ja_typings": ["garireo"]},
+      {"ja": "ニュートン", "en": "Newton", "ja_typings": ["nyu-ton"]},
+      {"ja": "パスカル", "en": "Pascal", "ja_typings": ["pasukaru"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0033",
+    "genre": "science",
+    "question_text": {"ja": "原子核の周りを回るのは?", "en": "What orbits the atomic nucleus?"},
+    "choices": [
+      {"ja": "電子", "en": "Electron", "ja_typings": ["denshi"]},
+      {"ja": "陽子", "en": "Proton", "ja_typings": ["youshi", "yo-shi"]},
+      {"ja": "中性子", "en": "Neutron", "ja_typings": ["chuuseishi", "chu-seishi"]},
+      {"ja": "光子", "en": "Photon", "ja_typings": ["koushi", "ko-shi"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0034",
+    "genre": "science",
+    "question_text": {"ja": "地球の自転に伴う見かけの力は?", "en": "What apparent force results from Earth's rotation?"},
+    "choices": [
+      {"ja": "コリオリの力", "en": "Coriolis force", "ja_typings": ["koriorinochikara"]},
+      {"ja": "万有引力", "en": "Gravity", "ja_typings": ["banyuuinryoku", "banyu-inryoku"]},
+      {"ja": "電磁気力", "en": "Electromagnetic force", "ja_typings": ["denjikiryoku"]},
+      {"ja": "摩擦力", "en": "Friction", "ja_typings": ["masatsuryoku"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0035",
+    "genre": "science",
+    "question_text": {"ja": "光の三原色は赤・緑・何?", "en": "The three primary colors of light are red, green, and what?"},
+    "choices": [
+      {"ja": "青", "en": "Blue", "ja_typings": ["ao"]},
+      {"ja": "黄色", "en": "Yellow", "ja_typings": ["kiiro"]},
+      {"ja": "紫", "en": "Purple", "ja_typings": ["murasaki"]},
+      {"ja": "白", "en": "White", "ja_typings": ["shiro"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0036",
+    "genre": "science",
+    "question_text": {"ja": "細胞を初めて観察し命名した人物は?", "en": "Who first observed and named cells?"},
+    "choices": [
+      {"ja": "フック", "en": "Hooke", "ja_typings": ["fukku"]},
+      {"ja": "レーウェンフック", "en": "Leeuwenhoek", "ja_typings": ["re-wenfukku"]},
+      {"ja": "シュライデン", "en": "Schleiden", "ja_typings": ["shuraiden"]},
+      {"ja": "パスツール", "en": "Pasteur", "ja_typings": ["pasutsu-ru"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0037",
+    "genre": "science",
+    "question_text": {"ja": "狂犬病ワクチンを開発したのは?", "en": "Who developed the rabies vaccine?"},
+    "choices": [
+      {"ja": "パスツール", "en": "Pasteur", "ja_typings": ["pasutsu-ru"]},
+      {"ja": "ジェンナー", "en": "Jenner", "ja_typings": ["jenna-"]},
+      {"ja": "コッホ", "en": "Koch", "ja_typings": ["kohho"]},
+      {"ja": "フレミング", "en": "Fleming", "ja_typings": ["furemingu"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0038",
+    "genre": "science",
+    "question_text": {"ja": "天然痘ワクチンを開発したのは?", "en": "Who developed the smallpox vaccine?"},
+    "choices": [
+      {"ja": "ジェンナー", "en": "Jenner", "ja_typings": ["jenna-"]},
+      {"ja": "パスツール", "en": "Pasteur", "ja_typings": ["pasutsu-ru"]},
+      {"ja": "コッホ", "en": "Koch", "ja_typings": ["kohho"]},
+      {"ja": "野口英世", "en": "Hideyo Noguchi", "ja_typings": ["noguchihideyo"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0039",
+    "genre": "science",
+    "question_text": {"ja": "雷の主な正体は?", "en": "What essentially is lightning?"},
+    "choices": [
+      {"ja": "放電現象", "en": "Electric discharge", "ja_typings": ["houdengenshou", "ho-dengensho-"]},
+      {"ja": "燃焼現象", "en": "Combustion", "ja_typings": ["nenshougenshou", "nensho-gensho-"]},
+      {"ja": "核反応", "en": "Nuclear reaction", "ja_typings": ["kakuhannou", "kakuhanno-"]},
+      {"ja": "磁気嵐", "en": "Magnetic storm", "ja_typings": ["jikiarashi"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0040",
+    "genre": "science",
+    "question_text": {"ja": "地震の規模を表す指標は?", "en": "What index represents the magnitude of an earthquake?"},
+    "choices": [
+      {"ja": "マグニチュード", "en": "Magnitude", "ja_typings": ["magunichu-do"]},
+      {"ja": "震度", "en": "Seismic intensity", "ja_typings": ["shindo"]},
+      {"ja": "デシベル", "en": "Decibel", "ja_typings": ["deshiberu"]},
+      {"ja": "ヘルツ", "en": "Hertz", "ja_typings": ["herutsu"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0041",
+    "genre": "science",
+    "question_text": {"ja": "周波数の単位は?", "en": "What is the unit of frequency?"},
+    "choices": [
+      {"ja": "ヘルツ", "en": "Hertz", "ja_typings": ["herutsu"]},
+      {"ja": "ワット", "en": "Watt", "ja_typings": ["watto"]},
+      {"ja": "ジュール", "en": "Joule", "ja_typings": ["ju-ru"]},
+      {"ja": "パスカル", "en": "Pascal", "ja_typings": ["pasukaru"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0042",
+    "genre": "science",
+    "question_text": {"ja": "ダイヤモンドの主成分は?", "en": "What is the main component of diamond?"},
+    "choices": [
+      {"ja": "炭素", "en": "Carbon", "ja_typings": ["tanso"]},
+      {"ja": "ケイ素", "en": "Silicon", "ja_typings": ["keiso"]},
+      {"ja": "アルミニウム", "en": "Aluminum", "ja_typings": ["aruminiumu"]},
+      {"ja": "硫黄", "en": "Sulfur", "ja_typings": ["iou", "io-"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0043",
+    "genre": "science",
+    "question_text": {"ja": "月の引力が主な原因で起こる現象は?", "en": "What phenomenon is mainly caused by the Moon's gravity?"},
+    "choices": [
+      {"ja": "潮の満ち引き", "en": "Tides", "ja_typings": ["shionomichihiki"]},
+      {"ja": "オーロラ", "en": "Aurora", "ja_typings": ["o-rora"]},
+      {"ja": "虹", "en": "Rainbow", "ja_typings": ["niji"]},
+      {"ja": "蜃気楼", "en": "Mirage", "ja_typings": ["shinkirou", "shinkiro-"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0044",
+    "genre": "science",
+    "question_text": {"ja": "ヒトの体温の平均はおよそ何度?", "en": "What is the approximate average human body temperature?"},
+    "choices": [
+      {"ja": "三十六度", "en": "36 degrees", "ja_typings": ["sanjuurokudo"]},
+      {"ja": "三十度", "en": "30 degrees", "ja_typings": ["sanjuudo"]},
+      {"ja": "四十度", "en": "40 degrees", "ja_typings": ["yonjuudo"]},
+      {"ja": "二十五度", "en": "25 degrees", "ja_typings": ["nijuugodo"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0045",
+    "genre": "science",
+    "question_text": {"ja": "化石燃料に分類されないものは?", "en": "Which is NOT classified as a fossil fuel?"},
+    "choices": [
+      {"ja": "ウラン", "en": "Uranium", "ja_typings": ["uran"]},
+      {"ja": "石油", "en": "Oil", "ja_typings": ["sekiyu"]},
+      {"ja": "石炭", "en": "Coal", "ja_typings": ["sekitan"]},
+      {"ja": "天然ガス", "en": "Natural gas", "ja_typings": ["tennengasu"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0046",
+    "genre": "science",
+    "question_text": {"ja": "赤血球が作られる場所は?", "en": "Where are red blood cells produced?"},
+    "choices": [
+      {"ja": "骨髄", "en": "Bone marrow", "ja_typings": ["kotsuzui"]},
+      {"ja": "肝臓", "en": "Liver", "ja_typings": ["kanzou", "kanzo-"]},
+      {"ja": "腎臓", "en": "Kidney", "ja_typings": ["jinzou", "jinzo-"]},
+      {"ja": "脾臓", "en": "Spleen", "ja_typings": ["hizou", "hizo-"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0047",
+    "genre": "science",
+    "question_text": {"ja": "酸性かアルカリ性かを示す指標は?", "en": "What index indicates acidity or alkalinity?"},
+    "choices": [
+      {"ja": "ピーエイチ", "en": "pH", "ja_typings": ["pi-eichi"]},
+      {"ja": "ピーピーエム", "en": "ppm", "ja_typings": ["pi-pi-emu"]},
+      {"ja": "ビーエムアイ", "en": "BMI", "ja_typings": ["bi-emuai"]},
+      {"ja": "アイキュー", "en": "IQ", "ja_typings": ["aikyu-"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0048",
+    "genre": "science",
+    "question_text": {"ja": "光が水やガラスで曲がる現象は?", "en": "What is the phenomenon of light bending in water or glass?"},
+    "choices": [
+      {"ja": "屈折", "en": "Refraction", "ja_typings": ["kussetsu"]},
+      {"ja": "反射", "en": "Reflection", "ja_typings": ["hansha"]},
+      {"ja": "回折", "en": "Diffraction", "ja_typings": ["kaisetsu"]},
+      {"ja": "干渉", "en": "Interference", "ja_typings": ["kanshou", "kansho-"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0049",
+    "genre": "science",
+    "question_text": {"ja": "恐竜が絶滅したとされる地質時代の終わりは?", "en": "At the end of which geological period did dinosaurs go extinct?"},
+    "choices": [
+      {"ja": "白亜紀", "en": "Cretaceous", "ja_typings": ["hakuaki"]},
+      {"ja": "ジュラ紀", "en": "Jurassic", "ja_typings": ["juraki"]},
+      {"ja": "三畳紀", "en": "Triassic", "ja_typings": ["sanjouki", "sanjo-ki"]},
+      {"ja": "古第三紀", "en": "Paleogene", "ja_typings": ["kodaisanki"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0050",
+    "genre": "science",
+    "question_text": {"ja": "絶対零度はおよそ摂氏何度?", "en": "What is absolute zero in degrees Celsius?"},
+    "choices": [
+      {"ja": "マイナス二百七十三度", "en": "-273 degrees", "ja_typings": ["mainasunihyakunanajuusando"]},
+      {"ja": "マイナス百度", "en": "-100 degrees", "ja_typings": ["mainasuhyakudo"]},
+      {"ja": "零度", "en": "0 degrees", "ja_typings": ["reido"]},
+      {"ja": "マイナス五百度", "en": "-500 degrees", "ja_typings": ["mainasugohyakudo"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  }
+]

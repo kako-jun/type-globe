@@ -1,0 +1,562 @@
+[
+  {
+    "id": "q0546",
+    "genre": "math",
+    "question_text": {"ja": "直角三角形の三辺の関係を表す定理は?", "en": "Which theorem expresses the relation between the three sides of a right triangle?"},
+    "choices": [
+      {"ja": "ピタゴラスの定理", "en": "Pythagorean theorem", "ja_typings": ["pitagorasunoteiri"]},
+      {"ja": "フェルマーの最終定理", "en": "Fermat's Last Theorem", "ja_typings": ["feruma-nosaishuuteiri", "ferma-nosaishuuteiri"]},
+      {"ja": "中心極限定理", "en": "Central limit theorem", "ja_typings": ["chuushinnkyokugenteiri"]},
+      {"ja": "二項定理", "en": "Binomial theorem", "ja_typings": ["nikouteiri"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0547",
+    "genre": "math",
+    "question_text": {"ja": "円周率を表すギリシャ文字は?", "en": "Which Greek letter represents the ratio of a circle's circumference to its diameter?"},
+    "choices": [
+      {"ja": "π (パイ)", "en": "Pi", "ja_typings": ["pai"]},
+      {"ja": "σ (シグマ)", "en": "Sigma", "ja_typings": ["shiguma"]},
+      {"ja": "φ (ファイ)", "en": "Phi", "ja_typings": ["fai"]},
+      {"ja": "θ (シータ)", "en": "Theta", "ja_typings": ["shi-ta"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0548",
+    "genre": "math",
+    "question_text": {"ja": "「数学の王」と呼ばれたドイツの数学者は?", "en": "Which German mathematician was called the \"Prince of Mathematicians\"?"},
+    "choices": [
+      {"ja": "ガウス", "en": "Gauss", "ja_typings": ["gausu"]},
+      {"ja": "リーマン", "en": "Riemann", "ja_typings": ["ri-mann"]},
+      {"ja": "ヒルベルト", "en": "Hilbert", "ja_typings": ["hiruberuto"]},
+      {"ja": "カントール", "en": "Cantor", "ja_typings": ["kanto-ru"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0549",
+    "genre": "math",
+    "question_text": {"ja": "微分積分学を独立に発見したイギリスの物理学者・数学者は?", "en": "Which English physicist and mathematician independently developed calculus?"},
+    "choices": [
+      {"ja": "ニュートン", "en": "Newton", "ja_typings": ["nyu-ton"]},
+      {"ja": "ライプニッツ", "en": "Leibniz", "ja_typings": ["raipunittsu"]},
+      {"ja": "デカルト", "en": "Descartes", "ja_typings": ["dekaruto"]},
+      {"ja": "ベルヌーイ", "en": "Bernoulli", "ja_typings": ["berunu-i"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0550",
+    "genre": "math",
+    "question_text": {"ja": "ニュートンと並んで微分積分学を発見したドイツの数学者は?", "en": "Which German mathematician developed calculus alongside Newton?"},
+    "choices": [
+      {"ja": "ライプニッツ", "en": "Leibniz", "ja_typings": ["raipunittsu"]},
+      {"ja": "オイラー", "en": "Euler", "ja_typings": ["oira-"]},
+      {"ja": "ガウス", "en": "Gauss", "ja_typings": ["gausu"]},
+      {"ja": "デデキント", "en": "Dedekind", "ja_typings": ["dedekinto"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0551",
+    "genre": "math",
+    "question_text": {"ja": "e^(iπ) + 1 = 0 という美しい等式を発見した数学者は?", "en": "Which mathematician discovered the elegant identity e^(iπ) + 1 = 0?"},
+    "choices": [
+      {"ja": "オイラー", "en": "Euler", "ja_typings": ["oira-"]},
+      {"ja": "ガウス", "en": "Gauss", "ja_typings": ["gausu"]},
+      {"ja": "コーシー", "en": "Cauchy", "ja_typings": ["ko-shi-"]},
+      {"ja": "アーベル", "en": "Abel", "ja_typings": ["a-beru"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0552",
+    "genre": "math",
+    "question_text": {"ja": "「私はこの命題の真に驚くべき証明を見つけたが余白が狭すぎる」と書き残した数学者は?", "en": "Which mathematician famously wrote that he had a marvelous proof too large for the margin?"},
+    "choices": [
+      {"ja": "フェルマー", "en": "Fermat", "ja_typings": ["feruma-", "ferma-"]},
+      {"ja": "ガロア", "en": "Galois", "ja_typings": ["garoa"]},
+      {"ja": "ラマヌジャン", "en": "Ramanujan", "ja_typings": ["ramanujan"]},
+      {"ja": "ポアンカレ", "en": "Poincaré", "ja_typings": ["poankare"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0553",
+    "genre": "math",
+    "question_text": {"ja": "20歳で決闘により死亡し群論の基礎を築いたフランスの数学者は?", "en": "Which French mathematician died in a duel at age 20 after founding group theory?"},
+    "choices": [
+      {"ja": "ガロア", "en": "Galois", "ja_typings": ["garoa"]},
+      {"ja": "アーベル", "en": "Abel", "ja_typings": ["a-beru"]},
+      {"ja": "コーシー", "en": "Cauchy", "ja_typings": ["ko-shi-"]},
+      {"ja": "ラグランジュ", "en": "Lagrange", "ja_typings": ["raguranju"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0554",
+    "genre": "math",
+    "question_text": {"ja": "1と自分自身でしか割り切れない自然数を何という?", "en": "What do we call a natural number divisible only by 1 and itself?"},
+    "choices": [
+      {"ja": "素数", "en": "Prime number", "ja_typings": ["sosuu"]},
+      {"ja": "合成数", "en": "Composite number", "ja_typings": ["gouseisuu", "gouseisu"]},
+      {"ja": "有理数", "en": "Rational number", "ja_typings": ["yuurisuu"]},
+      {"ja": "完全数", "en": "Perfect number", "ja_typings": ["kanzensuu"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0555",
+    "genre": "math",
+    "question_text": {"ja": "分数で表せない実数を何という?", "en": "What do we call a real number that cannot be expressed as a fraction?"},
+    "choices": [
+      {"ja": "無理数", "en": "Irrational number", "ja_typings": ["murisuu"]},
+      {"ja": "有理数", "en": "Rational number", "ja_typings": ["yuurisuu"]},
+      {"ja": "自然数", "en": "Natural number", "ja_typings": ["shizensuu"]},
+      {"ja": "整数", "en": "Integer", "ja_typings": ["seisuu"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0556",
+    "genre": "math",
+    "question_text": {"ja": "二乗して-1になる数を表す記号は?", "en": "Which symbol represents the number whose square is -1?"},
+    "choices": [
+      {"ja": "虚数単位 i", "en": "Imaginary unit i", "ja_typings": ["kyosuutannitsui", "ai"]},
+      {"ja": "ネイピア数 e", "en": "Napier's number e", "ja_typings": ["neipiasuui-"]},
+      {"ja": "黄金比 φ", "en": "Golden ratio φ", "ja_typings": ["oogonnhi"]},
+      {"ja": "円周率 π", "en": "Pi π", "ja_typings": ["enshuuritsu"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0557",
+    "genre": "math",
+    "question_text": {"ja": "自然対数の底を表す定数は?", "en": "Which constant is the base of the natural logarithm?"},
+    "choices": [
+      {"ja": "ネイピア数", "en": "Napier's number (e)", "ja_typings": ["neipiasuu"]},
+      {"ja": "円周率", "en": "Pi", "ja_typings": ["enshuuritsu"]},
+      {"ja": "黄金比", "en": "Golden ratio", "ja_typings": ["oogonnhi"]},
+      {"ja": "オイラー定数", "en": "Euler-Mascheroni constant", "ja_typings": ["oira-teisuu"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0558",
+    "genre": "math",
+    "question_text": {"ja": "約 1.618 で表される美しい比率を何という?", "en": "What is the name of the beautiful ratio approximately equal to 1.618?"},
+    "choices": [
+      {"ja": "黄金比", "en": "Golden ratio", "ja_typings": ["oogonnhi"]},
+      {"ja": "白銀比", "en": "Silver ratio", "ja_typings": ["hakuginnhi"]},
+      {"ja": "青銅比", "en": "Bronze ratio", "ja_typings": ["seidouhi"]},
+      {"ja": "調和比", "en": "Harmonic ratio", "ja_typings": ["chouwahi"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0559",
+    "genre": "math",
+    "question_text": {"ja": "前の2項の和が次の項になる有名な数列は?", "en": "Which famous sequence has each term equal to the sum of the previous two?"},
+    "choices": [
+      {"ja": "フィボナッチ数列", "en": "Fibonacci sequence", "ja_typings": ["fibonacchisuuretsu"]},
+      {"ja": "等差数列", "en": "Arithmetic sequence", "ja_typings": ["tousasuuretsu"]},
+      {"ja": "等比数列", "en": "Geometric sequence", "ja_typings": ["touhisuuretsu"]},
+      {"ja": "調和数列", "en": "Harmonic sequence", "ja_typings": ["chouwasuuretsu"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0560",
+    "genre": "math",
+    "question_text": {"ja": "三角形の内角の和は何度?", "en": "What is the sum of the interior angles of a triangle?"},
+    "choices": [
+      {"ja": "180度", "en": "180 degrees", "ja_typings": ["hyakuhachijuudo"]},
+      {"ja": "90度", "en": "90 degrees", "ja_typings": ["kyuujuudo"]},
+      {"ja": "270度", "en": "270 degrees", "ja_typings": ["nihyakunanajuudo"]},
+      {"ja": "360度", "en": "360 degrees", "ja_typings": ["sanbyakurokujuudo"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0561",
+    "genre": "math",
+    "question_text": {"ja": "サイコロを1回振って偶数の目が出る確率は?", "en": "What is the probability of rolling an even number on a single die?"},
+    "choices": [
+      {"ja": "1/2", "en": "1/2", "ja_typings": ["nibunnnoichi"]},
+      {"ja": "1/3", "en": "1/3", "ja_typings": ["sanbunnnoichi"]},
+      {"ja": "1/6", "en": "1/6", "ja_typings": ["rokubunnnoichi"]},
+      {"ja": "2/3", "en": "2/3", "ja_typings": ["sanbunnnoni"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0562",
+    "genre": "math",
+    "question_text": {"ja": "二つの集合の共通部分を表す記号は?", "en": "Which symbol represents the intersection of two sets?"},
+    "choices": [
+      {"ja": "∩ (キャップ)", "en": "Cap", "ja_typings": ["kyappu"]},
+      {"ja": "∪ (カップ)", "en": "Cup", "ja_typings": ["kappu"]},
+      {"ja": "⊂ (部分集合)", "en": "Subset", "ja_typings": ["bubunnshuugou"]},
+      {"ja": "∈ (要素)", "en": "Element of", "ja_typings": ["youso"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0563",
+    "genre": "math",
+    "question_text": {"ja": "縦・横・高さなど複数の数値をまとめて扱う数学的概念は?", "en": "Which mathematical concept handles quantities with both magnitude and direction?"},
+    "choices": [
+      {"ja": "ベクトル", "en": "Vector", "ja_typings": ["bekutoru", "vector"]},
+      {"ja": "スカラー", "en": "Scalar", "ja_typings": ["sukara-", "scalar"]},
+      {"ja": "テンソル", "en": "Tensor", "ja_typings": ["tensoru", "tensor"]},
+      {"ja": "関数", "en": "Function", "ja_typings": ["kannsuu"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0564",
+    "genre": "math",
+    "question_text": {"ja": "数を長方形状に並べた数学的対象を何という?", "en": "What is a rectangular array of numbers called in mathematics?"},
+    "choices": [
+      {"ja": "行列", "en": "Matrix", "ja_typings": ["gyouretsu", "matrix"]},
+      {"ja": "ベクトル", "en": "Vector", "ja_typings": ["bekutoru"]},
+      {"ja": "数列", "en": "Sequence", "ja_typings": ["suuretsu"]},
+      {"ja": "集合", "en": "Set", "ja_typings": ["shuugou"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0565",
+    "genre": "math",
+    "question_text": {"ja": "「我思う、ゆえに我あり」で知られ座標平面を考案した数学者は?", "en": "Which philosopher-mathematician created the coordinate plane and said \"I think, therefore I am\"?"},
+    "choices": [
+      {"ja": "デカルト", "en": "Descartes", "ja_typings": ["dekaruto"]},
+      {"ja": "パスカル", "en": "Pascal", "ja_typings": ["pasukaru"]},
+      {"ja": "ライプニッツ", "en": "Leibniz", "ja_typings": ["raipunittsu"]},
+      {"ja": "フェルマー", "en": "Fermat", "ja_typings": ["feruma-", "ferma-"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0566",
+    "genre": "math",
+    "question_text": {"ja": "古代ギリシャで「幾何学原論」を著した数学者は?", "en": "Which ancient Greek mathematician wrote \"Elements\"?"},
+    "choices": [
+      {"ja": "ユークリッド", "en": "Euclid", "ja_typings": ["yu-kuriddo"]},
+      {"ja": "アルキメデス", "en": "Archimedes", "ja_typings": ["arukimedesu"]},
+      {"ja": "ピタゴラス", "en": "Pythagoras", "ja_typings": ["pitagorasu"]},
+      {"ja": "タレス", "en": "Thales", "ja_typings": ["taresu"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0567",
+    "genre": "math",
+    "question_text": {"ja": "古代ギリシャで浮力の原理を発見した数学者・物理学者は?", "en": "Which ancient Greek mathematician and physicist discovered the principle of buoyancy?"},
+    "choices": [
+      {"ja": "アルキメデス", "en": "Archimedes", "ja_typings": ["arukimedesu"]},
+      {"ja": "ユークリッド", "en": "Euclid", "ja_typings": ["yu-kuriddo"]},
+      {"ja": "プラトン", "en": "Plato", "ja_typings": ["puraton"]},
+      {"ja": "アリストテレス", "en": "Aristotle", "ja_typings": ["arisutoteresu"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0568",
+    "genre": "math",
+    "question_text": {"ja": "1から100までの整数の和を瞬時に求めた逸話を持つ少年は誰?", "en": "Which boy is said to have summed 1 to 100 in moments?"},
+    "choices": [
+      {"ja": "ガウス", "en": "Gauss", "ja_typings": ["gausu"]},
+      {"ja": "オイラー", "en": "Euler", "ja_typings": ["oira-"]},
+      {"ja": "ニュートン", "en": "Newton", "ja_typings": ["nyu-ton"]},
+      {"ja": "ラマヌジャン", "en": "Ramanujan", "ja_typings": ["ramanujan"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0569",
+    "genre": "math",
+    "question_text": {"ja": "1994 年にフェルマーの最終定理を証明した数学者は?", "en": "Who proved Fermat's Last Theorem in 1994?"},
+    "choices": [
+      {"ja": "アンドリュー・ワイルズ", "en": "Andrew Wiles", "ja_typings": ["andoryu-wairuzu"]},
+      {"ja": "グリゴリー・ペレルマン", "en": "Grigori Perelman", "ja_typings": ["gurigori-pereruman"]},
+      {"ja": "テレンス・タオ", "en": "Terence Tao", "ja_typings": ["terensutao"]},
+      {"ja": "ジョン・ナッシュ", "en": "John Nash", "ja_typings": ["jonnasshu"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0570",
+    "genre": "math",
+    "question_text": {"ja": "ポアンカレ予想を証明し受賞を辞退したロシアの数学者は?", "en": "Which Russian mathematician proved the Poincaré conjecture and declined the prize?"},
+    "choices": [
+      {"ja": "ペレルマン", "en": "Perelman", "ja_typings": ["pereruman"]},
+      {"ja": "コルモゴロフ", "en": "Kolmogorov", "ja_typings": ["korumogorofu"]},
+      {"ja": "チェビシェフ", "en": "Chebyshev", "ja_typings": ["chebishefu"]},
+      {"ja": "ロバチェフスキー", "en": "Lobachevsky", "ja_typings": ["robachefusuki-"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0571",
+    "genre": "math",
+    "question_text": {"ja": "数学のノーベル賞と呼ばれる若手向けの賞は?", "en": "Which award is called the \"Nobel Prize of Mathematics\" for young mathematicians?"},
+    "choices": [
+      {"ja": "フィールズ賞", "en": "Fields Medal", "ja_typings": ["fi-ruzushou"]},
+      {"ja": "アーベル賞", "en": "Abel Prize", "ja_typings": ["a-berushou"]},
+      {"ja": "チューリング賞", "en": "Turing Award", "ja_typings": ["chu-ringushou"]},
+      {"ja": "ウルフ賞", "en": "Wolf Prize", "ja_typings": ["urufushou"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0572",
+    "genre": "math",
+    "question_text": {"ja": "「集合論の父」と呼ばれる数学者は?", "en": "Which mathematician is called the father of set theory?"},
+    "choices": [
+      {"ja": "カントール", "en": "Cantor", "ja_typings": ["kanto-ru"]},
+      {"ja": "ラッセル", "en": "Russell", "ja_typings": ["rasseru"]},
+      {"ja": "ゲーデル", "en": "Gödel", "ja_typings": ["ge-deru"]},
+      {"ja": "ヒルベルト", "en": "Hilbert", "ja_typings": ["hiruberuto"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0573",
+    "genre": "math",
+    "question_text": {"ja": "「不完全性定理」を証明したオーストリアの論理学者は?", "en": "Which Austrian logician proved the Incompleteness Theorems?"},
+    "choices": [
+      {"ja": "ゲーデル", "en": "Gödel", "ja_typings": ["ge-deru"]},
+      {"ja": "ヒルベルト", "en": "Hilbert", "ja_typings": ["hiruberuto"]},
+      {"ja": "フレーゲ", "en": "Frege", "ja_typings": ["fure-ge"]},
+      {"ja": "タルスキ", "en": "Tarski", "ja_typings": ["tarusuki"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0574",
+    "genre": "math",
+    "question_text": {"ja": "コンピュータ理論の父と呼ばれイギリスの数学者は?", "en": "Which British mathematician is called the father of computer science?"},
+    "choices": [
+      {"ja": "チューリング", "en": "Turing", "ja_typings": ["chu-ringu"]},
+      {"ja": "フォン・ノイマン", "en": "Von Neumann", "ja_typings": ["fonnoiman"]},
+      {"ja": "シャノン", "en": "Shannon", "ja_typings": ["shannon"]},
+      {"ja": "バベッジ", "en": "Babbage", "ja_typings": ["bavejji", "babejji"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0575",
+    "genre": "math",
+    "question_text": {"ja": "リーマン予想の対象となる関数は?", "en": "Which function is the subject of the Riemann hypothesis?"},
+    "choices": [
+      {"ja": "ゼータ関数", "en": "Zeta function", "ja_typings": ["ze-takannsuu"]},
+      {"ja": "ガンマ関数", "en": "Gamma function", "ja_typings": ["gammakannsuu", "ganmakannsuu"]},
+      {"ja": "ベータ関数", "en": "Beta function", "ja_typings": ["be-takannsuu"]},
+      {"ja": "デルタ関数", "en": "Delta function", "ja_typings": ["derutakannsuu"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0576",
+    "genre": "math",
+    "question_text": {"ja": "正規分布の形をしたグラフを何と呼ぶ?", "en": "What is the bell-shaped graph of a normal distribution called?"},
+    "choices": [
+      {"ja": "ベル曲線", "en": "Bell curve", "ja_typings": ["berukyokusen"]},
+      {"ja": "シグモイド曲線", "en": "Sigmoid curve", "ja_typings": ["shigumoidokyokusen"]},
+      {"ja": "対数曲線", "en": "Logarithmic curve", "ja_typings": ["taisuukyokusen"]},
+      {"ja": "双曲線", "en": "Hyperbola", "ja_typings": ["soukyokusen"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0577",
+    "genre": "math",
+    "question_text": {"ja": "標本の平均が母集団の平均に近づく統計学の定理は?", "en": "Which statistical theorem states that the sample mean approaches the population mean?"},
+    "choices": [
+      {"ja": "大数の法則", "en": "Law of large numbers", "ja_typings": ["taisuunohousoku"]},
+      {"ja": "中心極限定理", "en": "Central limit theorem", "ja_typings": ["chuushinnkyokugenteiri"]},
+      {"ja": "ベイズの定理", "en": "Bayes' theorem", "ja_typings": ["beizunoteiri"]},
+      {"ja": "チェビシェフの不等式", "en": "Chebyshev's inequality", "ja_typings": ["chebishefunofutoushiki"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0578",
+    "genre": "math",
+    "question_text": {"ja": "条件付き確率に関する有名な定理は?", "en": "Which famous theorem concerns conditional probability?"},
+    "choices": [
+      {"ja": "ベイズの定理", "en": "Bayes' theorem", "ja_typings": ["beizunoteiri"]},
+      {"ja": "中心極限定理", "en": "Central limit theorem", "ja_typings": ["chuushinnkyokugenteiri"]},
+      {"ja": "大数の法則", "en": "Law of large numbers", "ja_typings": ["taisuunohousoku"]},
+      {"ja": "ピタゴラスの定理", "en": "Pythagorean theorem", "ja_typings": ["pitagorasunoteiri"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0579",
+    "genre": "math",
+    "question_text": {"ja": "和の極限を扱う記号 ∑ の名前は?", "en": "What is the name of the summation symbol ∑?"},
+    "choices": [
+      {"ja": "シグマ", "en": "Sigma", "ja_typings": ["shiguma"]},
+      {"ja": "デルタ", "en": "Delta", "ja_typings": ["deruta"]},
+      {"ja": "オメガ", "en": "Omega", "ja_typings": ["omega"]},
+      {"ja": "ラムダ", "en": "Lambda", "ja_typings": ["ramuda"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0580",
+    "genre": "math",
+    "question_text": {"ja": "積分を表すおなじみのS字記号の名前は?", "en": "What is the name of the elongated S symbol used for integration?"},
+    "choices": [
+      {"ja": "インテグラル", "en": "Integral sign", "ja_typings": ["integuraru"]},
+      {"ja": "ナブラ", "en": "Nabla", "ja_typings": ["nabura"]},
+      {"ja": "ラプラシアン", "en": "Laplacian", "ja_typings": ["rapurashian"]},
+      {"ja": "ダランベルシアン", "en": "D'Alembertian", "ja_typings": ["darannberushian"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0581",
+    "genre": "math",
+    "question_text": {"ja": "「インドの魔術師」と呼ばれた天才数学者は?", "en": "Which prodigy mathematician was called \"the Indian magician\"?"},
+    "choices": [
+      {"ja": "ラマヌジャン", "en": "Ramanujan", "ja_typings": ["ramanujan"]},
+      {"ja": "ハーディ", "en": "Hardy", "ja_typings": ["ha-di"]},
+      {"ja": "ボース", "en": "Bose", "ja_typings": ["bo-su"]},
+      {"ja": "チャンドラセカール", "en": "Chandrasekhar", "ja_typings": ["chandorasekka-ru"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0582",
+    "genre": "math",
+    "question_text": {"ja": "辺の長さがすべて等しく内角もすべて等しい多角形を何という?", "en": "What is a polygon called whose sides and angles are all equal?"},
+    "choices": [
+      {"ja": "正多角形", "en": "Regular polygon", "ja_typings": ["seitakakukei"]},
+      {"ja": "凸多角形", "en": "Convex polygon", "ja_typings": ["totsutakakukei"]},
+      {"ja": "凹多角形", "en": "Concave polygon", "ja_typings": ["outakakukei"]},
+      {"ja": "相似多角形", "en": "Similar polygon", "ja_typings": ["soujitakakukei"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0583",
+    "genre": "math",
+    "question_text": {"ja": "「四色定理」が扱う分野は?", "en": "Which field of mathematics does the four-color theorem belong to?"},
+    "choices": [
+      {"ja": "グラフ理論", "en": "Graph theory", "ja_typings": ["gurafuriron"]},
+      {"ja": "数論", "en": "Number theory", "ja_typings": ["suuron"]},
+      {"ja": "代数幾何", "en": "Algebraic geometry", "ja_typings": ["daisuukika"]},
+      {"ja": "解析学", "en": "Analysis", "ja_typings": ["kaisekigaku"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0584",
+    "genre": "math",
+    "question_text": {"ja": "x の値を変えると y の値が一意に決まる対応関係を何という?", "en": "What is the mathematical name for a rule assigning each x exactly one y?"},
+    "choices": [
+      {"ja": "関数", "en": "Function", "ja_typings": ["kannsuu"]},
+      {"ja": "関係", "en": "Relation", "ja_typings": ["kannkei"]},
+      {"ja": "写像", "en": "Mapping", "ja_typings": ["shazou"]},
+      {"ja": "演算", "en": "Operation", "ja_typings": ["enzan"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0585",
+    "genre": "math",
+    "question_text": {"ja": "曲線上の一点における接線の傾きを求める演算は?", "en": "Which operation finds the slope of the tangent at a point on a curve?"},
+    "choices": [
+      {"ja": "微分", "en": "Differentiation", "ja_typings": ["bibun"]},
+      {"ja": "積分", "en": "Integration", "ja_typings": ["sekibun"]},
+      {"ja": "極限", "en": "Limit", "ja_typings": ["kyokugen"]},
+      {"ja": "因数分解", "en": "Factorization", "ja_typings": ["innsuubunkai"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  }
+]
