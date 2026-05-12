@@ -143,46 +143,37 @@ Quiz-side runs are not bound by this layout — quiz questions may freely mix ki
 
 ### Quiz question (`data/questions_<lang>.json`)
 
-Bilingual quiz banks live in JSON (one file per language, but each entry carries every language). The schema:
-
 ```json
-{
-  "id": "q001",
-  "genre": "science",
-  "question_text": {
-    "en": "What is the chemical formula for water?",
-    "ja": "水の化学式は？"
-  },
-  "question_text_reading": {
-    "en": "What is the chemical formula for water?",
-    "ja": "みずのかがくしきは？"
-  },
-  "choices": [
-    { "en": "CO2", "ja": "CO2", "ja_typings": ["co2"] },
-    { "en": "H2O", "ja": "H2O", "ja_typings": ["h2o"] },
-    { "en": "O2",  "ja": "O2",  "ja_typings": ["o2"] },
-    { "en": "N2",  "ja": "N2",  "ja_typings": ["n2"] }
-  ],
-  "correct_answer_index": 1,
-  "image_path": null
-}
+[
+  {
+    "id": "q001",
+    "genre": "programming",
+    "question_text": {
+      "ja": "Rustで所有権を移動するキーワードはどれ？",
+      "en": "Which keyword moves ownership in Rust?"
+    },
+    "question_text_reading": {
+      "ja": "らすとでしょゆうけんをいどうするきーわーどはどれ？",
+      "en": "Which keyword moves ownership in Rust?"
+    },
+    "choices": [
+      { "ja": "borrow", "en": "borrow" },
+      { "ja": "move", "en": "move" },
+      { "ja": "ref", "en": "ref" },
+      { "ja": "clone", "en": "clone" }
+    ],
+    "correct_answer_index": 1,
+    "image_path": null
+  }
+]
 ```
 
-Field roles:
+`question_text` is the on-screen display text. In JA, this should use normal kanji/katakana mixed writing. `question_text_reading` is an optional reading-preservation field for TTS / conversion workflows; in JA it should stay hiragana-first. When `question_text_reading` is absent, the runtime falls back to `question_text`. Quiz choice labels remain input-oriented: JA choices should stay hiragana / katakana / ASCII so players can type without kana-kanji conversion.
 
-| field | role |
-|---|---|
-| `question_text.<lang>` | **display** form. Quiz UI shows this. JA aims for natural kanji-kana mixed text. |
-| `question_text_reading.<lang>` | **reading** form. Hiragana for JA. Used by TTS / future RPG audio paths and as a safety net for the migration that rewrites `question_text.ja`. Optional (defaults to display when absent). |
-| `choices[].<lang>` | per-language choice display label. JA should be natural kanji-kana mixed text where appropriate. |
-| `choices[].ja_typings` | accepted JA typing forms (Hepburn variants, official spellings). This is the typing target when the JA display label contains kanji. |
-
-Migration recipe (`scripts/`, see README for full chain):
-
-1. `backfill_question_text_reading.py` — copies current `question_text` into `question_text_reading` (idempotent).
-2. `restore_ja_question_texts_with_ollama.py` — rewrites `question_text.ja` for hiragana-heavy entries via local Gemma. With `--all --include-choices`, refreshes every JA question display and answer label through the same model path. Reading / `ja_typings` are preserved.
-3. `question_text_stats.py` / `list_suspect_question_texts.py` — diagnostics.
-4. `cargo run --bin lint-questions -- data/questions_ja.json data/questions_en.json` — final lint.
+Recommended migration order for existing JA quiz banks:
+1. Backfill `question_text_reading.ja` from the current `question_text.ja`.
+2. Rewrite only `question_text.ja` into kanji/katakana mixed display text.
+3. Run stats/lint checks and manually inspect hiragana-heavy leftovers with `scripts/list_suspect_question_texts.py`.
 
 Validation: no two choices in a question may share a prefix that would make an auto-confirm ambiguous. Enforced by `cargo run --bin lint-questions -- <files>` (CI job `lint-data`) and by the unit tests `shipped_question_data_is_clean_{ja,en}` in `src/io/validator.rs`.
 
