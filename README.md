@@ -66,10 +66,10 @@ Flags:
 - `--demo-count <N>` — number of questions per run (default `10`)
 - `--demo-wait-ms <MS>` — pause before auto-typing each answer (default `1000`)
 - `--demo-type-cps <N>` — characters-per-second typing speed (default `20`)
-- `--demo-loop` — restart the run forever (until `q` / `Esc`)
+- `--demo-loop` — restart the run forever (until `Esc` / `Ctrl+C`)
 - `--lang`, `--genre` — same as quiz mode; `--lang` defaults to `ja` when omitted
 
-Press `q` or `Esc` at any time to exit. Demo runs do **not** write to Records.
+Press `Esc` (or `Ctrl+C`) at any time to exit. `q` is reserved as a typing character so it cannot be used to quit. Demo runs do **not** write to Records.
 
 Run `type-globe --help` or `type-globe <subcommand> --help` for all options.
 
