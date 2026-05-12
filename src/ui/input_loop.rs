@@ -209,11 +209,19 @@ impl DemoInputSource {
         }
     }
 
-    /// `true` once the current target has been fully delivered. The
-    /// session checks this to know when the demo has nothing left to
-    /// inject for this question (the actual question advance happens
-    /// through the normal auto-confirm-on-correct path).
-    #[cfg_attr(not(test), allow(dead_code))]
+    /// `true` once the current target has been fully delivered.
+    ///
+    /// Originally intended as a production-side affordance for "demo is
+    /// idle, advance to the next question", but the actual production
+    /// path advances through the normal auto-confirm-on-correct branch
+    /// in `QuizUI::submit_current_answer` — so this method is only
+    /// reachable from tests. S-4: gated behind `cfg(test)` rather than
+    /// papered over with `#[allow(dead_code)]` so the surface area of
+    /// `DemoInputSource` in release builds stays minimal. `KeyEventSource`
+    /// is a separate trait that doesn't reference `target_consumed`, so
+    /// removing it from the production build doesn't affect object
+    /// safety.
+    #[cfg(test)]
     pub fn target_consumed(&self) -> bool {
         match self.state.lock() {
             Ok(state) => state.cursor >= state.target.len(),
