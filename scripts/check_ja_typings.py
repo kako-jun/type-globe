@@ -28,7 +28,7 @@ REPORT_PATH = ROOT / "scripts" / "suspicious_ja_typings.json"
 KANJI_RE = re.compile(r"[一-鿿㐀-䶿]")
 
 SEPARATOR_CHARS = set("・･（）()[]{}「」『』、。,.:;!?")
-PRESERVE_ASCII = set(".|/")  # romaji.rs preserves '.' and '/'
+PRESERVE_ASCII = set("./")  # romaji.rs preserves '.' and '/'
 
 PAIR_TABLE = {
     ("き", "ゃ"): "kya", ("き", "ゅ"): "kyu", ("き", "ょ"): "kyo",
@@ -111,7 +111,7 @@ def _hiragana_to_hepburn_raw(text: str) -> str:
             geminate = True
             i += 1
             continue
-        if c in {".", "/"}:
+        if c in PRESERVE_ASCII:
             out.append(c)
             geminate = False
             i += 1
