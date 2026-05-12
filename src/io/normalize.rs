@@ -6,6 +6,9 @@
 //! without requiring every variant to be enumerated in question data.
 //! Katakana ー は `-` キー入力が必須 (IME 仕様)。データ側も `bo-ru`
 //! 形で登録するため、ここでは `-` を畳まず素通しする (#93)。
+//! ン+子音/末尾 の `nn` は IME で許容される冗長入力なので canonical
+//! では `n` に畳む。ただし `nn` の直後が母音 / `y` / `n` のときは
+//! ナ行・ヤ行と区別するために残す (例: かんおん = `kannon`)。
 
 pub fn canonical_romaji(s: &str) -> String {
     let mut out = s.to_lowercase();
@@ -20,6 +23,34 @@ pub fn canonical_romaji(s: &str) -> String {
     out = out.replace("fu", "hu");
     out = out.replace("ji", "zi");
     out = out.replace("wo", "o");
+    out = collapse_redundant_nn(&out);
+    out
+}
+
+/// ン+子音/末尾 の `nn` を `n` に畳む。`nn` の直後が母音 / `y` / `n`
+/// のときは「ン+母音」と「ナ行+母音」を区別するために残す。
+fn collapse_redundant_nn(s: &str) -> String {
+    let chars: Vec<char> = s.chars().collect();
+    let mut out = String::with_capacity(s.len());
+    let mut i = 0;
+    while i < chars.len() {
+        if i + 1 < chars.len() && chars[i] == 'n' && chars[i + 1] == 'n' {
+            let keep = matches!(
+                chars.get(i + 2),
+                Some('a' | 'i' | 'u' | 'e' | 'o' | 'y' | 'n')
+            );
+            if keep {
+                out.push('n');
+                out.push('n');
+            } else {
+                out.push('n');
+            }
+            i += 2;
+        } else {
+            out.push(chars[i]);
+            i += 1;
+        }
+    }
     out
 }
 
@@ -101,4 +132,30 @@ mod tests {
         // hepburn 書き換えは適用される。
         assert_eq!(canonical_romaji("shi-zu"), "si-zu");
     }
+
+    #[test]
+    fn nn_before_consonant_collapses_to_n() {
+        // ン+子音 は IME 入力で `n` でも `nn` でも通る。データは `n` で
+        // 登録するので、`nn` を `n` に畳んで比較する。
+        assert_eq!(canonical_romaji("doragonnbo-ru"), "doragonbo-ru");
+        assert_eq!(canonical_romaji("shinnbashi"), "sinbasi");
+        assert_eq!(canonical_romaji("tennpura"), "tenpura");
+    }
+
+    #[test]
+    fn nn_at_end_collapses_to_n() {
+        // ン 末尾も同様に `nn` → `n`。
+        assert_eq!(canonical_romaji("doragonn"), "doragon");
+        assert_eq!(canonical_romaji("rapann"), "rapan");
+    }
+
+    #[test]
+    fn nn_before_vowel_or_y_is_kept() {
+        // ン+母音/y は `nn` を残さないと ナ行/ヤ行 と区別できない。
+        // 例: かんおん (観音) = `kannon` であり `kanon` (カノン) と別物。
+        assert_eq!(canonical_romaji("kannon"), "kannon");
+        assert_eq!(canonical_romaji("tennen"), "tennen");
+        assert_eq!(canonical_romaji("honnyaku"), "honnyaku");
+    }
+
 }
