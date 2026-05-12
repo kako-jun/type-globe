@@ -1603,7 +1603,7 @@
     "genre": "science",
     "question_text": {
       "ja": "地震の規模を表す指標は?",
-      "en": "What index represents the magnitude of an earthquake?"
+      "en": "What scale represents the size of an earthquake's energy?"
     },
     "choices": [
       {
@@ -16449,7 +16449,7 @@
     "id": "q0401",
     "genre": "game",
     "question_text": {
-      "ja": "Mojang が開発した代表作で 2014 年に Microsoft が買収したスタジオは?",
+      "ja": "Minecraft を開発し、2014 年に Microsoft が買収したスタジオは?",
       "en": "Which studio developed Minecraft and was acquired by Microsoft in 2014?"
     },
     "choices": [
@@ -24425,7 +24425,7 @@
     "genre": "language",
     "question_text": {
       "ja": "日本語で語と語の関係を示す活用しない付属語はどれですか？",
-      "en": "Which non-conjugating Japanese particles show relations between words?"
+      "en": "Which non-conjugating Japanese word type shows relations between words?"
     },
     "choices": [
       {
@@ -29805,8 +29805,8 @@
     "id": "q0726",
     "genre": "vtuber_net_culture",
     "question_text": {
-      "ja": "ホロライブとにじさんじの両方にあるシステムで、ファンの呼称を指すのは?",
-      "en": "What term refers to a VTuber's fan name (used by both Hololive and Nijisanji)?"
+      "ja": "ホロライブとにじさんじでタレントごとに付けられている、ファン集団の通称制度は?",
+      "en": "What is the collective naming system (used by both Hololive and Nijisanji) for each VTuber's fanbase?"
     },
     "choices": [
       {
@@ -29928,7 +29928,7 @@
     "id": "q0729",
     "genre": "vtuber_net_culture",
     "question_text": {
-      "ja": "Vtuberの中の人を指すネットスラングは?",
+      "ja": "Vtuber のキャラクターを演じている本人を指すネットスラングは?",
       "en": "What is the net slang for the person behind a VTuber?"
     },
     "choices": [
@@ -30093,7 +30093,7 @@
     "id": "q0733",
     "genre": "vtuber_net_culture",
     "question_text": {
-      "ja": "ニコニコ動画で人気を博した「歌い手」が活躍しやすいサイトは?",
+      "ja": "日本で「歌い手」文化が花開いた代表的な動画サイトは?",
       "en": "On which site did 'utaite' (cover singers) culture flourish?"
     },
     "choices": [
