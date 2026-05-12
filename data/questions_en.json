@@ -9701,7 +9701,7 @@
     "id": "q0237",
     "genre": "web_development",
     "question_text": {
-      "ja": "ブラウザを閉じるまで保持され、リクエストには自動送信されないストレージは?",
+      "ja": "タブを閉じるまで保持され、リクエストには自動送信されないストレージは?",
       "en": "Which browser storage persists until the tab closes and is not sent with requests?"
     },
     "choices": [
@@ -12330,7 +12330,6 @@
         "ja": "リリース",
         "en": "Release",
         "ja_typings": [
-          "ari-su",
           "riri-su"
         ]
       }
@@ -17768,8 +17767,8 @@
     "id": "q0433",
     "genre": "game",
     "question_text": {
-      "ja": "Cygames の人気スマホ RPG でアニメ化もされた作品は?",
-      "en": "Which Cygames mobile RPG also got an anime adaptation?"
+      "ja": "Cygames が手がける競走馬擬人化スマホゲームでアニメ化もされた作品は?",
+      "en": "Which Cygames mobile game about anthropomorphic racehorses also got an anime adaptation?"
     },
     "choices": [
       {
@@ -23106,7 +23105,7 @@
     "id": "q0563",
     "genre": "math",
     "question_text": {
-      "ja": "縦・横・高さなど複数の数値をまとめて扱う数学的概念は?",
+      "ja": "大きさと向きを持つ量を表す数学的概念は?",
       "en": "Which mathematical concept handles quantities with both magnitude and direction?"
     },
     "choices": [
@@ -25946,8 +25945,8 @@
     "id": "q0632",
     "genre": "culture",
     "question_text": {
-      "ja": "フランスのプロヴァンス地方やイタリアで広く食される、煮込み野菜料理は?",
-      "en": "Which Provencal stewed vegetable dish is popular in France and Italy?"
+      "ja": "フランスのプロヴァンス地方の郷土料理として知られる、煮込み野菜料理は?",
+      "en": "Which Provencal stewed vegetable dish is a classic of French regional cuisine?"
     },
     "choices": [
       {
@@ -29765,8 +29764,8 @@
     "id": "q0725",
     "genre": "vtuber_net_culture",
     "question_text": {
-      "ja": "配信用語で「同時視聴」を意味するのは?",
-      "en": "What streaming term means watching content simultaneously with viewers?"
+      "ja": "配信者と視聴者が同じ動画を同期して観賞する配信形式を何と言う?",
+      "en": "What is the streaming format where streamer and viewers watch the same video synchronized?"
     },
     "choices": [
       {
