@@ -174,13 +174,13 @@ Field roles:
 |---|---|
 | `question_text.<lang>` | **display** form. Quiz UI shows this. JA aims for natural kanji-kana mixed text. |
 | `question_text_reading.<lang>` | **reading** form. Hiragana for JA. Used by TTS / future RPG audio paths and as a safety net for the migration that rewrites `question_text.ja`. Optional (defaults to display when absent). |
-| `choices[].<lang>` | per-language choice label. JA stays hiragana / katakana / ASCII because it doubles as the typing target. |
-| `choices[].ja_typings` | extra accepted JA typings (Hepburn variants, official spellings). |
+| `choices[].<lang>` | per-language choice display label. JA should be natural kanji-kana mixed text where appropriate. |
+| `choices[].ja_typings` | accepted JA typing forms (Hepburn variants, official spellings). This is the typing target when the JA display label contains kanji. |
 
 Migration recipe (`scripts/`, see README for full chain):
 
 1. `backfill_question_text_reading.py` — copies current `question_text` into `question_text_reading` (idempotent).
-2. `restore_ja_question_texts_with_ollama.py` — rewrites only `question_text.ja` for hiragana-heavy entries via local Gemma. Reading is preserved.
+2. `restore_ja_question_texts_with_ollama.py` — rewrites `question_text.ja` for hiragana-heavy entries via local Gemma. With `--all --include-choices`, refreshes every JA question display and answer label through the same model path. Reading / `ja_typings` are preserved.
 3. `question_text_stats.py` / `list_suspect_question_texts.py` — diagnostics.
 4. `cargo run --bin lint-questions -- data/questions_ja.json data/questions_en.json` — final lint.
 

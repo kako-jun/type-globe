@@ -136,6 +136,11 @@ impl DataLoader {
                 for typing in &choice.ja_typings {
                     variants.push(typing.to_lowercase());
                 }
+                if !variants.is_empty() {
+                    variants.sort();
+                    variants.dedup();
+                    return variants;
+                }
                 let displayed = Self::get_choice_text(choice, language);
                 if displayed.is_ascii() {
                     variants.push(displayed.to_lowercase());
@@ -216,7 +221,7 @@ mod tests {
                 ("ja".to_string(), "とうきょう".to_string()),
                 ("en".to_string(), "Tokyo".to_string()),
             ]),
-            ja_typings: vec!["tokyo".to_string()],
+            ja_typings: vec!["tokyo".to_string(), "toukyou".to_string()],
         };
         assert_eq!(
             DataLoader::get_choice_typing_texts(&choice, &Language::Japanese),

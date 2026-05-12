@@ -90,7 +90,7 @@ fn find_ja_typing_errors(path: &str, questions: &[Question]) -> Vec<String> {
             let Some(ja) = choice.labels.get("ja") else {
                 continue;
             };
-            if contains_han(ja) && choice.ja_typings.is_empty() {
+            if choice.ja_typings.is_empty() && contains_han(ja) {
                 errors.push(format!(
                     "[ja_typings missing] question {} choice #{} has non-kana ja={:?}",
                     question.id, choice_idx, ja
@@ -114,7 +114,7 @@ fn find_ja_typing_errors(path: &str, questions: &[Question]) -> Vec<String> {
                 ));
             }
 
-            if !contains_han(ja) {
+            if choice.ja_typings.is_empty() && !contains_han(ja) {
                 let expected = expected_ja_typings(ja);
                 if let Some(reason) = ja_typing_mismatch_reason(choice, &actual, &expected) {
                     errors.push(format!(
