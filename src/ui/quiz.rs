@@ -4,7 +4,10 @@ use crate::io::Storage;
 use crate::jiwa_core::{lerp_rgb, RevealHandle, RevealOpts, Rgb};
 use crate::types::{Language, Question, ScoreEntry};
 use crate::ui::inline_code;
-use crate::ui::{HelpEntry, HelpLine, InputChannel, PaneFrame, RecvOutcome, StatusPane};
+use crate::ui::{
+    DemoInputSource, HelpEntry, HelpLine, InputChannel, KeyEventSource, MultiplexedSource,
+    PaneFrame, RecvOutcome, StatusPane,
+};
 use crossterm::{
     event::{KeyCode, KeyEvent, KeyModifiers},
     execute,
@@ -138,6 +141,23 @@ impl QuizUI {
     pub fn from_pool(pool: &[Question], language: Language, records_file_path: String) -> Self {
         let mut quiz_game = QuizGame::from_pool(pool, language);
         quiz_game.start();
+        Self::wrap_started_game(quiz_game, records_file_path)
+    }
+
+    /// Variant of [`from_pool`] that lets the caller pin the run length.
+    /// The auto-demo (#106) uses this to honour `--demo-count`.
+    pub fn from_pool_with_count(
+        pool: &[Question],
+        language: Language,
+        records_file_path: String,
+        count: usize,
+    ) -> Self {
+        let mut quiz_game = QuizGame::from_pool_with_count(pool, language, count);
+        quiz_game.start();
+        Self::wrap_started_game(quiz_game, records_file_path)
+    }
+
+    fn wrap_started_game(quiz_game: QuizGame, records_file_path: String) -> Self {
         Self {
             quiz_game,
             input_buffer: String::new(),
@@ -169,7 +189,8 @@ impl QuizUI {
         let backend = CrosstermBackend::new(stdout);
         let mut terminal = Terminal::new(backend)?;
 
-        let result = self.run_app(&mut terminal);
+        let input = InputChannel::spawn();
+        let result = self.run_app(&mut terminal, &input, None);
 
         disable_raw_mode()?;
         execute!(terminal.backend_mut(), LeaveAlternateScreen)?;
@@ -178,9 +199,37 @@ impl QuizUI {
         result
     }
 
-    fn run_app(
+    /// Run the quiz under auto-demo control (#106). The `demo` source
+    /// drives typing; a real-keyboard `InputChannel` is multiplexed on
+    /// top so Esc / Ctrl+C still aborts. The session itself is unchanged —
+    /// reveal, sound, auto-confirm and result screen all flow through
+    /// the same code path as a human run.
+    pub fn run_with_demo(
+        &mut self,
+        demo: DemoInputSource,
+    ) -> Result<u32, Box<dyn std::error::Error>> {
+        enable_raw_mode()?;
+        let mut stdout = io::stdout();
+        execute!(stdout, EnterAlternateScreen)?;
+        let backend = CrosstermBackend::new(stdout);
+        let mut terminal = Terminal::new(backend)?;
+
+        let human = InputChannel::spawn();
+        let source = MultiplexedSource { a: human, b: demo };
+        let result = self.run_app(&mut terminal, &source, Some(&source.b));
+
+        disable_raw_mode()?;
+        execute!(terminal.backend_mut(), LeaveAlternateScreen)?;
+        terminal.show_cursor()?;
+
+        result
+    }
+
+    fn run_app<S: KeyEventSource>(
         &mut self,
         terminal: &mut Terminal<CrosstermBackend<io::Stdout>>,
+        input: &S,
+        demo: Option<&DemoInputSource>,
     ) -> Result<u32, Box<dyn std::error::Error>> {
         // Redraw cadence is short enough that the typewriter / fade
         // reveal (#19/#20/#21) renders smoothly (~33 fps). The actual
@@ -189,10 +238,30 @@ impl QuizUI {
         // without waiting for the next redraw tick.
         const REDRAW: Duration = Duration::from_millis(30);
 
-        let input = InputChannel::spawn();
+        // Track which question the demo has already been primed for, so
+        // we re-prime exactly once per question (right after the reveal
+        // anchor is established for the new question).
+        let mut demo_primed_for: Option<usize> = None;
 
         loop {
             terminal.draw(|f| self.ui(f))?;
+
+            // Demo: keep the synthetic input source pointed at the
+            // currently-active question. We re-prime whenever the
+            // question index changes; once the buffer is consumed the
+            // session will auto-confirm and move on naturally via the
+            // existing correct-answer path.
+            if let Some(demo) = demo {
+                if self.phase == Phase::Playing {
+                    let (current_idx, _) = self.quiz_game.get_progress();
+                    if demo_primed_for != Some(current_idx) {
+                        if let Some(target) = self.demo_target_for_current_question() {
+                            demo.set_target(&target);
+                            demo_primed_for = Some(current_idx);
+                        }
+                    }
+                }
+            }
 
             match input.recv_until(REDRAW) {
                 RecvOutcome::Key(key) => {
@@ -207,10 +276,26 @@ impl QuizUI {
                 }
                 RecvOutcome::Disconnected => break, // Worker thread exited.
             }
+
+            // Demo: in Summary / Naming phases, the session has nothing
+            // left to do — exit immediately so the demo loop driver can
+            // start the next run (or end if non-looping).
+            if demo.is_some() && matches!(self.phase, Phase::Summary | Phase::NamingForRecord) {
+                break;
+            }
         }
-        // `input` drops here → shutdown flag flipped → worker joins.
 
         Ok(self.quiz_game.get_final_score())
+    }
+
+    /// Pick the string the auto-demo should type for the current
+    /// question. For JA we prefer the first registered `ja_typings`
+    /// entry of the correct choice (Hepburn-canonical, long-vowel
+    /// preserved); for EN we fall back to the choice label. Returns
+    /// `None` if the question or choice is missing.
+    fn demo_target_for_current_question(&self) -> Option<String> {
+        let candidates = self.quiz_game.current_correct_typing_candidates();
+        candidates.into_iter().next()
     }
 
     fn handle_key(&mut self, key: KeyEvent) -> bool {

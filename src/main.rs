@@ -12,8 +12,9 @@ use config::Config;
 use game::ListeningSession;
 use io::{DataLoader, Storage};
 use std::io::{stdin, stdout, Write};
+use std::time::Duration;
 use types::{AnswerKind, GameMode, Language, ListeningPrompt, Question};
-use ui::{tts_unavailable_message, ListenUI, MenuUI, QuizUI, RecordsUI};
+use ui::{tts_unavailable_message, DemoInputSource, ListenUI, MenuUI, QuizUI, RecordsUI};
 
 // ---------------------------------------------------------------------------
 // CLI definition (#48)
@@ -25,6 +26,40 @@ use ui::{tts_unavailable_message, ListenUI, MenuUI, QuizUI, RecordsUI};
 struct Cli {
     #[command(subcommand)]
     command: Option<Commands>,
+
+    // ----- Auto-demo flags (#106) -----
+    // These are top-level (not under a subcommand) so existing demos and
+    // onboarding scripts can do `type-globe --demo --lang ja` without
+    // having to remember which subcommand owns demo mode. They are
+    // ignored when any subcommand is supplied.
+    /// 自動デモモードで起動する（無人ループ展示・宣伝動画用）。1問ごとに
+    /// `--demo-wait-ms` 待機したあと正解を自動入力する。
+    #[arg(long)]
+    demo: bool,
+
+    /// デモで連続出題する問題数（default 10）。
+    #[arg(long, default_value_t = 10)]
+    demo_count: u32,
+
+    /// 各問の開始から自動打鍵を始めるまでの待機時間 (ms, default 1000)。
+    #[arg(long, default_value_t = 1000)]
+    demo_wait_ms: u64,
+
+    /// 1秒あたりの自動打鍵数 (default 20)。
+    #[arg(long, default_value_t = 20)]
+    demo_type_cps: u32,
+
+    /// 終端させずにデモを永続ループする (Esc / Ctrl+C で中断)。
+    #[arg(long)]
+    demo_loop: bool,
+
+    /// デモモードの言語指定 (ja / en)。`--demo` 時のみ参照される。
+    #[arg(long, value_parser = parse_language)]
+    lang: Option<Language>,
+
+    /// デモモードのジャンル絞り込み。指定したジャンルの問題だけから出題する。
+    #[arg(long)]
+    genre: Option<String>,
 }
 
 #[derive(Subcommand, Debug)]
@@ -101,6 +136,23 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let config = Config::default();
 
     Storage::ensure_data_directory(&config.data_dir)?;
+
+    // --demo は最優先。サブコマンド経路を通さず、専用の auto-demo
+    // ループに直行する。--demo 指定時はサブコマンドを無視する仕様。
+    if cli.demo {
+        let language = resolve_language_or_select(cli.lang.clone())?;
+        return run_quiz_demo(
+            &config,
+            &language,
+            cli.genre.as_deref(),
+            DemoOptions {
+                count: cli.demo_count,
+                wait_ms: cli.demo_wait_ms,
+                type_cps: cli.demo_type_cps,
+                loop_forever: cli.demo_loop,
+            },
+        );
+    }
 
     match cli.command {
         // ---- サブコマンドなし: 従来どおりメインメニューへ ----
@@ -230,6 +282,68 @@ fn run_menu_loop(config: &Config) -> Result<(), Box<dyn std::error::Error>> {
 // ---------------------------------------------------------------------------
 // モード実装ヘルパー
 // ---------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------
+// Auto-demo runner (#106)
+// ---------------------------------------------------------------------------
+
+/// Tunables that the CLI surface exposes for the auto-demo. Bundled into
+/// a struct so future modes (listening demo, RPG demo) can take the
+/// same configuration without growing per-call argument lists.
+#[derive(Debug, Clone)]
+struct DemoOptions {
+    count: u32,
+    wait_ms: u64,
+    type_cps: u32,
+    loop_forever: bool,
+}
+
+/// Run the quiz under the auto-demo driver. Loads the question pool
+/// (optionally filtered by genre), then either runs one demo session
+/// or loops until the user aborts with Esc / Ctrl+C.
+fn run_quiz_demo(
+    config: &Config,
+    language: &Language,
+    genre: Option<&str>,
+    options: DemoOptions,
+) -> Result<(), Box<dyn std::error::Error>> {
+    let questions_file = config.questions_file_path(language);
+    let mut questions = load_questions_with_warnings(&questions_file)?;
+
+    if let Some(g) = genre {
+        questions = DataLoader::filter_questions_by_genre(&questions, Some(g));
+        if questions.is_empty() {
+            eprintln!("error: --genre '{g}' に一致する問題がありません。");
+            return Ok(());
+        }
+    }
+
+    if questions.is_empty() {
+        println!("問題が見つかりません。");
+        return Ok(());
+    }
+
+    let records_path = config.records_file_path(language);
+    let count = options.count.max(1) as usize;
+    let wait = Duration::from_millis(options.wait_ms);
+
+    loop {
+        let demo = DemoInputSource::new(options.type_cps, wait);
+        let mut quiz_ui =
+            QuizUI::from_pool_with_count(&questions, language.clone(), records_path.clone(), count);
+        // Demo path discards the score — the operator only cares that
+        // the run completes and the screen looks right. Errors are
+        // surfaced so a broken terminal doesn't get swallowed in loop
+        // mode.
+        let _ = quiz_ui.run_with_demo(demo)?;
+
+        if !options.loop_forever {
+            break;
+        }
+    }
+
+    Ok(())
+}
 
 fn run_quiz_mode(config: &Config, language: &Language) -> Result<(), Box<dyn std::error::Error>> {
     let questions_file = config.questions_file_path(language);

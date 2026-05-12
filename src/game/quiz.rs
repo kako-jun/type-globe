@@ -68,8 +68,15 @@ impl QuizGame {
     /// so two consecutive runs don't see the same questions in the same
     /// sequence.
     pub fn from_pool(pool: &[Question], language: Language) -> Self {
+        Self::from_pool_with_count(pool, language, QUIZ_RUN_LENGTH)
+    }
+
+    /// Same as [`from_pool`] but with a caller-specified run length.
+    /// Used by the auto-demo (#106) where the operator can dial the
+    /// session length up or down with `--demo-count`.
+    pub fn from_pool_with_count(pool: &[Question], language: Language, count: usize) -> Self {
         let mut rng = rand::thread_rng();
-        let take = pool.len().min(QUIZ_RUN_LENGTH);
+        let take = pool.len().min(count.max(1));
         let sampled: Vec<Question> = pool.choose_multiple(&mut rng, take).cloned().collect();
         Self::new(sampled, language)
     }
