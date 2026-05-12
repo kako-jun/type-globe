@@ -15585,36 +15585,36 @@
     "id": "q0380",
     "genre": "anime",
     "question_text": {
-      "ja": "『涼宮ハルヒの憂鬱』を制作したスタジオは?",
-      "en": "Which studio produced 'The Melancholy of Haruhi Suzumiya'?"
+      "ja": "『美少女戦士セーラームーン』『ドラゴンボール』を制作した、日本最古級のアニメスタジオは?",
+      "en": "Which veteran Japanese animation studio produced 'Sailor Moon' and 'Dragon Ball'?"
     },
     "choices": [
       {
-        "ja": "京都アニメーション",
-        "en": "Kyoto Animation",
+        "ja": "東映アニメーション",
+        "en": "Toei Animation",
         "ja_typings": [
-          "kyoutoanime-shon"
+          "toueianime-shon"
         ]
       },
       {
-        "ja": "シャフト",
-        "en": "Shaft",
+        "ja": "マッドハウス",
+        "en": "Madhouse",
         "ja_typings": [
-          "shafuto"
+          "maddohausu"
         ]
       },
       {
-        "ja": "サンライズ",
-        "en": "Sunrise",
+        "ja": "WIT STUDIO",
+        "en": "WIT STUDIO",
         "ja_typings": [
-          "sanraizu"
+          "wittosutajio"
         ]
       },
       {
-        "ja": "MAPPA",
-        "en": "MAPPA",
+        "ja": "ガイナックス",
+        "en": "Gainax",
         "ja_typings": [
-          "mappa"
+          "gainakkusu"
         ]
       }
     ],
@@ -17107,37 +17107,36 @@
     "id": "q0417",
     "genre": "game",
     "question_text": {
-      "ja": "Mojang のマルクス・ペルソンが開発した世界一売れたゲームは?",
-      "en": "Which game by Markus Persson at Mojang is the best-selling of all time?"
+      "ja": "『大乱闘スマッシュブラザーズ』『星のカービィ』を生み出したゲームデザイナーは?",
+      "en": "Which Japanese designer created 'Super Smash Bros.' and 'Kirby'?"
     },
     "choices": [
       {
-        "ja": "Minecraft",
-        "en": "Minecraft",
+        "ja": "桜井政博",
+        "en": "Masahiro Sakurai",
         "ja_typings": [
-          "minecraft"
+          "sakuraimasahiro"
         ]
       },
       {
-        "ja": "Tetris",
-        "en": "Tetris",
+        "ja": "鈴木裕",
+        "en": "Yu Suzuki",
         "ja_typings": [
-          "tetris"
+          "suzukiyuu"
         ]
       },
       {
-        "ja": "GTA V",
-        "en": "GTA V",
+        "ja": "田尻智",
+        "en": "Satoshi Tajiri",
         "ja_typings": [
-          "gtav",
-          "gta5"
+          "tajirisatoshi"
         ]
       },
       {
-        "ja": "Wii Sports",
-        "en": "Wii Sports",
+        "ja": "中村光一",
+        "en": "Koichi Nakamura",
         "ja_typings": [
-          "wiisports"
+          "nakamurakouichi"
         ]
       }
     ],
@@ -23315,36 +23314,36 @@
     "id": "q0568",
     "genre": "math",
     "question_text": {
-      "ja": "1から100までの整数の和を瞬時に求めた逸話を持つ少年は誰?",
-      "en": "Which boy is said to have summed 1 to 100 in moments?"
+      "ja": "「リーマン予想」で知られ、複素関数論を発展させた19世紀ドイツの数学者は?",
+      "en": "Which 19th-century German mathematician is famous for the Riemann hypothesis and complex analysis?"
     },
     "choices": [
       {
+        "ja": "リーマン",
+        "en": "Bernhard Riemann",
+        "ja_typings": [
+          "ri-man"
+        ]
+      },
+      {
         "ja": "ガウス",
-        "en": "Gauss",
+        "en": "Carl Friedrich Gauss",
         "ja_typings": [
           "gausu"
         ]
       },
       {
-        "ja": "オイラー",
-        "en": "Euler",
+        "ja": "ヒルベルト",
+        "en": "David Hilbert",
         "ja_typings": [
-          "oira-"
+          "hiruberuto"
         ]
       },
       {
-        "ja": "ニュートン",
-        "en": "Newton",
+        "ja": "カントール",
+        "en": "Georg Cantor",
         "ja_typings": [
-          "nyu-ton"
-        ]
-      },
-      {
-        "ja": "ラマヌジャン",
-        "en": "Ramanujan",
-        "ja_typings": [
-          "ramanujan"
+          "kanto-ru"
         ]
       }
     ],
@@ -28203,36 +28202,36 @@
     "id": "q0687",
     "genre": "general_knowledge",
     "question_text": {
-      "ja": "「マクドナルド」の発祥国は?",
-      "en": "In which country did McDonald's originate?"
+      "ja": "コーヒーの発祥の地と言われる国は?",
+      "en": "Which country is considered the birthplace of coffee?"
     },
     "choices": [
       {
-        "ja": "アメリカ",
-        "en": "United States",
+        "ja": "エチオピア",
+        "en": "Ethiopia",
         "ja_typings": [
-          "amerika"
+          "echiopia"
         ]
       },
       {
-        "ja": "カナダ",
-        "en": "Canada",
+        "ja": "イエメン",
+        "en": "Yemen",
         "ja_typings": [
-          "kanada"
+          "iemen"
         ]
       },
       {
-        "ja": "イギリス",
-        "en": "United Kingdom",
+        "ja": "トルコ",
+        "en": "Turkey",
         "ja_typings": [
-          "igirisu"
+          "toruko"
         ]
       },
       {
-        "ja": "オーストラリア",
-        "en": "Australia",
+        "ja": "ブラジル",
+        "en": "Brazil",
         "ja_typings": [
-          "o-sutoraria"
+          "burajiru"
         ]
       }
     ],
