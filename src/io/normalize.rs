@@ -4,6 +4,8 @@
 //! canonical form before comparison, so a player typing `shi`, `chi`,
 //! `tsu`, `wo`, etc. is accepted as equivalent to `si`, `ti`, `tu`, `o`
 //! without requiring every variant to be enumerated in question data.
+//! The long-vowel mark `ー` typed as `-` after a vowel is collapsed too,
+//! since question data registers long vowels in collapsed form (#93).
 
 pub fn canonical_romaji(s: &str) -> String {
     let mut out = s.to_lowercase();
@@ -18,6 +20,27 @@ pub fn canonical_romaji(s: &str) -> String {
     out = out.replace("fu", "hu");
     out = out.replace("ji", "zi");
     out = out.replace("wo", "o");
+    // 長音符 `ー` を `-` で打った場合の正規化 (#93)。
+    // 母音直後の `-` は `ー` と同じ意図なので、データが長音を畳んで
+    // 登録している (例: サーバー → `saba`) 前提に合わせて落とす。
+    // 子音直後や行頭の `-` は実在しない綴りなのでそのまま残す
+    // (mistype 判定で弾かれる)。
+    out = collapse_long_vowel_dash(&out);
+    out
+}
+
+fn collapse_long_vowel_dash(s: &str) -> String {
+    let mut out = String::with_capacity(s.len());
+    for c in s.chars() {
+        if c == '-' {
+            if let Some(prev) = out.chars().last() {
+                if matches!(prev, 'a' | 'i' | 'u' | 'e' | 'o') {
+                    continue;
+                }
+            }
+        }
+        out.push(c);
+    }
     out
 }
 
@@ -87,5 +110,33 @@ mod tests {
         assert_eq!(canonical_romaji("tokyo"), "tokyo");
         assert_eq!(canonical_romaji("nagoya"), "nagoya");
         assert_eq!(canonical_romaji("123 test"), "123 test");
+    }
+
+    #[test]
+    fn long_vowel_dash_after_vowel_drops() {
+        // Issue #93: サーバー を `sa-` `sa-ba-` で打てるようにする。
+        assert_eq!(canonical_romaji("sa-"), "sa");
+        assert_eq!(canonical_romaji("sa-ba-"), "saba");
+        assert_eq!(canonical_romaji("ko-hi-"), "kohi");
+        // 連続した長音もすべて落ちる。
+        assert_eq!(canonical_romaji("a--"), "a");
+    }
+
+    #[test]
+    fn dash_without_preceding_vowel_is_kept() {
+        // 子音直後・行頭の `-` は長音意図ではないので残す
+        // (ヘボン式に存在しない綴りなので prefix 判定で弾かれる)。
+        assert_eq!(canonical_romaji("-foo"), "-foo");
+        assert_eq!(canonical_romaji("k-"), "k-");
+    }
+
+    #[test]
+    fn long_vowel_dash_combines_with_hepburn_collapse() {
+        // 既存ルールと組み合わせても破綻しないこと。
+        // shi → si のあと i- が i に潰れる。
+        assert_eq!(canonical_romaji("shi-"), "si");
+        assert_eq!(canonical_romaji("chi-zu"), "tizu");
+        // wo → o のあと o- が o に潰れる (ウォー の入力ケース)。
+        assert_eq!(canonical_romaji("wo-"), "o");
     }
 }
