@@ -139,8 +139,15 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     // --demo は最優先。サブコマンド経路を通さず、専用の auto-demo
     // ループに直行する。--demo 指定時はサブコマンドを無視する仕様。
+    //
+    // 言語選択は --lang が未指定なら Japanese を採用する。demo は
+    // 無人ループ展示・OBS 録画・CI 動画生成など非対話用途が中心で、
+    // TTY/stdin が無い環境で `resolve_language_or_select` の対話
+    // プロンプトに詰まると死ぬため、ここでは絶対にプロンプトを出さない
+    // (R-1)。日本語デフォルトは type-globe の主用途と既存データ量、
+    // および日本人ユーザー優先方針に従う。
     if cli.demo {
-        let language = resolve_language_or_select(cli.lang.clone())?;
+        let language = cli.lang.clone().unwrap_or(Language::Japanese);
         return run_quiz_demo(
             &config,
             &language,
