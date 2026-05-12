@@ -446,6 +446,275 @@ mod tests {
         }
     }
 
+    // ----- DemoInputSource behavior tests (#106) -----
+
+    #[test]
+    fn demo_source_empty_target_returns_timeout() {
+        // No target armed → recv_until must keep ticking (Timeout), not
+        // Disconnected. The session relies on the redraw loop continuing.
+        let demo = DemoInputSource::new(1000, Duration::from_millis(0));
+        demo.set_target("");
+        let outcome = demo.recv_until(Duration::from_millis(20));
+        assert_eq!(outcome, RecvOutcome::Timeout);
+    }
+
+    #[test]
+    fn demo_source_long_target_delivers_all_chars_in_order() {
+        // 200-char target at 10000 cps (1 ms floor → 100 chars / 100 ms).
+        // Every character must arrive once and in input order.
+        let target: String = (0..200).map(|i| (b'a' + (i % 26) as u8) as char).collect();
+        let demo = DemoInputSource::new(10000, Duration::from_millis(0));
+        demo.set_target(&target);
+        let mut typed = String::new();
+        for _ in 0..target.chars().count() {
+            match demo.recv_until(Duration::from_millis(500)) {
+                RecvOutcome::Key(k) => {
+                    if let KeyCode::Char(c) = k.code {
+                        typed.push(c);
+                    }
+                }
+                other => panic!("expected Key, got {other:?}"),
+            }
+        }
+        assert_eq!(typed, target);
+        assert!(demo.target_consumed());
+    }
+
+    #[test]
+    fn demo_source_unicode_long_vowel_target() {
+        // `ko-hi-` (コーヒー) uses ASCII `-` for long vowels per #93.
+        // The source must deliver each char including the dashes intact.
+        let demo = DemoInputSource::new(1000, Duration::from_millis(0));
+        demo.set_target("ko-hi-");
+        let mut typed = String::new();
+        for _ in 0..6 {
+            match demo.recv_until(Duration::from_millis(100)) {
+                RecvOutcome::Key(k) => {
+                    if let KeyCode::Char(c) = k.code {
+                        typed.push(c);
+                    }
+                }
+                other => panic!("expected Key, got {other:?}"),
+            }
+        }
+        assert_eq!(typed, "ko-hi-");
+    }
+
+    #[test]
+    fn demo_source_cadence_is_steady_when_caller_pauses_between_calls() {
+        // 100 cps = 10 ms interval. If the caller pauses 50 ms between
+        // recv_until calls, the cadence is anchored to the prior fire time
+        // so the 2nd char must be available immediately (≤ 5 ms).
+        let demo = DemoInputSource::new(100, Duration::from_millis(0));
+        demo.set_target("abc");
+        // First keystroke (no anchor yet) — discard.
+        let _ = demo.recv_until(Duration::from_millis(50));
+        thread::sleep(Duration::from_millis(50));
+        let started = Instant::now();
+        match demo.recv_until(Duration::from_millis(50)) {
+            RecvOutcome::Key(k) => assert_eq!(k.code, KeyCode::Char('b')),
+            other => panic!("expected Key('b'), got {other:?}"),
+        }
+        assert!(
+            started.elapsed() < Duration::from_millis(5),
+            "cadence not steady: 2nd char took {:?}",
+            started.elapsed()
+        );
+    }
+
+    #[test]
+    fn demo_source_set_target_during_active_typing_resets_cursor() {
+        // Mid-stream `set_target` (e.g. question advanced) must drop the
+        // remainder of the old buffer and start the new one from index 0.
+        let demo = DemoInputSource::new(1000, Duration::from_millis(0));
+        demo.set_target("abc");
+        let _ = demo.recv_until(Duration::from_millis(50)); // 'a'
+        demo.set_target("xyz");
+        match demo.recv_until(Duration::from_millis(50)) {
+            RecvOutcome::Key(k) => assert_eq!(k.code, KeyCode::Char('x')),
+            other => panic!("expected Key('x'), got {other:?}"),
+        }
+    }
+
+    #[test]
+    fn demo_source_high_cps_clamped_to_min_1ms_interval() {
+        // Insane CPS must not panic and must not produce a zero interval
+        // (which would let the demo deliver everything in one tight loop
+        // and starve redraws). 10 chars at 1 ms each = ~10 ms minimum.
+        let demo = DemoInputSource::new(10_000_000, Duration::from_millis(0));
+        demo.set_target("0123456789");
+        let started = Instant::now();
+        for _ in 0..10 {
+            match demo.recv_until(Duration::from_millis(200)) {
+                RecvOutcome::Key(_) => {}
+                other => panic!("expected Key, got {other:?}"),
+            }
+        }
+        // Sanity: total time >= 9 * 1ms (9 inter-keystroke gaps).
+        assert!(
+            started.elapsed() >= Duration::from_millis(8),
+            "interval not clamped: 10 chars in {:?}",
+            started.elapsed()
+        );
+    }
+
+    #[test]
+    fn demo_source_one_cps_uses_1000ms_interval() {
+        // 1 cps = 1000 ms between keystrokes. 2nd char must NOT arrive
+        // before ~900 ms after the 1st.
+        let demo = DemoInputSource::new(1, Duration::from_millis(0));
+        demo.set_target("ab");
+        // First key fires nearly immediately (no wait, no prior anchor).
+        let _ = demo.recv_until(Duration::from_millis(50));
+        let started = Instant::now();
+        let outcome = demo.recv_until(Duration::from_millis(800));
+        // Within 800 ms of the first keystroke, the second must NOT have
+        // fired yet — the spacing contract is 1000 ms.
+        assert_eq!(outcome, RecvOutcome::Timeout);
+        assert!(started.elapsed() >= Duration::from_millis(750));
+    }
+
+    #[test]
+    fn demo_source_space_and_digit_in_target() {
+        // Non-alphabetic chars (space, digits) must round-trip as
+        // KeyCode::Char so phrase / number answers can be typed.
+        let demo = DemoInputSource::new(1000, Duration::from_millis(0));
+        demo.set_target("a 1");
+        let mut chars = Vec::new();
+        for _ in 0..3 {
+            match demo.recv_until(Duration::from_millis(50)) {
+                RecvOutcome::Key(k) => {
+                    if let KeyCode::Char(c) = k.code {
+                        chars.push(c);
+                    }
+                }
+                other => panic!("expected Key, got {other:?}"),
+            }
+        }
+        assert_eq!(chars, vec!['a', ' ', '1']);
+    }
+
+    #[test]
+    fn synth_key_produces_no_modifiers() {
+        // The demo never holds Ctrl/Alt/Shift; modifier bits on a synthetic
+        // event would trip the Quiz input handler's Esc/Ctrl-C branches.
+        let k = synth_key('q');
+        assert_eq!(k.code, KeyCode::Char('q'));
+        assert_eq!(k.modifiers, KeyModifiers::NONE);
+    }
+
+    // ----- MultiplexedSource tests (#106) -----
+
+    /// Mock `KeyEventSource` driven by a `Mutex<VecDeque<RecvOutcome>>`
+    /// so a single test can stage a deterministic sequence of returns
+    /// without spawning crossterm or sleeping for real timeouts.
+    struct MockSource {
+        queue: Mutex<std::collections::VecDeque<RecvOutcome>>,
+        default: fn() -> RecvOutcome,
+    }
+
+    impl MockSource {
+        fn new(default: fn() -> RecvOutcome) -> Self {
+            Self {
+                queue: Mutex::new(std::collections::VecDeque::new()),
+                default,
+            }
+        }
+        fn push(&self, outcome: RecvOutcome) {
+            self.queue.lock().unwrap().push_back(outcome);
+        }
+    }
+
+    impl KeyEventSource for MockSource {
+        fn recv_until(&self, _timeout: Duration) -> RecvOutcome {
+            match self.queue.lock().unwrap().pop_front() {
+                Some(o) => o,
+                None => (self.default)(),
+            }
+        }
+    }
+
+    #[test]
+    fn multiplexed_returns_human_key_when_human_has_event() {
+        // Human source has a key queued → mux must return it without
+        // consulting the demo source.
+        let human = MockSource::new(|| RecvOutcome::Timeout);
+        human.push(RecvOutcome::Key(KeyEvent::new(
+            KeyCode::Esc,
+            KeyModifiers::NONE,
+        )));
+        let demo = MockSource::new(|| RecvOutcome::Timeout);
+        demo.push(RecvOutcome::Key(KeyEvent::new(
+            KeyCode::Char('z'),
+            KeyModifiers::NONE,
+        )));
+        let mux = MultiplexedSource { a: human, b: demo };
+        match mux.recv_until(Duration::from_millis(50)) {
+            RecvOutcome::Key(k) => assert_eq!(k.code, KeyCode::Esc),
+            other => panic!("expected Esc from human, got {other:?}"),
+        }
+        // Demo queue still has its 'z' — mux must NOT have drained it.
+        assert_eq!(mux.b.queue.lock().unwrap().len(), 1);
+    }
+
+    #[test]
+    fn multiplexed_falls_through_to_demo_when_human_idle() {
+        let human = MockSource::new(|| RecvOutcome::Timeout);
+        let demo = MockSource::new(|| RecvOutcome::Timeout);
+        demo.push(RecvOutcome::Key(KeyEvent::new(
+            KeyCode::Char('a'),
+            KeyModifiers::NONE,
+        )));
+        let mux = MultiplexedSource { a: human, b: demo };
+        match mux.recv_until(Duration::from_millis(50)) {
+            RecvOutcome::Key(k) => assert_eq!(k.code, KeyCode::Char('a')),
+            other => panic!("expected Key('a') from demo, got {other:?}"),
+        }
+    }
+
+    #[test]
+    fn multiplexed_continues_on_human_disconnected() {
+        // If the human channel drops (e.g. terminal vanished mid-demo),
+        // the demo must keep driving rather than the whole mux returning
+        // Disconnected and killing the run.
+        let human = MockSource::new(|| RecvOutcome::Disconnected);
+        let demo = MockSource::new(|| RecvOutcome::Timeout);
+        demo.push(RecvOutcome::Key(KeyEvent::new(
+            KeyCode::Char('d'),
+            KeyModifiers::NONE,
+        )));
+        let mux = MultiplexedSource { a: human, b: demo };
+        match mux.recv_until(Duration::from_millis(50)) {
+            RecvOutcome::Key(k) => assert_eq!(k.code, KeyCode::Char('d')),
+            other => panic!("expected Key('d') from demo, got {other:?}"),
+        }
+    }
+
+    #[test]
+    fn multiplexed_does_not_double_dispatch_demo_key() {
+        // Two successive recv_until calls with two demo events queued must
+        // deliver them in order ('a' then 'b'), not duplicate the first.
+        let human = MockSource::new(|| RecvOutcome::Timeout);
+        let demo = MockSource::new(|| RecvOutcome::Timeout);
+        demo.push(RecvOutcome::Key(KeyEvent::new(
+            KeyCode::Char('a'),
+            KeyModifiers::NONE,
+        )));
+        demo.push(RecvOutcome::Key(KeyEvent::new(
+            KeyCode::Char('b'),
+            KeyModifiers::NONE,
+        )));
+        let mux = MultiplexedSource { a: human, b: demo };
+        match mux.recv_until(Duration::from_millis(50)) {
+            RecvOutcome::Key(k) => assert_eq!(k.code, KeyCode::Char('a')),
+            other => panic!("expected Key('a'), got {other:?}"),
+        }
+        match mux.recv_until(Duration::from_millis(50)) {
+            RecvOutcome::Key(k) => assert_eq!(k.code, KeyCode::Char('b')),
+            other => panic!("expected Key('b'), got {other:?}"),
+        }
+    }
+
     #[test]
     fn drop_signals_shutdown_and_joins_worker() {
         let (input, _tx) = channel_with_dummy_worker();
