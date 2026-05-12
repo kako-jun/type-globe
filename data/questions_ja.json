@@ -2725,17 +2725,17 @@
         ]
       },
       {
-        "ja": "アフリカ",
-        "en": "Africa",
+        "ja": "南アメリカ",
+        "en": "South America",
         "ja_typings": [
-          "afurika"
+          "minamiamerika"
         ]
       },
       {
-        "ja": "北アメリカ",
-        "en": "North America",
+        "ja": "オーストラリア",
+        "en": "Australia",
         "ja_typings": [
-          "kitaamerika"
+          "o-sutoraria"
         ]
       },
       {
@@ -29970,36 +29970,37 @@
     "id": "q0730",
     "genre": "vtuber_net_culture",
     "question_text": {
-      "ja": "ホロライブ2期生に所属する大空スバルの一人称は?",
-      "en": "What is the first-person pronoun Oozora Subaru uses?"
+      "ja": "ホロライブ2期生メンバーで「あくたん」の愛称で親しまれているVTuberは?",
+      "en": "Which Hololive 2nd gen member is known by the nickname 'Akutan'?"
     },
     "choices": [
       {
-        "ja": "オレ",
-        "en": "Ore",
+        "ja": "湊あくあ",
+        "en": "Minato Aqua",
         "ja_typings": [
-          "ore"
+          "minatoaqua",
+          "minatoakua"
         ]
       },
       {
-        "ja": "ワイ",
-        "en": "Wai",
+        "ja": "紫咲シオン",
+        "en": "Murasaki Shion",
         "ja_typings": [
-          "wai"
+          "murasakishion"
         ]
       },
       {
-        "ja": "ボク",
-        "en": "Boku",
+        "ja": "兎田ぺこら",
+        "en": "Usada Pekora",
         "ja_typings": [
-          "boku"
+          "usadapekora"
         ]
       },
       {
-        "ja": "ウチ",
-        "en": "Uchi",
+        "ja": "宝鐘マリン",
+        "en": "Houshou Marine",
         "ja_typings": [
-          "uchi"
+          "houshoumarine"
         ]
       }
     ],
