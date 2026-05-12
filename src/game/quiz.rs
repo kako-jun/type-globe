@@ -143,10 +143,20 @@ impl QuizGame {
         if typed.is_empty() {
             return true;
         }
+        let typed_lower = typed.to_lowercase();
         let typed_key = self.canonical_key(typed);
+        // 二段判定: canonical (例 `shi`/`si` 等価) と、生 lowercase の両側で
+        // prefix を見る。後者は「multi-char rewrite の途中」を救う:
+        // 例: データ `ratenmoji` を打鍵中、`ratenmoj` (ji 未完成) は
+        // canonical 比較だと `ratenmozi` と整合せず弾かれるが、生比較なら
+        // `ratenmoji`.starts_with(`ratenmoj`) で通る。
         self.current_correct_typing_candidates()
             .iter()
-            .any(|candidate| self.canonical_key(candidate).starts_with(&typed_key))
+            .any(|candidate| {
+                let cand_lower = candidate.to_lowercase();
+                cand_lower.starts_with(&typed_lower)
+                    || self.canonical_key(candidate).starts_with(&typed_key)
+            })
     }
 
     /// Resolve the typed text against the current question's choices and
@@ -519,6 +529,22 @@ mod tests {
         let game = QuizGame::new(vec![question], Language::English);
         assert!(!game.is_valid_correct_typed_prefix("b"));
         assert!(!game.is_valid_correct_typed_prefix("borrow"));
+    }
+
+    #[test]
+    fn valid_prefix_handles_mid_rewrite_partial_input() {
+        // Multi-char rewrite (ji → zi) の途中で打鍵されると、canonical 比較
+        // だけだと `ratenmoj` が `ratenmozi` の prefix にならず弾かれてしまう。
+        // 生 lowercase との二段判定で救う回帰テスト。
+        let mut question = make_question(&["ラテン文字", "漢字", "クメール文字", "タイ文字"], 0);
+        question.choices[0].ja_typings = vec!["ratenmoji".into()];
+        let game = QuizGame::new(vec![question], Language::Japanese);
+        assert!(game.is_valid_correct_typed_prefix("ratenmo"));
+        assert!(game.is_valid_correct_typed_prefix("ratenmoj"));
+        assert!(game.is_valid_correct_typed_prefix("ratenmoji"));
+        // kunrei (zi) 経路も通る。
+        assert!(game.is_valid_correct_typed_prefix("ratenmoz"));
+        assert!(game.is_valid_correct_typed_prefix("ratenmozi"));
     }
 
     #[test]
