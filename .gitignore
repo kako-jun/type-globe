@@ -5,3 +5,4 @@
 __pycache__/
 *.pyc
 .pytest_cache/
+scripts/suspicious_ja_typings.json

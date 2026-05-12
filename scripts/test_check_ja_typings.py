@@ -21,8 +21,11 @@ ROOT = Path(__file__).resolve().parent.parent
 QUESTIONS_PATH = ROOT / "data" / "questions_ja.json"
 
 
-def test_hepburn_raw_basic():
+def test_hepburn_raw_basic_voiced():
     assert _hiragana_to_hepburn_raw("りんご") == "ringo"
+
+
+def test_hepburn_raw_basic_simple():
     assert _hiragana_to_hepburn_raw("ふゆ") == "fuyu"
 
 
@@ -39,13 +42,19 @@ def test_hepburn_raw_n_before_bmp():
     assert _hiragana_to_hepburn_raw("てんぷら") == "tenpura"
 
 
-def test_hepburn_raw_sokuon_and_youon():
+def test_hepburn_raw_sokuon_basic():
     assert _hiragana_to_hepburn_raw("ろけっと") == "roketto"
+
+
+def test_hepburn_raw_sokuon_with_long_o():
     # がっこう raw = gakkou (collapsed = gakko via variants)
     assert _hiragana_to_hepburn_raw("がっこう") == "gakkou"
     assert hepburn_variants("がっこう") == ["gakko", "gakkou"]
-    # ちぇっく: ち+ぇ → che, prefix for っ before "ch" is 't'? No — gemination of
-    # ch uses 't' prefix, but next pair is く ("ku"), not ちぇ. Sequence is
+
+
+def test_hepburn_raw_sokuon_before_ku():
+    # ちぇっく: ち+ぇ → che, gemination of "ch" uses 't' prefix but here
+    # the geminated mora is く ("ku"), so the sequence becomes
     # ちぇ + っ + く → "che" + "kku"
     assert _hiragana_to_hepburn_raw("ちぇっく") == "chekku"
 
@@ -76,6 +85,15 @@ def test_matches_any_bidirectional_prefix():
     # Diverging strings (share only a short prefix) do not match
     assert matches_any(["toukyou"], ["tokyo"]) is False
     assert matches_any(["tokyo"], ["nagoya"]) is False
+
+
+def test_matches_any_prefix_requires_min_length():
+    # Short ja_typings must not prefix-match longer readings ("to" vs "tokyo")
+    assert matches_any(["to"], ["tokyo"]) is False
+    # 3-char threshold satisfied → prefix match allowed
+    assert matches_any(["abc"], ["abcdef"]) is True
+    # Exact equality still works below the min length
+    assert matches_any(["to"], ["to"]) is True
 
 
 def test_matches_any_normalizes_hyphen_space_underscore_and_case():

@@ -21,6 +21,11 @@ from typing import Iterable
 
 import pykakasi
 
+# Minimum length on the shorter side for prefix-based fuzzy match. Below
+# this, only exact equality counts. Prevents short ja_typings (e.g. "to")
+# from spuriously matching unrelated longer readings (e.g. "tokyo").
+PREFIX_MIN_LEN = 3
+
 ROOT = Path(__file__).resolve().parent.parent
 QUESTIONS_PATH = ROOT / "data" / "questions_ja.json"
 REPORT_PATH = ROOT / "scripts" / "suspicious_ja_typings.json"
@@ -180,10 +185,13 @@ def hepburn_variants(hira: str) -> list[str]:
     return [collapsed, raw]
 
 
-_kks = pykakasi.kakasi()
+_kks: "pykakasi.kakasi | None" = None
 
 
 def reading_of(ja: str) -> str:
+    global _kks
+    if _kks is None:
+        _kks = pykakasi.kakasi()
     parts = _kks.convert(ja)
     return "".join(part["hira"] for part in parts)
 
@@ -206,7 +214,11 @@ def matches_any(expected_variants: Iterable[str], actual: Iterable[str]) -> bool
         for a in norm_actual:
             if not a:
                 continue
-            if a == ev or a.startswith(ev) or ev.startswith(a):
+            if a == ev:
+                return True
+            if min(len(a), len(ev)) >= PREFIX_MIN_LEN and (
+                a.startswith(ev) or ev.startswith(a)
+            ):
                 return True
     return False
 
@@ -250,9 +262,10 @@ def main() -> int:
     )
 
     print(f"checked kanji-bearing choices: {checked}")
+    print(f"skipped (no kanji): {skipped_no_kanji}")
     print(f"suspicious entries: {len(suspicious)}")
     print(f"report: {REPORT_PATH.relative_to(ROOT)}")
-    return 0
+    return 0 if not suspicious else 1
 
 
 if __name__ == "__main__":
