@@ -4139,7 +4139,7 @@
         "ja": "リンクトリスト",
         "en": "Linked List",
         "ja_typings": [
-          "rinnkutorisuto"
+          "rinkutorisuto"
         ]
       }
     ],
@@ -4487,7 +4487,7 @@
         "ja": "二分木",
         "en": "Binary Tree",
         "ja_typings": [
-          "nibunngi",
+          "nibungi",
           "nibunki"
         ]
       },
@@ -4502,7 +4502,7 @@
         "ja": "三分木",
         "en": "Ternary Tree",
         "ja_typings": [
-          "sanbunngi",
+          "sanbungi",
           "sanbunki"
         ]
       },
@@ -4510,7 +4510,7 @@
         "ja": "完全グラフ",
         "en": "Complete Graph",
         "ja_typings": [
-          "kannzenngurafu"
+          "kanzengurafu"
         ]
       }
     ],
@@ -4653,7 +4653,7 @@
         "ja": "シングルトン",
         "en": "Singleton",
         "ja_typings": [
-          "shinngurutonn"
+          "shinguruton"
         ]
       },
       {
@@ -4701,7 +4701,7 @@
         "ja": "シングルトン",
         "en": "Singleton",
         "ja_typings": [
-          "shinngurutonn"
+          "shinguruton"
         ]
       },
       {
@@ -4750,7 +4750,7 @@
         "ja": "コンポジット",
         "en": "Composite",
         "ja_typings": [
-          "konnpojitto"
+          "konpojitto"
         ]
       },
       {
@@ -5071,7 +5071,7 @@
         "ja": "コメントを示すため",
         "en": "It indicates comments",
         "ja_typings": [
-          "komenntowoshimesutame"
+          "komentowoshimesutame"
         ]
       },
       {
@@ -5106,7 +5106,7 @@
         "ja": "厳密等価演算子",
         "en": "Strict equality",
         "ja_typings": [
-          "gennmitsutoukaennzannshi",
+          "genmitsutoukaenzanshi",
           "genmitsutokaenzanshi"
         ]
       },
@@ -5114,7 +5114,7 @@
         "ja": "代入演算子",
         "en": "Assignment",
         "ja_typings": [
-          "dainyuuennzannshi",
+          "dainyuuenzanshi",
           "dainyuenzanshi"
         ]
       },
@@ -5122,7 +5122,6 @@
         "ja": "論理積演算子",
         "en": "Logical AND",
         "ja_typings": [
-          "ronnrisekiennzannshi",
           "ronrisekienzanshi"
         ]
       },
@@ -5130,7 +5129,6 @@
         "ja": "ビット和演算子",
         "en": "Bitwise OR",
         "ja_typings": [
-          "bittowaennzannshi",
           "bittowaenzanshi"
         ]
       }
@@ -5165,7 +5163,7 @@
         "ja": "アセンブリ",
         "en": "Assembly",
         "ja_typings": [
-          "asennburi"
+          "asenburi"
         ]
       },
       {
@@ -5356,7 +5354,7 @@
         "ja": "ゴルーチン",
         "en": "Goroutine",
         "ja_typings": [
-          "goru-chinn"
+          "goru-chin"
         ]
       },
       {
@@ -5739,7 +5737,7 @@
         "ja": "ジェームズ・ゴスリン",
         "en": "James Gosling",
         "ja_typings": [
-          "je-muzugosurinn"
+          "je-muzugosurin"
         ]
       },
       {
@@ -5814,14 +5812,14 @@
         "ja": "リチャード・ストールマン",
         "en": "Richard Stallman",
         "ja_typings": [
-          "richa-dosuto-rumann"
+          "richa-dosuto-ruman"
         ]
       },
       {
         "ja": "ケン・トンプソン",
         "en": "Ken Thompson",
         "ja_typings": [
-          "kenntonnpusonn"
+          "kentonpuson"
         ]
       },
       {
@@ -5862,14 +5860,14 @@
         "ja": "ジェームズ・ゴスリン",
         "en": "James Gosling",
         "ja_typings": [
-          "je-muzugosurinn"
+          "je-muzugosurin"
         ]
       },
       {
         "ja": "ブレンダン・アイク",
         "en": "Brendan Eich",
         "ja_typings": [
-          "burenndannaiku"
+          "burendannaiku"
         ]
       }
     ],
@@ -5889,14 +5887,14 @@
         "ja": "ブレンダン・アイク",
         "en": "Brendan Eich",
         "ja_typings": [
-          "burenndannaiku"
+          "burendannaiku"
         ]
       },
       {
         "ja": "ジェームズ・ゴスリン",
         "en": "James Gosling",
         "ja_typings": [
-          "je-muzugosurinn"
+          "je-muzugosurin"
         ]
       },
       {
@@ -5930,7 +5928,7 @@
         "ja": "サン・マイクロシステムズ",
         "en": "Sun Microsystems",
         "ja_typings": [
-          "sannmaikuroshisutemuzu"
+          "sanmaikuroshisutemuzu"
         ]
       },
       {
@@ -6019,7 +6017,7 @@
         "ja": "リチャード・ストールマン",
         "en": "Richard Stallman",
         "ja_typings": [
-          "richa-dosuto-rumann"
+          "richa-dosuto-ruman"
         ]
       },
       {
@@ -6033,7 +6031,7 @@
         "ja": "ブライアン・カーニハン",
         "en": "Brian Kernighan",
         "ja_typings": [
-          "buraiannka-nihann"
+          "buraianka-nihan"
         ]
       }
     ],
@@ -6053,7 +6051,7 @@
         "ja": "リチャード・ストールマン",
         "en": "Richard Stallman",
         "ja_typings": [
-          "richa-dosuto-rumann"
+          "richa-dosuto-ruman"
         ]
       },
       {
@@ -6067,7 +6065,7 @@
         "ja": "ケン・トンプソン",
         "en": "Ken Thompson",
         "ja_typings": [
-          "kenntonnpusonn"
+          "kentonpuson"
         ]
       },
       {
@@ -6224,7 +6222,7 @@
         "ja": "反復",
         "en": "Iteration",
         "ja_typings": [
-          "hannpuku"
+          "hanpuku"
         ]
       },
       {
@@ -6258,7 +6256,7 @@
         "ja": "計算量の上限",
         "en": "Upper bound of complexity",
         "ja_typings": [
-          "keisannryounojougenn",
+          "keisanryounojougen",
           "keisanryonojogen"
         ]
       },
@@ -6266,7 +6264,7 @@
         "ja": "計算量の下限",
         "en": "Lower bound of complexity",
         "ja_typings": [
-          "keisannryounokagenn",
+          "keisanryounokagen",
           "keisanryonokagen"
         ]
       },
@@ -6281,7 +6279,7 @@
         "ja": "実行回数の平均",
         "en": "Average run count",
         "ja_typings": [
-          "jikkoukaisuunoheikinn",
+          "jikkoukaisuunoheikin",
           "jikkokaisunoheikin"
         ]
       }
@@ -6802,7 +6800,7 @@
         "en": "Client Error",
         "ja_typings": [
           "kuraiannutoera-",
-          "kuraianntoera-"
+          "kuraiantoera-"
         ]
       },
       {
@@ -7000,7 +6998,7 @@
         "ja": "二進数",
         "en": "Binary",
         "ja_typings": [
-          "nishinnsuu",
+          "nishinsuu",
           "nishinsu"
         ]
       },
@@ -7008,7 +7006,7 @@
         "ja": "十進数",
         "en": "Decimal",
         "ja_typings": [
-          "jisshinnsuu",
+          "jisshinsuu",
           "jisshinsu"
         ]
       },
@@ -7016,7 +7014,7 @@
         "ja": "八進数",
         "en": "Octal",
         "ja_typings": [
-          "hasshinnsuu",
+          "hasshinsuu",
           "hasshinsu"
         ]
       },
@@ -7024,7 +7022,7 @@
         "ja": "十六進数",
         "en": "Hexadecimal",
         "ja_typings": [
-          "jurokushinnsuu",
+          "jurokushinsuu",
           "jurokushinsu"
         ]
       }
@@ -7127,7 +7125,7 @@
         "ja": "ガベージコレクション",
         "en": "Garbage Collection",
         "ja_typings": [
-          "gabe-jikorekushonn"
+          "gabe-jikorekushon"
         ]
       },
       {
@@ -7148,7 +7146,7 @@
         "ja": "セグメンテーション違反",
         "en": "Segmentation Fault",
         "ja_typings": [
-          "segumente-shonniihann",
+          "segumente-shonniihan",
           "segumente-shoniihan"
         ]
       }
@@ -7169,28 +7167,28 @@
         "ja": "インタプリタ",
         "en": "Interpreter",
         "ja_typings": [
-          "inntapurita"
+          "intapurita"
         ]
       },
       {
         "ja": "コンパイラ",
         "en": "Compiler",
         "ja_typings": [
-          "konnpaira"
+          "konpaira"
         ]
       },
       {
         "ja": "リンカ",
         "en": "Linker",
         "ja_typings": [
-          "rinnka"
+          "rinka"
         ]
       },
       {
         "ja": "アセンブラ",
         "en": "Assembler",
         "ja_typings": [
-          "asennbura"
+          "asenbura"
         ]
       }
     ],
@@ -7210,14 +7208,14 @@
         "ja": "コンパイラ",
         "en": "Compiler",
         "ja_typings": [
-          "konnpaira"
+          "konpaira"
         ]
       },
       {
         "ja": "インタプリタ",
         "en": "Interpreter",
         "ja_typings": [
-          "inntapurita"
+          "intapurita"
         ]
       },
       {
@@ -7388,7 +7386,7 @@
         "ja": "ブレンダン・アイク",
         "en": "Brendan Eich",
         "ja_typings": [
-          "burenndannaiku"
+          "burendannaiku"
         ]
       },
       {
@@ -7436,7 +7434,6 @@
         "ja": "認証が必要",
         "en": "Authentication required",
         "ja_typings": [
-          "ninnshouga hitsuyou",
           "ninshouga hitsuyou"
         ]
       }
@@ -7587,7 +7584,6 @@
         "ja": "認証が必要",
         "en": "Authentication required",
         "ja_typings": [
-          "ninnshouga hitsuyou",
           "ninshouga hitsuyou"
         ]
       },
@@ -7622,7 +7618,6 @@
         "ja": "認証が必要",
         "en": "Authentication required",
         "ja_typings": [
-          "ninnshouga hitsuyou",
           "ninshouga hitsuyou"
         ]
       },
@@ -8949,7 +8944,6 @@
         "ja": "Basic 認証",
         "en": "Basic authentication",
         "ja_typings": [
-          "basic ninnshou",
           "basic ninshou"
         ]
       },
@@ -8957,7 +8951,6 @@
         "ja": "Digest 認証",
         "en": "Digest authentication",
         "ja_typings": [
-          "digest ninnshou",
           "digest ninshou"
         ]
       }
@@ -9081,7 +9074,6 @@
         "ja": "セッションハイジャック",
         "en": "Session hijacking",
         "ja_typings": [
-          "sesshonn haijakku",
           "sesshon haijakku"
         ]
       }
@@ -9772,7 +9764,6 @@
         "ja": "JavaScript ランタイム",
         "en": "JavaScript runtimes",
         "ja_typings": [
-          "javascript ranntaimu",
           "javascript rantaimu"
         ]
       },
@@ -9780,7 +9771,6 @@
         "ja": "バンドラ",
         "en": "Bundlers",
         "ja_typings": [
-          "banndora",
           "bandora"
         ]
       }
@@ -12319,7 +12309,7 @@
         "ja": "スプリント",
         "en": "Sprint",
         "ja_typings": [
-          "supurinnto"
+          "supurinto"
         ]
       },
       {
@@ -12689,7 +12679,7 @@
         "ja": "インデックス",
         "en": "Index",
         "ja_typings": [
-          "inndekkusu"
+          "indekkusu"
         ]
       },
       {
@@ -12853,14 +12843,14 @@
         "ja": "アジャイルソフトウェア開発宣言",
         "en": "Manifesto for Agile Software Development",
         "ja_typings": [
-          "ajairusofutoweakaihatsusenngenn"
+          "ajairusofutoweakaihatsusengen"
         ]
       },
       {
         "ja": "GNU 宣言",
         "en": "GNU Manifesto",
         "ja_typings": [
-          "gnusenngenn"
+          "gnusengen"
         ]
       },
       {
@@ -12874,7 +12864,7 @@
         "ja": "ハッカー宣言",
         "en": "Hacker Manifesto",
         "ja_typings": [
-          "hakka-senngenn"
+          "hakka-sengen"
         ]
       }
     ],
@@ -12894,7 +12884,7 @@
         "ja": "デイリースタンドアップ",
         "en": "Daily Stand-up",
         "ja_typings": [
-          "deiri-sutanndoappu"
+          "deiri-sutandoappu"
         ]
       },
       {
@@ -12908,14 +12898,14 @@
         "ja": "スプリントレビュー",
         "en": "Sprint Review",
         "ja_typings": [
-          "supurinntorebyu-"
+          "supurintorebyu-"
         ]
       },
       {
         "ja": "プランニングポーカー",
         "en": "Planning Poker",
         "ja_typings": [
-          "puranninngupo-ka-"
+          "puranningupo-ka-"
         ]
       }
     ],
@@ -13024,14 +13014,14 @@
         "ja": "ブルーグリーンデプロイ",
         "en": "Blue-Green Deployment",
         "ja_typings": [
-          "buru-guri-nndepuroi"
+          "buru-guri-ndepuroi"
         ]
       },
       {
         "ja": "ローリングアップデート",
         "en": "Rolling Update",
         "ja_typings": [
-          "ro-rinnguappude-to"
+          "ro-ringuappude-to"
         ]
       },
       {
@@ -13161,7 +13151,7 @@
         "ja": "イベント駆動アーキテクチャ",
         "en": "Event-Driven Architecture",
         "ja_typings": [
-          "ibenntokudoua-kitekucha"
+          "ibentokudoua-kitekucha"
         ]
       }
     ],
@@ -13386,7 +13376,7 @@
         "ja": "尾田栄一郎",
         "en": "Eiichiro Oda",
         "ja_typings": [
-          "odaeiichiro"
+          "odaeiichirou"
         ]
       },
       {
@@ -13434,7 +13424,7 @@
         "ja": "尾田栄一郎",
         "en": "Eiichiro Oda",
         "ja_typings": [
-          "odaeiichiro"
+          "odaeiichirou"
         ]
       },
       {
@@ -13475,7 +13465,7 @@
         "ja": "尾田栄一郎",
         "en": "Eiichiro Oda",
         "ja_typings": [
-          "odaeiichiro"
+          "odaeiichirou"
         ]
       },
       {
@@ -13523,7 +13513,7 @@
         "ja": "尾田栄一郎",
         "en": "Eiichiro Oda",
         "ja_typings": [
-          "odaeiichiro"
+          "odaeiichirou"
         ]
       },
       {
@@ -13762,7 +13752,7 @@
         "ja": "尾田栄一郎",
         "en": "Eiichiro Oda",
         "ja_typings": [
-          "odaeiichiro"
+          "odaeiichirou"
         ]
       },
       {
@@ -13837,8 +13827,7 @@
         "ja": "大場つぐみ",
         "en": "Tsugumi Ohba",
         "ja_typings": [
-          "ohbatsugumi",
-          "obatsugumi"
+          "ohbatsugumi"
         ]
       },
       {
@@ -13852,7 +13841,7 @@
         "ja": "尾田栄一郎",
         "en": "Eiichiro Oda",
         "ja_typings": [
-          "odaeiichiro"
+          "odaeiichirou"
         ]
       },
       {
@@ -14392,7 +14381,7 @@
         "ja": "ボンズ",
         "en": "Bones",
         "ja_typings": [
-          "bonnzu"
+          "bonzu"
         ]
       }
     ],
@@ -14467,7 +14456,7 @@
         "ja": "ボンズ",
         "en": "Bones",
         "ja_typings": [
-          "bonnzu"
+          "bonzu"
         ]
       },
       {
@@ -14556,7 +14545,7 @@
         "ja": "ボンズ",
         "en": "Bones",
         "ja_typings": [
-          "bonnzu"
+          "bonzu"
         ]
       }
     ],
@@ -14597,7 +14586,7 @@
         "ja": "尾田栄一郎",
         "en": "Eiichiro Oda",
         "ja_typings": [
-          "odaeiichiro"
+          "odaeiichirou"
         ]
       }
     ],
@@ -15660,7 +15649,7 @@
         "ja": "ボンズ",
         "en": "Bones",
         "ja_typings": [
-          "bonnzu"
+          "bonzu"
         ]
       },
       {
@@ -15934,7 +15923,7 @@
         "ja": "ポケットモンスター",
         "en": "Pokemon",
         "ja_typings": [
-          "pokettomonnsuta-"
+          "pokettomonsuta-"
         ]
       },
       {
@@ -15955,7 +15944,7 @@
         "ja": "モンスターハンター",
         "en": "Monster Hunter",
         "ja_typings": [
-          "monnsuta-hannta-"
+          "monsuta-hanta-"
         ]
       }
     ],
@@ -15975,16 +15964,16 @@
         "ja": "ファイナルファンタジーVII",
         "en": "Final Fantasy VII",
         "ja_typings": [
-          "fainarufanntaji-7",
-          "fainarufanntaji-sebun"
+          "fainarufantaji-7",
+          "fainarufantaji-sebun"
         ]
       },
       {
         "ja": "ファイナルファンタジーX",
         "en": "Final Fantasy X",
         "ja_typings": [
-          "fainarufanntaji-10",
-          "fainarufanntaji-ten"
+          "fainarufantaji-10",
+          "fainarufantaji-ten"
         ]
       },
       {
@@ -15998,7 +15987,7 @@
         "ja": "聖剣伝説",
         "en": "Seiken Densetsu",
         "ja_typings": [
-          "seikenndensetsu"
+          "seikendensetsu"
         ]
       }
     ],
@@ -16018,14 +16007,14 @@
         "ja": "ドラゴンクエスト",
         "en": "Dragon Quest",
         "ja_typings": [
-          "doragonnkuesuto"
+          "doragonkuesuto"
         ]
       },
       {
         "ja": "ファイナルファンタジー",
         "en": "Final Fantasy",
         "ja_typings": [
-          "fainarufanntaji-"
+          "fainarufantaji-"
         ]
       },
       {
@@ -16080,7 +16069,7 @@
         "ja": "ドラゴンクエストビルダーズ",
         "en": "Dragon Quest Builders",
         "ja_typings": [
-          "doragonnkuesutobiruda-zu"
+          "doragonkuesutobiruda-zu"
         ]
       }
     ],
@@ -16182,7 +16171,7 @@
         "ja": "ファミリーコンピュータ",
         "en": "Famicom",
         "ja_typings": [
-          "famiri-konnpyu-ta"
+          "famiri-konpyu-ta"
         ]
       },
       {
@@ -16319,14 +16308,14 @@
         "ja": "ニンテンドー3DS",
         "en": "Nintendo 3DS",
         "ja_typings": [
-          "ninntendo-3ds"
+          "nintendo-3ds"
         ]
       },
       {
         "ja": "ニンテンドーDS",
         "en": "Nintendo DS",
         "ja_typings": [
-          "ninntendo-ds"
+          "nintendo-ds"
         ]
       }
     ],
@@ -16640,7 +16629,7 @@
         "ja": "横井軍平",
         "en": "Gunpei Yokoi",
         "ja_typings": [
-          "yokoigunnpei"
+          "yokoigunpei"
         ]
       },
       {
@@ -16893,7 +16882,7 @@
         "ja": "エージェント47",
         "en": "Agent 47",
         "ja_typings": [
-          "e-jenntoyonjuunana",
+          "e-jentoyonjuunana",
           "e-jento47"
         ]
       },
@@ -16901,7 +16890,7 @@
         "ja": "ジェイソン・ボーン",
         "en": "Jason Bourne",
         "ja_typings": [
-          "jeisonnbo-n"
+          "jeisonbo-n"
         ]
       }
     ],
@@ -16921,14 +16910,14 @@
         "ja": "モンスターハンター",
         "en": "Monster Hunter",
         "ja_typings": [
-          "monnsuta-hannta-"
+          "monsuta-hanta-"
         ]
       },
       {
         "ja": "戦国BASARA",
         "en": "Sengoku Basara",
         "ja_typings": [
-          "senngokubasara"
+          "sengokubasara"
         ]
       },
       {
@@ -16962,14 +16951,14 @@
         "ja": "ファイナルファンタジーXIV",
         "en": "Final Fantasy XIV",
         "ja_typings": [
-          "fainarufanntaji-14"
+          "fainarufantaji-14"
         ]
       },
       {
         "ja": "ドラゴンクエストX",
         "en": "Dragon Quest X",
         "ja_typings": [
-          "doragonnkuesuto10"
+          "doragonkuesuto10"
         ]
       },
       {
@@ -17190,7 +17179,7 @@
         "ja": "レインボーシックス",
         "en": "Rainbow Six",
         "ja_typings": [
-          "reinnbo-shikkusu"
+          "reinbo-shikkusu"
         ]
       }
     ],
@@ -17231,7 +17220,7 @@
         "ja": "タイタンフォール",
         "en": "Titanfall",
         "ja_typings": [
-          "taitannfo-ru"
+          "taitanfo-ru"
         ]
       }
     ],
@@ -17348,7 +17337,7 @@
         "ja": "パラディンズ",
         "en": "Paladins",
         "ja_typings": [
-          "paradinnzu"
+          "paradinzu"
         ]
       },
       {
@@ -17539,7 +17528,7 @@
         "ja": "エルデンリング",
         "en": "Elden Ring",
         "ja_typings": [
-          "erudennringu"
+          "erudenringu"
         ]
       },
       {
@@ -17629,7 +17618,7 @@
         "ja": "アンチャーテッド",
         "en": "Uncharted",
         "ja_typings": [
-          "anncha-teddo"
+          "ancha-teddo"
         ]
       },
       {
@@ -17663,7 +17652,7 @@
         "ja": "アンチャーテッド",
         "en": "Uncharted",
         "ja_typings": [
-          "anncha-teddo"
+          "ancha-teddo"
         ]
       },
       {
@@ -17794,14 +17783,14 @@
         "ja": "プリンセスコネクト",
         "en": "Princess Connect",
         "ja_typings": [
-          "purinnsesukonekuto"
+          "purinsesukonekuto"
         ]
       },
       {
         "ja": "グランブルーファンタジー",
         "en": "Granblue Fantasy",
         "ja_typings": [
-          "guranburu-fanntaji-"
+          "guranburu-fantaji-"
         ]
       },
       {
@@ -17876,7 +17865,7 @@
         "ja": "ウイニングイレブン",
         "en": "Winning Eleven",
         "ja_typings": [
-          "uininnguirebun"
+          "uininguirebun"
         ]
       },
       {
@@ -17917,7 +17906,7 @@
         "ja": "ゼルダの伝説 ティアーズ オブ ザ キングダム",
         "en": "The Legend of Zelda: Tears of the Kingdom",
         "ja_typings": [
-          "zerudanodensetsutia-zuobuzakinngudamu"
+          "zerudanodensetsutia-zuobuzakingudamu"
         ]
       },
       {
@@ -17931,7 +17920,7 @@
         "ja": "ゼルダの伝説 トワイライトプリンセス",
         "en": "The Legend of Zelda: Twilight Princess",
         "ja_typings": [
-          "zerudanodensetsutowairaitopurinnsesu"
+          "zerudanodensetsutowairaitopurinsesu"
         ]
       }
     ],
@@ -17951,7 +17940,6 @@
         "ja": "大乱闘スマッシュブラザーズ",
         "en": "Super Smash Bros.",
         "ja_typings": [
-          "dairanntousumasshubura-za-zu",
           "dairantousumasshubura-za-zu"
         ]
       },
@@ -18089,14 +18077,14 @@
         "ja": "人生ゲーム",
         "en": "The Game of Life",
         "ja_typings": [
-          "jinnseige-mu"
+          "jinseige-mu"
         ]
       },
       {
         "ja": "ボンバーマン",
         "en": "Bomberman",
         "ja_typings": [
-          "bonnba-man"
+          "bonba-man"
         ]
       }
     ],
@@ -18198,7 +18186,7 @@
         "ja": "スペースインベーダー",
         "en": "Space Invaders",
         "ja_typings": [
-          "supe-suinnbe-da-"
+          "supe-suinbe-da-"
         ]
       },
       {
@@ -19203,7 +19191,6 @@
         "ja": "松本零士",
         "en": "Leiji Matsumoto",
         "ja_typings": [
-          "matsumotoleiji",
           "matsumotoreiji"
         ]
       }
@@ -20003,7 +19990,7 @@
         "ja": "スクウェア・エニックス",
         "en": "Square Enix",
         "ja_typings": [
-          "sukueaenikkusu"
+          "sukuwea enikkusu"
         ]
       },
       {
@@ -20380,21 +20367,21 @@
         "ja": "アブシンベル神殿",
         "en": "Abu Simbel Temple",
         "ja_typings": [
-          "abushinnberushinnden"
+          "abushinberushinden"
         ]
       },
       {
         "ja": "ルクソール神殿",
         "en": "Luxor Temple",
         "ja_typings": [
-          "rukuso-rushinnden"
+          "rukuso-rushinden"
         ]
       },
       {
         "ja": "カルナック神殿",
         "en": "Karnak Temple",
         "ja_typings": [
-          "karunakkushinnden"
+          "karunakkushinden"
         ]
       }
     ],
@@ -20496,7 +20483,7 @@
         "ja": "コロンブス",
         "en": "Columbus",
         "ja_typings": [
-          "koronnbusu"
+          "koronbusu"
         ]
       },
       {
@@ -20626,14 +20613,14 @@
         "ja": "権利章典",
         "en": "Bill of Rights",
         "ja_typings": [
-          "kennrishouten"
+          "kenrishouten"
         ]
       },
       {
         "ja": "権利の請願",
         "en": "Petition of Right",
         "ja_typings": [
-          "kennrinoseigan"
+          "kenrinoseigan"
         ]
       },
       {
@@ -20756,7 +20743,7 @@
         "ja": "アイザック・ニュートン",
         "en": "Isaac Newton",
         "ja_typings": [
-          "aizakkunyu-tonn"
+          "aizakkunyu-ton"
         ]
       },
       {
@@ -20783,14 +20770,14 @@
         "ja": "リンカーン",
         "en": "Abraham Lincoln",
         "ja_typings": [
-          "rinka-nn"
+          "rinka-n"
         ]
       },
       {
         "ja": "ワシントン",
         "en": "George Washington",
         "ja_typings": [
-          "washinntonn"
+          "washinton"
         ]
       },
       {
@@ -20804,7 +20791,7 @@
         "ja": "グラント",
         "en": "Ulysses S. Grant",
         "ja_typings": [
-          "gurannto"
+          "guranto"
         ]
       }
     ],
@@ -20845,7 +20832,7 @@
         "ja": "サンフランシスコ講和条約",
         "en": "Treaty of San Francisco",
         "ja_typings": [
-          "sannfuranshisukokouwajouyaku"
+          "sanfuranshisukokouwajouyaku"
         ]
       }
     ],
@@ -20865,28 +20852,28 @@
         "ja": "ドイツのポーランド侵攻",
         "en": "German invasion of Poland",
         "ja_typings": [
-          "doitsunopo-rannndoshinnkou"
+          "doitsunopo-rannndoshinkou"
         ]
       },
       {
         "ja": "真珠湾攻撃",
         "en": "Attack on Pearl Harbor",
         "ja_typings": [
-          "shinnjuwannkougeki"
+          "shinjuwankougeki"
         ]
       },
       {
         "ja": "ミュンヘン会談",
         "en": "Munich Agreement",
         "ja_typings": [
-          "myunnhennkaidan"
+          "myunhenkaidan"
         ]
       },
       {
         "ja": "スターリングラードの戦い",
         "en": "Battle of Stalingrad",
         "ja_typings": [
-          "suta-rinngura-donotatakai"
+          "suta-ringura-donotatakai"
         ]
       }
     ],
@@ -20906,14 +20893,14 @@
         "ja": "レオナルド・ダ・ヴィンチ",
         "en": "Leonardo da Vinci",
         "ja_typings": [
-          "reonarudodavinnchi"
+          "reonarudodavinchi"
         ]
       },
       {
         "ja": "ミケランジェロ",
         "en": "Michelangelo",
         "ja_typings": [
-          "mikerannjero"
+          "mikeranjero"
         ]
       },
       {
@@ -20947,21 +20934,21 @@
         "ja": "マルティン・ルター",
         "en": "Martin Luther",
         "ja_typings": [
-          "marutinnruta-"
+          "marutinruta-"
         ]
       },
       {
         "ja": "ジャン・カルヴァン",
         "en": "John Calvin",
         "ja_typings": [
-          "jannkaruvann"
+          "jankaruvan"
         ]
       },
       {
         "ja": "ツヴィングリ",
         "en": "Huldrych Zwingli",
         "ja_typings": [
-          "tsuvinnguri"
+          "tsuvinguri"
         ]
       },
       {
@@ -21009,7 +20996,7 @@
         "ja": "武田信玄",
         "en": "Takeda Shingen",
         "ja_typings": [
-          "takedashinngen"
+          "takedashingen"
         ]
       }
     ],
@@ -21111,7 +21098,7 @@
         "ja": "オスマン帝国",
         "en": "Ottoman Empire",
         "ja_typings": [
-          "osumanntekoku"
+          "osumantekoku"
         ]
       },
       {
@@ -21152,7 +21139,7 @@
         "ja": "ニール・アームストロング",
         "en": "Neil Armstrong",
         "ja_typings": [
-          "ni-rua-musutoronngu"
+          "ni-rua-musutorongu"
         ]
       },
       {
@@ -21173,7 +21160,7 @@
         "ja": "ジョン・グレン",
         "en": "John Glenn",
         "ja_typings": [
-          "jonngurenn"
+          "jonguren"
         ]
       }
     ],
@@ -21200,21 +21187,21 @@
         "ja": "鉄のカーテン",
         "en": "Iron Curtain",
         "ja_typings": [
-          "tetsunoka-tenn"
+          "tetsunoka-ten"
         ]
       },
       {
         "ja": "マジノ線",
         "en": "Maginot Line",
         "ja_typings": [
-          "majinosenn"
+          "majinosen"
         ]
       },
       {
         "ja": "万里の長城",
         "en": "Great Wall of China",
         "ja_typings": [
-          "bannrinochoujou"
+          "banrinochoujou"
         ]
       }
     ],
@@ -21234,7 +21221,7 @@
         "ja": "ソビエト連邦",
         "en": "Soviet Union",
         "ja_typings": [
-          "sobietorennpou"
+          "sobietorenpou"
         ]
       },
       {
@@ -21364,7 +21351,7 @@
         "ja": "マーティン・ルーサー・キング",
         "en": "Martin Luther King Jr.",
         "ja_typings": [
-          "ma-tinnru-sa-kinngu"
+          "ma-tinru-sa-kingu"
         ]
       },
       {
@@ -21481,7 +21468,7 @@
         "ja": "ルビコン川",
         "en": "Rubicon River",
         "ja_typings": [
-          "rubikonngawa"
+          "rubikongawa"
         ]
       },
       {
@@ -21495,7 +21482,7 @@
         "ja": "ライン川",
         "en": "Rhine River",
         "ja_typings": [
-          "rainngawa"
+          "raingawa"
         ]
       },
       {
@@ -21563,7 +21550,7 @@
         "ja": "チンギス・ハン",
         "en": "Genghis Khan",
         "ja_typings": [
-          "chinngisuhan"
+          "chingisuhan"
         ]
       },
       {
@@ -21604,7 +21591,7 @@
         "ja": "人間と市民の権利の宣言",
         "en": "Declaration of the Rights of Man and of the Citizen",
         "ja_typings": [
-          "ninngennntoshiminnnokennrinosengen"
+          "ningennntoshiminnnokenrinosengen"
         ]
       },
       {
@@ -21768,7 +21755,7 @@
         "ja": "ジョージ・ワシントン",
         "en": "George Washington",
         "ja_typings": [
-          "jo-jiwashinntonn"
+          "jo-jiwashinton"
         ]
       },
       {
@@ -21782,7 +21769,7 @@
         "ja": "ベンジャミン・フランクリン",
         "en": "Benjamin Franklin",
         "ja_typings": [
-          "bennjaminnfurannkurin"
+          "benjaminfurankurin"
         ]
       },
       {
@@ -21906,14 +21893,14 @@
         "ja": "百年戦争",
         "en": "Hundred Years' War",
         "ja_typings": [
-          "hyakunennsensou"
+          "hyakunensensou"
         ]
       },
       {
         "ja": "三十年戦争",
         "en": "Thirty Years' War",
         "ja_typings": [
-          "sannjuunennsensou"
+          "sanjuunensensou"
         ]
       }
     ],
@@ -21947,7 +21934,7 @@
         "ja": "フランコ",
         "en": "Francisco Franco",
         "ja_typings": [
-          "furannko"
+          "furanko"
         ]
       },
       {
@@ -21995,7 +21982,7 @@
         "ja": "ケレンスキー",
         "en": "Alexander Kerensky",
         "ja_typings": [
-          "kerennsuki-"
+          "kerensuki-"
         ]
       }
     ],
@@ -22147,7 +22134,7 @@
         "ja": "ハンムラビ法典碑",
         "en": "Code of Hammurabi stele",
         "ja_typings": [
-          "hannmurabihoutennhi"
+          "hanmurabihoutenhi"
         ]
       },
       {
@@ -22222,7 +22209,7 @@
         "ja": "アヘン戦争",
         "en": "Opium War",
         "ja_typings": [
-          "ahennsensou"
+          "ahensensou"
         ]
       },
       {
@@ -22236,14 +22223,14 @@
         "ja": "義和団事件",
         "en": "Boxer Rebellion",
         "ja_typings": [
-          "giwadannjiken"
+          "giwadanjiken"
         ]
       },
       {
         "ja": "太平天国の乱",
         "en": "Taiping Rebellion",
         "ja_typings": [
-          "taiheitenngokunoran"
+          "taiheitengokunoran"
         ]
       }
     ],
@@ -22442,7 +22429,7 @@
         "ja": "中心極限定理",
         "en": "Central limit theorem",
         "ja_typings": [
-          "chuushinnkyokugenteiri"
+          "chuushinkyokugenteiri"
         ]
       },
       {
@@ -22517,7 +22504,7 @@
         "ja": "リーマン",
         "en": "Riemann",
         "ja_typings": [
-          "ri-mann"
+          "ri-man"
         ]
       },
       {
@@ -22854,7 +22841,7 @@
         "ja": "黄金比 φ",
         "en": "Golden ratio φ",
         "ja_typings": [
-          "oogonnhi"
+          "oogonhi"
         ]
       },
       {
@@ -22895,7 +22882,7 @@
         "ja": "黄金比",
         "en": "Golden ratio",
         "ja_typings": [
-          "oogonnhi"
+          "oogonhi"
         ]
       },
       {
@@ -22922,14 +22909,14 @@
         "ja": "黄金比",
         "en": "Golden ratio",
         "ja_typings": [
-          "oogonnhi"
+          "oogonhi"
         ]
       },
       {
         "ja": "白銀比",
         "en": "Silver ratio",
         "ja_typings": [
-          "hakuginnhi"
+          "hakuginhi"
         ]
       },
       {
@@ -23100,7 +23087,7 @@
         "ja": "⊂ (部分集合)",
         "en": "Subset",
         "ja_typings": [
-          "bubunnshuugou"
+          "bubunshuugou"
         ]
       },
       {
@@ -23151,7 +23138,7 @@
         "ja": "関数",
         "en": "Function",
         "ja_typings": [
-          "kannsuu"
+          "kansuu"
         ]
       }
     ],
@@ -23625,29 +23612,29 @@
         "ja": "ゼータ関数",
         "en": "Zeta function",
         "ja_typings": [
-          "ze-takannsuu"
+          "ze-takansuu"
         ]
       },
       {
         "ja": "ガンマ関数",
         "en": "Gamma function",
         "ja_typings": [
-          "gammakannsuu",
-          "ganmakannsuu"
+          "gammakansuu",
+          "ganmakansuu"
         ]
       },
       {
         "ja": "ベータ関数",
         "en": "Beta function",
         "ja_typings": [
-          "be-takannsuu"
+          "be-takansuu"
         ]
       },
       {
         "ja": "デルタ関数",
         "en": "Delta function",
         "ja_typings": [
-          "derutakannsuu"
+          "derutakansuu"
         ]
       }
     ],
@@ -23715,7 +23702,7 @@
         "ja": "中心極限定理",
         "en": "Central limit theorem",
         "ja_typings": [
-          "chuushinnkyokugenteiri"
+          "chuushinkyokugenteiri"
         ]
       },
       {
@@ -23756,7 +23743,7 @@
         "ja": "中心極限定理",
         "en": "Central limit theorem",
         "ja_typings": [
-          "chuushinnkyokugenteiri"
+          "chuushinkyokugenteiri"
         ]
       },
       {
@@ -23852,7 +23839,7 @@
         "ja": "ダランベルシアン",
         "en": "D'Alembertian",
         "ja_typings": [
-          "darannberushian"
+          "daranberushian"
         ]
       }
     ],
@@ -23995,14 +23982,14 @@
         "ja": "関数",
         "en": "Function",
         "ja_typings": [
-          "kannsuu"
+          "kansuu"
         ]
       },
       {
         "ja": "関係",
         "en": "Relation",
         "ja_typings": [
-          "kannkei"
+          "kankei"
         ]
       },
       {
@@ -24057,7 +24044,7 @@
         "ja": "因数分解",
         "en": "Factorization",
         "ja_typings": [
-          "innsuubunkai"
+          "insuubunkai"
         ]
       }
     ],
@@ -25359,7 +25346,7 @@
         "ja": "漢音",
         "en": "Kan-on",
         "ja_typings": [
-          "kanon"
+          "kannon"
         ]
       },
       {
@@ -25373,7 +25360,7 @@
         "ja": "慣用音",
         "en": "Customary reading",
         "ja_typings": [
-          "kanyouon"
+          "kannyouon"
         ]
       }
     ],
@@ -27136,7 +27123,7 @@
         "ja": "アインシュタイン",
         "en": "Albert Einstein",
         "ja_typings": [
-          "ainnshutain"
+          "ainshutain"
         ]
       }
     ],
@@ -27171,14 +27158,14 @@
         "ja": "キリマンジャロ",
         "en": "Kilimanjaro",
         "ja_typings": [
-          "kirimannjaro"
+          "kirimanjaro"
         ]
       },
       {
         "ja": "モンブラン",
         "en": "Mont Blanc",
         "ja_typings": [
-          "monnburan"
+          "monburan"
         ]
       }
     ],
@@ -27246,7 +27233,7 @@
         "ja": "スタインベック",
         "en": "John Steinbeck",
         "ja_typings": [
-          "sutainnbekku"
+          "sutainbekku"
         ]
       },
       {
@@ -27444,7 +27431,7 @@
         "ja": "ジャパンオープン",
         "en": "Japan Open",
         "ja_typings": [
-          "japannoo-punn",
+          "japannoo-pun",
           "japannoopun"
         ]
       },
@@ -27452,7 +27439,7 @@
         "ja": "ウィンブルドン",
         "en": "Wimbledon",
         "ja_typings": [
-          "uinnburudon"
+          "uinburudon"
         ]
       },
       {
@@ -27630,7 +27617,7 @@
         "ja": "フィレンツェ",
         "en": "Florence",
         "ja_typings": [
-          "firennche",
+          "firenche",
           "firentse"
         ]
       }
