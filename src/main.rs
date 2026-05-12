@@ -389,7 +389,7 @@ mod tests {
             Some(Commands::Quiz { seed, .. }) => {
                 assert_eq!(seed, Some(u64::MAX));
             }
-            other => panic!("expected Quiz subcommand, got {:?}", other),
+            other => panic!("expected Quiz subcommand, got {other:?}"),
         }
     }
 
@@ -402,7 +402,7 @@ mod tests {
             Some(Commands::Rpg { floor, .. }) => {
                 assert_eq!(floor, Some(u32::MAX));
             }
-            other => panic!("expected Rpg subcommand, got {:?}", other),
+            other => panic!("expected Rpg subcommand, got {other:?}"),
         }
     }
 

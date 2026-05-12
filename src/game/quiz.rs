@@ -37,11 +37,11 @@ pub struct QuizGame {
 pub struct QuizResult {
     #[cfg_attr(not(test), allow(dead_code))]
     pub is_correct: bool,
-    #[cfg_attr(not(test), allow(dead_code))]
+    #[allow(dead_code)]
     pub correct_answer_index: usize,
     #[cfg_attr(not(test), allow(dead_code))]
     pub selected_answer_index: usize,
-    #[cfg_attr(not(test), allow(dead_code))]
+    #[allow(dead_code)]
     pub time_taken: Duration,
 }
 

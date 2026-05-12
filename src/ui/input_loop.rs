@@ -152,7 +152,7 @@ mod tests {
         tx.send(key).unwrap();
         match input.recv_until(Duration::from_millis(100)) {
             RecvOutcome::Key(k) => assert_eq!(k.code, KeyCode::Char('x')),
-            other => panic!("expected Key, got {:?}", other),
+            other => panic!("expected Key, got {other:?}"),
         }
     }
 
@@ -173,7 +173,7 @@ mod tests {
         drop(tx);
         match input.recv_until(Duration::from_millis(100)) {
             RecvOutcome::Disconnected => {}
-            other => panic!("expected Disconnected, got {:?}", other),
+            other => panic!("expected Disconnected, got {other:?}"),
         }
     }
 
