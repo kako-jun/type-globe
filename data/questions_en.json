@@ -2177,7 +2177,6 @@
         "ja": "中国",
         "en": "China",
         "ja_typings": [
-          "chugoku",
           "chuugoku"
         ]
       },
@@ -2185,7 +2184,6 @@
         "ja": "アメリカ合衆国",
         "en": "United States",
         "ja_typings": [
-          "amerikagasshukoku",
           "amerikagasshuukoku"
         ]
       }
@@ -2262,7 +2260,6 @@
         "ja": "長江",
         "en": "Yangtze River",
         "ja_typings": [
-          "chokou",
           "choukou"
         ]
       },
@@ -2785,7 +2782,6 @@
         "ja": "太平洋",
         "en": "Pacific Ocean",
         "ja_typings": [
-          "taiheiyo",
           "taiheiyou"
         ]
       },
@@ -2793,7 +2789,6 @@
         "ja": "大西洋",
         "en": "Atlantic Ocean",
         "ja_typings": [
-          "taiseiyo",
           "taiseiyou"
         ]
       },
@@ -2801,7 +2796,6 @@
         "ja": "インド洋",
         "en": "Indian Ocean",
         "ja_typings": [
-          "indoyo",
           "indoyou"
         ]
       },
@@ -3466,7 +3460,6 @@
         "ja": "天竜川",
         "en": "Tenryu River",
         "ja_typings": [
-          "tenryugawa",
           "tenryuugawa"
         ]
       }
@@ -3713,7 +3706,6 @@
         "ja": "南アフリカ共和国",
         "en": "South Africa",
         "ja_typings": [
-          "minamiafurikakyowakoku",
           "minamiafurikakyouwakoku"
         ]
       }
@@ -3837,7 +3829,6 @@
         "ja": "地中海沿岸",
         "en": "Mediterranean coast",
         "ja_typings": [
-          "chichukaiengan",
           "chichuukaiengan"
         ]
       }
@@ -3941,7 +3932,6 @@
         "ja": "瀬戸大橋",
         "en": "Great Seto Bridge",
         "ja_typings": [
-          "setoohashi",
           "setooohashi"
         ]
       },
@@ -3949,15 +3939,13 @@
         "ja": "東京湾アクアライン",
         "en": "Tokyo Bay Aqua-Line",
         "ja_typings": [
-          "toukyouwanakuarain",
-          "tokyowanakuarain"
+          "toukyouwanakuarain"
         ]
       },
       {
         "ja": "関門橋",
         "en": "Kanmon Bridge",
         "ja_typings": [
-          "kanmonkyo",
           "kanmonkyou"
         ]
       },
@@ -4569,8 +4557,7 @@
         "ja": "継承",
         "en": "Inheritance",
         "ja_typings": [
-          "keishou",
-          "keisho"
+          "keishou"
         ]
       },
       {
@@ -4611,8 +4598,7 @@
         "ja": "継承",
         "en": "Inheritance",
         "ja_typings": [
-          "keishou",
-          "keisho"
+          "keishou"
         ]
       },
       {
@@ -4626,8 +4612,7 @@
         "ja": "抽象化",
         "en": "Abstraction",
         "ja_typings": [
-          "chuushouka",
-          "chushoka"
+          "chuushouka"
         ]
       }
     ],
@@ -4661,16 +4646,14 @@
         "ja": "継承",
         "en": "Inheritance",
         "ja_typings": [
-          "keishou",
-          "keisho"
+          "keishou"
         ]
       },
       {
         "ja": "委譲",
         "en": "Delegation",
         "ja_typings": [
-          "ijou",
-          "ijo"
+          "ijou"
         ]
       }
     ],
@@ -4958,8 +4941,7 @@
         "ja": "動的",
         "en": "Dynamic",
         "ja_typings": [
-          "douteki",
-          "doteki"
+          "douteki"
         ]
       }
     ],
@@ -5102,8 +5084,7 @@
         "ja": "ブロック構造を示すため",
         "en": "It defines block structure",
         "ja_typings": [
-          "burokkukouzouwoshimesutame",
-          "burokkukozowoshimesutame"
+          "burokkukouzouwoshimesutame"
         ]
       },
       {
@@ -6065,8 +6046,7 @@
         "ja": "ジュニオ・ハマノ",
         "en": "Junio Hamano",
         "ja_typings": [
-          "junioohamano",
-          "juniohamano"
+          "junioohamano"
         ]
       },
       {
@@ -6271,16 +6251,14 @@
         "ja": "委譲",
         "en": "Delegation",
         "ja_typings": [
-          "ijou",
-          "ijo"
+          "ijou"
         ]
       },
       {
         "ja": "継承",
         "en": "Inheritance",
         "ja_typings": [
-          "keishou",
-          "keisho"
+          "keishou"
         ]
       }
     ],
@@ -6316,8 +6294,7 @@
         "ja": "メモリ使用量",
         "en": "Memory usage",
         "ja_typings": [
-          "memorishiyouryou",
-          "memorishiyoryo"
+          "memorishiyouryou"
         ]
       },
       {
@@ -6859,8 +6836,7 @@
         "ja": "成功",
         "en": "Success",
         "ja_typings": [
-          "seikou",
-          "seiko"
+          "seikou"
         ]
       }
     ],
@@ -13615,8 +13591,7 @@
         "ja": "吾峠呼世晴",
         "en": "Koyoharu Gotouge",
         "ja_typings": [
-          "gotougekoyoharu",
-          "gotogekoyoharu"
+          "gotougekoyoharu"
         ]
       }
     ],
@@ -13636,8 +13611,7 @@
         "ja": "吾峠呼世晴",
         "en": "Koyoharu Gotouge",
         "ja_typings": [
-          "gotougekoyoharu",
-          "gotogekoyoharu"
+          "gotougekoyoharu"
         ]
       },
       {
@@ -13658,7 +13632,6 @@
         "ja": "堀越耕平",
         "en": "Kohei Horikoshi",
         "ja_typings": [
-          "horikoshikohei",
           "horikoshikouhei"
         ]
       }
@@ -13693,15 +13666,13 @@
         "ja": "吾峠呼世晴",
         "en": "Koyoharu Gotouge",
         "ja_typings": [
-          "gotougekoyoharu",
-          "gotogekoyoharu"
+          "gotougekoyoharu"
         ]
       },
       {
         "ja": "堀越耕平",
         "en": "Kohei Horikoshi",
         "ja_typings": [
-          "horikoshikohei",
           "horikoshikouhei"
         ]
       }
@@ -13763,7 +13734,6 @@
         "ja": "堀越耕平",
         "en": "Kohei Horikoshi",
         "ja_typings": [
-          "horikoshikohei",
           "horikoshikouhei"
         ]
       },
@@ -13853,7 +13823,6 @@
         "ja": "高橋陽一",
         "en": "Yoichi Takahashi",
         "ja_typings": [
-          "takahashiyoichi",
           "takahashiyouichi"
         ]
       },
@@ -14279,7 +14248,6 @@
         "ja": "大友克洋",
         "en": "Katsuhiro Otomo",
         "ja_typings": [
-          "otomokatsuhiro",
           "ootomokatsuhiro"
         ]
       }
@@ -14300,7 +14268,6 @@
         "ja": "大友克洋",
         "en": "Katsuhiro Otomo",
         "ja_typings": [
-          "otomokatsuhiro",
           "ootomokatsuhiro"
         ]
       },
@@ -14390,7 +14357,6 @@
         "ja": "京都アニメーション",
         "en": "Kyoto Animation",
         "ja_typings": [
-          "kyotoanime-shon",
           "kyoutoanime-shon"
         ]
       },
@@ -14398,7 +14364,6 @@
         "ja": "東映アニメーション",
         "en": "Toei Animation",
         "ja_typings": [
-          "toeianime-shon",
           "toueianime-shon"
         ]
       },
@@ -14426,7 +14391,6 @@
         "ja": "京都アニメーション",
         "en": "Kyoto Animation",
         "ja_typings": [
-          "kyotoanime-shon",
           "kyoutoanime-shon"
         ]
       },
@@ -14482,7 +14446,6 @@
         "ja": "京都アニメーション",
         "en": "Kyoto Animation",
         "ja_typings": [
-          "kyotoanime-shon",
           "kyoutoanime-shon"
         ]
       },
@@ -14606,7 +14569,6 @@
         "ja": "東映アニメーション",
         "en": "Toei Animation",
         "ja_typings": [
-          "toeianime-shon",
           "toueianime-shon"
         ]
       },
@@ -14648,7 +14610,6 @@
         "ja": "堀越耕平",
         "en": "Kohei Horikoshi",
         "ja_typings": [
-          "horikoshikohei",
           "horikoshikouhei"
         ]
       },
@@ -14676,7 +14637,6 @@
         "ja": "遠藤達哉",
         "en": "Tatsuya Endo",
         "ja_typings": [
-          "endotatsuya",
           "endoutatsuya"
         ]
       },
@@ -14698,7 +14658,6 @@
         "ja": "堀越耕平",
         "en": "Kohei Horikoshi",
         "ja_typings": [
-          "horikoshikohei",
           "horikoshikouhei"
         ]
       }
@@ -14965,7 +14924,6 @@
         "ja": "竈門炭治郎",
         "en": "Tanjiro Kamado",
         "ja_typings": [
-          "kamadotanjiro",
           "kamadotanjirou"
         ]
       },
@@ -15014,7 +14972,6 @@
         "ja": "胡蝶しのぶ",
         "en": "Shinobu Kocho",
         "ja_typings": [
-          "kochoshinobu",
           "kochoushinobu"
         ]
       },
@@ -15049,7 +15006,6 @@
         "ja": "虎杖悠仁",
         "en": "Yuji Itadori",
         "ja_typings": [
-          "itadoriyuji",
           "itadoriyuuji"
         ]
       },
@@ -15071,7 +15027,6 @@
         "ja": "五条悟",
         "en": "Satoru Gojo",
         "ja_typings": [
-          "gojosatoru",
           "gojousatoru"
         ]
       }
@@ -15093,8 +15048,7 @@
         "en": "Unlimited Void",
         "ja_typings": [
           "muryokucho",
-          "muryoukuusho",
-          "muryokusho"
+          "muryoukuusho"
         ]
       },
       {
@@ -15143,8 +15097,7 @@
         "en": "Unlimited Void",
         "ja_typings": [
           "muryokucho",
-          "muryoukuusho",
-          "muryokusho"
+          "muryoukuusho"
         ]
       },
       {
@@ -15275,7 +15228,6 @@
         "ja": "日常系",
         "en": "Slice of life",
         "ja_typings": [
-          "nichijokei",
           "nichijoukei"
         ]
       },
@@ -15318,7 +15270,6 @@
         "ja": "惣流・アスカ・ラングレー",
         "en": "Asuka Langley Soryu",
         "ja_typings": [
-          "soryuasukaranguree",
           "souryuuasukaranguree"
         ]
       },
@@ -15367,7 +15318,6 @@
         "ja": "ジュドー・アーシタ",
         "en": "Judau Ashta",
         "ja_typings": [
-          "judoa-shita",
           "judoua-shita"
         ]
       }
@@ -15409,7 +15359,6 @@
         "ja": "石田雨竜",
         "en": "Uryu Ishida",
         "ja_typings": [
-          "ishidauryu",
           "ishidauryuu"
         ]
       }
@@ -15430,7 +15379,6 @@
         "ja": "孫悟空",
         "en": "Son Goku",
         "ja_typings": [
-          "songoku",
           "songokuu"
         ]
       },
@@ -15520,7 +15468,6 @@
         "ja": "爆豪勝己",
         "en": "Katsuki Bakugo",
         "ja_typings": [
-          "bakugokatsuki",
           "bakugoukatsuki"
         ]
       },
@@ -15528,7 +15475,6 @@
         "ja": "轟焦凍",
         "en": "Shoto Todoroki",
         "ja_typings": [
-          "todorokishoto",
           "todorokishouto"
         ]
       },
@@ -15597,7 +15543,6 @@
         "ja": "日向翔陽",
         "en": "Shoyo Hinata",
         "ja_typings": [
-          "hinatashoyo",
           "hinatashouyou"
         ]
       },
@@ -15612,7 +15557,6 @@
         "ja": "及川徹",
         "en": "Toru Oikawa",
         "ja_typings": [
-          "oikawatoru",
           "oikawatooru"
         ]
       },
@@ -15620,7 +15564,6 @@
         "ja": "黒尾鉄朗",
         "en": "Tetsuro Kuroo",
         "ja_typings": [
-          "kurootetsuro",
           "kurootetsurou"
         ]
       }
@@ -15641,7 +15584,6 @@
         "ja": "空条承太郎",
         "en": "Jotaro Kujo",
         "ja_typings": [
-          "kujojotaro",
           "kujoujoutarou"
         ]
       },
@@ -15683,7 +15625,6 @@
         "ja": "京都アニメーション",
         "en": "Kyoto Animation",
         "ja_typings": [
-          "kyotoanime-shon",
           "kyoutoanime-shon"
         ]
       },
@@ -15732,7 +15673,6 @@
         "ja": "京都アニメーション",
         "en": "Kyoto Animation",
         "ja_typings": [
-          "kyotoanime-shon",
           "kyoutoanime-shon"
         ]
       },
@@ -15864,7 +15804,6 @@
         "ja": "石ノ森章太郎",
         "en": "Shotaro Ishinomori",
         "ja_typings": [
-          "ishinomorishotaro",
           "ishinomorishoutarou"
         ]
       },
@@ -15906,7 +15845,6 @@
         "ja": "石ノ森章太郎",
         "en": "Shotaro Ishinomori",
         "ja_typings": [
-          "ishinomorishotaro",
           "ishinomorishoutarou"
         ]
       },
@@ -16838,8 +16776,7 @@
         "ja": "堀井雄二",
         "en": "Yuji Horii",
         "ja_typings": [
-          "horiiyuuji",
-          "horiiyuji"
+          "horiiyuuji"
         ]
       },
       {
@@ -16887,24 +16824,21 @@
         "ja": "堀井雄二",
         "en": "Yuji Horii",
         "ja_typings": [
-          "horiiyuuji",
-          "horiiyuji"
+          "horiiyuuji"
         ]
       },
       {
         "ja": "鈴木裕",
         "en": "Yu Suzuki",
         "ja_typings": [
-          "suzukiyuu",
-          "suzukiyu"
+          "suzukiyuu"
         ]
       },
       {
         "ja": "中裕司",
         "en": "Yuji Naka",
         "ja_typings": [
-          "nakayuuji",
-          "nakayuji"
+          "nakayuuji"
         ]
       }
     ],
@@ -16945,7 +16879,6 @@
         "ja": "龍が如く",
         "en": "Yakuza",
         "ja_typings": [
-          "ryugagotoku",
           "ryuugagotoku"
         ]
       }
@@ -17813,8 +17746,7 @@
         "ja": "侍道",
         "en": "Way of the Samurai",
         "ja_typings": [
-          "samuraidou",
-          "samuraido"
+          "samuraidou"
         ]
       }
     ],
@@ -17841,16 +17773,14 @@
         "ja": "崩壊スターレイル",
         "en": "Honkai Star Rail",
         "ja_typings": [
-          "houkaisuta-reiru",
-          "hokaisuta-reiru"
+          "houkaisuta-reiru"
         ]
       },
       {
         "ja": "幻塔",
         "en": "Tower of Fantasy",
         "ja_typings": [
-          "gentou",
-          "gento"
+          "gentou"
         ]
       },
       {
@@ -17932,16 +17862,14 @@
         "ja": "プロ野球スピリッツ",
         "en": "Pro Yakyu Spirits",
         "ja_typings": [
-          "puroyakyuusupirittsu",
-          "puroyakyusupirittsu"
+          "puroyakyuusupirittsu"
         ]
       },
       {
         "ja": "燃えろプロ野球",
         "en": "Moero Pro Yakyu",
         "ja_typings": [
-          "moeropuroyakyuu",
-          "moeropuroyakyu"
+          "moeropuroyakyuu"
         ]
       }
     ],
@@ -18126,16 +18054,14 @@
         "ja": "あつまれ どうぶつの森",
         "en": "Animal Crossing: New Horizons",
         "ja_typings": [
-          "atsumaredoubutsunomori",
-          "atsumaredobutsunomori"
+          "atsumaredoubutsunomori"
         ]
       },
       {
         "ja": "牧場物語",
         "en": "Story of Seasons",
         "ja_typings": [
-          "bokujoumonogatari",
-          "bokujomonogatari"
+          "bokujoumonogatari"
         ]
       },
       {
@@ -18169,9 +18095,7 @@
         "ja": "桃太郎電鉄",
         "en": "Momotaro Dentetsu",
         "ja_typings": [
-          "momotarodensetsu",
           "momotaroudensetsu",
-          "momotarodentetsu",
           "momotaroudentetsu"
         ]
       },
@@ -18213,8 +18137,7 @@
         "ja": "桐生一馬",
         "en": "Kazuma Kiryu",
         "ja_typings": [
-          "kiryuukazuma",
-          "kiryukazuma"
+          "kiryuukazuma"
         ]
       },
       {
@@ -18228,8 +18151,7 @@
         "ja": "真島吾朗",
         "en": "Goro Majima",
         "ja_typings": [
-          "majimagorou",
-          "majimagoro"
+          "majimagorou"
         ]
       },
       {
@@ -18420,7 +18342,6 @@
         "ja": "尾田栄一郎",
         "en": "Eiichiro Oda",
         "ja_typings": [
-          "odaeiichiro",
           "odaeiichirou"
         ]
       },
@@ -18469,7 +18390,6 @@
         "ja": "尾田栄一郎",
         "en": "Eiichiro Oda",
         "ja_typings": [
-          "odaeiichiro",
           "odaeiichirou"
         ]
       },
@@ -18511,7 +18431,6 @@
         "ja": "尾田栄一郎",
         "en": "Eiichiro Oda",
         "ja_typings": [
-          "odaeiichiro",
           "odaeiichirou"
         ]
       },
@@ -18594,7 +18513,6 @@
         "ja": "石ノ森章太郎",
         "en": "Shotaro Ishinomori",
         "ja_typings": [
-          "ishinomorishotaro",
           "ishinomorishoutarou"
         ]
       },
@@ -18643,7 +18561,6 @@
         "ja": "石ノ森章太郎",
         "en": "Shotaro Ishinomori",
         "ja_typings": [
-          "ishinomorishotaro",
           "ishinomorishoutarou"
         ]
       },
@@ -18685,7 +18602,6 @@
         "ja": "三浦建太郎",
         "en": "Kentaro Miura",
         "ja_typings": [
-          "miurakentaro",
           "miurakentarou"
         ]
       },
@@ -18775,7 +18691,6 @@
         "ja": "高橋陽一",
         "en": "Yoichi Takahashi",
         "ja_typings": [
-          "takahashiyoichi",
           "takahashiyouichi"
         ]
       }
@@ -18817,7 +18732,6 @@
         "ja": "堀越耕平",
         "en": "Kohei Horikoshi",
         "ja_typings": [
-          "horikoshikohei",
           "horikoshikouhei"
         ]
       }
@@ -18934,7 +18848,6 @@
         "ja": "石ノ森章太郎",
         "en": "Shotaro Ishinomori",
         "ja_typings": [
-          "ishinomorishotaro",
           "ishinomorishoutarou"
         ]
       },
@@ -19229,7 +19142,6 @@
         "ja": "三浦建太郎",
         "en": "Kentaro Miura",
         "ja_typings": [
-          "miurakentaro",
           "miurakentarou"
         ]
       }
@@ -19250,7 +19162,6 @@
         "ja": "三浦建太郎",
         "en": "Kentaro Miura",
         "ja_typings": [
-          "miurakentaro",
           "miurakentarou"
         ]
       },
@@ -19272,7 +19183,6 @@
         "ja": "大友克洋",
         "en": "Katsuhiro Otomo",
         "ja_typings": [
-          "otomokatsuhiro",
           "ootomokatsuhiro"
         ]
       }
@@ -19293,7 +19203,6 @@
         "ja": "大友克洋",
         "en": "Katsuhiro Otomo",
         "ja_typings": [
-          "otomokatsuhiro",
           "ootomokatsuhiro"
         ]
       },
@@ -19301,7 +19210,6 @@
         "ja": "士郎正宗",
         "en": "Masamune Shirow",
         "ja_typings": [
-          "shiromasamune",
           "shiroumasamune"
         ]
       },
@@ -19337,7 +19245,6 @@
         "ja": "士郎正宗",
         "en": "Masamune Shirow",
         "ja_typings": [
-          "shiromasamune",
           "shiroumasamune"
         ]
       },
@@ -19345,7 +19252,6 @@
         "ja": "大友克洋",
         "en": "Katsuhiro Otomo",
         "ja_typings": [
-          "otomokatsuhiro",
           "ootomokatsuhiro"
         ]
       },
@@ -19380,7 +19286,6 @@
         "ja": "大場つぐみ",
         "en": "Tsugumi Ohba",
         "ja_typings": [
-          "obatsugumi",
           "oobatsugumi"
         ]
       },
@@ -19429,7 +19334,6 @@
         "ja": "大場つぐみ",
         "en": "Tsugumi Ohba",
         "ja_typings": [
-          "obatsugumi",
           "oobatsugumi"
         ]
       },
@@ -19464,7 +19368,6 @@
         "ja": "集英社",
         "en": "Shueisha",
         "ja_typings": [
-          "shueisha",
           "shuueisha"
         ]
       },
@@ -19472,7 +19375,6 @@
         "ja": "講談社",
         "en": "Kodansha",
         "ja_typings": [
-          "kodansha",
           "koudansha"
         ]
       },
@@ -19480,7 +19382,6 @@
         "ja": "小学館",
         "en": "Shogakukan",
         "ja_typings": [
-          "shogakukan",
           "shougakukan"
         ]
       },
@@ -19508,7 +19409,6 @@
         "ja": "講談社",
         "en": "Kodansha",
         "ja_typings": [
-          "kodansha",
           "koudansha"
         ]
       },
@@ -19516,7 +19416,6 @@
         "ja": "集英社",
         "en": "Shueisha",
         "ja_typings": [
-          "shueisha",
           "shuueisha"
         ]
       },
@@ -19524,7 +19423,6 @@
         "ja": "小学館",
         "en": "Shogakukan",
         "ja_typings": [
-          "shogakukan",
           "shougakukan"
         ]
       },
@@ -19552,7 +19450,6 @@
         "ja": "小学館",
         "en": "Shogakukan",
         "ja_typings": [
-          "shogakukan",
           "shougakukan"
         ]
       },
@@ -19560,7 +19457,6 @@
         "ja": "集英社",
         "en": "Shueisha",
         "ja_typings": [
-          "shueisha",
           "shuueisha"
         ]
       },
@@ -19568,7 +19464,6 @@
         "ja": "講談社",
         "en": "Kodansha",
         "ja_typings": [
-          "kodansha",
           "koudansha"
         ]
       },
@@ -19603,7 +19498,6 @@
         "ja": "小学館",
         "en": "Shogakukan",
         "ja_typings": [
-          "shogakukan",
           "shougakukan"
         ]
       },
@@ -19611,7 +19505,6 @@
         "ja": "集英社",
         "en": "Shueisha",
         "ja_typings": [
-          "shueisha",
           "shuueisha"
         ]
       },
@@ -19619,7 +19512,6 @@
         "ja": "講談社",
         "en": "Kodansha",
         "ja_typings": [
-          "kodansha",
           "koudansha"
         ]
       }
@@ -19640,7 +19532,6 @@
         "ja": "講談社",
         "en": "Kodansha",
         "ja_typings": [
-          "kodansha",
           "koudansha"
         ]
       },
@@ -19648,7 +19539,6 @@
         "ja": "集英社",
         "en": "Shueisha",
         "ja_typings": [
-          "shueisha",
           "shuueisha"
         ]
       },
@@ -19656,7 +19546,6 @@
         "ja": "小学館",
         "en": "Shogakukan",
         "ja_typings": [
-          "shogakukan",
           "shougakukan"
         ]
       },
@@ -19684,7 +19573,6 @@
         "ja": "講談社",
         "en": "Kodansha",
         "ja_typings": [
-          "kodansha",
           "koudansha"
         ]
       },
@@ -19692,7 +19580,6 @@
         "ja": "集英社",
         "en": "Shueisha",
         "ja_typings": [
-          "shueisha",
           "shuueisha"
         ]
       },
@@ -19700,7 +19587,6 @@
         "ja": "小学館",
         "en": "Shogakukan",
         "ja_typings": [
-          "shogakukan",
           "shougakukan"
         ]
       },
@@ -19728,7 +19614,6 @@
         "ja": "小学館",
         "en": "Shogakukan",
         "ja_typings": [
-          "shogakukan",
           "shougakukan"
         ]
       },
@@ -19736,7 +19621,6 @@
         "ja": "講談社",
         "en": "Kodansha",
         "ja_typings": [
-          "kodansha",
           "koudansha"
         ]
       },
@@ -19744,7 +19628,6 @@
         "ja": "集英社",
         "en": "Shueisha",
         "ja_typings": [
-          "shueisha",
           "shuueisha"
         ]
       },
@@ -19895,7 +19778,6 @@
         "ja": "青山剛昌",
         "en": "Gosho Aoyama",
         "ja_typings": [
-          "aoyamagosho",
           "aoyamagoushou"
         ]
       },
@@ -20081,7 +19963,6 @@
         "ja": "久米田康治",
         "en": "Koji Kumeta",
         "ja_typings": [
-          "kumetakoji",
           "kumetakouji"
         ]
       }
@@ -20150,7 +20031,6 @@
         "ja": "集英社",
         "en": "Shueisha",
         "ja_typings": [
-          "shueisha",
           "shuueisha"
         ]
       },
@@ -20158,7 +20038,6 @@
         "ja": "講談社",
         "en": "Kodansha",
         "ja_typings": [
-          "kodansha",
           "koudansha"
         ]
       },
@@ -20228,7 +20107,6 @@
         "ja": "講談社",
         "en": "Kodansha",
         "ja_typings": [
-          "kodansha",
           "koudansha"
         ]
       },
@@ -20236,7 +20114,6 @@
         "ja": "集英社",
         "en": "Shueisha",
         "ja_typings": [
-          "shueisha",
           "shuueisha"
         ]
       },
@@ -20244,7 +20121,6 @@
         "ja": "小学館",
         "en": "Shogakukan",
         "ja_typings": [
-          "shogakukan",
           "shougakukan"
         ]
       },
@@ -20279,7 +20155,6 @@
         "ja": "集英社",
         "en": "Shueisha",
         "ja_typings": [
-          "shueisha",
           "shuueisha"
         ]
       },
@@ -20287,7 +20162,6 @@
         "ja": "講談社",
         "en": "Kodansha",
         "ja_typings": [
-          "kodansha",
           "koudansha"
         ]
       },
@@ -20295,7 +20169,6 @@
         "ja": "小学館",
         "en": "Shogakukan",
         "ja_typings": [
-          "shogakukan",
           "shougakukan"
         ]
       }
@@ -20371,7 +20244,6 @@
         "ja": "堀越耕平",
         "en": "Kohei Horikoshi",
         "ja_typings": [
-          "horikoshikohei",
           "horikoshikouhei"
         ]
       },
@@ -20399,7 +20271,6 @@
         "ja": "堀越耕平",
         "en": "Kohei Horikoshi",
         "ja_typings": [
-          "horikoshikohei",
           "horikoshikouhei"
         ]
       },
@@ -20448,7 +20319,6 @@
         "ja": "堀越耕平",
         "en": "Kohei Horikoshi",
         "ja_typings": [
-          "horikoshikohei",
           "horikoshikouhei"
         ]
       },
@@ -20490,7 +20360,6 @@
         "ja": "石ノ森章太郎",
         "en": "Shotaro Ishinomori",
         "ja_typings": [
-          "ishinomorishotaro",
           "ishinomorishoutarou"
         ]
       },
@@ -22916,8 +22785,7 @@
         "ja": "合成数",
         "en": "Composite number",
         "ja_typings": [
-          "gouseisuu",
-          "gouseisu"
+          "gouseisuu"
         ]
       },
       {
@@ -24244,8 +24112,7 @@
         "ja": "統語論",
         "en": "Syntax",
         "ja_typings": [
-          "tougoron",
-          "togoron"
+          "tougoron"
         ]
       },
       {
@@ -24313,8 +24180,7 @@
         "ja": "統語論",
         "en": "Syntax",
         "ja_typings": [
-          "tougoron",
-          "togoron"
+          "tougoron"
         ]
       },
       {
@@ -24328,8 +24194,7 @@
         "ja": "語用論",
         "en": "Pragmatics",
         "ja_typings": [
-          "goyouron",
-          "goyoron"
+          "goyouron"
         ]
       },
       {
@@ -24356,8 +24221,7 @@
         "ja": "中国語",
         "en": "Chinese",
         "ja_typings": [
-          "chuugokugo",
-          "chugokugo"
+          "chuugokugo"
         ]
       },
       {
@@ -24528,16 +24392,14 @@
         "ja": "動詞",
         "en": "Verb",
         "ja_typings": [
-          "doushi",
-          "doshi"
+          "doushi"
         ]
       },
       {
         "ja": "形容詞",
         "en": "Adjective",
         "ja_typings": [
-          "keiyoushi",
-          "keiyoshi"
+          "keiyoushi"
         ]
       },
       {
@@ -24564,8 +24426,7 @@
         "ja": "助動詞",
         "en": "Auxiliary verb",
         "ja_typings": [
-          "jodoushi",
-          "jodoshi"
+          "jodoushi"
         ]
       },
       {
@@ -24613,16 +24474,14 @@
         "ja": "助動詞",
         "en": "Auxiliary verb",
         "ja_typings": [
-          "jodoushi",
-          "jodoshi"
+          "jodoushi"
         ]
       },
       {
         "ja": "感動詞",
         "en": "Interjection",
         "ja_typings": [
-          "kandoushi",
-          "kandoshi"
+          "kandoushi"
         ]
       },
       {
@@ -24656,8 +24515,7 @@
         "ja": "謙譲語",
         "en": "Humble language",
         "ja_typings": [
-          "kenjougo",
-          "kenjogo"
+          "kenjougo"
         ]
       },
       {
@@ -24691,8 +24549,7 @@
         "ja": "謙譲語",
         "en": "Humble language",
         "ja_typings": [
-          "kenjougo",
-          "kenjogo"
+          "kenjougo"
         ]
       },
       {
@@ -24713,8 +24570,7 @@
         "ja": "口語",
         "en": "Colloquial",
         "ja_typings": [
-          "kougo",
-          "kogo"
+          "kougo"
         ]
       }
     ],
@@ -24748,8 +24604,7 @@
         "ja": "謙譲語",
         "en": "Humble language",
         "ja_typings": [
-          "kenjougo",
-          "kenjogo"
+          "kenjougo"
         ]
       },
       {
@@ -24776,8 +24631,7 @@
         "ja": "活用",
         "en": "Conjugation",
         "ja_typings": [
-          "katsuyou",
-          "katsuyo"
+          "katsuyou"
         ]
       },
       {
@@ -24839,8 +24693,7 @@
         "ja": "母音交替",
         "en": "Vowel alternation",
         "ja_typings": [
-          "boinkoutai",
-          "boinkotai"
+          "boinkoutai"
         ]
       }
     ],
@@ -24881,8 +24734,7 @@
         "ja": "連声",
         "en": "Renjo",
         "ja_typings": [
-          "renjou",
-          "renjo"
+          "renjou"
         ]
       }
     ],
@@ -24902,16 +24754,14 @@
         "ja": "進行相",
         "en": "Progressive aspect",
         "ja_typings": [
-          "shinkousou",
-          "shinkoso"
+          "shinkousou"
         ]
       },
       {
         "ja": "完了相",
         "en": "Perfect aspect",
         "ja_typings": [
-          "kanryousou",
-          "kanryoso"
+          "kanryousou"
         ]
       },
       {
@@ -24952,8 +24802,7 @@
         "ja": "相",
         "en": "Aspect",
         "ja_typings": [
-          "sou",
-          "so"
+          "sou"
         ]
       },
       {
@@ -24967,8 +24816,7 @@
         "ja": "法",
         "en": "Mood",
         "ja_typings": [
-          "hou",
-          "ho"
+          "hou"
         ]
       }
     ],
@@ -24988,16 +24836,14 @@
         "ja": "受動態",
         "en": "Passive voice",
         "ja_typings": [
-          "judoutai",
-          "judotai"
+          "judoutai"
         ]
       },
       {
         "ja": "能動態",
         "en": "Active voice",
         "ja_typings": [
-          "noudoutai",
-          "nodotai"
+          "noudoutai"
         ]
       },
       {
@@ -25011,8 +24857,7 @@
         "ja": "中動態",
         "en": "Middle voice",
         "ja_typings": [
-          "chuudoutai",
-          "chudotai"
+          "chuudoutai"
         ]
       }
     ],
@@ -25039,24 +24884,21 @@
         "ja": "受動態",
         "en": "Passive voice",
         "ja_typings": [
-          "judoutai",
-          "judotai"
+          "judoutai"
         ]
       },
       {
         "ja": "能動態",
         "en": "Active voice",
         "ja_typings": [
-          "noudoutai",
-          "nodotai"
+          "noudoutai"
         ]
       },
       {
         "ja": "可能態",
         "en": "Potential form",
         "ja_typings": [
-          "kanoutai",
-          "kanotai"
+          "kanoutai"
         ]
       }
     ],
@@ -25265,8 +25107,7 @@
         "ja": "注音符号",
         "en": "Bopomofo",
         "ja_typings": [
-          "chuuonfugou",
-          "chuonfugo"
+          "chuuonfugou"
         ]
       }
     ],
@@ -25382,16 +25223,14 @@
         "ja": "擬人法",
         "en": "Personification",
         "ja_typings": [
-          "gijinhou",
-          "gijinho"
+          "gijinhou"
         ]
       },
       {
         "ja": "誇張法",
         "en": "Hyperbole",
         "ja_typings": [
-          "kochouhou",
-          "kochoho"
+          "kochouhou"
         ]
       }
     ],
@@ -25452,32 +25291,28 @@
         "ja": "擬人法",
         "en": "Personification",
         "ja_typings": [
-          "gijinhou",
-          "gijinho"
+          "gijinhou"
         ]
       },
       {
         "ja": "倒置法",
         "en": "Inversion",
         "ja_typings": [
-          "touchihou",
-          "tochiho"
+          "touchihou"
         ]
       },
       {
         "ja": "対句法",
         "en": "Antithesis",
         "ja_typings": [
-          "tsuikuhou",
-          "tsuikuho"
+          "tsuikuhou"
         ]
       },
       {
         "ja": "反復法",
         "en": "Repetition",
         "ja_typings": [
-          "hanpukuhou",
-          "hanpukuho"
+          "hanpukuhou"
         ]
       }
     ],
@@ -25497,16 +25332,14 @@
         "ja": "倒置法",
         "en": "Inversion",
         "ja_typings": [
-          "touchihou",
-          "tochiho"
+          "touchihou"
         ]
       },
       {
         "ja": "省略法",
         "en": "Ellipsis",
         "ja_typings": [
-          "shouryakuhou",
-          "shoryakuho"
+          "shouryakuhou"
         ]
       },
       {
@@ -25520,8 +25353,7 @@
         "ja": "対句法",
         "en": "Antithesis",
         "ja_typings": [
-          "tsuikuhou",
-          "tsuikuho"
+          "tsuikuhou"
         ]
       }
     ],
@@ -25555,16 +25387,14 @@
         "ja": "唐音",
         "en": "To-on",
         "ja_typings": [
-          "touon",
-          "toon"
+          "touon"
         ]
       },
       {
         "ja": "慣用音",
         "en": "Customary reading",
         "ja_typings": [
-          "kanyouon",
-          "kanyoon"
+          "kanyouon"
         ]
       }
     ],
@@ -25666,8 +25496,7 @@
         "ja": "語用論",
         "en": "Pragmatics",
         "ja_typings": [
-          "goyouron",
-          "goyoron"
+          "goyouron"
         ]
       },
       {
@@ -25708,7 +25537,6 @@
         "ja": "千利休",
         "en": "Sen no Rikyu",
         "ja_typings": [
-          "sennorikyu",
           "sennorikyuu"
         ]
       },
@@ -25723,7 +25551,6 @@
         "ja": "松尾芭蕉",
         "en": "Matsuo Basho",
         "ja_typings": [
-          "matsuobasho",
           "matsuobashou"
         ]
       },
@@ -25731,7 +25558,6 @@
         "ja": "雪舟",
         "en": "Sesshu",
         "ja_typings": [
-          "sesshu",
           "sesshuu"
         ]
       }
@@ -25882,7 +25708,6 @@
         "ja": "能",
         "en": "Noh",
         "ja_typings": [
-          "no",
           "nou"
         ]
       },
@@ -25897,7 +25722,6 @@
         "ja": "狂言",
         "en": "Kyogen",
         "ja_typings": [
-          "kyogen",
           "kyougen"
         ]
       }
@@ -26130,7 +25954,6 @@
         "ja": "中秋節",
         "en": "Mid-Autumn Festival",
         "ja_typings": [
-          "chushusetsu",
           "chuushuusetsu"
         ]
       },
@@ -26370,32 +26193,28 @@
         "ja": "サン・ピエトロ大聖堂",
         "en": "St. Peter's Basilica",
         "ja_typings": [
-          "sanpietorodaiseidou",
-          "sanpietorodaiseido"
+          "sanpietorodaiseidou"
         ]
       },
       {
         "ja": "ノートルダム大聖堂",
         "en": "Notre-Dame Cathedral",
         "ja_typings": [
-          "no-torudamudaiseidou",
-          "no-torudamudaiseido"
+          "no-torudamudaiseidou"
         ]
       },
       {
         "ja": "ケルン大聖堂",
         "en": "Cologne Cathedral",
         "ja_typings": [
-          "kerundaiseidou",
-          "kerundaiseido"
+          "kerundaiseidou"
         ]
       },
       {
         "ja": "ミラノ大聖堂",
         "en": "Milan Cathedral",
         "ja_typings": [
-          "miranodaiseidou",
-          "miranodaiseido"
+          "miranodaiseidou"
         ]
       }
     ],
@@ -26415,7 +26234,6 @@
         "ja": "池坊",
         "en": "Ikenobo",
         "ja_typings": [
-          "ikenobo",
           "ikenobou"
         ]
       },
@@ -26423,7 +26241,6 @@
         "ja": "草月流",
         "en": "Sogetsu",
         "ja_typings": [
-          "sogetsuryu",
           "sougetsuryuu"
         ]
       },
@@ -26431,7 +26248,6 @@
         "ja": "小原流",
         "en": "Ohara",
         "ja_typings": [
-          "ohararyu",
           "ohararyuu"
         ]
       },
@@ -26439,7 +26255,6 @@
         "ja": "嵯峨御流",
         "en": "Saga Goryu",
         "ja_typings": [
-          "sagagoryu",
           "sagagoryuu"
         ]
       }
@@ -27042,7 +26857,6 @@
         "ja": "大関",
         "en": "Ozeki",
         "ja_typings": [
-          "ozeki",
           "oozeki"
         ]
       },
@@ -27200,7 +27014,6 @@
         "ja": "45分",
         "en": "45 minutes",
         "ja_typings": [
-          "yonjugofun",
           "yonjuugofun"
         ]
       },
@@ -27421,7 +27234,6 @@
         "ja": "長江",
         "en": "Yangtze River",
         "ja_typings": [
-          "chokou",
           "choukou"
         ]
       },
@@ -27778,16 +27590,14 @@
         "ja": "勝利の女神の翼",
         "en": "wing of the goddess of victory",
         "ja_typings": [
-          "shourinomegaminotsubasa",
-          "shorinomegaminotsubasa"
+          "shourinomegaminotsubasa"
         ]
       },
       {
         "ja": "雷の閃光",
         "en": "flash of lightning",
         "ja_typings": [
-          "kaminarinosenkou",
-          "kaminarinosenko"
+          "kaminarinosenkou"
         ]
       },
       {
@@ -28034,7 +27844,6 @@
         "ja": "12個",
         "en": "12",
         "ja_typings": [
-          "juniko",
           "juuniko"
         ]
       },
@@ -28042,7 +27851,6 @@
         "ja": "20個",
         "en": "20",
         "ja_typings": [
-          "nijukko",
           "nijuukko"
         ]
       },
@@ -28050,7 +27858,6 @@
         "ja": "30個",
         "en": "30",
         "ja_typings": [
-          "sanjukko",
           "sanjuukko"
         ]
       }
@@ -28399,8 +28206,7 @@
         "ja": "反響定位",
         "en": "echolocation",
         "ja_typings": [
-          "hankyouteii",
-          "hankyoteii"
+          "hankyouteii"
         ]
       },
       {
@@ -28414,7 +28220,6 @@
         "ja": "嗅覚",
         "en": "sense of smell",
         "ja_typings": [
-          "kyukaku",
           "kyuukaku"
         ]
       },
@@ -28483,7 +28288,6 @@
         "ja": "42キロ",
         "en": "42 km",
         "ja_typings": [
-          "yonjunikiro",
           "yonjuunikiro"
         ]
       },
@@ -28491,7 +28295,6 @@
         "ja": "30キロ",
         "en": "30 km",
         "ja_typings": [
-          "sanjukkiro",
           "sanjuukkiro"
         ]
       },
@@ -28499,7 +28302,6 @@
         "ja": "50キロ",
         "en": "50 km",
         "ja_typings": [
-          "gojukkiro",
           "gojuukkiro"
         ]
       },
@@ -28507,7 +28309,6 @@
         "ja": "26キロ",
         "en": "26 km",
         "ja_typings": [
-          "nijurokkiro",
           "nijuurokkiro"
         ]
       }
@@ -28706,7 +28507,6 @@
         "ja": "中国",
         "en": "China",
         "ja_typings": [
-          "chugoku",
           "chuugoku"
         ]
       },
@@ -28734,7 +28534,6 @@
         "ja": "哺乳類",
         "en": "mammals",
         "ja_typings": [
-          "honyurui",
           "honyuurui"
         ]
       },
@@ -28749,7 +28548,6 @@
         "ja": "爬虫類",
         "en": "reptiles",
         "ja_typings": [
-          "hachurui",
           "hachuurui"
         ]
       },
@@ -28757,8 +28555,7 @@
         "ja": "両生類",
         "en": "amphibians",
         "ja_typings": [
-          "ryouseirui",
-          "ryoseirui"
+          "ryouseirui"
         ]
       }
     ],
@@ -29270,32 +29067,28 @@
         "ja": "船長",
         "en": "Senchou",
         "ja_typings": [
-          "senchou",
-          "senchoo"
+          "senchou"
         ]
       },
       {
         "ja": "会長",
         "en": "Kaichou",
         "ja_typings": [
-          "kaichou",
-          "kaichoo"
+          "kaichou"
         ]
       },
       {
         "ja": "団長",
         "en": "Danchou",
         "ja_typings": [
-          "danchou",
-          "danchoo"
+          "danchou"
         ]
       },
       {
         "ja": "社長",
         "en": "Shachou",
         "ja_typings": [
-          "shachou",
-          "shachoo"
+          "shachou"
         ]
       }
     ],
@@ -29609,8 +29402,7 @@
         "ja": "了解",
         "en": "Got it",
         "ja_typings": [
-          "ryoukai",
-          "ryookai"
+          "ryoukai"
         ]
       },
       {
@@ -29686,24 +29478,21 @@
         "ja": "ニコニコ超会議",
         "en": "Nico Nico Choukaigi",
         "ja_typings": [
-          "nikonikochoukaigi",
-          "nikonikochookaigi"
+          "nikonikochoukaigi"
         ]
       },
       {
         "ja": "ニコニコ動画祭",
         "en": "Niconico Festival",
         "ja_typings": [
-          "nikonikodougasai",
-          "nikonikodoogasai"
+          "nikonikodougasai"
         ]
       },
       {
         "ja": "闘会議",
         "en": "Toukaigi",
         "ja_typings": [
-          "toukaigi",
-          "tookaigi"
+          "toukaigi"
         ]
       },
       {
@@ -29895,8 +29684,7 @@
         "ja": "配信の視聴者",
         "en": "Stream viewers",
         "ja_typings": [
-          "haishinnoshichousha",
-          "haishinnoshichoosha"
+          "haishinnoshichousha"
         ]
       },
       {
@@ -29952,8 +29740,7 @@
         "ja": "ニコ厨",
         "en": "Nicochu",
         "ja_typings": [
-          "nikochuu",
-          "nikochu"
+          "nikochuu"
         ]
       },
       {
@@ -30021,8 +29808,7 @@
         "ja": "同時視聴",
         "en": "Douji shichou",
         "ja_typings": [
-          "doujishichou",
-          "doojishichoo"
+          "doujishichou"
         ]
       },
       {
@@ -30036,8 +29822,7 @@
         "ja": "リアクション動画",
         "en": "Reaction douga",
         "ja_typings": [
-          "riakushondouga",
-          "riakushondooga"
+          "riakushondouga"
         ]
       },
       {
@@ -30126,8 +29911,7 @@
         "ja": "微妙",
         "en": "Bimyou",
         "ja_typings": [
-          "bimyou",
-          "bimyoo"
+          "bimyou"
         ]
       }
     ],
@@ -30277,16 +30061,14 @@
         "ja": "ありがとう",
         "en": "Thanks",
         "ja_typings": [
-          "arigatou",
-          "arigatoo"
+          "arigatou"
         ]
       },
       {
         "ja": "おはよう",
         "en": "Good morning",
         "ja_typings": [
-          "ohayou",
-          "ohayoo"
+          "ohayou"
         ]
       },
       {
@@ -30354,8 +30136,7 @@
         "ja": "ニコニコ動画",
         "en": "Niconico",
         "ja_typings": [
-          "nikonikodouga",
-          "nikonikodooga"
+          "nikonikodouga"
         ]
       },
       {
