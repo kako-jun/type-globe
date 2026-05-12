@@ -15,7 +15,11 @@ pub fn canonical_romaji(s: &str) -> String {
     // 長いパターンから順に。同一の対象文字列に複数ルールが当たらないように。
     out = out.replace("texi", "thi");
     out = out.replace("teli", "thi");
+    out = out.replace("dexi", "di");
+    out = out.replace("deli", "di");
+    out = out.replace("dhi", "di");
     out = out.replace("dji", "di");
+    out = out.replace("dzi", "di");
     out = out.replace("dzu", "du");
     out = out.replace("tsu", "tu");
     out = out.replace("shi", "si");
@@ -84,6 +88,11 @@ mod tests {
     fn di_dzu_aliases() {
         assert_eq!(canonical_romaji("dji"), "di");
         assert_eq!(canonical_romaji("dzu"), "du");
+        // ディ / ぢ の Wapuro 系別綴り (Windows IME 既定など)
+        assert_eq!(canonical_romaji("dhi"), "di");
+        assert_eq!(canonical_romaji("dexi"), "di");
+        assert_eq!(canonical_romaji("deli"), "di");
+        assert_eq!(canonical_romaji("dzi"), "di");
     }
 
     #[test]
