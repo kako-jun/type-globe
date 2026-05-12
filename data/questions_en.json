@@ -13368,36 +13368,36 @@
     "id": "q0326",
     "genre": "anime",
     "question_text": {
-      "ja": "『ONE PIECE』の作者は誰?",
-      "en": "Who is the author of 'ONE PIECE'?"
+      "ja": "『ONE PIECE』のモンキー・D・ルフィの声優を担当しているのは?",
+      "en": "Who voices Monkey D. Luffy in 'ONE PIECE'?"
     },
     "choices": [
       {
-        "ja": "尾田栄一郎",
-        "en": "Eiichiro Oda",
+        "ja": "田中真弓",
+        "en": "Mayumi Tanaka",
         "ja_typings": [
-          "odaeiichirou"
+          "tanakamayumi"
         ]
       },
       {
-        "ja": "鳥山明",
-        "en": "Akira Toriyama",
+        "ja": "野沢雅子",
+        "en": "Masako Nozawa",
         "ja_typings": [
-          "toriyamaakira"
+          "nozawamasako"
         ]
       },
       {
-        "ja": "岸本斉史",
-        "en": "Masashi Kishimoto",
+        "ja": "林原めぐみ",
+        "en": "Megumi Hayashibara",
         "ja_typings": [
-          "kishimotomasashi"
+          "hayashibaramegumi"
         ]
       },
       {
-        "ja": "久保帯人",
-        "en": "Tite Kubo",
+        "ja": "折笠富美子",
+        "en": "Fumiko Orikasa",
         "ja_typings": [
-          "kubotaito"
+          "orikasafumiko"
         ]
       }
     ],
@@ -13409,36 +13409,36 @@
     "id": "q0327",
     "genre": "anime",
     "question_text": {
-      "ja": "『NARUTO -ナルト-』の作者は誰?",
-      "en": "Who is the author of 'NARUTO'?"
+      "ja": "『NARUTO -ナルト-』のうずまきナルトの声優を担当しているのは?",
+      "en": "Who voices Naruto Uzumaki in 'NARUTO'?"
     },
     "choices": [
       {
-        "ja": "岸本斉史",
-        "en": "Masashi Kishimoto",
+        "ja": "竹内順子",
+        "en": "Junko Takeuchi",
         "ja_typings": [
-          "kishimotomasashi"
+          "takeuchijunko"
         ]
       },
       {
-        "ja": "尾田栄一郎",
-        "en": "Eiichiro Oda",
+        "ja": "田中真弓",
+        "en": "Mayumi Tanaka",
         "ja_typings": [
-          "odaeiichirou"
+          "tanakamayumi"
         ]
       },
       {
-        "ja": "冨樫義博",
-        "en": "Yoshihiro Togashi",
+        "ja": "釘宮理恵",
+        "en": "Rie Kugimiya",
         "ja_typings": [
-          "togashiyoshihiro"
+          "kugimiyarie"
         ]
       },
       {
-        "ja": "井上雄彦",
-        "en": "Takehiko Inoue",
+        "ja": "早見沙織",
+        "en": "Saori Hayami",
         "ja_typings": [
-          "inouetakehiko"
+          "hayamisaori"
         ]
       }
     ],
@@ -13450,36 +13450,36 @@
     "id": "q0328",
     "genre": "anime",
     "question_text": {
-      "ja": "『ドラゴンボール』の作者は誰?",
-      "en": "Who is the author of 'Dragon Ball'?"
+      "ja": "『ドラゴンボール』の孫悟空の声を1986年から長年担当しているのは?",
+      "en": "Who has voiced Son Goku in 'Dragon Ball' since 1986?"
     },
     "choices": [
       {
-        "ja": "鳥山明",
-        "en": "Akira Toriyama",
+        "ja": "野沢雅子",
+        "en": "Masako Nozawa",
         "ja_typings": [
-          "toriyamaakira"
+          "nozawamasako"
         ]
       },
       {
-        "ja": "尾田栄一郎",
-        "en": "Eiichiro Oda",
+        "ja": "林原めぐみ",
+        "en": "Megumi Hayashibara",
         "ja_typings": [
-          "odaeiichirou"
+          "hayashibaramegumi"
         ]
       },
       {
-        "ja": "原哲夫",
-        "en": "Tetsuo Hara",
+        "ja": "高山みなみ",
+        "en": "Minami Takayama",
         "ja_typings": [
-          "haratetsuo"
+          "takayamaminami"
         ]
       },
       {
-        "ja": "車田正美",
-        "en": "Masami Kurumada",
+        "ja": "田中真弓",
+        "en": "Mayumi Tanaka",
         "ja_typings": [
-          "kurumadamasami"
+          "tanakamayumi"
         ]
       }
     ],
@@ -13491,36 +13491,36 @@
     "id": "q0329",
     "genre": "anime",
     "question_text": {
-      "ja": "『BLEACH』の作者は誰?",
-      "en": "Who is the author of 'BLEACH'?"
+      "ja": "『BLEACH』の黒崎一護の声優を担当しているのは?",
+      "en": "Who voices Ichigo Kurosaki in 'BLEACH'?"
     },
     "choices": [
       {
-        "ja": "久保帯人",
-        "en": "Tite Kubo",
+        "ja": "森田成一",
+        "en": "Masakazu Morita",
         "ja_typings": [
-          "kubotaito"
+          "moritamasakazu"
         ]
       },
       {
-        "ja": "岸本斉史",
-        "en": "Masashi Kishimoto",
+        "ja": "神谷浩史",
+        "en": "Hiroshi Kamiya",
         "ja_typings": [
-          "kishimotomasashi"
+          "kamiyahiroshi"
         ]
       },
       {
-        "ja": "尾田栄一郎",
-        "en": "Eiichiro Oda",
+        "ja": "杉田智和",
+        "en": "Tomokazu Sugita",
         "ja_typings": [
-          "odaeiichirou"
+          "sugitatomokazu"
         ]
       },
       {
-        "ja": "和月伸宏",
-        "en": "Nobuhiro Watsuki",
+        "ja": "福山潤",
+        "en": "Jun Fukuyama",
         "ja_typings": [
-          "watsukinobuhiro"
+          "fukuyamajun"
         ]
       }
     ],
@@ -13532,36 +13532,36 @@
     "id": "q0330",
     "genre": "anime",
     "question_text": {
-      "ja": "『進撃の巨人』の作者は誰?",
-      "en": "Who is the author of 'Attack on Titan'?"
+      "ja": "『進撃の巨人』(Season 1〜3) を制作したアニメスタジオは?",
+      "en": "Which animation studio produced 'Attack on Titan' Seasons 1–3?"
     },
     "choices": [
       {
-        "ja": "諫山創",
-        "en": "Hajime Isayama",
+        "ja": "WIT STUDIO",
+        "en": "WIT STUDIO",
         "ja_typings": [
-          "isayamahajime"
+          "wittosutajio"
         ]
       },
       {
-        "ja": "藤本タツキ",
-        "en": "Tatsuki Fujimoto",
+        "ja": "MAPPA",
+        "en": "MAPPA",
         "ja_typings": [
-          "fujimototatsuki"
+          "mappa"
         ]
       },
       {
-        "ja": "芥見下々",
-        "en": "Gege Akutami",
+        "ja": "ボンズ",
+        "en": "Bones",
         "ja_typings": [
-          "akutamigege"
+          "bonzu"
         ]
       },
       {
-        "ja": "吾峠呼世晴",
-        "en": "Koyoharu Gotouge",
+        "ja": "プロダクションI.G",
+        "en": "Production I.G",
         "ja_typings": [
-          "gotougekoyoharu"
+          "purodakushonaiji-"
         ]
       }
     ],
@@ -13573,36 +13573,36 @@
     "id": "q0331",
     "genre": "anime",
     "question_text": {
-      "ja": "『鬼滅の刃』の作者は誰?",
-      "en": "Who is the author of 'Demon Slayer'?"
+      "ja": "『鬼滅の刃』の竈門炭治郎の声優を担当しているのは?",
+      "en": "Who voices Tanjiro Kamado in 'Demon Slayer'?"
     },
     "choices": [
       {
-        "ja": "吾峠呼世晴",
-        "en": "Koyoharu Gotouge",
+        "ja": "花江夏樹",
+        "en": "Natsuki Hanae",
         "ja_typings": [
-          "gotougekoyoharu"
+          "hanaenatsuki"
         ]
       },
       {
-        "ja": "諫山創",
-        "en": "Hajime Isayama",
+        "ja": "梶裕貴",
+        "en": "Yuki Kaji",
         "ja_typings": [
-          "isayamahajime"
+          "kajiyuuki"
         ]
       },
       {
-        "ja": "芥見下々",
-        "en": "Gege Akutami",
+        "ja": "松岡禎丞",
+        "en": "Yoshitsugu Matsuoka",
         "ja_typings": [
-          "akutamigege"
+          "matsuokayoshitsugu"
         ]
       },
       {
-        "ja": "堀越耕平",
-        "en": "Kohei Horikoshi",
+        "ja": "内田雄馬",
+        "en": "Yuma Uchida",
         "ja_typings": [
-          "horikoshikouhei"
+          "uchidayuuma"
         ]
       }
     ],
@@ -13614,36 +13614,36 @@
     "id": "q0332",
     "genre": "anime",
     "question_text": {
-      "ja": "『呪術廻戦』の作者は誰?",
-      "en": "Who is the author of 'Jujutsu Kaisen'?"
+      "ja": "『呪術廻戦』の五条悟の声優を担当しているのは?",
+      "en": "Who voices Satoru Gojo in 'Jujutsu Kaisen'?"
     },
     "choices": [
       {
-        "ja": "芥見下々",
-        "en": "Gege Akutami",
+        "ja": "中村悠一",
+        "en": "Yuichi Nakamura",
         "ja_typings": [
-          "akutamigege"
+          "nakamurayuuichi"
         ]
       },
       {
-        "ja": "藤本タツキ",
-        "en": "Tatsuki Fujimoto",
+        "ja": "神谷浩史",
+        "en": "Hiroshi Kamiya",
         "ja_typings": [
-          "fujimototatsuki"
+          "kamiyahiroshi"
         ]
       },
       {
-        "ja": "吾峠呼世晴",
-        "en": "Koyoharu Gotouge",
+        "ja": "櫻井孝宏",
+        "en": "Takahiro Sakurai",
         "ja_typings": [
-          "gotougekoyoharu"
+          "sakuraitakahiro"
         ]
       },
       {
-        "ja": "堀越耕平",
-        "en": "Kohei Horikoshi",
+        "ja": "小野賢章",
+        "en": "Kensho Ono",
         "ja_typings": [
-          "horikoshikouhei"
+          "onokenshou"
         ]
       }
     ],
@@ -13655,36 +13655,36 @@
     "id": "q0333",
     "genre": "anime",
     "question_text": {
-      "ja": "『チェンソーマン』の作者は誰?",
-      "en": "Who is the author of 'Chainsaw Man'?"
+      "ja": "『DEATH NOTE』の夜神月の声優を担当したのは?",
+      "en": "Who voices Light Yagami in 'Death Note'?"
     },
     "choices": [
       {
-        "ja": "藤本タツキ",
-        "en": "Tatsuki Fujimoto",
+        "ja": "宮野真守",
+        "en": "Mamoru Miyano",
         "ja_typings": [
-          "fujimototatsuki"
+          "miyanomamoru"
         ]
       },
       {
-        "ja": "芥見下々",
-        "en": "Gege Akutami",
+        "ja": "松山健一",
+        "en": "Kenichi Matsuyama",
         "ja_typings": [
-          "akutamigege"
+          "matsuyamakenichi"
         ]
       },
       {
-        "ja": "諫山創",
-        "en": "Hajime Isayama",
+        "ja": "神谷浩史",
+        "en": "Hiroshi Kamiya",
         "ja_typings": [
-          "isayamahajime"
+          "kamiyahiroshi"
         ]
       },
       {
-        "ja": "石田スイ",
-        "en": "Sui Ishida",
+        "ja": "小野大輔",
+        "en": "Daisuke Ono",
         "ja_typings": [
-          "ishidasui"
+          "onodaisuke"
         ]
       }
     ],
@@ -13696,36 +13696,36 @@
     "id": "q0334",
     "genre": "anime",
     "question_text": {
-      "ja": "『僕のヒーローアカデミア』の作者は誰?",
-      "en": "Who is the author of 'My Hero Academia'?"
+      "ja": "『僕のヒーローアカデミア』のアニメを制作したスタジオは?",
+      "en": "Which studio produced the anime adaptation of 'My Hero Academia'?"
     },
     "choices": [
       {
-        "ja": "堀越耕平",
-        "en": "Kohei Horikoshi",
+        "ja": "ボンズ",
+        "en": "Bones",
         "ja_typings": [
-          "horikoshikouhei"
+          "bonzu"
         ]
       },
       {
-        "ja": "芥見下々",
-        "en": "Gege Akutami",
+        "ja": "MAPPA",
+        "en": "MAPPA",
         "ja_typings": [
-          "akutamigege"
+          "mappa"
         ]
       },
       {
-        "ja": "藤本タツキ",
-        "en": "Tatsuki Fujimoto",
+        "ja": "A-1 Pictures",
+        "en": "A-1 Pictures",
         "ja_typings": [
-          "fujimototatsuki"
+          "a-1pikucha-zu"
         ]
       },
       {
-        "ja": "古舘春一",
-        "en": "Haruichi Furudate",
+        "ja": "シャフト",
+        "en": "Shaft",
         "ja_typings": [
-          "furudateharuichi"
+          "shafuto"
         ]
       }
     ],
@@ -13737,36 +13737,36 @@
     "id": "q0335",
     "genre": "anime",
     "question_text": {
-      "ja": "『HUNTER×HUNTER』の作者は誰?",
-      "en": "Who is the author of 'HUNTER×HUNTER'?"
+      "ja": "『新世紀エヴァンゲリオン』の碇シンジの声優を担当しているのは?",
+      "en": "Who voices Shinji Ikari in 'Neon Genesis Evangelion'?"
     },
     "choices": [
       {
-        "ja": "冨樫義博",
-        "en": "Yoshihiro Togashi",
+        "ja": "緒方恵美",
+        "en": "Megumi Ogata",
         "ja_typings": [
-          "togashiyoshihiro"
+          "ogatamegumi"
         ]
       },
       {
-        "ja": "尾田栄一郎",
-        "en": "Eiichiro Oda",
+        "ja": "林原めぐみ",
+        "en": "Megumi Hayashibara",
         "ja_typings": [
-          "odaeiichirou"
+          "hayashibaramegumi"
         ]
       },
       {
-        "ja": "岸本斉史",
-        "en": "Masashi Kishimoto",
+        "ja": "坂本真綾",
+        "en": "Maaya Sakamoto",
         "ja_typings": [
-          "kishimotomasashi"
+          "sakamotomaaya"
         ]
       },
       {
-        "ja": "井上雄彦",
-        "en": "Takehiko Inoue",
+        "ja": "折笠富美子",
+        "en": "Fumiko Orikasa",
         "ja_typings": [
-          "inouetakehiko"
+          "orikasafumiko"
         ]
       }
     ],
@@ -13778,36 +13778,36 @@
     "id": "q0336",
     "genre": "anime",
     "question_text": {
-      "ja": "『SLAM DUNK』の作者は誰?",
-      "en": "Who is the author of 'SLAM DUNK'?"
+      "ja": "『新世紀エヴァンゲリオン』の綾波レイの声優を担当しているのは?",
+      "en": "Who voices Rei Ayanami in 'Neon Genesis Evangelion'?"
     },
     "choices": [
       {
-        "ja": "井上雄彦",
-        "en": "Takehiko Inoue",
+        "ja": "林原めぐみ",
+        "en": "Megumi Hayashibara",
         "ja_typings": [
-          "inouetakehiko"
+          "hayashibaramegumi"
         ]
       },
       {
-        "ja": "高橋陽一",
-        "en": "Yoichi Takahashi",
+        "ja": "緒方恵美",
+        "en": "Megumi Ogata",
         "ja_typings": [
-          "takahashiyouichi"
+          "ogatamegumi"
         ]
       },
       {
-        "ja": "あだち充",
-        "en": "Mitsuru Adachi",
+        "ja": "三石琴乃",
+        "en": "Kotono Mitsuishi",
         "ja_typings": [
-          "adachimitsuru"
+          "mitsuishikotono"
         ]
       },
       {
-        "ja": "森川ジョージ",
-        "en": "George Morikawa",
+        "ja": "久川綾",
+        "en": "Aya Hisakawa",
         "ja_typings": [
-          "morikawajo-ji"
+          "hisakawaaya"
         ]
       }
     ],
@@ -13819,36 +13819,36 @@
     "id": "q0337",
     "genre": "anime",
     "question_text": {
-      "ja": "『DEATH NOTE』の原作者(原案・原作)は誰?",
-      "en": "Who wrote the story of 'DEATH NOTE'?"
+      "ja": "『名探偵コナン』の江戸川コナンの声優を担当しているのは?",
+      "en": "Who voices Conan Edogawa in 'Detective Conan'?"
     },
     "choices": [
       {
-        "ja": "大場つぐみ",
-        "en": "Tsugumi Ohba",
+        "ja": "高山みなみ",
+        "en": "Minami Takayama",
         "ja_typings": [
-          "ohbatsugumi"
+          "takayamaminami"
         ]
       },
       {
-        "ja": "小畑健",
-        "en": "Takeshi Obata",
+        "ja": "林原めぐみ",
+        "en": "Megumi Hayashibara",
         "ja_typings": [
-          "obatatakeshi"
+          "hayashibaramegumi"
         ]
       },
       {
-        "ja": "尾田栄一郎",
-        "en": "Eiichiro Oda",
+        "ja": "野沢雅子",
+        "en": "Masako Nozawa",
         "ja_typings": [
-          "odaeiichirou"
+          "nozawamasako"
         ]
       },
       {
-        "ja": "荒木飛呂彦",
-        "en": "Hirohiko Araki",
+        "ja": "田中真弓",
+        "en": "Mayumi Tanaka",
         "ja_typings": [
-          "arakihirohiko"
+          "tanakamayumi"
         ]
       }
     ],
@@ -13860,36 +13860,36 @@
     "id": "q0338",
     "genre": "anime",
     "question_text": {
-      "ja": "『ジョジョの奇妙な冒険』の作者は誰?",
-      "en": "Who is the author of 'JoJo's Bizarre Adventure'?"
+      "ja": "『機動戦士ガンダム』のアムロ・レイの声優を担当したのは?",
+      "en": "Who voices Amuro Ray in 'Mobile Suit Gundam'?"
     },
     "choices": [
       {
-        "ja": "荒木飛呂彦",
-        "en": "Hirohiko Araki",
+        "ja": "古谷徹",
+        "en": "Toru Furuya",
         "ja_typings": [
-          "arakihirohiko"
+          "furuyatooru"
         ]
       },
       {
-        "ja": "原哲夫",
-        "en": "Tetsuo Hara",
+        "ja": "神谷明",
+        "en": "Akira Kamiya",
         "ja_typings": [
-          "haratetsuo"
+          "kamiyaakira"
         ]
       },
       {
-        "ja": "車田正美",
-        "en": "Masami Kurumada",
+        "ja": "池田秀一",
+        "en": "Shuichi Ikeda",
         "ja_typings": [
-          "kurumadamasami"
+          "ikedashuuichi"
         ]
       },
       {
-        "ja": "井上雄彦",
-        "en": "Takehiko Inoue",
+        "ja": "井上和彦",
+        "en": "Kazuhiko Inoue",
         "ja_typings": [
-          "inouetakehiko"
+          "inouekazuhiko"
         ]
       }
     ],
@@ -14229,10 +14229,17 @@
     "id": "q0347",
     "genre": "anime",
     "question_text": {
-      "ja": "『AKIRA』の原作・監督は誰?",
-      "en": "Who is the original creator and director of 'AKIRA'?"
+      "ja": "『機動戦士ガンダム』(1979 年 TV 版) のキャラクターデザインと作画監督を担当したのは?",
+      "en": "Who designed the characters and supervised animation for 'Mobile Suit Gundam' (1979 TV)?"
     },
     "choices": [
+      {
+        "ja": "安彦良和",
+        "en": "Yoshikazu Yasuhiko",
+        "ja_typings": [
+          "yasuhikoyoshikazu"
+        ]
+      },
       {
         "ja": "大友克洋",
         "en": "Katsuhiro Otomo",
@@ -14241,24 +14248,17 @@
         ]
       },
       {
-        "ja": "押井守",
-        "en": "Mamoru Oshii",
+        "ja": "湯浅政明",
+        "en": "Masaaki Yuasa",
         "ja_typings": [
-          "oshiimamoru"
+          "yuasamasaaki"
         ]
       },
       {
-        "ja": "今敏",
-        "en": "Satoshi Kon",
+        "ja": "貞本義行",
+        "en": "Yoshiyuki Sadamoto",
         "ja_typings": [
-          "konsatoshi"
-        ]
-      },
-      {
-        "ja": "庵野秀明",
-        "en": "Hideaki Anno",
-        "ja_typings": [
-          "annohideaki"
+          "sadamotoyoshiyuki"
         ]
       }
     ],
@@ -14557,36 +14557,36 @@
     "id": "q0355",
     "genre": "anime",
     "question_text": {
-      "ja": "『ハイキュー!!』の作者は誰?",
-      "en": "Who is the author of 'Haikyu!!'?"
+      "ja": "『ハイキュー!!』の日向翔陽の声優を担当しているのは?",
+      "en": "Who voices Shoyo Hinata in 'Haikyu!!'?"
     },
     "choices": [
       {
-        "ja": "古舘春一",
-        "en": "Haruichi Furudate",
+        "ja": "村瀬歩",
+        "en": "Ayumu Murase",
         "ja_typings": [
-          "furudateharuichi"
+          "muraseayumu"
         ]
       },
       {
-        "ja": "井上雄彦",
-        "en": "Takehiko Inoue",
+        "ja": "石川界人",
+        "en": "Kaito Ishikawa",
         "ja_typings": [
-          "inouetakehiko"
+          "ishikawakaito"
         ]
       },
       {
-        "ja": "堀越耕平",
-        "en": "Kohei Horikoshi",
+        "ja": "梶裕貴",
+        "en": "Yuki Kaji",
         "ja_typings": [
-          "horikoshikouhei"
+          "kajiyuuki"
         ]
       },
       {
-        "ja": "尾田栄一郎",
-        "en": "Eiichiro Oda",
+        "ja": "内山昂輝",
+        "en": "Koki Uchiyama",
         "ja_typings": [
-          "odaeiichirou"
+          "uchiyamakouki"
         ]
       }
     ],
@@ -14680,36 +14680,36 @@
     "id": "q0358",
     "genre": "anime",
     "question_text": {
-      "ja": "『北斗の拳』の作画を担当した漫画家は誰?",
-      "en": "Who drew the manga 'Fist of the North Star'?"
+      "ja": "『北斗の拳』のケンシロウの声優を担当したのは?",
+      "en": "Who voiced Kenshiro in 'Fist of the North Star'?"
     },
     "choices": [
       {
-        "ja": "原哲夫",
-        "en": "Tetsuo Hara",
+        "ja": "神谷明",
+        "en": "Akira Kamiya",
         "ja_typings": [
-          "haratetsuo"
+          "kamiyaakira"
         ]
       },
       {
-        "ja": "車田正美",
-        "en": "Masami Kurumada",
+        "ja": "古谷徹",
+        "en": "Toru Furuya",
         "ja_typings": [
-          "kurumadamasami"
+          "furuyatooru"
         ]
       },
       {
-        "ja": "荒木飛呂彦",
-        "en": "Hirohiko Araki",
+        "ja": "銀河万丈",
+        "en": "Banjo Ginga",
         "ja_typings": [
-          "arakihirohiko"
+          "gingabanjou"
         ]
       },
       {
-        "ja": "鳥山明",
-        "en": "Akira Toriyama",
+        "ja": "内海賢二",
+        "en": "Kenji Utsumi",
         "ja_typings": [
-          "toriyamaakira"
+          "utsumikenji"
         ]
       }
     ],
@@ -14721,36 +14721,36 @@
     "id": "q0359",
     "genre": "anime",
     "question_text": {
-      "ja": "『るろうに剣心』の作者は誰?",
-      "en": "Who is the author of 'Rurouni Kenshin'?"
+      "ja": "『るろうに剣心』(1996 年 TV シリーズ) の緋村剣心の声優を担当したのは?",
+      "en": "Who voiced Kenshin Himura in the 1996 'Rurouni Kenshin' TV anime?"
     },
     "choices": [
       {
-        "ja": "和月伸宏",
-        "en": "Nobuhiro Watsuki",
+        "ja": "涼風真世",
+        "en": "Mayo Suzukaze",
         "ja_typings": [
-          "watsukinobuhiro"
+          "suzukazemayo"
         ]
       },
       {
-        "ja": "井上雄彦",
-        "en": "Takehiko Inoue",
+        "ja": "緒方恵美",
+        "en": "Megumi Ogata",
         "ja_typings": [
-          "inouetakehiko"
+          "ogatamegumi"
         ]
       },
       {
-        "ja": "久保帯人",
-        "en": "Tite Kubo",
+        "ja": "折笠富美子",
+        "en": "Fumiko Orikasa",
         "ja_typings": [
-          "kubotaito"
+          "orikasafumiko"
         ]
       },
       {
-        "ja": "岸本斉史",
-        "en": "Masashi Kishimoto",
+        "ja": "高山みなみ",
+        "en": "Minami Takayama",
         "ja_typings": [
-          "kishimotomasashi"
+          "takayamaminami"
         ]
       }
     ],
@@ -15668,36 +15668,36 @@
     "id": "q0382",
     "genre": "anime",
     "question_text": {
-      "ja": "『鋼の錬金術師』の作者は誰?",
-      "en": "Who is the author of 'Fullmetal Alchemist'?"
+      "ja": "『鋼の錬金術師 FULLMETAL ALCHEMIST』(2009 年版) のエドワード・エルリックの声優を担当したのは?",
+      "en": "Who voiced Edward Elric in 'Fullmetal Alchemist: Brotherhood' (2009)?"
     },
     "choices": [
       {
-        "ja": "荒川弘",
-        "en": "Hiromu Arakawa",
+        "ja": "朴璐美",
+        "en": "Romi Park",
         "ja_typings": [
-          "arakawahiromu"
+          "pakuromi"
         ]
       },
       {
-        "ja": "和月伸宏",
-        "en": "Nobuhiro Watsuki",
+        "ja": "折笠富美子",
+        "en": "Fumiko Orikasa",
         "ja_typings": [
-          "watsukinobuhiro"
+          "orikasafumiko"
         ]
       },
       {
-        "ja": "久保帯人",
-        "en": "Tite Kubo",
+        "ja": "林原めぐみ",
+        "en": "Megumi Hayashibara",
         "ja_typings": [
-          "kubotaito"
+          "hayashibaramegumi"
         ]
       },
       {
-        "ja": "荒木飛呂彦",
-        "en": "Hirohiko Araki",
+        "ja": "豊口めぐみ",
+        "en": "Megumi Toyoguchi",
         "ja_typings": [
-          "arakihirohiko"
+          "toyoguchimegumi"
         ]
       }
     ],
@@ -15792,36 +15792,36 @@
     "id": "q0385",
     "genre": "anime",
     "question_text": {
-      "ja": "『ドラえもん』の作者は誰?",
-      "en": "Who is the author of 'Doraemon'?"
+      "ja": "『ドラえもん』(2005 年からの現行 TV シリーズ) のドラえもんの声優を担当しているのは?",
+      "en": "Who has voiced Doraemon in the current TV anime since 2005?"
     },
     "choices": [
       {
-        "ja": "藤子・F・不二雄",
-        "en": "Fujiko F. Fujio",
+        "ja": "水田わさび",
+        "en": "Wasabi Mizuta",
         "ja_typings": [
-          "fujikoefujio"
+          "mizutawasabi"
         ]
       },
       {
-        "ja": "手塚治虫",
-        "en": "Osamu Tezuka",
+        "ja": "大山のぶ代",
+        "en": "Nobuyo Oyama",
         "ja_typings": [
-          "tezukaosamu"
+          "ooyamanobuyo"
         ]
       },
       {
-        "ja": "石ノ森章太郎",
-        "en": "Shotaro Ishinomori",
+        "ja": "野沢雅子",
+        "en": "Masako Nozawa",
         "ja_typings": [
-          "ishinomorishoutarou"
+          "nozawamasako"
         ]
       },
       {
-        "ja": "鳥山明",
-        "en": "Akira Toriyama",
+        "ja": "高山みなみ",
+        "en": "Minami Takayama",
         "ja_typings": [
-          "toriyamaakira"
+          "takayamaminami"
         ]
       }
     ],
