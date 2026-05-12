@@ -70,8 +70,16 @@ mod tests {
     fn hepburn_and_kunrei_collide() {
         // Issue #96 の意図: shi も si も同じ正準形になる
         assert_eq!(canonical_romaji("hashi"), canonical_romaji("hasi"));
-        assert_eq!(canonical_romaji("tokyo"), canonical_romaji("tokyo")); // 自明
         assert_eq!(canonical_romaji("tsugi"), canonical_romaji("tugi"));
+    }
+
+    #[test]
+    fn rules_apply_in_sequence_without_clobbering_each_other() {
+        // 同一文字列内で複数ルールが連続適用されることのリグレッションガード。
+        // 置換順序が壊れると tsushi → tushi のように片方しか潰れなくなる。
+        assert_eq!(canonical_romaji("tsushi"), "tusi");
+        assert_eq!(canonical_romaji("jishi"), "zisi");
+        assert_eq!(canonical_romaji("chitsu"), "titu");
     }
 
     #[test]

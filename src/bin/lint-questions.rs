@@ -19,6 +19,10 @@ mod types;
 #[allow(dead_code)]
 mod romaji;
 
+// `validator` (included below) references `super::normalize::canonical_romaji`
+// when run as part of the library. As a standalone binary we re-include the
+// module here so the same path resolves; the `dead_code` allow is needed
+// because this binary only uses a subset of normalize's surface.
 #[path = "../io/normalize.rs"]
 #[allow(dead_code)]
 mod normalize;

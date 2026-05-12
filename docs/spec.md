@@ -65,7 +65,22 @@ Quiz is paired with score-attack modes; listening is paired with the RPG. The tw
 - Matching is **case-insensitive**.
 - A single logical answer may accept **multiple typed spellings**.
 - In JA mode, romanized aliases may be accepted for the same answer (for example `tokyo` and `toukyou`, `osaka` and `oosaka`). Question data may declare these explicitly with `ja_typings`. When a choice has a well-established official Latin spelling (for example a proper name), that spelling may also be accepted. The implementation may also derive additional common ASCII aliases from kana as long as it never reveals the answer string before typing.
-- **Input matching: canonical romaji normalization (#96).** Both the player's typed input and every `ja_typings` candidate are mapped to a shared canonical form before prefix / equality comparison. The substring rewrites (applied longest-first on lowercased input) are: `texi`→`thi`, `teli`→`thi`, `dji`→`di`, `dzu`→`du`, `tsu`→`tu`, `shi`→`si`, `chi`→`ti`, `fu`→`hu`, `ji`→`zi`, `wo`→`o`. Consequence: a player may type Hepburn (`shi`/`chi`/`tsu`/`wo`) when the data file registered kunrei (`si`/`ti`/`tu`/`o`), or vice versa, and either form is accepted without enumerating every variant in `ja_typings`. This is a runtime layer only — no question-data migration is needed and `ja_typings` files keep their original spelling. The build-time prefix-conflict linter (`io::validator`) also compares in canonical space, so a real conflict (e.g. `to` vs `tokyo`) is still detected while spurious conflicts caused only by spelling variants (e.g. `shi` vs `si` between unrelated choices) are no longer flagged.
+- **Input matching: canonical romaji normalization (#96).** In **JA mode only**, both the player's typed input and every `ja_typings` candidate are mapped to a shared canonical form before prefix / equality comparison. EN mode (and any future non-JA mode) uses plain lowercase comparison so that English words containing Japanese-romaji substrings — e.g. `wolf` containing `wo`, `fuse` containing `fu` — are not silently rewritten. Details:
+    - Rules are substring rewrites on the lowercased input. They are applied in a fixed order, longest / most-specific first, so chained patterns collapse correctly (`tsushi` → `tusi`, `chitsu` → `titu`).
+    - The full rule list:
+        - `texi` → `thi` — IME-style foreign `ti` (ティ) entered as `t` + `exi`
+        - `teli` → `thi` — same target via `l` row
+        - `dji` → `di` — both ぢ (historical/dakuten ji) and foreign `dj`-onset words approximated as `di`
+        - `dzu` → `du` — both づ (historical zu) and foreign `dz`-onset variants approximated as `du`
+        - `tsu` → `tu` — Hepburn → kunrei
+        - `shi` → `si` — Hepburn → kunrei
+        - `chi` → `ti` — Hepburn → kunrei
+        - `fu`  → `hu` — Hepburn → kunrei
+        - `ji`  → `zi` — Hepburn → kunrei
+        - `wo`  → `o`  — particle を / kunrei collapse
+    - Consequence: a player may type Hepburn (`shi`/`chi`/`tsu`/`wo`) when the data file registered kunrei (`si`/`ti`/`tu`/`o`), or vice versa, and either form is accepted without enumerating every variant in `ja_typings`.
+    - This is a runtime layer only — no question-data migration is needed and `ja_typings` files keep their original spelling. Today no shipped choice registers Hepburn and kunrei in parallel; if such redundancy appears later there is room to dedupe `ja_typings` since normalization will accept either.
+    - The build-time prefix-conflict linter (`io::validator`) also compares in canonical space, so a real conflict (e.g. `to` vs `tokyo`) is still detected while spurious conflicts caused only by spelling variants (e.g. `shi` vs `si` between unrelated choices) are no longer flagged.
 - Score = function(CPM, accuracy, correctness).
 - One run is fixed at **10 questions** (constant `QUIZ_RUN_LENGTH`), sampled from the language's question pool. The total Time is **frozen at the last correct keystroke** of the final question (or at the moment the final question is skipped via Tab) — it does not keep ticking on the Summary / Records-entry screens. After the 10th question, the UI shows a Summary (Score / Correct / Accuracy / CPM / WPM / Time), then a Records-entry screen prompts for a name and writes a `ScoreEntry` to `records_<lang>.yaml` (Top 10 by score; ts as tiebreaker). Esc on either screen returns to the menu without saving.
 

@@ -99,8 +99,9 @@ impl QuizGame {
     /// correct choice — wrong choices' typings are not accepted, so the
     /// candidate list is intentionally narrow.
     ///
-    /// Returned strings are the *original* lowercased candidates, not the
-    /// canonical form. Callers that compare against player input should
+    /// Returned strings are the **pre-canonical** (lowercased) candidates
+    /// — the spelling as it appears in `ja_typings`, not the canonicalised
+    /// form. Callers comparing against player input in JA mode should
     /// normalise both sides via `canonical_romaji` (see #96); the raw form
     /// is still useful for display and length-based metrics.
     pub fn current_correct_typing_candidates(&self) -> Vec<String> {
@@ -125,18 +126,33 @@ impl QuizGame {
     /// diverges from the correct prefix is rejected like a mistype, which
     /// is the contract Issue #70 asks for.
     ///
-    /// Comparison is done on the *canonical* romaji form (#96), so the
-    /// player can type either Hepburn (`shi`/`chi`/`tsu`/`wo`) or kunrei
-    /// (`si`/`ti`/`tu`/`o`) regardless of which variant was registered in
-    /// `ja_typings`.
+    /// In JA mode comparison is done on the *canonical* romaji form (#96),
+    /// so the player can type either Hepburn (`shi`/`chi`/`tsu`/`wo`) or
+    /// kunrei (`si`/`ti`/`tu`/`o`) regardless of which variant was
+    /// registered in `ja_typings`. In other languages the rewrites would
+    /// be active harm (e.g. `wolf` would match the `olf` prefix because
+    /// `wo`→`o`), so non-JA modes fall back to plain lowercase comparison.
     pub fn is_valid_correct_typed_prefix(&self, typed: &str) -> bool {
         if typed.is_empty() {
             return true;
         }
-        let typed_canon = canonical_romaji(typed);
+        let typed_lower = typed.to_lowercase();
+        let is_ja = matches!(self.language, Language::Japanese);
+        let typed_key = if is_ja {
+            canonical_romaji(&typed_lower)
+        } else {
+            typed_lower
+        };
         self.current_correct_typing_candidates()
             .iter()
-            .any(|candidate| canonical_romaji(candidate).starts_with(&typed_canon))
+            .any(|candidate| {
+                let candidate_key = if is_ja {
+                    canonical_romaji(candidate)
+                } else {
+                    candidate.clone()
+                };
+                candidate_key.starts_with(&typed_key)
+            })
     }
 
     /// Resolve the typed text against the current question's choices and
@@ -151,7 +167,14 @@ impl QuizGame {
     /// data file happened to register.
     pub fn answer_question_typed(&mut self, typed: &str) -> Option<QuizResult> {
         let typed_lower = typed.to_lowercase();
-        let typed_canon = canonical_romaji(&typed_lower);
+        let is_ja = matches!(self.language, Language::Japanese);
+        let typed_key = if is_ja {
+            canonical_romaji(&typed_lower)
+        } else {
+            typed_lower.clone()
+        };
+        // ja_typings / choice labels are ASCII in practice, so char count
+        // and byte count coincide; we use char count for safety.
         let typed_chars = typed_lower.chars().count() as u32;
         let matched = self.get_current_question().and_then(|question| {
             question
@@ -161,7 +184,14 @@ impl QuizGame {
                 .find_map(|(idx, choice)| {
                     DataLoader::get_choice_typing_texts(choice, &self.language)
                         .into_iter()
-                        .find(|candidate| canonical_romaji(candidate) == typed_canon)
+                        .find(|candidate| {
+                            let candidate_key = if is_ja {
+                                canonical_romaji(candidate)
+                            } else {
+                                candidate.to_lowercase()
+                            };
+                            candidate_key == typed_key
+                        })
                         .map(|_| (idx, typed_chars))
                 })
         });
@@ -694,6 +724,29 @@ mod tests {
         game.start();
         let result = game.answer_question_typed("turu").expect("result");
         assert!(result.is_correct);
+    }
+
+    #[test]
+    fn wolf_is_not_accepted_by_olf_in_en_mode() {
+        // M1 regression: canonical_romaji rewrites `wo`→`o`, which would
+        // make `olf` accidentally match `wolf` if applied in EN mode.
+        // EN mode must use plain lowercase comparison.
+        let question = make_question(&["wolf", "fox", "bear", "deer"], 0);
+        let mut game = QuizGame::new(vec![question], Language::English);
+        game.start();
+        assert!(!game.is_valid_correct_typed_prefix("olf"));
+        let result = game.answer_question_typed("olf").expect("result");
+        assert!(!result.is_correct);
+        assert_eq!(result.selected_answer_index, usize::MAX);
+    }
+
+    #[test]
+    fn en_mode_prefix_still_works_normally() {
+        let question = make_question(&["wolf", "fox", "bear", "deer"], 0);
+        let game = QuizGame::new(vec![question], Language::English);
+        assert!(game.is_valid_correct_typed_prefix("w"));
+        assert!(game.is_valid_correct_typed_prefix("wo"));
+        assert!(game.is_valid_correct_typed_prefix("wolf"));
     }
 
     #[test]
