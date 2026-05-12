@@ -22,12 +22,12 @@
 //! the duration the channel is alive. The channel is the single source
 //! of input events.
 
-use crossterm::event::{self, Event, KeyEvent};
+use crossterm::event::{self, Event, KeyCode, KeyEvent, KeyModifiers};
 use std::sync::atomic::{AtomicBool, Ordering};
 use std::sync::mpsc::{self, RecvTimeoutError};
-use std::sync::Arc;
+use std::sync::{Arc, Mutex};
 use std::thread::{self, JoinHandle};
-use std::time::Duration;
+use std::time::{Duration, Instant};
 
 /// Polling interval inside the worker thread. Short enough that the
 /// worker notices a shutdown signal within roughly one frame, long
@@ -47,10 +47,29 @@ pub enum RecvOutcome {
     Disconnected,
 }
 
+/// Abstraction over "wherever the next key event comes from" (#106).
+///
+/// The Quiz/Listening render loops don't care whether a `KeyEvent` was
+/// produced by a human pressing a key (`InputChannel`) or by an auto-demo
+/// driver synthesising keystrokes (`DemoInputSource`). Sharing a trait
+/// keeps the existing input pipeline (rejection flash, jiwa reveal,
+/// auto-confirm on correct answer) intact for the demo path without any
+/// special-casing in the session code.
+pub trait KeyEventSource {
+    /// Block up to `timeout` for the next synthetic / real key event.
+    fn recv_until(&self, timeout: Duration) -> RecvOutcome;
+}
+
 pub struct InputChannel {
     rx: mpsc::Receiver<KeyEvent>,
     shutdown: Arc<AtomicBool>,
     handle: Option<JoinHandle<()>>,
+}
+
+impl KeyEventSource for InputChannel {
+    fn recv_until(&self, timeout: Duration) -> RecvOutcome {
+        InputChannel::recv_until(self, timeout)
+    }
 }
 
 impl InputChannel {
@@ -114,10 +133,198 @@ fn run_input(tx: mpsc::Sender<KeyEvent>, shutdown: Arc<AtomicBool>) {
     }
 }
 
+// ---------------------------------------------------------------------------
+// Auto-demo input source (#106)
+// ---------------------------------------------------------------------------
+
+/// Internal demo state machine. Lives behind a `Mutex` inside
+/// [`DemoInputSource`] so the session code can refresh the "target string
+/// to type" each time a new question begins without taking a reference
+/// across the render loop.
+#[derive(Debug)]
+struct DemoState {
+    /// The full string the demo should type for the active question.
+    /// Cleared once typing is finished; the session is expected to call
+    /// `DemoInputSource::set_target` again before the next question.
+    target: Vec<char>,
+    /// How many characters of `target` have already been delivered.
+    cursor: usize,
+    /// Wall-clock instant at which the *next* event (either the first
+    /// keystroke after the wait window, or the next keystroke during
+    /// typing) is allowed to fire. Acts as a single throttle for both
+    /// the per-question wait and the per-keystroke spacing.
+    next_fire_at: Option<Instant>,
+    /// Per-keystroke interval derived from `--demo-type-cps`. A floor of
+    /// 1 ms is enforced so a pathological CPS doesn't make the demo
+    /// effectively block-write the answer in zero time.
+    type_interval: Duration,
+    /// Initial wait between question reveal and the first keystroke
+    /// (`--demo-wait-ms`).
+    wait_per_question: Duration,
+}
+
+/// Synthetic [`KeyEventSource`] used by the auto-demo (#106).
+///
+/// The session driver calls [`DemoInputSource::set_target`] each time a
+/// new question becomes active. `recv_until` then emits one `KeyEvent`
+/// per call (paced by `--demo-type-cps`, with an initial `--demo-wait-ms`
+/// gap) until the full target has been typed. When the buffer is empty
+/// or fully delivered, `recv_until` returns [`RecvOutcome::Timeout`] so
+/// the render loop keeps repainting between keystrokes.
+///
+/// The demo never produces Esc / Ctrl+C itself; those still come from
+/// the real keyboard via a separately spawned [`InputChannel`] that the
+/// CLI layer multiplexes against this source.
+pub struct DemoInputSource {
+    state: Arc<Mutex<DemoState>>,
+}
+
+impl DemoInputSource {
+    /// Build a demo source with the given typing speed (characters per
+    /// second) and per-question wait. `type_cps == 0` is normalised to
+    /// 1 cps so we never divide by zero; very high CPS is clamped to a
+    /// 1 ms minimum interval to keep redraws happening between events.
+    pub fn new(type_cps: u32, wait_per_question: Duration) -> Self {
+        let cps = type_cps.max(1);
+        let interval_ms = (1000 / cps).max(1);
+        let state = DemoState {
+            target: Vec::new(),
+            cursor: 0,
+            next_fire_at: None,
+            type_interval: Duration::from_millis(interval_ms as u64),
+            wait_per_question,
+        };
+        Self {
+            state: Arc::new(Mutex::new(state)),
+        }
+    }
+
+    /// Replace the string the demo should type next. Resets the cursor
+    /// and arms the per-question wait timer.
+    pub fn set_target(&self, target: &str) {
+        if let Ok(mut state) = self.state.lock() {
+            state.target = target.chars().collect();
+            state.cursor = 0;
+            state.next_fire_at = Some(Instant::now() + state.wait_per_question);
+        }
+    }
+
+    /// `true` once the current target has been fully delivered. The
+    /// session checks this to know when the demo has nothing left to
+    /// inject for this question (the actual question advance happens
+    /// through the normal auto-confirm-on-correct path).
+    #[cfg_attr(not(test), allow(dead_code))]
+    pub fn target_consumed(&self) -> bool {
+        match self.state.lock() {
+            Ok(state) => state.cursor >= state.target.len(),
+            Err(_) => true,
+        }
+    }
+}
+
+impl KeyEventSource for DemoInputSource {
+    fn recv_until(&self, timeout: Duration) -> RecvOutcome {
+        // We pick a "wait deadline" for this call and either deliver a
+        // synthetic key at the right moment, or fall through to the
+        // timeout so the render loop keeps repainting (timer/reveal).
+        let started = Instant::now();
+        let deadline = started + timeout;
+
+        loop {
+            let now = Instant::now();
+            let next_char = {
+                let mut state = self.state.lock().expect("demo state poisoned");
+                if state.cursor >= state.target.len() {
+                    None
+                } else {
+                    let fire_at = state.next_fire_at.unwrap_or(now);
+                    if now < fire_at {
+                        // Not yet time for the next key. Sleep until
+                        // either the deadline or the fire time, whichever
+                        // is sooner, then re-check.
+                        let sleep_until = fire_at.min(deadline);
+                        drop(state);
+                        if sleep_until > now {
+                            thread::sleep(sleep_until - now);
+                        }
+                        if Instant::now() >= deadline {
+                            return RecvOutcome::Timeout;
+                        }
+                        continue;
+                    }
+                    let c = state.target[state.cursor];
+                    state.cursor += 1;
+                    // Schedule the next keystroke `type_interval` after
+                    // *this* one's fire time so the cadence is steady
+                    // regardless of how long the caller waits between
+                    // `recv_until` calls.
+                    state.next_fire_at = Some(fire_at + state.type_interval);
+                    Some(c)
+                }
+            };
+
+            match next_char {
+                Some(c) => {
+                    return RecvOutcome::Key(synth_key(c));
+                }
+                None => {
+                    // Nothing left to type for the current target — keep
+                    // the render loop ticking. The session will pump a
+                    // new target on the next question.
+                    let remaining = deadline.saturating_duration_since(Instant::now());
+                    if remaining.is_zero() {
+                        return RecvOutcome::Timeout;
+                    }
+                    thread::sleep(remaining);
+                    return RecvOutcome::Timeout;
+                }
+            }
+        }
+    }
+}
+
+/// Build a `KeyEvent` matching what crossterm would deliver for a single
+/// character keystroke. No modifiers — the demo only types printable
+/// chars and the Quiz input handler drops modifier chords anyway.
+fn synth_key(c: char) -> KeyEvent {
+    KeyEvent::new(KeyCode::Char(c), KeyModifiers::NONE)
+}
+
+/// Multiplex two key-event sources, returning whichever produces a key
+/// first within `timeout`. Used by the demo path so the real keyboard's
+/// Esc / Ctrl+C still aborts the run even while the synthetic source is
+/// driving the typing. The primary source (passed as `a`) is polled in a
+/// short slice; if it has nothing, `b` is polled for the remainder.
+pub struct MultiplexedSource<A: KeyEventSource, B: KeyEventSource> {
+    pub a: A,
+    pub b: B,
+}
+
+impl<A: KeyEventSource, B: KeyEventSource> KeyEventSource for MultiplexedSource<A, B> {
+    fn recv_until(&self, timeout: Duration) -> RecvOutcome {
+        // Poll the human source first with a small slice so abort keys
+        // are responsive. The rest of the budget goes to the demo source.
+        const HUMAN_POLL: Duration = Duration::from_millis(5);
+        let human_slice = HUMAN_POLL.min(timeout);
+        match self.a.recv_until(human_slice) {
+            RecvOutcome::Key(k) => return RecvOutcome::Key(k),
+            RecvOutcome::Disconnected => {
+                // Human channel is gone; fall back to demo for the rest
+                // of the budget so the run can still complete cleanly.
+            }
+            RecvOutcome::Timeout => {}
+        }
+        let remaining = timeout.saturating_sub(human_slice);
+        if remaining.is_zero() {
+            return RecvOutcome::Timeout;
+        }
+        self.b.recv_until(remaining)
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
-    use crossterm::event::{KeyCode, KeyModifiers};
     use std::time::Instant;
 
     /// Build a complete `InputChannel` without spawning the real
@@ -174,6 +381,68 @@ mod tests {
         match input.recv_until(Duration::from_millis(100)) {
             RecvOutcome::Disconnected => {}
             other => panic!("expected Disconnected, got {other:?}"),
+        }
+    }
+
+    // ----- DemoInputSource sanity tests (#106) -----
+
+    #[test]
+    fn demo_source_waits_then_emits_target_chars_in_order() {
+        // 200 cps → 5 ms per keystroke; 0 ms initial wait so the test
+        // doesn't have to sleep through `--demo-wait-ms` first.
+        let demo = DemoInputSource::new(200, Duration::from_millis(0));
+        demo.set_target("abc");
+        let mut typed = String::new();
+        for _ in 0..3 {
+            match demo.recv_until(Duration::from_millis(100)) {
+                RecvOutcome::Key(k) => {
+                    if let KeyCode::Char(c) = k.code {
+                        typed.push(c);
+                    }
+                }
+                other => panic!("expected Key, got {other:?}"),
+            }
+        }
+        assert_eq!(typed, "abc");
+        assert!(demo.target_consumed());
+    }
+
+    #[test]
+    fn demo_source_idle_after_target_consumed() {
+        let demo = DemoInputSource::new(1000, Duration::from_millis(0));
+        demo.set_target("x");
+        // Drain the single char.
+        let _ = demo.recv_until(Duration::from_millis(50));
+        // With no remaining target, recv_until must return Timeout
+        // (NOT Disconnected) so the session keeps redrawing.
+        let outcome = demo.recv_until(Duration::from_millis(20));
+        assert_eq!(outcome, RecvOutcome::Timeout);
+    }
+
+    #[test]
+    fn demo_source_set_target_resets_cursor() {
+        let demo = DemoInputSource::new(1000, Duration::from_millis(0));
+        demo.set_target("a");
+        let _ = demo.recv_until(Duration::from_millis(50));
+        assert!(demo.target_consumed());
+        // Priming a new target must allow another keystroke.
+        demo.set_target("b");
+        assert!(!demo.target_consumed());
+        match demo.recv_until(Duration::from_millis(50)) {
+            RecvOutcome::Key(k) => assert_eq!(k.code, KeyCode::Char('b')),
+            other => panic!("expected Key('b'), got {other:?}"),
+        }
+    }
+
+    #[test]
+    fn demo_source_zero_cps_is_normalised_to_one_cps() {
+        // Defensive: --demo-type-cps 0 must not panic on divide-by-zero
+        // and must still produce keys (just slowly).
+        let demo = DemoInputSource::new(0, Duration::from_millis(0));
+        demo.set_target("z");
+        match demo.recv_until(Duration::from_millis(50)) {
+            RecvOutcome::Key(k) => assert_eq!(k.code, KeyCode::Char('z')),
+            other => panic!("expected Key('z'), got {other:?}"),
         }
     }
 
