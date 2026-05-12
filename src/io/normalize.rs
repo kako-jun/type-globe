@@ -26,7 +26,6 @@ pub fn canonical_romaji(s: &str) -> String {
     out = out.replace("chi", "ti");
     out = out.replace("fu", "hu");
     out = out.replace("ji", "zi");
-    out = out.replace("wo", "o");
     out = collapse_redundant_nn(&out);
     out
 }
@@ -72,9 +71,12 @@ mod tests {
     }
 
     #[test]
-    fn wo_collapses_to_o() {
-        assert_eq!(canonical_romaji("wo"), "o");
-        assert_eq!(canonical_romaji("kawawo"), "kawao");
+    fn wo_is_distinct_from_o() {
+        // IME 入力で `wo` キーストロークは を を出すが、`o` 単独は お を出す。
+        // 別文字なので canonical でも別物に保つ。
+        assert_eq!(canonical_romaji("wo"), "wo");
+        assert_eq!(canonical_romaji("kawawo"), "kawawo");
+        assert_ne!(canonical_romaji("kawawo"), canonical_romaji("kawao"));
     }
 
     #[test]

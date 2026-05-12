@@ -692,13 +692,14 @@ mod tests {
     }
 
     #[test]
-    fn issue_96_accepts_wo_for_o() {
-        // を が選択肢に含まれるケース。ja_typings に "kawao" だけ登録されていても "kawawo" が通る。
+    fn wo_and_o_are_distinct_in_japanese_mode() {
+        // を と お は IME 入力 (wo vs o) で別キーストローク。strict 仕様では
+        // データが `kawawo` (を 入り) なら入力も `wo` 必須、`o` だけでは不正解。
         let mut question = make_question(&["かわを", "はし", "つる", "ちば"], 0);
-        question.choices[0].ja_typings = vec!["kawao".into()];
+        question.choices[0].ja_typings = vec!["kawawo".into()];
         let game = QuizGame::new(vec![question], Language::Japanese);
-        assert!(game.is_valid_correct_typed_prefix("kawao"));
         assert!(game.is_valid_correct_typed_prefix("kawawo"));
+        assert!(!game.is_valid_correct_typed_prefix("kawao"));
     }
 
     #[test]
