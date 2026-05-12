@@ -699,6 +699,20 @@ mod tests {
     }
 
     #[test]
+    fn multiplexed_source_with_zero_duration_does_not_panic() {
+        // S-7: `recv_until(Duration::ZERO)` should be a no-op poll that
+        // returns Timeout (or whatever the human source happens to
+        // deliver in that instant) without dividing by zero, sleeping
+        // negative durations, or panicking in `saturating_sub`. Both
+        // queues empty → must come back as Timeout.
+        let human = MockSource::new(|| RecvOutcome::Timeout);
+        let demo = MockSource::new(|| RecvOutcome::Timeout);
+        let mux = MultiplexedSource { a: human, b: demo };
+        let outcome = mux.recv_until(Duration::ZERO);
+        assert_eq!(outcome, RecvOutcome::Timeout);
+    }
+
+    #[test]
     fn multiplexed_does_not_double_dispatch_demo_key() {
         // Two successive recv_until calls with two demo events queued must
         // deliver them in order ('a' then 'b'), not duplicate the first.

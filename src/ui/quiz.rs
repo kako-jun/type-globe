@@ -1161,6 +1161,41 @@ mod tests {
     }
 
     #[test]
+    fn handle_key_esc_sets_user_aborted_flag() {
+        // S-7: pressing Esc must flag `user_aborted` so run_with_demo
+        // propagates the abort up to the --demo-loop driver, which can
+        // then break the outer loop rather than restarting another
+        // session right after the user asked to leave.
+        let mut ui = make_quiz_ui_with_choice(
+            "東京",
+            "Tokyo",
+            vec!["tokyo".to_string()],
+            Language::Japanese,
+        );
+        assert!(!ui.user_aborted, "user_aborted starts false");
+        let esc = KeyEvent::new(KeyCode::Esc, KeyModifiers::NONE);
+        let quit = ui.handle_key(esc);
+        assert!(quit, "Esc must request quit");
+        assert!(ui.user_aborted, "Esc must record user abort");
+    }
+
+    #[test]
+    fn handle_key_ctrl_c_sets_user_aborted_flag() {
+        // S-7: Ctrl+C is the other documented quit binding; it must
+        // set the same flag so the loop driver treats it identically.
+        let mut ui = make_quiz_ui_with_choice(
+            "東京",
+            "Tokyo",
+            vec!["tokyo".to_string()],
+            Language::Japanese,
+        );
+        let ctrl_c = KeyEvent::new(KeyCode::Char('c'), KeyModifiers::CONTROL);
+        let quit = ui.handle_key(ctrl_c);
+        assert!(quit, "Ctrl+C must request quit");
+        assert!(ui.user_aborted, "Ctrl+C must record user abort");
+    }
+
+    #[test]
     fn demo_target_uses_ja_typings_when_registered() {
         // ja_typings が登録されていれば通常パスでそれを採用する。
         // S-3/S-6 の fallback 撤廃でも通常パスは壊れていないことを保証。
