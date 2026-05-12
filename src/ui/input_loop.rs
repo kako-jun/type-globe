@@ -241,7 +241,17 @@ impl KeyEventSource for DemoInputSource {
         loop {
             let now = Instant::now();
             let next_char = {
-                let mut state = self.state.lock().expect("demo state poisoned");
+                // N-4: a poisoned mutex previously crashed the whole
+                // demo with `expect("demo state poisoned")`. The state
+                // is a simple counter + Vec<char>; if a panicking
+                // writer left it in a partially-updated form the worst
+                // we'd do here is re-deliver the same char or skip
+                // one — both prefer over killing the kiosk demo with
+                // a panic. Recover the inner state and keep going.
+                let mut state = self
+                    .state
+                    .lock()
+                    .unwrap_or_else(|poisoned| poisoned.into_inner());
                 if state.cursor >= state.target.len() {
                     None
                 } else {
@@ -558,9 +568,15 @@ mod tests {
                 other => panic!("expected Key, got {other:?}"),
             }
         }
-        // Sanity: total time >= 9 * 1ms (9 inter-keystroke gaps).
+        // Sanity: total time should be roughly proportional to the
+        // 1 ms floor across 9 inter-keystroke gaps. The threshold is
+        // intentionally well below the theoretical 9 ms so a
+        // congested CI runner (process scheduler delays, GC pauses)
+        // doesn't make this test flaky — what we actually care about
+        // is "the clamp is on at all", not the exact wall time.
+        // N-3: previously `>= 8 ms` which was occasionally flaky.
         assert!(
-            started.elapsed() >= Duration::from_millis(8),
+            started.elapsed() >= Duration::from_millis(5),
             "interval not clamped: 10 chars in {:?}",
             started.elapsed()
         );

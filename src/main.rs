@@ -320,8 +320,11 @@ fn run_quiz_demo(
     if let Some(g) = genre {
         questions = DataLoader::filter_questions_by_genre(&questions, Some(g));
         if questions.is_empty() {
+            // N-1: exit non-zero so kiosk / CI wrappers can detect the
+            // empty-genre case and surface it instead of recording a
+            // "successful" empty demo run.
             eprintln!("error: --genre '{g}' に一致する問題がありません。");
-            return Ok(());
+            std::process::exit(1);
         }
     }
 
