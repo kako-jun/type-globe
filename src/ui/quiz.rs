@@ -95,6 +95,43 @@ enum Phase {
     NamingForRecord,
 }
 
+/// Result of one demo session (#106 review: M-2/S-1).
+///
+/// The caller (`run_quiz_demo` in `main.rs`) needs to distinguish three
+/// outcomes so it can react correctly inside `--demo-loop`:
+///   - normal completion → keep looping
+///   - the user pressed Esc / Ctrl+C → break out of the outer loop too
+///   - no typing target could be derived for the current question
+///     (data hole) → count it toward the consecutive-abort breaker so a
+///     pathological pool can't busy-loop the kiosk forever
+///
+/// Carrying these flags as data (rather than printing `eprintln!`
+/// straight from inside the alt screen, which used to corrupt the TUI
+/// output) lets `run_quiz_demo` emit warnings *after* the terminal has
+/// been restored.
+#[derive(Debug, Clone, Default)]
+pub struct DemoOutcome {
+    /// Final score of the run. Currently unused by `run_quiz_demo` (the
+    /// kiosk demo intentionally discards scores) but kept on the
+    /// outcome so future callers — e.g. a "demo + record to disk"
+    /// mode — don't have to break the return type again.
+    #[allow(dead_code)]
+    pub score: u32,
+    /// `true` when the player hit Esc / Ctrl+C during the session.
+    pub user_aborted: bool,
+    /// `true` when the demo had to abort the session because no typing
+    /// target was available for the current question (ja_typings empty
+    /// and label not convertible). The loop driver should warn the user
+    /// after leaving the alt screen, and break after enough consecutive
+    /// hits to avoid an infinite kiosk loop on a broken question pool.
+    pub no_target_abort: bool,
+    /// Optional human-readable warnings collected during the run that
+    /// the caller should `eprintln!` *after* the alt screen has been
+    /// torn down. Currently used for `persist_record` failures so the
+    /// disk error reaches the user without corrupting the TUI.
+    pub warnings: Vec<String>,
+}
+
 pub struct QuizUI {
     quiz_game: QuizGame,
     /// Characters the player has typed for the current question. Per
@@ -132,6 +169,23 @@ pub struct QuizUI {
     /// Sound-effect engine (Issue #73). `None` when audio output is
     /// unavailable — Quiz still works silently in that case.
     cues: Option<CueEngine>,
+    /// Warnings collected during the run that must be surfaced to the
+    /// user *after* the alt screen has been torn down (M-2). Examples:
+    /// `persist_record` disk-write failures. Plain `eprintln!` while
+    /// the alt screen is active would either be hidden by ratatui's
+    /// next redraw or visibly tear the TUI when it scrolls into view.
+    pending_warnings: Vec<String>,
+    /// Set to `true` when the demo path discovered the current question
+    /// has no usable typing target. Signals `run_app` to break out of
+    /// the loop without delivering more synthetic input. Distinct from
+    /// `user_aborted` so the loop driver can apply the consecutive-
+    /// abort breaker (M-3).
+    no_target_abort: bool,
+    /// Set to `true` when the player pressed Esc / Ctrl+C. Propagated
+    /// up through `DemoOutcome` so `--demo-loop` can break the outer
+    /// loop too (S-1) rather than restarting another session right
+    /// after the user already asked to leave.
+    user_aborted: bool,
 }
 
 impl QuizUI {
@@ -173,6 +227,9 @@ impl QuizUI {
             rejected_char: None,
             reject_flash_until: None,
             cues: CueEngine::new(),
+            pending_warnings: Vec::new(),
+            no_target_abort: false,
+            user_aborted: false,
         }
     }
 
@@ -196,6 +253,13 @@ impl QuizUI {
         execute!(terminal.backend_mut(), LeaveAlternateScreen)?;
         terminal.show_cursor()?;
 
+        // M-2: flush warnings (e.g. persist_record disk failure) only
+        // after the alt screen is gone so the message survives in the
+        // user's scrollback.
+        for w in self.pending_warnings.drain(..) {
+            eprintln!("{w}");
+        }
+
         result
     }
 
@@ -204,10 +268,14 @@ impl QuizUI {
     /// top so Esc / Ctrl+C still aborts. The session itself is unchanged —
     /// reveal, sound, auto-confirm and result screen all flow through
     /// the same code path as a human run.
+    ///
+    /// Returns a [`DemoOutcome`] carrying the score plus abort flags and
+    /// any deferred warnings the caller should print after restoring
+    /// the terminal (M-2/S-1).
     pub fn run_with_demo(
         &mut self,
         demo: DemoInputSource,
-    ) -> Result<u32, Box<dyn std::error::Error>> {
+    ) -> Result<DemoOutcome, Box<dyn std::error::Error>> {
         enable_raw_mode()?;
         let mut stdout = io::stdout();
         execute!(stdout, EnterAlternateScreen)?;
@@ -222,7 +290,13 @@ impl QuizUI {
         execute!(terminal.backend_mut(), LeaveAlternateScreen)?;
         terminal.show_cursor()?;
 
-        result
+        let score = result?;
+        Ok(DemoOutcome {
+            score,
+            user_aborted: self.user_aborted,
+            no_target_abort: self.no_target_abort,
+            warnings: std::mem::take(&mut self.pending_warnings),
+        })
     }
 
     fn run_app<S: KeyEventSource>(
@@ -261,16 +335,23 @@ impl QuizUI {
                                 demo_primed_for = Some(current_idx);
                             }
                             None => {
-                                // R-2 フェイルセーフ: 該当 question に
-                                // 対する打鍵対象が生成できない (ja_typings
-                                // 空 + en ラベル空など)。MultiplexedSource
-                                // は human 入力を待ち続けるため、demo は
-                                // 無人で無限ハングする。session を即時
-                                // 中断し、警告を出して呼び出し側にエラー
-                                // 表示を任せる。
-                                eprintln!(
+                                // R-2 フェイルセーフ (M-2): 該当
+                                // question の打鍵対象が生成できない
+                                // (ja_typings 未登録 + 漢字ラベルなど)。
+                                // MultiplexedSource は human 入力を
+                                // 待ち続けるため、無人だと無限ハングに
+                                // 倒れる。session を即時中断する。
+                                //
+                                // 警告メッセージは alt screen 内で
+                                // `eprintln!` すると次の redraw に
+                                // 上書きされたり TUI を縦に汚すので、
+                                // `pending_warnings` に積んで
+                                // `run_with_demo` が alt screen を
+                                // 抜けた後に呼び出し側で表示する。
+                                self.pending_warnings.push(format!(
                                     "warn: demo skipped — no typing target for question (idx {current_idx}); aborting session"
-                                );
+                                ));
+                                self.no_target_abort = true;
                                 break;
                             }
                         }
@@ -333,10 +414,17 @@ impl QuizUI {
         // Quit keys: Esc, and Ctrl+C as the standard terminal escape.
         // Printable characters (including 'q') are part of typed selection
         // and must reach the buffer.
+        //
+        // S-1: record the explicit user abort so `run_with_demo` can
+        // forward the signal up to the `--demo-loop` driver and break
+        // the outer loop, rather than restarting another session right
+        // after the user already asked to leave.
         if matches!(key.code, KeyCode::Esc) {
+            self.user_aborted = true;
             return true;
         }
         if matches!(key.code, KeyCode::Char('c')) && key.modifiers.contains(KeyModifiers::CONTROL) {
+            self.user_aborted = true;
             return true;
         }
 
@@ -408,10 +496,13 @@ impl QuizUI {
                     return false;
                 }
                 if let Err(err) = self.persist_record() {
-                    // Surfacing the failure inline keeps the run from
-                    // silently dropping on a disk error — Esc / next Enter
-                    // still exits regardless.
-                    eprintln!("warning: failed to save records: {err}");
+                    // M-2: alt screen 内で `eprintln!` すると次の redraw
+                    // で隠れたり画面が縦に汚れるので、警告を
+                    // `pending_warnings` に積んで run path 終了後に
+                    // 呼び出し側で表示する。Esc / 次の Enter で
+                    // session を抜ける動作は維持する。
+                    self.pending_warnings
+                        .push(format!("warning: failed to save records: {err}"));
                     return false;
                 }
                 self.saved = true;
