@@ -3,6 +3,7 @@ use crate::game::QuizGame;
 use crate::io::Storage;
 use crate::jiwa_core::{lerp_rgb, RevealHandle, RevealOpts, Rgb};
 use crate::types::{Language, Question, ScoreEntry};
+use crate::ui::inline_code;
 use crate::ui::{HelpEntry, HelpLine, InputChannel, PaneFrame, RecvOutcome, StatusPane};
 use crossterm::{
     event::{KeyCode, KeyEvent, KeyModifiers},
@@ -63,6 +64,11 @@ const STYLE_DIM: Style = Style::new().fg(Color::DarkGray);
 const STYLE_CORRECT: Style = Style::new().fg(Color::Green).add_modifier(Modifier::BOLD);
 const STYLE_INCORRECT: Style = Style::new().fg(Color::Red).add_modifier(Modifier::BOLD);
 const STYLE_INPUT_ECHO: Style = Style::new().fg(Color::Yellow).add_modifier(Modifier::BOLD);
+/// Foreground color applied to Markdown inline-code spans in question and
+/// choice text (Issue #97). The Bold modifier is added on top per-span;
+/// this constant only carries the color so the reveal animation can mix
+/// it with the per-grapheme fade color.
+const INLINE_CODE_COLOR: Color = Color::Rgb(255, 220, 80);
 const INPUT_REJECT_FLASH_MS: u64 = 180;
 /// How long after the question reveal starts before the choices block begins
 /// fading in (Issue #72). Roughly the time it takes for the eye to land on
@@ -102,6 +108,11 @@ pub struct QuizUI {
     /// Question index the current `reveal` is anchored to. Used to detect
     /// when we need to reset the animation for the next question.
     reveal_for_question: Option<usize>,
+    /// Grapheme index ranges of Markdown inline-code spans in the current
+    /// question text *after* backticks are stripped (Issue #97). Aligned
+    /// with the reveal snapshot indices so we can style code graphemes
+    /// without disturbing the per-character fade-in.
+    code_ranges: Vec<(usize, usize)>,
     /// Permutation of the active question's choices (Issue #72). Indices
     /// reference the original `question.choices`; `correct_answer_index`
     /// stays meaningful because the typing match is identity-based, not
@@ -134,6 +145,7 @@ impl QuizUI {
             saved: false,
             reveal: None,
             reveal_for_question: None,
+            code_ranges: Vec::new(),
             choice_order: Vec::new(),
             choices_reveal_starts_at: None,
             rejected_char: None,
@@ -345,10 +357,21 @@ impl QuizUI {
             self.play_cue(Cue::QuestionReveal);
         }
         let now = Instant::now();
+        // Issue #97: strip Markdown inline-code backticks before handing
+        // the text to the reveal handle, but remember where the code
+        // spans live (in grapheme indices) so `question_reveal_line` can
+        // restyle them on the way out. The typing-match path is not
+        // routed through here — backticks don't appear in `ja_typings`
+        // or in `current_correct_typing_candidates`, so input validation
+        // is unaffected.
+        let mut next_code_ranges: Vec<(usize, usize)> = Vec::new();
         self.reveal = self.quiz_game.get_current_question().map(|question| {
             let text = self.quiz_game.get_question_text(question);
-            RevealHandle::start_at(&text, RevealOpts::default_quiz(), now)
+            let (stripped, ranges) = inline_code::strip_and_locate(&text);
+            next_code_ranges = ranges;
+            RevealHandle::start_at(&stripped, RevealOpts::default_quiz(), now)
         });
+        self.code_ranges = next_code_ranges;
         // Issue #72: shuffle the four choices each question and stagger
         // their reveal so the player reads the question first, then the
         // choices fade in together a moment later.
@@ -553,18 +576,42 @@ impl QuizUI {
         if let Some(reveal) = self.reveal.as_ref() {
             let snapshot = reveal.snapshot(Instant::now());
             if !snapshot.is_empty() {
+                // Issue #97: keep the per-grapheme reveal color so the
+                // fade-in/typewriter animation still plays out, but mark
+                // inline-code graphemes with the Bold modifier so the
+                // code span is visually distinct from the start. Once
+                // the reveal is fully settled, the fg color of code
+                // graphemes is replaced with `INLINE_CODE_COLOR` for a
+                // stronger highlight in the steady-state view.
+                let settled = reveal.is_done(Instant::now());
                 let spans: Vec<Span<'static>> = snapshot
                     .into_iter()
-                    .map(|g| {
-                        let Rgb(r, gc, b) = g.color;
-                        Span::styled(g.text, Style::new().fg(Color::Rgb(r, gc, b)))
+                    .enumerate()
+                    .map(|(i, g)| {
+                        let in_code = self.code_ranges.iter().any(|&(s, e)| i >= s && i < e);
+                        let style = if in_code {
+                            let fg = if settled {
+                                INLINE_CODE_COLOR
+                            } else {
+                                let Rgb(r, gc, b) = g.color;
+                                Color::Rgb(r, gc, b)
+                            };
+                            Style::new().fg(fg).add_modifier(Modifier::BOLD)
+                        } else {
+                            let Rgb(r, gc, b) = g.color;
+                            Style::new().fg(Color::Rgb(r, gc, b))
+                        };
+                        Span::styled(g.text, style)
                     })
                     .collect();
                 return Line::from(spans);
             }
         }
+        // Fallback path (no active reveal): parse the raw text directly
+        // so backticks are stripped and code spans get the inline-code
+        // style applied.
         let text = self.quiz_game.get_question_text(question);
-        Line::from(Span::styled(text, STYLE_NORMAL))
+        Line::from(spans_from_inline_code(&text, STYLE_NORMAL))
     }
 
     fn render_question(&self, f: &mut Frame, area: Rect) {
@@ -615,10 +662,14 @@ impl QuizUI {
                 .filter_map(|(display_idx, &orig_idx)| {
                     let label = LABELS.get(display_idx).copied().unwrap_or("?");
                     let choice = choices.get(orig_idx)?.clone();
-                    Some(ListItem::new(Line::from(vec![
-                        Span::styled(format!("{label}) "), label_style),
-                        Span::styled(choice, text_style),
-                    ])))
+                    // Issue #97: parse Markdown inline-code in the choice
+                    // text so backticks are stripped and `code` spans get
+                    // the inline-code highlight. Non-code text inherits
+                    // the choices-fade `text_style` so the fade-in still
+                    // works.
+                    let mut line_spans = vec![Span::styled(format!("{label}) "), label_style)];
+                    line_spans.extend(spans_from_inline_code(&choice, text_style));
+                    Some(ListItem::new(Line::from(line_spans)))
                 })
                 .collect();
 
@@ -738,6 +789,33 @@ impl QuizUI {
     }
 }
 
+/// Build a `Vec<Span>` for `text`, stripping Markdown inline-code
+/// backticks and styling each code span with `INLINE_CODE_COLOR` + Bold
+/// while keeping non-code text styled with `base_style` (Issue #97).
+/// Used by both the question fallback path (no active reveal) and the
+/// choices renderer.
+fn spans_from_inline_code(text: &str, base_style: Style) -> Vec<Span<'static>> {
+    let segments = inline_code::parse_inline_code(text);
+    if segments.is_empty() {
+        return vec![Span::styled(String::new(), base_style)];
+    }
+    segments
+        .into_iter()
+        .map(|seg| {
+            if seg.is_code {
+                Span::styled(
+                    seg.text,
+                    Style::new()
+                        .fg(INLINE_CODE_COLOR)
+                        .add_modifier(Modifier::BOLD),
+                )
+            } else {
+                Span::styled(seg.text, base_style)
+            }
+        })
+        .collect()
+}
+
 /// Interpolate two `Rgb` triples and return a ratatui `Color`. Thin
 /// wrapper over `jiwa_core::lerp_rgb` so the choices fade-in (Issue #72)
 /// uses the same channel math as the question text reveal.
@@ -749,6 +827,43 @@ fn lerp_rgb_color(from: Rgb, to: Rgb, t: f32) -> Color {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn spans_from_inline_code_strips_backticks() {
+        // Issue #97: backticks must not leak into the rendered spans.
+        let spans = spans_from_inline_code("HTMLの `alt` 属性", STYLE_NORMAL);
+        let all_text: String = spans.iter().map(|s| s.content.as_ref()).collect();
+        assert!(
+            !all_text.contains('`'),
+            "backtick leaked into rendered spans: {all_text}"
+        );
+        assert_eq!(all_text, "HTMLの alt 属性");
+        // The code segment must carry the inline-code style.
+        let code_span = spans.iter().find(|s| s.content.as_ref() == "alt").unwrap();
+        assert_eq!(code_span.style.fg, Some(INLINE_CODE_COLOR));
+        assert!(code_span.style.add_modifier.contains(Modifier::BOLD));
+    }
+
+    #[test]
+    fn spans_from_inline_code_plain_text_unchanged() {
+        let spans = spans_from_inline_code("just text", STYLE_NORMAL);
+        let all_text: String = spans.iter().map(|s| s.content.as_ref()).collect();
+        assert_eq!(all_text, "just text");
+        assert!(spans.iter().all(|s| s.style.fg == STYLE_NORMAL.fg));
+    }
+
+    #[test]
+    fn spans_from_inline_code_multiple_spans() {
+        let spans = spans_from_inline_code("use `let` and `mut` here", STYLE_NORMAL);
+        let all_text: String = spans.iter().map(|s| s.content.as_ref()).collect();
+        assert!(!all_text.contains('`'));
+        assert_eq!(all_text, "use let and mut here");
+        let code_spans: Vec<_> = spans
+            .iter()
+            .filter(|s| s.style.fg == Some(INLINE_CODE_COLOR))
+            .collect();
+        assert_eq!(code_spans.len(), 2);
+    }
 
     #[test]
     fn now_rfc3339_matches_format() {

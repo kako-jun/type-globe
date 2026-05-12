@@ -1,4 +1,5 @@
 pub mod help_line;
+pub mod inline_code;
 pub mod input_loop;
 pub mod layout;
 pub mod listen;
