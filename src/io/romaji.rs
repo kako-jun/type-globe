@@ -8,6 +8,8 @@
 /// - Hepburn spellings (`shi`, `chi`, `tsu`, `fu`, `ji`)
 /// - no macrons
 /// - long `o` collapsed (`とうきょう` -> `tokyo`, `おおさか` -> `osaka`)
+/// - katakana ー is emitted as `-` (IME 入力で `-` キー必須に合わせる、
+///   例: `ボール` -> `bo-ru`)
 /// - `ん` always maps to `n`, even before `b/m/p`
 #[allow(dead_code)]
 pub fn hiragana_to_hepburn(input: &str) -> String {
@@ -45,7 +47,10 @@ fn hiragana_to_hepburn_raw(input: &str) -> String {
         }
 
         if c == 'ー' {
-            // ASCII-only long-vowel collapse: keep the prior vowel as-is.
+            // カタカナ長音は IME 入力で `-` キーが必須なので、ローマ字側
+            // にも `-` を残す。データ側は `bo-ru` 形で登録されている前提。
+            out.push('-');
+            geminate = false;
             i += 1;
             continue;
         }
@@ -375,8 +380,9 @@ mod tests {
     #[test]
     fn normalizes_katakana_and_punctuation() {
         assert_eq!(hiragana_to_hepburn("エル（Lawliet）"), "eru lawliet");
-        assert_eq!(hiragana_to_hepburn("おーぷん そーす"), "opun sosu");
-        assert_eq!(hiragana_to_hepburn("エレン・イェーガー"), "eren yega");
+        // 長音 ー は IME 入力で必須の `-` キーに合わせてローマ字側にも残す。
+        assert_eq!(hiragana_to_hepburn("おーぷん そーす"), "o-pun so-su");
+        assert_eq!(hiragana_to_hepburn("エレン・イェーガー"), "eren ye-ga-");
     }
 
     #[test]
