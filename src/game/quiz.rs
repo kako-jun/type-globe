@@ -558,24 +558,28 @@ mod tests {
     }
 
     #[test]
-    fn valid_prefix_accepts_long_vowel_dash_against_collapsed_data() {
-        // Issue #93: データは長音を畳んで登録している (サーバー → `saba`) ので、
-        // 母音直後の `-` を `ー` の意図として受理する。
+    fn valid_prefix_accepts_long_vowel_dash_against_strict_data() {
+        // Issue #93: カタカナ ー は IME 入力で `-` キー必須。データも
+        // `bo-ru` 形で登録するので、入力も `-` を含む形のみ受理する。
         let mut question = make_question(&["サーバー", "クライアント", "DB", "API"], 0);
-        question.choices[0].ja_typings = vec!["saba".into()];
+        question.choices[0].ja_typings = vec!["sa-ba-".into()];
         let game = QuizGame::new(vec![question], Language::Japanese);
         assert!(game.is_valid_correct_typed_prefix("sa-"));
         assert!(game.is_valid_correct_typed_prefix("sa-b"));
         assert!(game.is_valid_correct_typed_prefix("sa-ba"));
-        // 子音直後の `-` は無効入力として弾かれる。
+        assert!(game.is_valid_correct_typed_prefix("sa-ba-"));
+        // `-` 抜きの collapsed 形は不正解扱い。
+        assert!(!game.is_valid_correct_typed_prefix("sab"));
+        assert!(!game.is_valid_correct_typed_prefix("saba"));
+        // 子音直後の `-` も無効。
         assert!(!game.is_valid_correct_typed_prefix("s-"));
     }
 
     #[test]
-    fn answer_question_typed_accepts_long_vowel_dash() {
-        // Issue #93: prefix だけでなく exact match の経路でも `-` が通ること。
+    fn answer_question_typed_accepts_strict_long_vowel_dash() {
+        // exact match 経路でも `-` を含む strict 形のみ受理。
         let mut question = make_question(&["サーバー", "クライアント", "DB", "API"], 0);
-        question.choices[0].ja_typings = vec!["saba".into()];
+        question.choices[0].ja_typings = vec!["sa-ba-".into()];
         let mut game = QuizGame::new(vec![question], Language::Japanese);
         game.start();
         let result = game.answer_question_typed("sa-ba-").expect("result");
@@ -584,16 +588,15 @@ mod tests {
     }
 
     #[test]
-    fn en_mode_does_not_collapse_dash() {
-        // Issue #93 のルールは JA 専用 (canonical_key が言語で分岐する)。
-        // English の選択肢で `-` を含むものはハイフンとして打鍵が必須。
-        let mut question = make_question(&["a-b", "cd", "ef", "gh"], 0);
-        question.choices[0].ja_typings = vec![];
-        let game = QuizGame::new(vec![question], Language::English);
-        assert!(game.is_valid_correct_typed_prefix("a-"));
-        assert!(game.is_valid_correct_typed_prefix("a-b"));
-        // 英語モードでは `a` のあと `-` を抜いた `ab` は別物。
-        assert!(!game.is_valid_correct_typed_prefix("ab"));
+    fn answer_question_typed_rejects_dash_collapsed_form() {
+        // `-` 抜きの collapsed 形は不正解 (selected_answer_index = usize::MAX)。
+        let mut question = make_question(&["サーバー", "クライアント", "DB", "API"], 0);
+        question.choices[0].ja_typings = vec!["sa-ba-".into()];
+        let mut game = QuizGame::new(vec![question], Language::Japanese);
+        game.start();
+        let result = game.answer_question_typed("saba").expect("result");
+        assert!(!result.is_correct);
+        assert_eq!(result.selected_answer_index, usize::MAX);
     }
 
     #[test]

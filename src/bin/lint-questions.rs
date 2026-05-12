@@ -275,10 +275,10 @@ mod tests {
         labels.insert("en".to_string(), "Eren Yeager".to_string());
         let choice = Choice {
             labels,
-            ja_typings: vec!["eren yeager".to_string(), "eren yega".to_string()],
+            ja_typings: vec!["eren yeager".to_string(), "eren ye-ga-".to_string()],
         };
         let expected = expected_ja_typings(choice.labels.get("ja").unwrap());
-        let actual = vec!["eren yega".to_string(), "eren yeager".to_string()];
+        let actual = vec!["eren ye-ga-".to_string(), "eren yeager".to_string()];
         assert_eq!(ja_typing_mismatch_reason(&choice, &actual, &expected), None);
     }
 
@@ -289,10 +289,10 @@ mod tests {
         labels.insert("en".to_string(), "Eren Yeager".to_string());
         let choice = Choice {
             labels,
-            ja_typings: vec!["eren yega".to_string(), "eren jaeger".to_string()],
+            ja_typings: vec!["eren ye-ga-".to_string(), "eren jaeger".to_string()],
         };
         let expected = expected_ja_typings(choice.labels.get("ja").unwrap());
-        let actual = vec!["eren jaeger".to_string(), "eren yega".to_string()];
+        let actual = vec!["eren jaeger".to_string(), "eren ye-ga-".to_string()];
         assert!(ja_typing_mismatch_reason(&choice, &actual, &expected).is_some());
     }
 
