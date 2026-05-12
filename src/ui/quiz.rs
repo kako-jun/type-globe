@@ -304,46 +304,29 @@ impl QuizUI {
     }
 
     /// Pick the string the auto-demo should type for the current
-    /// question. For JA we prefer the first registered `ja_typings`
-    /// entry of the correct choice (Hepburn-canonical, long-vowel
-    /// preserved); for EN we fall back to the choice label. Returns
-    /// `None` if the question is missing or no usable target string
-    /// can be derived.
+    /// question. Returns the first entry of
+    /// `current_correct_typing_candidates()`, which is the same set the
+    /// input validator (`is_valid_correct_typed_prefix`) checks against
+    /// — so whatever we hand the demo here is guaranteed to be
+    /// accepted by the prefix matcher.
     ///
-    /// Fallback order (R-2: demo の無限待ちを防ぐフェイルセーフ):
-    ///   1. `current_correct_typing_candidates()` の先頭 (通常パス)。
-    ///      この値はそのまま返す — EN mode で "new york" のように空白を
-    ///      含む正解があり、`current_correct_typed_prefix` 側の比較も
-    ///      空白前提なので、ここで空白を潰すと打鍵照合が壊れる。
-    ///   2. それでも空 (両ラベル不在 / hepburn 変換失敗 / 通常パスが
-    ///      何も返さない) なら、correct choice の `en` ラベルを
-    ///      小文字化して**空白除去**したものを使う。これは「正解照合に
-    ///      使えないが demo を進めたい」最終手段なので、demo は破綻する
-    ///      可能性があるが、少なくとも無限ハングは起こさない。
-    ///   3. それでも空なら `None`。呼び出し側はこの session を中断する。
+    /// Returns `None` when no candidate exists (e.g. `ja_typings` empty
+    /// and the JA label has no Hepburn conversion). The caller is
+    /// expected to treat `None` as "ja_typings 未登録の問題" and abort
+    /// the demo session — otherwise the synthetic source would type a
+    /// string the validator rejects, causing an infinite mistype flash.
+    ///
+    /// Note (S-3/S-6): an earlier revision had an `en` label fallback
+    /// (lowercase + whitespace stripped) so demo could at least "type
+    /// something" when typing candidates were missing. That fallback
+    /// was removed because the typed string then bypassed the
+    /// validator's candidate list, producing exactly the infinite-loop
+    /// failure mode the fallback was supposed to avoid.
     fn demo_target_for_current_question(&self) -> Option<String> {
-        let candidates = self.quiz_game.current_correct_typing_candidates();
-        if let Some(first) = candidates.into_iter().next() {
-            if !first.is_empty() {
-                return Some(first);
-            }
-        }
-        // Fallback: 英字 choice ラベルから生成。データ追加忘れ
-        // (例: ja_typings 空 + ja ラベルも空 / 不正) で demo が
-        // 無限待ちになるのを防ぐ最後の砦。
-        let question = self.quiz_game.get_current_question()?;
-        let choice = question.choices.get(question.correct_answer_index)?;
-        let en_label = choice.labels.get("en")?;
-        let fallback: String = en_label
-            .to_lowercase()
-            .chars()
-            .filter(|c| !c.is_whitespace())
-            .collect();
-        if fallback.is_empty() {
-            None
-        } else {
-            Some(fallback)
-        }
+        self.quiz_game
+            .current_correct_typing_candidates()
+            .into_iter()
+            .find(|s| !s.is_empty())
     }
 
     fn handle_key(&mut self, key: KeyEvent) -> bool {
@@ -1059,22 +1042,24 @@ mod tests {
     }
 
     #[test]
-    fn demo_target_falls_back_to_en_when_ja_typings_empty() {
-        // R-2: 漢字のみの ja ラベル + ja_typings 空 = `get_choice_typing_texts`
-        // の hepburn 変換が空文字列を返す = `current_correct_typing_candidates`
-        // が empty を返す。この状態でも en ラベルから demo 用ターゲットを
-        // 生成して session を進める必要がある。"Hello World" → "helloworld"
-        // (小文字化 + 空白除去)。
+    fn demo_target_returns_none_when_ja_typings_empty_and_label_not_convertible() {
+        // S-3/S-6: 漢字のみの ja ラベル + ja_typings 空 のとき、
+        // `current_correct_typing_candidates` は empty を返す。
+        // 旧実装は en ラベルから「打鍵だけ進む」フォールバックを生成
+        // していたが、その文字列は validator の candidate list には
+        // 含まれず無限ミスタイプフラッシュの原因になっていた。
+        // 現実装ではこのケースを None として返し、run_with_demo 側で
+        // session abort に倒す。
         let ui = make_quiz_ui_with_choice("漢字", "Hello World", Vec::new(), Language::Japanese);
-        let target = ui
-            .demo_target_for_current_question()
-            .expect("fallback must yield a target");
-        assert_eq!(target, "helloworld");
+        assert!(
+            ui.demo_target_for_current_question().is_none(),
+            "ja_typings 空 + 変換不能ラベルは fallback せず None"
+        );
     }
 
     #[test]
     fn demo_target_returns_none_when_both_typings_and_en_empty() {
-        // R-2: ja_typings 空 + ja は変換不能の漢字のみ + en ラベル空 =
+        // S-3/S-6: ja_typings 空 + ja は変換不能の漢字のみ + en ラベル空 =
         // どこからも打鍵対象を取り出せない。run_with_demo 側でこれを
         // 検出して session を中断する。
         let ui = make_quiz_ui_with_choice("漢字", "", Vec::new(), Language::Japanese);
@@ -1085,10 +1070,9 @@ mod tests {
     }
 
     #[test]
-    fn demo_target_prefers_ja_typings_over_en_fallback() {
-        // R-2 のフォールバックが「通常パスを壊していない」ことを保証する
-        // リグレッションテスト。ja_typings が登録されていれば、en ラベル
-        // の有無に関わらずそちらが採用される。
+    fn demo_target_uses_ja_typings_when_registered() {
+        // ja_typings が登録されていれば通常パスでそれを採用する。
+        // S-3/S-6 の fallback 撤廃でも通常パスは壊れていないことを保証。
         let ui = make_quiz_ui_with_choice(
             "東京",
             "Tokyo",
