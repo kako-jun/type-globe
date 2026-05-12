@@ -14023,10 +14023,17 @@
     "id": "q0342",
     "genre": "anime",
     "question_text": {
-      "ja": "『もののけ姫』の監督は誰?",
-      "en": "Who directed 'Princess Mononoke'?"
+      "ja": "『思い出のマーニー』『借りぐらしのアリエッティ』を監督した、ジブリ出身の演出家は?",
+      "en": "Who directed 'When Marnie Was There' and 'The Secret World of Arrietty'?"
     },
     "choices": [
+      {
+        "ja": "米林宏昌",
+        "en": "Hiromasa Yonebayashi",
+        "ja_typings": [
+          "yonebayashihiromasa"
+        ]
+      },
       {
         "ja": "宮崎駿",
         "en": "Hayao Miyazaki",
@@ -14035,24 +14042,17 @@
         ]
       },
       {
+        "ja": "宮崎吾朗",
+        "en": "Goro Miyazaki",
+        "ja_typings": [
+          "miyazakigorou"
+        ]
+      },
+      {
         "ja": "高畑勲",
         "en": "Isao Takahata",
         "ja_typings": [
           "takahataisao"
-        ]
-      },
-      {
-        "ja": "押井守",
-        "en": "Mamoru Oshii",
-        "ja_typings": [
-          "oshiimamoru"
-        ]
-      },
-      {
-        "ja": "庵野秀明",
-        "en": "Hideaki Anno",
-        "ja_typings": [
-          "annohideaki"
         ]
       }
     ],
@@ -18792,22 +18792,15 @@
     "id": "q0458",
     "genre": "manga",
     "question_text": {
-      "ja": "『ブラック・ジャック』の作者は?",
-      "en": "Who is the author of 'Black Jack'?"
+      "ja": "『デビルマン』『マジンガーZ』の作者は?",
+      "en": "Who is the author of 'Devilman' and 'Mazinger Z'?"
     },
     "choices": [
       {
-        "ja": "手塚治虫",
-        "en": "Osamu Tezuka",
+        "ja": "永井豪",
+        "en": "Go Nagai",
         "ja_typings": [
-          "tezukaosamu"
-        ]
-      },
-      {
-        "ja": "横山光輝",
-        "en": "Mitsuteru Yokoyama",
-        "ja_typings": [
-          "yokoyamamitsuteru"
+          "nagaigou"
         ]
       },
       {
@@ -18815,6 +18808,13 @@
         "en": "Shotaro Ishinomori",
         "ja_typings": [
           "ishinomorishoutarou"
+        ]
+      },
+      {
+        "ja": "楳図かずお",
+        "en": "Kazuo Umezu",
+        "ja_typings": [
+          "umezukazuo"
         ]
       },
       {
@@ -19489,10 +19489,17 @@
     "id": "q0475",
     "genre": "manga",
     "question_text": {
-      "ja": "『月刊アフタヌーン』の出版社は?",
-      "en": "Which publisher issues 'Monthly Afternoon'?"
+      "ja": "『月刊少年エース』の出版社は?",
+      "en": "Which publisher issues 'Monthly Shōnen Ace'?"
     },
     "choices": [
+      {
+        "ja": "KADOKAWA",
+        "en": "KADOKAWA",
+        "ja_typings": [
+          "kadokawa"
+        ]
+      },
       {
         "ja": "講談社",
         "en": "Kodansha",
@@ -19512,13 +19519,6 @@
         "en": "Shogakukan",
         "ja_typings": [
           "shougakukan"
-        ]
-      },
-      {
-        "ja": "KADOKAWA",
-        "en": "KADOKAWA",
-        "ja_typings": [
-          "kadokawa"
         ]
       }
     ],
@@ -19530,10 +19530,17 @@
     "id": "q0476",
     "genre": "manga",
     "question_text": {
-      "ja": "『ヤングマガジン』の出版社は?",
-      "en": "Which publisher issues 'Young Magazine'?"
+      "ja": "『漫画アクション』の出版社は?",
+      "en": "Which publisher issues 'Manga Action'?"
     },
     "choices": [
+      {
+        "ja": "双葉社",
+        "en": "Futabasha",
+        "ja_typings": [
+          "futabasha"
+        ]
+      },
       {
         "ja": "講談社",
         "en": "Kodansha",
@@ -19549,17 +19556,10 @@
         ]
       },
       {
-        "ja": "小学館",
-        "en": "Shogakukan",
+        "ja": "秋田書店",
+        "en": "Akita Shoten",
         "ja_typings": [
-          "shougakukan"
-        ]
-      },
-      {
-        "ja": "白泉社",
-        "en": "Hakusensha",
-        "ja_typings": [
-          "hakusensha"
+          "akitashoten"
         ]
       }
     ],
