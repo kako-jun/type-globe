@@ -240,6 +240,7 @@ mod tests {
             choices: Vec::new(),
             correct_answer_index: 0,
             image_path: None,
+            ja_reviewed: false,
         };
         assert_eq!(
             DataLoader::get_question_reading_text(&question, &Language::Japanese),
@@ -260,6 +261,7 @@ mod tests {
             choices: Vec::new(),
             correct_answer_index: 0,
             image_path: None,
+            ja_reviewed: false,
         };
         assert_eq!(
             DataLoader::get_question_reading_text(&question, &Language::Japanese),

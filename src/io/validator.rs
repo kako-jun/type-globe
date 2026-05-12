@@ -186,6 +186,7 @@ mod tests {
             choices,
             correct_answer_index: 0,
             image_path: None,
+            ja_reviewed: false,
         }
     }
 
@@ -330,6 +331,7 @@ mod tests {
             ],
             correct_answer_index: 0,
             image_path: None,
+            ja_reviewed: false,
         };
         let conflicts = find_prefix_conflicts(&[q]);
         assert_eq!(conflicts.len(), 1);
@@ -374,6 +376,7 @@ mod tests {
             ],
             correct_answer_index: 0,
             image_path: None,
+            ja_reviewed: false,
         };
         let conflicts = find_prefix_conflicts(&[q]);
         // Conflict reported only for `en`; `ja` has just one populated

@@ -15,6 +15,12 @@ pub struct Question {
     pub choices: Vec<Choice>,
     pub correct_answer_index: usize,
     pub image_path: Option<String>,
+    /// True when every kanji-containing `ja_typings` in this question has been
+    /// per-entry reviewed (see CLAUDE.md "ja_typings 全件チェック手順").
+    /// Newly generated questions default to false; the lint binary reports
+    /// the unreviewed count so the backlog can be drained over time.
+    #[serde(default)]
+    pub ja_reviewed: bool,
 }
 
 #[derive(Debug, Clone, Deserialize, Serialize, Default)]

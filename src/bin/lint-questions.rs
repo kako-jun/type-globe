@@ -58,6 +58,20 @@ fn main() -> ExitCode {
                     eprintln!("{path}: {error}");
                 }
                 typing_errors += errors.len();
+                if path.contains("questions_ja") {
+                    let unreviewed: Vec<&str> = questions
+                        .iter()
+                        .filter(|q| !q.ja_reviewed)
+                        .map(|q| q.id.as_str())
+                        .collect();
+                    if !unreviewed.is_empty() {
+                        eprintln!(
+                            "{path}: {} unreviewed question(s) (ja_reviewed=false). First 10: {:?}",
+                            unreviewed.len(),
+                            &unreviewed[..unreviewed.len().min(10)]
+                        );
+                    }
+                }
             }
             Err(e) => {
                 eprintln!("{path}: load error: {e}");
