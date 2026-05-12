@@ -50,6 +50,27 @@ type-globe quiz --lang ja   # Jump straight to Japanese Quiz
 type-globe rpg  --lang en --no-tts  # Listening RPG without TTS (silent mode)
 ```
 
+### Demo mode (auto-play, for screencasts and unattended displays)
+
+`--demo` runs Quiz in a fully automated way: each question waits, then the correct answer is typed character by character through the normal input path, so sound / reveal / transitions all fire as if a human were playing. Designed for promo recordings, onboarding loops, and unattended kiosks (e.g. llll-ll-media).
+
+```sh
+type-globe --demo                                       # 10 questions, 1 s wait, 20 cps, JA default
+type-globe --demo --demo-count 5 --lang en              # 5 questions in English
+type-globe --demo --demo-wait-ms 500 --demo-type-cps 40 # faster pacing
+type-globe --demo --demo-loop                           # endless loop for kiosk display
+type-globe --demo --genre science                       # restrict to one genre
+```
+
+Flags:
+- `--demo-count <N>` — number of questions per run (default `10`)
+- `--demo-wait-ms <MS>` — pause before auto-typing each answer (default `1000`)
+- `--demo-type-cps <N>` — characters-per-second typing speed (default `20`)
+- `--demo-loop` — restart the run forever (until `Esc` / `Ctrl+C`)
+- `--lang`, `--genre` — same as quiz mode; `--lang` defaults to `ja` when omitted
+
+Press `Esc` (or `Ctrl+C`) at any time to exit. `q` is reserved as a typing character so it cannot be used to quit. Demo runs do **not** write to Records.
+
 Run `type-globe --help` or `type-globe <subcommand> --help` for all options.
 
 For quiz-data migration work, the repository also ships:

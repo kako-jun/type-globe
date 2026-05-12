@@ -9,7 +9,9 @@ pub mod records;
 pub mod status;
 
 pub use help_line::{HelpEntry, HelpLine};
-pub use input_loop::{InputChannel, RecvOutcome};
+pub use input_loop::{
+    DemoInputSource, InputChannel, KeyEventSource, MultiplexedSource, RecvOutcome,
+};
 pub use layout::PaneFrame;
 pub use listen::{tts_unavailable_message, ListenUI};
 pub use menu::MenuUI;

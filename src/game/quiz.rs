@@ -68,8 +68,15 @@ impl QuizGame {
     /// so two consecutive runs don't see the same questions in the same
     /// sequence.
     pub fn from_pool(pool: &[Question], language: Language) -> Self {
+        Self::from_pool_with_count(pool, language, QUIZ_RUN_LENGTH)
+    }
+
+    /// Same as [`from_pool`] but with a caller-specified run length.
+    /// Used by the auto-demo (#106) where the operator can dial the
+    /// session length up or down with `--demo-count`.
+    pub fn from_pool_with_count(pool: &[Question], language: Language, count: usize) -> Self {
         let mut rng = rand::thread_rng();
-        let take = pool.len().min(QUIZ_RUN_LENGTH);
+        let take = pool.len().min(count.max(1));
         let sampled: Vec<Question> = pool.choose_multiple(&mut rng, take).cloned().collect();
         Self::new(sampled, language)
     }
@@ -744,6 +751,65 @@ mod tests {
         assert!(game.is_valid_correct_typed_prefix("w"));
         assert!(game.is_valid_correct_typed_prefix("wo"));
         assert!(game.is_valid_correct_typed_prefix("wolf"));
+    }
+
+    // ----- from_pool_with_count (#106 auto-demo --demo-count) -----
+
+    #[test]
+    fn from_pool_with_count_zero_falls_back_to_one() {
+        // `--demo-count 0` is nonsense but must not produce an empty run
+        // (the demo loop would never call `start()` and we'd freeze on a
+        // 0-of-0 progress bar). `count.max(1)` is the documented floor.
+        let pool: Vec<Question> = (0..5)
+            .map(|i| {
+                let mut q = make_question(&["a", "b", "c", "d"], 0);
+                q.id = format!("q{i}");
+                q
+            })
+            .collect();
+        let game = QuizGame::from_pool_with_count(&pool, Language::English, 0);
+        assert_eq!(game.get_progress(), (0, 1));
+    }
+
+    #[test]
+    fn from_pool_with_count_one_takes_single_question() {
+        let pool: Vec<Question> = (0..5)
+            .map(|i| {
+                let mut q = make_question(&["a", "b", "c", "d"], 0);
+                q.id = format!("q{i}");
+                q
+            })
+            .collect();
+        let game = QuizGame::from_pool_with_count(&pool, Language::English, 1);
+        assert_eq!(game.get_progress(), (0, 1));
+    }
+
+    #[test]
+    fn from_pool_with_count_exact_match() {
+        let pool: Vec<Question> = (0..5)
+            .map(|i| {
+                let mut q = make_question(&["a", "b", "c", "d"], 0);
+                q.id = format!("q{i}");
+                q
+            })
+            .collect();
+        let game = QuizGame::from_pool_with_count(&pool, Language::English, 5);
+        assert_eq!(game.get_progress(), (0, 5));
+    }
+
+    #[test]
+    fn from_pool_with_count_exceeds_pool_is_clamped() {
+        // Requesting more than the pool offers must clamp to pool size
+        // rather than padding / repeating (mirrors `from_pool`'s contract).
+        let pool: Vec<Question> = (0..3)
+            .map(|i| {
+                let mut q = make_question(&["a", "b", "c", "d"], 0);
+                q.id = format!("q{i}");
+                q
+            })
+            .collect();
+        let game = QuizGame::from_pool_with_count(&pool, Language::English, 1000);
+        assert_eq!(game.get_progress(), (0, 3));
     }
 
     #[test]
