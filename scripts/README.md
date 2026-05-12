@@ -129,3 +129,41 @@ python generate_questions.py --genre programming --count 500
 ### レート制限エラー
 スクリプトは自動的に1秒間隔で実行されますが、それでもエラーが出る場合は、
 `time.sleep(1)` の値を増やしてください。
+
+## ja_typings 整合性チェック (`check_ja_typings.py`)
+
+`data/questions_ja.json` の各 choice について、`ja` に漢字が含まれる場合に
+pykakasi で読みを取得し、Hepburn ローマ字 (`src/io/romaji.rs` と同じ規則)
+に変換した結果と `ja_typings` を突き合わせて、明らかにズレている候補を
+洗い出すスクリプトです。
+
+### 役割分担
+
+- **漢字を含む `ja`** → `scripts/check_ja_typings.py` (本スクリプト)
+  - pykakasi で読みを取得しないと検証できないため Python 側で扱う
+- **kana のみの `ja`** → `cargo run --bin lint-questions`
+  - Rust 側の lint で `ja_typings` の必須化・整合性をチェック
+
+### 実行方法
+
+```bash
+uv run --with pykakasi python3 scripts/check_ja_typings.py
+```
+
+依存追加が必要な場合は `scripts/requirements.txt` の `pykakasi` を参照。
+
+### 出力
+
+- `scripts/suspicious_ja_typings.json` — 疑わしいエントリの一覧 (gitignore 済み)
+- 標準出力に `checked` / `skipped (no kanji)` / `suspicious entries` のサマリ
+
+### Exit code
+
+- `suspicious entries == 0` → 0
+- `suspicious entries > 0` → 1 (CI などで失敗扱いにできる)
+
+### テスト
+
+```bash
+uv run --with pykakasi --with pytest pytest scripts/test_check_ja_typings.py -v
+```

@@ -2,3 +2,7 @@
 .claude/settings.local.json
 .serena/
 .mcp.json
+__pycache__/
+*.pyc
+.pytest_cache/
+scripts/suspicious_ja_typings.json
