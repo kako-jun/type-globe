@@ -343,6 +343,7 @@ mod tests {
             choices,
             correct_answer_index: correct,
             image_path: None,
+            ja_reviewed: false,
         }
     }
 
