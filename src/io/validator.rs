@@ -80,6 +80,11 @@ fn typing_texts(choice: &Choice, language: &str) -> Vec<String> {
                 .iter()
                 .map(|typing| typing.to_lowercase())
                 .collect();
+            if !variants.is_empty() {
+                variants.sort();
+                variants.dedup();
+                return variants;
+            }
             let Some(displayed) = choice.labels.get(language) else {
                 return variants;
             };

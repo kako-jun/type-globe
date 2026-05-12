@@ -147,9 +147,14 @@ uv run python3 scripts/backfill_question_text_reading.py data/questions_ja.json 
 # 2. survey what needs work
 uv run python3 scripts/question_text_stats.py data/questions_ja.json
 
-# 3. rewrite hiragana-heavy display forms via local LLM (reading is preserved)
+# 3. rewrite hiragana-heavy question display forms via local LLM (reading is preserved)
 uv run python3 scripts/restore_ja_question_texts_with_ollama.py data/questions_ja.json --dry-run
 uv run python3 scripts/restore_ja_question_texts_with_ollama.py data/questions_ja.json
+
+# Or refresh every JA question and answer display label through the same model path.
+# This preserves question_text_reading.ja and choices[].ja_typings.
+uv run python3 scripts/restore_ja_question_texts_with_ollama.py data/questions_ja.json --all --include-choices --dry-run
+uv run python3 scripts/restore_ja_question_texts_with_ollama.py data/questions_ja.json --all --include-choices
 
 # 4. list any stragglers for manual review
 uv run python3 scripts/list_suspect_question_texts.py data/questions_ja.json
