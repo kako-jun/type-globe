@@ -7413,28 +7413,28 @@
         "ja": "リソースが見つからない",
         "en": "Resource not found",
         "ja_typings": [
-          "riso-suga mitsukaranai"
+          "riso-sugamitsukaranai"
         ]
       },
       {
         "ja": "サーバー内部エラー",
         "en": "Internal server error",
         "ja_typings": [
-          "sa-ba- naibu era-"
+          "sa-ba-naibuera-"
         ]
       },
       {
         "ja": "アクセス禁止",
         "en": "Forbidden access",
         "ja_typings": [
-          "akusesu kinshi"
+          "akusesukinshi"
         ]
       },
       {
         "ja": "認証が必要",
         "en": "Authentication required",
         "ja_typings": [
-          "ninshouga hitsuyou"
+          "ninshougahitsuyou"
         ]
       }
     ],
@@ -7454,14 +7454,14 @@
         "ja": "サーバー内部エラー",
         "en": "Internal server error",
         "ja_typings": [
-          "sa-ba- naibu era-"
+          "sa-ba-naibuera-"
         ]
       },
       {
         "ja": "リソースが見つからない",
         "en": "Resource not found",
         "ja_typings": [
-          "riso-suga mitsukaranai"
+          "riso-sugamitsukaranai"
         ]
       },
       {
@@ -7475,7 +7475,7 @@
         "ja": "リクエストが不正",
         "en": "Bad request",
         "ja_typings": [
-          "rikuesutoga fusei"
+          "rikuesutogafusei"
         ]
       }
     ],
@@ -7495,28 +7495,28 @@
         "ja": "恒久的なリダイレクト",
         "en": "Permanent redirect",
         "ja_typings": [
-          "koukyuutekina ridairekuto"
+          "koukyuutekinaridairekuto"
         ]
       },
       {
         "ja": "一時的なリダイレクト",
         "en": "Temporary redirect",
         "ja_typings": [
-          "ichijitekina ridairekuto"
+          "ichijitekinaridairekuto"
         ]
       },
       {
         "ja": "リソースが見つからない",
         "en": "Resource not found",
         "ja_typings": [
-          "riso-suga mitsukaranai"
+          "riso-sugamitsukaranai"
         ]
       },
       {
         "ja": "サーバー内部エラー",
         "en": "Internal server error",
         "ja_typings": [
-          "sa-ba- naibu era-"
+          "sa-ba-naibuera-"
         ]
       }
     ],
@@ -7536,28 +7536,28 @@
         "ja": "リクエスト成功",
         "en": "Request succeeded",
         "ja_typings": [
-          "rikuesuto seikou"
+          "rikuesutoseikou"
         ]
       },
       {
         "ja": "リクエストが不正",
         "en": "Bad request",
         "ja_typings": [
-          "rikuesutoga fusei"
+          "rikuesutogafusei"
         ]
       },
       {
         "ja": "アクセス禁止",
         "en": "Forbidden access",
         "ja_typings": [
-          "akusesu kinshi"
+          "akusesukinshi"
         ]
       },
       {
         "ja": "サービス利用不可",
         "en": "Service unavailable",
         "ja_typings": [
-          "sa-bisu riyou fuka"
+          "sa-bisuriyoufuka"
         ]
       }
     ],
@@ -7577,28 +7577,28 @@
         "ja": "アクセス禁止",
         "en": "Forbidden access",
         "ja_typings": [
-          "akusesu kinshi"
+          "akusesukinshi"
         ]
       },
       {
         "ja": "認証が必要",
         "en": "Authentication required",
         "ja_typings": [
-          "ninshouga hitsuyou"
+          "ninshougahitsuyou"
         ]
       },
       {
         "ja": "リソースが見つからない",
         "en": "Resource not found",
         "ja_typings": [
-          "riso-suga mitsukaranai"
+          "riso-sugamitsukaranai"
         ]
       },
       {
         "ja": "リクエスト成功",
         "en": "Request succeeded",
         "ja_typings": [
-          "rikuesuto seikou"
+          "rikuesutoseikou"
         ]
       }
     ],
@@ -7618,28 +7618,28 @@
         "ja": "認証が必要",
         "en": "Authentication required",
         "ja_typings": [
-          "ninshouga hitsuyou"
+          "ninshougahitsuyou"
         ]
       },
       {
         "ja": "アクセス禁止",
         "en": "Forbidden access",
         "ja_typings": [
-          "akusesu kinshi"
+          "akusesukinshi"
         ]
       },
       {
         "ja": "サーバー内部エラー",
         "en": "Internal server error",
         "ja_typings": [
-          "sa-ba- naibu era-"
+          "sa-ba-naibuera-"
         ]
       },
       {
         "ja": "リソースが見つからない",
         "en": "Resource not found",
         "ja_typings": [
-          "riso-suga mitsukaranai"
+          "riso-sugamitsukaranai"
         ]
       }
     ],
@@ -7789,8 +7789,7 @@
         "ja": "Tailwind CSS",
         "en": "Tailwind CSS",
         "ja_typings": [
-          "tailwindcss",
-          "tailwind css"
+          "tailwindcss"
         ]
       },
       {
@@ -7824,28 +7823,28 @@
         "ja": "`<img>` タグ",
         "en": "`<img>` tag",
         "ja_typings": [
-          "img tagu"
+          "imgtagu"
         ]
       },
       {
         "ja": "`<picture>` タグ",
         "en": "`<picture>` tag",
         "ja_typings": [
-          "picture tagu"
+          "picturetagu"
         ]
       },
       {
         "ja": "`<figure>` タグ",
         "en": "`<figure>` tag",
         "ja_typings": [
-          "figure tagu"
+          "figuretagu"
         ]
       },
       {
         "ja": "`<canvas>` タグ",
         "en": "`<canvas>` tag",
         "ja_typings": [
-          "canvas tagu"
+          "canvastagu"
         ]
       }
     ],
@@ -7865,28 +7864,28 @@
         "ja": "`alt` 属性",
         "en": "`alt` attribute",
         "ja_typings": [
-          "alt zokusei"
+          "altzokusei"
         ]
       },
       {
         "ja": "`title` 属性",
         "en": "`title` attribute",
         "ja_typings": [
-          "title zokusei"
+          "titlezokusei"
         ]
       },
       {
         "ja": "`src` 属性",
         "en": "`src` attribute",
         "ja_typings": [
-          "src zokusei"
+          "srczokusei"
         ]
       },
       {
         "ja": "`name` 属性",
         "en": "`name` attribute",
         "ja_typings": [
-          "name zokusei"
+          "namezokusei"
         ]
       }
     ],
@@ -7906,28 +7905,28 @@
         "ja": "`<a>` タグ",
         "en": "`<a>` tag",
         "ja_typings": [
-          "a tagu"
+          "atagu"
         ]
       },
       {
         "ja": "`<link>` タグ",
         "en": "`<link>` tag",
         "ja_typings": [
-          "link tagu"
+          "linktagu"
         ]
       },
       {
         "ja": "`<nav>` タグ",
         "en": "`<nav>` tag",
         "ja_typings": [
-          "nav tagu"
+          "navtagu"
         ]
       },
       {
         "ja": "`<href>` タグ",
         "en": "`<href>` tag",
         "ja_typings": [
-          "href tagu"
+          "hreftagu"
         ]
       }
     ],
@@ -7947,28 +7946,28 @@
         "ja": "`<video>` タグ",
         "en": "`<video>` tag",
         "ja_typings": [
-          "video tagu"
+          "videotagu"
         ]
       },
       {
         "ja": "`<movie>` タグ",
         "en": "`<movie>` tag",
         "ja_typings": [
-          "movie tagu"
+          "movietagu"
         ]
       },
       {
         "ja": "`<media>` タグ",
         "en": "`<media>` tag",
         "ja_typings": [
-          "media tagu"
+          "mediatagu"
         ]
       },
       {
         "ja": "`<embed>` タグ",
         "en": "`<embed>` tag",
         "ja_typings": [
-          "embed tagu"
+          "embedtagu"
         ]
       }
     ],
@@ -7988,28 +7987,28 @@
         "ja": "`display: flex`",
         "en": "`display: flex`",
         "ja_typings": [
-          "display flex"
+          "displayflex"
         ]
       },
       {
         "ja": "`display: grid`",
         "en": "`display: grid`",
         "ja_typings": [
-          "display grid"
+          "displaygrid"
         ]
       },
       {
         "ja": "`display: block`",
         "en": "`display: block`",
         "ja_typings": [
-          "display block"
+          "displayblock"
         ]
       },
       {
         "ja": "`display: inline`",
         "en": "`display: inline`",
         "ja_typings": [
-          "display inline"
+          "displayinline"
         ]
       }
     ],
@@ -8029,7 +8028,7 @@
         "ja": "CSS Grid",
         "en": "CSS Grid",
         "ja_typings": [
-          "css grid"
+          "cssgrid"
         ]
       },
       {
@@ -8316,28 +8315,28 @@
         "ja": "`===`",
         "en": "`===`",
         "ja_typings": [
-          "triple equal"
+          "tripleequal"
         ]
       },
       {
         "ja": "`==`",
         "en": "`==`",
         "ja_typings": [
-          "double equal"
+          "doubleequal"
         ]
       },
       {
         "ja": "`=`",
         "en": "`=`",
         "ja_typings": [
-          "single equal"
+          "singleequal"
         ]
       },
       {
         "ja": "`!=`",
         "en": "`!=`",
         "ja_typings": [
-          "not equal"
+          "notequal"
         ]
       }
     ],
@@ -8931,7 +8930,7 @@
         "ja": "OpenID Connect",
         "en": "OpenID Connect",
         "ja_typings": [
-          "openid connect"
+          "openidconnect"
         ]
       },
       {
@@ -8945,14 +8944,14 @@
         "ja": "Basic 認証",
         "en": "Basic authentication",
         "ja_typings": [
-          "basic ninshou"
+          "basicninshou"
         ]
       },
       {
         "ja": "Digest 認証",
         "en": "Digest authentication",
         "ja_typings": [
-          "digest ninshou"
+          "digestninshou"
         ]
       }
     ],
@@ -8986,14 +8985,14 @@
         "ja": "Session ID",
         "en": "Session ID",
         "ja_typings": [
-          "session id"
+          "sessionid"
         ]
       },
       {
         "ja": "API Key",
         "en": "API Key",
         "ja_typings": [
-          "api key"
+          "apikey"
         ]
       }
     ],
@@ -9027,7 +9026,7 @@
         "ja": "SQL インジェクション",
         "en": "SQL injection",
         "ja_typings": [
-          "sql injekushon"
+          "sqlinjekushon"
         ]
       },
       {
@@ -9075,7 +9074,7 @@
         "ja": "セッションハイジャック",
         "en": "Session hijacking",
         "ja_typings": [
-          "sesshon haijakku"
+          "sesshonhaijakku"
         ]
       }
     ],
@@ -9136,28 +9135,28 @@
         "ja": "Content-Security-Policy",
         "en": "Content-Security-Policy",
         "ja_typings": [
-          "content security policy"
+          "contentsecuritypolicy"
         ]
       },
       {
         "ja": "X-Frame-Options",
         "en": "X-Frame-Options",
         "ja_typings": [
-          "x frame options"
+          "xframeoptions"
         ]
       },
       {
         "ja": "Strict-Transport-Security",
         "en": "Strict-Transport-Security",
         "ja_typings": [
-          "strict transport security"
+          "stricttransportsecurity"
         ]
       },
       {
         "ja": "Referrer-Policy",
         "en": "Referrer-Policy",
         "ja_typings": [
-          "referrer policy"
+          "referrerpolicy"
         ]
       }
     ],
@@ -9403,7 +9402,7 @@
         "ja": "DNS Lookup",
         "en": "DNS Lookup",
         "ja_typings": [
-          "dns lookup"
+          "dnslookup"
         ]
       }
     ],
@@ -9464,28 +9463,28 @@
         "ja": "Document Object Model",
         "en": "Document Object Model",
         "ja_typings": [
-          "document object model"
+          "documentobjectmodel"
         ]
       },
       {
         "ja": "Data Object Model",
         "en": "Data Object Model",
         "ja_typings": [
-          "data object model"
+          "dataobjectmodel"
         ]
       },
       {
         "ja": "Display Object Model",
         "en": "Display Object Model",
         "ja_typings": [
-          "display object model"
+          "displayobjectmodel"
         ]
       },
       {
         "ja": "Dynamic Object Module",
         "en": "Dynamic Object Module",
         "ja_typings": [
-          "dynamic object module"
+          "dynamicobjectmodule"
         ]
       }
     ],
@@ -9505,21 +9504,21 @@
         "ja": "Service Worker",
         "en": "Service Worker",
         "ja_typings": [
-          "service worker"
+          "serviceworker"
         ]
       },
       {
         "ja": "Web Worker",
         "en": "Web Worker",
         "ja_typings": [
-          "web worker"
+          "webworker"
         ]
       },
       {
         "ja": "Shared Worker",
         "en": "Shared Worker",
         "ja_typings": [
-          "shared worker"
+          "sharedworker"
         ]
       },
       {
@@ -9553,14 +9552,14 @@
         "ja": "HTTP/1.1",
         "en": "HTTP/1.1",
         "ja_typings": [
-          "http 1 1"
+          "http11"
         ]
       },
       {
         "ja": "Long Polling",
         "en": "Long Polling",
         "ja_typings": [
-          "long polling"
+          "longpolling"
         ]
       },
       {
@@ -9587,28 +9586,28 @@
         "ja": "バイナリフレーミングと多重化",
         "en": "Binary framing and multiplexing",
         "ja_typings": [
-          "bainari fure-mingu to tajuuka"
+          "bainarifure-mingutotajuuka"
         ]
       },
       {
         "ja": "テキストベースのプロトコル",
         "en": "Text-based protocol",
         "ja_typings": [
-          "tekisuto be-su no purotokoru"
+          "tekisutobe-sunopurotokoru"
         ]
       },
       {
         "ja": "UDP を基盤とする",
         "en": "Built on UDP",
         "ja_typings": [
-          "udp wo kiban to suru"
+          "udpwokibantosuru"
         ]
       },
       {
         "ja": "暗号化必須化のみ",
         "en": "Mandatory encryption only",
         "ja_typings": [
-          "angouka hissuka nomi"
+          "angoukahissukanomi"
         ]
       }
     ],
@@ -9731,7 +9730,7 @@
         "ja": "Cache Storage",
         "en": "Cache Storage",
         "ja_typings": [
-          "cache storage"
+          "cachestorage"
         ]
       }
     ],
@@ -9751,21 +9750,21 @@
         "ja": "CSS プリプロセッサ",
         "en": "CSS preprocessors",
         "ja_typings": [
-          "css purepurosessa"
+          "csspurepurosessa"
         ]
       },
       {
         "ja": "CSS フレームワーク",
         "en": "CSS frameworks",
         "ja_typings": [
-          "css fure-muwa-ku"
+          "cssfure-muwa-ku"
         ]
       },
       {
         "ja": "JavaScript ランタイム",
         "en": "JavaScript runtimes",
         "ja_typings": [
-          "javascript rantaimu"
+          "javascriptrantaimu"
         ]
       },
       {
@@ -9792,7 +9791,7 @@
         "ja": "Tailwind CSS",
         "en": "Tailwind CSS",
         "ja_typings": [
-          "tailwind css"
+          "tailwindcss"
         ]
       },
       {
@@ -19989,7 +19988,7 @@
         "ja": "スクウェア・エニックス",
         "en": "Square Enix",
         "ja_typings": [
-          "sukuwea enikkusu"
+          "sukuweaenikkusu"
         ]
       },
       {
@@ -21364,7 +21363,7 @@
         "ja": "ハリエット・タブマン",
         "en": "Harriet Tubman",
         "ja_typings": [
-          "harietto tabuman"
+          "hariettotabuman"
         ]
       }
     ],
@@ -22064,7 +22063,6 @@
         "ja": "投石機",
         "en": "Catapult",
         "ja_typings": [
-          "touseki ki",
           "tousekiki"
         ]
       }
