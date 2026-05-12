@@ -68,7 +68,9 @@ const STYLE_INPUT_ECHO: Style = Style::new().fg(Color::Yellow).add_modifier(Modi
 /// choice text (Issue #97). The Bold modifier is added on top per-span;
 /// this constant only carries the color so the reveal animation can mix
 /// it with the per-grapheme fade color.
-const INLINE_CODE_COLOR: Color = Color::Rgb(255, 220, 80);
+// Issue #97 nit: shifted toward orange so the inline-code highlight is
+// unambiguously distinct from `Color::Yellow` (the input-echo color).
+const INLINE_CODE_COLOR: Color = Color::Rgb(255, 200, 60);
 const INPUT_REJECT_FLASH_MS: u64 = 180;
 /// How long after the question reveal starts before the choices block begins
 /// fading in (Issue #72). Roughly the time it takes for the eye to land on
@@ -583,6 +585,11 @@ impl QuizUI {
                 // the reveal is fully settled, the fg color of code
                 // graphemes is replaced with `INLINE_CODE_COLOR` for a
                 // stronger highlight in the steady-state view.
+                //
+                // Followup idea (#97): interpolate the code fg toward
+                // `INLINE_CODE_COLOR` over the final fade window so the
+                // settle reads as a deliberate "pop" instead of a hard
+                // swap. Out of scope for the initial implementation.
                 let settled = reveal.is_done(Instant::now());
                 let spans: Vec<Span<'static>> = snapshot
                     .into_iter()
@@ -796,8 +803,11 @@ impl QuizUI {
 /// choices renderer.
 fn spans_from_inline_code(text: &str, base_style: Style) -> Vec<Span<'static>> {
     let segments = inline_code::parse_inline_code(text);
+    // Empty input → empty span list. `Line::from(vec![])` and
+    // `List::new` both tolerate an empty Vec, so we don't need to emit a
+    // placeholder empty-text span just to keep callers happy.
     if segments.is_empty() {
-        return vec![Span::styled(String::new(), base_style)];
+        return Vec::new();
     }
     segments
         .into_iter()
