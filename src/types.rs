@@ -7,9 +7,9 @@ pub struct Question {
     pub genre: String,
     pub question_text: HashMap<String, String>,
     /// Per-language reading form (hiragana for ja, identical to display for en).
-    /// Used by TTS / future RPG audio paths and as a safety net if `question_text`
-    /// gets rewritten by a migration. Optional for backwards compatibility with
-    /// older question files.
+    /// Used by TTS / RPG audio paths. Quiz mode does not read the prompt aloud,
+    /// so quiz entries may leave this empty; `get_question_reading_text` falls
+    /// back to `question_text` automatically.
     #[serde(default, skip_serializing_if = "HashMap::is_empty")]
     pub question_text_reading: HashMap<String, String>,
     pub choices: Vec<Choice>,
