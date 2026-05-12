@@ -1,0 +1,597 @@
+[
+  {
+    "id": "q0291",
+    "genre": "it_terminology",
+    "question_text": {
+      "ja": "ソースコードの変更を頻繁に自動でビルド・テストする開発手法の略称は?",
+      "en": "What is the abbreviation for the practice of frequently and automatically building and testing source code changes?"
+    },
+    "choices": [
+      {"ja": "CI", "en": "CI", "ja_typings": ["ci"]},
+      {"ja": "CD", "en": "CD", "ja_typings": ["cd"]},
+      {"ja": "QA", "en": "QA", "ja_typings": ["qa"]},
+      {"ja": "PR", "en": "PR", "ja_typings": ["pr"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0292",
+    "genre": "it_terminology",
+    "question_text": {
+      "ja": "アプリケーションをコンテナ化して実行・管理するためのオープンソースプラットフォームは?",
+      "en": "Which open-source platform is used to containerize and run applications?"
+    },
+    "choices": [
+      {"ja": "Docker", "en": "Docker", "ja_typings": ["docker"]},
+      {"ja": "Vagrant", "en": "Vagrant", "ja_typings": ["vagrant"]},
+      {"ja": "Ansible", "en": "Ansible", "ja_typings": ["ansible"]},
+      {"ja": "Terraform", "en": "Terraform", "ja_typings": ["terraform"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0293",
+    "genre": "it_terminology",
+    "question_text": {
+      "ja": "Google が開発したコンテナオーケストレーションシステムの一般的な略称は?",
+      "en": "What is the common abbreviation for the container orchestration system originally developed by Google?"
+    },
+    "choices": [
+      {"ja": "K8s", "en": "K8s", "ja_typings": ["k8s"]},
+      {"ja": "OCI", "en": "OCI", "ja_typings": ["oci"]},
+      {"ja": "ECS", "en": "ECS", "ja_typings": ["ecs"]},
+      {"ja": "GKE", "en": "GKE", "ja_typings": ["gke"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0294",
+    "genre": "it_terminology",
+    "question_text": {
+      "ja": "AWS のオブジェクトストレージサービスは?",
+      "en": "Which AWS service provides object storage?"
+    },
+    "choices": [
+      {"ja": "S3", "en": "S3", "ja_typings": ["s3"]},
+      {"ja": "EBS", "en": "EBS", "ja_typings": ["ebs"]},
+      {"ja": "RDS", "en": "RDS", "ja_typings": ["rds"]},
+      {"ja": "EFS", "en": "EFS", "ja_typings": ["efs"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0295",
+    "genre": "it_terminology",
+    "question_text": {
+      "ja": "AWS の仮想サーバー(IaaS)サービスは?",
+      "en": "Which AWS service provides virtual servers (IaaS)?"
+    },
+    "choices": [
+      {"ja": "EC2", "en": "EC2", "ja_typings": ["ec2"]},
+      {"ja": "Lambda", "en": "Lambda", "ja_typings": ["lambda"]},
+      {"ja": "Fargate", "en": "Fargate", "ja_typings": ["fargate"]},
+      {"ja": "Beanstalk", "en": "Beanstalk", "ja_typings": ["beanstalk"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0296",
+    "genre": "it_terminology",
+    "question_text": {
+      "ja": "データベーストランザクションの4つの特性 ACID のうち「A」が表すものは?",
+      "en": "In the ACID properties of database transactions, what does the letter A stand for?"
+    },
+    "choices": [
+      {"ja": "Atomicity (原子性)", "en": "Atomicity", "ja_typings": ["atomicity"]},
+      {"ja": "Availability (可用性)", "en": "Availability", "ja_typings": ["availability"]},
+      {"ja": "Accuracy (正確性)", "en": "Accuracy", "ja_typings": ["accuracy"]},
+      {"ja": "Authentication (認証)", "en": "Authentication", "ja_typings": ["authentication"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0297",
+    "genre": "it_terminology",
+    "question_text": {
+      "ja": "分散システムの CAP 定理で「C」「A」「P」のうち P が表すものは?",
+      "en": "In the CAP theorem of distributed systems, what does the letter P represent?"
+    },
+    "choices": [
+      {"ja": "Partition tolerance (分断耐性)", "en": "Partition tolerance", "ja_typings": ["partitiontolerance"]},
+      {"ja": "Persistence (永続性)", "en": "Persistence", "ja_typings": ["persistence"]},
+      {"ja": "Performance (性能)", "en": "Performance", "ja_typings": ["performance"]},
+      {"ja": "Privacy (機密性)", "en": "Privacy", "ja_typings": ["privacy"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0298",
+    "genre": "it_terminology",
+    "question_text": {
+      "ja": "Salesforce や Gmail のように、ソフトウェアをサービスとして提供する形態を表す用語は?",
+      "en": "What term describes delivering software as a service, like Salesforce or Gmail?"
+    },
+    "choices": [
+      {"ja": "SaaS", "en": "SaaS", "ja_typings": ["saas"]},
+      {"ja": "PaaS", "en": "PaaS", "ja_typings": ["paas"]},
+      {"ja": "IaaS", "en": "IaaS", "ja_typings": ["iaas"]},
+      {"ja": "DaaS", "en": "DaaS", "ja_typings": ["daas"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0299",
+    "genre": "it_terminology",
+    "question_text": {
+      "ja": "Heroku や Google App Engine が提供する、アプリ実行基盤を提供するサービス形態は?",
+      "en": "Which service model, offered by Heroku or Google App Engine, provides an application platform?"
+    },
+    "choices": [
+      {"ja": "PaaS", "en": "PaaS", "ja_typings": ["paas"]},
+      {"ja": "SaaS", "en": "SaaS", "ja_typings": ["saas"]},
+      {"ja": "IaaS", "en": "IaaS", "ja_typings": ["iaas"]},
+      {"ja": "FaaS", "en": "FaaS", "ja_typings": ["faas"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0300",
+    "genre": "it_terminology",
+    "question_text": {
+      "ja": "Scrum の反復開発単位を表す用語は?",
+      "en": "What is the term for an iteration unit in Scrum development?"
+    },
+    "choices": [
+      {"ja": "スプリント", "en": "Sprint", "ja_typings": ["supurinnto"]},
+      {"ja": "イテレーション", "en": "Iteration", "ja_typings": ["itere-shon"]},
+      {"ja": "マイルストーン", "en": "Milestone", "ja_typings": ["mairusuto-n"]},
+      {"ja": "リリース", "en": "Release", "ja_typings": ["ari-su", "riri-su"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0301",
+    "genre": "it_terminology",
+    "question_text": {
+      "ja": "Scrum で開発チームを支援し障害を取り除く役割は?",
+      "en": "In Scrum, which role facilitates the team and removes impediments?"
+    },
+    "choices": [
+      {"ja": "スクラムマスター", "en": "Scrum Master", "ja_typings": ["sukuramumasuta-"]},
+      {"ja": "プロダクトオーナー", "en": "Product Owner", "ja_typings": ["purodakutoo-na-"]},
+      {"ja": "テックリード", "en": "Tech Lead", "ja_typings": ["tekkuri-do"]},
+      {"ja": "プロジェクトマネージャー", "en": "Project Manager", "ja_typings": ["purojekutomane-ja-"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0302",
+    "genre": "it_terminology",
+    "question_text": {
+      "ja": "改変したソースコードの公開を義務付ける「コピーレフト」型の代表的なライセンスは?",
+      "en": "Which is the representative copyleft license requiring source disclosure for modifications?"
+    },
+    "choices": [
+      {"ja": "GPL", "en": "GPL", "ja_typings": ["gpl"]},
+      {"ja": "MIT", "en": "MIT", "ja_typings": ["mit"]},
+      {"ja": "BSD", "en": "BSD", "ja_typings": ["bsd"]},
+      {"ja": "Apache", "en": "Apache", "ja_typings": ["apache"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0303",
+    "genre": "it_terminology",
+    "question_text": {
+      "ja": "Microsoft のクラウドプラットフォームの名称は?",
+      "en": "What is the name of Microsoft's cloud platform?"
+    },
+    "choices": [
+      {"ja": "Azure", "en": "Azure", "ja_typings": ["azure"]},
+      {"ja": "AWS", "en": "AWS", "ja_typings": ["aws"]},
+      {"ja": "GCP", "en": "GCP", "ja_typings": ["gcp"]},
+      {"ja": "OCI", "en": "OCI", "ja_typings": ["oci"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0304",
+    "genre": "it_terminology",
+    "question_text": {
+      "ja": "イベント駆動でコードを実行する AWS のサーバーレスサービスは?",
+      "en": "Which AWS serverless service runs code in response to events?"
+    },
+    "choices": [
+      {"ja": "Lambda", "en": "Lambda", "ja_typings": ["lambda"]},
+      {"ja": "Fargate", "en": "Fargate", "ja_typings": ["fargate"]},
+      {"ja": "ECS", "en": "ECS", "ja_typings": ["ecs"]},
+      {"ja": "Batch", "en": "Batch", "ja_typings": ["batch"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0305",
+    "genre": "it_terminology",
+    "question_text": {
+      "ja": "GCP のマネージド Kubernetes サービスの略称は?",
+      "en": "What is the abbreviation for GCP's managed Kubernetes service?"
+    },
+    "choices": [
+      {"ja": "GKE", "en": "GKE", "ja_typings": ["gke"]},
+      {"ja": "EKS", "en": "EKS", "ja_typings": ["eks"]},
+      {"ja": "AKS", "en": "AKS", "ja_typings": ["aks"]},
+      {"ja": "OKE", "en": "OKE", "ja_typings": ["oke"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0306",
+    "genre": "it_terminology",
+    "question_text": {
+      "ja": "サービスの可用性を「99.9%」のように契約で保証する文書は?",
+      "en": "What document contractually guarantees service availability, e.g. 99.9% uptime?"
+    },
+    "choices": [
+      {"ja": "SLA", "en": "SLA", "ja_typings": ["sla"]},
+      {"ja": "NDA", "en": "NDA", "ja_typings": ["nda"]},
+      {"ja": "MOU", "en": "MOU", "ja_typings": ["mou"]},
+      {"ja": "EULA", "en": "EULA", "ja_typings": ["eula"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0307",
+    "genre": "it_terminology",
+    "question_text": {
+      "ja": "Google が提唱した、信頼性を工学的に管理するエンジニアリングの略称は?",
+      "en": "What is Google's term for engineering reliability through software practices?"
+    },
+    "choices": [
+      {"ja": "SRE", "en": "SRE", "ja_typings": ["sre"]},
+      {"ja": "QA", "en": "QA", "ja_typings": ["qa"]},
+      {"ja": "DevOps", "en": "DevOps", "ja_typings": ["devops"]},
+      {"ja": "ITIL", "en": "ITIL", "ja_typings": ["itil"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0308",
+    "genre": "it_terminology",
+    "question_text": {
+      "ja": "Terraform などで使われる、インフラ構成をコードで管理する考え方の略称は?",
+      "en": "What is the abbreviation for managing infrastructure configuration as code, used by tools like Terraform?"
+    },
+    "choices": [
+      {"ja": "IaC", "en": "IaC", "ja_typings": ["iac"]},
+      {"ja": "CaC", "en": "CaC", "ja_typings": ["cac"]},
+      {"ja": "PaC", "en": "PaC", "ja_typings": ["pac"]},
+      {"ja": "DaC", "en": "DaC", "ja_typings": ["dac"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0309",
+    "genre": "it_terminology",
+    "question_text": {
+      "ja": "リレーショナル DB で検索を高速化する仕組みは?",
+      "en": "Which mechanism in a relational database speeds up searches?"
+    },
+    "choices": [
+      {"ja": "インデックス", "en": "Index", "ja_typings": ["inndekkusu"]},
+      {"ja": "トリガー", "en": "Trigger", "ja_typings": ["toriga-"]},
+      {"ja": "ビュー", "en": "View", "ja_typings": ["byu-"]},
+      {"ja": "スキーマ", "en": "Schema", "ja_typings": ["suki-ma"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0310",
+    "genre": "it_terminology",
+    "question_text": {
+      "ja": "MongoDB や Cassandra のような、RDB ではないデータベースを総称する用語は?",
+      "en": "What is the general term for non-relational databases like MongoDB or Cassandra?"
+    },
+    "choices": [
+      {"ja": "NoSQL", "en": "NoSQL", "ja_typings": ["nosql"]},
+      {"ja": "NewSQL", "en": "NewSQL", "ja_typings": ["newsql"]},
+      {"ja": "OLAP", "en": "OLAP", "ja_typings": ["olap"]},
+      {"ja": "OLTP", "en": "OLTP", "ja_typings": ["oltp"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0311",
+    "genre": "it_terminology",
+    "question_text": {
+      "ja": "EU の個人データ保護に関する一般データ保護規則の略称は?",
+      "en": "What is the abbreviation for the EU's general data protection regulation?"
+    },
+    "choices": [
+      {"ja": "GDPR", "en": "GDPR", "ja_typings": ["gdpr"]},
+      {"ja": "HIPAA", "en": "HIPAA", "ja_typings": ["hipaa"]},
+      {"ja": "CCPA", "en": "CCPA", "ja_typings": ["ccpa"]},
+      {"ja": "SOX", "en": "SOX", "ja_typings": ["sox"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0312",
+    "genre": "it_terminology",
+    "question_text": {
+      "ja": "クレジットカード情報を扱う事業者が遵守すべきセキュリティ基準は?",
+      "en": "Which security standard must businesses handling credit card data comply with?"
+    },
+    "choices": [
+      {"ja": "PCI DSS", "en": "PCI DSS", "ja_typings": ["pcidss"]},
+      {"ja": "ISO 27001", "en": "ISO 27001", "ja_typings": ["iso27001"]},
+      {"ja": "SOC 2", "en": "SOC 2", "ja_typings": ["soc2"]},
+      {"ja": "FIPS 140", "en": "FIPS 140", "ja_typings": ["fips140"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0313",
+    "genre": "it_terminology",
+    "question_text": {
+      "ja": "Agile 開発の価値観を示した 2001 年の宣言は?",
+      "en": "What 2001 manifesto declared the values of agile software development?"
+    },
+    "choices": [
+      {"ja": "アジャイルソフトウェア開発宣言", "en": "Manifesto for Agile Software Development", "ja_typings": ["ajairusofutoweakaihatsusenngenn"]},
+      {"ja": "GNU 宣言", "en": "GNU Manifesto", "ja_typings": ["gnusenngenn"]},
+      {"ja": "オープンソース定義", "en": "Open Source Definition", "ja_typings": ["o-punso-suteigi"]},
+      {"ja": "ハッカー宣言", "en": "Hacker Manifesto", "ja_typings": ["hakka-senngenn"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0314",
+    "genre": "it_terminology",
+    "question_text": {
+      "ja": "Scrum で日々の進捗共有を行う短いミーティングは?",
+      "en": "What is the short daily meeting in Scrum for syncing progress?"
+    },
+    "choices": [
+      {"ja": "デイリースタンドアップ", "en": "Daily Stand-up", "ja_typings": ["deiri-sutanndoappu"]},
+      {"ja": "レトロスペクティブ", "en": "Retrospective", "ja_typings": ["retorosupekuteibu"]},
+      {"ja": "スプリントレビュー", "en": "Sprint Review", "ja_typings": ["supurinntorebyu-"]},
+      {"ja": "プランニングポーカー", "en": "Planning Poker", "ja_typings": ["puranninngupo-ka-"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0315",
+    "genre": "it_terminology",
+    "question_text": {
+      "ja": "本番リリース直前のソフトウェア完成度を表す版は?",
+      "en": "Which release stage represents software just before public release?"
+    },
+    "choices": [
+      {"ja": "RC (Release Candidate)", "en": "RC (Release Candidate)", "ja_typings": ["rc"]},
+      {"ja": "アルファ版", "en": "Alpha", "ja_typings": ["arufaban"]},
+      {"ja": "ベータ版", "en": "Beta", "ja_typings": ["be-taban"]},
+      {"ja": "ナイトリービルド", "en": "Nightly Build", "ja_typings": ["naitori-birudo"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0316",
+    "genre": "it_terminology",
+    "question_text": {
+      "ja": "GitHub の変更取り込み依頼を意味する略語は?",
+      "en": "Which abbreviation refers to a request to merge changes on GitHub?"
+    },
+    "choices": [
+      {"ja": "PR", "en": "PR", "ja_typings": ["pr"]},
+      {"ja": "MR", "en": "MR", "ja_typings": ["mr"]},
+      {"ja": "CR", "en": "CR", "ja_typings": ["cr"]},
+      {"ja": "IR", "en": "IR", "ja_typings": ["ir"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0317",
+    "genre": "it_terminology",
+    "question_text": {
+      "ja": "新機能を一部のユーザーにのみ段階公開する手法は?",
+      "en": "What deployment technique releases a new feature only to a subset of users first?"
+    },
+    "choices": [
+      {"ja": "カナリアリリース", "en": "Canary Release", "ja_typings": ["kanariariri-su"]},
+      {"ja": "ブルーグリーンデプロイ", "en": "Blue-Green Deployment", "ja_typings": ["buru-guri-nndepuroi"]},
+      {"ja": "ローリングアップデート", "en": "Rolling Update", "ja_typings": ["ro-rinnguappude-to"]},
+      {"ja": "シャドーデプロイ", "en": "Shadow Deployment", "ja_typings": ["shado-depuroi"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0318",
+    "genre": "it_terminology",
+    "question_text": {
+      "ja": "AWS で関係データベースを提供するマネージドサービスは?",
+      "en": "Which AWS managed service provides relational databases?"
+    },
+    "choices": [
+      {"ja": "RDS", "en": "RDS", "ja_typings": ["rds"]},
+      {"ja": "DynamoDB", "en": "DynamoDB", "ja_typings": ["dynamodb"]},
+      {"ja": "Redshift", "en": "Redshift", "ja_typings": ["redshift"]},
+      {"ja": "Aurora Serverless", "en": "Aurora Serverless", "ja_typings": ["auroraserverless"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0319",
+    "genre": "it_terminology",
+    "question_text": {
+      "ja": "世界中にコンテンツを高速配信する仕組みの一般的な略称は?",
+      "en": "What is the common abbreviation for a globally distributed content delivery system?"
+    },
+    "choices": [
+      {"ja": "CDN", "en": "CDN", "ja_typings": ["cdn"]},
+      {"ja": "DNS", "en": "DNS", "ja_typings": ["dns"]},
+      {"ja": "VPN", "en": "VPN", "ja_typings": ["vpn"]},
+      {"ja": "NAT", "en": "NAT", "ja_typings": ["nat"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0320",
+    "genre": "it_terminology",
+    "question_text": {
+      "ja": "1 つの大きなアプリを多数の小さなサービスで構成する設計手法は?",
+      "en": "Which architectural style composes an application from many small services?"
+    },
+    "choices": [
+      {"ja": "マイクロサービス", "en": "Microservices", "ja_typings": ["maikurosa-bisu"]},
+      {"ja": "モノリス", "en": "Monolith", "ja_typings": ["monorisu"]},
+      {"ja": "サービス指向アーキテクチャ", "en": "Service-Oriented Architecture", "ja_typings": ["sa-bisushikoua-kitekucha"]},
+      {"ja": "イベント駆動アーキテクチャ", "en": "Event-Driven Architecture", "ja_typings": ["ibenntokudoua-kitekucha"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0321",
+    "genre": "it_terminology",
+    "question_text": {
+      "ja": "Kubernetes でコンテナをまとめる最小デプロイ単位は?",
+      "en": "What is the smallest deployable unit grouping containers in Kubernetes?"
+    },
+    "choices": [
+      {"ja": "Pod", "en": "Pod", "ja_typings": ["pod"]},
+      {"ja": "Node", "en": "Node", "ja_typings": ["node"]},
+      {"ja": "Service", "en": "Service", "ja_typings": ["service"]},
+      {"ja": "Deployment", "en": "Deployment", "ja_typings": ["deployment"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0322",
+    "genre": "it_terminology",
+    "question_text": {
+      "ja": "DevOps の効果を測る指標として有名な「DORA 4 メトリクス」を提唱した組織は?",
+      "en": "Which organization proposed the famous DORA Four Key Metrics for DevOps performance?"
+    },
+    "choices": [
+      {"ja": "DORA", "en": "DORA", "ja_typings": ["dora"]},
+      {"ja": "CNCF", "en": "CNCF", "ja_typings": ["cncf"]},
+      {"ja": "OWASP", "en": "OWASP", "ja_typings": ["owasp"]},
+      {"ja": "IETF", "en": "IETF", "ja_typings": ["ietf"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0323",
+    "genre": "it_terminology",
+    "question_text": {
+      "ja": "ユーザー視点で「ログインできる」のように要件を書く Agile の単位は?",
+      "en": "What is the agile unit that describes a requirement from the user's perspective, such as 'I can log in'?"
+    },
+    "choices": [
+      {"ja": "ユーザーストーリー", "en": "User Story", "ja_typings": ["yu-za-suto-ri-"]},
+      {"ja": "エピック", "en": "Epic", "ja_typings": ["epikku"]},
+      {"ja": "タスク", "en": "Task", "ja_typings": ["tasuku"]},
+      {"ja": "ユースケース", "en": "Use Case", "ja_typings": ["yu-suke-su"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0324",
+    "genre": "it_terminology",
+    "question_text": {
+      "ja": "改変ソースの公開を強制しない、寛容なソフトウェアライセンスはどれ?",
+      "en": "Which is a permissive software license that does NOT require disclosing modified source?"
+    },
+    "choices": [
+      {"ja": "MIT License", "en": "MIT License", "ja_typings": ["mit"]},
+      {"ja": "GPLv3", "en": "GPLv3", "ja_typings": ["gplv3"]},
+      {"ja": "AGPL", "en": "AGPL", "ja_typings": ["agpl"]},
+      {"ja": "LGPL", "en": "LGPL", "ja_typings": ["lgpl"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0325",
+    "genre": "it_terminology",
+    "question_text": {
+      "ja": "AWS で DNS サービスを提供するサービス名は?",
+      "en": "Which AWS service provides DNS?"
+    },
+    "choices": [
+      {"ja": "Route 53", "en": "Route 53", "ja_typings": ["route53"]},
+      {"ja": "CloudFront", "en": "CloudFront", "ja_typings": ["cloudfront"]},
+      {"ja": "API Gateway", "en": "API Gateway", "ja_typings": ["apigateway"]},
+      {"ja": "Direct Connect", "en": "Direct Connect", "ja_typings": ["directconnect"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  }
+]

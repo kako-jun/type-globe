@@ -1,0 +1,562 @@
+[
+  {
+    "id": "q0696",
+    "genre": "vtuber_net_culture",
+    "question_text": {"ja": "兎田ぺこらが所属する事務所は?", "en": "Which agency does Usada Pekora belong to?"},
+    "choices": [
+      {"ja": "ホロライブ", "en": "Hololive", "ja_typings": ["hororaibu"]},
+      {"ja": "にじさんじ", "en": "Nijisanji", "ja_typings": ["nijisanji"]},
+      {"ja": "ぶいすぽっ!", "en": "VSPO!", "ja_typings": ["buisupo"]},
+      {"ja": "ノリプロ", "en": "Noripro", "ja_typings": ["noripuro"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0697",
+    "genre": "vtuber_net_culture",
+    "question_text": {"ja": "月ノ美兎が所属する事務所は?", "en": "Which agency does Tsukino Mito belong to?"},
+    "choices": [
+      {"ja": "にじさんじ", "en": "Nijisanji", "ja_typings": ["nijisanji"]},
+      {"ja": "ホロライブ", "en": "Hololive", "ja_typings": ["hororaibu"]},
+      {"ja": "VShojo", "en": "VShojo", "ja_typings": ["vshojo"]},
+      {"ja": ".LIVE", "en": ".LIVE", "ja_typings": ["dotlive"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0698",
+    "genre": "vtuber_net_culture",
+    "question_text": {"ja": "世界初のバーチャルYouTuberとされる人物は?", "en": "Who is considered the world's first Virtual YouTuber?"},
+    "choices": [
+      {"ja": "キズナアイ", "en": "Kizuna AI", "ja_typings": ["kizunaai"]},
+      {"ja": "ミライアカリ", "en": "Mirai Akari", "ja_typings": ["miraiakari"]},
+      {"ja": "輝夜月", "en": "Kaguya Luna", "ja_typings": ["kaguyaruna"]},
+      {"ja": "電脳少女シロ", "en": "Dennou Shoujo Siro", "ja_typings": ["dennoushoujoshiro"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0699",
+    "genre": "vtuber_net_culture",
+    "question_text": {"ja": "ホロライブを運営する会社は?", "en": "Which company operates Hololive?"},
+    "choices": [
+      {"ja": "カバー", "en": "Cover Corp", "ja_typings": ["kaba-"]},
+      {"ja": "エニーカラー", "en": "ANYCOLOR", "ja_typings": ["eni-kara-"]},
+      {"ja": "ブシロード", "en": "Bushiroad", "ja_typings": ["bushiro-do"]},
+      {"ja": "ソニー", "en": "Sony", "ja_typings": ["soni-"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0700",
+    "genre": "vtuber_net_culture",
+    "question_text": {"ja": "にじさんじを運営する会社は?", "en": "Which company operates Nijisanji?"},
+    "choices": [
+      {"ja": "エニーカラー", "en": "ANYCOLOR", "ja_typings": ["eni-kara-"]},
+      {"ja": "カバー", "en": "Cover Corp", "ja_typings": ["kaba-"]},
+      {"ja": "ドワンゴ", "en": "Dwango", "ja_typings": ["dowango"]},
+      {"ja": "サイバーエージェント", "en": "CyberAgent", "ja_typings": ["saiba-e-jento"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0701",
+    "genre": "vtuber_net_culture",
+    "question_text": {"ja": "ネットスラングで笑いを表す「草」の元になった表記は?", "en": "Which expression is the origin of the net slang 'kusa' (grass) for laughter?"},
+    "choices": [
+      {"ja": "wwwww", "en": "wwwww", "ja_typings": ["wwwww"]},
+      {"ja": "(笑)", "en": "(lol)", "ja_typings": ["wara"]},
+      {"ja": "XD", "en": "XD", "ja_typings": ["xd"]},
+      {"ja": "草生える", "en": "kusa haeru", "ja_typings": ["kusahaeru"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0702",
+    "genre": "vtuber_net_culture",
+    "question_text": {"ja": "YouTubeの投げ銭機能の名前は?", "en": "What is the name of YouTube's tipping feature?"},
+    "choices": [
+      {"ja": "スーパーチャット", "en": "Super Chat", "ja_typings": ["su-pa-chatto"]},
+      {"ja": "ビッツ", "en": "Bits", "ja_typings": ["bittsu"]},
+      {"ja": "メンバーシップ", "en": "Membership", "ja_typings": ["menba-shippu"]},
+      {"ja": "ドネーション", "en": "Donation", "ja_typings": ["done-shon"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0703",
+    "genre": "vtuber_net_culture",
+    "question_text": {"ja": "スーパーチャットの略称として配信文化で使われるのは?", "en": "What is the common abbreviation for Super Chat in streaming culture?"},
+    "choices": [
+      {"ja": "スパチャ", "en": "Supacha", "ja_typings": ["supacha"]},
+      {"ja": "スチャ", "en": "Sucha", "ja_typings": ["sucha"]},
+      {"ja": "チャト", "en": "Chato", "ja_typings": ["chato"]},
+      {"ja": "ドネ", "en": "Done", "ja_typings": ["done"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0704",
+    "genre": "vtuber_net_culture",
+    "question_text": {"ja": "YouTubeでメンバー限定配信を指す略語は?", "en": "What is the slang term for YouTube members-only streams?"},
+    "choices": [
+      {"ja": "メン限", "en": "Mengen", "ja_typings": ["mengen"]},
+      {"ja": "メンシ", "en": "Menshi", "ja_typings": ["menshi"]},
+      {"ja": "限定", "en": "Gentei", "ja_typings": ["gentei"]},
+      {"ja": "サブスク", "en": "Subsc", "ja_typings": ["sabusuku"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0705",
+    "genre": "vtuber_net_culture",
+    "question_text": {"ja": "Twitchで使われる投げ銭通貨の名前は?", "en": "What is the name of Twitch's tipping currency?"},
+    "choices": [
+      {"ja": "ビッツ", "en": "Bits", "ja_typings": ["bittsu"]},
+      {"ja": "スパチャ", "en": "Supacha", "ja_typings": ["supacha"]},
+      {"ja": "コイン", "en": "Coin", "ja_typings": ["koin"]},
+      {"ja": "ジェム", "en": "Gem", "ja_typings": ["jemu"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0706",
+    "genre": "vtuber_net_culture",
+    "question_text": {"ja": "ニコニコ動画で画面上を流れるコメント機能の名前は?", "en": "What is the name of Niconico's scrolling comment feature?"},
+    "choices": [
+      {"ja": "弾幕", "en": "Danmaku", "ja_typings": ["danmaku"]},
+      {"ja": "コメント砲", "en": "Comment Cannon", "ja_typings": ["komentohou"]},
+      {"ja": "流れコメ", "en": "Flow Comment", "ja_typings": ["nagarekome"]},
+      {"ja": "チャット", "en": "Chat", "ja_typings": ["chatto"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0707",
+    "genre": "vtuber_net_culture",
+    "question_text": {"ja": "宝鐘マリンの自称肩書きは?", "en": "What is Houshou Marine's self-proclaimed title?"},
+    "choices": [
+      {"ja": "船長", "en": "Senchou", "ja_typings": ["senchou", "senchoo"]},
+      {"ja": "会長", "en": "Kaichou", "ja_typings": ["kaichou", "kaichoo"]},
+      {"ja": "団長", "en": "Danchou", "ja_typings": ["danchou", "danchoo"]},
+      {"ja": "社長", "en": "Shachou", "ja_typings": ["shachou", "shachoo"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0708",
+    "genre": "vtuber_net_culture",
+    "question_text": {"ja": "ホロライブ所属で「会長」と呼ばれるVTuberは?", "en": "Which Hololive VTuber is known as 'Kaichou' (President)?"},
+    "choices": [
+      {"ja": "桐生ココ", "en": "Kiryu Coco", "ja_typings": ["kiryuukoko"]},
+      {"ja": "宝鐘マリン", "en": "Houshou Marine", "ja_typings": ["houshoumarin"]},
+      {"ja": "白上フブキ", "en": "Shirakami Fubuki", "ja_typings": ["shirakamifubuki"]},
+      {"ja": "湊あくあ", "en": "Minato Aqua", "ja_typings": ["minatoakua"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0709",
+    "genre": "vtuber_net_culture",
+    "question_text": {"ja": "「ぺこら」の口癖として有名な語尾は?", "en": "What is Pekora's famous catchphrase ending?"},
+    "choices": [
+      {"ja": "ぺこ", "en": "peko", "ja_typings": ["peko"]},
+      {"ja": "にゃ", "en": "nya", "ja_typings": ["nya"]},
+      {"ja": "だぞ", "en": "dazo", "ja_typings": ["dazo"]},
+      {"ja": "なのだ", "en": "nanoda", "ja_typings": ["nanoda"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0710",
+    "genre": "vtuber_net_culture",
+    "question_text": {"ja": "ホロライブ英語圏部門の通称は?", "en": "What is the common abbreviation for Hololive's English branch?"},
+    "choices": [
+      {"ja": "ホロEN", "en": "Hololive EN", "ja_typings": ["horoen"]},
+      {"ja": "ホロID", "en": "Hololive ID", "ja_typings": ["horoid"]},
+      {"ja": "ホロJP", "en": "Hololive JP", "ja_typings": ["horojp"]},
+      {"ja": "ホロCN", "en": "Hololive CN", "ja_typings": ["horocn"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0711",
+    "genre": "vtuber_net_culture",
+    "question_text": {"ja": "ホロライブEN一期生 Myth に所属するサメ系VTuberは?", "en": "Which shark-themed VTuber is in Hololive EN's first generation Myth?"},
+    "choices": [
+      {"ja": "がうるぐら", "en": "Gawr Gura", "ja_typings": ["gaurugura"]},
+      {"ja": "ワトソンアメリア", "en": "Watson Amelia", "ja_typings": ["watosonameria"]},
+      {"ja": "森カリオペ", "en": "Mori Calliope", "ja_typings": ["morikariope"]},
+      {"ja": "小鳥遊キアラ", "en": "Takanashi Kiara", "ja_typings": ["takanashikiara"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0712",
+    "genre": "vtuber_net_culture",
+    "question_text": {"ja": "にじさんじの人気男性VTuberで、APEX配信で有名なのは?", "en": "Which popular male Nijisanji VTuber is famous for APEX streams?"},
+    "choices": [
+      {"ja": "葛葉", "en": "Kuzuha", "ja_typings": ["kuzuha"]},
+      {"ja": "月ノ美兎", "en": "Tsukino Mito", "ja_typings": ["tsukinomito"]},
+      {"ja": "笹木咲", "en": "Sasaki Saku", "ja_typings": ["sasakisaku"]},
+      {"ja": "本間ひまわり", "en": "Honma Himawari", "ja_typings": ["honmahimawari"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0713",
+    "genre": "vtuber_net_culture",
+    "question_text": {"ja": "にじさんじの人気男性ユニット「ChroNoiR」のメンバーは?", "en": "Who are the members of Nijisanji's popular duo ChroNoiR?"},
+    "choices": [
+      {"ja": "葛葉と叶", "en": "Kuzuha and Kanae", "ja_typings": ["kuzuhatokanae"]},
+      {"ja": "葛葉と剣持", "en": "Kuzuha and Kenmochi", "ja_typings": ["kuzuhatokenmochi"]},
+      {"ja": "叶と剣持", "en": "Kanae and Kenmochi", "ja_typings": ["kanaetokenmochi"]},
+      {"ja": "葛葉と月ノ美兎", "en": "Kuzuha and Tsukino Mito", "ja_typings": ["kuzuhatotsukinomito"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0714",
+    "genre": "vtuber_net_culture",
+    "question_text": {"ja": "ネットで「ナナチ」のような驚き・親しみを示すミームの元ネタ作品は?", "en": "What is the source work of the popular meme character Nanachi?"},
+    "choices": [
+      {"ja": "メイドインアビス", "en": "Made in Abyss", "ja_typings": ["meidoinabisu"]},
+      {"ja": "進撃の巨人", "en": "Attack on Titan", "ja_typings": ["shingekinokyojin"]},
+      {"ja": "ワンピース", "en": "One Piece", "ja_typings": ["wanpi-su"]},
+      {"ja": "鬼滅の刃", "en": "Demon Slayer", "ja_typings": ["kimetsunoyaiba"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0715",
+    "genre": "vtuber_net_culture",
+    "question_text": {"ja": "Twitch発祥でチャットで使う「LUL」の意味は?", "en": "What does the Twitch chat slang 'LUL' mean?"},
+    "choices": [
+      {"ja": "大笑い", "en": "Big laugh", "ja_typings": ["oowarai"]},
+      {"ja": "了解", "en": "Got it", "ja_typings": ["ryoukai", "ryookai"]},
+      {"ja": "じゃあね", "en": "Bye", "ja_typings": ["jaane"]},
+      {"ja": "怒り", "en": "Angry", "ja_typings": ["ikari"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0716",
+    "genre": "vtuber_net_culture",
+    "question_text": {"ja": "ニコニコ動画を運営する会社は?", "en": "Which company operates Niconico Douga?"},
+    "choices": [
+      {"ja": "ドワンゴ", "en": "Dwango", "ja_typings": ["dowango"]},
+      {"ja": "カドカワ", "en": "Kadokawa", "ja_typings": ["kadokawa"]},
+      {"ja": "サイバーエージェント", "en": "CyberAgent", "ja_typings": ["saiba-e-jento"]},
+      {"ja": "DeNA", "en": "DeNA", "ja_typings": ["dena", "di-i-enue-"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0717",
+    "genre": "vtuber_net_culture",
+    "question_text": {"ja": "ニコニコ動画が幕張メッセで毎年開催する大型イベントは?", "en": "What is Niconico's annual large-scale event held at Makuhari Messe?"},
+    "choices": [
+      {"ja": "ニコニコ超会議", "en": "Nico Nico Choukaigi", "ja_typings": ["nikonikochoukaigi", "nikonikochookaigi"]},
+      {"ja": "ニコニコ動画祭", "en": "Niconico Festival", "ja_typings": ["nikonikodougasai", "nikonikodoogasai"]},
+      {"ja": "闘会議", "en": "Toukaigi", "ja_typings": ["toukaigi", "tookaigi"]},
+      {"ja": "ニコニコ歌合戦", "en": "Nico Utagassen", "ja_typings": ["nikonikoutagassen"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0718",
+    "genre": "vtuber_net_culture",
+    "question_text": {"ja": "YouTubeで配信中に流れるチャットのことを略して何と言う?", "en": "What is the slang abbreviation for YouTube live chat messages?"},
+    "choices": [
+      {"ja": "コメ", "en": "Kome", "ja_typings": ["kome"]},
+      {"ja": "チャト", "en": "Chato", "ja_typings": ["chato"]},
+      {"ja": "ライチャ", "en": "Laicha", "ja_typings": ["raicha"]},
+      {"ja": "メッセ", "en": "Messe", "ja_typings": ["messe"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0719",
+    "genre": "vtuber_net_culture",
+    "question_text": {"ja": "「VShojo」が拠点とする国は?", "en": "Which country is VShojo based in?"},
+    "choices": [
+      {"ja": "アメリカ", "en": "USA", "ja_typings": ["amerika"]},
+      {"ja": "日本", "en": "Japan", "ja_typings": ["nihon", "nippon"]},
+      {"ja": "韓国", "en": "Korea", "ja_typings": ["kankoku"]},
+      {"ja": "インドネシア", "en": "Indonesia", "ja_typings": ["indoneshia"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0720",
+    "genre": "vtuber_net_culture",
+    "question_text": {"ja": "ホロライブ0期生で「みこち」の愛称を持つVTuberは?", "en": "Which Hololive Gen 0 VTuber has the nickname 'Mikochi'?"},
+    "choices": [
+      {"ja": "さくらみこ", "en": "Sakura Miko", "ja_typings": ["sakuramiko"]},
+      {"ja": "ときのそら", "en": "Tokino Sora", "ja_typings": ["tokinosora"]},
+      {"ja": "ロボ子さん", "en": "Robocosan", "ja_typings": ["robokosan"]},
+      {"ja": "AZKi", "en": "AZKi", "ja_typings": ["azki"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0721",
+    "genre": "vtuber_net_culture",
+    "question_text": {"ja": "ホロライブの白色の狐VTuberは?", "en": "Which is the white fox VTuber in Hololive?"},
+    "choices": [
+      {"ja": "白上フブキ", "en": "Shirakami Fubuki", "ja_typings": ["shirakamifubuki"]},
+      {"ja": "湊あくあ", "en": "Minato Aqua", "ja_typings": ["minatoakua"]},
+      {"ja": "百鬼あやめ", "en": "Nakiri Ayame", "ja_typings": ["nakiriayame"]},
+      {"ja": "兎田ぺこら", "en": "Usada Pekora", "ja_typings": ["usadapekora"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0722",
+    "genre": "vtuber_net_culture",
+    "question_text": {"ja": "ネットスラング「リスナー」が指すのは?", "en": "What does the streaming term 'listener' refer to?"},
+    "choices": [
+      {"ja": "配信の視聴者", "en": "Stream viewers", "ja_typings": ["haishinnoshichousha", "haishinnoshichoosha"]},
+      {"ja": "配信者本人", "en": "The streamer", "ja_typings": ["haishinshahonnin"]},
+      {"ja": "運営スタッフ", "en": "Staff", "ja_typings": ["unneisutaffu", "unneesutaffu"]},
+      {"ja": "ボイスチェンジャー", "en": "Voice changer", "ja_typings": ["boisuchenja-"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0723",
+    "genre": "vtuber_net_culture",
+    "question_text": {"ja": "ニコニコ動画の有料会員制度の通称は?", "en": "What is the common name for Niconico's paid membership?"},
+    "choices": [
+      {"ja": "プレミアム会員", "en": "Premium member", "ja_typings": ["puremiamukaiin"]},
+      {"ja": "ゴールド会員", "en": "Gold member", "ja_typings": ["go-rudokaiin"]},
+      {"ja": "ニコ厨", "en": "Nicochu", "ja_typings": ["nikochuu", "nikochu"]},
+      {"ja": "プラス会員", "en": "Plus member", "ja_typings": ["purasukaiin"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0724",
+    "genre": "vtuber_net_culture",
+    "question_text": {"ja": "「VTuber四天王」と呼ばれた初期VTuberに含まれないのは?", "en": "Which VTuber was NOT part of the original 'VTuber Four Heavenly Kings'?"},
+    "choices": [
+      {"ja": "兎田ぺこら", "en": "Usada Pekora", "ja_typings": ["usadapekora"]},
+      {"ja": "輝夜月", "en": "Kaguya Luna", "ja_typings": ["kaguyaruna"]},
+      {"ja": "ミライアカリ", "en": "Mirai Akari", "ja_typings": ["miraiakari"]},
+      {"ja": "電脳少女シロ", "en": "Dennou Shoujo Siro", "ja_typings": ["dennoushoujoshiro"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0725",
+    "genre": "vtuber_net_culture",
+    "question_text": {"ja": "配信用語で「同時視聴」を意味するのは?", "en": "What streaming term means watching content simultaneously with viewers?"},
+    "choices": [
+      {"ja": "同時視聴", "en": "Douji shichou", "ja_typings": ["doujishichou", "doojishichoo"]},
+      {"ja": "ミラー配信", "en": "Mirror haishin", "ja_typings": ["mira-haishin"]},
+      {"ja": "リアクション動画", "en": "Reaction douga", "ja_typings": ["riakushondouga", "riakushondooga"]},
+      {"ja": "コラボ配信", "en": "Collab haishin", "ja_typings": ["korabohaishin"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0726",
+    "genre": "vtuber_net_culture",
+    "question_text": {"ja": "ホロライブとにじさんじの両方にあるシステムで、ファンの呼称を指すのは?", "en": "What term refers to a VTuber's fan name (used by both Hololive and Nijisanji)?"},
+    "choices": [
+      {"ja": "ファンネーム", "en": "Fan name", "ja_typings": ["fanne-mu"]},
+      {"ja": "リスナー", "en": "Listener", "ja_typings": ["risuna-"]},
+      {"ja": "クルー", "en": "Crew", "ja_typings": ["kuru-"]},
+      {"ja": "メンバー", "en": "Member", "ja_typings": ["menba-"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0727",
+    "genre": "vtuber_net_culture",
+    "question_text": {"ja": "ネットスラングで「とても良い」を意味する「神」の対義語的に使われるのは?", "en": "Which net slang is used opposite to 'kami' (god-tier) meaning very bad?"},
+    "choices": [
+      {"ja": "クソ", "en": "Kuso", "ja_typings": ["kuso"]},
+      {"ja": "雑魚", "en": "Zako", "ja_typings": ["zako"]},
+      {"ja": "ゴミ", "en": "Gomi", "ja_typings": ["gomi"]},
+      {"ja": "微妙", "en": "Bimyou", "ja_typings": ["bimyou", "bimyoo"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0728",
+    "genre": "vtuber_net_culture",
+    "question_text": {"ja": "Vtuberが顔出しせずに使うキャラクター映像のことを何と言う?", "en": "What is the visual avatar used by VTubers called?"},
+    "choices": [
+      {"ja": "ガワ", "en": "Gawa", "ja_typings": ["gawa"]},
+      {"ja": "ガラ", "en": "Gara", "ja_typings": ["gara"]},
+      {"ja": "アバ", "en": "Aba", "ja_typings": ["aba"]},
+      {"ja": "ペルソナ", "en": "Persona", "ja_typings": ["perusona"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0729",
+    "genre": "vtuber_net_culture",
+    "question_text": {"ja": "Vtuberの中の人を指すネットスラングは?", "en": "What is the net slang for the person behind a VTuber?"},
+    "choices": [
+      {"ja": "中の人", "en": "Nakanohito", "ja_typings": ["nakanohito"]},
+      {"ja": "魂", "en": "Tamashii", "ja_typings": ["tamashii"]},
+      {"ja": "演者", "en": "Enja", "ja_typings": ["enja"]},
+      {"ja": "上の", "en": "Ueno", "ja_typings": ["ueno"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0730",
+    "genre": "vtuber_net_culture",
+    "question_text": {"ja": "ホロライブ2期生に所属する大空スバルの一人称は?", "en": "What is the first-person pronoun Oozora Subaru uses?"},
+    "choices": [
+      {"ja": "オレ", "en": "Ore", "ja_typings": ["ore"]},
+      {"ja": "ワイ", "en": "Wai", "ja_typings": ["wai"]},
+      {"ja": "ボク", "en": "Boku", "ja_typings": ["boku"]},
+      {"ja": "ウチ", "en": "Uchi", "ja_typings": ["uchi"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0731",
+    "genre": "vtuber_net_culture",
+    "question_text": {"ja": "ネットスラング「乙」の意味は?", "en": "What does the net slang 'otsu' mean?"},
+    "choices": [
+      {"ja": "お疲れ様", "en": "Good work", "ja_typings": ["otsukaresama"]},
+      {"ja": "ありがとう", "en": "Thanks", "ja_typings": ["arigatou", "arigatoo"]},
+      {"ja": "おはよう", "en": "Good morning", "ja_typings": ["ohayou", "ohayoo"]},
+      {"ja": "ごめんなさい", "en": "Sorry", "ja_typings": ["gomennasai"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0732",
+    "genre": "vtuber_net_culture",
+    "question_text": {"ja": "個人勢として絶大な人気を誇り「ぽんぽこ」とコンビで知られるVTuberは?", "en": "Which independent VTuber is famous as a duo with Ponpoko?"},
+    "choices": [
+      {"ja": "ピーナッツくん", "en": "Peanuts-kun", "ja_typings": ["pi-nattsukun"]},
+      {"ja": "ヤマトイオリ", "en": "Yamato Iori", "ja_typings": ["yamatoiori"]},
+      {"ja": "犬山たまき", "en": "Inuyama Tamaki", "ja_typings": ["inuyamatamaki"]},
+      {"ja": "天開司", "en": "Tenkai Tsukasa", "ja_typings": ["tenkaitsukasa"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0733",
+    "genre": "vtuber_net_culture",
+    "question_text": {"ja": "ニコニコ動画で人気を博した「歌い手」が活躍しやすいサイトは?", "en": "On which site did 'utaite' (cover singers) culture flourish?"},
+    "choices": [
+      {"ja": "ニコニコ動画", "en": "Niconico", "ja_typings": ["nikonikodouga", "nikonikodooga"]},
+      {"ja": "YouTube", "en": "YouTube", "ja_typings": ["yu-chu-bu"]},
+      {"ja": "Twitch", "en": "Twitch", "ja_typings": ["twicchi"]},
+      {"ja": "TikTok", "en": "TikTok", "ja_typings": ["tikutoku"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0734",
+    "genre": "vtuber_net_culture",
+    "question_text": {"ja": "ネット略語で「自分の意見では」を表すのは?", "en": "Which net abbreviation means 'in my opinion'?"},
+    "choices": [
+      {"ja": "IMO", "en": "IMO", "ja_typings": ["imo"]},
+      {"ja": "FYI", "en": "FYI", "ja_typings": ["fyi"]},
+      {"ja": "BTW", "en": "BTW", "ja_typings": ["btw"]},
+      {"ja": "TBH", "en": "TBH", "ja_typings": ["tbh"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0735",
+    "genre": "vtuber_net_culture",
+    "question_text": {"ja": "配信中、リスナーが連投する同じ文字列のことを何と言う?", "en": "What is the term for repeated identical chat messages by viewers?"},
+    "choices": [
+      {"ja": "スパム", "en": "Spam", "ja_typings": ["supamu"]},
+      {"ja": "コピペ", "en": "Copipe", "ja_typings": ["kopipe"]},
+      {"ja": "連コメ", "en": "Renkome", "ja_typings": ["renkome"]},
+      {"ja": "荒らし", "en": "Arashi", "ja_typings": ["arashi"]}
+    ],
+    "correct_answer_index": 1,
+    "image_path": null,
+    "ja_reviewed": true
+  }
+]

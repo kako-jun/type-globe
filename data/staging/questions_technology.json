@@ -1,0 +1,852 @@
+[
+  {
+    "id": "q0241",
+    "genre": "technology",
+    "question_text": {
+      "ja": "コンピュータの中央演算処理装置を表す略語はどれ?",
+      "en": "Which acronym refers to a computer's central processing unit?"
+    },
+    "choices": [
+      {"ja": "CPU", "en": "CPU", "ja_typings": ["cpu"]},
+      {"ja": "GPU", "en": "GPU", "ja_typings": ["gpu"]},
+      {"ja": "RAM", "en": "RAM", "ja_typings": ["ram"]},
+      {"ja": "ROM", "en": "ROM", "ja_typings": ["rom"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0242",
+    "genre": "technology",
+    "question_text": {
+      "ja": "電源を切るとデータが消える主記憶装置はどれ?",
+      "en": "Which type of memory loses its contents when power is removed?"
+    },
+    "choices": [
+      {"ja": "RAM", "en": "RAM", "ja_typings": ["ram"]},
+      {"ja": "SSD", "en": "SSD", "ja_typings": ["ssd"]},
+      {"ja": "HDD", "en": "HDD", "ja_typings": ["hdd"]},
+      {"ja": "ROM", "en": "ROM", "ja_typings": ["rom"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0243",
+    "genre": "technology",
+    "question_text": {
+      "ja": "主に画像処理や並列演算に用いられるプロセッサはどれ?",
+      "en": "Which processor is mainly used for graphics and parallel computation?"
+    },
+    "choices": [
+      {"ja": "GPU", "en": "GPU", "ja_typings": ["gpu"]},
+      {"ja": "CPU", "en": "CPU", "ja_typings": ["cpu"]},
+      {"ja": "TPU", "en": "TPU", "ja_typings": ["tpu"]},
+      {"ja": "DSP", "en": "DSP", "ja_typings": ["dsp"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0244",
+    "genre": "technology",
+    "question_text": {
+      "ja": "回転する磁気ディスクにデータを記録する記憶装置はどれ?",
+      "en": "Which storage device records data on rotating magnetic platters?"
+    },
+    "choices": [
+      {"ja": "HDD", "en": "HDD", "ja_typings": ["hdd"]},
+      {"ja": "SSD", "en": "SSD", "ja_typings": ["ssd"]},
+      {"ja": "USBメモリ", "en": "USB flash drive", "ja_typings": ["usbmemori"]},
+      {"ja": "光ディスク", "en": "Optical disc", "ja_typings": ["hikaridisuku"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0245",
+    "genre": "technology",
+    "question_text": {
+      "ja": "フラッシュメモリを用いた半導体ストレージはどれ?",
+      "en": "Which storage uses semiconductor flash memory with no moving parts?"
+    },
+    "choices": [
+      {"ja": "SSD", "en": "SSD", "ja_typings": ["ssd"]},
+      {"ja": "HDD", "en": "HDD", "ja_typings": ["hdd"]},
+      {"ja": "FDD", "en": "FDD", "ja_typings": ["fdd"]},
+      {"ja": "MO", "en": "MO", "ja_typings": ["mo"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0246",
+    "genre": "technology",
+    "question_text": {
+      "ja": "PC の各パーツに電力を供給する装置はどれ?",
+      "en": "Which component supplies electrical power to a PC's parts?"
+    },
+    "choices": [
+      {"ja": "PSU", "en": "PSU", "ja_typings": ["psu"]},
+      {"ja": "CPU", "en": "CPU", "ja_typings": ["cpu"]},
+      {"ja": "GPU", "en": "GPU", "ja_typings": ["gpu"]},
+      {"ja": "BIOS", "en": "BIOS", "ja_typings": ["bios"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0247",
+    "genre": "technology",
+    "question_text": {
+      "ja": "PC を起動するときに最初に動く基本ファームウェアはどれ?",
+      "en": "Which firmware runs first when a PC is powered on?"
+    },
+    "choices": [
+      {"ja": "BIOS", "en": "BIOS", "ja_typings": ["bios"]},
+      {"ja": "カーネル", "en": "Kernel", "ja_typings": ["ka-neru"]},
+      {"ja": "シェル", "en": "Shell", "ja_typings": ["sheru"]},
+      {"ja": "ドライバ", "en": "Driver", "ja_typings": ["doraiba"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0248",
+    "genre": "technology",
+    "question_text": {
+      "ja": "OS の中核としてハードウェア資源を管理する部分はどれ?",
+      "en": "Which part of an OS forms the core that manages hardware resources?"
+    },
+    "choices": [
+      {"ja": "カーネル", "en": "Kernel", "ja_typings": ["ka-neru"]},
+      {"ja": "シェル", "en": "Shell", "ja_typings": ["sheru"]},
+      {"ja": "ライブラリ", "en": "Library", "ja_typings": ["raiburari"]},
+      {"ja": "デーモン", "en": "Daemon", "ja_typings": ["de-mon"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0249",
+    "genre": "technology",
+    "question_text": {
+      "ja": "OS で実行中のプログラムを表す単位はどれ?",
+      "en": "Which term represents a running program managed by the OS?"
+    },
+    "choices": [
+      {"ja": "プロセス", "en": "Process", "ja_typings": ["purosesu"]},
+      {"ja": "コンパイラ", "en": "Compiler", "ja_typings": ["konpaira"]},
+      {"ja": "リポジトリ", "en": "Repository", "ja_typings": ["ripojitori"]},
+      {"ja": "デバッガ", "en": "Debugger", "ja_typings": ["debagga"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0250",
+    "genre": "technology",
+    "question_text": {
+      "ja": "1 つのプロセス内で並行実行される最小の実行単位はどれ?",
+      "en": "Which is the smallest unit of execution that runs in parallel within one process?"
+    },
+    "choices": [
+      {"ja": "スレッド", "en": "Thread", "ja_typings": ["sureddo"]},
+      {"ja": "プロセス", "en": "Process", "ja_typings": ["purosesu"]},
+      {"ja": "ファイバ", "en": "Fiber", "ja_typings": ["faiba"]},
+      {"ja": "コンテナ", "en": "Container", "ja_typings": ["kontena"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0251",
+    "genre": "technology",
+    "question_text": {
+      "ja": "インターネットで信頼性のあるデータ通信を行う代表的なプロトコルはどれ?",
+      "en": "Which is the main reliable transport protocol used on the Internet?"
+    },
+    "choices": [
+      {"ja": "TCP", "en": "TCP", "ja_typings": ["tcp"]},
+      {"ja": "UDP", "en": "UDP", "ja_typings": ["udp"]},
+      {"ja": "ICMP", "en": "ICMP", "ja_typings": ["icmp"]},
+      {"ja": "ARP", "en": "ARP", "ja_typings": ["arp"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0252",
+    "genre": "technology",
+    "question_text": {
+      "ja": "信頼性を犠牲にして低遅延を優先するトランスポートプロトコルはどれ?",
+      "en": "Which transport protocol sacrifices reliability for low latency?"
+    },
+    "choices": [
+      {"ja": "UDP", "en": "UDP", "ja_typings": ["udp"]},
+      {"ja": "TCP", "en": "TCP", "ja_typings": ["tcp"]},
+      {"ja": "FTP", "en": "FTP", "ja_typings": ["ftp"]},
+      {"ja": "SSH", "en": "SSH", "ja_typings": ["ssh"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0253",
+    "genre": "technology",
+    "question_text": {
+      "ja": "ドメイン名を IP アドレスに変換する仕組みはどれ?",
+      "en": "Which system translates domain names into IP addresses?"
+    },
+    "choices": [
+      {"ja": "DNS", "en": "DNS", "ja_typings": ["dns"]},
+      {"ja": "DHCP", "en": "DHCP", "ja_typings": ["dhcp"]},
+      {"ja": "NAT", "en": "NAT", "ja_typings": ["nat"]},
+      {"ja": "VPN", "en": "VPN", "ja_typings": ["vpn"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0254",
+    "genre": "technology",
+    "question_text": {
+      "ja": "LAN 内の機器に自動で IP アドレスを割り当てるプロトコルはどれ?",
+      "en": "Which protocol automatically assigns IP addresses to devices on a LAN?"
+    },
+    "choices": [
+      {"ja": "DHCP", "en": "DHCP", "ja_typings": ["dhcp"]},
+      {"ja": "DNS", "en": "DNS", "ja_typings": ["dns"]},
+      {"ja": "SMTP", "en": "SMTP", "ja_typings": ["smtp"]},
+      {"ja": "SNMP", "en": "SNMP", "ja_typings": ["snmp"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0255",
+    "genre": "technology",
+    "question_text": {
+      "ja": "異なるネットワーク間でパケットを転送する機器はどれ?",
+      "en": "Which device forwards packets between different networks?"
+    },
+    "choices": [
+      {"ja": "ルーター", "en": "Router", "ja_typings": ["ru-ta-"]},
+      {"ja": "スイッチ", "en": "Switch", "ja_typings": ["suicchi"]},
+      {"ja": "ハブ", "en": "Hub", "ja_typings": ["habu"]},
+      {"ja": "リピータ", "en": "Repeater", "ja_typings": ["ripi-ta"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0256",
+    "genre": "technology",
+    "question_text": {
+      "ja": "IPv4 アドレスは何ビットで表されるか?",
+      "en": "How many bits make up an IPv4 address?"
+    },
+    "choices": [
+      {"ja": "32ビット", "en": "32 bits", "ja_typings": ["32bitto", "sanjuunibitto"]},
+      {"ja": "64ビット", "en": "64 bits", "ja_typings": ["64bitto", "rokujuuyonbitto"]},
+      {"ja": "128ビット", "en": "128 bits", "ja_typings": ["128bitto", "hyakunijuuhachibitto"]},
+      {"ja": "16ビット", "en": "16 bits", "ja_typings": ["16bitto", "juurokubitto"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0257",
+    "genre": "technology",
+    "question_text": {
+      "ja": "IPv6 アドレスは何ビットか?",
+      "en": "How many bits make up an IPv6 address?"
+    },
+    "choices": [
+      {"ja": "128ビット", "en": "128 bits", "ja_typings": ["128bitto", "hyakunijuuhachibitto"]},
+      {"ja": "32ビット", "en": "32 bits", "ja_typings": ["32bitto", "sanjuunibitto"]},
+      {"ja": "64ビット", "en": "64 bits", "ja_typings": ["64bitto", "rokujuuyonbitto"]},
+      {"ja": "256ビット", "en": "256 bits", "ja_typings": ["256bitto", "nihyakugojuurokubitto"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0258",
+    "genre": "technology",
+    "question_text": {
+      "ja": "公開鍵と秘密鍵のペアを使う暗号方式はどれ?",
+      "en": "Which cryptosystem uses a pair of public and private keys?"
+    },
+    "choices": [
+      {"ja": "公開鍵暗号", "en": "Public-key cryptography", "ja_typings": ["koukaikagiangou"]},
+      {"ja": "共通鍵暗号", "en": "Symmetric-key cryptography", "ja_typings": ["kyoutsuukagiangou"]},
+      {"ja": "ハッシュ関数", "en": "Hash function", "ja_typings": ["hasshukansuu"]},
+      {"ja": "ステガノグラフィ", "en": "Steganography", "ja_typings": ["suteganogurafi"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0259",
+    "genre": "technology",
+    "question_text": {
+      "ja": "公開鍵暗号の代表的なアルゴリズムはどれ?",
+      "en": "Which is a well-known public-key cryptography algorithm?"
+    },
+    "choices": [
+      {"ja": "RSA", "en": "RSA", "ja_typings": ["rsa"]},
+      {"ja": "AES", "en": "AES", "ja_typings": ["aes"]},
+      {"ja": "DES", "en": "DES", "ja_typings": ["des"]},
+      {"ja": "MD5", "en": "MD5", "ja_typings": ["md5"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0260",
+    "genre": "technology",
+    "question_text": {
+      "ja": "現在広く使われている共通鍵ブロック暗号はどれ?",
+      "en": "Which symmetric-key block cipher is most widely used today?"
+    },
+    "choices": [
+      {"ja": "AES", "en": "AES", "ja_typings": ["aes"]},
+      {"ja": "RSA", "en": "RSA", "ja_typings": ["rsa"]},
+      {"ja": "SHA", "en": "SHA", "ja_typings": ["sha"]},
+      {"ja": "ECC", "en": "ECC", "ja_typings": ["ecc"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0261",
+    "genre": "technology",
+    "question_text": {
+      "ja": "任意長のデータから固定長の値を生成する関数はどれ?",
+      "en": "Which function produces a fixed-length value from arbitrary-length input?"
+    },
+    "choices": [
+      {"ja": "ハッシュ関数", "en": "Hash function", "ja_typings": ["hasshukansuu"]},
+      {"ja": "圧縮アルゴリズム", "en": "Compression algorithm", "ja_typings": ["asshukuarugorizumu"]},
+      {"ja": "電子署名", "en": "Digital signature", "ja_typings": ["denshishomei"]},
+      {"ja": "乱数生成器", "en": "Random number generator", "ja_typings": ["ransuuseiseiki"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0262",
+    "genre": "technology",
+    "question_text": {
+      "ja": "現代でも広く使われる安全なハッシュ関数の系列はどれ?",
+      "en": "Which family of cryptographic hash functions is widely used today as secure?"
+    },
+    "choices": [
+      {"ja": "SHA-2", "en": "SHA-2", "ja_typings": ["sha-2"]},
+      {"ja": "MD5", "en": "MD5", "ja_typings": ["md5"]},
+      {"ja": "CRC32", "en": "CRC32", "ja_typings": ["crc32"]},
+      {"ja": "ROT13", "en": "ROT13", "ja_typings": ["rot13"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0263",
+    "genre": "technology",
+    "question_text": {
+      "ja": "HTTP 通信を暗号化するために用いられるプロトコルはどれ?",
+      "en": "Which protocol is used to encrypt HTTP communication?"
+    },
+    "choices": [
+      {"ja": "TLS", "en": "TLS", "ja_typings": ["tls"]},
+      {"ja": "FTP", "en": "FTP", "ja_typings": ["ftp"]},
+      {"ja": "SMTP", "en": "SMTP", "ja_typings": ["smtp"]},
+      {"ja": "POP3", "en": "POP3", "ja_typings": ["pop3"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0264",
+    "genre": "technology",
+    "question_text": {
+      "ja": "Windows で標準的に用いられるファイルシステムはどれ?",
+      "en": "Which file system is the standard on modern Windows?"
+    },
+    "choices": [
+      {"ja": "NTFS", "en": "NTFS", "ja_typings": ["ntfs"]},
+      {"ja": "ext4", "en": "ext4", "ja_typings": ["ext4"]},
+      {"ja": "APFS", "en": "APFS", "ja_typings": ["apfs"]},
+      {"ja": "ZFS", "en": "ZFS", "ja_typings": ["zfs"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0265",
+    "genre": "technology",
+    "question_text": {
+      "ja": "Linux で広く使われている標準的なファイルシステムはどれ?",
+      "en": "Which file system is commonly used by default on Linux?"
+    },
+    "choices": [
+      {"ja": "ext4", "en": "ext4", "ja_typings": ["ext4"]},
+      {"ja": "NTFS", "en": "NTFS", "ja_typings": ["ntfs"]},
+      {"ja": "FAT32", "en": "FAT32", "ja_typings": ["fat32"]},
+      {"ja": "HFS", "en": "HFS", "ja_typings": ["hfs"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0266",
+    "genre": "technology",
+    "question_text": {
+      "ja": "macOS で現在標準のファイルシステムはどれ?",
+      "en": "Which file system is the default on modern macOS?"
+    },
+    "choices": [
+      {"ja": "APFS", "en": "APFS", "ja_typings": ["apfs"]},
+      {"ja": "NTFS", "en": "NTFS", "ja_typings": ["ntfs"]},
+      {"ja": "ext4", "en": "ext4", "ja_typings": ["ext4"]},
+      {"ja": "exFAT", "en": "exFAT", "ja_typings": ["exfat"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0267",
+    "genre": "technology",
+    "question_text": {
+      "ja": "Intel と並ぶ代表的な x86 系 CPU メーカーはどれ?",
+      "en": "Which is the main alternative x86 CPU manufacturer alongside Intel?"
+    },
+    "choices": [
+      {"ja": "AMD", "en": "AMD", "ja_typings": ["amd"]},
+      {"ja": "NVIDIA", "en": "NVIDIA", "ja_typings": ["nvidia"]},
+      {"ja": "ARM", "en": "ARM", "ja_typings": ["arm"]},
+      {"ja": "Qualcomm", "en": "Qualcomm", "ja_typings": ["qualcomm"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0268",
+    "genre": "technology",
+    "question_text": {
+      "ja": "GeForce シリーズの GPU で知られる企業はどれ?",
+      "en": "Which company is known for the GeForce GPU series?"
+    },
+    "choices": [
+      {"ja": "NVIDIA", "en": "NVIDIA", "ja_typings": ["nvidia"]},
+      {"ja": "Intel", "en": "Intel", "ja_typings": ["intel"]},
+      {"ja": "IBM", "en": "IBM", "ja_typings": ["ibm"]},
+      {"ja": "Cisco", "en": "Cisco", "ja_typings": ["cisco"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0269",
+    "genre": "technology",
+    "question_text": {
+      "ja": "スマートフォン向け CPU の設計で広く使われているアーキテクチャはどれ?",
+      "en": "Which CPU architecture is widely used in smartphone processors?"
+    },
+    "choices": [
+      {"ja": "ARM", "en": "ARM", "ja_typings": ["arm"]},
+      {"ja": "x86", "en": "x86", "ja_typings": ["x86"]},
+      {"ja": "MIPS", "en": "MIPS", "ja_typings": ["mips"]},
+      {"ja": "SPARC", "en": "SPARC", "ja_typings": ["sparc"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0270",
+    "genre": "technology",
+    "question_text": {
+      "ja": "外付け機器を接続するための標準的なシリアルインタフェース規格はどれ?",
+      "en": "Which is the standard serial interface for connecting external peripherals?"
+    },
+    "choices": [
+      {"ja": "USB", "en": "USB", "ja_typings": ["usb"]},
+      {"ja": "PCIe", "en": "PCIe", "ja_typings": ["pcie"]},
+      {"ja": "SATA", "en": "SATA", "ja_typings": ["sata"]},
+      {"ja": "DDR", "en": "DDR", "ja_typings": ["ddr"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0271",
+    "genre": "technology",
+    "question_text": {
+      "ja": "GPU や拡張カードを接続するマザーボードの高速バスはどれ?",
+      "en": "Which motherboard bus is used to connect GPUs and expansion cards?"
+    },
+    "choices": [
+      {"ja": "PCIe", "en": "PCIe", "ja_typings": ["pcie"]},
+      {"ja": "USB", "en": "USB", "ja_typings": ["usb"]},
+      {"ja": "HDMI", "en": "HDMI", "ja_typings": ["hdmi"]},
+      {"ja": "VGA", "en": "VGA", "ja_typings": ["vga"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0272",
+    "genre": "technology",
+    "question_text": {
+      "ja": "ディスプレイを接続するデジタル映像音声端子はどれ?",
+      "en": "Which connector carries digital video and audio to a display?"
+    },
+    "choices": [
+      {"ja": "HDMI", "en": "HDMI", "ja_typings": ["hdmi"]},
+      {"ja": "RS-232C", "en": "RS-232C", "ja_typings": ["rs-232c"]},
+      {"ja": "PS/2", "en": "PS/2", "ja_typings": ["ps/2"]},
+      {"ja": "RJ-45", "en": "RJ-45", "ja_typings": ["rj-45"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0273",
+    "genre": "technology",
+    "question_text": {
+      "ja": "イーサネット LAN ケーブルでよく用いられるコネクタはどれ?",
+      "en": "Which connector is commonly used for Ethernet LAN cables?"
+    },
+    "choices": [
+      {"ja": "RJ-45", "en": "RJ-45", "ja_typings": ["rj-45"]},
+      {"ja": "HDMI", "en": "HDMI", "ja_typings": ["hdmi"]},
+      {"ja": "USB-C", "en": "USB-C", "ja_typings": ["usb-c"]},
+      {"ja": "SATA", "en": "SATA", "ja_typings": ["sata"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0274",
+    "genre": "technology",
+    "question_text": {
+      "ja": "近距離無線通信でヘッドホンなどに使われる規格はどれ?",
+      "en": "Which short-range wireless standard is used for headphones and similar devices?"
+    },
+    "choices": [
+      {"ja": "Bluetooth", "en": "Bluetooth", "ja_typings": ["bluetooth"]},
+      {"ja": "Wi-Fi", "en": "Wi-Fi", "ja_typings": ["wi-fi"]},
+      {"ja": "NFC", "en": "NFC", "ja_typings": ["nfc"]},
+      {"ja": "Zigbee", "en": "Zigbee", "ja_typings": ["zigbee"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0275",
+    "genre": "technology",
+    "question_text": {
+      "ja": "ごく近距離で電子マネー決済などに使われる無線通信規格はどれ?",
+      "en": "Which very short-range wireless standard is used for mobile payments?"
+    },
+    "choices": [
+      {"ja": "NFC", "en": "NFC", "ja_typings": ["nfc"]},
+      {"ja": "Bluetooth", "en": "Bluetooth", "ja_typings": ["bluetooth"]},
+      {"ja": "Wi-Fi", "en": "Wi-Fi", "ja_typings": ["wi-fi"]},
+      {"ja": "LTE", "en": "LTE", "ja_typings": ["lte"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0276",
+    "genre": "technology",
+    "question_text": {
+      "ja": "Linus Torvalds が開発を始めた OS カーネルはどれ?",
+      "en": "Which OS kernel was started by Linus Torvalds?"
+    },
+    "choices": [
+      {"ja": "Linux", "en": "Linux", "ja_typings": ["linux"]},
+      {"ja": "Windows", "en": "Windows", "ja_typings": ["windows"]},
+      {"ja": "macOS", "en": "macOS", "ja_typings": ["macos"]},
+      {"ja": "FreeBSD", "en": "FreeBSD", "ja_typings": ["freebsd"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0277",
+    "genre": "technology",
+    "question_text": {
+      "ja": "iPhone を開発したアメリカの企業はどれ?",
+      "en": "Which American company develops the iPhone?"
+    },
+    "choices": [
+      {"ja": "Apple", "en": "Apple", "ja_typings": ["apple"]},
+      {"ja": "Google", "en": "Google", "ja_typings": ["google"]},
+      {"ja": "Microsoft", "en": "Microsoft", "ja_typings": ["microsoft"]},
+      {"ja": "Samsung", "en": "Samsung", "ja_typings": ["samsung"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0278",
+    "genre": "technology",
+    "question_text": {
+      "ja": "Android OS を主に開発している企業はどれ?",
+      "en": "Which company primarily develops the Android OS?"
+    },
+    "choices": [
+      {"ja": "Google", "en": "Google", "ja_typings": ["google"]},
+      {"ja": "Apple", "en": "Apple", "ja_typings": ["apple"]},
+      {"ja": "Oracle", "en": "Oracle", "ja_typings": ["oracle"]},
+      {"ja": "Meta", "en": "Meta", "ja_typings": ["meta"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0279",
+    "genre": "technology",
+    "question_text": {
+      "ja": "1 バイトは何ビットか?",
+      "en": "How many bits are in one byte?"
+    },
+    "choices": [
+      {"ja": "8ビット", "en": "8 bits", "ja_typings": ["8bitto", "hachibitto"]},
+      {"ja": "4ビット", "en": "4 bits", "ja_typings": ["4bitto", "yonbitto"]},
+      {"ja": "16ビット", "en": "16 bits", "ja_typings": ["16bitto", "juurokubitto"]},
+      {"ja": "32ビット", "en": "32 bits", "ja_typings": ["32bitto", "sanjuunibitto"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0280",
+    "genre": "technology",
+    "question_text": {
+      "ja": "16進数で 1 桁が表現できるビット数はいくつか?",
+      "en": "How many bits can a single hexadecimal digit represent?"
+    },
+    "choices": [
+      {"ja": "4ビット", "en": "4 bits", "ja_typings": ["4bitto", "yonbitto"]},
+      {"ja": "8ビット", "en": "8 bits", "ja_typings": ["8bitto", "hachibitto"]},
+      {"ja": "2ビット", "en": "2 bits", "ja_typings": ["2bitto", "nibitto"]},
+      {"ja": "16ビット", "en": "16 bits", "ja_typings": ["16bitto", "juurokubitto"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0281",
+    "genre": "technology",
+    "question_text": {
+      "ja": "CPU が高速にアクセスするために内蔵される小容量の高速メモリはどれ?",
+      "en": "Which small, fast memory is built into a CPU for rapid access?"
+    },
+    "choices": [
+      {"ja": "キャッシュメモリ", "en": "Cache memory", "ja_typings": ["kyasshumemori"]},
+      {"ja": "メインメモリ", "en": "Main memory", "ja_typings": ["meinmemori"]},
+      {"ja": "仮想メモリ", "en": "Virtual memory", "ja_typings": ["kasoumemori"]},
+      {"ja": "スワップ", "en": "Swap", "ja_typings": ["suwappu"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0282",
+    "genre": "technology",
+    "question_text": {
+      "ja": "物理メモリが不足したときに OS がディスクを補助領域として使う仕組みはどれ?",
+      "en": "Which technique lets the OS use disk space to extend physical memory?"
+    },
+    "choices": [
+      {"ja": "仮想メモリ", "en": "Virtual memory", "ja_typings": ["kasoumemori"]},
+      {"ja": "キャッシュメモリ", "en": "Cache memory", "ja_typings": ["kyasshumemori"]},
+      {"ja": "レジスタ", "en": "Register", "ja_typings": ["rejisuta"]},
+      {"ja": "バッファ", "en": "Buffer", "ja_typings": ["baffa"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0283",
+    "genre": "technology",
+    "question_text": {
+      "ja": "メールの送信に使われる代表的なプロトコルはどれ?",
+      "en": "Which protocol is mainly used for sending email?"
+    },
+    "choices": [
+      {"ja": "SMTP", "en": "SMTP", "ja_typings": ["smtp"]},
+      {"ja": "POP3", "en": "POP3", "ja_typings": ["pop3"]},
+      {"ja": "IMAP", "en": "IMAP", "ja_typings": ["imap"]},
+      {"ja": "FTP", "en": "FTP", "ja_typings": ["ftp"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0284",
+    "genre": "technology",
+    "question_text": {
+      "ja": "リモートサーバーに暗号化してログインするためのプロトコルはどれ?",
+      "en": "Which protocol provides encrypted login to a remote server?"
+    },
+    "choices": [
+      {"ja": "SSH", "en": "SSH", "ja_typings": ["ssh"]},
+      {"ja": "Telnet", "en": "Telnet", "ja_typings": ["telnet"]},
+      {"ja": "FTP", "en": "FTP", "ja_typings": ["ftp"]},
+      {"ja": "HTTP", "en": "HTTP", "ja_typings": ["http"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0285",
+    "genre": "technology",
+    "question_text": {
+      "ja": "プライベート IP アドレスをグローバル IP アドレスに変換する技術はどれ?",
+      "en": "Which technology translates private IP addresses to a global IP address?"
+    },
+    "choices": [
+      {"ja": "NAT", "en": "NAT", "ja_typings": ["nat"]},
+      {"ja": "VPN", "en": "VPN", "ja_typings": ["vpn"]},
+      {"ja": "DNS", "en": "DNS", "ja_typings": ["dns"]},
+      {"ja": "DHCP", "en": "DHCP", "ja_typings": ["dhcp"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0286",
+    "genre": "technology",
+    "question_text": {
+      "ja": "外部から特定の通信を制限してネットワークを守る仕組みはどれ?",
+      "en": "Which mechanism filters traffic to protect a network from outside?"
+    },
+    "choices": [
+      {"ja": "ファイアウォール", "en": "Firewall", "ja_typings": ["faiawo-ru"]},
+      {"ja": "プロキシ", "en": "Proxy", "ja_typings": ["purokishi"]},
+      {"ja": "ロードバランサ", "en": "Load balancer", "ja_typings": ["ro-dobaransa"]},
+      {"ja": "リバースシェル", "en": "Reverse shell", "ja_typings": ["riba-susheru"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0287",
+    "genre": "technology",
+    "question_text": {
+      "ja": "現在主流の DRAM 規格の系列はどれ?",
+      "en": "Which is the current mainstream family of DRAM standards?"
+    },
+    "choices": [
+      {"ja": "DDR", "en": "DDR", "ja_typings": ["ddr"]},
+      {"ja": "SRAM", "en": "SRAM", "ja_typings": ["sram"]},
+      {"ja": "EEPROM", "en": "EEPROM", "ja_typings": ["eeprom"]},
+      {"ja": "Flash", "en": "Flash", "ja_typings": ["flash"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0288",
+    "genre": "technology",
+    "question_text": {
+      "ja": "M.2 SSD で広く使われる高速接続規格はどれ?",
+      "en": "Which high-speed interface is widely used for M.2 SSDs?"
+    },
+    "choices": [
+      {"ja": "NVMe", "en": "NVMe", "ja_typings": ["nvme"]},
+      {"ja": "SATA", "en": "SATA", "ja_typings": ["sata"]},
+      {"ja": "SCSI", "en": "SCSI", "ja_typings": ["scsi"]},
+      {"ja": "IDE", "en": "IDE", "ja_typings": ["ide"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0289",
+    "genre": "technology",
+    "question_text": {
+      "ja": "複数の HDD や SSD を組み合わせ冗長性や性能を高める技術はどれ?",
+      "en": "Which technology combines multiple disks for redundancy or performance?"
+    },
+    "choices": [
+      {"ja": "RAID", "en": "RAID", "ja_typings": ["raid"]},
+      {"ja": "LVM", "en": "LVM", "ja_typings": ["lvm"]},
+      {"ja": "NAS", "en": "NAS", "ja_typings": ["nas"]},
+      {"ja": "SAN", "en": "SAN", "ja_typings": ["san"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  },
+  {
+    "id": "q0290",
+    "genre": "technology",
+    "question_text": {
+      "ja": "世界初の汎用電子計算機の一つとされる 1946 年完成の機械はどれ?",
+      "en": "Which 1946 machine is considered one of the first general-purpose electronic computers?"
+    },
+    "choices": [
+      {"ja": "ENIAC", "en": "ENIAC", "ja_typings": ["eniac"]},
+      {"ja": "UNIVAC", "en": "UNIVAC", "ja_typings": ["univac"]},
+      {"ja": "ALTAIR", "en": "ALTAIR", "ja_typings": ["altair"]},
+      {"ja": "MARK I", "en": "MARK I", "ja_typings": ["marki", "mark1"]}
+    ],
+    "correct_answer_index": 0,
+    "image_path": null,
+    "ja_reviewed": true
+  }
+]
