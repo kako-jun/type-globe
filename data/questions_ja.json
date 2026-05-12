@@ -329,14 +329,14 @@
       },
       {
         "en": "%",
-        "ja": "きていじょうけん",
+        "ja": "%",
         "ja_typings": [
           "%"
         ]
       },
       {
         "en": "**",
-        "ja": "きていじょうけん",
+        "ja": "**",
         "ja_typings": [
           "**"
         ]
@@ -632,7 +632,7 @@
       },
       {
         "en": "*",
-        "ja": "きていじょうけん",
+        "ja": "*",
         "ja_typings": [
           "*"
         ]
@@ -646,7 +646,7 @@
       },
       {
         "en": "#",
-        "ja": "きていじょうけん",
+        "ja": "#",
         "ja_typings": [
           "#"
         ]
@@ -1036,14 +1036,14 @@
       },
       {
         "en": "assignment",
-        "ja": "第２入",
+        "ja": "代入",
         "ja_typings": [
           "dainyuu"
         ]
       },
       {
         "en": "loose equality",
-        "ja": "緩やかななどうち",
+        "ja": "緩やかな等値",
         "ja_typings": [
           "yuruyakanadochi",
           "yuruyakanadouchi"
@@ -1074,7 +1074,7 @@
     "choices": [
       {
         "en": "() => {}",
-        "ja": "きていじょうけん() => {}",
+        "ja": "() => {}",
         "ja_typings": [
           "() => {}"
         ]
@@ -2043,7 +2043,7 @@
     "image_path": null,
     "question_text": {
       "en": "What does Dijkstra's algorithm find?",
-      "ja": "ダイクストラのあるごりずむはなにをもとめるか？"
+      "ja": "ダイクストラのアルゴリズムは何を求めるか？"
     },
     "question_text_reading": {
       "en": "What does Dijkstra's algorithm find?",
@@ -6834,7 +6834,7 @@
     "choices": [
       {
         "en": "<a>",
-        "ja": "ひらがな読み正本: げんきなひと",
+        "ja": "<a>",
         "ja_typings": [
           "<a>"
         ]
@@ -6848,14 +6848,14 @@
       },
       {
         "en": "<href>",
-        "ja": "きていじょうけん",
+        "ja": "<href>",
         "ja_typings": [
           "<href>"
         ]
       },
       {
         "en": "<url>",
-        "ja": "きていじょうけん",
+        "ja": "<url>",
         "ja_typings": [
           "<url>"
         ]
@@ -10185,7 +10185,7 @@
       },
       {
         "en": "delaying API response",
-        "ja": "API応答を流す",
+        "ja": "API応答を遅らす",
         "ja_typings": [
           "apiotookurasu",
           "apioutouookurasu"
@@ -12452,7 +12452,7 @@
     "image_path": null,
     "question_text": {
       "en": "What is canary deployment?",
-      "ja": "カナリアはひとは何か？"
+      "ja": "カナリア配備とは何か？"
     },
     "question_text_reading": {
       "en": "What is canary deployment?",
@@ -14140,7 +14140,7 @@
       },
       {
         "en": "built-in array type",
-        "ja": "備わった配列型",
+        "ja": "組み込み配列型",
         "ja_typings": [
           "sonawattahairetsugata"
         ]
@@ -14860,14 +14860,14 @@
     "choices": [
       {
         "en": "Naruto Uzumaki",
-        "ja": "うずまきなると",
+        "ja": "うずまきナルト",
         "ja_typings": [
           "uzumakinaruto"
         ]
       },
       {
         "en": "Sasuke Uchiha",
-        "ja": "うちはさすけ",
+        "ja": "うちはサスケ",
         "ja_typings": [
           "uchihasasuke"
         ]
@@ -15518,7 +15518,7 @@
     "image_path": null,
     "question_text": {
       "en": "Which anime series is known for the 'Kamehameha' attack?",
-      "ja": "かめはめはこうげきでゆうめいなアニメは？"
+      "ja": "かめはめ波攻撃で有名なアニメは？"
     },
     "question_text_reading": {
       "en": "Which anime series is known for the 'Kamehameha' attack?",
@@ -16008,7 +16008,7 @@
     "image_path": null,
     "question_text": {
       "en": "Which Ghibli film features a young witch who delivers by broomstick?",
-      "ja": "ほうきでいたつするわかいまじょのジブリえいがは？"
+      "ja": "ほうきで配達する若い魔女のジブリ映画は？"
     },
     "question_text_reading": {
       "en": "Which Ghibli film features a young witch who delivers by broomstick?",
@@ -16658,7 +16658,7 @@
       },
       {
         "en": "Meow Train",
-        "ja": "にゃーれっしゃ",
+        "ja": "ニャー列車",
         "ja_typings": [
           "nyaressha"
         ]
@@ -16677,7 +16677,7 @@
     "image_path": null,
     "question_text": {
       "en": "What is the name of the cat bus in My Neighbor Totoro?",
-      "ja": "となりのトトロのねこバスのなまえは？"
+      "ja": "となりのトトロの猫バスの名前は？"
     },
     "question_text_reading": {
       "en": "What is the name of the cat bus in My Neighbor Totoro?",
@@ -16912,7 +16912,7 @@
     "choices": [
       {
         "en": "a superpower",
-        "ja": "超能力力",
+        "ja": "超能力",
         "ja_typings": [
           "chonoryoku",
           "chounouryoku"
@@ -16936,7 +16936,7 @@
       },
       {
         "en": "a fighting technique",
-        "ja": "闘うの技",
+        "ja": "戦う技",
         "ja_typings": [
           "butonowaza",
           "butounowaza"
@@ -22355,7 +22355,7 @@
     "image_path": null,
     "question_text": {
       "en": "What is the best-selling manga of all time?",
-      "ja": "もっともうれたまんがは？"
+      "ja": "最も売れた漫画は？"
     },
     "question_text_reading": {
       "en": "What is the best-selling manga of all time?",
@@ -22989,7 +22989,7 @@
     "image_path": null,
     "question_text": {
       "en": "Who created Bleach?",
-      "ja": "ブリーチをかいたのは？"
+      "ja": "ブリーチを描いたのは？"
     },
     "question_text_reading": {
       "en": "Who created Bleach?",
@@ -23098,7 +23098,7 @@
       },
       {
         "en": "Rurouni Kenshin",
-        "ja": "るろうにけんしん",
+        "ja": "るろうに剣心",
         "ja_typings": [
           "ruronikenshin",
           "rurounikenshin"
@@ -23262,7 +23262,7 @@
     "image_path": null,
     "question_text": {
       "en": "Who draws One Piece?",
-      "ja": "ワンピースをかいているのは誰か？"
+      "ja": "ワンピースを描いているのは誰か？"
     },
     "question_text_reading": {
       "en": "Who draws One Piece?",
@@ -23668,7 +23668,7 @@
     "image_path": null,
     "question_text": {
       "en": "Who created Doraemon?",
-      "ja": "ドラえもんをかいたのは？"
+      "ja": "ドラえもんを描いたのは？"
     },
     "question_text_reading": {
       "en": "Who created Doraemon?",
@@ -24220,7 +24220,7 @@
       },
       {
         "en": "simple action manga",
-        "ja": "簡単なアクション漫画",
+        "ja": "単純なアクション漫画",
         "ja_typings": [
           "kantannaakushonmanga"
         ]
@@ -26344,7 +26344,7 @@
     "image_path": null,
     "question_text": {
       "en": "What is the capital of Turkey?",
-      "ja": "トルコのしゅとは？"
+      "ja": "トルコの首都は？"
     },
     "question_text_reading": {
       "en": "What is the capital of Turkey?",
@@ -26960,7 +26960,7 @@
     "image_path": null,
     "question_text": {
       "en": "What is the capital of Kenya?",
-      "ja": "ケニアのしゅとは？"
+      "ja": "ケニアの首都は？"
     },
     "question_text_reading": {
       "en": "What is the capital of Kenya?",
@@ -29976,7 +29976,7 @@
       },
       {
         "en": "dark star that produces no light",
-        "ja": "光をだしていないくらいほし",
+        "ja": "光を出していない暗い星",
         "ja_typings": [
           "hikariodashiteinaikuraihoshi"
         ]
@@ -30634,7 +30634,7 @@
       },
       {
         "en": "particle outside nucleus",
-        "ja": "核のそとのりゅうし",
+        "ja": "核の外の粒子",
         "ja_typings": [
           "kakunosotonoryuushi"
         ]
@@ -31455,7 +31455,7 @@
       },
       {
         "en": "clot blood",
-        "ja": "血をかたまる",
+        "ja": "血を固まらせる",
         "ja_typings": [
           "chiokatamaraseru"
         ]
@@ -32027,7 +32027,7 @@
     "image_path": null,
     "question_text": {
       "en": "What is 2 + 2?",
-      "ja": "2たす2はいくつ？"
+      "ja": "2足す2はいくつ？"
     },
     "question_text_reading": {
       "en": "What is 2 + 2?",
@@ -35001,7 +35001,7 @@
       },
       {
         "en": "word imitating sound",
-        "ja": "音をまねることば",
+        "ja": "音をまねる言葉",
         "ja_typings": [
           "otomanerukotoba",
           "otoomanerukotoba"
@@ -35058,7 +35058,7 @@
     "image_path": null,
     "question_text": {
       "en": "What is alliteration?",
-      "ja": "どうじしゅんぷうとは何か？"
+      "ja": "頭韻とは何か？"
     },
     "question_text_reading": {
       "en": "What is alliteration?",
@@ -36464,7 +36464,7 @@
     "image_path": null,
     "question_text": {
       "en": "How many days are in a leap year?",
-      "ja": "うるうどしはなんにち？"
+      "ja": "うるう年は何日？"
     },
     "question_text_reading": {
       "en": "How many days are in a leap year?",
@@ -37309,7 +37309,7 @@
     "image_path": null,
     "question_text": {
       "en": "What is the main language spoken in Argentina?",
-      "ja": "あるぜんちんでつかわれるしゅのことばは？"
+      "ja": "アルゼンチンで使われる主な言葉は？"
     },
     "question_text_reading": {
       "en": "What is the main language spoken in Argentina?",
@@ -39102,7 +39102,7 @@
     "image_path": null,
     "question_text": {
       "en": "What is 'KEKW'?",
-      "ja": "けくわとは何か？"
+      "ja": "KEKWとは何か？"
     },
     "question_text_reading": {
       "en": "What is 'KEKW'?",
