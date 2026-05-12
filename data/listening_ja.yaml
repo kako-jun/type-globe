@@ -1,5 +1,5 @@
 # listening_ja.yaml — Japanese listening prompts (100 items)
-# text_reading: hiragana only (used for TTS and romaji conversion)
+# text_reading: hiragana + ASCII space (space marks word boundary in TTS and romaji)
 # text_display: natural Japanese notation (kanji/katakana)
 # word: l-ja-001 to l-ja-070
 # phrase: l-ja-071 to l-ja-090
