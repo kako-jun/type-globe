@@ -334,6 +334,14 @@ fn run_quiz_demo(
     let count = options.count.max(1) as usize;
     let wait = Duration::from_millis(options.wait_ms);
 
+    // M-3: consecutive `no_target_abort` counter so a broken question
+    // pool (e.g. every sample lacks `ja_typings`) can't kiosk-spin the
+    // demo forever. Three sessions in a row failing to derive a typing
+    // target is enough evidence the data — not transient flakiness —
+    // is the problem; bail out with a final message.
+    const MAX_CONSECUTIVE_NO_TARGET_ABORTS: u32 = 3;
+    let mut consecutive_aborts: u32 = 0;
+
     loop {
         let demo = DemoInputSource::new(options.type_cps, wait);
         let mut quiz_ui =
@@ -342,7 +350,38 @@ fn run_quiz_demo(
         // the run completes and the screen looks right. Errors are
         // surfaced so a broken terminal doesn't get swallowed in loop
         // mode.
-        let _ = quiz_ui.run_with_demo(demo)?;
+        let outcome = quiz_ui.run_with_demo(demo)?;
+
+        // M-2: emit warnings *after* the alt screen has been torn down
+        // (this is the first safe place — `run_with_demo` already
+        // restored the terminal before returning).
+        for w in &outcome.warnings {
+            eprintln!("{w}");
+        }
+
+        // S-1: an explicit Esc / Ctrl+C from the user must break the
+        // outer `--demo-loop` too. Without this, hitting Esc inside a
+        // looping kiosk demo would immediately restart the next run.
+        if outcome.user_aborted {
+            break;
+        }
+
+        // M-3: if the session aborted because no typing target could
+        // be found, count it; bail after a small streak rather than
+        // looping forever on broken data.
+        if outcome.no_target_abort {
+            consecutive_aborts += 1;
+            if consecutive_aborts >= MAX_CONSECUTIVE_NO_TARGET_ABORTS {
+                eprintln!(
+                    "demo stopped: aborted {consecutive_aborts} sessions in a row because the chosen question had no typing target. \
+                     Check that `data/questions_{}.json` has `ja_typings` populated for the relevant questions.",
+                    match language { Language::Japanese => "ja", Language::English => "en" }
+                );
+                break;
+            }
+        } else {
+            consecutive_aborts = 0;
+        }
 
         if !options.loop_forever {
             break;
