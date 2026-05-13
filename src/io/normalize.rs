@@ -71,25 +71,34 @@ pub fn canonical_romaji(s: &str) -> String {
     out
 }
 
-/// ン+子音/末尾 の `nn` を `n` に畳む。`nn` の直後が母音 / `y` / `n`
-/// のときは「ン+母音」と「ナ行+母音」を区別するために残す。
+/// n の連続を文脈に応じて正準化する:
+/// - 母音 / `y` の直前にある ≥2連 → `nn` に正規化 (ん + ナ行/ヤ行 を表現)。
+///   例: `sennnorikyuu` (Wapuro 3連) ≡ `sennorikyuu` (Hepburn 2連) → どちらも
+///   `sennorikyuu` に寄せる。これにより IME 経由で打鍵した人と Hepburn 表記の
+///   候補が一致する。
+/// - 子音 / 末尾 の直前にある ≥2連 → `n` に畳む (ん のみ)。
+///   例: `tennpura` → `tenpura`、`doragonn` → `doragon`。
+/// - 単独 `n` はそのまま (ナ行の頭子音 として次音節と結合)。
 fn collapse_redundant_nn(s: &str) -> String {
     let chars: Vec<char> = s.chars().collect();
     let mut out = String::with_capacity(s.len());
     let mut i = 0;
     while i < chars.len() {
-        if i + 1 < chars.len() && chars[i] == 'n' && chars[i + 1] == 'n' {
-            let keep = matches!(
-                chars.get(i + 2),
-                Some('a' | 'i' | 'u' | 'e' | 'o' | 'y' | 'n')
-            );
-            if keep {
+        if chars[i] == 'n' {
+            let start = i;
+            while i < chars.len() && chars[i] == 'n' {
+                i += 1;
+            }
+            let run = i - start;
+            let next = chars.get(i).copied();
+            if run == 1 {
+                out.push('n');
+            } else if matches!(next, Some('a' | 'i' | 'u' | 'e' | 'o' | 'y')) {
                 out.push('n');
                 out.push('n');
             } else {
                 out.push('n');
             }
-            i += 2;
         } else {
             out.push(chars[i]);
             i += 1;
@@ -247,5 +256,18 @@ mod tests {
         assert_eq!(canonical_romaji("kannon"), "kannon");
         assert_eq!(canonical_romaji("tennen"), "tennen");
         assert_eq!(canonical_romaji("honnyaku"), "honnyaku");
+    }
+
+    #[test]
+    fn triple_n_before_vowel_collapses_to_double() {
+        // Hepburn は ん+ナ行 を `nn` 連で書き、IME-wapuro は `nnn` (ん用 `nn`
+        // + ナ行の n) で打つ。両方の流儀を受け入れるため 3 連以上の n は
+        // 2 連へ正規化する。例: せんのりきゅう = `sennorikyuu` (Hepburn)
+        // ≡ `sennnorikyuu` (IME-wapuro)。
+        assert_eq!(canonical_romaji("sennnorikyuu"), "sennorikyuu");
+        assert_eq!(canonical_romaji("gomennnasai"), "gomennasai");
+        // 3 連 n が子音 / 末尾 の前にあれば 1 連 (ん) に畳む。
+        assert_eq!(canonical_romaji("tennnpura"), "tenpura");
+        assert_eq!(canonical_romaji("doragonnn"), "doragon");
     }
 }
