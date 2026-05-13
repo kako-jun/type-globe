@@ -328,7 +328,19 @@ impl QuizUI {
             if let Some(demo) = demo {
                 if self.phase == Phase::Playing {
                     let (current_idx, _) = self.quiz_game.get_progress();
-                    if demo_primed_for != Some(current_idx) {
+                    // Defer priming until the question-text reveal has finished
+                    // animating, so `--demo-wait-ms` measures the gap *after*
+                    // the text is fully visible instead of starting in
+                    // parallel with the typewriter. Without this, short
+                    // questions consumed most of the wait window during
+                    // reveal — visually "typing starts before the text is
+                    // done", and the gap shrank as questions got shorter.
+                    let reveal_done = self
+                        .reveal
+                        .as_ref()
+                        .map(|r| r.is_done(Instant::now()))
+                        .unwrap_or(true);
+                    if demo_primed_for != Some(current_idx) && reveal_done {
                         match self.demo_target_for_current_question() {
                             Some(target) => {
                                 demo.set_target(&target);
