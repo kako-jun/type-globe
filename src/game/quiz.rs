@@ -159,6 +159,21 @@ impl QuizGame {
             })
     }
 
+    /// `true` if `typed` is a **complete** correct answer for the active
+    /// question (canonical-equal to one of the correct choice's typings).
+    /// Used by the UI to auto-confirm on the last keystroke. Comparing on
+    /// canonical form rather than raw bytes is required so IME 別経路
+    /// (`/` 中黒、`huxa` = `fa`、`kixya` = `kya`、`rokeltsuto` = `roketto`,
+    /// 等) も「打ち終わったら確定」となる — 旧実装は raw 等値 だけ見ていた
+    /// ため、prefix としては valid なのに最後のキーで confirm が走らない
+    /// バグが量産されていた。
+    pub fn is_complete_correct_typed(&self, typed: &str) -> bool {
+        let typed_key = self.canonical_key(typed);
+        self.current_correct_typing_candidates()
+            .iter()
+            .any(|candidate| self.canonical_key(candidate) == typed_key)
+    }
+
     /// Resolve the typed text against the current question's choices and
     /// answer with the matching index. Per `docs/spec.md`, only an **exact**
     /// match counts — prefix matches do nothing (so `mov` does not auto-pick
@@ -582,6 +597,45 @@ mod tests {
                 assert!(
                     game.is_valid_correct_typed_prefix(p),
                     "candidate={registered:?} should accept partial prefix {p:?}"
+                );
+            }
+        }
+    }
+
+    #[test]
+    fn complete_correct_typed_recognizes_ime_alt_paths() {
+        // 「打ち終わったら自動確定」が IME 別経路でも発火することを担保。
+        // 旧実装は raw 等値だけ見ていたため、prefix が通っても最後の
+        // キーで確定しないバグが量産されていた。
+        let cases: &[(&str, &[&str])] = &[
+            // ブレンダン・アイク: `/` (中黒 IME ショートカット) で打鍵
+            (
+                "burendannaiku",
+                &["burendannaiku", "burendann/aiku", "burendan/aiku"],
+            ),
+            // スクウェア・エニックス: ウェ系 + 中黒 `/`
+            (
+                "sukuweaenikkusu",
+                &[
+                    "sukuweaenikkusu",
+                    "sukuwea/enikkusu",
+                    "sukuuxeaenikkusu",
+                    "sukuuleaenikkusu",
+                ],
+            ),
+            // ろけっと: 明示的小っ
+            ("roketto", &["roketto", "rokeltsuto", "rokextuto"]),
+            // 千利休: Hepburn 流儀のままでも canonical で揃う
+            ("sennnorikyuu", &["sennnorikyuu"]),
+        ];
+        for (registered, completed_inputs) in cases {
+            let mut question = make_question(&["A", "B", "C", "D"], 0);
+            question.choices[0].ja_typings = vec![(*registered).into()];
+            let game = QuizGame::new(vec![question], Language::Japanese);
+            for input in *completed_inputs {
+                assert!(
+                    game.is_complete_correct_typed(input),
+                    "candidate={registered:?} should auto-confirm on input {input:?}"
                 );
             }
         }

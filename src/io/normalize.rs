@@ -24,9 +24,18 @@
 ///   ため)。
 pub fn canonical_romaji(s: &str) -> String {
     let mut out = s.to_lowercase();
-    // IME で全角記号を出す ASCII キーを剥がす。データ側は記号を含めない
-    // 慣行 (`・` `、` `。` をローマ字に書き起こさない) なので、打鍵時に
-    // 対応キー (`/`,`、` で `,`、`。` で `.`) を押しても押さなくても受理する。
+    // IME 記号キー (`/` = ・, `,` = 、, `.` = 。) は **commit トリガー** でも
+    // ある。直前にバッファされている単独 `n` は記号タイプ時に ん として
+    // コミットされるので、剥がす前に `n` を `nn` へ二重化しておく。既に
+    // `nn` の場合は doubling 不要 (longer pattern を先に処理する)。
+    // 例: `burendan/aiku` (ブレンダン・アイク) → `burendannaiku` に揃う。
+    for punct in ['/', ',', '.'] {
+        let nn_punct = format!("nn{punct}");
+        let n_punct = format!("n{punct}");
+        out = out.replace(&nn_punct, "nn");
+        out = out.replace(&n_punct, "nn");
+    }
+    // 残りの記号 (n の隣接以外) を素通しで剥がす。
     out = out.replace('/', "");
     out = out.replace(',', "");
     out = out.replace('.', "");
