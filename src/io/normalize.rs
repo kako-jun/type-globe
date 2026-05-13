@@ -367,7 +367,10 @@ mod tests {
         // canonical でも別物に保つ。
         // - `sennnorikyuu` は せんのりきゅう (3 連 = ん + の)
         // - `sennorikyuu` は せんおりきゅう (2 連 = ん + お)
-        assert_ne!(canonical_romaji("sennnorikyuu"), canonical_romaji("sennorikyuu"));
+        assert_ne!(
+            canonical_romaji("sennnorikyuu"),
+            canonical_romaji("sennorikyuu")
+        );
         assert_eq!(canonical_romaji("sennnorikyuu"), "sennnorikyuu");
     }
 }
