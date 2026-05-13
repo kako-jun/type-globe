@@ -155,7 +155,10 @@ mod tests {
         assert_eq!(canonical_romaji("sukuuxea"), canonical_romaji("sukuwea"));
         assert_eq!(canonical_romaji("sukuulea"), canonical_romaji("sukuwea"));
         assert_eq!(canonical_romaji("uxisuki-"), canonical_romaji("wisuki-"));
-        assert_eq!(canonical_romaji("uxoruhuredo"), canonical_romaji("woruhuredo"));
+        assert_eq!(
+            canonical_romaji("uxoruhuredo"),
+            canonical_romaji("woruhuredo")
+        );
     }
 
     #[test]
@@ -168,7 +171,10 @@ mod tests {
         assert_eq!(canonical_romaji("huliripin"), canonical_romaji("firipin"));
         assert_eq!(canonical_romaji("fuxiripin"), canonical_romaji("firipin"));
         assert_eq!(canonical_romaji("fuliripin"), canonical_romaji("firipin"));
-        assert_eq!(canonical_romaji("huxeruma-ta"), canonical_romaji("feruma-ta"));
+        assert_eq!(
+            canonical_romaji("huxeruma-ta"),
+            canonical_romaji("feruma-ta")
+        );
     }
 
     #[test]
