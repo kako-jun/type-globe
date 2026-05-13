@@ -5448,32 +5448,28 @@
         "ja": "`&`",
         "en": "`&`",
         "ja_typings": [
-          "&",
-          "`&`"
+          "&"
         ]
       },
       {
         "ja": "`*`",
         "en": "`*`",
         "ja_typings": [
-          "*",
-          "`*`"
+          "*"
         ]
       },
       {
         "ja": "`#`",
         "en": "`#`",
         "ja_typings": [
-          "#",
-          "`#`"
+          "#"
         ]
       },
       {
         "ja": "`@`",
         "en": "`@`",
         "ja_typings": [
-          "@",
-          "`@`"
+          "@"
         ]
       }
     ],
@@ -5493,32 +5489,28 @@
         "ja": "`*`",
         "en": "`*`",
         "ja_typings": [
-          "*",
-          "`*`"
+          "*"
         ]
       },
       {
         "ja": "`&`",
         "en": "`&`",
         "ja_typings": [
-          "&",
-          "`&`"
+          "&"
         ]
       },
       {
         "ja": "`%`",
         "en": "`%`",
         "ja_typings": [
-          "%",
-          "`%`"
+          "%"
         ]
       },
       {
         "ja": "`$`",
         "en": "`$`",
         "ja_typings": [
-          "$",
-          "`$`"
+          "$"
         ]
       }
     ],
@@ -5538,32 +5530,28 @@
         "ja": "`await`",
         "en": "`await`",
         "ja_typings": [
-          "await",
-          "`await`"
+          "await"
         ]
       },
       {
         "ja": "`yield`",
         "en": "`yield`",
         "ja_typings": [
-          "yield",
-          "`yield`"
+          "yield"
         ]
       },
       {
         "ja": "`return`",
         "en": "`return`",
         "ja_typings": [
-          "return",
-          "`return`"
+          "return"
         ]
       },
       {
         "ja": "`defer`",
         "en": "`defer`",
         "ja_typings": [
-          "defer",
-          "`defer`"
+          "defer"
         ]
       }
     ],
@@ -5583,32 +5571,28 @@
         "ja": "`async`",
         "en": "`async`",
         "ja_typings": [
-          "async",
-          "`async`"
+          "async"
         ]
       },
       {
         "ja": "`await`",
         "en": "`await`",
         "ja_typings": [
-          "await",
-          "`await`"
+          "await"
         ]
       },
       {
         "ja": "`def`",
         "en": "`def`",
         "ja_typings": [
-          "def",
-          "`def`"
+          "def"
         ]
       },
       {
         "ja": "`fn`",
         "en": "`fn`",
         "ja_typings": [
-          "fn",
-          "`fn`"
+          "fn"
         ]
       }
     ],
@@ -5628,32 +5612,28 @@
         "ja": "`def`",
         "en": "`def`",
         "ja_typings": [
-          "def",
-          "`def`"
+          "def"
         ]
       },
       {
         "ja": "`fn`",
         "en": "`fn`",
         "ja_typings": [
-          "fn",
-          "`fn`"
+          "fn"
         ]
       },
       {
         "ja": "`sub`",
         "en": "`sub`",
         "ja_typings": [
-          "sub",
-          "`sub`"
+          "sub"
         ]
       },
       {
         "ja": "`function`",
         "en": "`function`",
         "ja_typings": [
-          "function",
-          "`function`"
+          "function"
         ]
       }
     ],
@@ -5673,32 +5653,28 @@
         "ja": "`fn`",
         "en": "`fn`",
         "ja_typings": [
-          "fn",
-          "`fn`"
+          "fn"
         ]
       },
       {
         "ja": "`def`",
         "en": "`def`",
         "ja_typings": [
-          "def",
-          "`def`"
+          "def"
         ]
       },
       {
         "ja": "`sub`",
         "en": "`sub`",
         "ja_typings": [
-          "sub",
-          "`sub`"
+          "sub"
         ]
       },
       {
         "ja": "`function`",
         "en": "`function`",
         "ja_typings": [
-          "function",
-          "`function`"
+          "function"
         ]
       }
     ],
@@ -5718,32 +5694,28 @@
         "ja": "`func`",
         "en": "`func`",
         "ja_typings": [
-          "func",
-          "`func`"
+          "func"
         ]
       },
       {
         "ja": "`def`",
         "en": "`def`",
         "ja_typings": [
-          "def",
-          "`def`"
+          "def"
         ]
       },
       {
         "ja": "`fn`",
         "en": "`fn`",
         "ja_typings": [
-          "fn",
-          "`fn`"
+          "fn"
         ]
       },
       {
         "ja": "`sub`",
         "en": "`sub`",
         "ja_typings": [
-          "sub",
-          "`sub`"
+          "sub"
         ]
       }
     ],
@@ -8110,7 +8082,7 @@
         "en": "`display: flex`",
         "ja_typings": [
           "displayflex",
-          "`display: flex`"
+          "display: flex"
         ]
       },
       {
@@ -8118,7 +8090,7 @@
         "en": "`display: grid`",
         "ja_typings": [
           "displaygrid",
-          "`display: grid`"
+          "display: grid"
         ]
       },
       {
@@ -8126,7 +8098,7 @@
         "en": "`display: block`",
         "ja_typings": [
           "displayblock",
-          "`display: block`"
+          "display: block"
         ]
       },
       {
@@ -8134,7 +8106,7 @@
         "en": "`display: inline`",
         "ja_typings": [
           "displayinline",
-          "`display: inline`"
+          "display: inline"
         ]
       }
     ],
@@ -8196,32 +8168,28 @@
         "ja": "`margin`",
         "en": "`margin`",
         "ja_typings": [
-          "margin",
-          "`margin`"
+          "margin"
         ]
       },
       {
         "ja": "`padding`",
         "en": "`padding`",
         "ja_typings": [
-          "padding",
-          "`padding`"
+          "padding"
         ]
       },
       {
         "ja": "`border`",
         "en": "`border`",
         "ja_typings": [
-          "border",
-          "`border`"
+          "border"
         ]
       },
       {
         "ja": "`gap`",
         "en": "`gap`",
         "ja_typings": [
-          "gap",
-          "`gap`"
+          "gap"
         ]
       }
     ],
@@ -8241,32 +8209,28 @@
         "ja": "`padding`",
         "en": "`padding`",
         "ja_typings": [
-          "padding",
-          "`padding`"
+          "padding"
         ]
       },
       {
         "ja": "`margin`",
         "en": "`margin`",
         "ja_typings": [
-          "margin",
-          "`margin`"
+          "margin"
         ]
       },
       {
         "ja": "`spacing`",
         "en": "`spacing`",
         "ja_typings": [
-          "spacing",
-          "`spacing`"
+          "spacing"
         ]
       },
       {
         "ja": "`inset`",
         "en": "`inset`",
         "ja_typings": [
-          "inset",
-          "`inset`"
+          "inset"
         ]
       }
     ],
@@ -8287,7 +8251,7 @@
         "en": "`#`",
         "ja_typings": [
           "sharp",
-          "`#`"
+          "#"
         ]
       },
       {
@@ -8295,7 +8259,7 @@
         "en": "`.`",
         "ja_typings": [
           "dot",
-          "`.`"
+          "."
         ]
       },
       {
@@ -8303,7 +8267,7 @@
         "en": "`@`",
         "ja_typings": [
           "at",
-          "`@`"
+          "@"
         ]
       },
       {
@@ -8311,7 +8275,7 @@
         "en": "`&`",
         "ja_typings": [
           "ampersand",
-          "`&`"
+          "&"
         ]
       }
     ],
@@ -8332,7 +8296,7 @@
         "en": "`.`",
         "ja_typings": [
           "dot",
-          "`.`"
+          "."
         ]
       },
       {
@@ -8340,7 +8304,7 @@
         "en": "`#`",
         "ja_typings": [
           "sharp",
-          "`#`"
+          "#"
         ]
       },
       {
@@ -8348,7 +8312,7 @@
         "en": "`*`",
         "ja_typings": [
           "asterisk",
-          "`*`"
+          "*"
         ]
       },
       {
@@ -8356,7 +8320,7 @@
         "en": "`:`",
         "ja_typings": [
           "colon",
-          "`:`"
+          ":"
         ]
       }
     ],
@@ -8376,32 +8340,28 @@
         "ja": "`const`",
         "en": "`const`",
         "ja_typings": [
-          "const",
-          "`const`"
+          "const"
         ]
       },
       {
         "ja": "`let`",
         "en": "`let`",
         "ja_typings": [
-          "let",
-          "`let`"
+          "let"
         ]
       },
       {
         "ja": "`var`",
         "en": "`var`",
         "ja_typings": [
-          "var",
-          "`var`"
+          "var"
         ]
       },
       {
         "ja": "`final`",
         "en": "`final`",
         "ja_typings": [
-          "final",
-          "`final`"
+          "final"
         ]
       }
     ],
@@ -8463,7 +8423,7 @@
         "en": "`===`",
         "ja_typings": [
           "tripleequal",
-          "`===`"
+          "==="
         ]
       },
       {
@@ -8471,7 +8431,7 @@
         "en": "`==`",
         "ja_typings": [
           "doubleequal",
-          "`==`"
+          "=="
         ]
       },
       {
@@ -8479,7 +8439,7 @@
         "en": "`=`",
         "ja_typings": [
           "singleequal",
-          "`=`"
+          "="
         ]
       },
       {
@@ -8487,7 +8447,7 @@
         "en": "`!=`",
         "ja_typings": [
           "notequal",
-          "`!=`"
+          "!="
         ]
       }
     ],
@@ -8507,32 +8467,28 @@
         "ja": "`map`",
         "en": "`map`",
         "ja_typings": [
-          "map",
-          "`map`"
+          "map"
         ]
       },
       {
         "ja": "`forEach`",
         "en": "`forEach`",
         "ja_typings": [
-          "foreach",
-          "`foreach`"
+          "foreach"
         ]
       },
       {
         "ja": "`filter`",
         "en": "`filter`",
         "ja_typings": [
-          "filter",
-          "`filter`"
+          "filter"
         ]
       },
       {
         "ja": "`reduce`",
         "en": "`reduce`",
         "ja_typings": [
-          "reduce",
-          "`reduce`"
+          "reduce"
         ]
       }
     ],
@@ -8552,32 +8508,28 @@
         "ja": "`filter`",
         "en": "`filter`",
         "ja_typings": [
-          "filter",
-          "`filter`"
+          "filter"
         ]
       },
       {
         "ja": "`map`",
         "en": "`map`",
         "ja_typings": [
-          "map",
-          "`map`"
+          "map"
         ]
       },
       {
         "ja": "`find`",
         "en": "`find`",
         "ja_typings": [
-          "find",
-          "`find`"
+          "find"
         ]
       },
       {
         "ja": "`some`",
         "en": "`some`",
         "ja_typings": [
-          "some",
-          "`some`"
+          "some"
         ]
       }
     ],
