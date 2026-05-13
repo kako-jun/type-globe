@@ -54,9 +54,22 @@ pub fn canonical_romaji(s: &str) -> String {
     out = out.replace("dji", "di");
     out = out.replace("dzi", "di");
     out = out.replace("dzu", "du");
+    // 拗音 (きゃ/しゃ/ちゃ 等) の Hepburn 形を kunrei 形に寄せる:
+    // `sha → sya`, `cha → tya`, `ja → zya` 等。`shi/chi/ji` 単音版より前に
+    // 処理する (`shixya` の `shi` を `si` に潰す前に `sha` 系を捌くため)。
+    out = out.replace("sha", "sya");
+    out = out.replace("shu", "syu");
+    out = out.replace("sho", "syo");
+    out = out.replace("cha", "tya");
+    out = out.replace("chu", "tyu");
+    out = out.replace("cho", "tyo");
+    out = out.replace("ja", "zya");
+    out = out.replace("ju", "zyu");
+    out = out.replace("jo", "zyo");
     out = out.replace("tsu", "tu");
     out = out.replace("shi", "si");
     out = out.replace("chi", "ti");
+    out = out.replace("ji", "zi");
     // ウェ 系: `we/uxe/ule` を同一視。`uxa/ula → wa` は ウァ ≠ ワ なので
     // 除外。`uxo/ulo → wo` は ウォ も `wo` で書く慣行があるため同一視 OK。
     out = out.replace("uxi", "wi");
@@ -65,40 +78,88 @@ pub fn canonical_romaji(s: &str) -> String {
     out = out.replace("ule", "we");
     out = out.replace("uxo", "wo");
     out = out.replace("ulo", "wo");
+    // 拗音の IME 別経路: `Cixya/Cilya` 等 (子音+i+小ゃ) を `Cya` に寄せる。
+    // 例: `kixya` (=きゃ via 明示的小ゃ) ≡ `kya`。`shi/chi/ji` を先に
+    // `si/ti/zi` に潰してから `ixya → ya` を当てると `shixya → sixya → sya`、
+    // `chixya → tixya → tya`、`jixya → zixya → zya` の連鎖が成立する。
+    out = out.replace("ixya", "ya");
+    out = out.replace("ixyu", "yu");
+    out = out.replace("ixyo", "yo");
+    out = out.replace("ilya", "ya");
+    out = out.replace("ilyu", "yu");
+    out = out.replace("ilyo", "yo");
     out = out.replace("fu", "hu");
-    out = out.replace("ji", "zi");
+    // 促音 (っ) の IME 別経路: `ltu/xtu/ltsu/xtsu + 子音C → CC` に変換。
+    // 例: `rokeltsuto` (明示的小っ) ≡ `roketto` (標準二重子音)。
+    out = expand_small_tsu(&out);
     out = collapse_redundant_nn(&out);
     out
 }
 
-/// n の連続を文脈に応じて正準化する:
-/// - 母音 / `y` の直前にある ≥2連 → `nn` に正規化 (ん + ナ行/ヤ行 を表現)。
-///   例: `sennnorikyuu` (Wapuro 3連) ≡ `sennorikyuu` (Hepburn 2連) → どちらも
-///   `sennorikyuu` に寄せる。これにより IME 経由で打鍵した人と Hepburn 表記の
-///   候補が一致する。
-/// - 子音 / 末尾 の直前にある ≥2連 → `n` に畳む (ん のみ)。
-///   例: `tennpura` → `tenpura`、`doragonn` → `doragon`。
-/// - 単独 `n` はそのまま (ナ行の頭子音 として次音節と結合)。
+/// 促音 IME 別経路: `ltu/xtu/ltsu/xtsu` の直後に子音があれば、その子音を
+/// 二重化した形に置換する。これにより `roke[ltu]to` → `roketto` のように
+/// 標準形へ寄せられる。直後が母音 / 末尾 の場合は別意味になるので変換しない。
+fn expand_small_tsu(s: &str) -> String {
+    let chars: Vec<char> = s.chars().collect();
+    let mut out = String::with_capacity(s.len());
+    let mut i = 0;
+    while i < chars.len() {
+        let prefix_len = if i + 4 <= chars.len()
+            && (chars[i] == 'l' || chars[i] == 'x')
+            && chars[i + 1] == 't'
+            && chars[i + 2] == 's'
+            && chars[i + 3] == 'u'
+        {
+            Some(4)
+        } else if i + 3 <= chars.len()
+            && (chars[i] == 'l' || chars[i] == 'x')
+            && chars[i + 1] == 't'
+            && chars[i + 2] == 'u'
+        {
+            Some(3)
+        } else {
+            None
+        };
+        if let Some(plen) = prefix_len {
+            if let Some(&next) = chars.get(i + plen) {
+                if next.is_ascii_alphabetic() && !matches!(next, 'a' | 'i' | 'u' | 'e' | 'o') {
+                    out.push(next);
+                    i += plen;
+                    continue;
+                }
+            }
+        }
+        out.push(chars[i]);
+        i += 1;
+    }
+    out
+}
+
+/// ン+子音/末尾 の `nn` を `n` に畳む。`nn` の直後が母音 / `y` / `n`
+/// のときは「ン+母音」と「ナ行+母音」を区別するために残す。
+///
+/// 3 連以上の n は IME-wapuro と Hepburn の流儀差を表す (Hepburn `nn` ≡
+/// Wapuro `nnn`) が、type-globe はタイピング練習として IME 流儀を「正」
+/// と定義する。よってここでは正規化せず、2 連と 3 連は異なる正準形のまま
+/// 残し、データ側を IME 正解形に揃える運用とする (`hiragana_to_hepburn` も
+/// IME 流儀で出力)。
 fn collapse_redundant_nn(s: &str) -> String {
     let chars: Vec<char> = s.chars().collect();
     let mut out = String::with_capacity(s.len());
     let mut i = 0;
     while i < chars.len() {
-        if chars[i] == 'n' {
-            let start = i;
-            while i < chars.len() && chars[i] == 'n' {
-                i += 1;
-            }
-            let run = i - start;
-            let next = chars.get(i).copied();
-            if run == 1 {
-                out.push('n');
-            } else if matches!(next, Some('a' | 'i' | 'u' | 'e' | 'o' | 'y')) {
+        if i + 1 < chars.len() && chars[i] == 'n' && chars[i + 1] == 'n' {
+            let keep = matches!(
+                chars.get(i + 2),
+                Some('a' | 'i' | 'u' | 'e' | 'o' | 'y' | 'n')
+            );
+            if keep {
                 out.push('n');
                 out.push('n');
             } else {
                 out.push('n');
             }
+            i += 2;
         } else {
             out.push(chars[i]);
             i += 1;
@@ -259,15 +320,54 @@ mod tests {
     }
 
     #[test]
-    fn triple_n_before_vowel_collapses_to_double() {
-        // Hepburn は ん+ナ行 を `nn` 連で書き、IME-wapuro は `nnn` (ん用 `nn`
-        // + ナ行の n) で打つ。両方の流儀を受け入れるため 3 連以上の n は
-        // 2 連へ正規化する。例: せんのりきゅう = `sennorikyuu` (Hepburn)
-        // ≡ `sennnorikyuu` (IME-wapuro)。
-        assert_eq!(canonical_romaji("sennnorikyuu"), "sennorikyuu");
-        assert_eq!(canonical_romaji("gomennnasai"), "gomennasai");
-        // 3 連 n が子音 / 末尾 の前にあれば 1 連 (ん) に畳む。
-        assert_eq!(canonical_romaji("tennnpura"), "tenpura");
-        assert_eq!(canonical_romaji("doragonnn"), "doragon");
+    fn yoon_hepburn_kunrei_unified() {
+        // しゃ・ちゃ・じゃ 系は Hepburn (sha/cha/ja) と Kunrei (sya/tya/zya)
+        // を同一視。`shi/chi/ji` 単音版と整合。
+        assert_eq!(canonical_romaji("sha"), canonical_romaji("sya"));
+        assert_eq!(canonical_romaji("shu"), canonical_romaji("syu"));
+        assert_eq!(canonical_romaji("sho"), canonical_romaji("syo"));
+        assert_eq!(canonical_romaji("cha"), canonical_romaji("tya"));
+        assert_eq!(canonical_romaji("cho"), canonical_romaji("tyo"));
+        assert_eq!(canonical_romaji("ja"), canonical_romaji("zya"));
+        assert_eq!(canonical_romaji("jo"), canonical_romaji("zyo"));
+    }
+
+    #[test]
+    fn yoon_ime_alt_path_via_small_ya() {
+        // `kixya/kilya` 等 (明示的小ゃ) を `kya` と同一視。
+        assert_eq!(canonical_romaji("kixya"), canonical_romaji("kya"));
+        assert_eq!(canonical_romaji("kilyu"), canonical_romaji("kyu"));
+        assert_eq!(canonical_romaji("kixyo"), canonical_romaji("kyo"));
+        // しゃ 系も Hepburn → Kunrei → 小ゃ展開 で統一される。
+        assert_eq!(canonical_romaji("shixya"), canonical_romaji("sha"));
+        assert_eq!(canonical_romaji("chixya"), canonical_romaji("cha"));
+        assert_eq!(canonical_romaji("jixya"), canonical_romaji("ja"));
+    }
+
+    #[test]
+    fn sokuon_ime_alt_path_via_explicit_small_tsu() {
+        // 明示的小っ (`ltu/xtu/ltsu/xtsu` + 子音) を子音二重化 (`kk/tt/...`)
+        // と同一視。例: `rokeltsuto` ≡ `roketto`。
+        assert_eq!(canonical_romaji("rokeltsuto"), canonical_romaji("roketto"));
+        assert_eq!(canonical_romaji("rokextsuto"), canonical_romaji("roketto"));
+        assert_eq!(canonical_romaji("rokeltuto"), canonical_romaji("roketto"));
+        assert_eq!(canonical_romaji("rokextuto"), canonical_romaji("roketto"));
+        // っ + ち系: `matcha` (まっちゃ) は kunrei `mattya` (m+a+tt+ya) と同一。
+        // `cha → tya` で `mat+cha → mat+tya = mattya`。
+        assert_eq!(canonical_romaji("matcha"), "mattya");
+        assert_eq!(canonical_romaji("maltsucha"), "mattya");
+        // 直後が母音や末尾の `ltu/xtu` は変換しない (意味的に異なる)。
+        assert_eq!(canonical_romaji("xtu"), "xtu");
+    }
+
+    #[test]
+    fn n_runs_preserve_ime_distinction() {
+        // type-globe は IME 流儀を「正」と定義 (タイピング練習として)。
+        // ん+ナ行 (3 連) と ん+母音 (2 連) は IME で異なる入力経路なので、
+        // canonical でも別物に保つ。
+        // - `sennnorikyuu` は せんのりきゅう (3 連 = ん + の)
+        // - `sennorikyuu` は せんおりきゅう (2 連 = ん + お)
+        assert_ne!(canonical_romaji("sennnorikyuu"), canonical_romaji("sennorikyuu"));
+        assert_eq!(canonical_romaji("sennnorikyuu"), "sennnorikyuu");
     }
 }

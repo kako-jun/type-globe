@@ -588,6 +588,81 @@ mod tests {
     }
 
     #[test]
+    fn user_reported_partial_typing_cases() {
+        // ユーザー報告された具体的なつまずきが現行 validator で通ることを担保。
+        let cases: &[(&str, &[&str])] = &[
+            // 美内すずえ Hepburn 部分入力 (217ba7c)
+            ("miuchisuzue", &["m", "mi", "miu", "miuc", "miuch", "miuchi", "miuchisuzue"]),
+            // 千利休 IME-wapuro 3連 n (v0.7.0 ん 厳密化)
+            ("sennnorikyuu", &["s", "se", "sen", "senn", "sennn", "sennno", "sennnorikyuu"]),
+            // スクウェア・エニックス IME alt path (uxe / ule)
+            (
+                "sukuweaenikkusu",
+                &["sukuwe", "sukuwea", "sukuuxea", "sukuulea", "sukuwea/enikkusu"],
+            ),
+            // ろけっと 明示的小っ
+            ("roketto", &["rokeltsuto", "rokextuto"]),
+            // ジェンナー (Wapuro 3連 n は v0.7.0 で正解形)
+            ("jennna-", &["j", "je", "jen", "jenn", "jennn", "jennna", "jennna-"]),
+        ];
+        for (registered, inputs) in cases {
+            let mut question = make_question(&["A", "B", "C", "D"], 0);
+            question.choices[0].ja_typings = vec![(*registered).into()];
+            let game = QuizGame::new(vec![question], Language::Japanese);
+            for input in *inputs {
+                assert!(
+                    game.is_valid_correct_typed_prefix(input),
+                    "candidate={registered:?} should accept input {input:?}"
+                );
+            }
+        }
+    }
+
+    /// 全 ja_typings に対して「先頭1文字→2文字→...→全文字」と打鍵していった
+    /// ときに、各 prefix が validator を通ることを確認する coverage テスト。
+    /// 既存データの IME 整合性 (ん 厳密化、digraph 別経路、促音 等) を一括で
+    /// 担保する。release ビルドで ~40ms と軽いので常時実行する。
+    #[test]
+    fn data_typings_are_prefix_typeable() {
+        let raw = include_str!("../../data/questions_ja.json");
+        let questions: Vec<Question> = serde_json::from_str(raw).expect("parse questions_ja.json");
+        let mut failures: Vec<String> = Vec::new();
+        for question in questions {
+            let correct_idx = question.correct_answer_index;
+            let typings = question.choices[correct_idx].ja_typings.clone();
+            for typing in typings {
+                let game =
+                    QuizGame::new(vec![question.clone()], Language::Japanese);
+                // 1文字ずつ伸ばして各 prefix を検証。
+                let chars: Vec<char> = typing.chars().collect();
+                for end in 1..=chars.len() {
+                    let prefix: String = chars[..end].iter().collect();
+                    if !game.is_valid_correct_typed_prefix(&prefix) {
+                        failures.push(format!(
+                            "{} (ja={:?}, typing={:?}) rejected at prefix {:?}",
+                            question.id,
+                            question.choices[correct_idx]
+                                .labels
+                                .get("ja")
+                                .cloned()
+                                .unwrap_or_default(),
+                            typing,
+                            prefix
+                        ));
+                        break;
+                    }
+                }
+            }
+        }
+        assert!(
+            failures.is_empty(),
+            "data prefix-typeability failures ({}):\n  {}",
+            failures.len(),
+            failures.join("\n  ")
+        );
+    }
+
+    #[test]
     fn valid_prefix_handles_japanese_romaji_variants() {
         let mut question = make_question(&["東京", "大阪", "京都", "名古屋"], 0);
         question.choices[0].ja_typings = vec!["tokyo".into(), "toukyou".into()];
