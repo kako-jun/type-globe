@@ -82,6 +82,37 @@ fn hiragana_to_hepburn_raw(input: &str) -> String {
             continue;
         }
 
+        // ん は IME-wapuro 仕様で出力する: 後続が母音 / ヤ行 / ナ行 のとき
+        // `nn` で打たないと ん が消費されて次音節と結合してしまうため、
+        // ローマ字側でも `nn` を出力する。それ以外 (子音 / 末尾) は `n` で
+        // 充分 (IME は次の子音 or 確定キーで ん をコミットする)。
+        if c == 'ん' {
+            let next_needs_nn = matches!(
+                chars.get(i + 1).copied(),
+                Some(
+                    'あ' | 'い'
+                        | 'う'
+                        | 'え'
+                        | 'お'
+                        | 'や'
+                        | 'ゆ'
+                        | 'よ'
+                        | 'ゃ'
+                        | 'ゅ'
+                        | 'ょ'
+                        | 'な'
+                        | 'に'
+                        | 'ぬ'
+                        | 'ね'
+                        | 'の'
+                )
+            );
+            out.push_str(if next_needs_nn { "nn" } else { "n" });
+            geminate = false;
+            i += 1;
+            continue;
+        }
+
         if let Some((roman, consumed)) = romanize_chunk(&chars[i..]) {
             if geminate {
                 if let Some(prefix) = geminate_prefix(roman) {
@@ -368,6 +399,22 @@ mod tests {
     fn keeps_n_before_bmp_as_plain_n() {
         assert_eq!(hiragana_to_hepburn("しんばし"), "shinbashi");
         assert_eq!(hiragana_to_hepburn("てんぷら"), "tenpura");
+    }
+
+    #[test]
+    fn doubles_n_before_vowel_y_or_n_row_for_ime() {
+        // IME-wapuro 仕様: ん + 母音 / ヤ行 / ナ行 は `nn` で打たないと
+        // 次音節と結合して ん が消える。例:
+        // - せんのりきゅう (千利休): ん+の → `sennnorikyuu` (3連)
+        // - ごめんなさい: ん+な → `gomennnasai` (3連)
+        // - かんおん (観音): ん+お → `kannon` (2連)
+        // - ほんやく (翻訳): ん+や → `honnyaku` (2連)
+        assert_eq!(hiragana_to_hepburn("せんのりきゅう"), "sennnorikyuu");
+        assert_eq!(hiragana_to_hepburn("ごめんなさい"), "gomennnasai");
+        assert_eq!(hiragana_to_hepburn("かんおん"), "kannon");
+        assert_eq!(hiragana_to_hepburn("ほんやく"), "honnyaku");
+        // 末尾の ん は単独 `n` (IME は次キー/確定で ん 化)
+        assert_eq!(hiragana_to_hepburn("どらごん"), "doragon");
     }
 
     #[test]

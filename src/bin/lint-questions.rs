@@ -136,12 +136,16 @@ fn find_ja_typing_errors(path: &str, questions: &[Question]) -> Vec<String> {
                 ));
             }
 
-            if choice.ja_typings.is_empty() && !contains_han(ja) {
+            // Pure-kana labels: ja_typings must match what `hiragana_to_hepburn`
+            // emits (IME-wapuro 正解形)。これで `gomennasai` のような IME 流儀で
+            // 別の読みになってしまう登録を自動検出する。漢字ラベルは読みが取れ
+            // ないので skip (人手レビュー対象)。
+            if !choice.ja_typings.is_empty() && !contains_han(ja) {
                 let expected = expected_ja_typings(ja);
                 if let Some(reason) = ja_typing_mismatch_reason(choice, &actual, &expected) {
                     errors.push(format!(
-                        "[ja_typings mismatch] question {} choice #{} expected {:?} but got {:?}: {}",
-                        question.id, choice_idx, expected, actual, reason
+                        "[ja_typings mismatch] question {} choice #{} ja={:?} expected {:?} but got {:?}: {}",
+                        question.id, choice_idx, ja, expected, actual, reason
                     ));
                 }
             }

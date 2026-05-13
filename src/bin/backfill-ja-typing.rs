@@ -43,14 +43,14 @@ fn main() -> ExitCode {
             let Some(ja) = obj.get("ja").and_then(Value::as_str) else {
                 continue;
             };
+            // 漢字を含むラベルは読みが取れないので人手登録に委ねる (skip)。
+            // ASCII / かな のみのラベルに限り上書き。
+            let Some(typings) = derive_ja_typings(ja) else {
+                continue;
+            };
             obj.insert(
                 "ja_typings".to_string(),
-                Value::Array(
-                    derive_ja_typings(ja)
-                        .into_iter()
-                        .map(Value::String)
-                        .collect(),
-                ),
+                Value::Array(typings.into_iter().map(Value::String).collect()),
             );
         }
     }
@@ -71,11 +71,17 @@ fn main() -> ExitCode {
     ExitCode::SUCCESS
 }
 
-fn derive_ja_typings(ja: &str) -> Vec<String> {
+fn derive_ja_typings(ja: &str) -> Option<Vec<String>> {
     match ja {
-        "酸素" => vec!["sanso".to_string()],
-        "鉄" => vec!["tetsu".to_string()],
-        _ if ja.is_ascii() => vec![ja.to_ascii_lowercase()],
-        _ => romaji::hiragana_to_hepburn_variants(ja),
+        "酸素" => Some(vec!["sanso".to_string()]),
+        "鉄" => Some(vec!["tetsu".to_string()]),
+        _ if ja.is_ascii() => Some(vec![ja.to_ascii_lowercase()]),
+        _ if contains_han(ja) => None,
+        _ => Some(romaji::hiragana_to_hepburn_variants(ja)),
     }
+}
+
+fn contains_han(s: &str) -> bool {
+    s.chars()
+        .any(|c| matches!(c as u32, 0x3400..=0x4DBF | 0x4E00..=0x9FFF | 0xF900..=0xFAFF))
 }
