@@ -2405,7 +2405,8 @@
         "en": "Venice",
         "ja_typings": [
           "benetsia",
-          "venetsuia"
+          "venetsuia",
+          "venetsia"
         ]
       },
       {
@@ -2433,7 +2434,8 @@
         "ja": "ソウル",
         "en": "Seoul",
         "ja_typings": [
-          "souru"
+          "souru",
+          "soru"
         ]
       },
       {
@@ -2557,7 +2559,8 @@
         "en": "Washington, D.C.",
         "ja_typings": [
           "washintondc",
-          "washintondi-shi-"
+          "washintondi-shi-",
+          "washintond.c."
         ]
       },
       {
@@ -3145,7 +3148,8 @@
         "ja": "ノヴォシビルスク",
         "en": "Novosibirsk",
         "ja_typings": [
-          "noboshibirusuku"
+          "noboshibirusuku",
+          "novoshibirusuku"
         ]
       },
       {
@@ -3173,7 +3177,8 @@
         "en": "Mexico City",
         "ja_typings": [
           "mekishikoshithi",
-          "mekishikoshitei"
+          "mekishikoshitei",
+          "mekishikoshiti"
         ]
       },
       {
@@ -3843,7 +3848,8 @@
         "ja": "アイスランド",
         "en": "Iceland",
         "ja_typings": [
-          "airusurando"
+          "airusurando",
+          "aisurando"
         ]
       },
       {
@@ -3878,7 +3884,8 @@
         "en": "Santiago",
         "ja_typings": [
           "santhiago",
-          "santeiago"
+          "santeiago",
+          "santiago"
         ]
       },
       {
@@ -4200,7 +4207,8 @@
         "ja": "O(log n)",
         "en": "O(log n)",
         "ja_typings": [
-          "o(logn)"
+          "o(logn)",
+          "o(log n)"
         ]
       },
       {
@@ -4248,7 +4256,8 @@
         "ja": "O(log n)",
         "en": "O(log n)",
         "ja_typings": [
-          "o(logn)"
+          "o(logn)",
+          "o(log n)"
         ]
       },
       {
@@ -4262,7 +4271,8 @@
         "ja": "O(n log n)",
         "en": "O(n log n)",
         "ja_typings": [
-          "o(nlogn)"
+          "o(nlogn)",
+          "o(n log n)"
         ]
       }
     ],
@@ -4282,7 +4292,8 @@
         "ja": "O(n log n)",
         "en": "O(n log n)",
         "ja_typings": [
-          "o(nlogn)"
+          "o(nlogn)",
+          "o(n log n)"
         ]
       },
       {
@@ -4303,7 +4314,8 @@
         "ja": "O(log n)",
         "en": "O(log n)",
         "ja_typings": [
-          "o(logn)"
+          "o(logn)",
+          "o(log n)"
         ]
       }
     ],
@@ -4330,7 +4342,8 @@
         "ja": "O(n log n)",
         "en": "O(n log n)",
         "ja_typings": [
-          "o(nlogn)"
+          "o(nlogn)",
+          "o(n log n)"
         ]
       },
       {
@@ -4378,7 +4391,8 @@
         "ja": "O(log n)",
         "en": "O(log n)",
         "ja_typings": [
-          "o(logn)"
+          "o(logn)",
+          "o(log n)"
         ]
       },
       {
@@ -5434,28 +5448,32 @@
         "ja": "`&`",
         "en": "`&`",
         "ja_typings": [
-          "&"
+          "&",
+          "`&`"
         ]
       },
       {
         "ja": "`*`",
         "en": "`*`",
         "ja_typings": [
-          "*"
+          "*",
+          "`*`"
         ]
       },
       {
         "ja": "`#`",
         "en": "`#`",
         "ja_typings": [
-          "#"
+          "#",
+          "`#`"
         ]
       },
       {
         "ja": "`@`",
         "en": "`@`",
         "ja_typings": [
-          "@"
+          "@",
+          "`@`"
         ]
       }
     ],
@@ -5475,28 +5493,32 @@
         "ja": "`*`",
         "en": "`*`",
         "ja_typings": [
-          "*"
+          "*",
+          "`*`"
         ]
       },
       {
         "ja": "`&`",
         "en": "`&`",
         "ja_typings": [
-          "&"
+          "&",
+          "`&`"
         ]
       },
       {
         "ja": "`%`",
         "en": "`%`",
         "ja_typings": [
-          "%"
+          "%",
+          "`%`"
         ]
       },
       {
         "ja": "`$`",
         "en": "`$`",
         "ja_typings": [
-          "$"
+          "$",
+          "`$`"
         ]
       }
     ],
@@ -5516,28 +5538,32 @@
         "ja": "`await`",
         "en": "`await`",
         "ja_typings": [
-          "await"
+          "await",
+          "`await`"
         ]
       },
       {
         "ja": "`yield`",
         "en": "`yield`",
         "ja_typings": [
-          "yield"
+          "yield",
+          "`yield`"
         ]
       },
       {
         "ja": "`return`",
         "en": "`return`",
         "ja_typings": [
-          "return"
+          "return",
+          "`return`"
         ]
       },
       {
         "ja": "`defer`",
         "en": "`defer`",
         "ja_typings": [
-          "defer"
+          "defer",
+          "`defer`"
         ]
       }
     ],
@@ -5557,28 +5583,32 @@
         "ja": "`async`",
         "en": "`async`",
         "ja_typings": [
-          "async"
+          "async",
+          "`async`"
         ]
       },
       {
         "ja": "`await`",
         "en": "`await`",
         "ja_typings": [
-          "await"
+          "await",
+          "`await`"
         ]
       },
       {
         "ja": "`def`",
         "en": "`def`",
         "ja_typings": [
-          "def"
+          "def",
+          "`def`"
         ]
       },
       {
         "ja": "`fn`",
         "en": "`fn`",
         "ja_typings": [
-          "fn"
+          "fn",
+          "`fn`"
         ]
       }
     ],
@@ -5598,28 +5628,32 @@
         "ja": "`def`",
         "en": "`def`",
         "ja_typings": [
-          "def"
+          "def",
+          "`def`"
         ]
       },
       {
         "ja": "`fn`",
         "en": "`fn`",
         "ja_typings": [
-          "fn"
+          "fn",
+          "`fn`"
         ]
       },
       {
         "ja": "`sub`",
         "en": "`sub`",
         "ja_typings": [
-          "sub"
+          "sub",
+          "`sub`"
         ]
       },
       {
         "ja": "`function`",
         "en": "`function`",
         "ja_typings": [
-          "function"
+          "function",
+          "`function`"
         ]
       }
     ],
@@ -5639,28 +5673,32 @@
         "ja": "`fn`",
         "en": "`fn`",
         "ja_typings": [
-          "fn"
+          "fn",
+          "`fn`"
         ]
       },
       {
         "ja": "`def`",
         "en": "`def`",
         "ja_typings": [
-          "def"
+          "def",
+          "`def`"
         ]
       },
       {
         "ja": "`sub`",
         "en": "`sub`",
         "ja_typings": [
-          "sub"
+          "sub",
+          "`sub`"
         ]
       },
       {
         "ja": "`function`",
         "en": "`function`",
         "ja_typings": [
-          "function"
+          "function",
+          "`function`"
         ]
       }
     ],
@@ -5680,28 +5718,32 @@
         "ja": "`func`",
         "en": "`func`",
         "ja_typings": [
-          "func"
+          "func",
+          "`func`"
         ]
       },
       {
         "ja": "`def`",
         "en": "`def`",
         "ja_typings": [
-          "def"
+          "def",
+          "`def`"
         ]
       },
       {
         "ja": "`fn`",
         "en": "`fn`",
         "ja_typings": [
-          "fn"
+          "fn",
+          "`fn`"
         ]
       },
       {
         "ja": "`sub`",
         "en": "`sub`",
         "ja_typings": [
-          "sub"
+          "sub",
+          "`sub`"
         ]
       }
     ],
@@ -5721,28 +5763,32 @@
         "ja": "デニス・リッチー",
         "en": "Dennis Ritchie",
         "ja_typings": [
-          "denisuritchi-"
+          "denisuritchi-",
+          "denisu/ritchi-"
         ]
       },
       {
         "ja": "ビャーネ・ストロヴストルップ",
         "en": "Bjarne Stroustrup",
         "ja_typings": [
-          "bya-nesutorovusutoruppu"
+          "bya-nesutorovusutoruppu",
+          "bya-ne/sutorovusutoruppu"
         ]
       },
       {
         "ja": "ジェームズ・ゴスリン",
         "en": "James Gosling",
         "ja_typings": [
-          "je-muzugosurin"
+          "je-muzugosurin",
+          "je-muzu/gosurin"
         ]
       },
       {
         "ja": "グイド・ヴァン・ロッサム",
         "en": "Guido van Rossum",
         "ja_typings": [
-          "guidovanrossamu"
+          "guidovanrossamu",
+          "guido/van/rossamu"
         ]
       }
     ],
@@ -5762,28 +5808,32 @@
         "ja": "グイド・ヴァン・ロッサム",
         "en": "Guido van Rossum",
         "ja_typings": [
-          "guidovanrossamu"
+          "guidovanrossamu",
+          "guido/van/rossamu"
         ]
       },
       {
         "ja": "デニス・リッチー",
         "en": "Dennis Ritchie",
         "ja_typings": [
-          "denisuritchi-"
+          "denisuritchi-",
+          "denisu/ritchi-"
         ]
       },
       {
         "ja": "ラリー・ウォール",
         "en": "Larry Wall",
         "ja_typings": [
-          "rari-uo-ru"
+          "rari-uo-ru",
+          "rari-/wo-ru"
         ]
       },
       {
         "ja": "リーナス・トーバルズ",
         "en": "Linus Torvalds",
         "ja_typings": [
-          "ri-nasuto-baruzu"
+          "ri-nasuto-baruzu",
+          "ri-nasu/to-baruzu"
         ]
       }
     ],
@@ -5803,28 +5853,32 @@
         "ja": "リーナス・トーバルズ",
         "en": "Linus Torvalds",
         "ja_typings": [
-          "ri-nasuto-baruzu"
+          "ri-nasuto-baruzu",
+          "ri-nasu/to-baruzu"
         ]
       },
       {
         "ja": "リチャード・ストールマン",
         "en": "Richard Stallman",
         "ja_typings": [
-          "richa-dosuto-ruman"
+          "richa-dosuto-ruman",
+          "richa-do/suto-ruman"
         ]
       },
       {
         "ja": "ケン・トンプソン",
         "en": "Ken Thompson",
         "ja_typings": [
-          "kentonpuson"
+          "kentonpuson",
+          "ken/tonpuson"
         ]
       },
       {
         "ja": "ビル・ジョイ",
         "en": "Bill Joy",
         "ja_typings": [
-          "birujoi"
+          "birujoi",
+          "biru/joi"
         ]
       }
     ],
@@ -5844,28 +5898,32 @@
         "ja": "ビャーネ・ストロヴストルップ",
         "en": "Bjarne Stroustrup",
         "ja_typings": [
-          "bya-nesutorovusutoruppu"
+          "bya-nesutorovusutoruppu",
+          "bya-ne/sutorovusutoruppu"
         ]
       },
       {
         "ja": "デニス・リッチー",
         "en": "Dennis Ritchie",
         "ja_typings": [
-          "denisuritchi-"
+          "denisuritchi-",
+          "denisu/ritchi-"
         ]
       },
       {
         "ja": "ジェームズ・ゴスリン",
         "en": "James Gosling",
         "ja_typings": [
-          "je-muzugosurin"
+          "je-muzugosurin",
+          "je-muzu/gosurin"
         ]
       },
       {
         "ja": "ブレンダン・アイク",
         "en": "Brendan Eich",
         "ja_typings": [
-          "burendannaiku"
+          "burendannaiku",
+          "burendan/aiku"
         ]
       }
     ],
@@ -5885,28 +5943,32 @@
         "ja": "ブレンダン・アイク",
         "en": "Brendan Eich",
         "ja_typings": [
-          "burendannaiku"
+          "burendannaiku",
+          "burendan/aiku"
         ]
       },
       {
         "ja": "ジェームズ・ゴスリン",
         "en": "James Gosling",
         "ja_typings": [
-          "je-muzugosurin"
+          "je-muzugosurin",
+          "je-muzu/gosurin"
         ]
       },
       {
         "ja": "ティム・バーナーズ＝リー",
         "en": "Tim Berners-Lee",
         "ja_typings": [
-          "timuba-na-zuri-"
+          "timuba-na-zuri-",
+          "timu/ba-na-zuri-"
         ]
       },
       {
         "ja": "ラリー・ウォール",
         "en": "Larry Wall",
         "ja_typings": [
-          "rari-uo-ru"
+          "rari-uo-ru",
+          "rari-/wo-ru"
         ]
       }
     ],
@@ -5926,7 +5988,8 @@
         "ja": "サン・マイクロシステムズ",
         "en": "Sun Microsystems",
         "ja_typings": [
-          "sanmaikuroshisutemuzu"
+          "sanmaikuroshisutemuzu",
+          "san/maikuroshisutemuzu"
         ]
       },
       {
@@ -6008,28 +6071,32 @@
         "ja": "リーナス・トーバルズ",
         "en": "Linus Torvalds",
         "ja_typings": [
-          "ri-nasuto-baruzu"
+          "ri-nasuto-baruzu",
+          "ri-nasu/to-baruzu"
         ]
       },
       {
         "ja": "リチャード・ストールマン",
         "en": "Richard Stallman",
         "ja_typings": [
-          "richa-dosuto-ruman"
+          "richa-dosuto-ruman",
+          "richa-do/suto-ruman"
         ]
       },
       {
         "ja": "ジュニオ・ハマノ",
         "en": "Junio Hamano",
         "ja_typings": [
-          "junioohamano"
+          "junioohamano",
+          "junio/hamano"
         ]
       },
       {
         "ja": "ブライアン・カーニハン",
         "en": "Brian Kernighan",
         "ja_typings": [
-          "buraianka-nihan"
+          "buraianka-nihan",
+          "buraian/ka-nihan"
         ]
       }
     ],
@@ -6049,28 +6116,32 @@
         "ja": "リチャード・ストールマン",
         "en": "Richard Stallman",
         "ja_typings": [
-          "richa-dosuto-ruman"
+          "richa-dosuto-ruman",
+          "richa-do/suto-ruman"
         ]
       },
       {
         "ja": "リーナス・トーバルズ",
         "en": "Linus Torvalds",
         "ja_typings": [
-          "ri-nasuto-baruzu"
+          "ri-nasuto-baruzu",
+          "ri-nasu/to-baruzu"
         ]
       },
       {
         "ja": "ケン・トンプソン",
         "en": "Ken Thompson",
         "ja_typings": [
-          "kentonpuson"
+          "kentonpuson",
+          "ken/tonpuson"
         ]
       },
       {
         "ja": "デニス・リッチー",
         "en": "Dennis Ritchie",
         "ja_typings": [
-          "denisuritchi-"
+          "denisuritchi-",
+          "denisu/ritchi-"
         ]
       }
     ],
@@ -6592,7 +6663,8 @@
         "ja": "Docker Compose",
         "en": "Docker Compose",
         "ja_typings": [
-          "dockercompose"
+          "dockercompose",
+          "docker compose"
         ]
       },
       {
@@ -6708,7 +6780,8 @@
         "ja": "Not Found",
         "en": "Not Found",
         "ja_typings": [
-          "notfound"
+          "notfound",
+          "not found"
         ]
       },
       {
@@ -6729,7 +6802,8 @@
         "ja": "Internal Server Error",
         "en": "Internal Server Error",
         "ja_typings": [
-          "internalservererror"
+          "internalservererror",
+          "internal server error"
         ]
       }
     ],
@@ -6756,14 +6830,16 @@
         "ja": "Not Found",
         "en": "Not Found",
         "ja_typings": [
-          "notfound"
+          "notfound",
+          "not found"
         ]
       },
       {
         "ja": "Bad Request",
         "en": "Bad Request",
         "ja_typings": [
-          "badrequest"
+          "badrequest",
+          "bad request"
         ]
       },
       {
@@ -6955,28 +7031,32 @@
         "ja": "JavaScript Object Notation",
         "en": "JavaScript Object Notation",
         "ja_typings": [
-          "javascriptobjectnotation"
+          "javascriptobjectnotation",
+          "javascript object notation"
         ]
       },
       {
         "ja": "Java Source Object Network",
         "en": "Java Source Object Network",
         "ja_typings": [
-          "javasourceobjectnetwork"
+          "javasourceobjectnetwork",
+          "java source object network"
         ]
       },
       {
         "ja": "Joint Standard Object Notation",
         "en": "Joint Standard Object Notation",
         "ja_typings": [
-          "jointstandardobjectnotation"
+          "jointstandardobjectnotation",
+          "joint standard object notation"
         ]
       },
       {
         "ja": "JavaScript Open Network",
         "en": "JavaScript Open Network",
         "ja_typings": [
-          "javascriptopennetwork"
+          "javascriptopennetwork",
+          "javascript open network"
         ]
       }
     ],
@@ -7130,7 +7210,8 @@
         "ja": "メモリリーク",
         "en": "Memory Leak",
         "ja_typings": [
-          "memori-ku"
+          "memori-ku",
+          "memoriri-ku"
         ]
       },
       {
@@ -7336,21 +7417,24 @@
         "ja": "リーナス・トーバルズ",
         "en": "Linus Torvalds",
         "ja_typings": [
-          "ri-nasuto-baruzu"
+          "ri-nasuto-baruzu",
+          "ri-nasu/to-baruzu"
         ]
       },
       {
         "ja": "ラリー・ウォール",
         "en": "Larry Wall",
         "ja_typings": [
-          "rari-uo-ru"
+          "rari-uo-ru",
+          "rari-/wo-ru"
         ]
       },
       {
         "ja": "グイド・ヴァン・ロッサム",
         "en": "Guido van Rossum",
         "ja_typings": [
-          "guidovanrossamu"
+          "guidovanrossamu",
+          "guido/van/rossamu"
         ]
       }
     ],
@@ -7370,7 +7454,8 @@
         "ja": "ラリー・ウォール",
         "en": "Larry Wall",
         "ja_typings": [
-          "rari-uo-ru"
+          "rari-uo-ru",
+          "rari-/wo-ru"
         ]
       },
       {
@@ -7384,14 +7469,16 @@
         "ja": "ブレンダン・アイク",
         "en": "Brendan Eich",
         "ja_typings": [
-          "burendannaiku"
+          "burendannaiku",
+          "burendan/aiku"
         ]
       },
       {
         "ja": "デニス・リッチー",
         "en": "Dennis Ritchie",
         "ja_typings": [
-          "denisuritchi-"
+          "denisuritchi-",
+          "denisu/ritchi-"
         ]
       }
     ],
@@ -7787,7 +7874,8 @@
         "ja": "Tailwind CSS",
         "en": "Tailwind CSS",
         "ja_typings": [
-          "tailwindcss"
+          "tailwindcss",
+          "tailwind css"
         ]
       },
       {
@@ -7821,28 +7909,32 @@
         "ja": "`<img>` タグ",
         "en": "`<img>` tag",
         "ja_typings": [
-          "imgtagu"
+          "imgtagu",
+          "img tagu"
         ]
       },
       {
         "ja": "`<picture>` タグ",
         "en": "`<picture>` tag",
         "ja_typings": [
-          "picturetagu"
+          "picturetagu",
+          "picture tagu"
         ]
       },
       {
         "ja": "`<figure>` タグ",
         "en": "`<figure>` tag",
         "ja_typings": [
-          "figuretagu"
+          "figuretagu",
+          "figure tagu"
         ]
       },
       {
         "ja": "`<canvas>` タグ",
         "en": "`<canvas>` tag",
         "ja_typings": [
-          "canvastagu"
+          "canvastagu",
+          "canvas tagu"
         ]
       }
     ],
@@ -7903,28 +7995,32 @@
         "ja": "`<a>` タグ",
         "en": "`<a>` tag",
         "ja_typings": [
-          "atagu"
+          "atagu",
+          "a tagu"
         ]
       },
       {
         "ja": "`<link>` タグ",
         "en": "`<link>` tag",
         "ja_typings": [
-          "linktagu"
+          "linktagu",
+          "link tagu"
         ]
       },
       {
         "ja": "`<nav>` タグ",
         "en": "`<nav>` tag",
         "ja_typings": [
-          "navtagu"
+          "navtagu",
+          "nav tagu"
         ]
       },
       {
         "ja": "`<href>` タグ",
         "en": "`<href>` tag",
         "ja_typings": [
-          "hreftagu"
+          "hreftagu",
+          "href tagu"
         ]
       }
     ],
@@ -7944,28 +8040,32 @@
         "ja": "`<video>` タグ",
         "en": "`<video>` tag",
         "ja_typings": [
-          "videotagu"
+          "videotagu",
+          "video tagu"
         ]
       },
       {
         "ja": "`<movie>` タグ",
         "en": "`<movie>` tag",
         "ja_typings": [
-          "movietagu"
+          "movietagu",
+          "movie tagu"
         ]
       },
       {
         "ja": "`<media>` タグ",
         "en": "`<media>` tag",
         "ja_typings": [
-          "mediatagu"
+          "mediatagu",
+          "media tagu"
         ]
       },
       {
         "ja": "`<embed>` タグ",
         "en": "`<embed>` tag",
         "ja_typings": [
-          "embedtagu"
+          "embedtagu",
+          "embed tagu"
         ]
       }
     ],
@@ -7985,28 +8085,32 @@
         "ja": "`display: flex`",
         "en": "`display: flex`",
         "ja_typings": [
-          "displayflex"
+          "displayflex",
+          "`display: flex`"
         ]
       },
       {
         "ja": "`display: grid`",
         "en": "`display: grid`",
         "ja_typings": [
-          "displaygrid"
+          "displaygrid",
+          "`display: grid`"
         ]
       },
       {
         "ja": "`display: block`",
         "en": "`display: block`",
         "ja_typings": [
-          "displayblock"
+          "displayblock",
+          "`display: block`"
         ]
       },
       {
         "ja": "`display: inline`",
         "en": "`display: inline`",
         "ja_typings": [
-          "displayinline"
+          "displayinline",
+          "`display: inline`"
         ]
       }
     ],
@@ -8026,7 +8130,8 @@
         "ja": "CSS Grid",
         "en": "CSS Grid",
         "ja_typings": [
-          "cssgrid"
+          "cssgrid",
+          "css grid"
         ]
       },
       {
@@ -8067,28 +8172,32 @@
         "ja": "`margin`",
         "en": "`margin`",
         "ja_typings": [
-          "margin"
+          "margin",
+          "`margin`"
         ]
       },
       {
         "ja": "`padding`",
         "en": "`padding`",
         "ja_typings": [
-          "padding"
+          "padding",
+          "`padding`"
         ]
       },
       {
         "ja": "`border`",
         "en": "`border`",
         "ja_typings": [
-          "border"
+          "border",
+          "`border`"
         ]
       },
       {
         "ja": "`gap`",
         "en": "`gap`",
         "ja_typings": [
-          "gap"
+          "gap",
+          "`gap`"
         ]
       }
     ],
@@ -8108,28 +8217,32 @@
         "ja": "`padding`",
         "en": "`padding`",
         "ja_typings": [
-          "padding"
+          "padding",
+          "`padding`"
         ]
       },
       {
         "ja": "`margin`",
         "en": "`margin`",
         "ja_typings": [
-          "margin"
+          "margin",
+          "`margin`"
         ]
       },
       {
         "ja": "`spacing`",
         "en": "`spacing`",
         "ja_typings": [
-          "spacing"
+          "spacing",
+          "`spacing`"
         ]
       },
       {
         "ja": "`inset`",
         "en": "`inset`",
         "ja_typings": [
-          "inset"
+          "inset",
+          "`inset`"
         ]
       }
     ],
@@ -8149,28 +8262,32 @@
         "ja": "`#`",
         "en": "`#`",
         "ja_typings": [
-          "sharp"
+          "sharp",
+          "`#`"
         ]
       },
       {
         "ja": "`.`",
         "en": "`.`",
         "ja_typings": [
-          "dot"
+          "dot",
+          "`.`"
         ]
       },
       {
         "ja": "`@`",
         "en": "`@`",
         "ja_typings": [
-          "at"
+          "at",
+          "`@`"
         ]
       },
       {
         "ja": "`&`",
         "en": "`&`",
         "ja_typings": [
-          "ampersand"
+          "ampersand",
+          "`&`"
         ]
       }
     ],
@@ -8190,28 +8307,32 @@
         "ja": "`.`",
         "en": "`.`",
         "ja_typings": [
-          "dot"
+          "dot",
+          "`.`"
         ]
       },
       {
         "ja": "`#`",
         "en": "`#`",
         "ja_typings": [
-          "sharp"
+          "sharp",
+          "`#`"
         ]
       },
       {
         "ja": "`*`",
         "en": "`*`",
         "ja_typings": [
-          "asterisk"
+          "asterisk",
+          "`*`"
         ]
       },
       {
         "ja": "`:`",
         "en": "`:`",
         "ja_typings": [
-          "colon"
+          "colon",
+          "`:`"
         ]
       }
     ],
@@ -8231,28 +8352,32 @@
         "ja": "`const`",
         "en": "`const`",
         "ja_typings": [
-          "const"
+          "const",
+          "`const`"
         ]
       },
       {
         "ja": "`let`",
         "en": "`let`",
         "ja_typings": [
-          "let"
+          "let",
+          "`let`"
         ]
       },
       {
         "ja": "`var`",
         "en": "`var`",
         "ja_typings": [
-          "var"
+          "var",
+          "`var`"
         ]
       },
       {
         "ja": "`final`",
         "en": "`final`",
         "ja_typings": [
-          "final"
+          "final",
+          "`final`"
         ]
       }
     ],
@@ -8313,28 +8438,32 @@
         "ja": "`===`",
         "en": "`===`",
         "ja_typings": [
-          "tripleequal"
+          "tripleequal",
+          "`===`"
         ]
       },
       {
         "ja": "`==`",
         "en": "`==`",
         "ja_typings": [
-          "doubleequal"
+          "doubleequal",
+          "`==`"
         ]
       },
       {
         "ja": "`=`",
         "en": "`=`",
         "ja_typings": [
-          "singleequal"
+          "singleequal",
+          "`=`"
         ]
       },
       {
         "ja": "`!=`",
         "en": "`!=`",
         "ja_typings": [
-          "notequal"
+          "notequal",
+          "`!=`"
         ]
       }
     ],
@@ -8354,28 +8483,32 @@
         "ja": "`map`",
         "en": "`map`",
         "ja_typings": [
-          "map"
+          "map",
+          "`map`"
         ]
       },
       {
         "ja": "`forEach`",
         "en": "`forEach`",
         "ja_typings": [
-          "foreach"
+          "foreach",
+          "`foreach`"
         ]
       },
       {
         "ja": "`filter`",
         "en": "`filter`",
         "ja_typings": [
-          "filter"
+          "filter",
+          "`filter`"
         ]
       },
       {
         "ja": "`reduce`",
         "en": "`reduce`",
         "ja_typings": [
-          "reduce"
+          "reduce",
+          "`reduce`"
         ]
       }
     ],
@@ -8395,28 +8528,32 @@
         "ja": "`filter`",
         "en": "`filter`",
         "ja_typings": [
-          "filter"
+          "filter",
+          "`filter`"
         ]
       },
       {
         "ja": "`map`",
         "en": "`map`",
         "ja_typings": [
-          "map"
+          "map",
+          "`map`"
         ]
       },
       {
         "ja": "`find`",
         "en": "`find`",
         "ja_typings": [
-          "find"
+          "find",
+          "`find`"
         ]
       },
       {
         "ja": "`some`",
         "en": "`some`",
         "ja_typings": [
-          "some"
+          "some",
+          "`some`"
         ]
       }
     ],
@@ -8600,14 +8737,16 @@
         "ja": "Next.js",
         "en": "Next.js",
         "ja_typings": [
-          "nextjs"
+          "nextjs",
+          "next.js"
         ]
       },
       {
         "ja": "Nuxt.js",
         "en": "Nuxt.js",
         "ja_typings": [
-          "nuxtjs"
+          "nuxtjs",
+          "nuxt.js"
         ]
       },
       {
@@ -8689,14 +8828,16 @@
         "ja": "Next.js",
         "en": "Next.js",
         "ja_typings": [
-          "nextjs"
+          "nextjs",
+          "next.js"
         ]
       },
       {
         "ja": "Nuxt.js",
         "en": "Nuxt.js",
         "ja_typings": [
-          "nuxtjs"
+          "nuxtjs",
+          "nuxt.js"
         ]
       },
       {
@@ -8928,7 +9069,8 @@
         "ja": "OpenID Connect",
         "en": "OpenID Connect",
         "ja_typings": [
-          "openidconnect"
+          "openidconnect",
+          "openid connect"
         ]
       },
       {
@@ -8983,14 +9125,16 @@
         "ja": "Session ID",
         "en": "Session ID",
         "ja_typings": [
-          "sessionid"
+          "sessionid",
+          "session id"
         ]
       },
       {
         "ja": "API Key",
         "en": "API Key",
         "ja_typings": [
-          "apikey"
+          "apikey",
+          "api key"
         ]
       }
     ],
@@ -9024,7 +9168,8 @@
         "ja": "SQL インジェクション",
         "en": "SQL injection",
         "ja_typings": [
-          "sqlinjekushon"
+          "sqlinjekushon",
+          "sql injekushon"
         ]
       },
       {
@@ -9133,28 +9278,32 @@
         "ja": "Content-Security-Policy",
         "en": "Content-Security-Policy",
         "ja_typings": [
-          "contentsecuritypolicy"
+          "contentsecuritypolicy",
+          "content-security-policy"
         ]
       },
       {
         "ja": "X-Frame-Options",
         "en": "X-Frame-Options",
         "ja_typings": [
-          "xframeoptions"
+          "xframeoptions",
+          "x-frame-options"
         ]
       },
       {
         "ja": "Strict-Transport-Security",
         "en": "Strict-Transport-Security",
         "ja_typings": [
-          "stricttransportsecurity"
+          "stricttransportsecurity",
+          "strict-transport-security"
         ]
       },
       {
         "ja": "Referrer-Policy",
         "en": "Referrer-Policy",
         "ja_typings": [
-          "referrerpolicy"
+          "referrerpolicy",
+          "referrer-policy"
         ]
       }
     ],
@@ -9400,7 +9549,8 @@
         "ja": "DNS Lookup",
         "en": "DNS Lookup",
         "ja_typings": [
-          "dnslookup"
+          "dnslookup",
+          "dns lookup"
         ]
       }
     ],
@@ -9461,28 +9611,32 @@
         "ja": "Document Object Model",
         "en": "Document Object Model",
         "ja_typings": [
-          "documentobjectmodel"
+          "documentobjectmodel",
+          "document object model"
         ]
       },
       {
         "ja": "Data Object Model",
         "en": "Data Object Model",
         "ja_typings": [
-          "dataobjectmodel"
+          "dataobjectmodel",
+          "data object model"
         ]
       },
       {
         "ja": "Display Object Model",
         "en": "Display Object Model",
         "ja_typings": [
-          "displayobjectmodel"
+          "displayobjectmodel",
+          "display object model"
         ]
       },
       {
         "ja": "Dynamic Object Module",
         "en": "Dynamic Object Module",
         "ja_typings": [
-          "dynamicobjectmodule"
+          "dynamicobjectmodule",
+          "dynamic object module"
         ]
       }
     ],
@@ -9502,21 +9656,24 @@
         "ja": "Service Worker",
         "en": "Service Worker",
         "ja_typings": [
-          "serviceworker"
+          "serviceworker",
+          "service worker"
         ]
       },
       {
         "ja": "Web Worker",
         "en": "Web Worker",
         "ja_typings": [
-          "webworker"
+          "webworker",
+          "web worker"
         ]
       },
       {
         "ja": "Shared Worker",
         "en": "Shared Worker",
         "ja_typings": [
-          "sharedworker"
+          "sharedworker",
+          "shared worker"
         ]
       },
       {
@@ -9550,14 +9707,16 @@
         "ja": "HTTP/1.1",
         "en": "HTTP/1.1",
         "ja_typings": [
-          "http11"
+          "http11",
+          "http/1.1"
         ]
       },
       {
         "ja": "Long Polling",
         "en": "Long Polling",
         "ja_typings": [
-          "longpolling"
+          "longpolling",
+          "long polling"
         ]
       },
       {
@@ -9728,7 +9887,8 @@
         "ja": "Cache Storage",
         "en": "Cache Storage",
         "ja_typings": [
-          "cachestorage"
+          "cachestorage",
+          "cache storage"
         ]
       }
     ],
@@ -9748,21 +9908,24 @@
         "ja": "CSS プリプロセッサ",
         "en": "CSS preprocessors",
         "ja_typings": [
-          "csspuripurosessa"
+          "csspuripurosessa",
+          "css puripurosessa"
         ]
       },
       {
         "ja": "CSS フレームワーク",
         "en": "CSS frameworks",
         "ja_typings": [
-          "cssfure-muwa-ku"
+          "cssfure-muwa-ku",
+          "css fure-muwa-ku"
         ]
       },
       {
         "ja": "JavaScript ランタイム",
         "en": "JavaScript runtimes",
         "ja_typings": [
-          "javascriptrantaimu"
+          "javascriptrantaimu",
+          "javascript rantaimu"
         ]
       },
       {
@@ -9789,7 +9952,8 @@
         "ja": "Tailwind CSS",
         "en": "Tailwind CSS",
         "ja_typings": [
-          "tailwindcss"
+          "tailwindcss",
+          "tailwind css"
         ]
       },
       {
@@ -10452,7 +10616,8 @@
         "ja": "スイッチ",
         "en": "Switch",
         "ja_typings": [
-          "suicchi"
+          "suicchi",
+          "suitchi"
         ]
       },
       {
@@ -11918,7 +12083,8 @@
         "en": "MARK I",
         "ja_typings": [
           "marki",
-          "mark1"
+          "mark1",
+          "mark i"
         ]
       }
     ],
@@ -12355,7 +12521,8 @@
         "ja": "プロダクトオーナー",
         "en": "Product Owner",
         "ja_typings": [
-          "purodakutoo-na-"
+          "purodakutoo-na-",
+          "purodakuto-na-"
         ]
       },
       {
@@ -12799,28 +12966,32 @@
         "ja": "PCI DSS",
         "en": "PCI DSS",
         "ja_typings": [
-          "pcidss"
+          "pcidss",
+          "pci dss"
         ]
       },
       {
         "ja": "ISO 27001",
         "en": "ISO 27001",
         "ja_typings": [
-          "iso27001"
+          "iso27001",
+          "iso 27001"
         ]
       },
       {
         "ja": "SOC 2",
         "en": "SOC 2",
         "ja_typings": [
-          "soc2"
+          "soc2",
+          "soc 2"
         ]
       },
       {
         "ja": "FIPS 140",
         "en": "FIPS 140",
         "ja_typings": [
-          "fips140"
+          "fips140",
+          "fips 140"
         ]
       }
     ],
@@ -12888,7 +13059,8 @@
         "ja": "レトロスペクティブ",
         "en": "Retrospective",
         "ja_typings": [
-          "retorosupekuteibu"
+          "retorosupekuteibu",
+          "retorosupekutibu"
         ]
       },
       {
@@ -12922,7 +13094,8 @@
         "ja": "RC (Release Candidate)",
         "en": "RC (Release Candidate)",
         "ja_typings": [
-          "rc"
+          "rc",
+          "rc (release candidate)"
         ]
       },
       {
@@ -13066,7 +13239,8 @@
         "ja": "Aurora Serverless",
         "en": "Aurora Serverless",
         "ja_typings": [
-          "auroraserverless"
+          "auroraserverless",
+          "aurora serverless"
         ]
       }
     ],
@@ -13291,7 +13465,8 @@
         "ja": "MIT License",
         "en": "MIT License",
         "ja_typings": [
-          "mit"
+          "mit",
+          "mit license"
         ]
       },
       {
@@ -13332,7 +13507,8 @@
         "ja": "Route 53",
         "en": "Route 53",
         "ja_typings": [
-          "route53"
+          "route53",
+          "route 53"
         ]
       },
       {
@@ -13346,14 +13522,16 @@
         "ja": "API Gateway",
         "en": "API Gateway",
         "ja_typings": [
-          "apigateway"
+          "apigateway",
+          "api gateway"
         ]
       },
       {
         "ja": "Direct Connect",
         "en": "Direct Connect",
         "ja_typings": [
-          "directconnect"
+          "directconnect",
+          "direct connect"
         ]
       }
     ],
@@ -13537,7 +13715,8 @@
         "ja": "WIT STUDIO",
         "en": "WIT STUDIO",
         "ja_typings": [
-          "wittosutajio"
+          "wittosutajio",
+          "wit studio"
         ]
       },
       {
@@ -13558,7 +13737,8 @@
         "ja": "プロダクションI.G",
         "en": "Production I.G",
         "ja_typings": [
-          "purodakushonaiji-"
+          "purodakushonaiji-",
+          "purodakushoni.g"
         ]
       }
     ],
@@ -13715,7 +13895,8 @@
         "ja": "A-1 Pictures",
         "en": "A-1 Pictures",
         "ja_typings": [
-          "a-1pikucha-zu"
+          "a-1pikucha-zu",
+          "a-1 pictures"
         ]
       },
       {
@@ -14337,7 +14518,8 @@
         "ja": "プロダクションI.G",
         "en": "Production I.G",
         "ja_typings": [
-          "purodakushonaiji-"
+          "purodakushonaiji-",
+          "purodakushoni.g"
         ]
       }
     ],
@@ -14849,14 +15031,16 @@
         "ja": "モンキー・D・ルフィ",
         "en": "Monkey D. Luffy",
         "ja_typings": [
-          "monki-di-rufi"
+          "monki-di-rufi",
+          "monki-/d/rufi"
         ]
       },
       {
         "ja": "ロロノア・ゾロ",
         "en": "Roronoa Zoro",
         "ja_typings": [
-          "roronoazoro"
+          "roronoazoro",
+          "roronoa/zoro"
         ]
       },
       {
@@ -15097,28 +15281,32 @@
         "ja": "エレン・イェーガー",
         "en": "Eren Yeager",
         "ja_typings": [
-          "erennie-ga-"
+          "erennie-ga-",
+          "eren/ye-ga-"
         ]
       },
       {
         "ja": "ミカサ・アッカーマン",
         "en": "Mikasa Ackerman",
         "ja_typings": [
-          "mikasaakka-man"
+          "mikasaakka-man",
+          "mikasa/akka-man"
         ]
       },
       {
         "ja": "アルミン・アルレルト",
         "en": "Armin Arlert",
         "ja_typings": [
-          "aruminnaruteruto"
+          "aruminnaruteruto",
+          "arumin/arureruto"
         ]
       },
       {
         "ja": "リヴァイ・アッカーマン",
         "en": "Levi Ackerman",
         "ja_typings": [
-          "rivaiakka-man"
+          "rivaiakka-man",
+          "rivai/akka-man"
         ]
       }
     ],
@@ -15146,7 +15334,8 @@
         "en": "Lawliet",
         "ja_typings": [
           "eru",
-          "lawliet"
+          "lawliet",
+          "l"
         ]
       },
       {
@@ -15263,28 +15452,32 @@
         "ja": "アムロ・レイ",
         "en": "Amuro Ray",
         "ja_typings": [
-          "amurorei"
+          "amurorei",
+          "amuro/rei"
         ]
       },
       {
         "ja": "シャア・アズナブル",
         "en": "Char Aznable",
         "ja_typings": [
-          "shaaazunaburu"
+          "shaaazunaburu",
+          "shaa/azunaburu"
         ]
       },
       {
         "ja": "カミーユ・ビダン",
         "en": "Kamille Bidan",
         "ja_typings": [
-          "kami-yubidan"
+          "kami-yubidan",
+          "kami-yu/bidan"
         ]
       },
       {
         "ja": "ジュドー・アーシタ",
         "en": "Judau Ashta",
         "ja_typings": [
-          "judoua-shita"
+          "judoua-shita",
+          "judo-/a-shita"
         ]
       }
     ],
@@ -15386,28 +15579,32 @@
         "ja": "ロイド・フォージャー",
         "en": "Loid Forger",
         "ja_typings": [
-          "roidofo-ja-"
+          "roidofo-ja-",
+          "roido/fo-ja-"
         ]
       },
       {
         "ja": "ヨル・フォージャー",
         "en": "Yor Forger",
         "ja_typings": [
-          "yorufo-ja-"
+          "yorufo-ja-",
+          "yoru/fo-ja-"
         ]
       },
       {
         "ja": "アーニャ・フォージャー",
         "en": "Anya Forger",
         "ja_typings": [
-          "a-nyafo-ja-"
+          "a-nyafo-ja-",
+          "a-nya/fo-ja-"
         ]
       },
       {
         "ja": "ユーリ・ブライア",
         "en": "Yuri Briar",
         "ja_typings": [
-          "yu-riburaia"
+          "yu-riburaia",
+          "yu-ri/buraia"
         ]
       }
     ],
@@ -15557,7 +15754,8 @@
         "ja": "ジョナサン・ジョースター",
         "en": "Jonathan Joestar",
         "ja_typings": [
-          "jonasanjo-suta-"
+          "jonasanjo-suta-",
+          "jonasan/jo-suta-"
         ]
       },
       {
@@ -15571,7 +15769,8 @@
         "ja": "ジョルノ・ジョバァーナ",
         "en": "Giorno Giovanna",
         "ja_typings": [
-          "jorunojoba-na"
+          "jorunojoba-na",
+          "joruno/jobaa-na"
         ]
       }
     ],
@@ -15605,7 +15804,8 @@
         "ja": "WIT STUDIO",
         "en": "WIT STUDIO",
         "ja_typings": [
-          "wittosutajio"
+          "wittosutajio",
+          "wit studio"
         ]
       },
       {
@@ -15714,28 +15914,32 @@
         "ja": "エドワード・エルリック",
         "en": "Edward Elric",
         "ja_typings": [
-          "edowa-doerurikku"
+          "edowa-doerurikku",
+          "edowa-do/erurikku"
         ]
       },
       {
         "ja": "アルフォンス・エルリック",
         "en": "Alphonse Elric",
         "ja_typings": [
-          "arufonsuerurikku"
+          "arufonsuerurikku",
+          "arufonsu/erurikku"
         ]
       },
       {
         "ja": "ロイ・マスタング",
         "en": "Roy Mustang",
         "ja_typings": [
-          "roimasutangu"
+          "roimasutangu",
+          "roi/masutangu"
         ]
       },
       {
         "ja": "ウィンリィ・ロックベル",
         "en": "Winry Rockbell",
         "ja_typings": [
-          "winrirokkuberu"
+          "winrirokkuberu",
+          "winrii/rokkuberu"
         ]
       }
     ],
@@ -15838,7 +16042,8 @@
         "ja": "スーパーマリオブラザーズ",
         "en": "Super Mario Bros.",
         "ja_typings": [
-          "su-pa-mariobura-za-zu"
+          "su-pa-mariobura-za-zu",
+          "su-pa-marioburaza-zu"
         ]
       },
       {
@@ -15962,7 +16167,8 @@
         "en": "Final Fantasy VII",
         "ja_typings": [
           "fainarufantaji-7",
-          "fainarufantaji-sebun"
+          "fainarufantaji-sebun",
+          "fainarufantaji-vii"
         ]
       },
       {
@@ -15970,7 +16176,8 @@
         "en": "Final Fantasy X",
         "ja_typings": [
           "fainarufantaji-10",
-          "fainarufantaji-ten"
+          "fainarufantaji-ten",
+          "fainarufantaji-x"
         ]
       },
       {
@@ -16093,14 +16300,16 @@
         "ja": "Saints Row",
         "en": "Saints Row",
         "ja_typings": [
-          "saintsrow"
+          "saintsrow",
+          "saints row"
         ]
       },
       {
         "ja": "Watch Dogs",
         "en": "Watch Dogs",
         "ja_typings": [
-          "watchdogs"
+          "watchdogs",
+          "watch dogs"
         ]
       },
       {
@@ -16134,7 +16343,8 @@
         "ja": "Apex Legends",
         "en": "Apex Legends",
         "ja_typings": [
-          "apexlegends"
+          "apexlegends",
+          "apex legends"
         ]
       },
       {
@@ -16271,7 +16481,8 @@
         "ja": "Steam Deck",
         "en": "Steam Deck",
         "ja_typings": [
-          "steamdeck"
+          "steamdeck",
+          "steam deck"
         ]
       }
     ],
@@ -16291,14 +16502,16 @@
         "ja": "Nintendo Switch",
         "en": "Nintendo Switch",
         "ja_typings": [
-          "nintendoswitch"
+          "nintendoswitch",
+          "nintendo switch"
         ]
       },
       {
         "ja": "Wii U",
         "en": "Wii U",
         "ja_typings": [
-          "wiiu"
+          "wiiu",
+          "wii u"
         ]
       },
       {
@@ -16332,28 +16545,32 @@
         "ja": "Steam Deck",
         "en": "Steam Deck",
         "ja_typings": [
-          "steamdeck"
+          "steamdeck",
+          "steam deck"
         ]
       },
       {
         "ja": "ROG Ally",
         "en": "ROG Ally",
         "ja_typings": [
-          "rogally"
+          "rogally",
+          "rog ally"
         ]
       },
       {
         "ja": "PlayStation Portal",
         "en": "PlayStation Portal",
         "ja_typings": [
-          "playstationportal"
+          "playstationportal",
+          "playstation portal"
         ]
       },
       {
         "ja": "Nintendo Switch",
         "en": "Nintendo Switch",
         "ja_typings": [
-          "nintendoswitch"
+          "nintendoswitch",
+          "nintendo switch"
         ]
       }
     ],
@@ -16373,7 +16590,8 @@
         "ja": "Half-Life 2",
         "en": "Half-Life 2",
         "ja_typings": [
-          "half-life2"
+          "half-life2",
+          "half-life 2"
         ]
       },
       {
@@ -16414,14 +16632,16 @@
         "ja": "League of Legends",
         "en": "League of Legends",
         "ja_typings": [
-          "leagueoflegends"
+          "leagueoflegends",
+          "league of legends"
         ]
       },
       {
         "ja": "Dota 2",
         "en": "Dota 2",
         "ja_typings": [
-          "dota2"
+          "dota2",
+          "dota 2"
         ]
       },
       {
@@ -16435,7 +16655,8 @@
         "ja": "Heroes of the Storm",
         "en": "Heroes of the Storm",
         "ja_typings": [
-          "heroesofthestorm"
+          "heroesofthestorm",
+          "heroes of the storm"
         ]
       }
     ],
@@ -16476,7 +16697,8 @@
         "ja": "Epic Games",
         "en": "Epic Games",
         "ja_typings": [
-          "epicgames"
+          "epicgames",
+          "epic games"
         ]
       }
     ],
@@ -16496,7 +16718,8 @@
         "ja": "Epic Games",
         "en": "Epic Games",
         "ja_typings": [
-          "epicgames"
+          "epicgames",
+          "epic games"
         ]
       },
       {
@@ -16517,7 +16740,8 @@
         "ja": "Take-Two Interactive",
         "en": "Take-Two Interactive",
         "ja_typings": [
-          "take-twointeractive"
+          "take-twointeractive",
+          "take-two interactive"
         ]
       }
     ],
@@ -16585,7 +16809,8 @@
         "ja": "ハック&スラッシュ",
         "en": "Hack and Slash",
         "ja_typings": [
-          "hakkuandosurasshu"
+          "hakkuandosurasshu",
+          "hakkusurasshu"
         ]
       },
       {
@@ -16824,7 +17049,8 @@
         "ja": "ソニック・ザ・ヘッジホッグ",
         "en": "Sonic the Hedgehog",
         "ja_typings": [
-          "sonikkuzaheddihoggu"
+          "sonikkuzaheddihoggu",
+          "sonikku/za/hejjihoggu"
         ]
       },
       {
@@ -16865,14 +17091,16 @@
         "ja": "ソリッド・スネーク",
         "en": "Solid Snake",
         "ja_typings": [
-          "soriddosune-ku"
+          "soriddosune-ku",
+          "soriddo/sune-ku"
         ]
       },
       {
         "ja": "サムフィッシャー",
         "en": "Sam Fisher",
         "ja_typings": [
-          "samufisha-"
+          "samufisha-",
+          "samufissha-"
         ]
       },
       {
@@ -16887,7 +17115,8 @@
         "ja": "ジェイソン・ボーン",
         "en": "Jason Bourne",
         "ja_typings": [
-          "jeisonbo-n"
+          "jeisonbo-n",
+          "jeison/bo-n"
         ]
       }
     ],
@@ -16948,21 +17177,24 @@
         "ja": "ファイナルファンタジーXIV",
         "en": "Final Fantasy XIV",
         "ja_typings": [
-          "fainarufantaji-14"
+          "fainarufantaji-14",
+          "fainarufantaji-xiv"
         ]
       },
       {
         "ja": "ドラゴンクエストX",
         "en": "Dragon Quest X",
         "ja_typings": [
-          "doragonkuesuto10"
+          "doragonkuesuto10",
+          "doragonkuesutox"
         ]
       },
       {
         "ja": "World of Warcraft",
         "en": "World of Warcraft",
         "ja_typings": [
-          "worldofwarcraft"
+          "worldofwarcraft",
+          "world of warcraft"
         ]
       },
       {
@@ -16989,7 +17221,8 @@
         "ja": "World of Warcraft",
         "en": "World of Warcraft",
         "ja_typings": [
-          "worldofwarcraft"
+          "worldofwarcraft",
+          "world of warcraft"
         ]
       },
       {
@@ -17003,14 +17236,16 @@
         "ja": "Guild Wars 2",
         "en": "Guild Wars 2",
         "ja_typings": [
-          "guildwars2"
+          "guildwars2",
+          "guild wars 2"
         ]
       },
       {
         "ja": "Lost Ark",
         "en": "Lost Ark",
         "ja_typings": [
-          "lostark"
+          "lostark",
+          "lost ark"
         ]
       }
     ],
@@ -17154,7 +17389,8 @@
         "ja": "コール オブ デューティ",
         "en": "Call of Duty",
         "ja_typings": [
-          "ko-ruobudyu-ti"
+          "ko-ruobudyu-ti",
+          "ko-ru obu deyu-ti"
         ]
       },
       {
@@ -17168,7 +17404,8 @@
         "ja": "メダル オブ オナー",
         "en": "Medal of Honor",
         "ja_typings": [
-          "medaruobuona-"
+          "medaruobuona-",
+          "medaru obu ona-"
         ]
       },
       {
@@ -17202,14 +17439,16 @@
         "ja": "コール オブ デューティ",
         "en": "Call of Duty",
         "ja_typings": [
-          "ko-ruobudyu-ti"
+          "ko-ruobudyu-ti",
+          "ko-ru obu deyu-ti"
         ]
       },
       {
         "ja": "Apex Legends",
         "en": "Apex Legends",
         "ja_typings": [
-          "apexlegends"
+          "apexlegends",
+          "apex legends"
         ]
       },
       {
@@ -17236,7 +17475,8 @@
         "ja": "Apex Legends",
         "en": "Apex Legends",
         "ja_typings": [
-          "apexlegends"
+          "apexlegends",
+          "apex legends"
         ]
       },
       {
@@ -17292,7 +17532,8 @@
         "ja": "Rainbow Six Siege",
         "en": "Rainbow Six Siege",
         "ja_typings": [
-          "rainbowsixsiege"
+          "rainbowsixsiege",
+          "rainbow six siege"
         ]
       },
       {
@@ -17319,7 +17560,8 @@
         "ja": "オーバーウォッチ",
         "en": "Overwatch",
         "ja_typings": [
-          "o-ba-uocchi"
+          "o-ba-uocchi",
+          "o-ba-wotchi"
         ]
       },
       {
@@ -17367,14 +17609,16 @@
         "ja": "The Elder Scrolls",
         "en": "The Elder Scrolls",
         "ja_typings": [
-          "theelderscrolls"
+          "theelderscrolls",
+          "the elder scrolls"
         ]
       },
       {
         "ja": "Mass Effect",
         "en": "Mass Effect",
         "ja_typings": [
-          "masseffect"
+          "masseffect",
+          "mass effect"
         ]
       },
       {
@@ -17401,7 +17645,8 @@
         "ja": "The Elder Scrolls",
         "en": "The Elder Scrolls",
         "ja_typings": [
-          "theelderscrolls"
+          "theelderscrolls",
+          "the elder scrolls"
         ]
       },
       {
@@ -17415,7 +17660,8 @@
         "ja": "Dragon Age",
         "en": "Dragon Age",
         "ja_typings": [
-          "dragonage"
+          "dragonage",
+          "dragon age"
         ]
       },
       {
@@ -17442,7 +17688,8 @@
         "ja": "ウィッチャー",
         "en": "The Witcher",
         "ja_typings": [
-          "uiccha-"
+          "uiccha-",
+          "witcha-"
         ]
       },
       {
@@ -17497,7 +17744,8 @@
         "ja": "Detroit: Become Human",
         "en": "Detroit: Become Human",
         "ja_typings": [
-          "detroit:becomehuman"
+          "detroit:becomehuman",
+          "detroit: become human"
         ]
       },
       {
@@ -17531,7 +17779,8 @@
         "ja": "ダークソウル",
         "en": "Dark Souls",
         "ja_typings": [
-          "da-kusouru"
+          "da-kusouru",
+          "da-kusoru"
         ]
       },
       {
@@ -17580,7 +17829,8 @@
         "ja": "Ghost of Tsushima",
         "en": "Ghost of Tsushima",
         "ja_typings": [
-          "ghostoftsushima"
+          "ghostoftsushima",
+          "ghost of tsushima"
         ]
       },
       {
@@ -17607,7 +17857,8 @@
         "ja": "The Last of Us",
         "en": "The Last of Us",
         "ja_typings": [
-          "thelastofus"
+          "thelastofus",
+          "the last of us"
         ]
       },
       {
@@ -17621,14 +17872,16 @@
         "ja": "Days Gone",
         "en": "Days Gone",
         "ja_typings": [
-          "daysgone"
+          "daysgone",
+          "days gone"
         ]
       },
       {
         "ja": "Death Stranding",
         "en": "Death Stranding",
         "ja_typings": [
-          "deathstranding"
+          "deathstranding",
+          "death stranding"
         ]
       }
     ],
@@ -17669,7 +17922,8 @@
         "ja": "ラチェット&クランク",
         "en": "Ratchet & Clank",
         "ja_typings": [
-          "racchettoandokuranku"
+          "racchettoandokuranku",
+          "rachettokuranku"
         ]
       }
     ],
@@ -17689,7 +17943,8 @@
         "ja": "Ghost of Tsushima",
         "en": "Ghost of Tsushima",
         "ja_typings": [
-          "ghostoftsushima"
+          "ghostoftsushima",
+          "ghost of tsushima"
         ]
       },
       {
@@ -17793,7 +18048,8 @@
         "ja": "シャドウバース",
         "en": "Shadowverse",
         "ja_typings": [
-          "shadouba-su"
+          "shadouba-su",
+          "shadoba-su"
         ]
       }
     ],
@@ -17868,14 +18124,16 @@
         "ja": "Football Manager",
         "en": "Football Manager",
         "ja_typings": [
-          "footballmanager"
+          "footballmanager",
+          "football manager"
         ]
       },
       {
         "ja": "Rocket League",
         "en": "Rocket League",
         "ja_typings": [
-          "rocketleague"
+          "rocketleague",
+          "rocket league"
         ]
       }
     ],
@@ -18148,7 +18406,8 @@
         "ja": "Space Invaders",
         "en": "Space Invaders",
         "ja_typings": [
-          "spaceinvaders"
+          "spaceinvaders",
+          "space invaders"
         ]
       },
       {
@@ -18223,28 +18482,32 @@
         "ja": "Clash of Clans",
         "en": "Clash of Clans",
         "ja_typings": [
-          "clashofclans"
+          "clashofclans",
+          "clash of clans"
         ]
       },
       {
         "ja": "Boom Beach",
         "en": "Boom Beach",
         "ja_typings": [
-          "boombeach"
+          "boombeach",
+          "boom beach"
         ]
       },
       {
         "ja": "Hay Day",
         "en": "Hay Day",
         "ja_typings": [
-          "hayday"
+          "hayday",
+          "hay day"
         ]
       },
       {
         "ja": "Brawl Stars",
         "en": "Brawl Stars",
         "ja_typings": [
-          "brawlstars"
+          "brawlstars",
+          "brawl stars"
         ]
       }
     ],
@@ -18264,7 +18527,8 @@
         "ja": "Pokemon GO",
         "en": "Pokemon GO",
         "ja_typings": [
-          "pokemongo"
+          "pokemongo",
+          "pokemon go"
         ]
       },
       {
@@ -18278,14 +18542,16 @@
         "ja": "Harry Potter: Wizards Unite",
         "en": "Harry Potter: Wizards Unite",
         "ja_typings": [
-          "harrypotter:wizardsunite"
+          "harrypotter:wizardsunite",
+          "harry potter: wizards unite"
         ]
       },
       {
         "ja": "Pikmin Bloom",
         "en": "Pikmin Bloom",
         "ja_typings": [
-          "pikminbloom"
+          "pikminbloom",
+          "pikmin bloom"
         ]
       }
     ],
@@ -19986,7 +20252,8 @@
         "ja": "スクウェア・エニックス",
         "en": "Square Enix",
         "ja_typings": [
-          "sukuweaenikkusu"
+          "sukuweaenikkusu",
+          "sukuwea/enikkusu"
         ]
       },
       {
@@ -20404,7 +20671,8 @@
         "ja": "ユリウス・カエサル",
         "en": "Julius Caesar",
         "ja_typings": [
-          "yuriusukaesaru"
+          "yuriusukaesaru",
+          "yuriusu/kaesaru"
         ]
       },
       {
@@ -20493,14 +20761,16 @@
         "ja": "バスコ・ダ・ガマ",
         "en": "Vasco da Gama",
         "ja_typings": [
-          "basukodagama"
+          "basukodagama",
+          "basuko/da/gama"
         ]
       },
       {
         "ja": "アメリゴ・ヴェスプッチ",
         "en": "Amerigo Vespucci",
         "ja_typings": [
-          "amerigovesupucchi"
+          "amerigovesupucchi",
+          "amerigo/vesuputchi"
         ]
       }
     ],
@@ -20602,7 +20872,8 @@
         "ja": "マグナ・カルタ",
         "en": "Magna Carta",
         "ja_typings": [
-          "magunakaruta"
+          "magunakaruta",
+          "maguna/karuta"
         ]
       },
       {
@@ -20725,28 +20996,32 @@
         "ja": "ジェームズ・ワット",
         "en": "James Watt",
         "ja_typings": [
-          "je-muzuwatto"
+          "je-muzuwatto",
+          "je-muzu/watto"
         ]
       },
       {
         "ja": "トーマス・エジソン",
         "en": "Thomas Edison",
         "ja_typings": [
-          "to-masuejison"
+          "to-masuejison",
+          "to-masu/ejison"
         ]
       },
       {
         "ja": "アイザック・ニュートン",
         "en": "Isaac Newton",
         "ja_typings": [
-          "aizakkunyu-ton"
+          "aizakkunyu-ton",
+          "aizakku/nyu-ton"
         ]
       },
       {
         "ja": "マイケル・ファラデー",
         "en": "Michael Faraday",
         "ja_typings": [
-          "maikerufarade-"
+          "maikerufarade-",
+          "maikeru/farade-"
         ]
       }
     ],
@@ -20889,7 +21164,8 @@
         "ja": "レオナルド・ダ・ヴィンチ",
         "en": "Leonardo da Vinci",
         "ja_typings": [
-          "reonarudodavinchi"
+          "reonarudodavinchi",
+          "reonarudo/da/vinchi"
         ]
       },
       {
@@ -20930,14 +21206,16 @@
         "ja": "マルティン・ルター",
         "en": "Martin Luther",
         "ja_typings": [
-          "marutinruta-"
+          "marutinruta-",
+          "marutin/ruta-"
         ]
       },
       {
         "ja": "ジャン・カルヴァン",
         "en": "John Calvin",
         "ja_typings": [
-          "jankaruvan"
+          "jankaruvan",
+          "jan/karuvan"
         ]
       },
       {
@@ -21135,28 +21413,32 @@
         "ja": "ニール・アームストロング",
         "en": "Neil Armstrong",
         "ja_typings": [
-          "ni-rua-musutorongu"
+          "ni-rua-musutorongu",
+          "ni-ru/a-musutorongu"
         ]
       },
       {
         "ja": "バズ・オルドリン",
         "en": "Buzz Aldrin",
         "ja_typings": [
-          "bazuorudorin"
+          "bazuorudorin",
+          "bazu/orudorin"
         ]
       },
       {
         "ja": "ユーリイ・ガガーリン",
         "en": "Yuri Gagarin",
         "ja_typings": [
-          "yu-riigaga-rin"
+          "yu-riigaga-rin",
+          "yu-rii/gaga-rin"
         ]
       },
       {
         "ja": "ジョン・グレン",
         "en": "John Glenn",
         "ja_typings": [
-          "jonguren"
+          "jonguren",
+          "jon/guren"
         ]
       }
     ],
@@ -21340,14 +21622,16 @@
         "ja": "ローザ・パークス",
         "en": "Rosa Parks",
         "ja_typings": [
-          "ro-zapa-kusu"
+          "ro-zapa-kusu",
+          "ro-za/pa-kusu"
         ]
       },
       {
         "ja": "マーティン・ルーサー・キング",
         "en": "Martin Luther King Jr.",
         "ja_typings": [
-          "ma-tinru-sa-kingu"
+          "ma-tinru-sa-kingu",
+          "ma-tin/ru-sa-/kingu"
         ]
       },
       {
@@ -21361,7 +21645,8 @@
         "ja": "ハリエット・タブマン",
         "en": "Harriet Tubman",
         "ja_typings": [
-          "hariettotabuman"
+          "hariettotabuman",
+          "harietto/tabuman"
         ]
       }
     ],
@@ -21545,21 +21830,24 @@
         "ja": "チンギス・ハン",
         "en": "Genghis Khan",
         "ja_typings": [
-          "chingisuhan"
+          "chingisuhan",
+          "chingisu/han"
         ]
       },
       {
         "ja": "フビライ・ハン",
         "en": "Kublai Khan",
         "ja_typings": [
-          "fubiraihan"
+          "fubiraihan",
+          "fubirai/han"
         ]
       },
       {
         "ja": "オゴデイ・ハン",
         "en": "Ogedei Khan",
         "ja_typings": [
-          "ogodeihan"
+          "ogodeihan",
+          "ogodei/han"
         ]
       },
       {
@@ -21627,7 +21915,8 @@
         "ja": "エノラ・ゲイ",
         "en": "Enola Gay",
         "ja_typings": [
-          "enoragei"
+          "enoragei",
+          "enora/gei"
         ]
       },
       {
@@ -21641,7 +21930,8 @@
         "ja": "メンフィス・ベル",
         "en": "Memphis Belle",
         "ja_typings": [
-          "menfisuberu"
+          "menfisuberu",
+          "menfisu/beru"
         ]
       },
       {
@@ -21750,28 +22040,32 @@
         "ja": "ジョージ・ワシントン",
         "en": "George Washington",
         "ja_typings": [
-          "jo-jiwashinton"
+          "jo-jiwashinton",
+          "jo-ji/washinton"
         ]
       },
       {
         "ja": "ジョン・アダムズ",
         "en": "John Adams",
         "ja_typings": [
-          "jonnadamuzu"
+          "jonnadamuzu",
+          "jon/adamuzu"
         ]
       },
       {
         "ja": "ベンジャミン・フランクリン",
         "en": "Benjamin Franklin",
         "ja_typings": [
-          "benjaminfurankurin"
+          "benjaminfurankurin",
+          "benjamin/furankurin"
         ]
       },
       {
         "ja": "アレクサンダー・ハミルトン",
         "en": "Alexander Hamilton",
         "ja_typings": [
-          "arekusanda-hamiruton"
+          "arekusanda-hamiruton",
+          "arekusanda-/hamiruton"
         ]
       }
     ],
@@ -21798,8 +22092,8 @@
         "ja": "トゥキディデス",
         "en": "Thucydides",
         "ja_typings": [
-          "tukidhidesu",
-          "thukididesu"
+          "thukididesu",
+          "tukididesu"
         ]
       },
       {
@@ -22121,7 +22415,8 @@
         "ja": "ロゼッタ・ストーン",
         "en": "Rosetta Stone",
         "ja_typings": [
-          "rozettasuto-n"
+          "rozettasuto-n",
+          "rozetta/suto-n"
         ]
       },
       {
@@ -22142,7 +22437,8 @@
         "ja": "パレルモ・ストーン",
         "en": "Palermo Stone",
         "ja_typings": [
-          "parerumosuto-n"
+          "parerumosuto-n",
+          "parerumo/suto-n"
         ]
       }
     ],
@@ -22162,7 +22458,8 @@
         "ja": "ナポレオン・ボナパルト",
         "en": "Napoleon Bonaparte",
         "ja_typings": [
-          "naporeonbonaparuto"
+          "naporeonbonaparuto",
+          "naporeon/bonaparuto"
         ]
       },
       {
@@ -22244,28 +22541,32 @@
         "ja": "ジャンヌ・ダルク",
         "en": "Joan of Arc",
         "ja_typings": [
-          "jannnudaruku"
+          "jannnudaruku",
+          "jannnu/daruku"
         ]
       },
       {
         "ja": "マリー・アントワネット",
         "en": "Marie Antoinette",
         "ja_typings": [
-          "mari-antowanetto"
+          "mari-antowanetto",
+          "mari-/antowanetto"
         ]
       },
       {
         "ja": "カトリーヌ・ド・メディシス",
         "en": "Catherine de' Medici",
         "ja_typings": [
-          "katori-nudomedishisu"
+          "katori-nudomedishisu",
+          "katori-nu/do/medishisu"
         ]
       },
       {
         "ja": "エレオノール・ダキテーヌ",
         "en": "Eleanor of Aquitaine",
         "ja_typings": [
-          "ereono-rudakite-nu"
+          "ereono-rudakite-nu",
+          "ereono-ru/dakite-nu"
         ]
       }
     ],
@@ -22367,28 +22668,32 @@
         "ja": "ベン・グリオン",
         "en": "David Ben-Gurion",
         "ja_typings": [
-          "bengurion"
+          "bengurion",
+          "ben/gurion"
         ]
       },
       {
         "ja": "ゴルダ・メイア",
         "en": "Golda Meir",
         "ja_typings": [
-          "gorudameia"
+          "gorudameia",
+          "goruda/meia"
         ]
       },
       {
         "ja": "メナヘム・ベギン",
         "en": "Menachem Begin",
         "ja_typings": [
-          "menahemubegin"
+          "menahemubegin",
+          "menahemu/begin"
         ]
       },
       {
         "ja": "イツハク・ラビン",
         "en": "Yitzhak Rabin",
         "ja_typings": [
-          "itsuhakurabin"
+          "itsuhakurabin",
+          "itsuhaku/rabin"
         ]
       }
     ],
@@ -23026,28 +23331,32 @@
         "ja": "1/2",
         "en": "1/2",
         "ja_typings": [
-          "nibunnnoichi"
+          "nibunnnoichi",
+          "1/2"
         ]
       },
       {
         "ja": "1/3",
         "en": "1/3",
         "ja_typings": [
-          "sanbunnnoichi"
+          "sanbunnnoichi",
+          "1/3"
         ]
       },
       {
         "ja": "1/6",
         "en": "1/6",
         "ja_typings": [
-          "rokubunnnoichi"
+          "rokubunnnoichi",
+          "1/6"
         ]
       },
       {
         "ja": "2/3",
         "en": "2/3",
         "ja_typings": [
-          "sanbunnnoni"
+          "sanbunnnoni",
+          "2/3"
         ]
       }
     ],
@@ -23359,28 +23668,32 @@
         "ja": "アンドリュー・ワイルズ",
         "en": "Andrew Wiles",
         "ja_typings": [
-          "andoryu-wairuzu"
+          "andoryu-wairuzu",
+          "andoryu-/wairuzu"
         ]
       },
       {
         "ja": "グリゴリー・ペレルマン",
         "en": "Grigori Perelman",
         "ja_typings": [
-          "gurigori-pereruman"
+          "gurigori-pereruman",
+          "gurigori-/pereruman"
         ]
       },
       {
         "ja": "テレンス・タオ",
         "en": "Terence Tao",
         "ja_typings": [
-          "terensutao"
+          "terensutao",
+          "terensu/tao"
         ]
       },
       {
         "ja": "ジョン・ナッシュ",
         "en": "John Nash",
         "ja_typings": [
-          "jonnnasshu"
+          "jonnnasshu",
+          "jon/nasshu"
         ]
       }
     ],
@@ -23571,7 +23884,8 @@
         "ja": "フォン・ノイマン",
         "en": "Von Neumann",
         "ja_typings": [
-          "fonnnoiman"
+          "fonnnoiman",
+          "fon/noiman"
         ]
       },
       {
@@ -23874,7 +24188,8 @@
         "ja": "チャンドラセカール",
         "en": "Chandrasekhar",
         "ja_typings": [
-          "chandorasekka-ru"
+          "chandorasekka-ru",
+          "chandoraseka-ru"
         ]
       }
     ],
@@ -25832,7 +26147,8 @@
         "ja": "シンコ・デ・マヨ",
         "en": "Cinco de Mayo",
         "ja_typings": [
-          "shinkodemayo"
+          "shinkodemayo",
+          "shinko/de/mayo"
         ]
       },
       {
@@ -25846,7 +26162,8 @@
         "ja": "ラ・トマティーナ",
         "en": "La Tomatina",
         "ja_typings": [
-          "ratomati-na"
+          "ratomati-na",
+          "ra/tomati-na"
         ]
       }
     ],
@@ -25866,7 +26183,8 @@
         "ja": "ラ・トマティーナ",
         "en": "La Tomatina",
         "ja_typings": [
-          "ratomati-na"
+          "ratomati-na",
+          "ra/tomati-na"
         ]
       },
       {
@@ -25880,7 +26198,8 @@
         "ja": "セマナ・サンタ",
         "en": "Semana Santa",
         "ja_typings": [
-          "semanasanta"
+          "semanasanta",
+          "semana/santa"
         ]
       },
       {
@@ -25996,7 +26315,8 @@
         "ja": "ドーティ",
         "en": "Dhoti",
         "ja_typings": [
-          "do-thi"
+          "do-thi",
+          "do-ti"
         ]
       },
       {
@@ -26256,7 +26576,8 @@
         "ja": "バロン・タガログ",
         "en": "Barong Tagalog",
         "ja_typings": [
-          "barontagarogu"
+          "barontagarogu",
+          "baron/tagarogu"
         ]
       }
     ],
@@ -26406,7 +26727,8 @@
         "ja": "フォカッチャ",
         "en": "Focaccia",
         "ja_typings": [
-          "fokaccha"
+          "fokaccha",
+          "fokatcha"
         ]
       },
       {
@@ -26727,28 +27049,32 @@
         "ja": "アントニ・ガウディ",
         "en": "Antoni Gaudi",
         "ja_typings": [
-          "antonigaudi"
+          "antonigaudi",
+          "antoni/gaudi"
         ]
       },
       {
         "ja": "ル・コルビュジエ",
         "en": "Le Corbusier",
         "ja_typings": [
-          "rukorubyujie"
+          "rukorubyujie",
+          "ru/korubyujie"
         ]
       },
       {
         "ja": "フランク・ロイド・ライト",
         "en": "Frank Lloyd Wright",
         "ja_typings": [
-          "furankuroidoraito"
+          "furankuroidoraito",
+          "furanku/roido/raito"
         ]
       },
       {
         "ja": "ザハ・ハディド",
         "en": "Zaha Hadid",
         "ja_typings": [
-          "zahahadido"
+          "zahahadido",
+          "zaha/hadido"
         ]
       }
     ],
@@ -27096,28 +27422,32 @@
         "ja": "アルフレッド・ノーベル",
         "en": "Alfred Nobel",
         "ja_typings": [
-          "arufureddono-beru"
+          "arufureddono-beru",
+          "arufureddo/no-beru"
         ]
       },
       {
         "ja": "トーマス・エジソン",
         "en": "Thomas Edison",
         "ja_typings": [
-          "to-masuejison"
+          "to-masuejison",
+          "to-masu/ejison"
         ]
       },
       {
         "ja": "アルバート・アインシュタイン",
         "en": "Albert Einstein",
         "ja_typings": [
-          "aruba-toainshutain"
+          "aruba-toainshutain",
+          "aruba-to/ainshutain"
         ]
       },
       {
         "ja": "マリー・キュリー",
         "en": "Marie Curie",
         "ja_typings": [
-          "mari-kyuri-"
+          "mari-kyuri-",
+          "mari-/kyuri-"
         ]
       }
     ],
@@ -27219,7 +27549,8 @@
         "ja": "ヘミングウェイ",
         "en": "Ernest Hemingway",
         "ja_typings": [
-          "hemingnguei"
+          "hemingnguei",
+          "heminguwei"
         ]
       },
       {
@@ -27260,7 +27591,8 @@
         "ja": "ジェームズ・キャメロン",
         "en": "James Cameron",
         "ja_typings": [
-          "je-muzukyameron"
+          "je-muzukyameron",
+          "je-muzu/kyameron"
         ]
       },
       {
@@ -27281,7 +27613,8 @@
         "ja": "リドリー・スコット",
         "en": "Ridley Scott",
         "ja_typings": [
-          "ridori-sukotto"
+          "ridori-sukotto",
+          "ridori-/sukotto"
         ]
       }
     ],
@@ -27363,7 +27696,8 @@
         "ja": "ヒョウ",
         "en": "leopard",
         "ja_typings": [
-          "hyou"
+          "hyou",
+          "hyo"
         ]
       }
     ],
@@ -27431,7 +27765,8 @@
         "ja": "ウィンブルドン",
         "en": "Wimbledon",
         "ja_typings": [
-          "uinburudon"
+          "uinburudon",
+          "winburudon"
         ]
       },
       {
@@ -28122,7 +28457,8 @@
         "ja": "J.K.ローリング",
         "en": "J. K. Rowling",
         "ja_typings": [
-          "jkro-ringu"
+          "jkro-ringu",
+          "j.k.ro-ringu"
         ]
       },
       {
@@ -28136,14 +28472,16 @@
         "ja": "C.S.ルイス",
         "en": "C. S. Lewis",
         "ja_typings": [
-          "csruisu"
+          "csruisu",
+          "c.s.ruisu"
         ]
       },
       {
         "ja": "ロアルド・ダール",
         "en": "Roald Dahl",
         "ja_typings": [
-          "roarudoda-ru"
+          "roarudoda-ru",
+          "roarudo/da-ru"
         ]
       }
     ],
@@ -28245,28 +28583,32 @@
         "ja": "42キロ",
         "en": "42 km",
         "ja_typings": [
-          "yonjuunikiro"
+          "yonjuunikiro",
+          "42kiro"
         ]
       },
       {
         "ja": "30キロ",
         "en": "30 km",
         "ja_typings": [
-          "sanjuukkiro"
+          "sanjuukkiro",
+          "30kiro"
         ]
       },
       {
         "ja": "50キロ",
         "en": "50 km",
         "ja_typings": [
-          "gojuukkiro"
+          "gojuukkiro",
+          "50kiro"
         ]
       },
       {
         "ja": "26キロ",
         "en": "26 km",
         "ja_typings": [
-          "nijuurokkiro"
+          "nijuurokkiro",
+          "26kiro"
         ]
       }
     ],
@@ -28286,14 +28628,16 @@
         "ja": "ルイス・キャロル",
         "en": "Lewis Carroll",
         "ja_typings": [
-          "ruisukyaroru"
+          "ruisukyaroru",
+          "ruisu/kyaroru"
         ]
       },
       {
         "ja": "オスカー・ワイルド",
         "en": "Oscar Wilde",
         "ja_typings": [
-          "osuka-wairudo"
+          "osuka-wairudo",
+          "osuka-/wairudo"
         ]
       },
       {
@@ -28327,28 +28671,32 @@
         "ja": "3つ",
         "en": "3",
         "ja_typings": [
-          "mittsu"
+          "mittsu",
+          "3tsu"
         ]
       },
       {
         "ja": "1つ",
         "en": "1",
         "ja_typings": [
-          "hitotsu"
+          "hitotsu",
+          "1tsu"
         ]
       },
       {
         "ja": "2つ",
         "en": "2",
         "ja_typings": [
-          "futatsu"
+          "futatsu",
+          "2tsu"
         ]
       },
       {
         "ja": "4つ",
         "en": "4",
         "ja_typings": [
-          "yottsu"
+          "yottsu",
+          "4tsu"
         ]
       }
     ],
@@ -28409,7 +28757,8 @@
         "ja": "スカーレット・オハラ",
         "en": "Scarlett O'Hara",
         "ja_typings": [
-          "suka-rettoohara"
+          "suka-rettoohara",
+          "suka-retto/ohara"
         ]
       },
       {
@@ -28532,7 +28881,8 @@
         "ja": "スティーブ・ジョブズ",
         "en": "Steve Jobs",
         "ja_typings": [
-          "suti-bujobuzu"
+          "suti-bujobuzu",
+          "suti-bu/jobuzu"
         ]
       },
       {
@@ -28546,14 +28896,16 @@
         "ja": "ティム・クック",
         "en": "Tim Cook",
         "ja_typings": [
-          "timukukku"
+          "timukukku",
+          "timu/kukku"
         ]
       },
       {
         "ja": "ビル・ゲイツ",
         "en": "Bill Gates",
         "ja_typings": [
-          "birugeitsu"
+          "birugeitsu",
+          "biru/geitsu"
         ]
       }
     ],
@@ -28635,7 +28987,8 @@
         "ja": ".LIVE",
         "en": ".LIVE",
         "ja_typings": [
-          "dotlive"
+          "dotlive",
+          ".live"
         ]
       }
     ],
@@ -29415,7 +29768,8 @@
         "ja": "DeNA",
         "en": "DeNA",
         "ja_typings": [
-          "di-i-enue-"
+          "di-i-enue-",
+          "dena"
         ]
       }
     ],
@@ -30019,14 +30373,16 @@
         "ja": "ありがとう",
         "en": "Thanks",
         "ja_typings": [
-          "arigatou"
+          "arigatou",
+          "arigato"
         ]
       },
       {
         "ja": "おはよう",
         "en": "Good morning",
         "ja_typings": [
-          "ohayou"
+          "ohayou",
+          "ohayo"
         ]
       },
       {
@@ -30101,21 +30457,24 @@
         "ja": "YouTube",
         "en": "YouTube",
         "ja_typings": [
-          "yu-chu-bu"
+          "yu-chu-bu",
+          "youtube"
         ]
       },
       {
         "ja": "Twitch",
         "en": "Twitch",
         "ja_typings": [
-          "twicchi"
+          "twicchi",
+          "twitch"
         ]
       },
       {
         "ja": "TikTok",
         "en": "TikTok",
         "ja_typings": [
-          "tikutoku"
+          "tikutoku",
+          "tiktok"
         ]
       }
     ],

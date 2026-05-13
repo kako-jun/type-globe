@@ -608,22 +608,22 @@ mod tests {
         // 旧実装は raw 等値だけ見ていたため、prefix が通っても最後の
         // キーで確定しないバグが量産されていた。
         let cases: &[(&str, &[&str])] = &[
-            // ブレンダン・アイク: `/` (中黒 IME ショートカット) で打鍵
+            // ブレンダン・アイク (v0.7.1+ strict: データは `/` 含む形)。
+            // 1連 n + `/` でも IME commit boundary により 2連 n に正規化される。
             (
-                "burendannaiku",
-                &["burendannaiku", "burendann/aiku", "burendan/aiku"],
+                "burendann/aiku",
+                &["burendann/aiku", "burendan/aiku"],
             ),
             // スクウェア・エニックス: ウェ系 + 中黒 `/`
             (
-                "sukuweaenikkusu",
+                "sukuwea/enikkusu",
                 &[
-                    "sukuweaenikkusu",
                     "sukuwea/enikkusu",
-                    "sukuuxeaenikkusu",
-                    "sukuuleaenikkusu",
+                    "sukuuxea/enikkusu",
+                    "sukuulea/enikkusu",
                 ],
             ),
-            // ろけっと: 明示的小っ
+            // ろけっと: 明示的小っ (・ 無し → `/` 不要)
             ("roketto", &["roketto", "rokeltsuto", "rokextuto"]),
             // 千利休: Hepburn 流儀のままでも canonical で揃う
             ("sennnorikyuu", &["sennnorikyuu"]),
@@ -656,16 +656,15 @@ mod tests {
                 &["s", "se", "sen", "senn", "sennn", "sennno", "sennnorikyuu"],
             ),
             // スクウェア・エニックス: IME 別経路 (ウェ系 `uxe`/`ule`) と、
-            // 中黒 `・` の IME ショートカット `/` 打鍵 (canonical で剥がす)
-            // を両方検証する。
+            // 中黒 `/` の位置一致を検証 (v0.7.1+ strict)。
             (
-                "sukuweaenikkusu",
+                "sukuwea/enikkusu",
                 &[
                     "sukuwe",
                     "sukuwea",
-                    "sukuuxea",
-                    "sukuulea",
-                    "sukuwea/enikkusu",
+                    "sukuwea/",
+                    "sukuuxea/",
+                    "sukuulea/",
                 ],
             ),
             // ろけっと 明示的小っ
