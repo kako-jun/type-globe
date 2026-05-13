@@ -97,14 +97,18 @@ v0.1.x にあった以下を v0.2.0 で段階的に廃止する：
 - v0.2.0 ターゲット：100 → 1,000 問
 - リスニング問題セット（`data/listening_<lang>.yaml`）も新設
 
-## JA ローマ字入力ルール (v0.5.x 以降の strict 仕様)
+## JA ローマ字入力ルール (v0.7.0 以降の IME strict 仕様)
+
+type-globe は**タイピング練習として IME-wapuro 流儀を「正」**と定義する。
+プレイヤーが IME 上で実際に打鍵して目的のかなになるキー列のみを正解とする。
 
 - `data/questions_ja.json` の各 choice は `ja_typings: string[]` を持つ
 - `ja_typings` は **小文字 ASCII のみ**
 - 登録は **IME で実際に打鍵する形 (ヘボン式 + 長音保持)** に統一
   - カタカナ長音 `ー` は `-` キー必須: `サーバー` → `sa-ba-`, `ボール` → `bo-ru`
   - ひらがな長音 `おう` / `おお` / `うう` も保持: `東京` → `toukyou` (×`tokyo`), `大阪` → `oosaka` (×`osaka`), `空気` → `kuuki` (×`kuki`)
-  - ン+母音/y: `nn` 二重: `観音` → `kannon`, `翻訳` → `honnyaku`
+  - ン+母音 / ヤ行: `nn` 二重: `観音` → `kannon`, `翻訳` → `honnyaku`
+  - **ン+ナ行: `nn` 二重 (= 計3連 n)**: `せんのりきゅう` → `sennnorikyuu`, `ごめんなさい` → `gomennnasai` (× Hepburn の 2連 `sennorikyuu` は IME で せんおりきゅう になる)
   - ン+子音 / 末尾: `n` 単数: `ドラゴン` → `doragon`, `東京` → `toukyou`
 - **collapsed 形 (`tokyo`, `osaka`, `boru` 等) は data に登録しない**(プレイヤーが入力しても不正解になる、IME 入力の strict 仕様に合わせる)
 - **Wapuro 系の子音揺れは data に登録しない**
@@ -113,20 +117,29 @@ v0.1.x にあった以下を v0.2.0 で段階的に廃止する：
 - 外来語・固有名詞で **公式の英字綴りがあるなら、それも `ja_typings` に追加してよい**
   - 例: `エル（Lawliet）` → `lawliet`
 - 漢字読みの真の揺れ (`日本` = `nihon` も `nippon` も実在) は両方登録
-- かな・カタカナ・ASCII だけの choice は自動生成でよい (`hiragana_to_hepburn` が長音保持版を出す)
+- かな・カタカナ・ASCII だけの choice は自動生成でよい (`hiragana_to_hepburn` が IME 正解形で出す)
 - 漢字を含む choice は読みを人間が判断して `ja_typings` を手で入れる
 - 検査は必ず実行する
   - `cargo run --bin lint-questions -- data/questions_ja.json data/questions_en.json`
+- データ全件の prefix 入力可否は `cargo test --release data_typings_are_prefix_typeable` が ~40ms で常時確認する
 
-### ローマ字バリアントの runtime 吸収（#96）
+### ローマ字バリアントの runtime 吸収（#96 + v0.7.0 拡張）
 
-`src/io/normalize.rs::canonical_romaji` が runtime で以下を吸収する。**データ側は1通りで登録**、プレイヤー入力は揺れて入っても通る。
+`src/io/normalize.rs::canonical_romaji` が runtime で以下を吸収する。**データ側は1通りで登録**、プレイヤー入力は IME 別経路で打っても通る。
 
-- ヘボン式 ↔ kunrei: `shi/si`, `chi/ti`, `tsu/tu`, `ji/zi`, `fu/hu` (※ `wo/o` は IME で別キーで別の文字 (`wo`→を, `o`→お) なので **吸収しない**)
-- ティ Wapuro: `thi/texi/teli` → `thi`
-- ディ / ぢ Wapuro: `di/dji/dhi/dexi/deli/dzi` → `di` (じ=`ji`→`zi` とは別キーなので区別される)
+- ヘボン式 ↔ kunrei (単音): `shi/si`, `chi/ti`, `tsu/tu`, `ji/zi`, `fu/hu` (※ `wo/o` は IME で別キーで別の文字 (`wo`→を, `o`→お) なので **吸収しない**)
+- ヘボン式 ↔ kunrei (拗音): `sha/sya`, `shu/syu`, `sho/syo`, `cha/tya`, `chu/tyu`, `cho/tyo`, `ja/zya`, `ju/zyu`, `jo/zyo`
+- ティ系: `thi/texi/teli` → `thi`
+- ディ / ぢ系: `di/dji/dhi/dexi/deli/dzi` → `di`
 - ヅ collapse: `dzu` → `du`
+- ファ系 (フ+小ぁ): `fa/fi/fe/fo` ≡ `huxa/hula/fuxa/fula/huxi/.../etc`
+- ヴァ系: `va/vi/ve/vo` ≡ `vuxa/vula/vuxi/.../etc`
+- ウェ系: `we/wi/wo` ≡ `uxe/ule/uxi/uli/uxo/ulo` (`uxa/ula → wa` は ウァ ≠ ワ なので **除外**)
+- 拗音の明示的小ゃ (`Cixya/Cilya`): `kixya/kya`, `shixya/sha`, `chixya/cha`, `jixya/ja` 等を同一視
+- 促音の明示的小っ: `ltu/xtu/ltsu/xtsu + 子音C → CC` (例: `rokeltsuto ≡ roketto`、`maltsucha ≡ matcha`)
 - ン+子音/末尾の `nn`: 冗長な `nn` を `n` に畳む (ン+母音/y/n は残す)
+- **3 連以上の n は正規化しない**: 2連 (ん+母音) と 3連 (ん+ナ行) は IME で別経路なので canonical でも別物
+- 中黒 `・` (= IME `/`)、読点 `、` (= `,`)、句点 `。` (= `.`) は打鍵側で剥がす (データ側は記号を含めない)
 - カタカナ ー の `-` は **畳まない** (データ側も `-` 入り)
 - ひらがな長音も **畳まない** (データ側も `ou` / `oo` / `uu` 入り)
 
