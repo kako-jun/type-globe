@@ -7910,7 +7910,9 @@
         "en": "`<img>` tag",
         "ja_typings": [
           "imgtagu",
-          "img tagu"
+          "img tagu",
+          "<img>tagu",
+          "<img> tagu"
         ]
       },
       {
@@ -7918,7 +7920,9 @@
         "en": "`<picture>` tag",
         "ja_typings": [
           "picturetagu",
-          "picture tagu"
+          "picture tagu",
+          "<picture>tagu",
+          "<picture> tagu"
         ]
       },
       {
@@ -7926,7 +7930,9 @@
         "en": "`<figure>` tag",
         "ja_typings": [
           "figuretagu",
-          "figure tagu"
+          "figure tagu",
+          "<figure>tagu",
+          "<figure> tagu"
         ]
       },
       {
@@ -7934,7 +7940,9 @@
         "en": "`<canvas>` tag",
         "ja_typings": [
           "canvastagu",
-          "canvas tagu"
+          "canvas tagu",
+          "<canvas>tagu",
+          "<canvas> tagu"
         ]
       }
     ],
@@ -7996,7 +8004,9 @@
         "en": "`<a>` tag",
         "ja_typings": [
           "atagu",
-          "a tagu"
+          "a tagu",
+          "<a>tagu",
+          "<a> tagu"
         ]
       },
       {
@@ -8004,7 +8014,9 @@
         "en": "`<link>` tag",
         "ja_typings": [
           "linktagu",
-          "link tagu"
+          "link tagu",
+          "<link>tagu",
+          "<link> tagu"
         ]
       },
       {
@@ -8012,7 +8024,9 @@
         "en": "`<nav>` tag",
         "ja_typings": [
           "navtagu",
-          "nav tagu"
+          "nav tagu",
+          "<nav>tagu",
+          "<nav> tagu"
         ]
       },
       {
@@ -8020,7 +8034,9 @@
         "en": "`<href>` tag",
         "ja_typings": [
           "hreftagu",
-          "href tagu"
+          "href tagu",
+          "<href>tagu",
+          "<href> tagu"
         ]
       }
     ],
@@ -8041,7 +8057,9 @@
         "en": "`<video>` tag",
         "ja_typings": [
           "videotagu",
-          "video tagu"
+          "video tagu",
+          "<video>tagu",
+          "<video> tagu"
         ]
       },
       {
@@ -8049,7 +8067,9 @@
         "en": "`<movie>` tag",
         "ja_typings": [
           "movietagu",
-          "movie tagu"
+          "movie tagu",
+          "<movie>tagu",
+          "<movie> tagu"
         ]
       },
       {
@@ -8057,7 +8077,9 @@
         "en": "`<media>` tag",
         "ja_typings": [
           "mediatagu",
-          "media tagu"
+          "media tagu",
+          "<media>tagu",
+          "<media> tagu"
         ]
       },
       {
@@ -8065,7 +8087,9 @@
         "en": "`<embed>` tag",
         "ja_typings": [
           "embedtagu",
-          "embed tagu"
+          "embed tagu",
+          "<embed>tagu",
+          "<embed> tagu"
         ]
       }
     ],
