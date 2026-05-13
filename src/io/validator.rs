@@ -30,49 +30,27 @@ pub struct PrefixConflict {
 /// Walk every question and report all prefix conflicts. The result is
 /// deterministic: questions in input order, language code ascending,
 /// (shorter, longer) index pairs ascending.
-pub fn find_prefix_conflicts(questions: &[Question]) -> Vec<PrefixConflict> {
-    let mut conflicts = Vec::new();
-    for question in questions {
-        // BTreeSet's iterator is already in ascending order, so the resulting
-        // Vec is sorted — no extra sort needed.
-        let languages: Vec<&String> = question
-            .choices
-            .iter()
-            .flat_map(|c| c.labels.keys())
-            .collect::<std::collections::BTreeSet<_>>()
-            .into_iter()
-            .collect();
-        for language in languages {
-            let texts: Vec<(usize, String)> = question
-                .choices
-                .iter()
-                .enumerate()
-                .flat_map(|(i, c)| typing_texts(c, language).into_iter().map(move |t| (i, t)))
-                .collect();
-            for (a_pos, (a_idx, a_text)) in texts.iter().enumerate() {
-                for (b_idx, b_text) in texts.iter().skip(a_pos + 1) {
-                    if a_idx == b_idx {
-                        continue;
-                    }
-                    if let Some((shorter, shorter_idx, longer, longer_idx)) =
-                        prefix_pair(a_text.as_str(), *a_idx, b_text.as_str(), *b_idx)
-                    {
-                        conflicts.push(PrefixConflict {
-                            question_id: question.id.clone(),
-                            language: language.clone(),
-                            shorter_index: shorter_idx,
-                            shorter_text: shorter.to_string(),
-                            longer_index: longer_idx,
-                            longer_text: longer.to_string(),
-                        });
-                    }
-                }
-            }
-        }
-    }
-    conflicts
+pub fn find_prefix_conflicts(_questions: &[Question]) -> Vec<PrefixConflict> {
+    // Cross-choice prefix conflict 検出は Issue #70 (正解 choice の typings
+    // 以外は runtime で受理しない) で意義を失った。
+    //
+    // 旧仕様: wrong choice の typing も打鍵できたので `=` 入力が `=`/`==`/
+    //         `===` のどれを指すか ambiguous だった。
+    // 新仕様: validator は正解 choice の typings のみ判定するため、
+    //         正解 `===` の問題でプレイヤーが `=` を打っても "valid prefix
+    //         of `===`" として accept、次の `=` で `==`、もう一度で `===`
+    //         が完成して auto-confirm。wrong choice `=`/`==`/`!=` の存在は
+    //         runtime に影響しない。
+    // 結果として、画面で `===` を見て `===` を打鍵する自然な UX を、
+    // lint が阻害してはならない (q0203 の演算子問題等)。
+    //
+    // 関数自体は backward-compatible のため残す (bin の呼び出し箇所、
+    // CI の shipped_question_data_is_clean_* テストが期待する型を維持)。
+    // 同一 choice 内 variant 間の prefix チェックは将来必要なら復活可能。
+    Vec::new()
 }
 
+#[allow(dead_code)]
 fn typing_texts(choice: &Choice, language: &str) -> Vec<String> {
     match language {
         "ja" => {
@@ -117,6 +95,7 @@ fn typing_texts(choice: &Choice, language: &str) -> Vec<String> {
 
 /// Return `(shorter, shorter_idx, longer, longer_idx)` if one of `a` / `b` is
 /// a strict prefix of the other; `None` if they're equal or unrelated.
+#[allow(dead_code)]
 fn prefix_pair<'a>(
     a: &'a str,
     a_idx: usize,
@@ -191,25 +170,13 @@ mod tests {
     }
 
     #[test]
-    fn detects_prefix_conflict() {
+    fn cross_choice_prefix_no_longer_flagged_after_70() {
+        // Issue #70 で validator は correct choice の typings しか受理しなく
+        // なったため、別 choice 間 の prefix 関係 (例: move/movement、
+        // ===/==/=/!=) は runtime で実害無し。lint も flag しない方針に
+        // 切り替えた (詳細は find_prefix_conflicts の doc コメント参照)。
         let q = question_with_choices("q-1", &[("en", &["move", "movement", "borrow", "ref"])]);
-        let conflicts = find_prefix_conflicts(&[q]);
-        assert_eq!(conflicts.len(), 1);
-        assert_eq!(conflicts[0].question_id, "q-1");
-        assert_eq!(conflicts[0].language, "en");
-        assert_eq!(conflicts[0].shorter_text, "move");
-        assert_eq!(conflicts[0].longer_text, "movement");
-        assert_eq!(conflicts[0].shorter_index, 0);
-        assert_eq!(conflicts[0].longer_index, 1);
-    }
-
-    #[test]
-    fn detects_prefix_regardless_of_choice_order() {
-        let q = question_with_choices("q-rev", &[("en", &["movement", "move", "borrow", "ref"])]);
-        let conflicts = find_prefix_conflicts(&[q]);
-        assert_eq!(conflicts.len(), 1);
-        assert_eq!(conflicts[0].shorter_text, "move");
-        assert_eq!(conflicts[0].longer_text, "movement");
+        assert!(find_prefix_conflicts(&[q]).is_empty());
     }
 
     #[test]
@@ -230,27 +197,8 @@ mod tests {
         assert!(find_prefix_conflicts(&[q]).is_empty());
     }
 
-    #[test]
-    fn checks_each_language_independently() {
-        let q = question_with_choices(
-            "q-multi",
-            &[
-                ("en", &["clean", "cleaner", "x", "y"]),
-                ("ja", &["きれい", "綺麗", "X", "Y"]),
-            ],
-        );
-        let conflicts = find_prefix_conflicts(&[q]);
-        assert_eq!(conflicts.len(), 1);
-        assert_eq!(conflicts[0].language, "en");
-    }
-
-    #[test]
-    fn reports_all_conflicts_within_a_question() {
-        let q = question_with_choices("q-many", &[("en", &["a", "ab", "abc", "z"])]);
-        let conflicts = find_prefix_conflicts(&[q]);
-        // a < ab, a < abc, ab < abc → 3 conflicts.
-        assert_eq!(conflicts.len(), 3);
-    }
+    // 削除: checks_each_language_independently / reports_all_conflicts_within_a_question
+    // 別 choice 間の prefix チェックは #70 で実害無し化したため (cross_choice_prefix_no_longer_flagged_after_70 でカバー)。
 
     #[test]
     fn empty_input_is_empty_output() {
@@ -288,17 +236,7 @@ mod tests {
         assert!(format_conflict(&c).contains(r#"\"hi\""#));
     }
 
-    #[test]
-    fn detects_multi_byte_prefix() {
-        let q = question_with_choices("q-utf8", &[("ja", &["A", "B", "x", "y"])]);
-        let mut q = q;
-        q.choices[0].ja_typings = vec!["ni".into()];
-        q.choices[1].ja_typings = vec!["nihon".into()];
-        let conflicts = find_prefix_conflicts(&[q]);
-        assert_eq!(conflicts.len(), 1);
-        assert_eq!(conflicts[0].shorter_text, "ni");
-        assert_eq!(conflicts[0].longer_text, "nihon");
-    }
+    // 削除: detects_multi_byte_prefix — cross-choice prefix を flag しない方針に。
 
     #[test]
     fn detects_prefix_conflict_in_ja_typings() {
@@ -333,11 +271,8 @@ mod tests {
             image_path: None,
             ja_reviewed: false,
         };
-        let conflicts = find_prefix_conflicts(&[q]);
-        assert_eq!(conflicts.len(), 1);
-        assert_eq!(conflicts[0].language, "ja");
-        assert_eq!(conflicts[0].shorter_text, "to");
-        assert_eq!(conflicts[0].longer_text, "tokyo");
+        // cross-choice prefix は #70 で無視する方針なので no conflict。
+        assert!(find_prefix_conflicts(&[q]).is_empty());
     }
 
     #[test]
@@ -378,11 +313,8 @@ mod tests {
             image_path: None,
             ja_reviewed: false,
         };
-        let conflicts = find_prefix_conflicts(&[q]);
-        // Conflict reported only for `en`; `ja` has just one populated
-        // choice so nothing to compare against.
-        assert_eq!(conflicts.len(), 1);
-        assert_eq!(conflicts[0].language, "en");
+        // cross-choice prefix は #70 で無視する方針なので no conflict。
+        assert!(find_prefix_conflicts(&[q]).is_empty());
     }
 
     // Bundled data must stay free of prefix conflicts; the build-time
