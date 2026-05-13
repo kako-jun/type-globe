@@ -17,6 +17,16 @@ pub fn hiragana_to_hepburn(input: &str) -> String {
     collapse_long_o(&raw)
 }
 
+/// `true` if `s` contains any CJK Unified Ideograph (han). Shared utility
+/// used by backfill / lint bins to skip auto-generation for kanji-bearing
+/// labels (their readings can't be derived mechanically). The main binary
+/// never calls this directly so clippy would flag it as dead code.
+#[allow(dead_code)]
+pub fn contains_han(s: &str) -> bool {
+    s.chars()
+        .any(|c| matches!(c as u32, 0x3400..=0x4DBF | 0x4E00..=0x9FFF | 0xF900..=0xFAFF))
+}
+
 pub fn hiragana_to_hepburn_variants(input: &str) -> Vec<String> {
     let raw = hiragana_to_hepburn_raw(input);
     if raw.is_empty() {

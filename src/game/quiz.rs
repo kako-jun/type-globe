@@ -601,7 +601,9 @@ mod tests {
                 "sennnorikyuu",
                 &["s", "se", "sen", "senn", "sennn", "sennno", "sennnorikyuu"],
             ),
-            // スクウェア・エニックス IME alt path (uxe / ule)
+            // スクウェア・エニックス: IME 別経路 (ウェ系 `uxe`/`ule`) と、
+            // 中黒 `・` の IME ショートカット `/` 打鍵 (canonical で剥がす)
+            // を両方検証する。
             (
                 "sukuweaenikkusu",
                 &[

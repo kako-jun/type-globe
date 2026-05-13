@@ -10,6 +10,18 @@
 //! では `n` に畳む。ただし `nn` の直後が母音 / `y` / `n` のときは
 //! ナ行・ヤ行と区別するために残す (例: かんおん = `kannon`)。
 
+/// 注意: ルールの **適用順序が正しさに直結する** ため安易に並び替えない。
+/// 依存関係:
+/// - 4文字 digraph (`vuxa/huxa/fuxa/...`) は `fu → hu` より前に処理する
+///   (`fuxa → fa` の連鎖を `fu` が先に潰さないため)。
+/// - 拗音 Hepburn 形 (`sha/cha/ja`) は単音 (`shi/chi/ji`) より前に処理する
+///   (`sha → si...` のような暴発を避けるため; `sha → sya` を先に当てる)。
+/// - 単音 Hepburn (`shi/chi/ji`) は `ixya/ilya` (拗音 IME 別経路) より前に
+///   処理する (`shixya → sixya → sya` の連鎖が成立する順序)。
+/// - `apply_explicit_small_tsu` は子音二重化を伴うため、子音側のすべての
+///   書き換えが済んだ後に実行する。
+/// - `collapse_redundant_nn` は最後 (途中で挿入された n の連続にも対応する
+///   ため)。
 pub fn canonical_romaji(s: &str) -> String {
     let mut out = s.to_lowercase();
     // IME で全角記号を出す ASCII キーを剥がす。データ側は記号を含めない
@@ -91,7 +103,7 @@ pub fn canonical_romaji(s: &str) -> String {
     out = out.replace("fu", "hu");
     // 促音 (っ) の IME 別経路: `ltu/xtu/ltsu/xtsu + 子音C → CC` に変換。
     // 例: `rokeltsuto` (明示的小っ) ≡ `roketto` (標準二重子音)。
-    out = expand_small_tsu(&out);
+    out = apply_explicit_small_tsu(&out);
     out = collapse_redundant_nn(&out);
     out
 }
@@ -99,7 +111,7 @@ pub fn canonical_romaji(s: &str) -> String {
 /// 促音 IME 別経路: `ltu/xtu/ltsu/xtsu` の直後に子音があれば、その子音を
 /// 二重化した形に置換する。これにより `roke[ltu]to` → `roketto` のように
 /// 標準形へ寄せられる。直後が母音 / 末尾 の場合は別意味になるので変換しない。
-fn expand_small_tsu(s: &str) -> String {
+fn apply_explicit_small_tsu(s: &str) -> String {
     let chars: Vec<char> = s.chars().collect();
     let mut out = String::with_capacity(s.len());
     let mut i = 0;
@@ -358,6 +370,22 @@ mod tests {
         assert_eq!(canonical_romaji("maltsucha"), "mattya");
         // 直後が母音や末尾の `ltu/xtu` は変換しない (意味的に異なる)。
         assert_eq!(canonical_romaji("xtu"), "xtu");
+    }
+
+    #[test]
+    fn trailing_n_run_preserves_count_for_prefix_match() {
+        // `sennnorikyuu` を 1 文字ずつ打鍵中、`sennn` (途中5文字) は末尾に
+        // 3連 n が来る。canonical はペア単位の collapse なので 3連目は
+        // 単独 `n` として残り `sennn` が保たれる。これにより candidate
+        // `sennnorikyuu` の prefix としてマッチする。
+        assert_eq!(canonical_romaji("sennn"), "sennn");
+        // 末尾 2連 n は通常通り `n` に畳まれる (ん 末尾の正準形)。
+        assert_eq!(canonical_romaji("senn"), "sen");
+        // 4連以上の n は末尾に来ると最後のペアが畳まれて 3連へ縮む
+        // (`nn` ペア + `nn` ペア → 前ペアは次が `n` なので keep、後ペアは
+        // 次が None なので collapse)。実プレイで 4連 n を打つことは無いが、
+        // 仕様メモとして記録。
+        assert_eq!(canonical_romaji("sennnn"), "sennn");
     }
 
     #[test]
