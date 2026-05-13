@@ -12333,28 +12333,36 @@
         "ja": "Atomicity (原子性)",
         "en": "Atomicity",
         "ja_typings": [
-          "atomicity"
+          "atomicity",
+          "atomicity (genshisei)",
+          "atomicity(genshisei)"
         ]
       },
       {
         "ja": "Availability (可用性)",
         "en": "Availability",
         "ja_typings": [
-          "availability"
+          "availability",
+          "availability (kayousei)",
+          "availability(kayousei)"
         ]
       },
       {
         "ja": "Accuracy (正確性)",
         "en": "Accuracy",
         "ja_typings": [
-          "accuracy"
+          "accuracy",
+          "accuracy (seikakusei)",
+          "accuracy(seikakusei)"
         ]
       },
       {
         "ja": "Authentication (認証)",
         "en": "Authentication",
         "ja_typings": [
-          "authentication"
+          "authentication",
+          "authentication (ninshou)",
+          "authentication(ninshou)"
         ]
       }
     ],
@@ -12374,28 +12382,36 @@
         "ja": "Partition tolerance (分断耐性)",
         "en": "Partition tolerance",
         "ja_typings": [
-          "partitiontolerance"
+          "partitiontolerance",
+          "partition tolerance (bundantaisei)",
+          "partitiontolerance(bundantaisei)"
         ]
       },
       {
         "ja": "Persistence (永続性)",
         "en": "Persistence",
         "ja_typings": [
-          "persistence"
+          "persistence",
+          "persistence (eizokusei)",
+          "persistence(eizokusei)"
         ]
       },
       {
         "ja": "Performance (性能)",
         "en": "Performance",
         "ja_typings": [
-          "performance"
+          "performance",
+          "performance (seinou)",
+          "performance(seinou)"
         ]
       },
       {
         "ja": "Privacy (機密性)",
         "en": "Privacy",
         "ja_typings": [
-          "privacy"
+          "privacy",
+          "privacy (kimitsusei)",
+          "privacy(kimitsusei)"
         ]
       }
     ],
@@ -22779,28 +22795,36 @@
         "ja": "π (パイ)",
         "en": "Pi",
         "ja_typings": [
-          "pai"
+          "pai",
+          "(pai)",
+          "pi(pai)"
         ]
       },
       {
         "ja": "σ (シグマ)",
         "en": "Sigma",
         "ja_typings": [
-          "shiguma"
+          "shiguma",
+          "(shiguma)",
+          "sigma(shiguma)"
         ]
       },
       {
         "ja": "φ (ファイ)",
         "en": "Phi",
         "ja_typings": [
-          "fai"
+          "fai",
+          "(fai)",
+          "phi(fai)"
         ]
       },
       {
         "ja": "θ (シータ)",
         "en": "Theta",
         "ja_typings": [
-          "shi-ta"
+          "shi-ta",
+          "(shi-ta)",
+          "theta(shi-ta)"
         ]
       }
     ],
@@ -23400,28 +23424,36 @@
         "ja": "∩ (キャップ)",
         "en": "Cap",
         "ja_typings": [
-          "kyappu"
+          "kyappu",
+          "(kyappu)",
+          "cap(kyappu)"
         ]
       },
       {
         "ja": "∪ (カップ)",
         "en": "Cup",
         "ja_typings": [
-          "kappu"
+          "kappu",
+          "(kappu)",
+          "cup(kappu)"
         ]
       },
       {
         "ja": "⊂ (部分集合)",
         "en": "Subset",
         "ja_typings": [
-          "bubunshuugou"
+          "bubunshuugou",
+          "(bubunshuugou)",
+          "subset(bubunshuugou)"
         ]
       },
       {
         "ja": "∈ (要素)",
         "en": "Element of",
         "ja_typings": [
-          "youso"
+          "youso",
+          "(youso)",
+          "in(youso)"
         ]
       }
     ],
