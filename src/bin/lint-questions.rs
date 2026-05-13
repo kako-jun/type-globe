@@ -136,11 +136,16 @@ fn find_ja_typing_errors(path: &str, questions: &[Question]) -> Vec<String> {
                 ));
             }
 
-            // Pure-kana labels: ja_typings must match what `hiragana_to_hepburn`
-            // emits (IME-wapuro 正解形)。これで `gomennasai` のような IME 流儀で
-            // 別の読みになってしまう登録を自動検出する。漢字ラベルは読みが取れ
-            // ないので skip (人手レビュー対象)。
-            if !choice.ja_typings.is_empty() && !contains_han(ja) {
+            // Pure-kana labels with no manual ja_typings: auto-fill via
+            // hiragana_to_hepburn comparison (mainly a sanity check that
+            // backfill 出力と一致するか)。typings が既に手入れされている
+            // entry の比較は意図的なキュレーション差分 (長音保持版の片方のみ
+            // 登録、公式 ASCII 綴り追加、手動カナ読み等) で大量の誤検知を
+            // 出すため、現状はチェックしない。IME 正解性は src/game/quiz.rs::
+            // data_typings_are_prefix_typeable と人手レビューで担保している。
+            // TODO: ん+ナ行/母音 のような IME-wapuro 専用ルール違反だけを
+            //       検出する専用 lint を分離する (#NN)。
+            if choice.ja_typings.is_empty() && !contains_han(ja) {
                 let expected = expected_ja_typings(ja);
                 if let Some(reason) = ja_typing_mismatch_reason(choice, &actual, &expected) {
                     errors.push(format!(
@@ -258,10 +263,7 @@ fn extract_ascii_parenthetical_aliases(label: &str) -> Vec<String> {
     aliases
 }
 
-fn contains_han(s: &str) -> bool {
-    s.chars()
-        .any(|c| matches!(c as u32, 0x3400..=0x4DBF | 0x4E00..=0x9FFF | 0xF900..=0xFAFF))
-}
+use romaji::contains_han;
 
 #[cfg(test)]
 mod tests {

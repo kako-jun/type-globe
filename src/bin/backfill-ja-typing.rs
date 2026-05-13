@@ -76,12 +76,7 @@ fn derive_ja_typings(ja: &str) -> Option<Vec<String>> {
         "酸素" => Some(vec!["sanso".to_string()]),
         "鉄" => Some(vec!["tetsu".to_string()]),
         _ if ja.is_ascii() => Some(vec![ja.to_ascii_lowercase()]),
-        _ if contains_han(ja) => None,
+        _ if romaji::contains_han(ja) => None,
         _ => Some(romaji::hiragana_to_hepburn_variants(ja)),
     }
-}
-
-fn contains_han(s: &str) -> bool {
-    s.chars()
-        .any(|c| matches!(c as u32, 0x3400..=0x4DBF | 0x4E00..=0x9FFF | 0xF900..=0xFAFF))
 }
