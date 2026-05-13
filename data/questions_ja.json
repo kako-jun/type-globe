@@ -5084,7 +5084,6 @@
         "ja": "戻り値を示すため",
         "en": "It indicates return values",
         "ja_typings": [
-          "modoriatiwoshimesutame",
           "modoriachiwoshimesutame"
         ]
       }
@@ -21423,7 +21422,6 @@
         "ja": "ガンディー",
         "en": "Mahatma Gandhi",
         "ja_typings": [
-          "gandhi-",
           "gandi-"
         ]
       },
