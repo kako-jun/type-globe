@@ -548,6 +548,46 @@ mod tests {
     }
 
     #[test]
+    fn valid_prefix_handles_all_multi_char_rewrite_mid_states() {
+        // ji→zi 以外の multi-char rewrite ルールも同じ「途中状態 mistype」
+        // クラスのバグを抱えていた。candidate を LEFT(Hepburn) 形で登録した
+        // ときに、各 rewrite の境界で 1 文字目を打った瞬間 (canonical では
+        // 整合しない) でも prefix が通ることを担保する。
+        let cases: &[(&str, &[&str])] = &[
+            // shi → si:  `s` 打鍵時 canonical(`sus`).starts_with(`sus`) は通る
+            // が、`sush` まで打つと canonical(`sush`)=`sush` vs canonical(`sushi`)=`susi`
+            // で破綻する。raw fallback が救う。
+            ("sushi", &["s", "su", "sus", "sush", "sushi"]),
+            // chi → ti
+            ("kachi", &["k", "ka", "kac", "kach", "kachi"]),
+            // tsu → tu
+            ("katsu", &["k", "ka", "kat", "kats", "katsu"]),
+            // fu → hu : `f` 単体で破綻していた
+            ("fuji", &["f", "fu", "fuj", "fuji"]),
+            // texi → thi
+            ("texi", &["t", "te", "tex", "texi"]),
+            // dexi → di
+            ("dexi", &["d", "de", "dex", "dexi"]),
+            // dhi → di
+            ("dhi", &["d", "dh", "dhi"]),
+            // dzu → du
+            ("dzu", &["d", "dz", "dzu"]),
+        ];
+        for (registered, prefixes) in cases {
+            let mut question =
+                make_question(&["ラテン文字", "漢字", "クメール文字", "タイ文字"], 0);
+            question.choices[0].ja_typings = vec![(*registered).into()];
+            let game = QuizGame::new(vec![question], Language::Japanese);
+            for p in *prefixes {
+                assert!(
+                    game.is_valid_correct_typed_prefix(p),
+                    "candidate={registered:?} should accept partial prefix {p:?}"
+                );
+            }
+        }
+    }
+
+    #[test]
     fn valid_prefix_handles_japanese_romaji_variants() {
         let mut question = make_question(&["東京", "大阪", "京都", "名古屋"], 0);
         question.choices[0].ja_typings = vec!["tokyo".into(), "toukyou".into()];
