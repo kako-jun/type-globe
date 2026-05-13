@@ -12,6 +12,39 @@
 
 pub fn canonical_romaji(s: &str) -> String {
     let mut out = s.to_lowercase();
+    // IME で全角記号を出す ASCII キーを剥がす。データ側は記号を含めない
+    // 慣行 (`・` `、` `。` をローマ字に書き起こさない) なので、打鍵時に
+    // 対応キー (`/`,`、` で `,`、`。` で `.`) を押しても押さなくても受理する。
+    out = out.replace('/', "");
+    out = out.replace(',', "");
+    out = out.replace('.', "");
+    // 非標準 digraph の IME 別経路を標準形へ寄せる。`vu` 系・`fu` 系は
+    // `fu→hu` より先に適用しないと `fuxi → huxi → fi` の連鎖が途切れる
+    // ため、4文字以上のパターンをここで先に処理する。
+    out = out.replace("vuxa", "va");
+    out = out.replace("vula", "va");
+    out = out.replace("vuxi", "vi");
+    out = out.replace("vuli", "vi");
+    out = out.replace("vuxe", "ve");
+    out = out.replace("vule", "ve");
+    out = out.replace("vuxo", "vo");
+    out = out.replace("vulo", "vo");
+    out = out.replace("huxa", "fa");
+    out = out.replace("hula", "fa");
+    out = out.replace("huxi", "fi");
+    out = out.replace("huli", "fi");
+    out = out.replace("huxe", "fe");
+    out = out.replace("hule", "fe");
+    out = out.replace("huxo", "fo");
+    out = out.replace("hulo", "fo");
+    out = out.replace("fuxa", "fa");
+    out = out.replace("fula", "fa");
+    out = out.replace("fuxi", "fi");
+    out = out.replace("fuli", "fi");
+    out = out.replace("fuxe", "fe");
+    out = out.replace("fule", "fe");
+    out = out.replace("fuxo", "fo");
+    out = out.replace("fulo", "fo");
     // 長いパターンから順に。同一の対象文字列に複数ルールが当たらないように。
     out = out.replace("texi", "thi");
     out = out.replace("teli", "thi");
@@ -24,6 +57,14 @@ pub fn canonical_romaji(s: &str) -> String {
     out = out.replace("tsu", "tu");
     out = out.replace("shi", "si");
     out = out.replace("chi", "ti");
+    // ウェ 系: `we/uxe/ule` を同一視。`uxa/ula → wa` は ウァ ≠ ワ なので
+    // 除外。`uxo/ulo → wo` は ウォ も `wo` で書く慣行があるため同一視 OK。
+    out = out.replace("uxi", "wi");
+    out = out.replace("uli", "wi");
+    out = out.replace("uxe", "we");
+    out = out.replace("ule", "we");
+    out = out.replace("uxo", "wo");
+    out = out.replace("ulo", "wo");
     out = out.replace("fu", "hu");
     out = out.replace("ji", "zi");
     out = collapse_redundant_nn(&out);
@@ -95,6 +136,39 @@ mod tests {
         assert_eq!(canonical_romaji("dexi"), "di");
         assert_eq!(canonical_romaji("deli"), "di");
         assert_eq!(canonical_romaji("dzi"), "di");
+    }
+
+    #[test]
+    fn ime_punctuation_keys_are_stripped() {
+        // ・ → `/`、、 → `,`、。 → `.`。データ側は記号を持たないので、
+        // 打鍵側で押された記号は剥がして候補と整合させる。
+        assert_eq!(canonical_romaji("sukuwea/enikkusu"), "sukuweaenikkusu");
+        assert_eq!(canonical_romaji("hello,world"), "helloworld");
+        assert_eq!(canonical_romaji("nodejs.org"), "nodejsorg");
+    }
+
+    #[test]
+    fn ime_alt_digraphs_wo_we_wi() {
+        // ウェ / ウィ / ウォ の IME 別経路 (`uxe/ule`, `uxi/uli`, `uxo/ulo`)
+        // を標準形 (`we/wi/wo`) へ寄せる。`uxa/ula → wa` は ウァ ≠ ワ
+        // なので意図的に除外している。
+        assert_eq!(canonical_romaji("sukuuxea"), canonical_romaji("sukuwea"));
+        assert_eq!(canonical_romaji("sukuulea"), canonical_romaji("sukuwea"));
+        assert_eq!(canonical_romaji("uxisuki-"), canonical_romaji("wisuki-"));
+        assert_eq!(canonical_romaji("uxoruhuredo"), canonical_romaji("woruhuredo"));
+    }
+
+    #[test]
+    fn ime_alt_digraphs_v_and_f() {
+        // ヴ / フ 系の小文字-合成入力を標準形に統一。
+        assert_eq!(canonical_romaji("vuxaiorin"), canonical_romaji("vaiorin"));
+        assert_eq!(canonical_romaji("vulaiorin"), canonical_romaji("vaiorin"));
+        assert_eq!(canonical_romaji("vuxeneto"), canonical_romaji("veneto"));
+        assert_eq!(canonical_romaji("huxiripin"), canonical_romaji("firipin"));
+        assert_eq!(canonical_romaji("huliripin"), canonical_romaji("firipin"));
+        assert_eq!(canonical_romaji("fuxiripin"), canonical_romaji("firipin"));
+        assert_eq!(canonical_romaji("fuliripin"), canonical_romaji("firipin"));
+        assert_eq!(canonical_romaji("huxeruma-ta"), canonical_romaji("feruma-ta"));
     }
 
     #[test]
