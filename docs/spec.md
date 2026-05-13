@@ -195,7 +195,7 @@ Recommended migration order for existing JA quiz banks:
 2. Rewrite only `question_text.ja` into kanji/katakana mixed display text.
 3. Run stats/lint checks and manually inspect hiragana-heavy leftovers with `scripts/list_suspect_question_texts.py`.
 
-Validation: no two choices in a question may share a prefix that would make an auto-confirm ambiguous. Enforced by `cargo run --bin lint-questions -- <files>` (CI job `lint-data`) and by the unit tests `shipped_question_data_is_clean_{ja,en}` in `src/io/validator.rs`.
+Validation: no two choices in a question may share a prefix that would make an auto-confirm ambiguous. Enforced by `cargo run --bin lint-questions -- <files>` (CI job `lint-data`) and by the unit tests `shipped_question_data_is_clean_{ja,en}` in `src/io/validator.rs`. The same lint binary also flags `ja_typings redundant-variant` — multiple typings in the same choice that collapse to the same canonical form (e.g. `gandhi-` / `gandi-`, where `dhi → di` makes them identical). Such duplicates are noise after v0.7.0's canonical_romaji expansion; only register one form per canonical group. Genuine reading variants (`日本` = `nihon` / `nippon`) are preserved because their canonical forms differ (the geminate `pp` distinguishes them).
 
 ### Listening prompt (`data/listening_<lang>.yaml`)
 

@@ -141,11 +141,11 @@ fn find_ja_typing_errors(path: &str, questions: &[Question]) -> Vec<String> {
                         .or_default()
                         .push(t.clone());
                 }
-                for (_, group) in groups {
+                for (canonical, group) in groups {
                     if group.len() > 1 {
                         errors.push(format!(
-                            "[ja_typings redundant-variant] question {} choice #{} ja={:?} variants {:?} canonical-collide (keep one)",
-                            question.id, choice_idx, ja, group
+                            "[ja_typings redundant-variant] question {} choice #{} ja={:?} variants {:?} all canonicalize to {:?} (keep one)",
+                            question.id, choice_idx, ja, group, canonical
                         ));
                     }
                 }
@@ -323,6 +323,66 @@ mod tests {
         let expected = expected_ja_typings(choice.labels.get("ja").unwrap());
         let actual = vec!["eren jaeger".to_string(), "eren ye-ga-".to_string()];
         assert!(ja_typing_mismatch_reason(&choice, &actual, &expected).is_some());
+    }
+
+    #[test]
+    fn detects_redundant_variants_that_canonicalize_alike() {
+        use crate::types::Question;
+        use std::collections::HashMap;
+        // `gandhi-` と `gandi-` は canonical_romaji で `dhi → di` 変換で
+        // どちらも `gandi-` になるため、両方を残すのは無意味な冗長。
+        let mut labels = HashMap::new();
+        labels.insert("ja".to_string(), "ガンディー".to_string());
+        let choice = Choice {
+            labels,
+            ja_typings: vec!["gandhi-".to_string(), "gandi-".to_string()],
+        };
+        let question = Question {
+            id: "q-test".to_string(),
+            genre: "test".to_string(),
+            question_text: HashMap::new(),
+            question_text_reading: HashMap::new(),
+            choices: vec![choice],
+            correct_answer_index: 0,
+            image_path: None,
+            ja_reviewed: false,
+        };
+        let errors = super::find_ja_typing_errors("data/questions_ja.json", &[question]);
+        assert!(
+            errors.iter().any(|e| e.contains("redundant-variant")
+                && e.contains("gandhi-")
+                && e.contains("gandi-")),
+            "expected redundant-variant for gandhi-/gandi-, got: {errors:?}"
+        );
+    }
+
+    #[test]
+    fn does_not_flag_genuine_reading_variants_as_redundant() {
+        use crate::types::Question;
+        use std::collections::HashMap;
+        // `nihon` と `nippon` は読み自体が違うので canonical でも別物。
+        // redundant-variant に引っかかってはいけない。
+        let mut labels = HashMap::new();
+        labels.insert("ja".to_string(), "にほん".to_string());
+        let choice = Choice {
+            labels,
+            ja_typings: vec!["nihon".to_string(), "nippon".to_string()],
+        };
+        let question = Question {
+            id: "q-test".to_string(),
+            genre: "test".to_string(),
+            question_text: HashMap::new(),
+            question_text_reading: HashMap::new(),
+            choices: vec![choice],
+            correct_answer_index: 0,
+            image_path: None,
+            ja_reviewed: false,
+        };
+        let errors = super::find_ja_typing_errors("data/questions_ja.json", &[question]);
+        assert!(
+            !errors.iter().any(|e| e.contains("redundant-variant")),
+            "should not flag nihon/nippon as redundant, got: {errors:?}"
+        );
     }
 
     #[test]
