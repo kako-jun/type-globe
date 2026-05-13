@@ -610,18 +610,11 @@ mod tests {
         let cases: &[(&str, &[&str])] = &[
             // ブレンダン・アイク (v0.7.1+ strict: データは `/` 含む形)。
             // 1連 n + `/` でも IME commit boundary により 2連 n に正規化される。
-            (
-                "burendann/aiku",
-                &["burendann/aiku", "burendan/aiku"],
-            ),
+            ("burendann/aiku", &["burendann/aiku", "burendan/aiku"]),
             // スクウェア・エニックス: ウェ系 + 中黒 `/`
             (
                 "sukuwea/enikkusu",
-                &[
-                    "sukuwea/enikkusu",
-                    "sukuuxea/enikkusu",
-                    "sukuulea/enikkusu",
-                ],
+                &["sukuwea/enikkusu", "sukuuxea/enikkusu", "sukuulea/enikkusu"],
             ),
             // ろけっと: 明示的小っ (・ 無し → `/` 不要)
             ("roketto", &["roketto", "rokeltsuto", "rokextuto"]),
@@ -659,13 +652,7 @@ mod tests {
             // 中黒 `/` の位置一致を検証 (v0.7.1+ strict)。
             (
                 "sukuwea/enikkusu",
-                &[
-                    "sukuwe",
-                    "sukuwea",
-                    "sukuwea/",
-                    "sukuuxea/",
-                    "sukuulea/",
-                ],
+                &["sukuwe", "sukuwea", "sukuwea/", "sukuuxea/", "sukuulea/"],
             ),
             // ろけっと 明示的小っ
             ("roketto", &["rokeltsuto", "rokextuto"]),
