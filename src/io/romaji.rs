@@ -78,6 +78,29 @@ fn hiragana_to_hepburn_raw(input: &str) -> String {
             continue;
         }
 
+        // IME 記号は対応 ASCII キーをそのまま出力する (・→`/`、、→`,`、。→`.`)。
+        // これでデータも IME-strict (位置一致が必要な形) になり、`/` を ・
+        // の位置以外で打つと弾かれる。`!` / `?` / 括弧類は依然「区切り」
+        // (空白) として扱う。
+        if matches!(c, '・' | '･') {
+            out.push('/');
+            geminate = false;
+            i += 1;
+            continue;
+        }
+        if c == '、' {
+            out.push(',');
+            geminate = false;
+            i += 1;
+            continue;
+        }
+        if c == '。' {
+            out.push('.');
+            geminate = false;
+            i += 1;
+            continue;
+        }
+
         if is_separator_like(c) {
             push_space(&mut out);
             geminate = false;
@@ -439,7 +462,7 @@ mod tests {
         assert_eq!(hiragana_to_hepburn("エル（Lawliet）"), "eru lawliet");
         // 長音 ー は IME 入力で必須の `-` キーに合わせてローマ字側にも残す。
         assert_eq!(hiragana_to_hepburn("おーぷん そーす"), "o-pun so-su");
-        assert_eq!(hiragana_to_hepburn("エレン・イェーガー"), "eren ye-ga-");
+        assert_eq!(hiragana_to_hepburn("エレン・イェーガー"), "eren/ye-ga-");
     }
 
     #[test]

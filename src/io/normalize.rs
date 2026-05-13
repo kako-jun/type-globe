@@ -25,20 +25,18 @@
 pub fn canonical_romaji(s: &str) -> String {
     let mut out = s.to_lowercase();
     // IME 記号キー (`/` = ・, `,` = 、, `.` = 。) は **commit トリガー** でも
-    // ある。直前にバッファされている単独 `n` は記号タイプ時に ん として
-    // コミットされるので、剥がす前に `n` を `nn` へ二重化しておく。既に
-    // `nn` の場合は doubling 不要 (longer pattern を先に処理する)。
-    // 例: `burendan/aiku` (ブレンダン・アイク) → `burendannaiku` に揃う。
+    // あるので、直前の単独 `n` を `nn` に二重化する。記号自体は剥がさず
+    // 保持する: そうしないと「`/` を打鍵できる位置が ・ の位置に限らず
+    // どこでも通る」誤動作になる (例: `to/kyo` が `tokyo` と等価になる)。
+    // データ側に `/` を含めて位置一致で判定する厳密仕様。
     for punct in ['/', ',', '.'] {
-        let nn_punct = format!("nn{punct}");
         let n_punct = format!("n{punct}");
-        out = out.replace(&nn_punct, "nn");
-        out = out.replace(&n_punct, "nn");
+        let nn_punct = format!("nn{punct}");
+        let sentinel = format!("\x01{punct}");
+        out = out.replace(&nn_punct, &sentinel); // protect already-doubled n
+        out = out.replace(&n_punct, &nn_punct); // double single n + keep /
+        out = out.replace(&sentinel, &nn_punct); // restore protected form
     }
-    // 残りの記号 (n の隣接以外) を素通しで剥がす。
-    out = out.replace('/', "");
-    out = out.replace(',', "");
-    out = out.replace('.', "");
     // 非標準 digraph の IME 別経路を標準形へ寄せる。`vu` 系・`fu` 系は
     // `fu→hu` より先に適用しないと `fuxi → huxi → fi` の連鎖が途切れる
     // ため、4文字以上のパターンをここで先に処理する。
@@ -170,9 +168,12 @@ fn collapse_redundant_nn(s: &str) -> String {
     let mut i = 0;
     while i < chars.len() {
         if i + 1 < chars.len() && chars[i] == 'n' && chars[i + 1] == 'n' {
+            // 直後が母音 / `y` / `n` (ナ行/ヤ行 と区別が必要) または IME
+            // 記号 `/,.` (commit boundary なので `nn` が ん として確定する)
+            // のときは `nn` を保持する。それ以外の子音/末尾は `n` に畳む。
             let keep = matches!(
                 chars.get(i + 2),
-                Some('a' | 'i' | 'u' | 'e' | 'o' | 'y' | 'n')
+                Some('a' | 'i' | 'u' | 'e' | 'o' | 'y' | 'n' | '/' | ',' | '.')
             );
             if keep {
                 out.push('n');
@@ -230,12 +231,18 @@ mod tests {
     }
 
     #[test]
-    fn ime_punctuation_keys_are_stripped() {
-        // ・ → `/`、、 → `,`、。 → `.`。データ側は記号を持たないので、
-        // 打鍵側で押された記号は剥がして候補と整合させる。
-        assert_eq!(canonical_romaji("sukuwea/enikkusu"), "sukuweaenikkusu");
-        assert_eq!(canonical_romaji("hello,world"), "helloworld");
-        assert_eq!(canonical_romaji("nodejs.org"), "nodejsorg");
+    fn ime_punctuation_keys_preserved_with_n_commit() {
+        // v0.7.1+: `/,.` は IME 記号として位置一致が必要 (剥がさない)。
+        // ただし IME 上では commit トリガーでもあるので、直前の単独 `n` は
+        // `nn` に二重化される (ん として確定する挙動を再現)。既に `nn` の
+        // 場合は重複二重化しない。
+        assert_eq!(canonical_romaji("burendan/aiku"), "burendann/aiku");
+        assert_eq!(canonical_romaji("burendann/aiku"), "burendann/aiku");
+        assert_eq!(canonical_romaji("sukuwea/enikkusu"), "sukuwea/enikkusu");
+        // 記号自体は通常文字として canonical に残るため、位置不一致は弾く。
+        assert_ne!(canonical_romaji("to/kyo"), canonical_romaji("tokyo"));
+        // 末尾の n + / も同様。
+        assert_eq!(canonical_romaji("don/a"), "donn/a");
     }
 
     #[test]
