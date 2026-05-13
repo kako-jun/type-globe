@@ -128,6 +128,29 @@ fn find_ja_typing_errors(path: &str, questions: &[Question]) -> Vec<String> {
                 }
             }
 
+            // 同一 canonical 形 に潰れる variant が複数登録されていないか
+            // チェック。v0.7.0 で canonical_romaji が IME 別経路 (Hepburn/
+            // Kunrei, 拗音, 促音, ファ系, ウェ系 等) を吸収するようになった
+            // ため、`gandhi-`/`gandi-` のような冗長ペアは1つに減らせる。
+            {
+                use std::collections::HashMap;
+                let mut groups: HashMap<String, Vec<String>> = HashMap::new();
+                for t in &choice.ja_typings {
+                    groups
+                        .entry(normalize::canonical_romaji(t))
+                        .or_default()
+                        .push(t.clone());
+                }
+                for (_, group) in groups {
+                    if group.len() > 1 {
+                        errors.push(format!(
+                            "[ja_typings redundant-variant] question {} choice #{} ja={:?} variants {:?} canonical-collide (keep one)",
+                            question.id, choice_idx, ja, group
+                        ));
+                    }
+                }
+            }
+
             let actual = normalized_variants(choice.ja_typings.clone());
             if actual.len() != choice.ja_typings.len() {
                 errors.push(format!(
