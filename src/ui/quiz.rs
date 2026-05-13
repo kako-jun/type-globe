@@ -696,13 +696,13 @@ impl QuizUI {
         // characters so the mistype cue can stand alone.
         self.play_cue(Cue::Keystroke);
 
+        // Auto-confirm on canonical equality so IME 別経路 (記号 `/`,
+        // 拗音 `kixya`, 促音 `ltsu`, ファ系 `huxa` 等) も最後のキーで
+        // 自動確定する。旧実装は raw 等値 だけで判定していたため、
+        // prefix 入力は通っているのに最後で確定しない症状 (`burendann/aiku`、
+        // `rokeltsuto` 等) が発生していた。
         let typed = self.input_buffer.to_lowercase();
-        if self
-            .quiz_game
-            .current_correct_typing_candidates()
-            .iter()
-            .any(|candidate| candidate == &typed)
-        {
+        if self.quiz_game.is_complete_correct_typed(&typed) {
             self.submit_current_answer();
         }
     }
