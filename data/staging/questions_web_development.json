@@ -2,12 +2,39 @@
   {
     "id": "q0181",
     "genre": "web_development",
-    "question_text": {"ja": "HTTP ステータスコード 404 が示す意味は?", "en": "What does HTTP status code 404 indicate?"},
+    "question_text": {
+      "ja": "HTTP ステータスコード 404 が示す意味は?",
+      "en": "What does HTTP status code 404 indicate?"
+    },
     "choices": [
-      {"ja": "リソースが見つからない", "en": "Resource not found", "ja_typings": ["riso-suga mitsukaranai"]},
-      {"ja": "サーバー内部エラー", "en": "Internal server error", "ja_typings": ["sa-ba- naibu era-"]},
-      {"ja": "アクセス禁止", "en": "Forbidden access", "ja_typings": ["akusesu kinshi"]},
-      {"ja": "認証が必要", "en": "Authentication required", "ja_typings": ["ninnshouga hitsuyou", "ninshouga hitsuyou"]}
+      {
+        "ja": "リソースが見つからない",
+        "en": "Resource not found",
+        "ja_typings": [
+          "riso-suga mitsukaranai"
+        ]
+      },
+      {
+        "ja": "サーバー内部エラー",
+        "en": "Internal server error",
+        "ja_typings": [
+          "sa-ba- naibu era-"
+        ]
+      },
+      {
+        "ja": "アクセス禁止",
+        "en": "Forbidden access",
+        "ja_typings": [
+          "akusesu kinshi"
+        ]
+      },
+      {
+        "ja": "認証が必要",
+        "en": "Authentication required",
+        "ja_typings": [
+          "ninshouga hitsuyou"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -16,12 +43,39 @@
   {
     "id": "q0182",
     "genre": "web_development",
-    "question_text": {"ja": "HTTP ステータスコード 500 が示す意味は?", "en": "What does HTTP status code 500 indicate?"},
+    "question_text": {
+      "ja": "HTTP ステータスコード 500 が示す意味は?",
+      "en": "What does HTTP status code 500 indicate?"
+    },
     "choices": [
-      {"ja": "サーバー内部エラー", "en": "Internal server error", "ja_typings": ["sa-ba- naibu era-"]},
-      {"ja": "リソースが見つからない", "en": "Resource not found", "ja_typings": ["riso-suga mitsukaranai"]},
-      {"ja": "リダイレクト", "en": "Redirect", "ja_typings": ["ridairekuto"]},
-      {"ja": "リクエストが不正", "en": "Bad request", "ja_typings": ["rikuesutoga fusei"]}
+      {
+        "ja": "サーバー内部エラー",
+        "en": "Internal server error",
+        "ja_typings": [
+          "sa-ba- naibu era-"
+        ]
+      },
+      {
+        "ja": "リソースが見つからない",
+        "en": "Resource not found",
+        "ja_typings": [
+          "riso-suga mitsukaranai"
+        ]
+      },
+      {
+        "ja": "リダイレクト",
+        "en": "Redirect",
+        "ja_typings": [
+          "ridairekuto"
+        ]
+      },
+      {
+        "ja": "リクエストが不正",
+        "en": "Bad request",
+        "ja_typings": [
+          "rikuesutoga fusei"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -30,12 +84,39 @@
   {
     "id": "q0183",
     "genre": "web_development",
-    "question_text": {"ja": "HTTP ステータスコード 301 が示す意味は?", "en": "What does HTTP status code 301 indicate?"},
+    "question_text": {
+      "ja": "HTTP ステータスコード 301 が示す意味は?",
+      "en": "What does HTTP status code 301 indicate?"
+    },
     "choices": [
-      {"ja": "恒久的なリダイレクト", "en": "Permanent redirect", "ja_typings": ["koukyuutekina ridairekuto"]},
-      {"ja": "一時的なリダイレクト", "en": "Temporary redirect", "ja_typings": ["ichijitekina ridairekuto"]},
-      {"ja": "リソースが見つからない", "en": "Resource not found", "ja_typings": ["riso-suga mitsukaranai"]},
-      {"ja": "サーバー内部エラー", "en": "Internal server error", "ja_typings": ["sa-ba- naibu era-"]}
+      {
+        "ja": "恒久的なリダイレクト",
+        "en": "Permanent redirect",
+        "ja_typings": [
+          "koukyuutekina ridairekuto"
+        ]
+      },
+      {
+        "ja": "一時的なリダイレクト",
+        "en": "Temporary redirect",
+        "ja_typings": [
+          "ichijitekina ridairekuto"
+        ]
+      },
+      {
+        "ja": "リソースが見つからない",
+        "en": "Resource not found",
+        "ja_typings": [
+          "riso-suga mitsukaranai"
+        ]
+      },
+      {
+        "ja": "サーバー内部エラー",
+        "en": "Internal server error",
+        "ja_typings": [
+          "sa-ba- naibu era-"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -44,12 +125,39 @@
   {
     "id": "q0184",
     "genre": "web_development",
-    "question_text": {"ja": "HTTP ステータスコード 200 が示す意味は?", "en": "What does HTTP status code 200 indicate?"},
+    "question_text": {
+      "ja": "HTTP ステータスコード 200 が示す意味は?",
+      "en": "What does HTTP status code 200 indicate?"
+    },
     "choices": [
-      {"ja": "リクエスト成功", "en": "Request succeeded", "ja_typings": ["rikuesuto seikou"]},
-      {"ja": "リクエストが不正", "en": "Bad request", "ja_typings": ["rikuesutoga fusei"]},
-      {"ja": "アクセス禁止", "en": "Forbidden access", "ja_typings": ["akusesu kinshi"]},
-      {"ja": "サービス利用不可", "en": "Service unavailable", "ja_typings": ["sa-bisu riyou fuka"]}
+      {
+        "ja": "リクエスト成功",
+        "en": "Request succeeded",
+        "ja_typings": [
+          "rikuesuto seikou"
+        ]
+      },
+      {
+        "ja": "リクエストが不正",
+        "en": "Bad request",
+        "ja_typings": [
+          "rikuesutoga fusei"
+        ]
+      },
+      {
+        "ja": "アクセス禁止",
+        "en": "Forbidden access",
+        "ja_typings": [
+          "akusesu kinshi"
+        ]
+      },
+      {
+        "ja": "サービス利用不可",
+        "en": "Service unavailable",
+        "ja_typings": [
+          "sa-bisu riyou fuka"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -58,12 +166,39 @@
   {
     "id": "q0185",
     "genre": "web_development",
-    "question_text": {"ja": "HTTP ステータスコード 403 が示す意味は?", "en": "What does HTTP status code 403 indicate?"},
+    "question_text": {
+      "ja": "HTTP ステータスコード 403 が示す意味は?",
+      "en": "What does HTTP status code 403 indicate?"
+    },
     "choices": [
-      {"ja": "アクセス禁止", "en": "Forbidden access", "ja_typings": ["akusesu kinshi"]},
-      {"ja": "認証が必要", "en": "Authentication required", "ja_typings": ["ninnshouga hitsuyou", "ninshouga hitsuyou"]},
-      {"ja": "リソースが見つからない", "en": "Resource not found", "ja_typings": ["riso-suga mitsukaranai"]},
-      {"ja": "リクエスト成功", "en": "Request succeeded", "ja_typings": ["rikuesuto seikou"]}
+      {
+        "ja": "アクセス禁止",
+        "en": "Forbidden access",
+        "ja_typings": [
+          "akusesu kinshi"
+        ]
+      },
+      {
+        "ja": "認証が必要",
+        "en": "Authentication required",
+        "ja_typings": [
+          "ninshouga hitsuyou"
+        ]
+      },
+      {
+        "ja": "リソースが見つからない",
+        "en": "Resource not found",
+        "ja_typings": [
+          "riso-suga mitsukaranai"
+        ]
+      },
+      {
+        "ja": "リクエスト成功",
+        "en": "Request succeeded",
+        "ja_typings": [
+          "rikuesuto seikou"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -72,12 +207,39 @@
   {
     "id": "q0186",
     "genre": "web_development",
-    "question_text": {"ja": "HTTP ステータスコード 401 が示す意味は?", "en": "What does HTTP status code 401 indicate?"},
+    "question_text": {
+      "ja": "HTTP ステータスコード 401 が示す意味は?",
+      "en": "What does HTTP status code 401 indicate?"
+    },
     "choices": [
-      {"ja": "認証が必要", "en": "Authentication required", "ja_typings": ["ninnshouga hitsuyou", "ninshouga hitsuyou"]},
-      {"ja": "アクセス禁止", "en": "Forbidden access", "ja_typings": ["akusesu kinshi"]},
-      {"ja": "サーバー内部エラー", "en": "Internal server error", "ja_typings": ["sa-ba- naibu era-"]},
-      {"ja": "リソースが見つからない", "en": "Resource not found", "ja_typings": ["riso-suga mitsukaranai"]}
+      {
+        "ja": "認証が必要",
+        "en": "Authentication required",
+        "ja_typings": [
+          "ninshouga hitsuyou"
+        ]
+      },
+      {
+        "ja": "アクセス禁止",
+        "en": "Forbidden access",
+        "ja_typings": [
+          "akusesu kinshi"
+        ]
+      },
+      {
+        "ja": "サーバー内部エラー",
+        "en": "Internal server error",
+        "ja_typings": [
+          "sa-ba- naibu era-"
+        ]
+      },
+      {
+        "ja": "リソースが見つからない",
+        "en": "Resource not found",
+        "ja_typings": [
+          "riso-suga mitsukaranai"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -86,12 +248,39 @@
   {
     "id": "q0187",
     "genre": "web_development",
-    "question_text": {"ja": "リソースを取得する HTTP メソッドは?", "en": "Which HTTP method retrieves a resource?"},
+    "question_text": {
+      "ja": "リソースを取得する HTTP メソッドは?",
+      "en": "Which HTTP method retrieves a resource?"
+    },
     "choices": [
-      {"ja": "GET", "en": "GET", "ja_typings": ["get"]},
-      {"ja": "POST", "en": "POST", "ja_typings": ["post"]},
-      {"ja": "DELETE", "en": "DELETE", "ja_typings": ["delete"]},
-      {"ja": "PATCH", "en": "PATCH", "ja_typings": ["patch"]}
+      {
+        "ja": "GET",
+        "en": "GET",
+        "ja_typings": [
+          "get"
+        ]
+      },
+      {
+        "ja": "POST",
+        "en": "POST",
+        "ja_typings": [
+          "post"
+        ]
+      },
+      {
+        "ja": "DELETE",
+        "en": "DELETE",
+        "ja_typings": [
+          "delete"
+        ]
+      },
+      {
+        "ja": "PATCH",
+        "en": "PATCH",
+        "ja_typings": [
+          "patch"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -100,12 +289,39 @@
   {
     "id": "q0188",
     "genre": "web_development",
-    "question_text": {"ja": "リソースを完全に置き換える HTTP メソッドは?", "en": "Which HTTP method fully replaces a resource?"},
+    "question_text": {
+      "ja": "リソースを完全に置き換える HTTP メソッドは?",
+      "en": "Which HTTP method fully replaces a resource?"
+    },
     "choices": [
-      {"ja": "PUT", "en": "PUT", "ja_typings": ["put"]},
-      {"ja": "GET", "en": "GET", "ja_typings": ["get"]},
-      {"ja": "PATCH", "en": "PATCH", "ja_typings": ["patch"]},
-      {"ja": "HEAD", "en": "HEAD", "ja_typings": ["head"]}
+      {
+        "ja": "PUT",
+        "en": "PUT",
+        "ja_typings": [
+          "put"
+        ]
+      },
+      {
+        "ja": "GET",
+        "en": "GET",
+        "ja_typings": [
+          "get"
+        ]
+      },
+      {
+        "ja": "PATCH",
+        "en": "PATCH",
+        "ja_typings": [
+          "patch"
+        ]
+      },
+      {
+        "ja": "HEAD",
+        "en": "HEAD",
+        "ja_typings": [
+          "head"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -114,12 +330,39 @@
   {
     "id": "q0189",
     "genre": "web_development",
-    "question_text": {"ja": "リソースを部分的に更新する HTTP メソッドは?", "en": "Which HTTP method partially updates a resource?"},
+    "question_text": {
+      "ja": "リソースを部分的に更新する HTTP メソッドは?",
+      "en": "Which HTTP method partially updates a resource?"
+    },
     "choices": [
-      {"ja": "PATCH", "en": "PATCH", "ja_typings": ["patch"]},
-      {"ja": "PUT", "en": "PUT", "ja_typings": ["put"]},
-      {"ja": "POST", "en": "POST", "ja_typings": ["post"]},
-      {"ja": "OPTIONS", "en": "OPTIONS", "ja_typings": ["options"]}
+      {
+        "ja": "PATCH",
+        "en": "PATCH",
+        "ja_typings": [
+          "patch"
+        ]
+      },
+      {
+        "ja": "PUT",
+        "en": "PUT",
+        "ja_typings": [
+          "put"
+        ]
+      },
+      {
+        "ja": "POST",
+        "en": "POST",
+        "ja_typings": [
+          "post"
+        ]
+      },
+      {
+        "ja": "OPTIONS",
+        "en": "OPTIONS",
+        "ja_typings": [
+          "options"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -128,12 +371,39 @@
   {
     "id": "q0190",
     "genre": "web_development",
-    "question_text": {"ja": "HTTPS で通信を暗号化するプロトコルは?", "en": "Which protocol encrypts HTTPS communication?"},
+    "question_text": {
+      "ja": "HTTPS で通信を暗号化するプロトコルは?",
+      "en": "Which protocol encrypts HTTPS communication?"
+    },
     "choices": [
-      {"ja": "TLS", "en": "TLS", "ja_typings": ["tls"]},
-      {"ja": "SSH", "en": "SSH", "ja_typings": ["ssh"]},
-      {"ja": "FTP", "en": "FTP", "ja_typings": ["ftp"]},
-      {"ja": "SMTP", "en": "SMTP", "ja_typings": ["smtp"]}
+      {
+        "ja": "TLS",
+        "en": "TLS",
+        "ja_typings": [
+          "tls"
+        ]
+      },
+      {
+        "ja": "SSH",
+        "en": "SSH",
+        "ja_typings": [
+          "ssh"
+        ]
+      },
+      {
+        "ja": "FTP",
+        "en": "FTP",
+        "ja_typings": [
+          "ftp"
+        ]
+      },
+      {
+        "ja": "SMTP",
+        "en": "SMTP",
+        "ja_typings": [
+          "smtp"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -142,12 +412,39 @@
   {
     "id": "q0191",
     "genre": "web_development",
-    "question_text": {"ja": "HTML で画像を埋め込むタグは?", "en": "Which HTML tag embeds an image?"},
+    "question_text": {
+      "ja": "HTML で画像を埋め込むタグは?",
+      "en": "Which HTML tag embeds an image?"
+    },
     "choices": [
-      {"ja": "`<img>` タグ", "en": "`<img>` tag", "ja_typings": ["img tagu"]},
-      {"ja": "`<picture>` タグ", "en": "`<picture>` tag", "ja_typings": ["picture tagu"]},
-      {"ja": "`<figure>` タグ", "en": "`<figure>` tag", "ja_typings": ["figure tagu"]},
-      {"ja": "`<canvas>` タグ", "en": "`<canvas>` tag", "ja_typings": ["canvas tagu"]}
+      {
+        "ja": "`<img>` タグ",
+        "en": "`<img>` tag",
+        "ja_typings": [
+          "img tagu"
+        ]
+      },
+      {
+        "ja": "`<picture>` タグ",
+        "en": "`<picture>` tag",
+        "ja_typings": [
+          "picture tagu"
+        ]
+      },
+      {
+        "ja": "`<figure>` タグ",
+        "en": "`<figure>` tag",
+        "ja_typings": [
+          "figure tagu"
+        ]
+      },
+      {
+        "ja": "`<canvas>` タグ",
+        "en": "`<canvas>` tag",
+        "ja_typings": [
+          "canvas tagu"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -156,12 +453,39 @@
   {
     "id": "q0192",
     "genre": "web_development",
-    "question_text": {"ja": "HTML で画像の代替テキストを指定する属性は?", "en": "Which HTML attribute specifies alternative text for an image?"},
+    "question_text": {
+      "ja": "HTML で画像の代替テキストを指定する属性は?",
+      "en": "Which HTML attribute specifies alternative text for an image?"
+    },
     "choices": [
-      {"ja": "`alt` 属性", "en": "`alt` attribute", "ja_typings": ["alt zokusei"]},
-      {"ja": "`title` 属性", "en": "`title` attribute", "ja_typings": ["title zokusei"]},
-      {"ja": "`src` 属性", "en": "`src` attribute", "ja_typings": ["src zokusei"]},
-      {"ja": "`name` 属性", "en": "`name` attribute", "ja_typings": ["name zokusei"]}
+      {
+        "ja": "`alt` 属性",
+        "en": "`alt` attribute",
+        "ja_typings": [
+          "alt zokusei"
+        ]
+      },
+      {
+        "ja": "`title` 属性",
+        "en": "`title` attribute",
+        "ja_typings": [
+          "title zokusei"
+        ]
+      },
+      {
+        "ja": "`src` 属性",
+        "en": "`src` attribute",
+        "ja_typings": [
+          "src zokusei"
+        ]
+      },
+      {
+        "ja": "`name` 属性",
+        "en": "`name` attribute",
+        "ja_typings": [
+          "name zokusei"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -170,12 +494,39 @@
   {
     "id": "q0193",
     "genre": "web_development",
-    "question_text": {"ja": "HTML でハイパーリンクを作るタグは?", "en": "Which HTML tag creates a hyperlink?"},
+    "question_text": {
+      "ja": "HTML でハイパーリンクを作るタグは?",
+      "en": "Which HTML tag creates a hyperlink?"
+    },
     "choices": [
-      {"ja": "`<a>` タグ", "en": "`<a>` tag", "ja_typings": ["a tagu"]},
-      {"ja": "`<link>` タグ", "en": "`<link>` tag", "ja_typings": ["link tagu"]},
-      {"ja": "`<nav>` タグ", "en": "`<nav>` tag", "ja_typings": ["nav tagu"]},
-      {"ja": "`<href>` タグ", "en": "`<href>` tag", "ja_typings": ["href tagu"]}
+      {
+        "ja": "`<a>` タグ",
+        "en": "`<a>` tag",
+        "ja_typings": [
+          "a tagu"
+        ]
+      },
+      {
+        "ja": "`<link>` タグ",
+        "en": "`<link>` tag",
+        "ja_typings": [
+          "link tagu"
+        ]
+      },
+      {
+        "ja": "`<nav>` タグ",
+        "en": "`<nav>` tag",
+        "ja_typings": [
+          "nav tagu"
+        ]
+      },
+      {
+        "ja": "`<href>` タグ",
+        "en": "`<href>` tag",
+        "ja_typings": [
+          "href tagu"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -184,12 +535,39 @@
   {
     "id": "q0194",
     "genre": "web_development",
-    "question_text": {"ja": "HTML5 で動画を埋め込むタグは?", "en": "Which HTML5 tag embeds a video?"},
+    "question_text": {
+      "ja": "HTML5 で動画を埋め込むタグは?",
+      "en": "Which HTML5 tag embeds a video?"
+    },
     "choices": [
-      {"ja": "`<video>` タグ", "en": "`<video>` tag", "ja_typings": ["video tagu"]},
-      {"ja": "`<movie>` タグ", "en": "`<movie>` tag", "ja_typings": ["movie tagu"]},
-      {"ja": "`<media>` タグ", "en": "`<media>` tag", "ja_typings": ["media tagu"]},
-      {"ja": "`<embed>` タグ", "en": "`<embed>` tag", "ja_typings": ["embed tagu"]}
+      {
+        "ja": "`<video>` タグ",
+        "en": "`<video>` tag",
+        "ja_typings": [
+          "video tagu"
+        ]
+      },
+      {
+        "ja": "`<movie>` タグ",
+        "en": "`<movie>` tag",
+        "ja_typings": [
+          "movie tagu"
+        ]
+      },
+      {
+        "ja": "`<media>` タグ",
+        "en": "`<media>` tag",
+        "ja_typings": [
+          "media tagu"
+        ]
+      },
+      {
+        "ja": "`<embed>` タグ",
+        "en": "`<embed>` tag",
+        "ja_typings": [
+          "embed tagu"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -198,12 +576,39 @@
   {
     "id": "q0195",
     "genre": "web_development",
-    "question_text": {"ja": "CSS で要素を横方向に並べる Flexbox の親要素プロパティは?", "en": "Which CSS property enables Flexbox layout on a parent element?"},
+    "question_text": {
+      "ja": "CSS で要素を横方向に並べる Flexbox の親要素プロパティは?",
+      "en": "Which CSS property enables Flexbox layout on a parent element?"
+    },
     "choices": [
-      {"ja": "`display: flex`", "en": "`display: flex`", "ja_typings": ["display flex"]},
-      {"ja": "`display: grid`", "en": "`display: grid`", "ja_typings": ["display grid"]},
-      {"ja": "`display: block`", "en": "`display: block`", "ja_typings": ["display block"]},
-      {"ja": "`display: inline`", "en": "`display: inline`", "ja_typings": ["display inline"]}
+      {
+        "ja": "`display: flex`",
+        "en": "`display: flex`",
+        "ja_typings": [
+          "`display: flex`"
+        ]
+      },
+      {
+        "ja": "`display: grid`",
+        "en": "`display: grid`",
+        "ja_typings": [
+          "`display: grid`"
+        ]
+      },
+      {
+        "ja": "`display: block`",
+        "en": "`display: block`",
+        "ja_typings": [
+          "`display: block`"
+        ]
+      },
+      {
+        "ja": "`display: inline`",
+        "en": "`display: inline`",
+        "ja_typings": [
+          "`display: inline`"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -212,12 +617,39 @@
   {
     "id": "q0196",
     "genre": "web_development",
-    "question_text": {"ja": "CSS で要素を 2 次元グリッドに並べるレイアウト方式は?", "en": "Which CSS layout method arranges elements in a 2D grid?"},
+    "question_text": {
+      "ja": "CSS で要素を 2 次元グリッドに並べるレイアウト方式は?",
+      "en": "Which CSS layout method arranges elements in a 2D grid?"
+    },
     "choices": [
-      {"ja": "CSS Grid", "en": "CSS Grid", "ja_typings": ["css grid"]},
-      {"ja": "Flexbox", "en": "Flexbox", "ja_typings": ["flexbox"]},
-      {"ja": "Float", "en": "Float", "ja_typings": ["float"]},
-      {"ja": "Position", "en": "Position", "ja_typings": ["position"]}
+      {
+        "ja": "CSS Grid",
+        "en": "CSS Grid",
+        "ja_typings": [
+          "css grid"
+        ]
+      },
+      {
+        "ja": "Flexbox",
+        "en": "Flexbox",
+        "ja_typings": [
+          "flexbox"
+        ]
+      },
+      {
+        "ja": "Float",
+        "en": "Float",
+        "ja_typings": [
+          "float"
+        ]
+      },
+      {
+        "ja": "Position",
+        "en": "Position",
+        "ja_typings": [
+          "position"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -226,12 +658,39 @@
   {
     "id": "q0197",
     "genre": "web_development",
-    "question_text": {"ja": "CSS で要素の外側余白を指定するプロパティは?", "en": "Which CSS property specifies the outer space around an element?"},
+    "question_text": {
+      "ja": "CSS で要素の外側余白を指定するプロパティは?",
+      "en": "Which CSS property specifies the outer space around an element?"
+    },
     "choices": [
-      {"ja": "`margin`", "en": "`margin`", "ja_typings": ["margin"]},
-      {"ja": "`padding`", "en": "`padding`", "ja_typings": ["padding"]},
-      {"ja": "`border`", "en": "`border`", "ja_typings": ["border"]},
-      {"ja": "`gap`", "en": "`gap`", "ja_typings": ["gap"]}
+      {
+        "ja": "`margin`",
+        "en": "`margin`",
+        "ja_typings": [
+          "`margin`"
+        ]
+      },
+      {
+        "ja": "`padding`",
+        "en": "`padding`",
+        "ja_typings": [
+          "`padding`"
+        ]
+      },
+      {
+        "ja": "`border`",
+        "en": "`border`",
+        "ja_typings": [
+          "`border`"
+        ]
+      },
+      {
+        "ja": "`gap`",
+        "en": "`gap`",
+        "ja_typings": [
+          "`gap`"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -240,12 +699,39 @@
   {
     "id": "q0198",
     "genre": "web_development",
-    "question_text": {"ja": "CSS で要素の内側余白を指定するプロパティは?", "en": "Which CSS property specifies the inner padding of an element?"},
+    "question_text": {
+      "ja": "CSS で要素の内側余白を指定するプロパティは?",
+      "en": "Which CSS property specifies the inner padding of an element?"
+    },
     "choices": [
-      {"ja": "`padding`", "en": "`padding`", "ja_typings": ["padding"]},
-      {"ja": "`margin`", "en": "`margin`", "ja_typings": ["margin"]},
-      {"ja": "`spacing`", "en": "`spacing`", "ja_typings": ["spacing"]},
-      {"ja": "`inset`", "en": "`inset`", "ja_typings": ["inset"]}
+      {
+        "ja": "`padding`",
+        "en": "`padding`",
+        "ja_typings": [
+          "`padding`"
+        ]
+      },
+      {
+        "ja": "`margin`",
+        "en": "`margin`",
+        "ja_typings": [
+          "`margin`"
+        ]
+      },
+      {
+        "ja": "`spacing`",
+        "en": "`spacing`",
+        "ja_typings": [
+          "`spacing`"
+        ]
+      },
+      {
+        "ja": "`inset`",
+        "en": "`inset`",
+        "ja_typings": [
+          "`inset`"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -254,12 +740,39 @@
   {
     "id": "q0199",
     "genre": "web_development",
-    "question_text": {"ja": "CSS で ID セレクタを表す記号は?", "en": "Which symbol denotes an ID selector in CSS?"},
+    "question_text": {
+      "ja": "CSS で ID セレクタを表す記号は?",
+      "en": "Which symbol denotes an ID selector in CSS?"
+    },
     "choices": [
-      {"ja": "`#`", "en": "`#`", "ja_typings": ["sharp"]},
-      {"ja": "`.`", "en": "`.`", "ja_typings": ["dot"]},
-      {"ja": "`@`", "en": "`@`", "ja_typings": ["at"]},
-      {"ja": "`&`", "en": "`&`", "ja_typings": ["ampersand"]}
+      {
+        "ja": "`#`",
+        "en": "`#`",
+        "ja_typings": [
+          "`#`"
+        ]
+      },
+      {
+        "ja": "`.`",
+        "en": "`.`",
+        "ja_typings": [
+          "`.`"
+        ]
+      },
+      {
+        "ja": "`@`",
+        "en": "`@`",
+        "ja_typings": [
+          "`@`"
+        ]
+      },
+      {
+        "ja": "`&`",
+        "en": "`&`",
+        "ja_typings": [
+          "`&`"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -268,12 +781,39 @@
   {
     "id": "q0200",
     "genre": "web_development",
-    "question_text": {"ja": "CSS でクラスセレクタを表す記号は?", "en": "Which symbol denotes a class selector in CSS?"},
+    "question_text": {
+      "ja": "CSS でクラスセレクタを表す記号は?",
+      "en": "Which symbol denotes a class selector in CSS?"
+    },
     "choices": [
-      {"ja": "`.`", "en": "`.`", "ja_typings": ["dot"]},
-      {"ja": "`#`", "en": "`#`", "ja_typings": ["sharp"]},
-      {"ja": "`*`", "en": "`*`", "ja_typings": ["asterisk"]},
-      {"ja": "`:`", "en": "`:`", "ja_typings": ["colon"]}
+      {
+        "ja": "`.`",
+        "en": "`.`",
+        "ja_typings": [
+          "`.`"
+        ]
+      },
+      {
+        "ja": "`#`",
+        "en": "`#`",
+        "ja_typings": [
+          "`#`"
+        ]
+      },
+      {
+        "ja": "`*`",
+        "en": "`*`",
+        "ja_typings": [
+          "`*`"
+        ]
+      },
+      {
+        "ja": "`:`",
+        "en": "`:`",
+        "ja_typings": [
+          "`:`"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -282,12 +822,39 @@
   {
     "id": "q0201",
     "genre": "web_development",
-    "question_text": {"ja": "JavaScript で変数を再代入不可で宣言するキーワードは?", "en": "Which JavaScript keyword declares a non-reassignable variable?"},
+    "question_text": {
+      "ja": "JavaScript で変数を再代入不可で宣言するキーワードは?",
+      "en": "Which JavaScript keyword declares a non-reassignable variable?"
+    },
     "choices": [
-      {"ja": "`const`", "en": "`const`", "ja_typings": ["const"]},
-      {"ja": "`let`", "en": "`let`", "ja_typings": ["let"]},
-      {"ja": "`var`", "en": "`var`", "ja_typings": ["var"]},
-      {"ja": "`final`", "en": "`final`", "ja_typings": ["final"]}
+      {
+        "ja": "`const`",
+        "en": "`const`",
+        "ja_typings": [
+          "`const`"
+        ]
+      },
+      {
+        "ja": "`let`",
+        "en": "`let`",
+        "ja_typings": [
+          "`let`"
+        ]
+      },
+      {
+        "ja": "`var`",
+        "en": "`var`",
+        "ja_typings": [
+          "`var`"
+        ]
+      },
+      {
+        "ja": "`final`",
+        "en": "`final`",
+        "ja_typings": [
+          "`final`"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -296,12 +863,39 @@
   {
     "id": "q0202",
     "genre": "web_development",
-    "question_text": {"ja": "JavaScript で非同期処理を扱うオブジェクトは?", "en": "Which JavaScript object handles asynchronous operations?"},
+    "question_text": {
+      "ja": "JavaScript で非同期処理を扱うオブジェクトは?",
+      "en": "Which JavaScript object handles asynchronous operations?"
+    },
     "choices": [
-      {"ja": "Promise", "en": "Promise", "ja_typings": ["promise"]},
-      {"ja": "Callback", "en": "Callback", "ja_typings": ["callback"]},
-      {"ja": "Thread", "en": "Thread", "ja_typings": ["thread"]},
-      {"ja": "Observable", "en": "Observable", "ja_typings": ["observable"]}
+      {
+        "ja": "Promise",
+        "en": "Promise",
+        "ja_typings": [
+          "promise"
+        ]
+      },
+      {
+        "ja": "Callback",
+        "en": "Callback",
+        "ja_typings": [
+          "callback"
+        ]
+      },
+      {
+        "ja": "Thread",
+        "en": "Thread",
+        "ja_typings": [
+          "thread"
+        ]
+      },
+      {
+        "ja": "Observable",
+        "en": "Observable",
+        "ja_typings": [
+          "observable"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -310,12 +904,39 @@
   {
     "id": "q0203",
     "genre": "web_development",
-    "question_text": {"ja": "JavaScript の厳密等価演算子は?", "en": "What is the strict equality operator in JavaScript?"},
+    "question_text": {
+      "ja": "JavaScript の厳密等価演算子は?",
+      "en": "What is the strict equality operator in JavaScript?"
+    },
     "choices": [
-      {"ja": "`===`", "en": "`===`", "ja_typings": ["triple equal"]},
-      {"ja": "`==`", "en": "`==`", "ja_typings": ["double equal"]},
-      {"ja": "`=`", "en": "`=`", "ja_typings": ["single equal"]},
-      {"ja": "`!=`", "en": "`!=`", "ja_typings": ["not equal"]}
+      {
+        "ja": "`===`",
+        "en": "`===`",
+        "ja_typings": [
+          "`===`"
+        ]
+      },
+      {
+        "ja": "`==`",
+        "en": "`==`",
+        "ja_typings": [
+          "`==`"
+        ]
+      },
+      {
+        "ja": "`=`",
+        "en": "`=`",
+        "ja_typings": [
+          "`=`"
+        ]
+      },
+      {
+        "ja": "`!=`",
+        "en": "`!=`",
+        "ja_typings": [
+          "`!=`"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -324,12 +945,39 @@
   {
     "id": "q0204",
     "genre": "web_development",
-    "question_text": {"ja": "JavaScript の配列メソッドで各要素に関数を適用し新しい配列を返すのは?", "en": "Which JavaScript array method applies a function to each element and returns a new array?"},
+    "question_text": {
+      "ja": "JavaScript の配列メソッドで各要素に関数を適用し新しい配列を返すのは?",
+      "en": "Which JavaScript array method applies a function to each element and returns a new array?"
+    },
     "choices": [
-      {"ja": "`map`", "en": "`map`", "ja_typings": ["map"]},
-      {"ja": "`forEach`", "en": "`forEach`", "ja_typings": ["foreach"]},
-      {"ja": "`filter`", "en": "`filter`", "ja_typings": ["filter"]},
-      {"ja": "`reduce`", "en": "`reduce`", "ja_typings": ["reduce"]}
+      {
+        "ja": "`map`",
+        "en": "`map`",
+        "ja_typings": [
+          "`map`"
+        ]
+      },
+      {
+        "ja": "`forEach`",
+        "en": "`forEach`",
+        "ja_typings": [
+          "`foreach`"
+        ]
+      },
+      {
+        "ja": "`filter`",
+        "en": "`filter`",
+        "ja_typings": [
+          "`filter`"
+        ]
+      },
+      {
+        "ja": "`reduce`",
+        "en": "`reduce`",
+        "ja_typings": [
+          "`reduce`"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -338,12 +986,39 @@
   {
     "id": "q0205",
     "genre": "web_development",
-    "question_text": {"ja": "JavaScript の配列メソッドで条件を満たす要素のみ抽出するのは?", "en": "Which JavaScript array method extracts elements matching a condition?"},
+    "question_text": {
+      "ja": "JavaScript の配列メソッドで条件を満たす要素のみ抽出するのは?",
+      "en": "Which JavaScript array method extracts elements matching a condition?"
+    },
     "choices": [
-      {"ja": "`filter`", "en": "`filter`", "ja_typings": ["filter"]},
-      {"ja": "`map`", "en": "`map`", "ja_typings": ["map"]},
-      {"ja": "`find`", "en": "`find`", "ja_typings": ["find"]},
-      {"ja": "`some`", "en": "`some`", "ja_typings": ["some"]}
+      {
+        "ja": "`filter`",
+        "en": "`filter`",
+        "ja_typings": [
+          "`filter`"
+        ]
+      },
+      {
+        "ja": "`map`",
+        "en": "`map`",
+        "ja_typings": [
+          "`map`"
+        ]
+      },
+      {
+        "ja": "`find`",
+        "en": "`find`",
+        "ja_typings": [
+          "`find`"
+        ]
+      },
+      {
+        "ja": "`some`",
+        "en": "`some`",
+        "ja_typings": [
+          "`some`"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -352,12 +1027,39 @@
   {
     "id": "q0206",
     "genre": "web_development",
-    "question_text": {"ja": "Facebook (Meta) が開発した UI ライブラリは?", "en": "Which UI library was developed by Facebook (Meta)?"},
+    "question_text": {
+      "ja": "Facebook (Meta) が開発した UI ライブラリは?",
+      "en": "Which UI library was developed by Facebook (Meta)?"
+    },
     "choices": [
-      {"ja": "React", "en": "React", "ja_typings": ["react"]},
-      {"ja": "Vue", "en": "Vue", "ja_typings": ["vue"]},
-      {"ja": "Angular", "en": "Angular", "ja_typings": ["angular"]},
-      {"ja": "Svelte", "en": "Svelte", "ja_typings": ["svelte"]}
+      {
+        "ja": "React",
+        "en": "React",
+        "ja_typings": [
+          "react"
+        ]
+      },
+      {
+        "ja": "Vue",
+        "en": "Vue",
+        "ja_typings": [
+          "vue"
+        ]
+      },
+      {
+        "ja": "Angular",
+        "en": "Angular",
+        "ja_typings": [
+          "angular"
+        ]
+      },
+      {
+        "ja": "Svelte",
+        "en": "Svelte",
+        "ja_typings": [
+          "svelte"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -366,12 +1068,39 @@
   {
     "id": "q0207",
     "genre": "web_development",
-    "question_text": {"ja": "Google が中心となって開発しているフルスタックフレームワークは?", "en": "Which full-stack framework is developed primarily by Google?"},
+    "question_text": {
+      "ja": "Google が中心となって開発しているフルスタックフレームワークは?",
+      "en": "Which full-stack framework is developed primarily by Google?"
+    },
     "choices": [
-      {"ja": "Angular", "en": "Angular", "ja_typings": ["angular"]},
-      {"ja": "React", "en": "React", "ja_typings": ["react"]},
-      {"ja": "Vue", "en": "Vue", "ja_typings": ["vue"]},
-      {"ja": "Ember", "en": "Ember", "ja_typings": ["ember"]}
+      {
+        "ja": "Angular",
+        "en": "Angular",
+        "ja_typings": [
+          "angular"
+        ]
+      },
+      {
+        "ja": "React",
+        "en": "React",
+        "ja_typings": [
+          "react"
+        ]
+      },
+      {
+        "ja": "Vue",
+        "en": "Vue",
+        "ja_typings": [
+          "vue"
+        ]
+      },
+      {
+        "ja": "Ember",
+        "en": "Ember",
+        "ja_typings": [
+          "ember"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -380,12 +1109,39 @@
   {
     "id": "q0208",
     "genre": "web_development",
-    "question_text": {"ja": "Evan You が開発した進歩的 JavaScript フレームワークは?", "en": "Which progressive JavaScript framework was created by Evan You?"},
+    "question_text": {
+      "ja": "Evan You が開発した進歩的 JavaScript フレームワークは?",
+      "en": "Which progressive JavaScript framework was created by Evan You?"
+    },
     "choices": [
-      {"ja": "Vue", "en": "Vue", "ja_typings": ["vue"]},
-      {"ja": "React", "en": "React", "ja_typings": ["react"]},
-      {"ja": "Angular", "en": "Angular", "ja_typings": ["angular"]},
-      {"ja": "Backbone", "en": "Backbone", "ja_typings": ["backbone"]}
+      {
+        "ja": "Vue",
+        "en": "Vue",
+        "ja_typings": [
+          "vue"
+        ]
+      },
+      {
+        "ja": "React",
+        "en": "React",
+        "ja_typings": [
+          "react"
+        ]
+      },
+      {
+        "ja": "Angular",
+        "en": "Angular",
+        "ja_typings": [
+          "angular"
+        ]
+      },
+      {
+        "ja": "Backbone",
+        "en": "Backbone",
+        "ja_typings": [
+          "backbone"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -394,12 +1150,39 @@
   {
     "id": "q0209",
     "genre": "web_development",
-    "question_text": {"ja": "コンパイル時にフレームワークコードを消去するアプローチで知られるフレームワークは?", "en": "Which framework is known for compiling away framework code at build time?"},
+    "question_text": {
+      "ja": "コンパイル時にフレームワークコードを消去するアプローチで知られるフレームワークは?",
+      "en": "Which framework is known for compiling away framework code at build time?"
+    },
     "choices": [
-      {"ja": "Svelte", "en": "Svelte", "ja_typings": ["svelte"]},
-      {"ja": "React", "en": "React", "ja_typings": ["react"]},
-      {"ja": "Vue", "en": "Vue", "ja_typings": ["vue"]},
-      {"ja": "Angular", "en": "Angular", "ja_typings": ["angular"]}
+      {
+        "ja": "Svelte",
+        "en": "Svelte",
+        "ja_typings": [
+          "svelte"
+        ]
+      },
+      {
+        "ja": "React",
+        "en": "React",
+        "ja_typings": [
+          "react"
+        ]
+      },
+      {
+        "ja": "Vue",
+        "en": "Vue",
+        "ja_typings": [
+          "vue"
+        ]
+      },
+      {
+        "ja": "Angular",
+        "en": "Angular",
+        "ja_typings": [
+          "angular"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -408,12 +1191,39 @@
   {
     "id": "q0210",
     "genre": "web_development",
-    "question_text": {"ja": "Vercel が開発する React ベースのフレームワークは?", "en": "Which React-based framework is developed by Vercel?"},
+    "question_text": {
+      "ja": "Vercel が開発する React ベースのフレームワークは?",
+      "en": "Which React-based framework is developed by Vercel?"
+    },
     "choices": [
-      {"ja": "Next.js", "en": "Next.js", "ja_typings": ["nextjs"]},
-      {"ja": "Nuxt.js", "en": "Nuxt.js", "ja_typings": ["nuxtjs"]},
-      {"ja": "Remix", "en": "Remix", "ja_typings": ["remix"]},
-      {"ja": "Gatsby", "en": "Gatsby", "ja_typings": ["gatsby"]}
+      {
+        "ja": "Next.js",
+        "en": "Next.js",
+        "ja_typings": [
+          "next.js"
+        ]
+      },
+      {
+        "ja": "Nuxt.js",
+        "en": "Nuxt.js",
+        "ja_typings": [
+          "nuxt.js"
+        ]
+      },
+      {
+        "ja": "Remix",
+        "en": "Remix",
+        "ja_typings": [
+          "remix"
+        ]
+      },
+      {
+        "ja": "Gatsby",
+        "en": "Gatsby",
+        "ja_typings": [
+          "gatsby"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -422,12 +1232,39 @@
   {
     "id": "q0211",
     "genre": "web_development",
-    "question_text": {"ja": "Vue ベースのメタフレームワークは?", "en": "Which meta-framework is built on top of Vue?"},
+    "question_text": {
+      "ja": "Vue ベースのメタフレームワークは?",
+      "en": "Which meta-framework is built on top of Vue?"
+    },
     "choices": [
-      {"ja": "Nuxt", "en": "Nuxt", "ja_typings": ["nuxt"]},
-      {"ja": "Next", "en": "Next", "ja_typings": ["next"]},
-      {"ja": "Remix", "en": "Remix", "ja_typings": ["remix"]},
-      {"ja": "Astro", "en": "Astro", "ja_typings": ["astro"]}
+      {
+        "ja": "Nuxt",
+        "en": "Nuxt",
+        "ja_typings": [
+          "nuxt"
+        ]
+      },
+      {
+        "ja": "Next",
+        "en": "Next",
+        "ja_typings": [
+          "next"
+        ]
+      },
+      {
+        "ja": "Remix",
+        "en": "Remix",
+        "ja_typings": [
+          "remix"
+        ]
+      },
+      {
+        "ja": "Astro",
+        "en": "Astro",
+        "ja_typings": [
+          "astro"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -436,12 +1273,39 @@
   {
     "id": "q0212",
     "genre": "web_development",
-    "question_text": {"ja": "Svelte ベースのメタフレームワークは?", "en": "Which meta-framework is built on top of Svelte?"},
+    "question_text": {
+      "ja": "Svelte ベースのメタフレームワークは?",
+      "en": "Which meta-framework is built on top of Svelte?"
+    },
     "choices": [
-      {"ja": "SvelteKit", "en": "SvelteKit", "ja_typings": ["sveltekit"]},
-      {"ja": "Next.js", "en": "Next.js", "ja_typings": ["nextjs"]},
-      {"ja": "Nuxt.js", "en": "Nuxt.js", "ja_typings": ["nuxtjs"]},
-      {"ja": "Remix", "en": "Remix", "ja_typings": ["remix"]}
+      {
+        "ja": "SvelteKit",
+        "en": "SvelteKit",
+        "ja_typings": [
+          "sveltekit"
+        ]
+      },
+      {
+        "ja": "Next.js",
+        "en": "Next.js",
+        "ja_typings": [
+          "next.js"
+        ]
+      },
+      {
+        "ja": "Nuxt.js",
+        "en": "Nuxt.js",
+        "ja_typings": [
+          "nuxt.js"
+        ]
+      },
+      {
+        "ja": "Remix",
+        "en": "Remix",
+        "ja_typings": [
+          "remix"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -450,12 +1314,39 @@
   {
     "id": "q0213",
     "genre": "web_development",
-    "question_text": {"ja": "REST API でリソースを識別するための要素は?", "en": "What identifies a resource in a REST API?"},
+    "question_text": {
+      "ja": "REST API でリソースを識別するための要素は?",
+      "en": "What identifies a resource in a REST API?"
+    },
     "choices": [
-      {"ja": "URI", "en": "URI", "ja_typings": ["uri"]},
-      {"ja": "HTML", "en": "HTML", "ja_typings": ["html"]},
-      {"ja": "JSON", "en": "JSON", "ja_typings": ["json"]},
-      {"ja": "MIME", "en": "MIME", "ja_typings": ["mime"]}
+      {
+        "ja": "URI",
+        "en": "URI",
+        "ja_typings": [
+          "uri"
+        ]
+      },
+      {
+        "ja": "HTML",
+        "en": "HTML",
+        "ja_typings": [
+          "html"
+        ]
+      },
+      {
+        "ja": "JSON",
+        "en": "JSON",
+        "ja_typings": [
+          "json"
+        ]
+      },
+      {
+        "ja": "MIME",
+        "en": "MIME",
+        "ja_typings": [
+          "mime"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -464,12 +1355,39 @@
   {
     "id": "q0214",
     "genre": "web_development",
-    "question_text": {"ja": "Facebook が開発したクエリ言語ベースの API 仕様は?", "en": "Which query-language-based API specification was developed by Facebook?"},
+    "question_text": {
+      "ja": "Facebook が開発したクエリ言語ベースの API 仕様は?",
+      "en": "Which query-language-based API specification was developed by Facebook?"
+    },
     "choices": [
-      {"ja": "GraphQL", "en": "GraphQL", "ja_typings": ["graphql"]},
-      {"ja": "REST", "en": "REST", "ja_typings": ["rest"]},
-      {"ja": "gRPC", "en": "gRPC", "ja_typings": ["grpc"]},
-      {"ja": "SOAP", "en": "SOAP", "ja_typings": ["soap"]}
+      {
+        "ja": "GraphQL",
+        "en": "GraphQL",
+        "ja_typings": [
+          "graphql"
+        ]
+      },
+      {
+        "ja": "REST",
+        "en": "REST",
+        "ja_typings": [
+          "rest"
+        ]
+      },
+      {
+        "ja": "gRPC",
+        "en": "gRPC",
+        "ja_typings": [
+          "grpc"
+        ]
+      },
+      {
+        "ja": "SOAP",
+        "en": "SOAP",
+        "ja_typings": [
+          "soap"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -478,12 +1396,39 @@
   {
     "id": "q0215",
     "genre": "web_development",
-    "question_text": {"ja": "GraphQL でデータを取得する操作の名前は?", "en": "What is the name of the GraphQL operation that fetches data?"},
+    "question_text": {
+      "ja": "GraphQL でデータを取得する操作の名前は?",
+      "en": "What is the name of the GraphQL operation that fetches data?"
+    },
     "choices": [
-      {"ja": "Query", "en": "Query", "ja_typings": ["query"]},
-      {"ja": "Mutation", "en": "Mutation", "ja_typings": ["mutation"]},
-      {"ja": "Subscription", "en": "Subscription", "ja_typings": ["subscription"]},
-      {"ja": "Fragment", "en": "Fragment", "ja_typings": ["fragment"]}
+      {
+        "ja": "Query",
+        "en": "Query",
+        "ja_typings": [
+          "query"
+        ]
+      },
+      {
+        "ja": "Mutation",
+        "en": "Mutation",
+        "ja_typings": [
+          "mutation"
+        ]
+      },
+      {
+        "ja": "Subscription",
+        "en": "Subscription",
+        "ja_typings": [
+          "subscription"
+        ]
+      },
+      {
+        "ja": "Fragment",
+        "en": "Fragment",
+        "ja_typings": [
+          "fragment"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -492,12 +1437,39 @@
   {
     "id": "q0216",
     "genre": "web_development",
-    "question_text": {"ja": "GraphQL でデータを変更する操作の名前は?", "en": "What is the name of the GraphQL operation that modifies data?"},
+    "question_text": {
+      "ja": "GraphQL でデータを変更する操作の名前は?",
+      "en": "What is the name of the GraphQL operation that modifies data?"
+    },
     "choices": [
-      {"ja": "Mutation", "en": "Mutation", "ja_typings": ["mutation"]},
-      {"ja": "Query", "en": "Query", "ja_typings": ["query"]},
-      {"ja": "Subscription", "en": "Subscription", "ja_typings": ["subscription"]},
-      {"ja": "Schema", "en": "Schema", "ja_typings": ["schema"]}
+      {
+        "ja": "Mutation",
+        "en": "Mutation",
+        "ja_typings": [
+          "mutation"
+        ]
+      },
+      {
+        "ja": "Query",
+        "en": "Query",
+        "ja_typings": [
+          "query"
+        ]
+      },
+      {
+        "ja": "Subscription",
+        "en": "Subscription",
+        "ja_typings": [
+          "subscription"
+        ]
+      },
+      {
+        "ja": "Schema",
+        "en": "Schema",
+        "ja_typings": [
+          "schema"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -506,12 +1478,39 @@
   {
     "id": "q0217",
     "genre": "web_development",
-    "question_text": {"ja": "サードパーティアプリケーションに権限委譲するための業界標準プロトコルは?", "en": "Which industry-standard protocol delegates authorization to third-party applications?"},
+    "question_text": {
+      "ja": "サードパーティアプリケーションに権限委譲するための業界標準プロトコルは?",
+      "en": "Which industry-standard protocol delegates authorization to third-party applications?"
+    },
     "choices": [
-      {"ja": "OAuth", "en": "OAuth", "ja_typings": ["oauth"]},
-      {"ja": "SAML", "en": "SAML", "ja_typings": ["saml"]},
-      {"ja": "LDAP", "en": "LDAP", "ja_typings": ["ldap"]},
-      {"ja": "Kerberos", "en": "Kerberos", "ja_typings": ["kerberos"]}
+      {
+        "ja": "OAuth",
+        "en": "OAuth",
+        "ja_typings": [
+          "oauth"
+        ]
+      },
+      {
+        "ja": "SAML",
+        "en": "SAML",
+        "ja_typings": [
+          "saml"
+        ]
+      },
+      {
+        "ja": "LDAP",
+        "en": "LDAP",
+        "ja_typings": [
+          "ldap"
+        ]
+      },
+      {
+        "ja": "Kerberos",
+        "en": "Kerberos",
+        "ja_typings": [
+          "kerberos"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -520,12 +1519,39 @@
   {
     "id": "q0218",
     "genre": "web_development",
-    "question_text": {"ja": "OAuth 2.0 をベースとする認証層プロトコルは?", "en": "Which authentication layer protocol is built on top of OAuth 2.0?"},
+    "question_text": {
+      "ja": "OAuth 2.0 をベースとする認証層プロトコルは?",
+      "en": "Which authentication layer protocol is built on top of OAuth 2.0?"
+    },
     "choices": [
-      {"ja": "OpenID Connect", "en": "OpenID Connect", "ja_typings": ["openid connect"]},
-      {"ja": "SAML", "en": "SAML", "ja_typings": ["saml"]},
-      {"ja": "Basic 認証", "en": "Basic authentication", "ja_typings": ["basic ninnshou", "basic ninshou"]},
-      {"ja": "Digest 認証", "en": "Digest authentication", "ja_typings": ["digest ninnshou", "digest ninshou"]}
+      {
+        "ja": "OpenID Connect",
+        "en": "OpenID Connect",
+        "ja_typings": [
+          "openid connect"
+        ]
+      },
+      {
+        "ja": "SAML",
+        "en": "SAML",
+        "ja_typings": [
+          "saml"
+        ]
+      },
+      {
+        "ja": "Basic 認証",
+        "en": "Basic authentication",
+        "ja_typings": [
+          "basic ninshou"
+        ]
+      },
+      {
+        "ja": "Digest 認証",
+        "en": "Digest authentication",
+        "ja_typings": [
+          "digest ninshou"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -534,12 +1560,39 @@
   {
     "id": "q0219",
     "genre": "web_development",
-    "question_text": {"ja": "Header / Payload / Signature の 3 部から構成されるトークン形式は?", "en": "Which token format consists of a header, payload, and signature?"},
+    "question_text": {
+      "ja": "Header / Payload / Signature の 3 部から構成されるトークン形式は?",
+      "en": "Which token format consists of a header, payload, and signature?"
+    },
     "choices": [
-      {"ja": "JWT", "en": "JWT", "ja_typings": ["jwt"]},
-      {"ja": "Cookie", "en": "Cookie", "ja_typings": ["cookie"]},
-      {"ja": "Session ID", "en": "Session ID", "ja_typings": ["session id"]},
-      {"ja": "API Key", "en": "API Key", "ja_typings": ["api key"]}
+      {
+        "ja": "JWT",
+        "en": "JWT",
+        "ja_typings": [
+          "jwt"
+        ]
+      },
+      {
+        "ja": "Cookie",
+        "en": "Cookie",
+        "ja_typings": [
+          "cookie"
+        ]
+      },
+      {
+        "ja": "Session ID",
+        "en": "Session ID",
+        "ja_typings": [
+          "session id"
+        ]
+      },
+      {
+        "ja": "API Key",
+        "en": "API Key",
+        "ja_typings": [
+          "api key"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -548,12 +1601,39 @@
   {
     "id": "q0220",
     "genre": "web_development",
-    "question_text": {"ja": "悪意あるスクリプトを Web ページに注入する攻撃は?", "en": "Which attack injects malicious scripts into a web page?"},
+    "question_text": {
+      "ja": "悪意あるスクリプトを Web ページに注入する攻撃は?",
+      "en": "Which attack injects malicious scripts into a web page?"
+    },
     "choices": [
-      {"ja": "XSS", "en": "XSS", "ja_typings": ["xss"]},
-      {"ja": "CSRF", "en": "CSRF", "ja_typings": ["csrf"]},
-      {"ja": "SQL インジェクション", "en": "SQL injection", "ja_typings": ["sql injekushon"]},
-      {"ja": "DDoS", "en": "DDoS", "ja_typings": ["ddos"]}
+      {
+        "ja": "XSS",
+        "en": "XSS",
+        "ja_typings": [
+          "xss"
+        ]
+      },
+      {
+        "ja": "CSRF",
+        "en": "CSRF",
+        "ja_typings": [
+          "csrf"
+        ]
+      },
+      {
+        "ja": "SQL インジェクション",
+        "en": "SQL injection",
+        "ja_typings": [
+          "sql injekushon"
+        ]
+      },
+      {
+        "ja": "DDoS",
+        "en": "DDoS",
+        "ja_typings": [
+          "ddos"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -562,12 +1642,39 @@
   {
     "id": "q0221",
     "genre": "web_development",
-    "question_text": {"ja": "ログイン中のユーザーに意図しないリクエストを送らせる攻撃は?", "en": "Which attack tricks a logged-in user into sending unintended requests?"},
+    "question_text": {
+      "ja": "ログイン中のユーザーに意図しないリクエストを送らせる攻撃は?",
+      "en": "Which attack tricks a logged-in user into sending unintended requests?"
+    },
     "choices": [
-      {"ja": "CSRF", "en": "CSRF", "ja_typings": ["csrf"]},
-      {"ja": "XSS", "en": "XSS", "ja_typings": ["xss"]},
-      {"ja": "クリックジャッキング", "en": "Clickjacking", "ja_typings": ["kurikkujakkingu"]},
-      {"ja": "セッションハイジャック", "en": "Session hijacking", "ja_typings": ["sesshonn haijakku", "sesshon haijakku"]}
+      {
+        "ja": "CSRF",
+        "en": "CSRF",
+        "ja_typings": [
+          "csrf"
+        ]
+      },
+      {
+        "ja": "XSS",
+        "en": "XSS",
+        "ja_typings": [
+          "xss"
+        ]
+      },
+      {
+        "ja": "クリックジャッキング",
+        "en": "Clickjacking",
+        "ja_typings": [
+          "kurikkujakkingu"
+        ]
+      },
+      {
+        "ja": "セッションハイジャック",
+        "en": "Session hijacking",
+        "ja_typings": [
+          "sesshonhaijakku"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -576,12 +1683,39 @@
   {
     "id": "q0222",
     "genre": "web_development",
-    "question_text": {"ja": "異なるオリジン間のリソース共有を制御するブラウザの仕組みは?", "en": "Which browser mechanism controls resource sharing across different origins?"},
+    "question_text": {
+      "ja": "異なるオリジン間のリソース共有を制御するブラウザの仕組みは?",
+      "en": "Which browser mechanism controls resource sharing across different origins?"
+    },
     "choices": [
-      {"ja": "CORS", "en": "CORS", "ja_typings": ["cors"]},
-      {"ja": "CSP", "en": "CSP", "ja_typings": ["csp"]},
-      {"ja": "CSRF", "en": "CSRF", "ja_typings": ["csrf"]},
-      {"ja": "SOP", "en": "SOP", "ja_typings": ["sop"]}
+      {
+        "ja": "CORS",
+        "en": "CORS",
+        "ja_typings": [
+          "cors"
+        ]
+      },
+      {
+        "ja": "CSP",
+        "en": "CSP",
+        "ja_typings": [
+          "csp"
+        ]
+      },
+      {
+        "ja": "CSRF",
+        "en": "CSRF",
+        "ja_typings": [
+          "csrf"
+        ]
+      },
+      {
+        "ja": "SOP",
+        "en": "SOP",
+        "ja_typings": [
+          "sop"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -590,12 +1724,39 @@
   {
     "id": "q0223",
     "genre": "web_development",
-    "question_text": {"ja": "Web ページが読み込めるリソース元を制限するヘッダは?", "en": "Which header restricts which sources a web page can load resources from?"},
+    "question_text": {
+      "ja": "Web ページが読み込めるリソース元を制限するヘッダは?",
+      "en": "Which header restricts which sources a web page can load resources from?"
+    },
     "choices": [
-      {"ja": "Content-Security-Policy", "en": "Content-Security-Policy", "ja_typings": ["content security policy"]},
-      {"ja": "X-Frame-Options", "en": "X-Frame-Options", "ja_typings": ["x frame options"]},
-      {"ja": "Strict-Transport-Security", "en": "Strict-Transport-Security", "ja_typings": ["strict transport security"]},
-      {"ja": "Referrer-Policy", "en": "Referrer-Policy", "ja_typings": ["referrer policy"]}
+      {
+        "ja": "Content-Security-Policy",
+        "en": "Content-Security-Policy",
+        "ja_typings": [
+          "content-security-policy"
+        ]
+      },
+      {
+        "ja": "X-Frame-Options",
+        "en": "X-Frame-Options",
+        "ja_typings": [
+          "x-frame-options"
+        ]
+      },
+      {
+        "ja": "Strict-Transport-Security",
+        "en": "Strict-Transport-Security",
+        "ja_typings": [
+          "strict-transport-security"
+        ]
+      },
+      {
+        "ja": "Referrer-Policy",
+        "en": "Referrer-Policy",
+        "ja_typings": [
+          "referrer-policy"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -604,12 +1765,39 @@
   {
     "id": "q0224",
     "genre": "web_development",
-    "question_text": {"ja": "ブラウザ上で HTML を生成して描画する方式は?", "en": "Which rendering approach generates HTML in the browser?"},
+    "question_text": {
+      "ja": "ブラウザ上で HTML を生成して描画する方式は?",
+      "en": "Which rendering approach generates HTML in the browser?"
+    },
     "choices": [
-      {"ja": "CSR", "en": "CSR", "ja_typings": ["csr"]},
-      {"ja": "SSR", "en": "SSR", "ja_typings": ["ssr"]},
-      {"ja": "SSG", "en": "SSG", "ja_typings": ["ssg"]},
-      {"ja": "ISR", "en": "ISR", "ja_typings": ["isr"]}
+      {
+        "ja": "CSR",
+        "en": "CSR",
+        "ja_typings": [
+          "csr"
+        ]
+      },
+      {
+        "ja": "SSR",
+        "en": "SSR",
+        "ja_typings": [
+          "ssr"
+        ]
+      },
+      {
+        "ja": "SSG",
+        "en": "SSG",
+        "ja_typings": [
+          "ssg"
+        ]
+      },
+      {
+        "ja": "ISR",
+        "en": "ISR",
+        "ja_typings": [
+          "isr"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -618,12 +1806,39 @@
   {
     "id": "q0225",
     "genre": "web_development",
-    "question_text": {"ja": "リクエストごとにサーバーで HTML を生成する方式は?", "en": "Which approach generates HTML on the server for each request?"},
+    "question_text": {
+      "ja": "リクエストごとにサーバーで HTML を生成する方式は?",
+      "en": "Which approach generates HTML on the server for each request?"
+    },
     "choices": [
-      {"ja": "SSR", "en": "SSR", "ja_typings": ["ssr"]},
-      {"ja": "CSR", "en": "CSR", "ja_typings": ["csr"]},
-      {"ja": "SSG", "en": "SSG", "ja_typings": ["ssg"]},
-      {"ja": "SPA", "en": "SPA", "ja_typings": ["spa"]}
+      {
+        "ja": "SSR",
+        "en": "SSR",
+        "ja_typings": [
+          "ssr"
+        ]
+      },
+      {
+        "ja": "CSR",
+        "en": "CSR",
+        "ja_typings": [
+          "csr"
+        ]
+      },
+      {
+        "ja": "SSG",
+        "en": "SSG",
+        "ja_typings": [
+          "ssg"
+        ]
+      },
+      {
+        "ja": "SPA",
+        "en": "SPA",
+        "ja_typings": [
+          "spa"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -632,12 +1847,39 @@
   {
     "id": "q0226",
     "genre": "web_development",
-    "question_text": {"ja": "ビルド時に静的 HTML を生成する方式は?", "en": "Which approach generates static HTML at build time?"},
+    "question_text": {
+      "ja": "ビルド時に静的 HTML を生成する方式は?",
+      "en": "Which approach generates static HTML at build time?"
+    },
     "choices": [
-      {"ja": "SSG", "en": "SSG", "ja_typings": ["ssg"]},
-      {"ja": "SSR", "en": "SSR", "ja_typings": ["ssr"]},
-      {"ja": "CSR", "en": "CSR", "ja_typings": ["csr"]},
-      {"ja": "PWA", "en": "PWA", "ja_typings": ["pwa"]}
+      {
+        "ja": "SSG",
+        "en": "SSG",
+        "ja_typings": [
+          "ssg"
+        ]
+      },
+      {
+        "ja": "SSR",
+        "en": "SSR",
+        "ja_typings": [
+          "ssr"
+        ]
+      },
+      {
+        "ja": "CSR",
+        "en": "CSR",
+        "ja_typings": [
+          "csr"
+        ]
+      },
+      {
+        "ja": "PWA",
+        "en": "PWA",
+        "ja_typings": [
+          "pwa"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -646,12 +1888,39 @@
   {
     "id": "q0227",
     "genre": "web_development",
-    "question_text": {"ja": "ユーザーが感じる読み込み完了の指標で、最大のコンテンツ要素が表示されるまでの時間は?", "en": "Which performance metric measures the time until the largest content element is rendered?"},
+    "question_text": {
+      "ja": "ユーザーが感じる読み込み完了の指標で、最大のコンテンツ要素が表示されるまでの時間は?",
+      "en": "Which performance metric measures the time until the largest content element is rendered?"
+    },
     "choices": [
-      {"ja": "LCP", "en": "LCP", "ja_typings": ["lcp"]},
-      {"ja": "FID", "en": "FID", "ja_typings": ["fid"]},
-      {"ja": "CLS", "en": "CLS", "ja_typings": ["cls"]},
-      {"ja": "TTFB", "en": "TTFB", "ja_typings": ["ttfb"]}
+      {
+        "ja": "LCP",
+        "en": "LCP",
+        "ja_typings": [
+          "lcp"
+        ]
+      },
+      {
+        "ja": "FID",
+        "en": "FID",
+        "ja_typings": [
+          "fid"
+        ]
+      },
+      {
+        "ja": "CLS",
+        "en": "CLS",
+        "ja_typings": [
+          "cls"
+        ]
+      },
+      {
+        "ja": "TTFB",
+        "en": "TTFB",
+        "ja_typings": [
+          "ttfb"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -660,12 +1929,39 @@
   {
     "id": "q0228",
     "genre": "web_development",
-    "question_text": {"ja": "ページ表示中の予期せぬレイアウト変化を測る指標は?", "en": "Which metric measures unexpected layout shifts during page display?"},
+    "question_text": {
+      "ja": "ページ表示中の予期せぬレイアウト変化を測る指標は?",
+      "en": "Which metric measures unexpected layout shifts during page display?"
+    },
     "choices": [
-      {"ja": "CLS", "en": "CLS", "ja_typings": ["cls"]},
-      {"ja": "LCP", "en": "LCP", "ja_typings": ["lcp"]},
-      {"ja": "FID", "en": "FID", "ja_typings": ["fid"]},
-      {"ja": "INP", "en": "INP", "ja_typings": ["inp"]}
+      {
+        "ja": "CLS",
+        "en": "CLS",
+        "ja_typings": [
+          "cls"
+        ]
+      },
+      {
+        "ja": "LCP",
+        "en": "LCP",
+        "ja_typings": [
+          "lcp"
+        ]
+      },
+      {
+        "ja": "FID",
+        "en": "FID",
+        "ja_typings": [
+          "fid"
+        ]
+      },
+      {
+        "ja": "INP",
+        "en": "INP",
+        "ja_typings": [
+          "inp"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -674,12 +1970,39 @@
   {
     "id": "q0229",
     "genre": "web_development",
-    "question_text": {"ja": "ブラウザがサーバーから最初のバイトを受け取るまでの時間は?", "en": "Which metric measures the time until the browser receives the first byte from the server?"},
+    "question_text": {
+      "ja": "ブラウザがサーバーから最初のバイトを受け取るまでの時間は?",
+      "en": "Which metric measures the time until the browser receives the first byte from the server?"
+    },
     "choices": [
-      {"ja": "TTFB", "en": "TTFB", "ja_typings": ["ttfb"]},
-      {"ja": "LCP", "en": "LCP", "ja_typings": ["lcp"]},
-      {"ja": "FCP", "en": "FCP", "ja_typings": ["fcp"]},
-      {"ja": "DNS Lookup", "en": "DNS Lookup", "ja_typings": ["dns lookup"]}
+      {
+        "ja": "TTFB",
+        "en": "TTFB",
+        "ja_typings": [
+          "ttfb"
+        ]
+      },
+      {
+        "ja": "LCP",
+        "en": "LCP",
+        "ja_typings": [
+          "lcp"
+        ]
+      },
+      {
+        "ja": "FCP",
+        "en": "FCP",
+        "ja_typings": [
+          "fcp"
+        ]
+      },
+      {
+        "ja": "DNS Lookup",
+        "en": "DNS Lookup",
+        "ja_typings": [
+          "dns lookup"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -688,12 +2011,39 @@
   {
     "id": "q0230",
     "genre": "web_development",
-    "question_text": {"ja": "ブラウザの開発者ツールで JavaScript を実行できるパネルは?", "en": "Which browser developer tool panel runs JavaScript interactively?"},
+    "question_text": {
+      "ja": "ブラウザの開発者ツールで JavaScript を実行できるパネルは?",
+      "en": "Which browser developer tool panel runs JavaScript interactively?"
+    },
     "choices": [
-      {"ja": "Console", "en": "Console", "ja_typings": ["console"]},
-      {"ja": "Network", "en": "Network", "ja_typings": ["network"]},
-      {"ja": "Elements", "en": "Elements", "ja_typings": ["elements"]},
-      {"ja": "Sources", "en": "Sources", "ja_typings": ["sources"]}
+      {
+        "ja": "Console",
+        "en": "Console",
+        "ja_typings": [
+          "console"
+        ]
+      },
+      {
+        "ja": "Network",
+        "en": "Network",
+        "ja_typings": [
+          "network"
+        ]
+      },
+      {
+        "ja": "Elements",
+        "en": "Elements",
+        "ja_typings": [
+          "elements"
+        ]
+      },
+      {
+        "ja": "Sources",
+        "en": "Sources",
+        "ja_typings": [
+          "sources"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -702,12 +2052,39 @@
   {
     "id": "q0231",
     "genre": "web_development",
-    "question_text": {"ja": "DOM とは何の略?", "en": "What does DOM stand for?"},
+    "question_text": {
+      "ja": "DOM とは何の略?",
+      "en": "What does DOM stand for?"
+    },
     "choices": [
-      {"ja": "Document Object Model", "en": "Document Object Model", "ja_typings": ["document object model"]},
-      {"ja": "Data Object Model", "en": "Data Object Model", "ja_typings": ["data object model"]},
-      {"ja": "Display Object Model", "en": "Display Object Model", "ja_typings": ["display object model"]},
-      {"ja": "Dynamic Object Module", "en": "Dynamic Object Module", "ja_typings": ["dynamic object module"]}
+      {
+        "ja": "Document Object Model",
+        "en": "Document Object Model",
+        "ja_typings": [
+          "document object model"
+        ]
+      },
+      {
+        "ja": "Data Object Model",
+        "en": "Data Object Model",
+        "ja_typings": [
+          "data object model"
+        ]
+      },
+      {
+        "ja": "Display Object Model",
+        "en": "Display Object Model",
+        "ja_typings": [
+          "display object model"
+        ]
+      },
+      {
+        "ja": "Dynamic Object Module",
+        "en": "Dynamic Object Module",
+        "ja_typings": [
+          "dynamic object module"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -716,12 +2093,39 @@
   {
     "id": "q0232",
     "genre": "web_development",
-    "question_text": {"ja": "ブラウザでオフライン動作・プッシュ通知を可能にする仕組みは?", "en": "Which browser feature enables offline behavior and push notifications?"},
+    "question_text": {
+      "ja": "ブラウザでオフライン動作・プッシュ通知を可能にする仕組みは?",
+      "en": "Which browser feature enables offline behavior and push notifications?"
+    },
     "choices": [
-      {"ja": "Service Worker", "en": "Service Worker", "ja_typings": ["service worker"]},
-      {"ja": "Web Worker", "en": "Web Worker", "ja_typings": ["web worker"]},
-      {"ja": "Shared Worker", "en": "Shared Worker", "ja_typings": ["shared worker"]},
-      {"ja": "WebSocket", "en": "WebSocket", "ja_typings": ["websocket"]}
+      {
+        "ja": "Service Worker",
+        "en": "Service Worker",
+        "ja_typings": [
+          "service worker"
+        ]
+      },
+      {
+        "ja": "Web Worker",
+        "en": "Web Worker",
+        "ja_typings": [
+          "web worker"
+        ]
+      },
+      {
+        "ja": "Shared Worker",
+        "en": "Shared Worker",
+        "ja_typings": [
+          "shared worker"
+        ]
+      },
+      {
+        "ja": "WebSocket",
+        "en": "WebSocket",
+        "ja_typings": [
+          "websocket"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -730,12 +2134,39 @@
   {
     "id": "q0233",
     "genre": "web_development",
-    "question_text": {"ja": "ブラウザとサーバー間で双方向通信を行う仕組みは?", "en": "Which technology enables bidirectional communication between browser and server?"},
+    "question_text": {
+      "ja": "ブラウザとサーバー間で双方向通信を行う仕組みは?",
+      "en": "Which technology enables bidirectional communication between browser and server?"
+    },
     "choices": [
-      {"ja": "WebSocket", "en": "WebSocket", "ja_typings": ["websocket"]},
-      {"ja": "HTTP/1.1", "en": "HTTP/1.1", "ja_typings": ["http 1 1"]},
-      {"ja": "Long Polling", "en": "Long Polling", "ja_typings": ["long polling"]},
-      {"ja": "SSE", "en": "SSE", "ja_typings": ["sse"]}
+      {
+        "ja": "WebSocket",
+        "en": "WebSocket",
+        "ja_typings": [
+          "websocket"
+        ]
+      },
+      {
+        "ja": "HTTP/1.1",
+        "en": "HTTP/1.1",
+        "ja_typings": [
+          "http/1.1"
+        ]
+      },
+      {
+        "ja": "Long Polling",
+        "en": "Long Polling",
+        "ja_typings": [
+          "long polling"
+        ]
+      },
+      {
+        "ja": "SSE",
+        "en": "SSE",
+        "ja_typings": [
+          "sse"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -744,12 +2175,39 @@
   {
     "id": "q0234",
     "genre": "web_development",
-    "question_text": {"ja": "HTTP/2 の主要な特徴は?", "en": "What is a key feature of HTTP/2?"},
+    "question_text": {
+      "ja": "HTTP/2 の主要な特徴は?",
+      "en": "What is a key feature of HTTP/2?"
+    },
     "choices": [
-      {"ja": "バイナリフレーミングと多重化", "en": "Binary framing and multiplexing", "ja_typings": ["bainari fure-mingu to tajuuka"]},
-      {"ja": "テキストベースのプロトコル", "en": "Text-based protocol", "ja_typings": ["tekisuto be-su no purotokoru"]},
-      {"ja": "UDP を基盤とする", "en": "Built on UDP", "ja_typings": ["udp wo kiban to suru"]},
-      {"ja": "暗号化必須化のみ", "en": "Mandatory encryption only", "ja_typings": ["angouka hissuka nomi"]}
+      {
+        "ja": "バイナリフレーミングと多重化",
+        "en": "Binary framing and multiplexing",
+        "ja_typings": [
+          "bainari fure-mingu to tajuuka"
+        ]
+      },
+      {
+        "ja": "テキストベースのプロトコル",
+        "en": "Text-based protocol",
+        "ja_typings": [
+          "tekisutobe-sunopurotokoru"
+        ]
+      },
+      {
+        "ja": "UDP を基盤とする",
+        "en": "Built on UDP",
+        "ja_typings": [
+          "udp wo kiban to suru"
+        ]
+      },
+      {
+        "ja": "暗号化必須化のみ",
+        "en": "Mandatory encryption only",
+        "ja_typings": [
+          "angouka hissuka nomi"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -758,12 +2216,39 @@
   {
     "id": "q0235",
     "genre": "web_development",
-    "question_text": {"ja": "HTTP/3 が基盤とするトランスポートプロトコルは?", "en": "Which transport protocol does HTTP/3 use?"},
+    "question_text": {
+      "ja": "HTTP/3 が基盤とするトランスポートプロトコルは?",
+      "en": "Which transport protocol does HTTP/3 use?"
+    },
     "choices": [
-      {"ja": "QUIC", "en": "QUIC", "ja_typings": ["quic"]},
-      {"ja": "TCP", "en": "TCP", "ja_typings": ["tcp"]},
-      {"ja": "SCTP", "en": "SCTP", "ja_typings": ["sctp"]},
-      {"ja": "TLS", "en": "TLS", "ja_typings": ["tls"]}
+      {
+        "ja": "QUIC",
+        "en": "QUIC",
+        "ja_typings": [
+          "quic"
+        ]
+      },
+      {
+        "ja": "TCP",
+        "en": "TCP",
+        "ja_typings": [
+          "tcp"
+        ]
+      },
+      {
+        "ja": "SCTP",
+        "en": "SCTP",
+        "ja_typings": [
+          "sctp"
+        ]
+      },
+      {
+        "ja": "TLS",
+        "en": "TLS",
+        "ja_typings": [
+          "tls"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -772,12 +2257,39 @@
   {
     "id": "q0236",
     "genre": "web_development",
-    "question_text": {"ja": "ブラウザで小さなデータを永続化する仕組みで、リクエスト時に自動送信されるのは?", "en": "Which browser storage is automatically sent with requests?"},
+    "question_text": {
+      "ja": "ブラウザで小さなデータを永続化する仕組みで、リクエスト時に自動送信されるのは?",
+      "en": "Which browser storage is automatically sent with requests?"
+    },
     "choices": [
-      {"ja": "Cookie", "en": "Cookie", "ja_typings": ["cookie"]},
-      {"ja": "localStorage", "en": "localStorage", "ja_typings": ["localstorage"]},
-      {"ja": "sessionStorage", "en": "sessionStorage", "ja_typings": ["sessionstorage"]},
-      {"ja": "IndexedDB", "en": "IndexedDB", "ja_typings": ["indexeddb"]}
+      {
+        "ja": "Cookie",
+        "en": "Cookie",
+        "ja_typings": [
+          "cookie"
+        ]
+      },
+      {
+        "ja": "localStorage",
+        "en": "localStorage",
+        "ja_typings": [
+          "localstorage"
+        ]
+      },
+      {
+        "ja": "sessionStorage",
+        "en": "sessionStorage",
+        "ja_typings": [
+          "sessionstorage"
+        ]
+      },
+      {
+        "ja": "IndexedDB",
+        "en": "IndexedDB",
+        "ja_typings": [
+          "indexeddb"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -786,12 +2298,39 @@
   {
     "id": "q0237",
     "genre": "web_development",
-    "question_text": {"ja": "ブラウザを閉じるまで保持され、リクエストには自動送信されないストレージは?", "en": "Which browser storage persists until the tab closes and is not sent with requests?"},
+    "question_text": {
+      "ja": "ブラウザを閉じるまで保持され、リクエストには自動送信されないストレージは?",
+      "en": "Which browser storage persists until the tab closes and is not sent with requests?"
+    },
     "choices": [
-      {"ja": "sessionStorage", "en": "sessionStorage", "ja_typings": ["sessionstorage"]},
-      {"ja": "localStorage", "en": "localStorage", "ja_typings": ["localstorage"]},
-      {"ja": "Cookie", "en": "Cookie", "ja_typings": ["cookie"]},
-      {"ja": "Cache Storage", "en": "Cache Storage", "ja_typings": ["cache storage"]}
+      {
+        "ja": "sessionStorage",
+        "en": "sessionStorage",
+        "ja_typings": [
+          "sessionstorage"
+        ]
+      },
+      {
+        "ja": "localStorage",
+        "en": "localStorage",
+        "ja_typings": [
+          "localstorage"
+        ]
+      },
+      {
+        "ja": "Cookie",
+        "en": "Cookie",
+        "ja_typings": [
+          "cookie"
+        ]
+      },
+      {
+        "ja": "Cache Storage",
+        "en": "Cache Storage",
+        "ja_typings": [
+          "cache storage"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -800,12 +2339,39 @@
   {
     "id": "q0238",
     "genre": "web_development",
-    "question_text": {"ja": "Sass や Less などのカテゴリ名は?", "en": "What category do Sass and Less belong to?"},
+    "question_text": {
+      "ja": "Sass や Less などのカテゴリ名は?",
+      "en": "What category do Sass and Less belong to?"
+    },
     "choices": [
-      {"ja": "CSS プリプロセッサ", "en": "CSS preprocessors", "ja_typings": ["css purepurosessa"]},
-      {"ja": "CSS フレームワーク", "en": "CSS frameworks", "ja_typings": ["css fure-muwa-ku"]},
-      {"ja": "JavaScript ランタイム", "en": "JavaScript runtimes", "ja_typings": ["javascript ranntaimu", "javascript rantaimu"]},
-      {"ja": "バンドラ", "en": "Bundlers", "ja_typings": ["banndora", "bandora"]}
+      {
+        "ja": "CSS プリプロセッサ",
+        "en": "CSS preprocessors",
+        "ja_typings": [
+          "css puripurosessa"
+        ]
+      },
+      {
+        "ja": "CSS フレームワーク",
+        "en": "CSS frameworks",
+        "ja_typings": [
+          "css fure-muwa-ku"
+        ]
+      },
+      {
+        "ja": "JavaScript ランタイム",
+        "en": "JavaScript runtimes",
+        "ja_typings": [
+          "javascript rantaimu"
+        ]
+      },
+      {
+        "ja": "バンドラ",
+        "en": "Bundlers",
+        "ja_typings": [
+          "bandora"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -814,12 +2380,39 @@
   {
     "id": "q0239",
     "genre": "web_development",
-    "question_text": {"ja": "ユーティリティファースト設計で知られる CSS フレームワークは?", "en": "Which CSS framework is known for utility-first design?"},
+    "question_text": {
+      "ja": "ユーティリティファースト設計で知られる CSS フレームワークは?",
+      "en": "Which CSS framework is known for utility-first design?"
+    },
     "choices": [
-      {"ja": "Tailwind CSS", "en": "Tailwind CSS", "ja_typings": ["tailwind css"]},
-      {"ja": "Bootstrap", "en": "Bootstrap", "ja_typings": ["bootstrap"]},
-      {"ja": "Bulma", "en": "Bulma", "ja_typings": ["bulma"]},
-      {"ja": "Foundation", "en": "Foundation", "ja_typings": ["foundation"]}
+      {
+        "ja": "Tailwind CSS",
+        "en": "Tailwind CSS",
+        "ja_typings": [
+          "tailwind css"
+        ]
+      },
+      {
+        "ja": "Bootstrap",
+        "en": "Bootstrap",
+        "ja_typings": [
+          "bootstrap"
+        ]
+      },
+      {
+        "ja": "Bulma",
+        "en": "Bulma",
+        "ja_typings": [
+          "bulma"
+        ]
+      },
+      {
+        "ja": "Foundation",
+        "en": "Foundation",
+        "ja_typings": [
+          "foundation"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -828,12 +2421,39 @@
   {
     "id": "q0240",
     "genre": "web_development",
-    "question_text": {"ja": "Node.js のパッケージ管理ツールでデフォルトで同梱されるのは?", "en": "Which package manager ships by default with Node.js?"},
+    "question_text": {
+      "ja": "Node.js のパッケージ管理ツールでデフォルトで同梱されるのは?",
+      "en": "Which package manager ships by default with Node.js?"
+    },
     "choices": [
-      {"ja": "npm", "en": "npm", "ja_typings": ["npm"]},
-      {"ja": "yarn", "en": "yarn", "ja_typings": ["yarn"]},
-      {"ja": "pnpm", "en": "pnpm", "ja_typings": ["pnpm"]},
-      {"ja": "bun", "en": "bun", "ja_typings": ["bun"]}
+      {
+        "ja": "npm",
+        "en": "npm",
+        "ja_typings": [
+          "npm"
+        ]
+      },
+      {
+        "ja": "yarn",
+        "en": "yarn",
+        "ja_typings": [
+          "yarn"
+        ]
+      },
+      {
+        "ja": "pnpm",
+        "en": "pnpm",
+        "ja_typings": [
+          "pnpm"
+        ]
+      },
+      {
+        "ja": "bun",
+        "en": "bun",
+        "ja_typings": [
+          "bun"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,

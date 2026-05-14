@@ -2,12 +2,39 @@
   {
     "id": "q0386",
     "genre": "game",
-    "question_text": {"ja": "配管工の兄弟が主人公の任天堂の看板アクションゲームは?", "en": "Which Nintendo flagship action game stars plumber brothers?"},
+    "question_text": {
+      "ja": "配管工の兄弟が主人公の任天堂の看板アクションゲームは?",
+      "en": "Which Nintendo flagship action game stars plumber brothers?"
+    },
     "choices": [
-      {"ja": "スーパーマリオブラザーズ", "en": "Super Mario Bros.", "ja_typings": ["su-pa-mariobura-za-zu"]},
-      {"ja": "ゼルダの伝説", "en": "The Legend of Zelda", "ja_typings": ["zerudanodensetsu"]},
-      {"ja": "メトロイド", "en": "Metroid", "ja_typings": ["metoroido"]},
-      {"ja": "星のカービィ", "en": "Kirby", "ja_typings": ["hoshinoka-bii"]}
+      {
+        "ja": "スーパーマリオブラザーズ",
+        "en": "Super Mario Bros.",
+        "ja_typings": [
+          "su-pa-marioburaza-zu"
+        ]
+      },
+      {
+        "ja": "ゼルダの伝説",
+        "en": "The Legend of Zelda",
+        "ja_typings": [
+          "zerudanodensetsu"
+        ]
+      },
+      {
+        "ja": "メトロイド",
+        "en": "Metroid",
+        "ja_typings": [
+          "metoroido"
+        ]
+      },
+      {
+        "ja": "星のカービィ",
+        "en": "Kirby",
+        "ja_typings": [
+          "hoshinoka-bii"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -16,12 +43,39 @@
   {
     "id": "q0387",
     "genre": "game",
-    "question_text": {"ja": "ハイラル王国を舞台に剣士リンクが冒険する任天堂のシリーズは?", "en": "Which Nintendo series follows swordsman Link in Hyrule?"},
+    "question_text": {
+      "ja": "ハイラル王国を舞台に剣士リンクが冒険する任天堂のシリーズは?",
+      "en": "Which Nintendo series follows swordsman Link in Hyrule?"
+    },
     "choices": [
-      {"ja": "ゼルダの伝説", "en": "The Legend of Zelda", "ja_typings": ["zerudanodensetsu"]},
-      {"ja": "ファイアーエムブレム", "en": "Fire Emblem", "ja_typings": ["faia-emuburemu"]},
-      {"ja": "ゼノブレイド", "en": "Xenoblade", "ja_typings": ["zenobureido"]},
-      {"ja": "ベヨネッタ", "en": "Bayonetta", "ja_typings": ["beyonetta"]}
+      {
+        "ja": "ゼルダの伝説",
+        "en": "The Legend of Zelda",
+        "ja_typings": [
+          "zerudanodensetsu"
+        ]
+      },
+      {
+        "ja": "ファイアーエムブレム",
+        "en": "Fire Emblem",
+        "ja_typings": [
+          "faia-emuburemu"
+        ]
+      },
+      {
+        "ja": "ゼノブレイド",
+        "en": "Xenoblade",
+        "ja_typings": [
+          "zenobureido"
+        ]
+      },
+      {
+        "ja": "ベヨネッタ",
+        "en": "Bayonetta",
+        "ja_typings": [
+          "beyonetta"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -30,12 +84,39 @@
   {
     "id": "q0388",
     "genre": "game",
-    "question_text": {"ja": "ピカチュウやイーブイなどモンスターを集めて戦わせるゲームシリーズは?", "en": "Which series features collecting monsters like Pikachu and Eevee?"},
+    "question_text": {
+      "ja": "ピカチュウやイーブイなどモンスターを集めて戦わせるゲームシリーズは?",
+      "en": "Which series features collecting monsters like Pikachu and Eevee?"
+    },
     "choices": [
-      {"ja": "ポケットモンスター", "en": "Pokemon", "ja_typings": ["pokettomonnsuta-"]},
-      {"ja": "デジモン", "en": "Digimon", "ja_typings": ["dejimon"]},
-      {"ja": "妖怪ウォッチ", "en": "Yo-kai Watch", "ja_typings": ["youkaiuocchi"]},
-      {"ja": "モンスターハンター", "en": "Monster Hunter", "ja_typings": ["monnsuta-hannta-"]}
+      {
+        "ja": "ポケットモンスター",
+        "en": "Pokemon",
+        "ja_typings": [
+          "pokettomonsuta-"
+        ]
+      },
+      {
+        "ja": "デジモン",
+        "en": "Digimon",
+        "ja_typings": [
+          "dejimon"
+        ]
+      },
+      {
+        "ja": "妖怪ウォッチ",
+        "en": "Yo-kai Watch",
+        "ja_typings": [
+          "youkaiuocchi"
+        ]
+      },
+      {
+        "ja": "モンスターハンター",
+        "en": "Monster Hunter",
+        "ja_typings": [
+          "monsuta-hanta-"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -44,12 +125,39 @@
   {
     "id": "q0389",
     "genre": "game",
-    "question_text": {"ja": "クラウドが主人公のスクウェアを代表する RPG シリーズの第七作は?", "en": "Which Square RPG installment stars Cloud as protagonist?"},
+    "question_text": {
+      "ja": "クラウドが主人公のスクウェアを代表する RPG シリーズの第七作は?",
+      "en": "Which Square RPG installment stars Cloud as protagonist?"
+    },
     "choices": [
-      {"ja": "ファイナルファンタジーVII", "en": "Final Fantasy VII", "ja_typings": ["fainarufanntaji-7","fainarufanntaji-sebun"]},
-      {"ja": "ファイナルファンタジーX", "en": "Final Fantasy X", "ja_typings": ["fainarufanntaji-10","fainarufanntaji-ten"]},
-      {"ja": "クロノトリガー", "en": "Chrono Trigger", "ja_typings": ["kuronotoriga-"]},
-      {"ja": "聖剣伝説", "en": "Seiken Densetsu", "ja_typings": ["seikenndensetsu"]}
+      {
+        "ja": "ファイナルファンタジーVII",
+        "en": "Final Fantasy VII",
+        "ja_typings": [
+          "fainarufantaji-vii"
+        ]
+      },
+      {
+        "ja": "ファイナルファンタジーX",
+        "en": "Final Fantasy X",
+        "ja_typings": [
+          "fainarufantaji-x"
+        ]
+      },
+      {
+        "ja": "クロノトリガー",
+        "en": "Chrono Trigger",
+        "ja_typings": [
+          "kuronotoriga-"
+        ]
+      },
+      {
+        "ja": "聖剣伝説",
+        "en": "Seiken Densetsu",
+        "ja_typings": [
+          "seikenndensetsu"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -58,12 +166,39 @@
   {
     "id": "q0390",
     "genre": "game",
-    "question_text": {"ja": "勇者ロトの血を引く主人公が登場するエニックスの代表的 RPG は?", "en": "Which Enix RPG features heroes descended from Roto?"},
+    "question_text": {
+      "ja": "勇者ロトの血を引く主人公が登場するエニックスの代表的 RPG は?",
+      "en": "Which Enix RPG features heroes descended from Roto?"
+    },
     "choices": [
-      {"ja": "ドラゴンクエスト", "en": "Dragon Quest", "ja_typings": ["doragonnkuesuto"]},
-      {"ja": "ファイナルファンタジー", "en": "Final Fantasy", "ja_typings": ["fainarufanntaji-"]},
-      {"ja": "テイルズオブシリーズ", "en": "Tales of Series", "ja_typings": ["teiruzuobushiri-zu"]},
-      {"ja": "サガフロンティア", "en": "SaGa Frontier", "ja_typings": ["sagafurontia"]}
+      {
+        "ja": "ドラゴンクエスト",
+        "en": "Dragon Quest",
+        "ja_typings": [
+          "doragonkuesuto"
+        ]
+      },
+      {
+        "ja": "ファイナルファンタジー",
+        "en": "Final Fantasy",
+        "ja_typings": [
+          "fainarufantaji-"
+        ]
+      },
+      {
+        "ja": "テイルズオブシリーズ",
+        "en": "Tales of Series",
+        "ja_typings": [
+          "teiruzuobushiri-zu"
+        ]
+      },
+      {
+        "ja": "サガフロンティア",
+        "en": "SaGa Frontier",
+        "ja_typings": [
+          "sagafuronthia"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -72,12 +207,39 @@
   {
     "id": "q0391",
     "genre": "game",
-    "question_text": {"ja": "ブロックを積み上げて世界を作るサンドボックスゲームは?", "en": "Which sandbox game lets you build worlds by stacking blocks?"},
+    "question_text": {
+      "ja": "ブロックを積み上げて世界を作るサンドボックスゲームは?",
+      "en": "Which sandbox game lets you build worlds by stacking blocks?"
+    },
     "choices": [
-      {"ja": "Minecraft", "en": "Minecraft", "ja_typings": ["minecraft"]},
-      {"ja": "Terraria", "en": "Terraria", "ja_typings": ["terraria"]},
-      {"ja": "Roblox", "en": "Roblox", "ja_typings": ["roblox"]},
-      {"ja": "ドラゴンクエストビルダーズ", "en": "Dragon Quest Builders", "ja_typings": ["doragonnkuesutobiruda-zu"]}
+      {
+        "ja": "Minecraft",
+        "en": "Minecraft",
+        "ja_typings": [
+          "minecraft"
+        ]
+      },
+      {
+        "ja": "Terraria",
+        "en": "Terraria",
+        "ja_typings": [
+          "terraria"
+        ]
+      },
+      {
+        "ja": "Roblox",
+        "en": "Roblox",
+        "ja_typings": [
+          "roblox"
+        ]
+      },
+      {
+        "ja": "ドラゴンクエストビルダーズ",
+        "en": "Dragon Quest Builders",
+        "ja_typings": [
+          "doragonkuesutobiruda-zu"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -86,12 +248,39 @@
   {
     "id": "q0392",
     "genre": "game",
-    "question_text": {"ja": "Rockstar が開発するオープンワールド犯罪アクションシリーズは?", "en": "Which Rockstar open-world crime series is iconic?"},
+    "question_text": {
+      "ja": "Rockstar が開発するオープンワールド犯罪アクションシリーズは?",
+      "en": "Which Rockstar open-world crime series is iconic?"
+    },
     "choices": [
-      {"ja": "GTA", "en": "GTA", "ja_typings": ["gta"]},
-      {"ja": "Saints Row", "en": "Saints Row", "ja_typings": ["saintsrow"]},
-      {"ja": "Watch Dogs", "en": "Watch Dogs", "ja_typings": ["watchdogs"]},
-      {"ja": "Mafia", "en": "Mafia", "ja_typings": ["mafia"]}
+      {
+        "ja": "GTA",
+        "en": "GTA",
+        "ja_typings": [
+          "gta"
+        ]
+      },
+      {
+        "ja": "Saints Row",
+        "en": "Saints Row",
+        "ja_typings": [
+          "saints row"
+        ]
+      },
+      {
+        "ja": "Watch Dogs",
+        "en": "Watch Dogs",
+        "ja_typings": [
+          "watch dogs"
+        ]
+      },
+      {
+        "ja": "Mafia",
+        "en": "Mafia",
+        "ja_typings": [
+          "mafia"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -100,12 +289,39 @@
   {
     "id": "q0393",
     "genre": "game",
-    "question_text": {"ja": "100人で島に降りて最後の一人を目指すバトルロイヤルゲームの代表作は?", "en": "Which battle royale game features 100 players dropping onto an island?"},
+    "question_text": {
+      "ja": "100人で島に降りて最後の一人を目指すバトルロイヤルゲームの代表作は?",
+      "en": "Which battle royale game features 100 players dropping onto an island?"
+    },
     "choices": [
-      {"ja": "Fortnite", "en": "Fortnite", "ja_typings": ["fortnite"]},
-      {"ja": "Apex Legends", "en": "Apex Legends", "ja_typings": ["apexlegends"]},
-      {"ja": "PUBG", "en": "PUBG", "ja_typings": ["pubg"]},
-      {"ja": "Warzone", "en": "Warzone", "ja_typings": ["warzone"]}
+      {
+        "ja": "Fortnite",
+        "en": "Fortnite",
+        "ja_typings": [
+          "fortnite"
+        ]
+      },
+      {
+        "ja": "Apex Legends",
+        "en": "Apex Legends",
+        "ja_typings": [
+          "apex legends"
+        ]
+      },
+      {
+        "ja": "PUBG",
+        "en": "PUBG",
+        "ja_typings": [
+          "pubg"
+        ]
+      },
+      {
+        "ja": "Warzone",
+        "en": "Warzone",
+        "ja_typings": [
+          "warzone"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -114,12 +330,39 @@
   {
     "id": "q0394",
     "genre": "game",
-    "question_text": {"ja": "1983 年に任天堂が発売した家庭用 8 ビットゲーム機の名称は?", "en": "What was Nintendo's 8-bit home console released in 1983?"},
+    "question_text": {
+      "ja": "1983 年に任天堂が発売した家庭用 8 ビットゲーム機の名称は?",
+      "en": "What was Nintendo's 8-bit home console released in 1983?"
+    },
     "choices": [
-      {"ja": "ファミリーコンピュータ", "en": "Famicom", "ja_typings": ["famiri-konnpyu-ta"]},
-      {"ja": "スーパーファミコン", "en": "Super Famicom", "ja_typings": ["su-pa-famikon"]},
-      {"ja": "ゲームボーイ", "en": "Game Boy", "ja_typings": ["ge-mubo-i"]},
-      {"ja": "NINTENDO64", "en": "Nintendo 64", "ja_typings": ["nintendo64"]}
+      {
+        "ja": "ファミリーコンピュータ",
+        "en": "Famicom",
+        "ja_typings": [
+          "famiri-konpyu-ta"
+        ]
+      },
+      {
+        "ja": "スーパーファミコン",
+        "en": "Super Famicom",
+        "ja_typings": [
+          "su-pa-famikon"
+        ]
+      },
+      {
+        "ja": "ゲームボーイ",
+        "en": "Game Boy",
+        "ja_typings": [
+          "ge-mubo-i"
+        ]
+      },
+      {
+        "ja": "NINTENDO64",
+        "en": "Nintendo 64",
+        "ja_typings": [
+          "nintendo64"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -128,12 +371,39 @@
   {
     "id": "q0395",
     "genre": "game",
-    "question_text": {"ja": "ソニーが 1994 年に日本で発売した初代の家庭用ゲーム機は?", "en": "What home console did Sony launch in Japan in 1994?"},
+    "question_text": {
+      "ja": "ソニーが 1994 年に日本で発売した初代の家庭用ゲーム機は?",
+      "en": "What home console did Sony launch in Japan in 1994?"
+    },
     "choices": [
-      {"ja": "プレイステーション", "en": "PlayStation", "ja_typings": ["pureisute-shon"]},
-      {"ja": "セガサターン", "en": "Sega Saturn", "ja_typings": ["segasata-n"]},
-      {"ja": "ドリームキャスト", "en": "Dreamcast", "ja_typings": ["dori-mukyasuto"]},
-      {"ja": "ネオジオ", "en": "Neo Geo", "ja_typings": ["neojio"]}
+      {
+        "ja": "プレイステーション",
+        "en": "PlayStation",
+        "ja_typings": [
+          "pureisute-shon"
+        ]
+      },
+      {
+        "ja": "セガサターン",
+        "en": "Sega Saturn",
+        "ja_typings": [
+          "segasata-n"
+        ]
+      },
+      {
+        "ja": "ドリームキャスト",
+        "en": "Dreamcast",
+        "ja_typings": [
+          "dori-mukyasuto"
+        ]
+      },
+      {
+        "ja": "ネオジオ",
+        "en": "Neo Geo",
+        "ja_typings": [
+          "neojio"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -142,12 +412,39 @@
   {
     "id": "q0396",
     "genre": "game",
-    "question_text": {"ja": "Microsoft が展開する家庭用ゲーム機ブランドは?", "en": "Which home console brand is by Microsoft?"},
+    "question_text": {
+      "ja": "Microsoft が展開する家庭用ゲーム機ブランドは?",
+      "en": "Which home console brand is by Microsoft?"
+    },
     "choices": [
-      {"ja": "Xbox", "en": "Xbox", "ja_typings": ["xbox"]},
-      {"ja": "PlayStation", "en": "PlayStation", "ja_typings": ["playstation"]},
-      {"ja": "Switch", "en": "Switch", "ja_typings": ["switch"]},
-      {"ja": "Steam Deck", "en": "Steam Deck", "ja_typings": ["steamdeck"]}
+      {
+        "ja": "Xbox",
+        "en": "Xbox",
+        "ja_typings": [
+          "xbox"
+        ]
+      },
+      {
+        "ja": "PlayStation",
+        "en": "PlayStation",
+        "ja_typings": [
+          "playstation"
+        ]
+      },
+      {
+        "ja": "Switch",
+        "en": "Switch",
+        "ja_typings": [
+          "switch"
+        ]
+      },
+      {
+        "ja": "Steam Deck",
+        "en": "Steam Deck",
+        "ja_typings": [
+          "steam deck"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -156,12 +453,39 @@
   {
     "id": "q0397",
     "genre": "game",
-    "question_text": {"ja": "任天堂が 2017 年に発売した据置と携帯のハイブリッド機は?", "en": "Which Nintendo hybrid console launched in 2017?"},
+    "question_text": {
+      "ja": "任天堂が 2017 年に発売した据置と携帯のハイブリッド機は?",
+      "en": "Which Nintendo hybrid console launched in 2017?"
+    },
     "choices": [
-      {"ja": "Nintendo Switch", "en": "Nintendo Switch", "ja_typings": ["nintendoswitch"]},
-      {"ja": "Wii U", "en": "Wii U", "ja_typings": ["wiiu"]},
-      {"ja": "ニンテンドー3DS", "en": "Nintendo 3DS", "ja_typings": ["ninntendo-3ds"]},
-      {"ja": "ニンテンドーDS", "en": "Nintendo DS", "ja_typings": ["ninntendo-ds"]}
+      {
+        "ja": "Nintendo Switch",
+        "en": "Nintendo Switch",
+        "ja_typings": [
+          "nintendo switch"
+        ]
+      },
+      {
+        "ja": "Wii U",
+        "en": "Wii U",
+        "ja_typings": [
+          "wii u"
+        ]
+      },
+      {
+        "ja": "ニンテンドー3DS",
+        "en": "Nintendo 3DS",
+        "ja_typings": [
+          "nintendo-3ds"
+        ]
+      },
+      {
+        "ja": "ニンテンドーDS",
+        "en": "Nintendo DS",
+        "ja_typings": [
+          "nintendo-ds"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -170,12 +494,39 @@
   {
     "id": "q0398",
     "genre": "game",
-    "question_text": {"ja": "Valve が販売する携帯型 PC ゲーム機は?", "en": "Which handheld PC gaming device is sold by Valve?"},
+    "question_text": {
+      "ja": "Valve が販売する携帯型 PC ゲーム機は?",
+      "en": "Which handheld PC gaming device is sold by Valve?"
+    },
     "choices": [
-      {"ja": "Steam Deck", "en": "Steam Deck", "ja_typings": ["steamdeck"]},
-      {"ja": "ROG Ally", "en": "ROG Ally", "ja_typings": ["rogally"]},
-      {"ja": "PlayStation Portal", "en": "PlayStation Portal", "ja_typings": ["playstationportal"]},
-      {"ja": "Nintendo Switch", "en": "Nintendo Switch", "ja_typings": ["nintendoswitch"]}
+      {
+        "ja": "Steam Deck",
+        "en": "Steam Deck",
+        "ja_typings": [
+          "steam deck"
+        ]
+      },
+      {
+        "ja": "ROG Ally",
+        "en": "ROG Ally",
+        "ja_typings": [
+          "rog ally"
+        ]
+      },
+      {
+        "ja": "PlayStation Portal",
+        "en": "PlayStation Portal",
+        "ja_typings": [
+          "playstation portal"
+        ]
+      },
+      {
+        "ja": "Nintendo Switch",
+        "en": "Nintendo Switch",
+        "ja_typings": [
+          "nintendo switch"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -184,12 +535,39 @@
   {
     "id": "q0399",
     "genre": "game",
-    "question_text": {"ja": "Valve が開発した SF FPS で重力銃が登場する作品は?", "en": "Which Valve sci-fi FPS features the gravity gun?"},
+    "question_text": {
+      "ja": "Valve が開発した SF FPS で重力銃が登場する作品は?",
+      "en": "Which Valve sci-fi FPS features the gravity gun?"
+    },
     "choices": [
-      {"ja": "Half-Life 2", "en": "Half-Life 2", "ja_typings": ["half-life2"]},
-      {"ja": "Portal", "en": "Portal", "ja_typings": ["portal"]},
-      {"ja": "Doom", "en": "Doom", "ja_typings": ["doom"]},
-      {"ja": "Quake", "en": "Quake", "ja_typings": ["quake"]}
+      {
+        "ja": "Half-Life 2",
+        "en": "Half-Life 2",
+        "ja_typings": [
+          "half-life 2"
+        ]
+      },
+      {
+        "ja": "Portal",
+        "en": "Portal",
+        "ja_typings": [
+          "portal"
+        ]
+      },
+      {
+        "ja": "Doom",
+        "en": "Doom",
+        "ja_typings": [
+          "doom"
+        ]
+      },
+      {
+        "ja": "Quake",
+        "en": "Quake",
+        "ja_typings": [
+          "quake"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -198,12 +576,39 @@
   {
     "id": "q0400",
     "genre": "game",
-    "question_text": {"ja": "Riot Games が運営する 5 対 5 の MOBA タイトルは?", "en": "Which Riot Games 5v5 MOBA is popular worldwide?"},
+    "question_text": {
+      "ja": "Riot Games が運営する 5 対 5 の MOBA タイトルは?",
+      "en": "Which Riot Games 5v5 MOBA is popular worldwide?"
+    },
     "choices": [
-      {"ja": "League of Legends", "en": "League of Legends", "ja_typings": ["leagueoflegends"]},
-      {"ja": "Dota 2", "en": "Dota 2", "ja_typings": ["dota2"]},
-      {"ja": "Smite", "en": "Smite", "ja_typings": ["smite"]},
-      {"ja": "Heroes of the Storm", "en": "Heroes of the Storm", "ja_typings": ["heroesofthestorm"]}
+      {
+        "ja": "League of Legends",
+        "en": "League of Legends",
+        "ja_typings": [
+          "league of legends"
+        ]
+      },
+      {
+        "ja": "Dota 2",
+        "en": "Dota 2",
+        "ja_typings": [
+          "dota 2"
+        ]
+      },
+      {
+        "ja": "Smite",
+        "en": "Smite",
+        "ja_typings": [
+          "smite"
+        ]
+      },
+      {
+        "ja": "Heroes of the Storm",
+        "en": "Heroes of the Storm",
+        "ja_typings": [
+          "heroes of the storm"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -212,12 +617,39 @@
   {
     "id": "q0401",
     "genre": "game",
-    "question_text": {"ja": "Mojang が開発した代表作で 2014 年に Microsoft が買収したスタジオは?", "en": "Which studio developed Minecraft and was acquired by Microsoft in 2014?"},
+    "question_text": {
+      "ja": "Mojang が開発した代表作で 2014 年に Microsoft が買収したスタジオは?",
+      "en": "Which studio developed Minecraft and was acquired by Microsoft in 2014?"
+    },
     "choices": [
-      {"ja": "Mojang", "en": "Mojang", "ja_typings": ["mojang"]},
-      {"ja": "Bethesda", "en": "Bethesda", "ja_typings": ["bethesda"]},
-      {"ja": "Bungie", "en": "Bungie", "ja_typings": ["bungie"]},
-      {"ja": "Epic Games", "en": "Epic Games", "ja_typings": ["epicgames"]}
+      {
+        "ja": "Mojang",
+        "en": "Mojang",
+        "ja_typings": [
+          "mojang"
+        ]
+      },
+      {
+        "ja": "Bethesda",
+        "en": "Bethesda",
+        "ja_typings": [
+          "bethesda"
+        ]
+      },
+      {
+        "ja": "Bungie",
+        "en": "Bungie",
+        "ja_typings": [
+          "bungie"
+        ]
+      },
+      {
+        "ja": "Epic Games",
+        "en": "Epic Games",
+        "ja_typings": [
+          "epic games"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -226,12 +658,39 @@
   {
     "id": "q0402",
     "genre": "game",
-    "question_text": {"ja": "Fortnite を運営し Unreal Engine を開発するスタジオは?", "en": "Which studio runs Fortnite and develops Unreal Engine?"},
+    "question_text": {
+      "ja": "Fortnite を運営し Unreal Engine を開発するスタジオは?",
+      "en": "Which studio runs Fortnite and develops Unreal Engine?"
+    },
     "choices": [
-      {"ja": "Epic Games", "en": "Epic Games", "ja_typings": ["epicgames"]},
-      {"ja": "Activision", "en": "Activision", "ja_typings": ["activision"]},
-      {"ja": "Ubisoft", "en": "Ubisoft", "ja_typings": ["ubisoft"]},
-      {"ja": "Take-Two Interactive", "en": "Take-Two Interactive", "ja_typings": ["take-twointeractive"]}
+      {
+        "ja": "Epic Games",
+        "en": "Epic Games",
+        "ja_typings": [
+          "epic games"
+        ]
+      },
+      {
+        "ja": "Activision",
+        "en": "Activision",
+        "ja_typings": [
+          "activision"
+        ]
+      },
+      {
+        "ja": "Ubisoft",
+        "en": "Ubisoft",
+        "ja_typings": [
+          "ubisoft"
+        ]
+      },
+      {
+        "ja": "Take-Two Interactive",
+        "en": "Take-Two Interactive",
+        "ja_typings": [
+          "take-two interactive"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -240,12 +699,39 @@
   {
     "id": "q0403",
     "genre": "game",
-    "question_text": {"ja": "プレイヤーの一人称視点で銃撃戦を行うジャンルの略称は?", "en": "What is the abbreviation for first-person shooter games?"},
+    "question_text": {
+      "ja": "プレイヤーの一人称視点で銃撃戦を行うジャンルの略称は?",
+      "en": "What is the abbreviation for first-person shooter games?"
+    },
     "choices": [
-      {"ja": "FPS", "en": "FPS", "ja_typings": ["fps"]},
-      {"ja": "RPG", "en": "RPG", "ja_typings": ["rpg"]},
-      {"ja": "MOBA", "en": "MOBA", "ja_typings": ["moba"]},
-      {"ja": "RTS", "en": "RTS", "ja_typings": ["rts"]}
+      {
+        "ja": "FPS",
+        "en": "FPS",
+        "ja_typings": [
+          "fps"
+        ]
+      },
+      {
+        "ja": "RPG",
+        "en": "RPG",
+        "ja_typings": [
+          "rpg"
+        ]
+      },
+      {
+        "ja": "MOBA",
+        "en": "MOBA",
+        "ja_typings": [
+          "moba"
+        ]
+      },
+      {
+        "ja": "RTS",
+        "en": "RTS",
+        "ja_typings": [
+          "rts"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -254,12 +740,39 @@
   {
     "id": "q0404",
     "genre": "game",
-    "question_text": {"ja": "ランダム生成のダンジョンを死にながら攻略するジャンルは?", "en": "Which genre features procedurally generated dungeons with permadeath?"},
+    "question_text": {
+      "ja": "ランダム生成のダンジョンを死にながら攻略するジャンルは?",
+      "en": "Which genre features procedurally generated dungeons with permadeath?"
+    },
     "choices": [
-      {"ja": "ローグライク", "en": "Roguelike", "ja_typings": ["ro-guraiku"]},
-      {"ja": "ハック&スラッシュ", "en": "Hack and Slash", "ja_typings": ["hakkuandosurasshu"]},
-      {"ja": "ターン制ストラテジー", "en": "Turn-based Strategy", "ja_typings": ["ta-nseisutorateji-"]},
-      {"ja": "ビジュアルノベル", "en": "Visual Novel", "ja_typings": ["bijuarunoberu"]}
+      {
+        "ja": "ローグライク",
+        "en": "Roguelike",
+        "ja_typings": [
+          "ro-guraiku"
+        ]
+      },
+      {
+        "ja": "ハック&スラッシュ",
+        "en": "Hack and Slash",
+        "ja_typings": [
+          "hakkusurasshu"
+        ]
+      },
+      {
+        "ja": "ターン制ストラテジー",
+        "en": "Turn-based Strategy",
+        "ja_typings": [
+          "ta-nseisutorateji-"
+        ]
+      },
+      {
+        "ja": "ビジュアルノベル",
+        "en": "Visual Novel",
+        "ja_typings": [
+          "bijuarunoberu"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -268,12 +781,39 @@
   {
     "id": "q0405",
     "genre": "game",
-    "question_text": {"ja": "スーパーマリオ生みの親で知られる任天堂のゲームクリエイターは?", "en": "Which Nintendo creator is known as the father of Super Mario?"},
+    "question_text": {
+      "ja": "スーパーマリオ生みの親で知られる任天堂のゲームクリエイターは?",
+      "en": "Which Nintendo creator is known as the father of Super Mario?"
+    },
     "choices": [
-      {"ja": "宮本茂", "en": "Shigeru Miyamoto", "ja_typings": ["miyamotoshigeru"]},
-      {"ja": "横井軍平", "en": "Gunpei Yokoi", "ja_typings": ["yokoigunnpei"]},
-      {"ja": "岩田聡", "en": "Satoru Iwata", "ja_typings": ["iwatasatoru"]},
-      {"ja": "桜井政博", "en": "Masahiro Sakurai", "ja_typings": ["sakuraimasahiro"]}
+      {
+        "ja": "宮本茂",
+        "en": "Shigeru Miyamoto",
+        "ja_typings": [
+          "miyamotoshigeru"
+        ]
+      },
+      {
+        "ja": "横井軍平",
+        "en": "Gunpei Yokoi",
+        "ja_typings": [
+          "yokoigunnpei"
+        ]
+      },
+      {
+        "ja": "岩田聡",
+        "en": "Satoru Iwata",
+        "ja_typings": [
+          "iwatasatoru"
+        ]
+      },
+      {
+        "ja": "桜井政博",
+        "en": "Masahiro Sakurai",
+        "ja_typings": [
+          "sakuraimasahiro"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -282,12 +822,39 @@
   {
     "id": "q0406",
     "genre": "game",
-    "question_text": {"ja": "メタルギアシリーズの監督として有名なクリエイターは?", "en": "Which creator is famous for directing the Metal Gear series?"},
+    "question_text": {
+      "ja": "メタルギアシリーズの監督として有名なクリエイターは?",
+      "en": "Which creator is famous for directing the Metal Gear series?"
+    },
     "choices": [
-      {"ja": "小島秀夫", "en": "Hideo Kojima", "ja_typings": ["kojimahideo"]},
-      {"ja": "三上真司", "en": "Shinji Mikami", "ja_typings": ["mikamishinji"]},
-      {"ja": "稲船敬二", "en": "Keiji Inafune", "ja_typings": ["inafunekeiji"]},
-      {"ja": "神谷英樹", "en": "Hideki Kamiya", "ja_typings": ["kamiyahideki"]}
+      {
+        "ja": "小島秀夫",
+        "en": "Hideo Kojima",
+        "ja_typings": [
+          "kojimahideo"
+        ]
+      },
+      {
+        "ja": "三上真司",
+        "en": "Shinji Mikami",
+        "ja_typings": [
+          "mikamishinji"
+        ]
+      },
+      {
+        "ja": "稲船敬二",
+        "en": "Keiji Inafune",
+        "ja_typings": [
+          "inafunekeiji"
+        ]
+      },
+      {
+        "ja": "神谷英樹",
+        "en": "Hideki Kamiya",
+        "ja_typings": [
+          "kamiyahideki"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -296,12 +863,39 @@
   {
     "id": "q0407",
     "genre": "game",
-    "question_text": {"ja": "バイオハザードシリーズの生みの親であるクリエイターは?", "en": "Which creator originated the Resident Evil series?"},
+    "question_text": {
+      "ja": "バイオハザードシリーズの生みの親であるクリエイターは?",
+      "en": "Which creator originated the Resident Evil series?"
+    },
     "choices": [
-      {"ja": "三上真司", "en": "Shinji Mikami", "ja_typings": ["mikamishinji"]},
-      {"ja": "小島秀夫", "en": "Hideo Kojima", "ja_typings": ["kojimahideo"]},
-      {"ja": "板垣伴信", "en": "Tomonobu Itagaki", "ja_typings": ["itagakitomonobu"]},
-      {"ja": "須田剛一", "en": "Goichi Suda", "ja_typings": ["sudagoichi"]}
+      {
+        "ja": "三上真司",
+        "en": "Shinji Mikami",
+        "ja_typings": [
+          "mikamishinji"
+        ]
+      },
+      {
+        "ja": "小島秀夫",
+        "en": "Hideo Kojima",
+        "ja_typings": [
+          "kojimahideo"
+        ]
+      },
+      {
+        "ja": "板垣伴信",
+        "en": "Tomonobu Itagaki",
+        "ja_typings": [
+          "itagakitomonobu"
+        ]
+      },
+      {
+        "ja": "須田剛一",
+        "en": "Goichi Suda",
+        "ja_typings": [
+          "sudagoichi"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -310,12 +904,39 @@
   {
     "id": "q0408",
     "genre": "game",
-    "question_text": {"ja": "ドラゴンクエストシリーズの生みの親であるゲームデザイナーは?", "en": "Which designer created the Dragon Quest series?"},
+    "question_text": {
+      "ja": "ドラゴンクエストシリーズの生みの親であるゲームデザイナーは?",
+      "en": "Which designer created the Dragon Quest series?"
+    },
     "choices": [
-      {"ja": "堀井雄二", "en": "Yuji Horii", "ja_typings": ["horiiyuuji","horiiyuji"]},
-      {"ja": "坂口博信", "en": "Hironobu Sakaguchi", "ja_typings": ["sakaguchihironobu"]},
-      {"ja": "鳥山求", "en": "Motomu Toriyama", "ja_typings": ["toriyamamotomu"]},
-      {"ja": "野村哲也", "en": "Tetsuya Nomura", "ja_typings": ["nomuratetsuya"]}
+      {
+        "ja": "堀井雄二",
+        "en": "Yuji Horii",
+        "ja_typings": [
+          "horiiyuuji"
+        ]
+      },
+      {
+        "ja": "坂口博信",
+        "en": "Hironobu Sakaguchi",
+        "ja_typings": [
+          "sakaguchihironobu"
+        ]
+      },
+      {
+        "ja": "鳥山求",
+        "en": "Motomu Toriyama",
+        "ja_typings": [
+          "toriyamamotomu"
+        ]
+      },
+      {
+        "ja": "野村哲也",
+        "en": "Tetsuya Nomura",
+        "ja_typings": [
+          "nomuratetsuya"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -324,12 +945,39 @@
   {
     "id": "q0409",
     "genre": "game",
-    "question_text": {"ja": "ファイナルファンタジーシリーズの生みの親であるクリエイターは?", "en": "Which creator started the Final Fantasy series?"},
+    "question_text": {
+      "ja": "ファイナルファンタジーシリーズの生みの親であるクリエイターは?",
+      "en": "Which creator started the Final Fantasy series?"
+    },
     "choices": [
-      {"ja": "坂口博信", "en": "Hironobu Sakaguchi", "ja_typings": ["sakaguchihironobu"]},
-      {"ja": "堀井雄二", "en": "Yuji Horii", "ja_typings": ["horiiyuuji","horiiyuji"]},
-      {"ja": "鈴木裕", "en": "Yu Suzuki", "ja_typings": ["suzukiyuu","suzukiyu"]},
-      {"ja": "中裕司", "en": "Yuji Naka", "ja_typings": ["nakayuuji","nakayuji"]}
+      {
+        "ja": "坂口博信",
+        "en": "Hironobu Sakaguchi",
+        "ja_typings": [
+          "sakaguchihironobu"
+        ]
+      },
+      {
+        "ja": "堀井雄二",
+        "en": "Yuji Horii",
+        "ja_typings": [
+          "horiiyuuji"
+        ]
+      },
+      {
+        "ja": "鈴木裕",
+        "en": "Yu Suzuki",
+        "ja_typings": [
+          "suzukiyuu"
+        ]
+      },
+      {
+        "ja": "中裕司",
+        "en": "Yuji Naka",
+        "ja_typings": [
+          "nakayuuji"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -338,12 +986,39 @@
   {
     "id": "q0410",
     "genre": "game",
-    "question_text": {"ja": "ハリネズミのキャラクターを主人公にしたセガの看板タイトルは?", "en": "Which Sega flagship stars a hedgehog character?"},
+    "question_text": {
+      "ja": "ハリネズミのキャラクターを主人公にしたセガの看板タイトルは?",
+      "en": "Which Sega flagship stars a hedgehog character?"
+    },
     "choices": [
-      {"ja": "ソニック・ザ・ヘッジホッグ", "en": "Sonic the Hedgehog", "ja_typings": ["sonikkuzaheddihoggu"]},
-      {"ja": "サクラ大戦", "en": "Sakura Wars", "ja_typings": ["sakurataisen"]},
-      {"ja": "バーチャファイター", "en": "Virtua Fighter", "ja_typings": ["ba-chafaita-"]},
-      {"ja": "龍が如く", "en": "Yakuza", "ja_typings": ["ryugagotoku","ryuugagotoku"]}
+      {
+        "ja": "ソニック・ザ・ヘッジホッグ",
+        "en": "Sonic the Hedgehog",
+        "ja_typings": [
+          "sonikku/za/hejjihoggu"
+        ]
+      },
+      {
+        "ja": "サクラ大戦",
+        "en": "Sakura Wars",
+        "ja_typings": [
+          "sakurataisen"
+        ]
+      },
+      {
+        "ja": "バーチャファイター",
+        "en": "Virtua Fighter",
+        "ja_typings": [
+          "ba-chafaita-"
+        ]
+      },
+      {
+        "ja": "龍が如く",
+        "en": "Yakuza",
+        "ja_typings": [
+          "ryuugagotoku"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -352,12 +1027,39 @@
   {
     "id": "q0411",
     "genre": "game",
-    "question_text": {"ja": "コナミから発売された潜入アクション「メタルギア」の主人公は?", "en": "Who is the protagonist of Konami's stealth action Metal Gear?"},
+    "question_text": {
+      "ja": "コナミから発売された潜入アクション「メタルギア」の主人公は?",
+      "en": "Who is the protagonist of Konami's stealth action Metal Gear?"
+    },
     "choices": [
-      {"ja": "ソリッド・スネーク", "en": "Solid Snake", "ja_typings": ["soriddosune-ku"]},
-      {"ja": "サムフィッシャー", "en": "Sam Fisher", "ja_typings": ["samufisha-"]},
-      {"ja": "エージェント47", "en": "Agent 47", "ja_typings": ["e-jenntoyonjuunana","e-jento47"]},
-      {"ja": "ジェイソン・ボーン", "en": "Jason Bourne", "ja_typings": ["jeisonnbo-n"]}
+      {
+        "ja": "ソリッド・スネーク",
+        "en": "Solid Snake",
+        "ja_typings": [
+          "soriddo/sune-ku"
+        ]
+      },
+      {
+        "ja": "サムフィッシャー",
+        "en": "Sam Fisher",
+        "ja_typings": [
+          "samufissha-"
+        ]
+      },
+      {
+        "ja": "エージェント47",
+        "en": "Agent 47",
+        "ja_typings": [
+          "e-jento47"
+        ]
+      },
+      {
+        "ja": "ジェイソン・ボーン",
+        "en": "Jason Bourne",
+        "ja_typings": [
+          "jeison/bo-n"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -366,12 +1068,39 @@
   {
     "id": "q0412",
     "genre": "game",
-    "question_text": {"ja": "カプコンが展開する村人狩猟生活がテーマのアクションシリーズは?", "en": "Which Capcom action series is themed on monster hunting?"},
+    "question_text": {
+      "ja": "カプコンが展開する村人狩猟生活がテーマのアクションシリーズは?",
+      "en": "Which Capcom action series is themed on monster hunting?"
+    },
     "choices": [
-      {"ja": "モンスターハンター", "en": "Monster Hunter", "ja_typings": ["monnsuta-hannta-"]},
-      {"ja": "戦国BASARA", "en": "Sengoku Basara", "ja_typings": ["senngokubasara"]},
-      {"ja": "デビルメイクライ", "en": "Devil May Cry", "ja_typings": ["debirumeikurai"]},
-      {"ja": "ロックマン", "en": "Mega Man", "ja_typings": ["rokkuman"]}
+      {
+        "ja": "モンスターハンター",
+        "en": "Monster Hunter",
+        "ja_typings": [
+          "monsuta-hanta-"
+        ]
+      },
+      {
+        "ja": "戦国BASARA",
+        "en": "Sengoku Basara",
+        "ja_typings": [
+          "senngokubasara"
+        ]
+      },
+      {
+        "ja": "デビルメイクライ",
+        "en": "Devil May Cry",
+        "ja_typings": [
+          "debirumeikurai"
+        ]
+      },
+      {
+        "ja": "ロックマン",
+        "en": "Mega Man",
+        "ja_typings": [
+          "rokkuman"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -380,12 +1109,39 @@
   {
     "id": "q0413",
     "genre": "game",
-    "question_text": {"ja": "スクウェア・エニックスが展開する MMORPG で世界中にプレイヤーがいる作品は?", "en": "Which Square Enix MMORPG has a global player base?"},
+    "question_text": {
+      "ja": "スクウェア・エニックスが展開する MMORPG で世界中にプレイヤーがいる作品は?",
+      "en": "Which Square Enix MMORPG has a global player base?"
+    },
     "choices": [
-      {"ja": "ファイナルファンタジーXIV", "en": "Final Fantasy XIV", "ja_typings": ["fainarufanntaji-14"]},
-      {"ja": "ドラゴンクエストX", "en": "Dragon Quest X", "ja_typings": ["doragonnkuesuto10"]},
-      {"ja": "World of Warcraft", "en": "World of Warcraft", "ja_typings": ["worldofwarcraft"]},
-      {"ja": "黒い砂漠", "en": "Black Desert", "ja_typings": ["kuroisabaku"]}
+      {
+        "ja": "ファイナルファンタジーXIV",
+        "en": "Final Fantasy XIV",
+        "ja_typings": [
+          "fainarufantaji-xiv"
+        ]
+      },
+      {
+        "ja": "ドラゴンクエストX",
+        "en": "Dragon Quest X",
+        "ja_typings": [
+          "doragonkuesutox"
+        ]
+      },
+      {
+        "ja": "World of Warcraft",
+        "en": "World of Warcraft",
+        "ja_typings": [
+          "world of warcraft"
+        ]
+      },
+      {
+        "ja": "黒い砂漠",
+        "en": "Black Desert",
+        "ja_typings": [
+          "kuroisabaku"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -394,12 +1150,39 @@
   {
     "id": "q0414",
     "genre": "game",
-    "question_text": {"ja": "Blizzard が運営する世界的に有名な MMORPG は?", "en": "Which world-famous MMORPG is operated by Blizzard?"},
+    "question_text": {
+      "ja": "Blizzard が運営する世界的に有名な MMORPG は?",
+      "en": "Which world-famous MMORPG is operated by Blizzard?"
+    },
     "choices": [
-      {"ja": "World of Warcraft", "en": "World of Warcraft", "ja_typings": ["worldofwarcraft"]},
-      {"ja": "EverQuest", "en": "EverQuest", "ja_typings": ["everquest"]},
-      {"ja": "Guild Wars 2", "en": "Guild Wars 2", "ja_typings": ["guildwars2"]},
-      {"ja": "Lost Ark", "en": "Lost Ark", "ja_typings": ["lostark"]}
+      {
+        "ja": "World of Warcraft",
+        "en": "World of Warcraft",
+        "ja_typings": [
+          "world of warcraft"
+        ]
+      },
+      {
+        "ja": "EverQuest",
+        "en": "EverQuest",
+        "ja_typings": [
+          "everquest"
+        ]
+      },
+      {
+        "ja": "Guild Wars 2",
+        "en": "Guild Wars 2",
+        "ja_typings": [
+          "guild wars 2"
+        ]
+      },
+      {
+        "ja": "Lost Ark",
+        "en": "Lost Ark",
+        "ja_typings": [
+          "lost ark"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -408,12 +1191,39 @@
   {
     "id": "q0415",
     "genre": "game",
-    "question_text": {"ja": "黄色い丸キャラがドットを食べモンスターから逃げるナムコの名作は?", "en": "Which Namco classic features a yellow disc eating dots?"},
+    "question_text": {
+      "ja": "黄色い丸キャラがドットを食べモンスターから逃げるナムコの名作は?",
+      "en": "Which Namco classic features a yellow disc eating dots?"
+    },
     "choices": [
-      {"ja": "パックマン", "en": "Pac-Man", "ja_typings": ["pakkuman"]},
-      {"ja": "ディグダグ", "en": "Dig Dug", "ja_typings": ["digudagu"]},
-      {"ja": "ギャラガ", "en": "Galaga", "ja_typings": ["gyaraga"]},
-      {"ja": "ゼビウス", "en": "Xevious", "ja_typings": ["zebiusu"]}
+      {
+        "ja": "パックマン",
+        "en": "Pac-Man",
+        "ja_typings": [
+          "pakkuman"
+        ]
+      },
+      {
+        "ja": "ディグダグ",
+        "en": "Dig Dug",
+        "ja_typings": [
+          "dhigudagu"
+        ]
+      },
+      {
+        "ja": "ギャラガ",
+        "en": "Galaga",
+        "ja_typings": [
+          "gyaraga"
+        ]
+      },
+      {
+        "ja": "ゼビウス",
+        "en": "Xevious",
+        "ja_typings": [
+          "zebiusu"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -422,12 +1232,39 @@
   {
     "id": "q0416",
     "genre": "game",
-    "question_text": {"ja": "落ち物パズルの代表作で 4 つのブロックを操作するソ連発祥のゲームは?", "en": "Which falling-block puzzle from the Soviet Union manipulates four-block pieces?"},
+    "question_text": {
+      "ja": "落ち物パズルの代表作で 4 つのブロックを操作するソ連発祥のゲームは?",
+      "en": "Which falling-block puzzle from the Soviet Union manipulates four-block pieces?"
+    },
     "choices": [
-      {"ja": "テトリス", "en": "Tetris", "ja_typings": ["tetorisu"]},
-      {"ja": "ぷよぷよ", "en": "Puyo Puyo", "ja_typings": ["puyopuyo"]},
-      {"ja": "コラムス", "en": "Columns", "ja_typings": ["koramusu"]},
-      {"ja": "Dr.マリオ", "en": "Dr. Mario", "ja_typings": ["dr.mario","dokuta-mario"]}
+      {
+        "ja": "テトリス",
+        "en": "Tetris",
+        "ja_typings": [
+          "tetorisu"
+        ]
+      },
+      {
+        "ja": "ぷよぷよ",
+        "en": "Puyo Puyo",
+        "ja_typings": [
+          "puyopuyo"
+        ]
+      },
+      {
+        "ja": "コラムス",
+        "en": "Columns",
+        "ja_typings": [
+          "koramusu"
+        ]
+      },
+      {
+        "ja": "Dr.マリオ",
+        "en": "Dr. Mario",
+        "ja_typings": [
+          "dr.mario"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -436,12 +1273,39 @@
   {
     "id": "q0417",
     "genre": "game",
-    "question_text": {"ja": "Mojang のマルクス・ペルソンが開発した世界一売れたゲームは?", "en": "Which game by Markus Persson at Mojang is the best-selling of all time?"},
+    "question_text": {
+      "ja": "Mojang のマルクス・ペルソンが開発した世界一売れたゲームは?",
+      "en": "Which game by Markus Persson at Mojang is the best-selling of all time?"
+    },
     "choices": [
-      {"ja": "Minecraft", "en": "Minecraft", "ja_typings": ["minecraft"]},
-      {"ja": "Tetris", "en": "Tetris", "ja_typings": ["tetris"]},
-      {"ja": "GTA V", "en": "GTA V", "ja_typings": ["gtav","gta5"]},
-      {"ja": "Wii Sports", "en": "Wii Sports", "ja_typings": ["wiisports"]}
+      {
+        "ja": "Minecraft",
+        "en": "Minecraft",
+        "ja_typings": [
+          "minecraft"
+        ]
+      },
+      {
+        "ja": "Tetris",
+        "en": "Tetris",
+        "ja_typings": [
+          "tetris"
+        ]
+      },
+      {
+        "ja": "GTA V",
+        "en": "GTA V",
+        "ja_typings": [
+          "gta v"
+        ]
+      },
+      {
+        "ja": "Wii Sports",
+        "en": "Wii Sports",
+        "ja_typings": [
+          "wii sports"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -450,12 +1314,39 @@
   {
     "id": "q0418",
     "genre": "game",
-    "question_text": {"ja": "Activision の人気軍事 FPS シリーズは?", "en": "Which Activision military FPS series is hugely popular?"},
+    "question_text": {
+      "ja": "Activision の人気軍事 FPS シリーズは?",
+      "en": "Which Activision military FPS series is hugely popular?"
+    },
     "choices": [
-      {"ja": "コール オブ デューティ", "en": "Call of Duty", "ja_typings": ["ko-ruobudyu-ti"]},
-      {"ja": "バトルフィールド", "en": "Battlefield", "ja_typings": ["batorufi-rudo"]},
-      {"ja": "メダル オブ オナー", "en": "Medal of Honor", "ja_typings": ["medaruobuona-"]},
-      {"ja": "レインボーシックス", "en": "Rainbow Six", "ja_typings": ["reinnbo-shikkusu"]}
+      {
+        "ja": "コール オブ デューティ",
+        "en": "Call of Duty",
+        "ja_typings": [
+          "ko-ru obu deyu-thi"
+        ]
+      },
+      {
+        "ja": "バトルフィールド",
+        "en": "Battlefield",
+        "ja_typings": [
+          "batorufi-rudo"
+        ]
+      },
+      {
+        "ja": "メダル オブ オナー",
+        "en": "Medal of Honor",
+        "ja_typings": [
+          "medaru obu ona-"
+        ]
+      },
+      {
+        "ja": "レインボーシックス",
+        "en": "Rainbow Six",
+        "ja_typings": [
+          "reinbo-shikkusu"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -464,12 +1355,39 @@
   {
     "id": "q0419",
     "genre": "game",
-    "question_text": {"ja": "EA DICE が開発する戦争 FPS シリーズは?", "en": "Which war FPS series is developed by EA DICE?"},
+    "question_text": {
+      "ja": "EA DICE が開発する戦争 FPS シリーズは?",
+      "en": "Which war FPS series is developed by EA DICE?"
+    },
     "choices": [
-      {"ja": "バトルフィールド", "en": "Battlefield", "ja_typings": ["batorufi-rudo"]},
-      {"ja": "コール オブ デューティ", "en": "Call of Duty", "ja_typings": ["ko-ruobudyu-ti"]},
-      {"ja": "Apex Legends", "en": "Apex Legends", "ja_typings": ["apexlegends"]},
-      {"ja": "タイタンフォール", "en": "Titanfall", "ja_typings": ["taitannfo-ru"]}
+      {
+        "ja": "バトルフィールド",
+        "en": "Battlefield",
+        "ja_typings": [
+          "batorufi-rudo"
+        ]
+      },
+      {
+        "ja": "コール オブ デューティ",
+        "en": "Call of Duty",
+        "ja_typings": [
+          "ko-ru obu deyu-thi"
+        ]
+      },
+      {
+        "ja": "Apex Legends",
+        "en": "Apex Legends",
+        "ja_typings": [
+          "apex legends"
+        ]
+      },
+      {
+        "ja": "タイタンフォール",
+        "en": "Titanfall",
+        "ja_typings": [
+          "taitanfo-ru"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -478,12 +1396,39 @@
   {
     "id": "q0420",
     "genre": "game",
-    "question_text": {"ja": "Respawn が開発する英雄キャラを操るバトルロイヤル FPS は?", "en": "Which Respawn battle royale FPS uses hero characters?"},
+    "question_text": {
+      "ja": "Respawn が開発する英雄キャラを操るバトルロイヤル FPS は?",
+      "en": "Which Respawn battle royale FPS uses hero characters?"
+    },
     "choices": [
-      {"ja": "Apex Legends", "en": "Apex Legends", "ja_typings": ["apexlegends"]},
-      {"ja": "Overwatch", "en": "Overwatch", "ja_typings": ["overwatch"]},
-      {"ja": "Valorant", "en": "Valorant", "ja_typings": ["valorant"]},
-      {"ja": "Paladins", "en": "Paladins", "ja_typings": ["paladins"]}
+      {
+        "ja": "Apex Legends",
+        "en": "Apex Legends",
+        "ja_typings": [
+          "apex legends"
+        ]
+      },
+      {
+        "ja": "Overwatch",
+        "en": "Overwatch",
+        "ja_typings": [
+          "overwatch"
+        ]
+      },
+      {
+        "ja": "Valorant",
+        "en": "Valorant",
+        "ja_typings": [
+          "valorant"
+        ]
+      },
+      {
+        "ja": "Paladins",
+        "en": "Paladins",
+        "ja_typings": [
+          "paladins"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -492,12 +1437,39 @@
   {
     "id": "q0421",
     "genre": "game",
-    "question_text": {"ja": "Riot Games が運営する 5 対 5 の戦術タクティカル FPS は?", "en": "Which Riot Games 5v5 tactical FPS is competitive?"},
+    "question_text": {
+      "ja": "Riot Games が運営する 5 対 5 の戦術タクティカル FPS は?",
+      "en": "Which Riot Games 5v5 tactical FPS is competitive?"
+    },
     "choices": [
-      {"ja": "VALORANT", "en": "Valorant", "ja_typings": ["valorant"]},
-      {"ja": "CS:GO", "en": "CS:GO", "ja_typings": ["cs:go","csgo"]},
-      {"ja": "Rainbow Six Siege", "en": "Rainbow Six Siege", "ja_typings": ["rainbowsixsiege"]},
-      {"ja": "Overwatch", "en": "Overwatch", "ja_typings": ["overwatch"]}
+      {
+        "ja": "VALORANT",
+        "en": "Valorant",
+        "ja_typings": [
+          "valorant"
+        ]
+      },
+      {
+        "ja": "CS:GO",
+        "en": "CS:GO",
+        "ja_typings": [
+          "cs:go"
+        ]
+      },
+      {
+        "ja": "Rainbow Six Siege",
+        "en": "Rainbow Six Siege",
+        "ja_typings": [
+          "rainbow six siege"
+        ]
+      },
+      {
+        "ja": "Overwatch",
+        "en": "Overwatch",
+        "ja_typings": [
+          "overwatch"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -506,12 +1478,39 @@
   {
     "id": "q0422",
     "genre": "game",
-    "question_text": {"ja": "Blizzard が手がけたヒーローシューター FPS は?", "en": "Which hero shooter FPS was made by Blizzard?"},
+    "question_text": {
+      "ja": "Blizzard が手がけたヒーローシューター FPS は?",
+      "en": "Which hero shooter FPS was made by Blizzard?"
+    },
     "choices": [
-      {"ja": "オーバーウォッチ", "en": "Overwatch", "ja_typings": ["o-ba-uocchi"]},
-      {"ja": "ヴァロラント", "en": "Valorant", "ja_typings": ["varoranto"]},
-      {"ja": "パラディンズ", "en": "Paladins", "ja_typings": ["paradinnzu"]},
-      {"ja": "チームフォートレス", "en": "Team Fortress", "ja_typings": ["chi-mufo-toresu"]}
+      {
+        "ja": "オーバーウォッチ",
+        "en": "Overwatch",
+        "ja_typings": [
+          "o-ba-wotchi"
+        ]
+      },
+      {
+        "ja": "ヴァロラント",
+        "en": "Valorant",
+        "ja_typings": [
+          "varoranto"
+        ]
+      },
+      {
+        "ja": "パラディンズ",
+        "en": "Paladins",
+        "ja_typings": [
+          "paradhinzu"
+        ]
+      },
+      {
+        "ja": "チームフォートレス",
+        "en": "Team Fortress",
+        "ja_typings": [
+          "chi-mufo-toresu"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -520,12 +1519,39 @@
   {
     "id": "q0423",
     "genre": "game",
-    "question_text": {"ja": "Bethesda が開発する核戦争後の世界を描く RPG シリーズは?", "en": "Which Bethesda RPG series depicts a post-nuclear world?"},
+    "question_text": {
+      "ja": "Bethesda が開発する核戦争後の世界を描く RPG シリーズは?",
+      "en": "Which Bethesda RPG series depicts a post-nuclear world?"
+    },
     "choices": [
-      {"ja": "Fallout", "en": "Fallout", "ja_typings": ["fallout"]},
-      {"ja": "The Elder Scrolls", "en": "The Elder Scrolls", "ja_typings": ["theelderscrolls"]},
-      {"ja": "Mass Effect", "en": "Mass Effect", "ja_typings": ["masseffect"]},
-      {"ja": "Borderlands", "en": "Borderlands", "ja_typings": ["borderlands"]}
+      {
+        "ja": "Fallout",
+        "en": "Fallout",
+        "ja_typings": [
+          "fallout"
+        ]
+      },
+      {
+        "ja": "The Elder Scrolls",
+        "en": "The Elder Scrolls",
+        "ja_typings": [
+          "the elder scrolls"
+        ]
+      },
+      {
+        "ja": "Mass Effect",
+        "en": "Mass Effect",
+        "ja_typings": [
+          "mass effect"
+        ]
+      },
+      {
+        "ja": "Borderlands",
+        "en": "Borderlands",
+        "ja_typings": [
+          "borderlands"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -534,12 +1560,39 @@
   {
     "id": "q0424",
     "genre": "game",
-    "question_text": {"ja": "Bethesda のオープンワールド RPG で Skyrim が第 5 作にあたるシリーズは?", "en": "Which Bethesda open-world RPG series counts Skyrim as its fifth entry?"},
+    "question_text": {
+      "ja": "Bethesda のオープンワールド RPG で Skyrim が第 5 作にあたるシリーズは?",
+      "en": "Which Bethesda open-world RPG series counts Skyrim as its fifth entry?"
+    },
     "choices": [
-      {"ja": "The Elder Scrolls", "en": "The Elder Scrolls", "ja_typings": ["theelderscrolls"]},
-      {"ja": "Fallout", "en": "Fallout", "ja_typings": ["fallout"]},
-      {"ja": "Dragon Age", "en": "Dragon Age", "ja_typings": ["dragonage"]},
-      {"ja": "Witcher", "en": "Witcher", "ja_typings": ["witcher"]}
+      {
+        "ja": "The Elder Scrolls",
+        "en": "The Elder Scrolls",
+        "ja_typings": [
+          "the elder scrolls"
+        ]
+      },
+      {
+        "ja": "Fallout",
+        "en": "Fallout",
+        "ja_typings": [
+          "fallout"
+        ]
+      },
+      {
+        "ja": "Dragon Age",
+        "en": "Dragon Age",
+        "ja_typings": [
+          "dragon age"
+        ]
+      },
+      {
+        "ja": "Witcher",
+        "en": "Witcher",
+        "ja_typings": [
+          "witcher"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -548,12 +1601,39 @@
   {
     "id": "q0425",
     "genre": "game",
-    "question_text": {"ja": "CD Projekt Red が手がけるゲラルトを主人公にした RPG シリーズは?", "en": "Which CD Projekt Red RPG series stars Geralt?"},
+    "question_text": {
+      "ja": "CD Projekt Red が手がけるゲラルトを主人公にした RPG シリーズは?",
+      "en": "Which CD Projekt Red RPG series stars Geralt?"
+    },
     "choices": [
-      {"ja": "ウィッチャー", "en": "The Witcher", "ja_typings": ["uiccha-"]},
-      {"ja": "サイバーパンク2077", "en": "Cyberpunk 2077", "ja_typings": ["saiba-panku2077"]},
-      {"ja": "ドラゴンエイジ", "en": "Dragon Age", "ja_typings": ["doragoneiji"]},
-      {"ja": "マスエフェクト", "en": "Mass Effect", "ja_typings": ["masuefekuto"]}
+      {
+        "ja": "ウィッチャー",
+        "en": "The Witcher",
+        "ja_typings": [
+          "witcha-"
+        ]
+      },
+      {
+        "ja": "サイバーパンク2077",
+        "en": "Cyberpunk 2077",
+        "ja_typings": [
+          "saiba-panku2077"
+        ]
+      },
+      {
+        "ja": "ドラゴンエイジ",
+        "en": "Dragon Age",
+        "ja_typings": [
+          "doragonneiji"
+        ]
+      },
+      {
+        "ja": "マスエフェクト",
+        "en": "Mass Effect",
+        "ja_typings": [
+          "masuefekuto"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -562,12 +1642,39 @@
   {
     "id": "q0426",
     "genre": "game",
-    "question_text": {"ja": "CD Projekt Red の SF オープンワールド RPG は?", "en": "Which CD Projekt Red sci-fi open-world RPG is set in a futuristic city?"},
+    "question_text": {
+      "ja": "CD Projekt Red の SF オープンワールド RPG は?",
+      "en": "Which CD Projekt Red sci-fi open-world RPG is set in a futuristic city?"
+    },
     "choices": [
-      {"ja": "サイバーパンク2077", "en": "Cyberpunk 2077", "ja_typings": ["saiba-panku2077"]},
-      {"ja": "デウスエクス", "en": "Deus Ex", "ja_typings": ["deusuekusu"]},
-      {"ja": "Detroit: Become Human", "en": "Detroit: Become Human", "ja_typings": ["detroit:becomehuman"]},
-      {"ja": "Shadowrun", "en": "Shadowrun", "ja_typings": ["shadowrun"]}
+      {
+        "ja": "サイバーパンク2077",
+        "en": "Cyberpunk 2077",
+        "ja_typings": [
+          "saiba-panku2077"
+        ]
+      },
+      {
+        "ja": "デウスエクス",
+        "en": "Deus Ex",
+        "ja_typings": [
+          "deusuekusu"
+        ]
+      },
+      {
+        "ja": "Detroit: Become Human",
+        "en": "Detroit: Become Human",
+        "ja_typings": [
+          "detroit: become human"
+        ]
+      },
+      {
+        "ja": "Shadowrun",
+        "en": "Shadowrun",
+        "ja_typings": [
+          "shadowrun"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -576,12 +1683,39 @@
   {
     "id": "q0427",
     "genre": "game",
-    "question_text": {"ja": "フロム・ソフトウェアの高難度アクション RPG でエルデの王を目指す作品は?", "en": "Which FromSoftware hard action RPG involves becoming Elden Lord?"},
+    "question_text": {
+      "ja": "フロム・ソフトウェアの高難度アクション RPG でエルデの王を目指す作品は?",
+      "en": "Which FromSoftware hard action RPG involves becoming Elden Lord?"
+    },
     "choices": [
-      {"ja": "エルデンリング", "en": "Elden Ring", "ja_typings": ["erudennringu"]},
-      {"ja": "ダークソウル", "en": "Dark Souls", "ja_typings": ["da-kusouru"]},
-      {"ja": "ブラッドボーン", "en": "Bloodborne", "ja_typings": ["buraddobo-n"]},
-      {"ja": "セキロ", "en": "Sekiro", "ja_typings": ["sekiro"]}
+      {
+        "ja": "エルデンリング",
+        "en": "Elden Ring",
+        "ja_typings": [
+          "erudenringu"
+        ]
+      },
+      {
+        "ja": "ダークソウル",
+        "en": "Dark Souls",
+        "ja_typings": [
+          "da-kusouru"
+        ]
+      },
+      {
+        "ja": "ブラッドボーン",
+        "en": "Bloodborne",
+        "ja_typings": [
+          "buraddobo-n"
+        ]
+      },
+      {
+        "ja": "セキロ",
+        "en": "Sekiro",
+        "ja_typings": [
+          "sekiro"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -590,12 +1724,39 @@
   {
     "id": "q0428",
     "genre": "game",
-    "question_text": {"ja": "フロム・ソフトウェアの戦国時代を舞台にした隻腕忍者の死にゲーは?", "en": "Which FromSoftware game features a one-armed ninja in Sengoku Japan?"},
+    "question_text": {
+      "ja": "フロム・ソフトウェアの戦国時代を舞台にした隻腕忍者の死にゲーは?",
+      "en": "Which FromSoftware game features a one-armed ninja in Sengoku Japan?"
+    },
     "choices": [
-      {"ja": "SEKIRO", "en": "Sekiro", "ja_typings": ["sekiro"]},
-      {"ja": "仁王", "en": "Nioh", "ja_typings": ["nioh","niou"]},
-      {"ja": "Ghost of Tsushima", "en": "Ghost of Tsushima", "ja_typings": ["ghostoftsushima"]},
-      {"ja": "Onimusha", "en": "Onimusha", "ja_typings": ["onimusha"]}
+      {
+        "ja": "SEKIRO",
+        "en": "Sekiro",
+        "ja_typings": [
+          "sekiro"
+        ]
+      },
+      {
+        "ja": "仁王",
+        "en": "Nioh",
+        "ja_typings": [
+          "niou"
+        ]
+      },
+      {
+        "ja": "Ghost of Tsushima",
+        "en": "Ghost of Tsushima",
+        "ja_typings": [
+          "ghost of tsushima"
+        ]
+      },
+      {
+        "ja": "Onimusha",
+        "en": "Onimusha",
+        "ja_typings": [
+          "onimusha"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -604,12 +1765,39 @@
   {
     "id": "q0429",
     "genre": "game",
-    "question_text": {"ja": "Naughty Dog が開発した感染症後の世界を描く PS 独占アクションは?", "en": "Which Naughty Dog PS-exclusive depicts a post-pandemic world?"},
+    "question_text": {
+      "ja": "Naughty Dog が開発した感染症後の世界を描く PS 独占アクションは?",
+      "en": "Which Naughty Dog PS-exclusive depicts a post-pandemic world?"
+    },
     "choices": [
-      {"ja": "The Last of Us", "en": "The Last of Us", "ja_typings": ["thelastofus"]},
-      {"ja": "アンチャーテッド", "en": "Uncharted", "ja_typings": ["anncha-teddo"]},
-      {"ja": "Days Gone", "en": "Days Gone", "ja_typings": ["daysgone"]},
-      {"ja": "Death Stranding", "en": "Death Stranding", "ja_typings": ["deathstranding"]}
+      {
+        "ja": "The Last of Us",
+        "en": "The Last of Us",
+        "ja_typings": [
+          "the last of us"
+        ]
+      },
+      {
+        "ja": "アンチャーテッド",
+        "en": "Uncharted",
+        "ja_typings": [
+          "ancha-teddo"
+        ]
+      },
+      {
+        "ja": "Days Gone",
+        "en": "Days Gone",
+        "ja_typings": [
+          "days gone"
+        ]
+      },
+      {
+        "ja": "Death Stranding",
+        "en": "Death Stranding",
+        "ja_typings": [
+          "death stranding"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -618,12 +1806,39 @@
   {
     "id": "q0430",
     "genre": "game",
-    "question_text": {"ja": "Naughty Dog のトレジャーハンターを主人公にしたアクション・アドベンチャーは?", "en": "Which Naughty Dog action-adventure series stars a treasure hunter?"},
+    "question_text": {
+      "ja": "Naughty Dog のトレジャーハンターを主人公にしたアクション・アドベンチャーは?",
+      "en": "Which Naughty Dog action-adventure series stars a treasure hunter?"
+    },
     "choices": [
-      {"ja": "アンチャーテッド", "en": "Uncharted", "ja_typings": ["anncha-teddo"]},
-      {"ja": "トゥームレイダー", "en": "Tomb Raider", "ja_typings": ["tu-mureida-"]},
-      {"ja": "ジャック×ダクスター", "en": "Jak and Daxter", "ja_typings": ["jakkudakusuta-"]},
-      {"ja": "ラチェット&クランク", "en": "Ratchet & Clank", "ja_typings": ["racchettoandokuranku"]}
+      {
+        "ja": "アンチャーテッド",
+        "en": "Uncharted",
+        "ja_typings": [
+          "ancha-teddo"
+        ]
+      },
+      {
+        "ja": "トゥームレイダー",
+        "en": "Tomb Raider",
+        "ja_typings": [
+          "twu-mureida-"
+        ]
+      },
+      {
+        "ja": "ジャック×ダクスター",
+        "en": "Jak and Daxter",
+        "ja_typings": [
+          "jakkudakusuta-"
+        ]
+      },
+      {
+        "ja": "ラチェット&クランク",
+        "en": "Ratchet & Clank",
+        "ja_typings": [
+          "rachettokuranku"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -632,12 +1847,39 @@
   {
     "id": "q0431",
     "genre": "game",
-    "question_text": {"ja": "Sucker Punch が開発した対馬を舞台にした PS4 の侍アクションは?", "en": "Which Sucker Punch PS4 samurai game is set on Tsushima?"},
+    "question_text": {
+      "ja": "Sucker Punch が開発した対馬を舞台にした PS4 の侍アクションは?",
+      "en": "Which Sucker Punch PS4 samurai game is set on Tsushima?"
+    },
     "choices": [
-      {"ja": "Ghost of Tsushima", "en": "Ghost of Tsushima", "ja_typings": ["ghostoftsushima"]},
-      {"ja": "仁王", "en": "Nioh", "ja_typings": ["nioh","niou"]},
-      {"ja": "Sekiro", "en": "Sekiro", "ja_typings": ["sekiro"]},
-      {"ja": "侍道", "en": "Way of the Samurai", "ja_typings": ["samuraidou","samuraido"]}
+      {
+        "ja": "Ghost of Tsushima",
+        "en": "Ghost of Tsushima",
+        "ja_typings": [
+          "ghost of tsushima"
+        ]
+      },
+      {
+        "ja": "仁王",
+        "en": "Nioh",
+        "ja_typings": [
+          "niou"
+        ]
+      },
+      {
+        "ja": "Sekiro",
+        "en": "Sekiro",
+        "ja_typings": [
+          "sekiro"
+        ]
+      },
+      {
+        "ja": "侍道",
+        "en": "Way of the Samurai",
+        "ja_typings": [
+          "samuraidou"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -646,12 +1888,39 @@
   {
     "id": "q0432",
     "genre": "game",
-    "question_text": {"ja": "MiHoYo が開発した原神に代表される基本無料オープンワールドは?", "en": "Which miHoYo free-to-play open-world game is famous worldwide?"},
+    "question_text": {
+      "ja": "MiHoYo が開発した原神に代表される基本無料オープンワールドは?",
+      "en": "Which miHoYo free-to-play open-world game is famous worldwide?"
+    },
     "choices": [
-      {"ja": "原神", "en": "Genshin Impact", "ja_typings": ["genshin"]},
-      {"ja": "崩壊スターレイル", "en": "Honkai Star Rail", "ja_typings": ["houkaisuta-reiru","hokaisuta-reiru"]},
-      {"ja": "幻塔", "en": "Tower of Fantasy", "ja_typings": ["gentou","gento"]},
-      {"ja": "アズールレーン", "en": "Azur Lane", "ja_typings": ["azu-rure-n"]}
+      {
+        "ja": "原神",
+        "en": "Genshin Impact",
+        "ja_typings": [
+          "genshin"
+        ]
+      },
+      {
+        "ja": "崩壊スターレイル",
+        "en": "Honkai Star Rail",
+        "ja_typings": [
+          "houkaisuta-reiru"
+        ]
+      },
+      {
+        "ja": "幻塔",
+        "en": "Tower of Fantasy",
+        "ja_typings": [
+          "gentou"
+        ]
+      },
+      {
+        "ja": "アズールレーン",
+        "en": "Azur Lane",
+        "ja_typings": [
+          "azu-rure-n"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -660,12 +1929,39 @@
   {
     "id": "q0433",
     "genre": "game",
-    "question_text": {"ja": "Cygames の人気スマホ RPG でアニメ化もされた作品は?", "en": "Which Cygames mobile RPG also got an anime adaptation?"},
+    "question_text": {
+      "ja": "Cygames の人気スマホ RPG でアニメ化もされた作品は?",
+      "en": "Which Cygames mobile RPG also got an anime adaptation?"
+    },
     "choices": [
-      {"ja": "ウマ娘 プリティーダービー", "en": "Uma Musume Pretty Derby", "ja_typings": ["umamusumepuriti-da-bi-"]},
-      {"ja": "プリンセスコネクト", "en": "Princess Connect", "ja_typings": ["purinnsesukonekuto"]},
-      {"ja": "グランブルーファンタジー", "en": "Granblue Fantasy", "ja_typings": ["guranburu-fanntaji-"]},
-      {"ja": "シャドウバース", "en": "Shadowverse", "ja_typings": ["shadouba-su"]}
+      {
+        "ja": "ウマ娘 プリティーダービー",
+        "en": "Uma Musume Pretty Derby",
+        "ja_typings": [
+          "umamusumepuriti-da-bi-"
+        ]
+      },
+      {
+        "ja": "プリンセスコネクト",
+        "en": "Princess Connect",
+        "ja_typings": [
+          "purinsesukonekuto"
+        ]
+      },
+      {
+        "ja": "グランブルーファンタジー",
+        "en": "Granblue Fantasy",
+        "ja_typings": [
+          "guranburu-fantaji-"
+        ]
+      },
+      {
+        "ja": "シャドウバース",
+        "en": "Shadowverse",
+        "ja_typings": [
+          "shadouba-su"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -674,12 +1970,39 @@
   {
     "id": "q0434",
     "genre": "game",
-    "question_text": {"ja": "コナミの人気野球シミュレーションゲームシリーズの愛称は?", "en": "What is the nickname for Konami's popular baseball simulation series?"},
+    "question_text": {
+      "ja": "コナミの人気野球シミュレーションゲームシリーズの愛称は?",
+      "en": "What is the nickname for Konami's popular baseball simulation series?"
+    },
     "choices": [
-      {"ja": "パワプロ", "en": "Power Pros", "ja_typings": ["pawapuro"]},
-      {"ja": "プロスピ", "en": "Pro Spirits", "ja_typings": ["purosupi"]},
-      {"ja": "プロ野球スピリッツ", "en": "Pro Yakyu Spirits", "ja_typings": ["puroyakyuusupirittsu","puroyakyusupirittsu"]},
-      {"ja": "燃えろプロ野球", "en": "Moero Pro Yakyu", "ja_typings": ["moeropuroyakyuu","moeropuroyakyu"]}
+      {
+        "ja": "パワプロ",
+        "en": "Power Pros",
+        "ja_typings": [
+          "pawapuro"
+        ]
+      },
+      {
+        "ja": "プロスピ",
+        "en": "Pro Spirits",
+        "ja_typings": [
+          "purosupi"
+        ]
+      },
+      {
+        "ja": "プロ野球スピリッツ",
+        "en": "Pro Yakyu Spirits",
+        "ja_typings": [
+          "puroyakyuusupirittsu"
+        ]
+      },
+      {
+        "ja": "燃えろプロ野球",
+        "en": "Moero Pro Yakyu",
+        "ja_typings": [
+          "moeropuroyakyuu"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -688,12 +2011,39 @@
   {
     "id": "q0435",
     "genre": "game",
-    "question_text": {"ja": "EA が展開する世界的に有名なサッカーゲームシリーズは?", "en": "Which EA series is the world's most famous soccer game?"},
+    "question_text": {
+      "ja": "EA が展開する世界的に有名なサッカーゲームシリーズは?",
+      "en": "Which EA series is the world's most famous soccer game?"
+    },
     "choices": [
-      {"ja": "FIFA", "en": "FIFA", "ja_typings": ["fifa"]},
-      {"ja": "ウイニングイレブン", "en": "Winning Eleven", "ja_typings": ["uininnguirebun"]},
-      {"ja": "Football Manager", "en": "Football Manager", "ja_typings": ["footballmanager"]},
-      {"ja": "Rocket League", "en": "Rocket League", "ja_typings": ["rocketleague"]}
+      {
+        "ja": "FIFA",
+        "en": "FIFA",
+        "ja_typings": [
+          "fifa"
+        ]
+      },
+      {
+        "ja": "ウイニングイレブン",
+        "en": "Winning Eleven",
+        "ja_typings": [
+          "uininguirebun"
+        ]
+      },
+      {
+        "ja": "Football Manager",
+        "en": "Football Manager",
+        "ja_typings": [
+          "football manager"
+        ]
+      },
+      {
+        "ja": "Rocket League",
+        "en": "Rocket League",
+        "ja_typings": [
+          "rocket league"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -702,12 +2052,39 @@
   {
     "id": "q0436",
     "genre": "game",
-    "question_text": {"ja": "2017 年に発売された Switch のオープンエア型ゼルダ作品は?", "en": "Which Nintendo open-air Zelda game launched in 2017?"},
+    "question_text": {
+      "ja": "2017 年に発売された Switch のオープンエア型ゼルダ作品は?",
+      "en": "Which Nintendo open-air Zelda game launched in 2017?"
+    },
     "choices": [
-      {"ja": "ゼルダの伝説 ブレス オブ ザ ワイルド", "en": "The Legend of Zelda: Breath of the Wild", "ja_typings": ["zerudanodensetsuburesuobuzawairudo"]},
-      {"ja": "ゼルダの伝説 ティアーズ オブ ザ キングダム", "en": "The Legend of Zelda: Tears of the Kingdom", "ja_typings": ["zerudanodensetsutia-zuobuzakinngudamu"]},
-      {"ja": "ゼルダの伝説 スカイウォードソード", "en": "The Legend of Zelda: Skyward Sword", "ja_typings": ["zerudanodensetsusukaiwo-doso-do"]},
-      {"ja": "ゼルダの伝説 トワイライトプリンセス", "en": "The Legend of Zelda: Twilight Princess", "ja_typings": ["zerudanodensetsutowairaitopurinnsesu"]}
+      {
+        "ja": "ゼルダの伝説 ブレス オブ ザ ワイルド",
+        "en": "The Legend of Zelda: Breath of the Wild",
+        "ja_typings": [
+          "zerudanodensetsuburesuobuzawairudo"
+        ]
+      },
+      {
+        "ja": "ゼルダの伝説 ティアーズ オブ ザ キングダム",
+        "en": "The Legend of Zelda: Tears of the Kingdom",
+        "ja_typings": [
+          "zerudanodensetsutia-zuobuzakinngudamu"
+        ]
+      },
+      {
+        "ja": "ゼルダの伝説 スカイウォードソード",
+        "en": "The Legend of Zelda: Skyward Sword",
+        "ja_typings": [
+          "zerudanodensetsusukaiwo-doso-do"
+        ]
+      },
+      {
+        "ja": "ゼルダの伝説 トワイライトプリンセス",
+        "en": "The Legend of Zelda: Twilight Princess",
+        "ja_typings": [
+          "zerudanodensetsutowairaitopurinnsesu"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -716,12 +2093,39 @@
   {
     "id": "q0437",
     "genre": "game",
-    "question_text": {"ja": "任天堂のあらゆる作品キャラが戦う対戦アクションシリーズは?", "en": "Which Nintendo crossover fighting series features many franchises?"},
+    "question_text": {
+      "ja": "任天堂のあらゆる作品キャラが戦う対戦アクションシリーズは?",
+      "en": "Which Nintendo crossover fighting series features many franchises?"
+    },
     "choices": [
-      {"ja": "大乱闘スマッシュブラザーズ", "en": "Super Smash Bros.", "ja_typings": ["dairanntousumasshubura-za-zu","dairantousumasshubura-za-zu"]},
-      {"ja": "マリオパーティ", "en": "Mario Party", "ja_typings": ["mariopa-ti"]},
-      {"ja": "マリオカート", "en": "Mario Kart", "ja_typings": ["marioka-to"]},
-      {"ja": "スプラトゥーン", "en": "Splatoon", "ja_typings": ["supuratu-n"]}
+      {
+        "ja": "大乱闘スマッシュブラザーズ",
+        "en": "Super Smash Bros.",
+        "ja_typings": [
+          "dairantousumasshuburaza-zu"
+        ]
+      },
+      {
+        "ja": "マリオパーティ",
+        "en": "Mario Party",
+        "ja_typings": [
+          "mariopa-thi"
+        ]
+      },
+      {
+        "ja": "マリオカート",
+        "en": "Mario Kart",
+        "ja_typings": [
+          "marioka-to"
+        ]
+      },
+      {
+        "ja": "スプラトゥーン",
+        "en": "Splatoon",
+        "ja_typings": [
+          "supuratwu-n"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -730,12 +2134,39 @@
   {
     "id": "q0438",
     "genre": "game",
-    "question_text": {"ja": "任天堂のインクで街を塗るインクリングを操る対戦アクションは?", "en": "Which Nintendo game uses Inklings to splat ink in arena battles?"},
+    "question_text": {
+      "ja": "任天堂のインクで街を塗るインクリングを操る対戦アクションは?",
+      "en": "Which Nintendo game uses Inklings to splat ink in arena battles?"
+    },
     "choices": [
-      {"ja": "スプラトゥーン", "en": "Splatoon", "ja_typings": ["supuratu-n"]},
-      {"ja": "ARMS", "en": "ARMS", "ja_typings": ["arms"]},
-      {"ja": "スターフォックス", "en": "Star Fox", "ja_typings": ["suta-fokkusu"]},
-      {"ja": "ピクミン", "en": "Pikmin", "ja_typings": ["pikumin"]}
+      {
+        "ja": "スプラトゥーン",
+        "en": "Splatoon",
+        "ja_typings": [
+          "supuratwu-n"
+        ]
+      },
+      {
+        "ja": "ARMS",
+        "en": "ARMS",
+        "ja_typings": [
+          "arms"
+        ]
+      },
+      {
+        "ja": "スターフォックス",
+        "en": "Star Fox",
+        "ja_typings": [
+          "suta-fokkusu"
+        ]
+      },
+      {
+        "ja": "ピクミン",
+        "en": "Pikmin",
+        "ja_typings": [
+          "pikumin"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -744,12 +2175,39 @@
   {
     "id": "q0439",
     "genre": "game",
-    "question_text": {"ja": "任天堂の無人島でスローライフを楽しむシミュレーションシリーズは?", "en": "Which Nintendo slow-life simulation series features village life?"},
+    "question_text": {
+      "ja": "任天堂の無人島でスローライフを楽しむシミュレーションシリーズは?",
+      "en": "Which Nintendo slow-life simulation series features village life?"
+    },
     "choices": [
-      {"ja": "あつまれ どうぶつの森", "en": "Animal Crossing: New Horizons", "ja_typings": ["atsumaredoubutsunomori","atsumaredobutsunomori"]},
-      {"ja": "牧場物語", "en": "Story of Seasons", "ja_typings": ["bokujoumonogatari","bokujomonogatari"]},
-      {"ja": "ルーンファクトリー", "en": "Rune Factory", "ja_typings": ["ru-nfakutori-"]},
-      {"ja": "ペーパーマリオ", "en": "Paper Mario", "ja_typings": ["pe-pa-mario"]}
+      {
+        "ja": "あつまれ どうぶつの森",
+        "en": "Animal Crossing: New Horizons",
+        "ja_typings": [
+          "atsumaredoubutsunomori"
+        ]
+      },
+      {
+        "ja": "牧場物語",
+        "en": "Story of Seasons",
+        "ja_typings": [
+          "bokujoumonogatari"
+        ]
+      },
+      {
+        "ja": "ルーンファクトリー",
+        "en": "Rune Factory",
+        "ja_typings": [
+          "ru-nfakutori-"
+        ]
+      },
+      {
+        "ja": "ペーパーマリオ",
+        "en": "Paper Mario",
+        "ja_typings": [
+          "pe-pa-mario"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -758,12 +2216,39 @@
   {
     "id": "q0440",
     "genre": "game",
-    "question_text": {"ja": "ハドソン/コナミの鉄道で日本を巡るボードゲーム型ソフトは?", "en": "Which Hudson/Konami board game has players ride trains across Japan?"},
+    "question_text": {
+      "ja": "ハドソン/コナミの鉄道で日本を巡るボードゲーム型ソフトは?",
+      "en": "Which Hudson/Konami board game has players ride trains across Japan?"
+    },
     "choices": [
-      {"ja": "桃太郎電鉄", "en": "Momotaro Dentetsu", "ja_typings": ["momotarodensetsu","momotaroudensetsu","momotarodentetsu","momotaroudentetsu"]},
-      {"ja": "いただきストリート", "en": "Itadaki Street", "ja_typings": ["itadakisutori-to"]},
-      {"ja": "人生ゲーム", "en": "The Game of Life", "ja_typings": ["jinnseige-mu"]},
-      {"ja": "ボンバーマン", "en": "Bomberman", "ja_typings": ["bonnba-man"]}
+      {
+        "ja": "桃太郎電鉄",
+        "en": "Momotaro Dentetsu",
+        "ja_typings": [
+          "momotaroudentetsu"
+        ]
+      },
+      {
+        "ja": "いただきストリート",
+        "en": "Itadaki Street",
+        "ja_typings": [
+          "itadakisutori-to"
+        ]
+      },
+      {
+        "ja": "人生ゲーム",
+        "en": "The Game of Life",
+        "ja_typings": [
+          "jinnseige-mu"
+        ]
+      },
+      {
+        "ja": "ボンバーマン",
+        "en": "Bomberman",
+        "ja_typings": [
+          "bonba-man"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -772,12 +2257,39 @@
   {
     "id": "q0441",
     "genre": "game",
-    "question_text": {"ja": "セガの龍が如くシリーズの主人公として知られる極道は?", "en": "Who is the protagonist of Sega's Yakuza/Like a Dragon series?"},
+    "question_text": {
+      "ja": "セガの龍が如くシリーズの主人公として知られる極道は?",
+      "en": "Who is the protagonist of Sega's Yakuza/Like a Dragon series?"
+    },
     "choices": [
-      {"ja": "桐生一馬", "en": "Kazuma Kiryu", "ja_typings": ["kiryuukazuma","kiryukazuma"]},
-      {"ja": "春日一番", "en": "Ichiban Kasuga", "ja_typings": ["kasugaichiban"]},
-      {"ja": "真島吾朗", "en": "Goro Majima", "ja_typings": ["majimagorou","majimagoro"]},
-      {"ja": "錦山彰", "en": "Akira Nishikiyama", "ja_typings": ["nishikiyamaakira"]}
+      {
+        "ja": "桐生一馬",
+        "en": "Kazuma Kiryu",
+        "ja_typings": [
+          "kiryuukazuma"
+        ]
+      },
+      {
+        "ja": "春日一番",
+        "en": "Ichiban Kasuga",
+        "ja_typings": [
+          "kasugaichiban"
+        ]
+      },
+      {
+        "ja": "真島吾朗",
+        "en": "Goro Majima",
+        "ja_typings": [
+          "majimagorou"
+        ]
+      },
+      {
+        "ja": "錦山彰",
+        "en": "Akira Nishikiyama",
+        "ja_typings": [
+          "nishikiyamaakira"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -786,12 +2298,39 @@
   {
     "id": "q0442",
     "genre": "game",
-    "question_text": {"ja": "アタリが 1972 年に発売した世界初の商業ビデオゲームと言われる作品は?", "en": "Which 1972 Atari game is considered the first commercial video game?"},
+    "question_text": {
+      "ja": "アタリが 1972 年に発売した世界初の商業ビデオゲームと言われる作品は?",
+      "en": "Which 1972 Atari game is considered the first commercial video game?"
+    },
     "choices": [
-      {"ja": "Pong", "en": "Pong", "ja_typings": ["pong"]},
-      {"ja": "Space Invaders", "en": "Space Invaders", "ja_typings": ["spaceinvaders"]},
-      {"ja": "Asteroids", "en": "Asteroids", "ja_typings": ["asteroids"]},
-      {"ja": "Breakout", "en": "Breakout", "ja_typings": ["breakout"]}
+      {
+        "ja": "Pong",
+        "en": "Pong",
+        "ja_typings": [
+          "pong"
+        ]
+      },
+      {
+        "ja": "Space Invaders",
+        "en": "Space Invaders",
+        "ja_typings": [
+          "space invaders"
+        ]
+      },
+      {
+        "ja": "Asteroids",
+        "en": "Asteroids",
+        "ja_typings": [
+          "asteroids"
+        ]
+      },
+      {
+        "ja": "Breakout",
+        "en": "Breakout",
+        "ja_typings": [
+          "breakout"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -800,12 +2339,39 @@
   {
     "id": "q0443",
     "genre": "game",
-    "question_text": {"ja": "タイトーが 1978 年に発売した宇宙人を撃ち落とす大ヒットアーケードは?", "en": "Which 1978 Taito arcade hit had players shoot down aliens?"},
+    "question_text": {
+      "ja": "タイトーが 1978 年に発売した宇宙人を撃ち落とす大ヒットアーケードは?",
+      "en": "Which 1978 Taito arcade hit had players shoot down aliens?"
+    },
     "choices": [
-      {"ja": "スペースインベーダー", "en": "Space Invaders", "ja_typings": ["supe-suinnbe-da-"]},
-      {"ja": "ギャラクシアン", "en": "Galaxian", "ja_typings": ["gyarakushian"]},
-      {"ja": "ムーンクレスタ", "en": "Moon Cresta", "ja_typings": ["mu-nkuresuta"]},
-      {"ja": "アステロイド", "en": "Asteroids", "ja_typings": ["asuteroido"]}
+      {
+        "ja": "スペースインベーダー",
+        "en": "Space Invaders",
+        "ja_typings": [
+          "supe-suinbe-da-"
+        ]
+      },
+      {
+        "ja": "ギャラクシアン",
+        "en": "Galaxian",
+        "ja_typings": [
+          "gyarakushian"
+        ]
+      },
+      {
+        "ja": "ムーンクレスタ",
+        "en": "Moon Cresta",
+        "ja_typings": [
+          "mu-nkuresuta"
+        ]
+      },
+      {
+        "ja": "アステロイド",
+        "en": "Asteroids",
+        "ja_typings": [
+          "asuteroido"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -814,12 +2380,39 @@
   {
     "id": "q0444",
     "genre": "game",
-    "question_text": {"ja": "Supercell が開発した世界的ヒットモバイル戦略ゲームは?", "en": "Which Supercell mobile strategy game became a global hit?"},
+    "question_text": {
+      "ja": "Supercell が開発した世界的ヒットモバイル戦略ゲームは?",
+      "en": "Which Supercell mobile strategy game became a global hit?"
+    },
     "choices": [
-      {"ja": "Clash of Clans", "en": "Clash of Clans", "ja_typings": ["clashofclans"]},
-      {"ja": "Boom Beach", "en": "Boom Beach", "ja_typings": ["boombeach"]},
-      {"ja": "Hay Day", "en": "Hay Day", "ja_typings": ["hayday"]},
-      {"ja": "Brawl Stars", "en": "Brawl Stars", "ja_typings": ["brawlstars"]}
+      {
+        "ja": "Clash of Clans",
+        "en": "Clash of Clans",
+        "ja_typings": [
+          "clash of clans"
+        ]
+      },
+      {
+        "ja": "Boom Beach",
+        "en": "Boom Beach",
+        "ja_typings": [
+          "boom beach"
+        ]
+      },
+      {
+        "ja": "Hay Day",
+        "en": "Hay Day",
+        "ja_typings": [
+          "hay day"
+        ]
+      },
+      {
+        "ja": "Brawl Stars",
+        "en": "Brawl Stars",
+        "ja_typings": [
+          "brawl stars"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -828,12 +2421,39 @@
   {
     "id": "q0445",
     "genre": "game",
-    "question_text": {"ja": "Niantic が開発した位置情報を使って街でモンスターを捕まえるスマホゲームは?", "en": "Which Niantic mobile game uses GPS to catch monsters in the real world?"},
+    "question_text": {
+      "ja": "Niantic が開発した位置情報を使って街でモンスターを捕まえるスマホゲームは?",
+      "en": "Which Niantic mobile game uses GPS to catch monsters in the real world?"
+    },
     "choices": [
-      {"ja": "Pokemon GO", "en": "Pokemon GO", "ja_typings": ["pokemongo"]},
-      {"ja": "Ingress", "en": "Ingress", "ja_typings": ["ingress"]},
-      {"ja": "Harry Potter: Wizards Unite", "en": "Harry Potter: Wizards Unite", "ja_typings": ["harrypotter:wizardsunite"]},
-      {"ja": "Pikmin Bloom", "en": "Pikmin Bloom", "ja_typings": ["pikminbloom"]}
+      {
+        "ja": "Pokemon GO",
+        "en": "Pokemon GO",
+        "ja_typings": [
+          "pokemon go"
+        ]
+      },
+      {
+        "ja": "Ingress",
+        "en": "Ingress",
+        "ja_typings": [
+          "ingress"
+        ]
+      },
+      {
+        "ja": "Harry Potter: Wizards Unite",
+        "en": "Harry Potter: Wizards Unite",
+        "ja_typings": [
+          "harry potter: wizards unite"
+        ]
+      },
+      {
+        "ja": "Pikmin Bloom",
+        "en": "Pikmin Bloom",
+        "ja_typings": [
+          "pikmin bloom"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,

@@ -118,7 +118,7 @@ On Linux, the `speech-dispatcher` daemon must be installed and running. If it is
 
 **Quiz** (`type-globe quiz`)
 
-Quiz answers are typed directly — there is no arrow / number-key fallback. An exact match auto-confirms immediately, and non-prefix typos are rejected on the spot instead of being inserted into the buffer. Matching is case-insensitive (`H2O` / `h2o`, `TOKYO` / `tokyo`). In JA mode, a single answer may intentionally accept multiple romanized spellings (`tokyo` / `toukyou`, `osaka` / `oosaka`, etc.), and bundled data can declare them explicitly via `ja_typings`. When a choice has a well-established official Latin spelling (for example a proper name), that spelling may also be accepted.
+Quiz answers are typed directly — there is no arrow / number-key fallback. An exact match auto-confirms immediately, and non-prefix typos are rejected on the spot instead of being inserted into the buffer. Matching is case-insensitive (`H2O` / `h2o`, `TOKYO` / `tokyo`). In JA mode, bundled data declares IME-wapuro spellings via `ja_typings`; runtime normalization absorbs input-method variants that produce the same kana, while long vowels stay strict (`toukyou` is not `tokyo`). Multiple `ja_typings` entries are reserved for true reading variants such as `nihon` / `nippon`.
 
 | Key | Action |
 |---|---|

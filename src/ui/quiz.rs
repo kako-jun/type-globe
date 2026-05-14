@@ -1181,7 +1181,7 @@ mod tests {
         let mut ui = make_quiz_ui_with_choice(
             "東京",
             "Tokyo",
-            vec!["tokyo".to_string()],
+            vec!["toukyou".to_string()],
             Language::Japanese,
         );
         assert!(!ui.user_aborted, "user_aborted starts false");
@@ -1198,7 +1198,7 @@ mod tests {
         let mut ui = make_quiz_ui_with_choice(
             "東京",
             "Tokyo",
-            vec!["tokyo".to_string()],
+            vec!["toukyou".to_string()],
             Language::Japanese,
         );
         let ctrl_c = KeyEvent::new(KeyCode::Char('c'), KeyModifiers::CONTROL);
@@ -1214,13 +1214,13 @@ mod tests {
         let ui = make_quiz_ui_with_choice(
             "東京",
             "Tokyo",
-            vec!["tokyo".to_string()],
+            vec!["toukyou".to_string()],
             Language::Japanese,
         );
         let target = ui
             .demo_target_for_current_question()
             .expect("ja_typings path must yield a target");
-        assert_eq!(target, "tokyo");
+        assert_eq!(target, "toukyou");
     }
 
     #[test]

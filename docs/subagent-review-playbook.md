@@ -14,7 +14,7 @@
 4. メモを書きまくる
 5. **出力ファイルを書かないまま watchdog タイムアウト**
 
-特に IME 関連の細かい揺れ (`nn` / `n` / `dhi` / `di` 等) について深く考え込む傾向が強い。
+特に IME 関連の細かい揺れ (`nn` / `n` など) について深く考え込む傾向が強い。`dhi` / `di` はそれぞれ ディ / ぢ で別物なので混同しない。
 
 ## サブエージェント呼び出し時の鉄則
 
@@ -123,7 +123,7 @@ Write `data/review/patches_{genre}_{START}_{END}.json` as `[]` (empty JSON array
 5. ja↔en hard mismatches (different concept)
 
 **Skip:**
-- IME romaji edge cases (nn/n, dhi/di — runtime normalize handles these)
+- IME romaji edge cases already covered by runtime normalize (nn/n before consonants, Hepburn/Kunrei, explicit small-kana paths). Do not conflate `dhi` and `di`.
 - Awkward phrasing
 - Distractor quality nitpicks
 - Anything you're not confident about

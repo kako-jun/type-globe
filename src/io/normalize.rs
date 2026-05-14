@@ -2,7 +2,7 @@
 //!
 //! Both ja_typings candidates and user input are mapped to the same
 //! canonical form before comparison, so a player typing `shi`, `chi`,
-//! `tsu`, `wo`, etc. is accepted as equivalent to `si`, `ti`, `tu`, `o`
+//! `tsu`, etc. is accepted as equivalent to `si`, `ti`, `tu`
 //! without requiring every variant to be enumerated in question data.
 //! Katakana ー は `-` キー入力が必須 (IME 仕様)。データ側も `bo-ru`
 //! 形で登録するため、ここでは `-` を畳まず素通しする (#93)。
@@ -67,9 +67,8 @@ pub fn canonical_romaji(s: &str) -> String {
     // 長いパターンから順に。同一の対象文字列に複数ルールが当たらないように。
     out = out.replace("texi", "thi");
     out = out.replace("teli", "thi");
-    out = out.replace("dexi", "di");
-    out = out.replace("deli", "di");
-    out = out.replace("dhi", "di");
+    out = out.replace("dexi", "dhi");
+    out = out.replace("deli", "dhi");
     out = out.replace("dji", "di");
     out = out.replace("dzi", "di");
     out = out.replace("dzu", "du");
@@ -220,13 +219,14 @@ mod tests {
     }
 
     #[test]
-    fn di_dzu_aliases() {
+    fn di_and_dhi_stay_distinct() {
         assert_eq!(canonical_romaji("dji"), "di");
         assert_eq!(canonical_romaji("dzu"), "du");
-        // ディ / ぢ の Wapuro 系別綴り (Windows IME 既定など)
-        assert_eq!(canonical_romaji("dhi"), "di");
-        assert_eq!(canonical_romaji("dexi"), "di");
-        assert_eq!(canonical_romaji("deli"), "di");
+        // IME では `di` は ぢ、`dhi` は ディ。混ぜない。
+        assert_ne!(canonical_romaji("di"), canonical_romaji("dhi"));
+        assert_eq!(canonical_romaji("dhi"), "dhi");
+        assert_eq!(canonical_romaji("dexi"), "dhi");
+        assert_eq!(canonical_romaji("deli"), "dhi");
         assert_eq!(canonical_romaji("dzi"), "di");
     }
 

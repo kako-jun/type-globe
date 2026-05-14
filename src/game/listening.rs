@@ -241,12 +241,12 @@ mod tests {
     fn judge_romanizes_japanese_prompts() {
         assert!(is_correct_listening_input(
             &Language::Japanese,
-            "tokyo",
+            "toukyou",
             "とうきょう"
         ));
-        assert!(is_correct_listening_input(
+        assert!(!is_correct_listening_input(
             &Language::Japanese,
-            "toukyou",
+            "tokyo",
             "とうきょう"
         ));
         assert!(is_correct_listening_input(
@@ -258,7 +258,7 @@ mod tests {
 
     #[test]
     fn prefix_accepts_japanese_variants() {
-        assert!(is_valid_listening_prefix(
+        assert!(!is_valid_listening_prefix(
             &Language::Japanese,
             "tok",
             "とうきょう"

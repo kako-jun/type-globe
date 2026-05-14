@@ -44,31 +44,15 @@ fn main() -> ExitCode {
                 continue;
             };
             // 漢字を含むラベルは読みが取れないので人手登録に委ねる (skip)。
-            // ASCII / かな のみのラベルに対して MERGE: 既存の手入れ variant
-            // (公式 ASCII 綴り、別読み等) を温存しつつ、自動生成の正典形
-            // (IME-strict 仕様の `/` 含む形等) を不足していれば追加する。
-            // 順序: 既存 variant を先頭に、不足する自動生成を末尾に append。
+            // ASCII / かな のみのラベルは IME-strict の標準形を機械生成できる。
+            // 同じかな読みのローマ字 variant は runtime canonical に任せるため、
+            // 既存 variant と merge せず標準形で置換する。
             let Some(generated) = derive_ja_typings(ja) else {
                 continue;
             };
-            let existing: Vec<String> = obj
-                .get("ja_typings")
-                .and_then(|v| v.as_array())
-                .map(|a| {
-                    a.iter()
-                        .filter_map(|t| t.as_str().map(String::from))
-                        .collect()
-                })
-                .unwrap_or_default();
-            let mut merged: Vec<String> = existing.clone();
-            for g in generated {
-                if !merged.contains(&g) {
-                    merged.push(g);
-                }
-            }
             obj.insert(
                 "ja_typings".to_string(),
-                Value::Array(merged.into_iter().map(Value::String).collect()),
+                Value::Array(generated.into_iter().map(Value::String).collect()),
             );
         }
     }
