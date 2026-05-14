@@ -2,12 +2,39 @@
   {
     "id": "q0656",
     "genre": "general_knowledge",
-    "question_text": {"ja": "野球で「ホームラン」は英語で何と表記される?", "en": "How is 'home run' spelled in English in baseball?"},
+    "question_text": {
+      "ja": "野球で「ホームラン」は英語で何と表記される?",
+      "en": "How is 'home run' spelled in English in baseball?"
+    },
     "choices": [
-      {"ja": "ホームラン", "en": "home run", "ja_typings": ["ho-muran"]},
-      {"ja": "ホームベース", "en": "home base", "ja_typings": ["ho-mube-su"]},
-      {"ja": "ヒット", "en": "hit", "ja_typings": ["hitto"]},
-      {"ja": "ファウル", "en": "foul", "ja_typings": ["fauru"]}
+      {
+        "ja": "ホームラン",
+        "en": "home run",
+        "ja_typings": [
+          "ho-muran"
+        ]
+      },
+      {
+        "ja": "ホームベース",
+        "en": "home base",
+        "ja_typings": [
+          "ho-mube-su"
+        ]
+      },
+      {
+        "ja": "ヒット",
+        "en": "hit",
+        "ja_typings": [
+          "hitto"
+        ]
+      },
+      {
+        "ja": "ファウル",
+        "en": "foul",
+        "ja_typings": [
+          "fauru"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -16,12 +43,39 @@
   {
     "id": "q0657",
     "genre": "general_knowledge",
-    "question_text": {"ja": "サッカーの試合は前後半それぞれ何分?", "en": "How many minutes is each half of a soccer match?"},
+    "question_text": {
+      "ja": "サッカーの試合は前後半それぞれ何分?",
+      "en": "How many minutes is each half of a soccer match?"
+    },
     "choices": [
-      {"ja": "45分", "en": "45 minutes", "ja_typings": ["yonjugofun", "yonjuugofun"]},
-      {"ja": "30分", "en": "30 minutes", "ja_typings": ["sanjuppun", "sanjuppun"]},
-      {"ja": "60分", "en": "60 minutes", "ja_typings": ["rokujuppun"]},
-      {"ja": "40分", "en": "40 minutes", "ja_typings": ["yonjuppun"]}
+      {
+        "ja": "45分",
+        "en": "45 minutes",
+        "ja_typings": [
+          "yonjuugofun"
+        ]
+      },
+      {
+        "ja": "30分",
+        "en": "30 minutes",
+        "ja_typings": [
+          "sanjuppun"
+        ]
+      },
+      {
+        "ja": "60分",
+        "en": "60 minutes",
+        "ja_typings": [
+          "rokujuppun"
+        ]
+      },
+      {
+        "ja": "40分",
+        "en": "40 minutes",
+        "ja_typings": [
+          "yonjuppun"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -30,12 +84,39 @@
   {
     "id": "q0658",
     "genre": "general_knowledge",
-    "question_text": {"ja": "近代オリンピックを提唱した人物は?", "en": "Who proposed the modern Olympic Games?"},
+    "question_text": {
+      "ja": "近代オリンピックを提唱した人物は?",
+      "en": "Who proposed the modern Olympic Games?"
+    },
     "choices": [
-      {"ja": "クーベルタン", "en": "Pierre de Coubertin", "ja_typings": ["ku-berutan"]},
-      {"ja": "サマランチ", "en": "Juan Antonio Samaranch", "ja_typings": ["samaranchi"]},
-      {"ja": "ロゲ", "en": "Jacques Rogge", "ja_typings": ["roge"]},
-      {"ja": "バッハ", "en": "Thomas Bach", "ja_typings": ["bahha"]}
+      {
+        "ja": "クーベルタン",
+        "en": "Pierre de Coubertin",
+        "ja_typings": [
+          "ku-berutan"
+        ]
+      },
+      {
+        "ja": "サマランチ",
+        "en": "Juan Antonio Samaranch",
+        "ja_typings": [
+          "samaranchi"
+        ]
+      },
+      {
+        "ja": "ロゲ",
+        "en": "Jacques Rogge",
+        "ja_typings": [
+          "roge"
+        ]
+      },
+      {
+        "ja": "バッハ",
+        "en": "Thomas Bach",
+        "ja_typings": [
+          "bahha"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -44,12 +125,39 @@
   {
     "id": "q0659",
     "genre": "general_knowledge",
-    "question_text": {"ja": "電球を実用化した発明家は誰?", "en": "Which inventor made the light bulb practical?"},
+    "question_text": {
+      "ja": "電球を実用化した発明家は誰?",
+      "en": "Which inventor made the light bulb practical?"
+    },
     "choices": [
-      {"ja": "エジソン", "en": "Thomas Edison", "ja_typings": ["ejison"]},
-      {"ja": "テスラ", "en": "Nikola Tesla", "ja_typings": ["tesura"]},
-      {"ja": "ベル", "en": "Alexander Graham Bell", "ja_typings": ["beru"]},
-      {"ja": "マルコーニ", "en": "Guglielmo Marconi", "ja_typings": ["maruko-ni"]}
+      {
+        "ja": "エジソン",
+        "en": "Thomas Edison",
+        "ja_typings": [
+          "ejison"
+        ]
+      },
+      {
+        "ja": "テスラ",
+        "en": "Nikola Tesla",
+        "ja_typings": [
+          "tesura"
+        ]
+      },
+      {
+        "ja": "ベル",
+        "en": "Alexander Graham Bell",
+        "ja_typings": [
+          "beru"
+        ]
+      },
+      {
+        "ja": "マルコーニ",
+        "en": "Guglielmo Marconi",
+        "ja_typings": [
+          "maruko-ni"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -58,12 +166,39 @@
   {
     "id": "q0660",
     "genre": "general_knowledge",
-    "question_text": {"ja": "万有引力を発見した物理学者は?", "en": "Which physicist discovered universal gravitation?"},
+    "question_text": {
+      "ja": "万有引力を発見した物理学者は?",
+      "en": "Which physicist discovered universal gravitation?"
+    },
     "choices": [
-      {"ja": "ニュートン", "en": "Isaac Newton", "ja_typings": ["nyu-ton"]},
-      {"ja": "ガリレオ", "en": "Galileo Galilei", "ja_typings": ["garireo"]},
-      {"ja": "ケプラー", "en": "Johannes Kepler", "ja_typings": ["kepura-"]},
-      {"ja": "アインシュタイン", "en": "Albert Einstein", "ja_typings": ["ainnshutain"]}
+      {
+        "ja": "ニュートン",
+        "en": "Isaac Newton",
+        "ja_typings": [
+          "nyu-ton"
+        ]
+      },
+      {
+        "ja": "ガリレオ",
+        "en": "Galileo Galilei",
+        "ja_typings": [
+          "garireo"
+        ]
+      },
+      {
+        "ja": "ケプラー",
+        "en": "Johannes Kepler",
+        "ja_typings": [
+          "kepura-"
+        ]
+      },
+      {
+        "ja": "アインシュタイン",
+        "en": "Albert Einstein",
+        "ja_typings": [
+          "ainshutain"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -72,12 +207,39 @@
   {
     "id": "q0661",
     "genre": "general_knowledge",
-    "question_text": {"ja": "世界で最も高い山は?", "en": "What is the tallest mountain in the world?"},
+    "question_text": {
+      "ja": "世界で最も高い山は?",
+      "en": "What is the tallest mountain in the world?"
+    },
     "choices": [
-      {"ja": "エベレスト", "en": "Mount Everest", "ja_typings": ["eberesuto"]},
-      {"ja": "K2", "en": "K2", "ja_typings": ["k2", "ke-tsu-"]},
-      {"ja": "キリマンジャロ", "en": "Kilimanjaro", "ja_typings": ["kirimannjaro"]},
-      {"ja": "モンブラン", "en": "Mont Blanc", "ja_typings": ["monnburan"]}
+      {
+        "ja": "エベレスト",
+        "en": "Mount Everest",
+        "ja_typings": [
+          "eberesuto"
+        ]
+      },
+      {
+        "ja": "K2",
+        "en": "K2",
+        "ja_typings": [
+          "k2"
+        ]
+      },
+      {
+        "ja": "キリマンジャロ",
+        "en": "Kilimanjaro",
+        "ja_typings": [
+          "kirimanjaro"
+        ]
+      },
+      {
+        "ja": "モンブラン",
+        "en": "Mont Blanc",
+        "ja_typings": [
+          "monburan"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -86,12 +248,39 @@
   {
     "id": "q0662",
     "genre": "general_knowledge",
-    "question_text": {"ja": "世界で最も長い川は?", "en": "What is the longest river in the world?"},
+    "question_text": {
+      "ja": "世界で最も長い川は?",
+      "en": "What is the longest river in the world?"
+    },
     "choices": [
-      {"ja": "ナイル川", "en": "Nile River", "ja_typings": ["nairugawa"]},
-      {"ja": "アマゾン川", "en": "Amazon River", "ja_typings": ["amazongawa"]},
-      {"ja": "長江", "en": "Yangtze River", "ja_typings": ["chokou", "choukou"]},
-      {"ja": "ミシシッピ川", "en": "Mississippi River", "ja_typings": ["mishishippigawa"]}
+      {
+        "ja": "ナイル川",
+        "en": "Nile River",
+        "ja_typings": [
+          "nairugawa"
+        ]
+      },
+      {
+        "ja": "アマゾン川",
+        "en": "Amazon River",
+        "ja_typings": [
+          "amazongawa"
+        ]
+      },
+      {
+        "ja": "長江",
+        "en": "Yangtze River",
+        "ja_typings": [
+          "choukou"
+        ]
+      },
+      {
+        "ja": "ミシシッピ川",
+        "en": "Mississippi River",
+        "ja_typings": [
+          "mishishippigawa"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -100,12 +289,39 @@
   {
     "id": "q0663",
     "genre": "general_knowledge",
-    "question_text": {"ja": "「老人と海」の作者は誰?", "en": "Who wrote 'The Old Man and the Sea'?"},
+    "question_text": {
+      "ja": "「老人と海」の作者は誰?",
+      "en": "Who wrote 'The Old Man and the Sea'?"
+    },
     "choices": [
-      {"ja": "ヘミングウェイ", "en": "Ernest Hemingway", "ja_typings": ["hemingnguei"]},
-      {"ja": "スタインベック", "en": "John Steinbeck", "ja_typings": ["sutainnbekku"]},
-      {"ja": "フォークナー", "en": "William Faulkner", "ja_typings": ["fo-kuna-"]},
-      {"ja": "フィッツジェラルド", "en": "F. Scott Fitzgerald", "ja_typings": ["fittsujerarudo"]}
+      {
+        "ja": "ヘミングウェイ",
+        "en": "Ernest Hemingway",
+        "ja_typings": [
+          "heminguwei"
+        ]
+      },
+      {
+        "ja": "スタインベック",
+        "en": "John Steinbeck",
+        "ja_typings": [
+          "sutainbekku"
+        ]
+      },
+      {
+        "ja": "フォークナー",
+        "en": "William Faulkner",
+        "ja_typings": [
+          "fo-kuna-"
+        ]
+      },
+      {
+        "ja": "フィッツジェラルド",
+        "en": "F. Scott Fitzgerald",
+        "ja_typings": [
+          "fittsujerarudo"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -114,12 +330,39 @@
   {
     "id": "q0664",
     "genre": "general_knowledge",
-    "question_text": {"ja": "映画「タイタニック」の監督は誰?", "en": "Who directed the film 'Titanic'?"},
+    "question_text": {
+      "ja": "映画「タイタニック」の監督は誰?",
+      "en": "Who directed the film 'Titanic'?"
+    },
     "choices": [
-      {"ja": "ジェームズ・キャメロン", "en": "James Cameron", "ja_typings": ["je-muzukyameron"]},
-      {"ja": "スピルバーグ", "en": "Steven Spielberg", "ja_typings": ["supiruba-gu"]},
-      {"ja": "スコセッシ", "en": "Martin Scorsese", "ja_typings": ["sukosesshi"]},
-      {"ja": "リドリー・スコット", "en": "Ridley Scott", "ja_typings": ["ridori-sukotto"]}
+      {
+        "ja": "ジェームズ・キャメロン",
+        "en": "James Cameron",
+        "ja_typings": [
+          "je-muzu/kyameron"
+        ]
+      },
+      {
+        "ja": "スピルバーグ",
+        "en": "Steven Spielberg",
+        "ja_typings": [
+          "supiruba-gu"
+        ]
+      },
+      {
+        "ja": "スコセッシ",
+        "en": "Martin Scorsese",
+        "ja_typings": [
+          "sukosesshi"
+        ]
+      },
+      {
+        "ja": "リドリー・スコット",
+        "en": "Ridley Scott",
+        "ja_typings": [
+          "ridori-/sukotto"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -128,12 +371,39 @@
   {
     "id": "q0665",
     "genre": "general_knowledge",
-    "question_text": {"ja": "イタリア発祥のパスタ料理は?", "en": "Which pasta dish originated in Italy?"},
+    "question_text": {
+      "ja": "イタリア発祥のパスタ料理は?",
+      "en": "Which pasta dish originated in Italy?"
+    },
     "choices": [
-      {"ja": "カルボナーラ", "en": "carbonara", "ja_typings": ["karubona-ra"]},
-      {"ja": "パエリア", "en": "paella", "ja_typings": ["paeria"]},
-      {"ja": "ボルシチ", "en": "borscht", "ja_typings": ["borushichi"]},
-      {"ja": "クスクス", "en": "couscous", "ja_typings": ["kusukusu"]}
+      {
+        "ja": "カルボナーラ",
+        "en": "carbonara",
+        "ja_typings": [
+          "karubona-ra"
+        ]
+      },
+      {
+        "ja": "パエリア",
+        "en": "paella",
+        "ja_typings": [
+          "paeria"
+        ]
+      },
+      {
+        "ja": "ボルシチ",
+        "en": "borscht",
+        "ja_typings": [
+          "borushichi"
+        ]
+      },
+      {
+        "ja": "クスクス",
+        "en": "couscous",
+        "ja_typings": [
+          "kusukusu"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -142,12 +412,39 @@
   {
     "id": "q0666",
     "genre": "general_knowledge",
-    "question_text": {"ja": "陸上で最も速い動物は?", "en": "What is the fastest land animal?"},
+    "question_text": {
+      "ja": "陸上で最も速い動物は?",
+      "en": "What is the fastest land animal?"
+    },
     "choices": [
-      {"ja": "チーター", "en": "cheetah", "ja_typings": ["chi-ta-"]},
-      {"ja": "ライオン", "en": "lion", "ja_typings": ["raion"]},
-      {"ja": "ガゼル", "en": "gazelle", "ja_typings": ["gazeru"]},
-      {"ja": "ヒョウ", "en": "leopard", "ja_typings": ["hyou"]}
+      {
+        "ja": "チーター",
+        "en": "cheetah",
+        "ja_typings": [
+          "chi-ta-"
+        ]
+      },
+      {
+        "ja": "ライオン",
+        "en": "lion",
+        "ja_typings": [
+          "raion"
+        ]
+      },
+      {
+        "ja": "ガゼル",
+        "en": "gazelle",
+        "ja_typings": [
+          "gazeru"
+        ]
+      },
+      {
+        "ja": "ヒョウ",
+        "en": "leopard",
+        "ja_typings": [
+          "hyou"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -156,12 +453,39 @@
   {
     "id": "q0667",
     "genre": "general_knowledge",
-    "question_text": {"ja": "コカ・コーラが誕生した国は?", "en": "In which country was Coca-Cola invented?"},
+    "question_text": {
+      "ja": "コカ・コーラが誕生した国は?",
+      "en": "In which country was Coca-Cola invented?"
+    },
     "choices": [
-      {"ja": "アメリカ", "en": "United States", "ja_typings": ["amerika"]},
-      {"ja": "イギリス", "en": "United Kingdom", "ja_typings": ["igirisu"]},
-      {"ja": "ドイツ", "en": "Germany", "ja_typings": ["doitsu"]},
-      {"ja": "フランス", "en": "France", "ja_typings": ["furansu"]}
+      {
+        "ja": "アメリカ",
+        "en": "United States",
+        "ja_typings": [
+          "amerika"
+        ]
+      },
+      {
+        "ja": "イギリス",
+        "en": "United Kingdom",
+        "ja_typings": [
+          "igirisu"
+        ]
+      },
+      {
+        "ja": "ドイツ",
+        "en": "Germany",
+        "ja_typings": [
+          "doitsu"
+        ]
+      },
+      {
+        "ja": "フランス",
+        "en": "France",
+        "ja_typings": [
+          "furansu"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -170,12 +494,39 @@
   {
     "id": "q0668",
     "genre": "general_knowledge",
-    "question_text": {"ja": "テニスの4大大会に含まれないのは?", "en": "Which is NOT one of tennis's four Grand Slam tournaments?"},
+    "question_text": {
+      "ja": "テニスの4大大会に含まれないのは?",
+      "en": "Which is NOT one of tennis's four Grand Slam tournaments?"
+    },
     "choices": [
-      {"ja": "ジャパンオープン", "en": "Japan Open", "ja_typings": ["japannoo-punn", "japannoopun"]},
-      {"ja": "ウィンブルドン", "en": "Wimbledon", "ja_typings": ["uinnburudon"]},
-      {"ja": "全仏オープン", "en": "French Open", "ja_typings": ["zenfutsuo-pun"]},
-      {"ja": "全豪オープン", "en": "Australian Open", "ja_typings": ["zengoo-pun"]}
+      {
+        "ja": "ジャパンオープン",
+        "en": "Japan Open",
+        "ja_typings": [
+          "japanno-pun"
+        ]
+      },
+      {
+        "ja": "ウィンブルドン",
+        "en": "Wimbledon",
+        "ja_typings": [
+          "winburudon"
+        ]
+      },
+      {
+        "ja": "全仏オープン",
+        "en": "French Open",
+        "ja_typings": [
+          "zenfutsuo-pun"
+        ]
+      },
+      {
+        "ja": "全豪オープン",
+        "en": "Australian Open",
+        "ja_typings": [
+          "zengoo-pun"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -184,12 +535,39 @@
   {
     "id": "q0669",
     "genre": "general_knowledge",
-    "question_text": {"ja": "蒸気機関を改良したイギリスの技術者は?", "en": "Which British engineer improved the steam engine?"},
+    "question_text": {
+      "ja": "蒸気機関を改良したイギリスの技術者は?",
+      "en": "Which British engineer improved the steam engine?"
+    },
     "choices": [
-      {"ja": "ワット", "en": "James Watt", "ja_typings": ["watto"]},
-      {"ja": "ニューコメン", "en": "Thomas Newcomen", "ja_typings": ["nyu-komen"]},
-      {"ja": "スティーブンソン", "en": "George Stephenson", "ja_typings": ["suti-bunson"]},
-      {"ja": "フルトン", "en": "Robert Fulton", "ja_typings": ["furuton"]}
+      {
+        "ja": "ワット",
+        "en": "James Watt",
+        "ja_typings": [
+          "watto"
+        ]
+      },
+      {
+        "ja": "ニューコメン",
+        "en": "Thomas Newcomen",
+        "ja_typings": [
+          "nyu-komen"
+        ]
+      },
+      {
+        "ja": "スティーブンソン",
+        "en": "George Stephenson",
+        "ja_typings": [
+          "suthi-bunson"
+        ]
+      },
+      {
+        "ja": "フルトン",
+        "en": "Robert Fulton",
+        "ja_typings": [
+          "furuton"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -198,12 +576,39 @@
   {
     "id": "q0670",
     "genre": "general_knowledge",
-    "question_text": {"ja": "ハチミツを作る昆虫は?", "en": "Which insect makes honey?"},
+    "question_text": {
+      "ja": "ハチミツを作る昆虫は?",
+      "en": "Which insect makes honey?"
+    },
     "choices": [
-      {"ja": "ミツバチ", "en": "honeybee", "ja_typings": ["mitsubachi"]},
-      {"ja": "スズメバチ", "en": "hornet", "ja_typings": ["suzumebachi"]},
-      {"ja": "アシナガバチ", "en": "paper wasp", "ja_typings": ["ashinagabachi"]},
-      {"ja": "クマバチ", "en": "carpenter bee", "ja_typings": ["kumabachi"]}
+      {
+        "ja": "ミツバチ",
+        "en": "honeybee",
+        "ja_typings": [
+          "mitsubachi"
+        ]
+      },
+      {
+        "ja": "スズメバチ",
+        "en": "hornet",
+        "ja_typings": [
+          "suzumebachi"
+        ]
+      },
+      {
+        "ja": "アシナガバチ",
+        "en": "paper wasp",
+        "ja_typings": [
+          "ashinagabachi"
+        ]
+      },
+      {
+        "ja": "クマバチ",
+        "en": "carpenter bee",
+        "ja_typings": [
+          "kumabachi"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -212,12 +617,39 @@
   {
     "id": "q0671",
     "genre": "general_knowledge",
-    "question_text": {"ja": "ナイキのロゴ「スウッシュ」の意味は?", "en": "What does the Nike 'Swoosh' logo represent?"},
+    "question_text": {
+      "ja": "ナイキのロゴ「スウッシュ」の意味は?",
+      "en": "What does the Nike 'Swoosh' logo represent?"
+    },
     "choices": [
-      {"ja": "勝利の女神の翼", "en": "wing of the goddess of victory", "ja_typings": ["shourinomegaminotsubasa", "shorinomegaminotsubasa"]},
-      {"ja": "雷の閃光", "en": "flash of lightning", "ja_typings": ["kaminarinosenkou", "kaminarinosenko"]},
-      {"ja": "走る人の足跡", "en": "footprint of a runner", "ja_typings": ["hashiruhitonoashiato"]},
-      {"ja": "矢の軌跡", "en": "trail of an arrow", "ja_typings": ["yanokiseki"]}
+      {
+        "ja": "勝利の女神の翼",
+        "en": "wing of the goddess of victory",
+        "ja_typings": [
+          "shourinomegaminotsubasa"
+        ]
+      },
+      {
+        "ja": "雷の閃光",
+        "en": "flash of lightning",
+        "ja_typings": [
+          "kaminarinosenkou"
+        ]
+      },
+      {
+        "ja": "走る人の足跡",
+        "en": "footprint of a runner",
+        "ja_typings": [
+          "hashiruhitonoashiato"
+        ]
+      },
+      {
+        "ja": "矢の軌跡",
+        "en": "trail of an arrow",
+        "ja_typings": [
+          "yanokiseki"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -226,12 +658,39 @@
   {
     "id": "q0672",
     "genre": "general_knowledge",
-    "question_text": {"ja": "ピザの本場として知られるイタリアの都市は?", "en": "Which Italian city is famous as the home of pizza?"},
+    "question_text": {
+      "ja": "ピザの本場として知られるイタリアの都市は?",
+      "en": "Which Italian city is famous as the home of pizza?"
+    },
     "choices": [
-      {"ja": "ナポリ", "en": "Naples", "ja_typings": ["napori"]},
-      {"ja": "ローマ", "en": "Rome", "ja_typings": ["ro-ma"]},
-      {"ja": "ミラノ", "en": "Milan", "ja_typings": ["mirano"]},
-      {"ja": "フィレンツェ", "en": "Florence", "ja_typings": ["firennche", "firentse"]}
+      {
+        "ja": "ナポリ",
+        "en": "Naples",
+        "ja_typings": [
+          "napori"
+        ]
+      },
+      {
+        "ja": "ローマ",
+        "en": "Rome",
+        "ja_typings": [
+          "ro-ma"
+        ]
+      },
+      {
+        "ja": "ミラノ",
+        "en": "Milan",
+        "ja_typings": [
+          "mirano"
+        ]
+      },
+      {
+        "ja": "フィレンツェ",
+        "en": "Florence",
+        "ja_typings": [
+          "firentse"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -240,12 +699,39 @@
   {
     "id": "q0673",
     "genre": "general_knowledge",
-    "question_text": {"ja": "パンダの主食は?", "en": "What is the staple food of pandas?"},
+    "question_text": {
+      "ja": "パンダの主食は?",
+      "en": "What is the staple food of pandas?"
+    },
     "choices": [
-      {"ja": "笹", "en": "bamboo", "ja_typings": ["sasa"]},
-      {"ja": "果物", "en": "fruit", "ja_typings": ["kudamono"]},
-      {"ja": "魚", "en": "fish", "ja_typings": ["sakana"]},
-      {"ja": "肉", "en": "meat", "ja_typings": ["niku"]}
+      {
+        "ja": "笹",
+        "en": "bamboo",
+        "ja_typings": [
+          "sasa"
+        ]
+      },
+      {
+        "ja": "果物",
+        "en": "fruit",
+        "ja_typings": [
+          "kudamono"
+        ]
+      },
+      {
+        "ja": "魚",
+        "en": "fish",
+        "ja_typings": [
+          "sakana"
+        ]
+      },
+      {
+        "ja": "肉",
+        "en": "meat",
+        "ja_typings": [
+          "niku"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -254,12 +740,39 @@
   {
     "id": "q0674",
     "genre": "general_knowledge",
-    "question_text": {"ja": "サッカーのワールドカップは何年ごとに開催?", "en": "How often is the FIFA World Cup held?"},
+    "question_text": {
+      "ja": "サッカーのワールドカップは何年ごとに開催?",
+      "en": "How often is the FIFA World Cup held?"
+    },
     "choices": [
-      {"ja": "4年", "en": "every 4 years", "ja_typings": ["yonen"]},
-      {"ja": "2年", "en": "every 2 years", "ja_typings": ["ninen"]},
-      {"ja": "3年", "en": "every 3 years", "ja_typings": ["sannen"]},
-      {"ja": "5年", "en": "every 5 years", "ja_typings": ["gonen"]}
+      {
+        "ja": "4年",
+        "en": "every 4 years",
+        "ja_typings": [
+          "yonen"
+        ]
+      },
+      {
+        "ja": "2年",
+        "en": "every 2 years",
+        "ja_typings": [
+          "ninen"
+        ]
+      },
+      {
+        "ja": "3年",
+        "en": "every 3 years",
+        "ja_typings": [
+          "sannen"
+        ]
+      },
+      {
+        "ja": "5年",
+        "en": "every 5 years",
+        "ja_typings": [
+          "gonen"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -268,12 +781,39 @@
   {
     "id": "q0675",
     "genre": "general_knowledge",
-    "question_text": {"ja": "電話を発明したとされる人物は?", "en": "Who is credited with inventing the telephone?"},
+    "question_text": {
+      "ja": "電話を発明したとされる人物は?",
+      "en": "Who is credited with inventing the telephone?"
+    },
     "choices": [
-      {"ja": "ベル", "en": "Alexander Graham Bell", "ja_typings": ["beru"]},
-      {"ja": "モールス", "en": "Samuel Morse", "ja_typings": ["mo-rusu"]},
-      {"ja": "マルコーニ", "en": "Guglielmo Marconi", "ja_typings": ["maruko-ni"]},
-      {"ja": "エジソン", "en": "Thomas Edison", "ja_typings": ["ejison"]}
+      {
+        "ja": "ベル",
+        "en": "Alexander Graham Bell",
+        "ja_typings": [
+          "beru"
+        ]
+      },
+      {
+        "ja": "モールス",
+        "en": "Samuel Morse",
+        "ja_typings": [
+          "mo-rusu"
+        ]
+      },
+      {
+        "ja": "マルコーニ",
+        "en": "Guglielmo Marconi",
+        "ja_typings": [
+          "maruko-ni"
+        ]
+      },
+      {
+        "ja": "エジソン",
+        "en": "Thomas Edison",
+        "ja_typings": [
+          "ejison"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -282,12 +822,39 @@
   {
     "id": "q0676",
     "genre": "general_knowledge",
-    "question_text": {"ja": "「戦争と平和」を書いたロシアの作家は?", "en": "Which Russian author wrote 'War and Peace'?"},
+    "question_text": {
+      "ja": "「戦争と平和」を書いたロシアの作家は?",
+      "en": "Which Russian author wrote 'War and Peace'?"
+    },
     "choices": [
-      {"ja": "トルストイ", "en": "Leo Tolstoy", "ja_typings": ["torusutoi"]},
-      {"ja": "ドストエフスキー", "en": "Fyodor Dostoevsky", "ja_typings": ["dosutoefusuki-"]},
-      {"ja": "チェーホフ", "en": "Anton Chekhov", "ja_typings": ["che-hofu"]},
-      {"ja": "ゴーゴリ", "en": "Nikolai Gogol", "ja_typings": ["go-gori"]}
+      {
+        "ja": "トルストイ",
+        "en": "Leo Tolstoy",
+        "ja_typings": [
+          "torusutoi"
+        ]
+      },
+      {
+        "ja": "ドストエフスキー",
+        "en": "Fyodor Dostoevsky",
+        "ja_typings": [
+          "dosutoefusuki-"
+        ]
+      },
+      {
+        "ja": "チェーホフ",
+        "en": "Anton Chekhov",
+        "ja_typings": [
+          "che-hofu"
+        ]
+      },
+      {
+        "ja": "ゴーゴリ",
+        "en": "Nikolai Gogol",
+        "ja_typings": [
+          "go-gori"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -296,12 +863,39 @@
   {
     "id": "q0677",
     "genre": "general_knowledge",
-    "question_text": {"ja": "キリンの首の骨(頸椎)の数は?", "en": "How many neck vertebrae does a giraffe have?"},
+    "question_text": {
+      "ja": "キリンの首の骨(頸椎)の数は?",
+      "en": "How many neck vertebrae does a giraffe have?"
+    },
     "choices": [
-      {"ja": "7個", "en": "7", "ja_typings": ["nanako"]},
-      {"ja": "12個", "en": "12", "ja_typings": ["juniko", "juuniko"]},
-      {"ja": "20個", "en": "20", "ja_typings": ["nijukko", "nijuukko"]},
-      {"ja": "30個", "en": "30", "ja_typings": ["sanjukko", "sanjuukko"]}
+      {
+        "ja": "7個",
+        "en": "7",
+        "ja_typings": [
+          "nanako"
+        ]
+      },
+      {
+        "ja": "12個",
+        "en": "12",
+        "ja_typings": [
+          "juuniko"
+        ]
+      },
+      {
+        "ja": "20個",
+        "en": "20",
+        "ja_typings": [
+          "nijukko"
+        ]
+      },
+      {
+        "ja": "30個",
+        "en": "30",
+        "ja_typings": [
+          "sanjukko"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -310,12 +904,39 @@
   {
     "id": "q0678",
     "genre": "general_knowledge",
-    "question_text": {"ja": "スターバックスの発祥都市は?", "en": "In which city was Starbucks founded?"},
+    "question_text": {
+      "ja": "スターバックスの発祥都市は?",
+      "en": "In which city was Starbucks founded?"
+    },
     "choices": [
-      {"ja": "シアトル", "en": "Seattle", "ja_typings": ["shiatoru"]},
-      {"ja": "ニューヨーク", "en": "New York", "ja_typings": ["nyu-yo-ku"]},
-      {"ja": "サンフランシスコ", "en": "San Francisco", "ja_typings": ["sanfuranshisuko"]},
-      {"ja": "ロサンゼルス", "en": "Los Angeles", "ja_typings": ["rosanzerusu"]}
+      {
+        "ja": "シアトル",
+        "en": "Seattle",
+        "ja_typings": [
+          "shiatoru"
+        ]
+      },
+      {
+        "ja": "ニューヨーク",
+        "en": "New York",
+        "ja_typings": [
+          "nyu-yo-ku"
+        ]
+      },
+      {
+        "ja": "サンフランシスコ",
+        "en": "San Francisco",
+        "ja_typings": [
+          "sanfuranshisuko"
+        ]
+      },
+      {
+        "ja": "ロサンゼルス",
+        "en": "Los Angeles",
+        "ja_typings": [
+          "rosanzerusu"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -324,12 +945,39 @@
   {
     "id": "q0679",
     "genre": "general_knowledge",
-    "question_text": {"ja": "ペニシリンを発見した科学者は?", "en": "Which scientist discovered penicillin?"},
+    "question_text": {
+      "ja": "ペニシリンを発見した科学者は?",
+      "en": "Which scientist discovered penicillin?"
+    },
     "choices": [
-      {"ja": "フレミング", "en": "Alexander Fleming", "ja_typings": ["furemingu"]},
-      {"ja": "パスツール", "en": "Louis Pasteur", "ja_typings": ["pasutsu-ru"]},
-      {"ja": "コッホ", "en": "Robert Koch", "ja_typings": ["kohho"]},
-      {"ja": "メンデル", "en": "Gregor Mendel", "ja_typings": ["menderu"]}
+      {
+        "ja": "フレミング",
+        "en": "Alexander Fleming",
+        "ja_typings": [
+          "furemingu"
+        ]
+      },
+      {
+        "ja": "パスツール",
+        "en": "Louis Pasteur",
+        "ja_typings": [
+          "pasutsu-ru"
+        ]
+      },
+      {
+        "ja": "コッホ",
+        "en": "Robert Koch",
+        "ja_typings": [
+          "kohho"
+        ]
+      },
+      {
+        "ja": "メンデル",
+        "en": "Gregor Mendel",
+        "ja_typings": [
+          "menderu"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -338,12 +986,39 @@
   {
     "id": "q0680",
     "genre": "general_knowledge",
-    "question_text": {"ja": "オリンピック発祥の国は?", "en": "In which country did the Olympics originate?"},
+    "question_text": {
+      "ja": "オリンピック発祥の国は?",
+      "en": "In which country did the Olympics originate?"
+    },
     "choices": [
-      {"ja": "ギリシャ", "en": "Greece", "ja_typings": ["girisha"]},
-      {"ja": "イタリア", "en": "Italy", "ja_typings": ["itaria"]},
-      {"ja": "エジプト", "en": "Egypt", "ja_typings": ["ejiputo"]},
-      {"ja": "フランス", "en": "France", "ja_typings": ["furansu"]}
+      {
+        "ja": "ギリシャ",
+        "en": "Greece",
+        "ja_typings": [
+          "girisha"
+        ]
+      },
+      {
+        "ja": "イタリア",
+        "en": "Italy",
+        "ja_typings": [
+          "itaria"
+        ]
+      },
+      {
+        "ja": "エジプト",
+        "en": "Egypt",
+        "ja_typings": [
+          "ejiputo"
+        ]
+      },
+      {
+        "ja": "フランス",
+        "en": "France",
+        "ja_typings": [
+          "furansu"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -352,12 +1027,39 @@
   {
     "id": "q0681",
     "genre": "general_knowledge",
-    "question_text": {"ja": "フランス料理で「エスカルゴ」とは何の料理?", "en": "In French cuisine, what is 'escargot'?"},
+    "question_text": {
+      "ja": "フランス料理で「エスカルゴ」とは何の料理?",
+      "en": "In French cuisine, what is 'escargot'?"
+    },
     "choices": [
-      {"ja": "カタツムリ", "en": "snail", "ja_typings": ["katatsumuri"]},
-      {"ja": "カエル", "en": "frog", "ja_typings": ["kaeru"]},
-      {"ja": "ウサギ", "en": "rabbit", "ja_typings": ["usagi"]},
-      {"ja": "ハト", "en": "pigeon", "ja_typings": ["hato"]}
+      {
+        "ja": "カタツムリ",
+        "en": "snail",
+        "ja_typings": [
+          "katatsumuri"
+        ]
+      },
+      {
+        "ja": "カエル",
+        "en": "frog",
+        "ja_typings": [
+          "kaeru"
+        ]
+      },
+      {
+        "ja": "ウサギ",
+        "en": "rabbit",
+        "ja_typings": [
+          "usagi"
+        ]
+      },
+      {
+        "ja": "ハト",
+        "en": "pigeon",
+        "ja_typings": [
+          "hato"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -366,12 +1068,39 @@
   {
     "id": "q0682",
     "genre": "general_knowledge",
-    "question_text": {"ja": "サクラの花が属する植物の科は?", "en": "To which plant family does the cherry blossom belong?"},
+    "question_text": {
+      "ja": "サクラの花が属する植物の科は?",
+      "en": "To which plant family does the cherry blossom belong?"
+    },
     "choices": [
-      {"ja": "バラ科", "en": "Rosaceae", "ja_typings": ["baraka"]},
-      {"ja": "ツバキ科", "en": "Theaceae", "ja_typings": ["tsubakika"]},
-      {"ja": "ウメ科", "en": "Prunus family", "ja_typings": ["umeka"]},
-      {"ja": "モクレン科", "en": "Magnoliaceae", "ja_typings": ["mokurenka"]}
+      {
+        "ja": "バラ科",
+        "en": "Rosaceae",
+        "ja_typings": [
+          "baraka"
+        ]
+      },
+      {
+        "ja": "ツバキ科",
+        "en": "Theaceae",
+        "ja_typings": [
+          "tsubakika"
+        ]
+      },
+      {
+        "ja": "ウメ科",
+        "en": "Prunus family",
+        "ja_typings": [
+          "umeka"
+        ]
+      },
+      {
+        "ja": "モクレン科",
+        "en": "Magnoliaceae",
+        "ja_typings": [
+          "mokurenka"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -380,12 +1109,39 @@
   {
     "id": "q0683",
     "genre": "general_knowledge",
-    "question_text": {"ja": "アディダスの創業国は?", "en": "In which country was Adidas founded?"},
+    "question_text": {
+      "ja": "アディダスの創業国は?",
+      "en": "In which country was Adidas founded?"
+    },
     "choices": [
-      {"ja": "ドイツ", "en": "Germany", "ja_typings": ["doitsu"]},
-      {"ja": "アメリカ", "en": "United States", "ja_typings": ["amerika"]},
-      {"ja": "イタリア", "en": "Italy", "ja_typings": ["itaria"]},
-      {"ja": "フランス", "en": "France", "ja_typings": ["furansu"]}
+      {
+        "ja": "ドイツ",
+        "en": "Germany",
+        "ja_typings": [
+          "doitsu"
+        ]
+      },
+      {
+        "ja": "アメリカ",
+        "en": "United States",
+        "ja_typings": [
+          "amerika"
+        ]
+      },
+      {
+        "ja": "イタリア",
+        "en": "Italy",
+        "ja_typings": [
+          "itaria"
+        ]
+      },
+      {
+        "ja": "フランス",
+        "en": "France",
+        "ja_typings": [
+          "furansu"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -394,12 +1150,39 @@
   {
     "id": "q0684",
     "genre": "general_knowledge",
-    "question_text": {"ja": "野球で打者が1試合で達成すると「サイクル安打」となる組み合わせは?", "en": "What hits constitute a 'cycle' in baseball?"},
+    "question_text": {
+      "ja": "野球で打者が1試合で達成すると「サイクル安打」となる組み合わせは?",
+      "en": "What hits constitute a 'cycle' in baseball?"
+    },
     "choices": [
-      {"ja": "単打・二塁打・三塁打・本塁打", "en": "single, double, triple, home run", "ja_typings": ["tandanirudasanrudahonruda"]},
-      {"ja": "二塁打を4本", "en": "four doubles", "ja_typings": ["nirudaoyonhon"]},
-      {"ja": "本塁打を4本", "en": "four home runs", "ja_typings": ["honrudaoyonhon"]},
-      {"ja": "三振を3つ", "en": "three strikeouts", "ja_typings": ["sanshinnomittsu"]}
+      {
+        "ja": "単打・二塁打・三塁打・本塁打",
+        "en": "single, double, triple, home run",
+        "ja_typings": [
+          "tandanirudasanrudahonruda"
+        ]
+      },
+      {
+        "ja": "二塁打を4本",
+        "en": "four doubles",
+        "ja_typings": [
+          "nirudaoyonhon"
+        ]
+      },
+      {
+        "ja": "本塁打を4本",
+        "en": "four home runs",
+        "ja_typings": [
+          "honrudaoyonhon"
+        ]
+      },
+      {
+        "ja": "三振を3つ",
+        "en": "three strikeouts",
+        "ja_typings": [
+          "sanshinnomittsu"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -408,12 +1191,39 @@
   {
     "id": "q0685",
     "genre": "general_knowledge",
-    "question_text": {"ja": "「ハリー・ポッター」シリーズの著者は?", "en": "Who is the author of the 'Harry Potter' series?"},
+    "question_text": {
+      "ja": "「ハリー・ポッター」シリーズの著者は?",
+      "en": "Who is the author of the 'Harry Potter' series?"
+    },
     "choices": [
-      {"ja": "J.K.ローリング", "en": "J. K. Rowling", "ja_typings": ["jkro-ringu"]},
-      {"ja": "トールキン", "en": "J. R. R. Tolkien", "ja_typings": ["to-rukin"]},
-      {"ja": "C.S.ルイス", "en": "C. S. Lewis", "ja_typings": ["csruisu"]},
-      {"ja": "ロアルド・ダール", "en": "Roald Dahl", "ja_typings": ["roarudoda-ru"]}
+      {
+        "ja": "J.K.ローリング",
+        "en": "J. K. Rowling",
+        "ja_typings": [
+          "j.k.ro-ringu"
+        ]
+      },
+      {
+        "ja": "トールキン",
+        "en": "J. R. R. Tolkien",
+        "ja_typings": [
+          "to-rukin"
+        ]
+      },
+      {
+        "ja": "C.S.ルイス",
+        "en": "C. S. Lewis",
+        "ja_typings": [
+          "c.s.ruisu"
+        ]
+      },
+      {
+        "ja": "ロアルド・ダール",
+        "en": "Roald Dahl",
+        "ja_typings": [
+          "roarudo/da-ru"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -422,12 +1232,39 @@
   {
     "id": "q0686",
     "genre": "general_knowledge",
-    "question_text": {"ja": "コウモリが空を飛ぶ際に使う能力は?", "en": "What ability do bats use to fly in the dark?"},
+    "question_text": {
+      "ja": "コウモリが空を飛ぶ際に使う能力は?",
+      "en": "What ability do bats use to fly in the dark?"
+    },
     "choices": [
-      {"ja": "反響定位", "en": "echolocation", "ja_typings": ["hankyouteii", "hankyoteii"]},
-      {"ja": "夜間視力", "en": "night vision", "ja_typings": ["yakanshiryoku"]},
-      {"ja": "嗅覚", "en": "sense of smell", "ja_typings": ["kyukaku", "kyuukaku"]},
-      {"ja": "磁気感知", "en": "magnetic sense", "ja_typings": ["jikikanchi"]}
+      {
+        "ja": "反響定位",
+        "en": "echolocation",
+        "ja_typings": [
+          "hankyouteii"
+        ]
+      },
+      {
+        "ja": "夜間視力",
+        "en": "night vision",
+        "ja_typings": [
+          "yakanshiryoku"
+        ]
+      },
+      {
+        "ja": "嗅覚",
+        "en": "sense of smell",
+        "ja_typings": [
+          "kyuukaku"
+        ]
+      },
+      {
+        "ja": "磁気感知",
+        "en": "magnetic sense",
+        "ja_typings": [
+          "jikikanchi"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -436,12 +1273,39 @@
   {
     "id": "q0687",
     "genre": "general_knowledge",
-    "question_text": {"ja": "「マクドナルド」の発祥国は?", "en": "In which country did McDonald's originate?"},
+    "question_text": {
+      "ja": "「マクドナルド」の発祥国は?",
+      "en": "In which country did McDonald's originate?"
+    },
     "choices": [
-      {"ja": "アメリカ", "en": "United States", "ja_typings": ["amerika"]},
-      {"ja": "カナダ", "en": "Canada", "ja_typings": ["kanada"]},
-      {"ja": "イギリス", "en": "United Kingdom", "ja_typings": ["igirisu"]},
-      {"ja": "オーストラリア", "en": "Australia", "ja_typings": ["o-sutoraria"]}
+      {
+        "ja": "アメリカ",
+        "en": "United States",
+        "ja_typings": [
+          "amerika"
+        ]
+      },
+      {
+        "ja": "カナダ",
+        "en": "Canada",
+        "ja_typings": [
+          "kanada"
+        ]
+      },
+      {
+        "ja": "イギリス",
+        "en": "United Kingdom",
+        "ja_typings": [
+          "igirisu"
+        ]
+      },
+      {
+        "ja": "オーストラリア",
+        "en": "Australia",
+        "ja_typings": [
+          "o-sutoraria"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -450,12 +1314,39 @@
   {
     "id": "q0688",
     "genre": "general_knowledge",
-    "question_text": {"ja": "夏季オリンピックでマラソンの距離は約何キロ?", "en": "Approximately how many kilometers is the Olympic marathon?"},
+    "question_text": {
+      "ja": "夏季オリンピックでマラソンの距離は約何キロ?",
+      "en": "Approximately how many kilometers is the Olympic marathon?"
+    },
     "choices": [
-      {"ja": "42キロ", "en": "42 km", "ja_typings": ["yonjunikiro", "yonjuunikiro"]},
-      {"ja": "30キロ", "en": "30 km", "ja_typings": ["sanjukkiro", "sanjuukkiro"]},
-      {"ja": "50キロ", "en": "50 km", "ja_typings": ["gojukkiro", "gojuukkiro"]},
-      {"ja": "26キロ", "en": "26 km", "ja_typings": ["nijurokkiro", "nijuurokkiro"]}
+      {
+        "ja": "42キロ",
+        "en": "42 km",
+        "ja_typings": [
+          "42kiro"
+        ]
+      },
+      {
+        "ja": "30キロ",
+        "en": "30 km",
+        "ja_typings": [
+          "30kiro"
+        ]
+      },
+      {
+        "ja": "50キロ",
+        "en": "50 km",
+        "ja_typings": [
+          "50kiro"
+        ]
+      },
+      {
+        "ja": "26キロ",
+        "en": "26 km",
+        "ja_typings": [
+          "26kiro"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -464,12 +1355,39 @@
   {
     "id": "q0689",
     "genre": "general_knowledge",
-    "question_text": {"ja": "「不思議の国のアリス」の作者は?", "en": "Who wrote 'Alice's Adventures in Wonderland'?"},
+    "question_text": {
+      "ja": "「不思議の国のアリス」の作者は?",
+      "en": "Who wrote 'Alice's Adventures in Wonderland'?"
+    },
     "choices": [
-      {"ja": "ルイス・キャロル", "en": "Lewis Carroll", "ja_typings": ["ruisukyaroru"]},
-      {"ja": "オスカー・ワイルド", "en": "Oscar Wilde", "ja_typings": ["osuka-wairudo"]},
-      {"ja": "ディケンズ", "en": "Charles Dickens", "ja_typings": ["dikenzu"]},
-      {"ja": "バーネット", "en": "Frances Hodgson Burnett", "ja_typings": ["ba-netto"]}
+      {
+        "ja": "ルイス・キャロル",
+        "en": "Lewis Carroll",
+        "ja_typings": [
+          "ruisu/kyaroru"
+        ]
+      },
+      {
+        "ja": "オスカー・ワイルド",
+        "en": "Oscar Wilde",
+        "ja_typings": [
+          "osuka-/wairudo"
+        ]
+      },
+      {
+        "ja": "ディケンズ",
+        "en": "Charles Dickens",
+        "ja_typings": [
+          "dhikenzu"
+        ]
+      },
+      {
+        "ja": "バーネット",
+        "en": "Frances Hodgson Burnett",
+        "ja_typings": [
+          "ba-netto"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -478,12 +1396,39 @@
   {
     "id": "q0690",
     "genre": "general_knowledge",
-    "question_text": {"ja": "タコの心臓の数は?", "en": "How many hearts does an octopus have?"},
+    "question_text": {
+      "ja": "タコの心臓の数は?",
+      "en": "How many hearts does an octopus have?"
+    },
     "choices": [
-      {"ja": "3つ", "en": "3", "ja_typings": ["mittsu"]},
-      {"ja": "1つ", "en": "1", "ja_typings": ["hitotsu"]},
-      {"ja": "2つ", "en": "2", "ja_typings": ["futatsu"]},
-      {"ja": "4つ", "en": "4", "ja_typings": ["yottsu"]}
+      {
+        "ja": "3つ",
+        "en": "3",
+        "ja_typings": [
+          "3tsu"
+        ]
+      },
+      {
+        "ja": "1つ",
+        "en": "1",
+        "ja_typings": [
+          "1tsu"
+        ]
+      },
+      {
+        "ja": "2つ",
+        "en": "2",
+        "ja_typings": [
+          "2tsu"
+        ]
+      },
+      {
+        "ja": "4つ",
+        "en": "4",
+        "ja_typings": [
+          "4tsu"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -492,12 +1437,39 @@
   {
     "id": "q0691",
     "genre": "general_knowledge",
-    "question_text": {"ja": "「LEGO」の社名の由来となった言語は?", "en": "From which language does the name 'LEGO' originate?"},
+    "question_text": {
+      "ja": "「LEGO」の社名の由来となった言語は?",
+      "en": "From which language does the name 'LEGO' originate?"
+    },
     "choices": [
-      {"ja": "デンマーク語", "en": "Danish", "ja_typings": ["denma-kugo"]},
-      {"ja": "ドイツ語", "en": "German", "ja_typings": ["doitsugo"]},
-      {"ja": "オランダ語", "en": "Dutch", "ja_typings": ["orandago"]},
-      {"ja": "スウェーデン語", "en": "Swedish", "ja_typings": ["suwe-dengo"]}
+      {
+        "ja": "デンマーク語",
+        "en": "Danish",
+        "ja_typings": [
+          "denma-kugo"
+        ]
+      },
+      {
+        "ja": "ドイツ語",
+        "en": "German",
+        "ja_typings": [
+          "doitsugo"
+        ]
+      },
+      {
+        "ja": "オランダ語",
+        "en": "Dutch",
+        "ja_typings": [
+          "orandago"
+        ]
+      },
+      {
+        "ja": "スウェーデン語",
+        "en": "Swedish",
+        "ja_typings": [
+          "suwe-dengo"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -506,12 +1478,39 @@
   {
     "id": "q0692",
     "genre": "general_knowledge",
-    "question_text": {"ja": "映画「風と共に去りぬ」のヒロインの名前は?", "en": "What is the heroine's name in 'Gone with the Wind'?"},
+    "question_text": {
+      "ja": "映画「風と共に去りぬ」のヒロインの名前は?",
+      "en": "What is the heroine's name in 'Gone with the Wind'?"
+    },
     "choices": [
-      {"ja": "スカーレット・オハラ", "en": "Scarlett O'Hara", "ja_typings": ["suka-rettoohara"]},
-      {"ja": "メラニー", "en": "Melanie", "ja_typings": ["merani-"]},
-      {"ja": "ベル", "en": "Belle", "ja_typings": ["beru"]},
-      {"ja": "デイジー", "en": "Daisy", "ja_typings": ["deiji-"]}
+      {
+        "ja": "スカーレット・オハラ",
+        "en": "Scarlett O'Hara",
+        "ja_typings": [
+          "suka-retto/ohara"
+        ]
+      },
+      {
+        "ja": "メラニー",
+        "en": "Melanie",
+        "ja_typings": [
+          "merani-"
+        ]
+      },
+      {
+        "ja": "ベル",
+        "en": "Belle",
+        "ja_typings": [
+          "beru"
+        ]
+      },
+      {
+        "ja": "デイジー",
+        "en": "Daisy",
+        "ja_typings": [
+          "deiji-"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -520,12 +1519,39 @@
   {
     "id": "q0693",
     "genre": "general_knowledge",
-    "question_text": {"ja": "「カレーライス」のルーツとされる国は?", "en": "Which country is considered the origin of curry?"},
+    "question_text": {
+      "ja": "「カレーライス」のルーツとされる国は?",
+      "en": "Which country is considered the origin of curry?"
+    },
     "choices": [
-      {"ja": "インド", "en": "India", "ja_typings": ["indo"]},
-      {"ja": "タイ", "en": "Thailand", "ja_typings": ["tai"]},
-      {"ja": "中国", "en": "China", "ja_typings": ["chugoku", "chuugoku"]},
-      {"ja": "イギリス", "en": "United Kingdom", "ja_typings": ["igirisu"]}
+      {
+        "ja": "インド",
+        "en": "India",
+        "ja_typings": [
+          "indo"
+        ]
+      },
+      {
+        "ja": "タイ",
+        "en": "Thailand",
+        "ja_typings": [
+          "tai"
+        ]
+      },
+      {
+        "ja": "中国",
+        "en": "China",
+        "ja_typings": [
+          "chuugoku"
+        ]
+      },
+      {
+        "ja": "イギリス",
+        "en": "United Kingdom",
+        "ja_typings": [
+          "igirisu"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -534,12 +1560,39 @@
   {
     "id": "q0694",
     "genre": "general_knowledge",
-    "question_text": {"ja": "イルカが属するのは何類?", "en": "To which class do dolphins belong?"},
+    "question_text": {
+      "ja": "イルカが属するのは何類?",
+      "en": "To which class do dolphins belong?"
+    },
     "choices": [
-      {"ja": "哺乳類", "en": "mammals", "ja_typings": ["honyurui", "honyuurui"]},
-      {"ja": "魚類", "en": "fish", "ja_typings": ["gyorui"]},
-      {"ja": "爬虫類", "en": "reptiles", "ja_typings": ["hachurui", "hachuurui"]},
-      {"ja": "両生類", "en": "amphibians", "ja_typings": ["ryouseirui", "ryoseirui"]}
+      {
+        "ja": "哺乳類",
+        "en": "mammals",
+        "ja_typings": [
+          "honyuurui"
+        ]
+      },
+      {
+        "ja": "魚類",
+        "en": "fish",
+        "ja_typings": [
+          "gyorui"
+        ]
+      },
+      {
+        "ja": "爬虫類",
+        "en": "reptiles",
+        "ja_typings": [
+          "hachuurui"
+        ]
+      },
+      {
+        "ja": "両生類",
+        "en": "amphibians",
+        "ja_typings": [
+          "ryouseirui"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -548,12 +1601,39 @@
   {
     "id": "q0695",
     "genre": "general_knowledge",
-    "question_text": {"ja": "アップルの共同創業者でiPhoneを発表した人物は?", "en": "Which Apple co-founder unveiled the iPhone?"},
+    "question_text": {
+      "ja": "アップルの共同創業者でiPhoneを発表した人物は?",
+      "en": "Which Apple co-founder unveiled the iPhone?"
+    },
     "choices": [
-      {"ja": "スティーブ・ジョブズ", "en": "Steve Jobs", "ja_typings": ["suti-bujobuzu"]},
-      {"ja": "ウォズニアック", "en": "Steve Wozniak", "ja_typings": ["wozuniakku"]},
-      {"ja": "ティム・クック", "en": "Tim Cook", "ja_typings": ["timukukku"]},
-      {"ja": "ビル・ゲイツ", "en": "Bill Gates", "ja_typings": ["birugeitsu"]}
+      {
+        "ja": "スティーブ・ジョブズ",
+        "en": "Steve Jobs",
+        "ja_typings": [
+          "suthi-bu/jobuzu"
+        ]
+      },
+      {
+        "ja": "ウォズニアック",
+        "en": "Steve Wozniak",
+        "ja_typings": [
+          "wozuniakku"
+        ]
+      },
+      {
+        "ja": "ティム・クック",
+        "en": "Tim Cook",
+        "ja_typings": [
+          "thimu/kukku"
+        ]
+      },
+      {
+        "ja": "ビル・ゲイツ",
+        "en": "Bill Gates",
+        "ja_typings": [
+          "biru/geitsu"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,

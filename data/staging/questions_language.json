@@ -2,12 +2,39 @@
   {
     "id": "q0586",
     "genre": "language",
-    "question_text": {"ja": "言語の音の最小単位を扱う言語学の分野はどれですか？", "en": "Which field of linguistics studies the smallest units of sound?"},
+    "question_text": {
+      "ja": "言語の音の最小単位を扱う言語学の分野はどれですか？",
+      "en": "Which field of linguistics studies the smallest units of sound?"
+    },
     "choices": [
-      {"ja": "音韻論", "en": "Phonology", "ja_typings": ["onninron"]},
-      {"ja": "形態論", "en": "Morphology", "ja_typings": ["keitairon"]},
-      {"ja": "統語論", "en": "Syntax", "ja_typings": ["tougoron", "togoron"]},
-      {"ja": "意味論", "en": "Semantics", "ja_typings": ["imiron"]}
+      {
+        "ja": "音韻論",
+        "en": "Phonology",
+        "ja_typings": [
+          "onninron"
+        ]
+      },
+      {
+        "ja": "形態論",
+        "en": "Morphology",
+        "ja_typings": [
+          "keitairon"
+        ]
+      },
+      {
+        "ja": "統語論",
+        "en": "Syntax",
+        "ja_typings": [
+          "tougoron"
+        ]
+      },
+      {
+        "ja": "意味論",
+        "en": "Semantics",
+        "ja_typings": [
+          "imiron"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -16,12 +43,39 @@
   {
     "id": "q0587",
     "genre": "language",
-    "question_text": {"ja": "意味を持つ最小の言語単位を何と呼びますか？", "en": "What is the smallest meaningful unit of language called?"},
+    "question_text": {
+      "ja": "意味を持つ最小の言語単位を何と呼びますか？",
+      "en": "What is the smallest meaningful unit of language called?"
+    },
     "choices": [
-      {"ja": "形態素", "en": "Morpheme", "ja_typings": ["keitaiso"]},
-      {"ja": "音素", "en": "Phoneme", "ja_typings": ["onso"]},
-      {"ja": "音節", "en": "Syllable", "ja_typings": ["onsetsu"]},
-      {"ja": "語幹", "en": "Stem", "ja_typings": ["gokan"]}
+      {
+        "ja": "形態素",
+        "en": "Morpheme",
+        "ja_typings": [
+          "keitaiso"
+        ]
+      },
+      {
+        "ja": "音素",
+        "en": "Phoneme",
+        "ja_typings": [
+          "onso"
+        ]
+      },
+      {
+        "ja": "音節",
+        "en": "Syllable",
+        "ja_typings": [
+          "onsetsu"
+        ]
+      },
+      {
+        "ja": "語幹",
+        "en": "Stem",
+        "ja_typings": [
+          "gokan"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -30,12 +84,39 @@
   {
     "id": "q0588",
     "genre": "language",
-    "question_text": {"ja": "文の構造や語の並びを研究する言語学の分野はどれですか？", "en": "Which field of linguistics studies sentence structure and word order?"},
+    "question_text": {
+      "ja": "文の構造や語の並びを研究する言語学の分野はどれですか？",
+      "en": "Which field of linguistics studies sentence structure and word order?"
+    },
     "choices": [
-      {"ja": "統語論", "en": "Syntax", "ja_typings": ["tougoron", "togoron"]},
-      {"ja": "音声学", "en": "Phonetics", "ja_typings": ["onseigaku"]},
-      {"ja": "語用論", "en": "Pragmatics", "ja_typings": ["goyouron", "goyoron"]},
-      {"ja": "文字論", "en": "Graphemics", "ja_typings": ["mojiron"]}
+      {
+        "ja": "統語論",
+        "en": "Syntax",
+        "ja_typings": [
+          "tougoron"
+        ]
+      },
+      {
+        "ja": "音声学",
+        "en": "Phonetics",
+        "ja_typings": [
+          "onseigaku"
+        ]
+      },
+      {
+        "ja": "語用論",
+        "en": "Pragmatics",
+        "ja_typings": [
+          "goyouron"
+        ]
+      },
+      {
+        "ja": "文字論",
+        "en": "Graphemics",
+        "ja_typings": [
+          "mojiron"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -44,12 +125,39 @@
   {
     "id": "q0589",
     "genre": "language",
-    "question_text": {"ja": "母語話者数が世界で最も多いとされる言語はどれですか？", "en": "Which language has the most native speakers in the world?"},
+    "question_text": {
+      "ja": "母語話者数が世界で最も多いとされる言語はどれですか？",
+      "en": "Which language has the most native speakers in the world?"
+    },
     "choices": [
-      {"ja": "中国語", "en": "Chinese", "ja_typings": ["chuugokugo", "chugokugo"]},
-      {"ja": "英語", "en": "English", "ja_typings": ["eigo"]},
-      {"ja": "スペイン語", "en": "Spanish", "ja_typings": ["supeingo"]},
-      {"ja": "ヒンディー語", "en": "Hindi", "ja_typings": ["hindi-go"]}
+      {
+        "ja": "中国語",
+        "en": "Chinese",
+        "ja_typings": [
+          "chuugokugo"
+        ]
+      },
+      {
+        "ja": "英語",
+        "en": "English",
+        "ja_typings": [
+          "eigo"
+        ]
+      },
+      {
+        "ja": "スペイン語",
+        "en": "Spanish",
+        "ja_typings": [
+          "supeingo"
+        ]
+      },
+      {
+        "ja": "ヒンディー語",
+        "en": "Hindi",
+        "ja_typings": [
+          "hindi-go"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -58,12 +166,39 @@
   {
     "id": "q0590",
     "genre": "language",
-    "question_text": {"ja": "ヒンディー語などインドの多くの言語を書き表す文字はどれですか？", "en": "Which script is used to write Hindi and many Indian languages?"},
+    "question_text": {
+      "ja": "ヒンディー語などインドの多くの言語を書き表す文字はどれですか？",
+      "en": "Which script is used to write Hindi and many Indian languages?"
+    },
     "choices": [
-      {"ja": "デーヴァナーガリー文字", "en": "Devanagari", "ja_typings": ["de-vana-gari-moji"]},
-      {"ja": "アラビア文字", "en": "Arabic script", "ja_typings": ["arabiamoji"]},
-      {"ja": "キリル文字", "en": "Cyrillic", "ja_typings": ["kirirumoji"]},
-      {"ja": "漢字", "en": "Kanji", "ja_typings": ["kanji"]}
+      {
+        "ja": "デーヴァナーガリー文字",
+        "en": "Devanagari",
+        "ja_typings": [
+          "de-vana-gari-moji"
+        ]
+      },
+      {
+        "ja": "アラビア文字",
+        "en": "Arabic script",
+        "ja_typings": [
+          "arabiamoji"
+        ]
+      },
+      {
+        "ja": "キリル文字",
+        "en": "Cyrillic",
+        "ja_typings": [
+          "kirirumoji"
+        ]
+      },
+      {
+        "ja": "漢字",
+        "en": "Kanji",
+        "ja_typings": [
+          "kanji"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -72,12 +207,39 @@
   {
     "id": "q0591",
     "genre": "language",
-    "question_text": {"ja": "ロシア語やブルガリア語などで使われる文字体系はどれですか？", "en": "Which writing system is used for Russian and Bulgarian?"},
+    "question_text": {
+      "ja": "ロシア語やブルガリア語などで使われる文字体系はどれですか？",
+      "en": "Which writing system is used for Russian and Bulgarian?"
+    },
     "choices": [
-      {"ja": "キリル文字", "en": "Cyrillic", "ja_typings": ["kirirumoji"]},
-      {"ja": "ギリシャ文字", "en": "Greek alphabet", "ja_typings": ["girishamoji"]},
-      {"ja": "ラテン文字", "en": "Latin alphabet", "ja_typings": ["ratenmoji"]},
-      {"ja": "ヘブライ文字", "en": "Hebrew script", "ja_typings": ["heburaimoji"]}
+      {
+        "ja": "キリル文字",
+        "en": "Cyrillic",
+        "ja_typings": [
+          "kirirumoji"
+        ]
+      },
+      {
+        "ja": "ギリシャ文字",
+        "en": "Greek alphabet",
+        "ja_typings": [
+          "girishamoji"
+        ]
+      },
+      {
+        "ja": "ラテン文字",
+        "en": "Latin alphabet",
+        "ja_typings": [
+          "ratenmoji"
+        ]
+      },
+      {
+        "ja": "ヘブライ文字",
+        "en": "Hebrew script",
+        "ja_typings": [
+          "heburaimoji"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -86,12 +248,39 @@
   {
     "id": "q0592",
     "genre": "language",
-    "question_text": {"ja": "アラビア語の書字方向はどれですか？", "en": "In which direction is Arabic written?"},
+    "question_text": {
+      "ja": "アラビア語の書字方向はどれですか？",
+      "en": "In which direction is Arabic written?"
+    },
     "choices": [
-      {"ja": "右から左", "en": "Right to left", "ja_typings": ["migikarahidari"]},
-      {"ja": "左から右", "en": "Left to right", "ja_typings": ["hidarikaramigi"]},
-      {"ja": "上から下", "en": "Top to bottom", "ja_typings": ["uekarashita"]},
-      {"ja": "下から上", "en": "Bottom to top", "ja_typings": ["shitakaraue"]}
+      {
+        "ja": "右から左",
+        "en": "Right to left",
+        "ja_typings": [
+          "migikarahidari"
+        ]
+      },
+      {
+        "ja": "左から右",
+        "en": "Left to right",
+        "ja_typings": [
+          "hidarikaramigi"
+        ]
+      },
+      {
+        "ja": "上から下",
+        "en": "Top to bottom",
+        "ja_typings": [
+          "uekarashita"
+        ]
+      },
+      {
+        "ja": "下から上",
+        "en": "Bottom to top",
+        "ja_typings": [
+          "shitakaraue"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -100,12 +289,39 @@
   {
     "id": "q0593",
     "genre": "language",
-    "question_text": {"ja": "日本語の品詞で、活用せず主語になれるものはどれですか？", "en": "Which Japanese part of speech does not conjugate and can be a subject?"},
+    "question_text": {
+      "ja": "日本語の品詞で、活用せず主語になれるものはどれですか？",
+      "en": "Which Japanese part of speech does not conjugate and can be a subject?"
+    },
     "choices": [
-      {"ja": "名詞", "en": "Noun", "ja_typings": ["meishi"]},
-      {"ja": "動詞", "en": "Verb", "ja_typings": ["doushi", "doshi"]},
-      {"ja": "形容詞", "en": "Adjective", "ja_typings": ["keiyoushi", "keiyoshi"]},
-      {"ja": "副詞", "en": "Adverb", "ja_typings": ["fukushi"]}
+      {
+        "ja": "名詞",
+        "en": "Noun",
+        "ja_typings": [
+          "meishi"
+        ]
+      },
+      {
+        "ja": "動詞",
+        "en": "Verb",
+        "ja_typings": [
+          "doushi"
+        ]
+      },
+      {
+        "ja": "形容詞",
+        "en": "Adjective",
+        "ja_typings": [
+          "keiyoushi"
+        ]
+      },
+      {
+        "ja": "副詞",
+        "en": "Adverb",
+        "ja_typings": [
+          "fukushi"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -114,12 +330,39 @@
   {
     "id": "q0594",
     "genre": "language",
-    "question_text": {"ja": "動詞や形容詞に付いて意味を添える、活用する付属語を何と呼びますか？", "en": "What are the conjugating auxiliaries attached to verbs and adjectives in Japanese called?"},
+    "question_text": {
+      "ja": "動詞や形容詞に付いて意味を添える、活用する付属語を何と呼びますか？",
+      "en": "What are the conjugating auxiliaries attached to verbs and adjectives in Japanese called?"
+    },
     "choices": [
-      {"ja": "助動詞", "en": "Auxiliary verb", "ja_typings": ["jodoushi", "jodoshi"]},
-      {"ja": "助詞", "en": "Particle", "ja_typings": ["joshi"]},
-      {"ja": "連体詞", "en": "Adnominal", "ja_typings": ["rentaishi"]},
-      {"ja": "接続詞", "en": "Conjunction", "ja_typings": ["setsuzokushi"]}
+      {
+        "ja": "助動詞",
+        "en": "Auxiliary verb",
+        "ja_typings": [
+          "jodoushi"
+        ]
+      },
+      {
+        "ja": "助詞",
+        "en": "Particle",
+        "ja_typings": [
+          "joshi"
+        ]
+      },
+      {
+        "ja": "連体詞",
+        "en": "Adnominal",
+        "ja_typings": [
+          "rentaishi"
+        ]
+      },
+      {
+        "ja": "接続詞",
+        "en": "Conjunction",
+        "ja_typings": [
+          "setsuzokushi"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -128,12 +371,39 @@
   {
     "id": "q0595",
     "genre": "language",
-    "question_text": {"ja": "日本語で語と語の関係を示す活用しない付属語はどれですか？", "en": "Which non-conjugating Japanese particles show relations between words?"},
+    "question_text": {
+      "ja": "日本語で語と語の関係を示す活用しない付属語はどれですか？",
+      "en": "Which non-conjugating Japanese particles show relations between words?"
+    },
     "choices": [
-      {"ja": "助詞", "en": "Particle", "ja_typings": ["joshi"]},
-      {"ja": "助動詞", "en": "Auxiliary verb", "ja_typings": ["jodoushi", "jodoshi"]},
-      {"ja": "感動詞", "en": "Interjection", "ja_typings": ["kandoushi", "kandoshi"]},
-      {"ja": "代名詞", "en": "Pronoun", "ja_typings": ["daimeishi"]}
+      {
+        "ja": "助詞",
+        "en": "Particle",
+        "ja_typings": [
+          "joshi"
+        ]
+      },
+      {
+        "ja": "助動詞",
+        "en": "Auxiliary verb",
+        "ja_typings": [
+          "jodoushi"
+        ]
+      },
+      {
+        "ja": "感動詞",
+        "en": "Interjection",
+        "ja_typings": [
+          "kandoushi"
+        ]
+      },
+      {
+        "ja": "代名詞",
+        "en": "Pronoun",
+        "ja_typings": [
+          "daimeishi"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -142,12 +412,39 @@
   {
     "id": "q0596",
     "genre": "language",
-    "question_text": {"ja": "目上の人の動作を高める敬語の種類はどれですか？", "en": "Which type of Japanese honorific elevates the actions of a superior?"},
+    "question_text": {
+      "ja": "目上の人の動作を高める敬語の種類はどれですか？",
+      "en": "Which type of Japanese honorific elevates the actions of a superior?"
+    },
     "choices": [
-      {"ja": "尊敬語", "en": "Respectful language", "ja_typings": ["sonkeigo"]},
-      {"ja": "謙譲語", "en": "Humble language", "ja_typings": ["kenjougo", "kenjogo"]},
-      {"ja": "丁寧語", "en": "Polite language", "ja_typings": ["teineigo"]},
-      {"ja": "美化語", "en": "Beautifying language", "ja_typings": ["bikago"]}
+      {
+        "ja": "尊敬語",
+        "en": "Respectful language",
+        "ja_typings": [
+          "sonkeigo"
+        ]
+      },
+      {
+        "ja": "謙譲語",
+        "en": "Humble language",
+        "ja_typings": [
+          "kenjougo"
+        ]
+      },
+      {
+        "ja": "丁寧語",
+        "en": "Polite language",
+        "ja_typings": [
+          "teineigo"
+        ]
+      },
+      {
+        "ja": "美化語",
+        "en": "Beautifying language",
+        "ja_typings": [
+          "bikago"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -156,12 +453,39 @@
   {
     "id": "q0597",
     "genre": "language",
-    "question_text": {"ja": "自分の動作をへりくだって表す敬語の種類はどれですか？", "en": "Which type of Japanese honorific humbles the speaker's own actions?"},
+    "question_text": {
+      "ja": "自分の動作をへりくだって表す敬語の種類はどれですか？",
+      "en": "Which type of Japanese honorific humbles the speaker's own actions?"
+    },
     "choices": [
-      {"ja": "謙譲語", "en": "Humble language", "ja_typings": ["kenjougo", "kenjogo"]},
-      {"ja": "尊敬語", "en": "Respectful language", "ja_typings": ["sonkeigo"]},
-      {"ja": "丁寧語", "en": "Polite language", "ja_typings": ["teineigo"]},
-      {"ja": "口語", "en": "Colloquial", "ja_typings": ["kougo", "kogo"]}
+      {
+        "ja": "謙譲語",
+        "en": "Humble language",
+        "ja_typings": [
+          "kenjougo"
+        ]
+      },
+      {
+        "ja": "尊敬語",
+        "en": "Respectful language",
+        "ja_typings": [
+          "sonkeigo"
+        ]
+      },
+      {
+        "ja": "丁寧語",
+        "en": "Polite language",
+        "ja_typings": [
+          "teineigo"
+        ]
+      },
+      {
+        "ja": "口語",
+        "en": "Colloquial",
+        "ja_typings": [
+          "kougo"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -170,12 +494,39 @@
   {
     "id": "q0598",
     "genre": "language",
-    "question_text": {"ja": "「です」「ます」のように文末を丁寧にする敬語はどれですか？", "en": "Which Japanese honorific style uses sentence-final 'desu' or 'masu'?"},
+    "question_text": {
+      "ja": "「です」「ます」のように文末を丁寧にする敬語はどれですか？",
+      "en": "Which Japanese honorific style uses sentence-final 'desu' or 'masu'?"
+    },
     "choices": [
-      {"ja": "丁寧語", "en": "Polite language", "ja_typings": ["teineigo"]},
-      {"ja": "尊敬語", "en": "Respectful language", "ja_typings": ["sonkeigo"]},
-      {"ja": "謙譲語", "en": "Humble language", "ja_typings": ["kenjougo", "kenjogo"]},
-      {"ja": "敬体", "en": "Formal style", "ja_typings": ["keitai"]}
+      {
+        "ja": "丁寧語",
+        "en": "Polite language",
+        "ja_typings": [
+          "teineigo"
+        ]
+      },
+      {
+        "ja": "尊敬語",
+        "en": "Respectful language",
+        "ja_typings": [
+          "sonkeigo"
+        ]
+      },
+      {
+        "ja": "謙譲語",
+        "en": "Humble language",
+        "ja_typings": [
+          "kenjougo"
+        ]
+      },
+      {
+        "ja": "敬体",
+        "en": "Formal style",
+        "ja_typings": [
+          "keitai"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -184,12 +535,39 @@
   {
     "id": "q0599",
     "genre": "language",
-    "question_text": {"ja": "「行く」が「行かない」「行きます」「行けば」と変わる現象を何と呼びますか？", "en": "What is the change of a Japanese verb form across endings called?"},
+    "question_text": {
+      "ja": "「行く」が「行かない」「行きます」「行けば」と変わる現象を何と呼びますか？",
+      "en": "What is the change of a Japanese verb form across endings called?"
+    },
     "choices": [
-      {"ja": "活用", "en": "Conjugation", "ja_typings": ["katsuyou", "katsuyo"]},
-      {"ja": "派生", "en": "Derivation", "ja_typings": ["hasei"]},
-      {"ja": "屈折", "en": "Inflection", "ja_typings": ["kussetsu"]},
-      {"ja": "音便", "en": "Sound change", "ja_typings": ["onbin"]}
+      {
+        "ja": "活用",
+        "en": "Conjugation",
+        "ja_typings": [
+          "katsuyou"
+        ]
+      },
+      {
+        "ja": "派生",
+        "en": "Derivation",
+        "ja_typings": [
+          "hasei"
+        ]
+      },
+      {
+        "ja": "屈折",
+        "en": "Inflection",
+        "ja_typings": [
+          "kussetsu"
+        ]
+      },
+      {
+        "ja": "音便",
+        "en": "Sound change",
+        "ja_typings": [
+          "onbin"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -198,12 +576,39 @@
   {
     "id": "q0600",
     "genre": "language",
-    "question_text": {"ja": "「書いた」「読んだ」のように発音しやすく音が変わる現象はどれですか？", "en": "What is the phonological change like 'kaita' or 'yonda' in Japanese verbs called?"},
+    "question_text": {
+      "ja": "「書いた」「読んだ」のように発音しやすく音が変わる現象はどれですか？",
+      "en": "What is the phonological change like 'kaita' or 'yonda' in Japanese verbs called?"
+    },
     "choices": [
-      {"ja": "音便", "en": "Onbin sound change", "ja_typings": ["onbin"]},
-      {"ja": "連濁", "en": "Rendaku", "ja_typings": ["rendaku"]},
-      {"ja": "促音化", "en": "Gemination", "ja_typings": ["sokuonka"]},
-      {"ja": "母音交替", "en": "Vowel alternation", "ja_typings": ["boinkoutai", "boinkotai"]}
+      {
+        "ja": "音便",
+        "en": "Onbin sound change",
+        "ja_typings": [
+          "onbin"
+        ]
+      },
+      {
+        "ja": "連濁",
+        "en": "Rendaku",
+        "ja_typings": [
+          "rendaku"
+        ]
+      },
+      {
+        "ja": "促音化",
+        "en": "Gemination",
+        "ja_typings": [
+          "sokuonka"
+        ]
+      },
+      {
+        "ja": "母音交替",
+        "en": "Vowel alternation",
+        "ja_typings": [
+          "boinkoutai"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -212,12 +617,39 @@
   {
     "id": "q0601",
     "genre": "language",
-    "question_text": {"ja": "複合語の後部要素が濁音化する現象を何と呼びますか？", "en": "What is the voicing of the second element of a compound in Japanese called?"},
+    "question_text": {
+      "ja": "複合語の後部要素が濁音化する現象を何と呼びますか？",
+      "en": "What is the voicing of the second element of a compound in Japanese called?"
+    },
     "choices": [
-      {"ja": "連濁", "en": "Rendaku", "ja_typings": ["rendaku"]},
-      {"ja": "音便", "en": "Onbin", "ja_typings": ["onbin"]},
-      {"ja": "撥音便", "en": "Nasal sound change", "ja_typings": ["hatsuonbin"]},
-      {"ja": "連声", "en": "Renjo", "ja_typings": ["renjou", "renjo"]}
+      {
+        "ja": "連濁",
+        "en": "Rendaku",
+        "ja_typings": [
+          "rendaku"
+        ]
+      },
+      {
+        "ja": "音便",
+        "en": "Onbin",
+        "ja_typings": [
+          "onbin"
+        ]
+      },
+      {
+        "ja": "撥音便",
+        "en": "Nasal sound change",
+        "ja_typings": [
+          "hatsuonbin"
+        ]
+      },
+      {
+        "ja": "連声",
+        "en": "Renjo",
+        "ja_typings": [
+          "renjou"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -226,12 +658,39 @@
   {
     "id": "q0602",
     "genre": "language",
-    "question_text": {"ja": "動作が継続中であることを表す文法カテゴリは何ですか？", "en": "Which grammatical category expresses an ongoing action?"},
+    "question_text": {
+      "ja": "動作が継続中であることを表す文法カテゴリは何ですか？",
+      "en": "Which grammatical category expresses an ongoing action?"
+    },
     "choices": [
-      {"ja": "進行相", "en": "Progressive aspect", "ja_typings": ["shinkousou", "shinkoso"]},
-      {"ja": "完了相", "en": "Perfect aspect", "ja_typings": ["kanryousou", "kanryoso"]},
-      {"ja": "過去時制", "en": "Past tense", "ja_typings": ["kakojisei"]},
-      {"ja": "未来時制", "en": "Future tense", "ja_typings": ["miraijisei"]}
+      {
+        "ja": "進行相",
+        "en": "Progressive aspect",
+        "ja_typings": [
+          "shinkousou"
+        ]
+      },
+      {
+        "ja": "完了相",
+        "en": "Perfect aspect",
+        "ja_typings": [
+          "kanryousou"
+        ]
+      },
+      {
+        "ja": "過去時制",
+        "en": "Past tense",
+        "ja_typings": [
+          "kakojisei"
+        ]
+      },
+      {
+        "ja": "未来時制",
+        "en": "Future tense",
+        "ja_typings": [
+          "miraijisei"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -240,12 +699,39 @@
   {
     "id": "q0603",
     "genre": "language",
-    "question_text": {"ja": "出来事が時間軸のどこにあるかを示す文法カテゴリは何ですか？", "en": "Which grammatical category locates an event in time?"},
+    "question_text": {
+      "ja": "出来事が時間軸のどこにあるかを示す文法カテゴリは何ですか？",
+      "en": "Which grammatical category locates an event in time?"
+    },
     "choices": [
-      {"ja": "時制", "en": "Tense", "ja_typings": ["jisei"]},
-      {"ja": "相", "en": "Aspect", "ja_typings": ["sou", "so"]},
-      {"ja": "態", "en": "Voice", "ja_typings": ["tai"]},
-      {"ja": "法", "en": "Mood", "ja_typings": ["hou", "ho"]}
+      {
+        "ja": "時制",
+        "en": "Tense",
+        "ja_typings": [
+          "jisei"
+        ]
+      },
+      {
+        "ja": "相",
+        "en": "Aspect",
+        "ja_typings": [
+          "sou"
+        ]
+      },
+      {
+        "ja": "態",
+        "en": "Voice",
+        "ja_typings": [
+          "tai"
+        ]
+      },
+      {
+        "ja": "法",
+        "en": "Mood",
+        "ja_typings": [
+          "hou"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -254,12 +740,39 @@
   {
     "id": "q0604",
     "genre": "language",
-    "question_text": {"ja": "「太郎が花子に殴られた」のように動作の受け手が主語になる態はどれですか？", "en": "Which voice makes the recipient of the action the subject?"},
+    "question_text": {
+      "ja": "「太郎が花子に殴られた」のように動作の受け手が主語になる態はどれですか？",
+      "en": "Which voice makes the recipient of the action the subject?"
+    },
     "choices": [
-      {"ja": "受動態", "en": "Passive voice", "ja_typings": ["judoutai", "judotai"]},
-      {"ja": "能動態", "en": "Active voice", "ja_typings": ["noudoutai", "nodotai"]},
-      {"ja": "使役態", "en": "Causative voice", "ja_typings": ["shiekitai"]},
-      {"ja": "中動態", "en": "Middle voice", "ja_typings": ["chuudoutai", "chudotai"]}
+      {
+        "ja": "受動態",
+        "en": "Passive voice",
+        "ja_typings": [
+          "judoutai"
+        ]
+      },
+      {
+        "ja": "能動態",
+        "en": "Active voice",
+        "ja_typings": [
+          "noudoutai"
+        ]
+      },
+      {
+        "ja": "使役態",
+        "en": "Causative voice",
+        "ja_typings": [
+          "shiekitai"
+        ]
+      },
+      {
+        "ja": "中動態",
+        "en": "Middle voice",
+        "ja_typings": [
+          "chuudoutai"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -268,12 +781,39 @@
   {
     "id": "q0605",
     "genre": "language",
-    "question_text": {"ja": "「子供に勉強させる」のように他者に動作をさせる態はどれですか？", "en": "Which voice expresses making someone else perform the action?"},
+    "question_text": {
+      "ja": "「子供に勉強させる」のように他者に動作をさせる態はどれですか？",
+      "en": "Which voice expresses making someone else perform the action?"
+    },
     "choices": [
-      {"ja": "使役態", "en": "Causative voice", "ja_typings": ["shiekitai"]},
-      {"ja": "受動態", "en": "Passive voice", "ja_typings": ["judoutai", "judotai"]},
-      {"ja": "能動態", "en": "Active voice", "ja_typings": ["noudoutai", "nodotai"]},
-      {"ja": "可能態", "en": "Potential form", "ja_typings": ["kanoutai", "kanotai"]}
+      {
+        "ja": "使役態",
+        "en": "Causative voice",
+        "ja_typings": [
+          "shiekitai"
+        ]
+      },
+      {
+        "ja": "受動態",
+        "en": "Passive voice",
+        "ja_typings": [
+          "judoutai"
+        ]
+      },
+      {
+        "ja": "能動態",
+        "en": "Active voice",
+        "ja_typings": [
+          "noudoutai"
+        ]
+      },
+      {
+        "ja": "可能態",
+        "en": "Potential form",
+        "ja_typings": [
+          "kanoutai"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -282,12 +822,39 @@
   {
     "id": "q0606",
     "genre": "language",
-    "question_text": {"ja": "中南米で広く話されているヨーロッパ起源の言語はどれですか？", "en": "Which European-origin language is widely spoken across Latin America?"},
+    "question_text": {
+      "ja": "中南米で広く話されているヨーロッパ起源の言語はどれですか？",
+      "en": "Which European-origin language is widely spoken across Latin America?"
+    },
     "choices": [
-      {"ja": "スペイン語", "en": "Spanish", "ja_typings": ["supeingo"]},
-      {"ja": "ポルトガル語", "en": "Portuguese", "ja_typings": ["porutogarugo"]},
-      {"ja": "フランス語", "en": "French", "ja_typings": ["furansugo"]},
-      {"ja": "イタリア語", "en": "Italian", "ja_typings": ["itariago"]}
+      {
+        "ja": "スペイン語",
+        "en": "Spanish",
+        "ja_typings": [
+          "supeingo"
+        ]
+      },
+      {
+        "ja": "ポルトガル語",
+        "en": "Portuguese",
+        "ja_typings": [
+          "porutogarugo"
+        ]
+      },
+      {
+        "ja": "フランス語",
+        "en": "French",
+        "ja_typings": [
+          "furansugo"
+        ]
+      },
+      {
+        "ja": "イタリア語",
+        "en": "Italian",
+        "ja_typings": [
+          "itariago"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -296,12 +863,39 @@
   {
     "id": "q0607",
     "genre": "language",
-    "question_text": {"ja": "ブラジルの公用語はどれですか？", "en": "What is the official language of Brazil?"},
+    "question_text": {
+      "ja": "ブラジルの公用語はどれですか？",
+      "en": "What is the official language of Brazil?"
+    },
     "choices": [
-      {"ja": "ポルトガル語", "en": "Portuguese", "ja_typings": ["porutogarugo"]},
-      {"ja": "スペイン語", "en": "Spanish", "ja_typings": ["supeingo"]},
-      {"ja": "英語", "en": "English", "ja_typings": ["eigo"]},
-      {"ja": "オランダ語", "en": "Dutch", "ja_typings": ["orandago"]}
+      {
+        "ja": "ポルトガル語",
+        "en": "Portuguese",
+        "ja_typings": [
+          "porutogarugo"
+        ]
+      },
+      {
+        "ja": "スペイン語",
+        "en": "Spanish",
+        "ja_typings": [
+          "supeingo"
+        ]
+      },
+      {
+        "ja": "英語",
+        "en": "English",
+        "ja_typings": [
+          "eigo"
+        ]
+      },
+      {
+        "ja": "オランダ語",
+        "en": "Dutch",
+        "ja_typings": [
+          "orandago"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -310,12 +904,39 @@
   {
     "id": "q0608",
     "genre": "language",
-    "question_text": {"ja": "中国語で標準語の発音表記に用いられるローマ字システムはどれですか？", "en": "Which romanization system is used for Standard Chinese pronunciation?"},
+    "question_text": {
+      "ja": "中国語で標準語の発音表記に用いられるローマ字システムはどれですか？",
+      "en": "Which romanization system is used for Standard Chinese pronunciation?"
+    },
     "choices": [
-      {"ja": "ピンイン", "en": "Pinyin", "ja_typings": ["pinnyin"]},
-      {"ja": "ボポモフォ", "en": "Bopomofo", "ja_typings": ["bopomofo"]},
-      {"ja": "ウェード式", "en": "Wade-Giles", "ja_typings": ["we-doshiki"]},
-      {"ja": "ヘボン式", "en": "Hepburn romanization", "ja_typings": ["hebonshiki"]}
+      {
+        "ja": "ピンイン",
+        "en": "Pinyin",
+        "ja_typings": [
+          "pinnin"
+        ]
+      },
+      {
+        "ja": "ボポモフォ",
+        "en": "Bopomofo",
+        "ja_typings": [
+          "bopomofo"
+        ]
+      },
+      {
+        "ja": "ウェード式",
+        "en": "Wade-Giles",
+        "ja_typings": [
+          "we-doshiki"
+        ]
+      },
+      {
+        "ja": "ヘボン式",
+        "en": "Hepburn romanization",
+        "ja_typings": [
+          "hebonshiki"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -324,12 +945,39 @@
   {
     "id": "q0609",
     "genre": "language",
-    "question_text": {"ja": "中国語の標準語で区別される声調は何種類ですか？", "en": "How many tones are distinguished in Standard Mandarin?"},
+    "question_text": {
+      "ja": "中国語の標準語で区別される声調は何種類ですか？",
+      "en": "How many tones are distinguished in Standard Mandarin?"
+    },
     "choices": [
-      {"ja": "4種類", "en": "Four", "ja_typings": ["4shurui", "yonshurui"]},
-      {"ja": "2種類", "en": "Two", "ja_typings": ["2shurui", "nishurui"]},
-      {"ja": "6種類", "en": "Six", "ja_typings": ["6shurui", "rokushurui"]},
-      {"ja": "8種類", "en": "Eight", "ja_typings": ["8shurui", "hachishurui"]}
+      {
+        "ja": "4種類",
+        "en": "Four",
+        "ja_typings": [
+          "4shurui"
+        ]
+      },
+      {
+        "ja": "2種類",
+        "en": "Two",
+        "ja_typings": [
+          "2shurui"
+        ]
+      },
+      {
+        "ja": "6種類",
+        "en": "Six",
+        "ja_typings": [
+          "6shurui"
+        ]
+      },
+      {
+        "ja": "8種類",
+        "en": "Eight",
+        "ja_typings": [
+          "8shurui"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -338,12 +986,39 @@
   {
     "id": "q0610",
     "genre": "language",
-    "question_text": {"ja": "韓国語を書き表す表音文字はどれですか？", "en": "Which phonetic script is used to write Korean?"},
+    "question_text": {
+      "ja": "韓国語を書き表す表音文字はどれですか？",
+      "en": "Which phonetic script is used to write Korean?"
+    },
     "choices": [
-      {"ja": "ハングル", "en": "Hangul", "ja_typings": ["hanguru"]},
-      {"ja": "漢字", "en": "Kanji", "ja_typings": ["kanji"]},
-      {"ja": "カタカナ", "en": "Katakana", "ja_typings": ["katakana"]},
-      {"ja": "注音符号", "en": "Bopomofo", "ja_typings": ["chuuonfugou", "chuonfugo"]}
+      {
+        "ja": "ハングル",
+        "en": "Hangul",
+        "ja_typings": [
+          "hanguru"
+        ]
+      },
+      {
+        "ja": "漢字",
+        "en": "Kanji",
+        "ja_typings": [
+          "kanji"
+        ]
+      },
+      {
+        "ja": "カタカナ",
+        "en": "Katakana",
+        "ja_typings": [
+          "katakana"
+        ]
+      },
+      {
+        "ja": "注音符号",
+        "en": "Bopomofo",
+        "ja_typings": [
+          "chuuonfugou"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -352,12 +1027,39 @@
   {
     "id": "q0611",
     "genre": "language",
-    "question_text": {"ja": "英語やドイツ語が属する語族はどれですか？", "en": "To which language family do English and German belong?"},
+    "question_text": {
+      "ja": "英語やドイツ語が属する語族はどれですか？",
+      "en": "To which language family do English and German belong?"
+    },
     "choices": [
-      {"ja": "インド・ヨーロッパ語族", "en": "Indo-European", "ja_typings": ["indoyo-roppagozoku"]},
-      {"ja": "ウラル語族", "en": "Uralic", "ja_typings": ["urarugozoku"]},
-      {"ja": "アフロ・アジア語族", "en": "Afro-Asiatic", "ja_typings": ["afuroajiagozoku"]},
-      {"ja": "シナ・チベット語族", "en": "Sino-Tibetan", "ja_typings": ["shinachibettogozoku"]}
+      {
+        "ja": "インド・ヨーロッパ語族",
+        "en": "Indo-European",
+        "ja_typings": [
+          "indoyo-roppagozoku"
+        ]
+      },
+      {
+        "ja": "ウラル語族",
+        "en": "Uralic",
+        "ja_typings": [
+          "urarugozoku"
+        ]
+      },
+      {
+        "ja": "アフロ・アジア語族",
+        "en": "Afro-Asiatic",
+        "ja_typings": [
+          "afuroajiagozoku"
+        ]
+      },
+      {
+        "ja": "シナ・チベット語族",
+        "en": "Sino-Tibetan",
+        "ja_typings": [
+          "shinachibettogozoku"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -366,12 +1068,39 @@
   {
     "id": "q0612",
     "genre": "language",
-    "question_text": {"ja": "アラビア語やヘブライ語が属する語族はどれですか？", "en": "To which language family do Arabic and Hebrew belong?"},
+    "question_text": {
+      "ja": "アラビア語やヘブライ語が属する語族はどれですか？",
+      "en": "To which language family do Arabic and Hebrew belong?"
+    },
     "choices": [
-      {"ja": "アフロ・アジア語族", "en": "Afro-Asiatic", "ja_typings": ["afuroajiagozoku"]},
-      {"ja": "インド・ヨーロッパ語族", "en": "Indo-European", "ja_typings": ["indoyo-roppagozoku"]},
-      {"ja": "ニジェール・コンゴ語族", "en": "Niger-Congo", "ja_typings": ["nije-rukongogozoku"]},
-      {"ja": "オーストロネシア語族", "en": "Austronesian", "ja_typings": ["o-sutoroneshiagozoku"]}
+      {
+        "ja": "アフロ・アジア語族",
+        "en": "Afro-Asiatic",
+        "ja_typings": [
+          "afuroajiagozoku"
+        ]
+      },
+      {
+        "ja": "インド・ヨーロッパ語族",
+        "en": "Indo-European",
+        "ja_typings": [
+          "indoyo-roppagozoku"
+        ]
+      },
+      {
+        "ja": "ニジェール・コンゴ語族",
+        "en": "Niger-Congo",
+        "ja_typings": [
+          "nije-rukongogozoku"
+        ]
+      },
+      {
+        "ja": "オーストロネシア語族",
+        "en": "Austronesian",
+        "ja_typings": [
+          "o-sutoroneshiagozoku"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -380,12 +1109,39 @@
   {
     "id": "q0613",
     "genre": "language",
-    "question_text": {"ja": "「氷のように冷たい」のように「ように」を使う比喩はどれですか？", "en": "Which figure of speech uses 'like' or 'as' for comparison?"},
+    "question_text": {
+      "ja": "「氷のように冷たい」のように「ように」を使う比喩はどれですか？",
+      "en": "Which figure of speech uses 'like' or 'as' for comparison?"
+    },
     "choices": [
-      {"ja": "直喩", "en": "Simile", "ja_typings": ["chokuyu"]},
-      {"ja": "隠喩", "en": "Metaphor", "ja_typings": ["inyu"]},
-      {"ja": "擬人法", "en": "Personification", "ja_typings": ["gijinhou", "gijinho"]},
-      {"ja": "誇張法", "en": "Hyperbole", "ja_typings": ["kochouhou", "kochoho"]}
+      {
+        "ja": "直喩",
+        "en": "Simile",
+        "ja_typings": [
+          "chokuyu"
+        ]
+      },
+      {
+        "ja": "隠喩",
+        "en": "Metaphor",
+        "ja_typings": [
+          "inyu"
+        ]
+      },
+      {
+        "ja": "擬人法",
+        "en": "Personification",
+        "ja_typings": [
+          "gijinhou"
+        ]
+      },
+      {
+        "ja": "誇張法",
+        "en": "Hyperbole",
+        "ja_typings": [
+          "kochouhou"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -394,12 +1150,39 @@
   {
     "id": "q0614",
     "genre": "language",
-    "question_text": {"ja": "「人生は旅だ」のように直接的に別のものに例える比喩はどれですか？", "en": "Which figure of speech directly equates one thing with another?"},
+    "question_text": {
+      "ja": "「人生は旅だ」のように直接的に別のものに例える比喩はどれですか？",
+      "en": "Which figure of speech directly equates one thing with another?"
+    },
     "choices": [
-      {"ja": "隠喩", "en": "Metaphor", "ja_typings": ["inyu"]},
-      {"ja": "直喩", "en": "Simile", "ja_typings": ["chokuyu"]},
-      {"ja": "換喩", "en": "Metonymy", "ja_typings": ["kanyu"]},
-      {"ja": "提喩", "en": "Synecdoche", "ja_typings": ["teiyu"]}
+      {
+        "ja": "隠喩",
+        "en": "Metaphor",
+        "ja_typings": [
+          "inyu"
+        ]
+      },
+      {
+        "ja": "直喩",
+        "en": "Simile",
+        "ja_typings": [
+          "chokuyu"
+        ]
+      },
+      {
+        "ja": "換喩",
+        "en": "Metonymy",
+        "ja_typings": [
+          "kanyu"
+        ]
+      },
+      {
+        "ja": "提喩",
+        "en": "Synecdoche",
+        "ja_typings": [
+          "teiyu"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -408,12 +1191,39 @@
   {
     "id": "q0615",
     "genre": "language",
-    "question_text": {"ja": "人ではないものを人のように描く修辞技法はどれですか？", "en": "Which rhetorical device gives human qualities to non-human things?"},
+    "question_text": {
+      "ja": "人ではないものを人のように描く修辞技法はどれですか？",
+      "en": "Which rhetorical device gives human qualities to non-human things?"
+    },
     "choices": [
-      {"ja": "擬人法", "en": "Personification", "ja_typings": ["gijinhou", "gijinho"]},
-      {"ja": "倒置法", "en": "Inversion", "ja_typings": ["touchihou", "tochiho"]},
-      {"ja": "対句法", "en": "Antithesis", "ja_typings": ["tsuikuhou", "tsuikuho"]},
-      {"ja": "反復法", "en": "Repetition", "ja_typings": ["hanpukuhou", "hanpukuho"]}
+      {
+        "ja": "擬人法",
+        "en": "Personification",
+        "ja_typings": [
+          "gijinhou"
+        ]
+      },
+      {
+        "ja": "倒置法",
+        "en": "Inversion",
+        "ja_typings": [
+          "touchihou"
+        ]
+      },
+      {
+        "ja": "対句法",
+        "en": "Antithesis",
+        "ja_typings": [
+          "tsuikuhou"
+        ]
+      },
+      {
+        "ja": "反復法",
+        "en": "Repetition",
+        "ja_typings": [
+          "hanpukuhou"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -422,12 +1232,39 @@
   {
     "id": "q0616",
     "genre": "language",
-    "question_text": {"ja": "通常の語順を入れ替えて強調する修辞技法はどれですか？", "en": "Which rhetorical device reverses normal word order for emphasis?"},
+    "question_text": {
+      "ja": "通常の語順を入れ替えて強調する修辞技法はどれですか？",
+      "en": "Which rhetorical device reverses normal word order for emphasis?"
+    },
     "choices": [
-      {"ja": "倒置法", "en": "Inversion", "ja_typings": ["touchihou", "tochiho"]},
-      {"ja": "省略法", "en": "Ellipsis", "ja_typings": ["shouryakuhou", "shoryakuho"]},
-      {"ja": "体言止め", "en": "Noun ending", "ja_typings": ["taigendome"]},
-      {"ja": "対句法", "en": "Antithesis", "ja_typings": ["tsuikuhou", "tsuikuho"]}
+      {
+        "ja": "倒置法",
+        "en": "Inversion",
+        "ja_typings": [
+          "touchihou"
+        ]
+      },
+      {
+        "ja": "省略法",
+        "en": "Ellipsis",
+        "ja_typings": [
+          "shouryakuhou"
+        ]
+      },
+      {
+        "ja": "体言止め",
+        "en": "Noun ending",
+        "ja_typings": [
+          "taigendome"
+        ]
+      },
+      {
+        "ja": "対句法",
+        "en": "Antithesis",
+        "ja_typings": [
+          "tsuikuhou"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -436,12 +1273,39 @@
   {
     "id": "q0617",
     "genre": "language",
-    "question_text": {"ja": "日本語の漢字音読みのうち、最も古い時代に伝わったとされる音はどれですか？", "en": "Which On'yomi reading layer of kanji is considered the oldest?"},
+    "question_text": {
+      "ja": "日本語の漢字音読みのうち、最も古い時代に伝わったとされる音はどれですか？",
+      "en": "Which On'yomi reading layer of kanji is considered the oldest?"
+    },
     "choices": [
-      {"ja": "呉音", "en": "Go-on", "ja_typings": ["goon"]},
-      {"ja": "漢音", "en": "Kan-on", "ja_typings": ["kanon"]},
-      {"ja": "唐音", "en": "To-on", "ja_typings": ["touon", "toon"]},
-      {"ja": "慣用音", "en": "Customary reading", "ja_typings": ["kanyouon", "kanyoon"]}
+      {
+        "ja": "呉音",
+        "en": "Go-on",
+        "ja_typings": [
+          "goon"
+        ]
+      },
+      {
+        "ja": "漢音",
+        "en": "Kan-on",
+        "ja_typings": [
+          "kanon"
+        ]
+      },
+      {
+        "ja": "唐音",
+        "en": "To-on",
+        "ja_typings": [
+          "touon"
+        ]
+      },
+      {
+        "ja": "慣用音",
+        "en": "Customary reading",
+        "ja_typings": [
+          "kanyouon"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -450,12 +1314,39 @@
   {
     "id": "q0618",
     "genre": "language",
-    "question_text": {"ja": "ベトナム語が現在使用している文字はどれですか？", "en": "Which script does modern Vietnamese currently use?"},
+    "question_text": {
+      "ja": "ベトナム語が現在使用している文字はどれですか？",
+      "en": "Which script does modern Vietnamese currently use?"
+    },
     "choices": [
-      {"ja": "ラテン文字", "en": "Latin alphabet", "ja_typings": ["ratenmoji"]},
-      {"ja": "漢字", "en": "Chinese characters", "ja_typings": ["kanji"]},
-      {"ja": "クメール文字", "en": "Khmer script", "ja_typings": ["kume-rumoji"]},
-      {"ja": "タイ文字", "en": "Thai script", "ja_typings": ["taimoji"]}
+      {
+        "ja": "ラテン文字",
+        "en": "Latin alphabet",
+        "ja_typings": [
+          "ratenmoji"
+        ]
+      },
+      {
+        "ja": "漢字",
+        "en": "Chinese characters",
+        "ja_typings": [
+          "kanji"
+        ]
+      },
+      {
+        "ja": "クメール文字",
+        "en": "Khmer script",
+        "ja_typings": [
+          "kume-rumoji"
+        ]
+      },
+      {
+        "ja": "タイ文字",
+        "en": "Thai script",
+        "ja_typings": [
+          "taimoji"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -464,12 +1355,39 @@
   {
     "id": "q0619",
     "genre": "language",
-    "question_text": {"ja": "動詞や形容詞の活用しない部分を何と呼びますか？", "en": "What is the unchanging part of a Japanese verb or adjective called?"},
+    "question_text": {
+      "ja": "動詞や形容詞の活用しない部分を何と呼びますか？",
+      "en": "What is the unchanging part of a Japanese verb or adjective called?"
+    },
     "choices": [
-      {"ja": "語幹", "en": "Stem", "ja_typings": ["gokan"]},
-      {"ja": "語尾", "en": "Ending", "ja_typings": ["gobi"]},
-      {"ja": "接辞", "en": "Affix", "ja_typings": ["setsuji"]},
-      {"ja": "助詞", "en": "Particle", "ja_typings": ["joshi"]}
+      {
+        "ja": "語幹",
+        "en": "Stem",
+        "ja_typings": [
+          "gokan"
+        ]
+      },
+      {
+        "ja": "語尾",
+        "en": "Ending",
+        "ja_typings": [
+          "gobi"
+        ]
+      },
+      {
+        "ja": "接辞",
+        "en": "Affix",
+        "ja_typings": [
+          "setsuji"
+        ]
+      },
+      {
+        "ja": "助詞",
+        "en": "Particle",
+        "ja_typings": [
+          "joshi"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -478,12 +1396,39 @@
   {
     "id": "q0620",
     "genre": "language",
-    "question_text": {"ja": "話し手と聞き手の関係や場面に応じた言葉の使い分けを研究する分野はどれですか？", "en": "Which field studies language use according to context and speakers?"},
+    "question_text": {
+      "ja": "話し手と聞き手の関係や場面に応じた言葉の使い分けを研究する分野はどれですか？",
+      "en": "Which field studies language use according to context and speakers?"
+    },
     "choices": [
-      {"ja": "語用論", "en": "Pragmatics", "ja_typings": ["goyouron", "goyoron"]},
-      {"ja": "意味論", "en": "Semantics", "ja_typings": ["imiron"]},
-      {"ja": "社会言語学", "en": "Sociolinguistics", "ja_typings": ["shakaigengogaku"]},
-      {"ja": "心理言語学", "en": "Psycholinguistics", "ja_typings": ["shinrigengogaku"]}
+      {
+        "ja": "語用論",
+        "en": "Pragmatics",
+        "ja_typings": [
+          "goyouron"
+        ]
+      },
+      {
+        "ja": "意味論",
+        "en": "Semantics",
+        "ja_typings": [
+          "imiron"
+        ]
+      },
+      {
+        "ja": "社会言語学",
+        "en": "Sociolinguistics",
+        "ja_typings": [
+          "shakaigengogaku"
+        ]
+      },
+      {
+        "ja": "心理言語学",
+        "en": "Psycholinguistics",
+        "ja_typings": [
+          "shinrigengogaku"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,

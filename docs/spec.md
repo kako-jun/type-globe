@@ -64,16 +64,17 @@ Quiz is paired with score-attack modes; listening is paired with the RPG. The tw
 - **Exact match auto-confirms and immediately advances** to the next question — there is no "Correct!" interstitial and no Enter-to-continue. The flow is a continuous typing rhythm.
 - **Only the correct choice's typings are accepted as a valid prefix.** Any divergence (including the full text of a wrong choice) is treated as a mistype: the input flashes red and the buffer resets to zero, and the run does not advance. The player can only proceed by typing the correct answer.
 - Matching is **case-insensitive**.
-- A single logical answer may accept **multiple typed spellings**.
-- In JA mode, romanized aliases may be accepted for the same answer (for example `tokyo` and `toukyou`, `osaka` and `oosaka`). Question data may declare these explicitly with `ja_typings`. When a choice has a well-established official Latin spelling (for example a proper name), that spelling may also be accepted. The implementation may also derive additional common ASCII aliases from kana as long as it never reveals the answer string before typing.
+- A single logical answer may accept **multiple typed spellings** only when they are genuine answer/readings variants.
+- In JA mode, `ja_typings` stores one IME-wapuro-correct spelling per kana reading. Runtime canonicalization absorbs input-method variants that produce the same kana, so data must not enumerate redundant pairs such as `ninnshou` / `ninshou`, `dairanntou` / `dairantou`, or `thi` / `texi`. Long vowels are strict: `toukyou` and `tokyo`, or `oosaka` and `osaka`, are not equivalent. Multiple `ja_typings` entries are reserved for true reading variants such as `nihon` / `nippon`; official Latin spellings are not added merely as alternate romanization for the same Japanese reading.
 - **Input matching: canonical romaji normalization (#96, expanded in v0.7.0).** In **JA mode only**, both the player's typed input and every `ja_typings` candidate are mapped to a shared canonical form before prefix / equality comparison. EN mode (and any future non-JA mode) uses plain lowercase comparison so that English words containing Japanese-romaji substrings are not silently rewritten. Type-globe defines IME-wapuro as the "正" (canonical) typing — every accepted input must produce the target kana when typed through a real IME. Details:
     - Rules are substring rewrites on the lowercased input. They are applied in a fixed order so chained patterns collapse correctly (`tsushi` → `tusi`, `shixya` → `sixya` → `sya`).
-    - **Punctuation strip** (IME 全角ショートカット): `/` (・), `,` (、), `.` (。) → empty.
+    - **Punctuation shortcut keys** (IME 全角ショートカット): `/` (・), `,` (、), `.` (。) are preserved and must match positionally. They also act as IME commit boundaries, so a preceding single `n` canonicalizes to `nn`.
     - **Non-standard digraph IME alt-paths**:
         - ファ系: `huxa/hula/fuxa/fula → fa` etc. for `fi/fe/fo` too
         - ヴァ系: `vuxa/vula → va`, etc.
         - ティ系: `texi/teli → thi`
-        - ディ/ぢ系: `dexi/deli/dhi/dji/dzi → di`
+        - ディ系: `dexi/deli → dhi`
+        - ぢ系: `dji/dzi → di`; `di` and `dhi` are distinct because IME maps them to ぢ and ディ
         - ヅ: `dzu → du`
         - ウェ系: `uxe/ule → we`, `uxi/uli → wi`, `uxo/ulo → wo` (`uxa/ula → wa` excluded: ウァ ≠ ワ)
     - **Yoon (拗音) Hepburn ↔ Kunrei**: `sha/sya`, `shu/syu`, `sho/syo`, `cha/tya`, `chu/tyu`, `cho/tyo`, `ja/zya`, `ju/zyu`, `jo/zyo`.
@@ -82,7 +83,7 @@ Quiz is paired with score-attack modes; listening is paired with the RPG. The tw
     - **Sokuon (促音) explicit-small-tsu path**: `ltu/xtu/ltsu/xtsu` followed by a consonant `C` collapses to `CC`. So `rokeltsuto ≡ roketto`, `maltsucha ≡ matcha ≡ mattya`.
     - **n-run handling**: a `nn` pair is preserved before a vowel / `y` / `n` (so ん+母音 and ん+ナ行 stay distinct), and collapsed to `n` before a consonant or end-of-word. Runs of 3+ n's are **not** collapsed — `sennorikyuu` (2-n, would type as せんおりきゅう in IME) and `sennnorikyuu` (3-n, the correct せんのりきゅう) canonicalize to different strings. Data must register the IME-correct form.
     - **Pass-through**: katakana `ー` → `-` (data registers `-`); long-vowel hiragana (`ou`/`oo`/`uu`) is preserved.
-    - Consequence: a player may type Hepburn or Kunrei single/yoon, the explicit-small-kana IME paths (`ltsu`, `xtu`, `kixya`, `huxa`, `uxe`, etc.), or the punctuation-shortcut keys (`/`, `,`, `.`), and any path that produces the target kana through a real IME is accepted. The data file keeps a single canonical entry per choice.
+    - Consequence: a player may type Hepburn or Kunrei single/yoon, the explicit-small-kana IME paths (`ltsu`, `xtu`, `kixya`, `huxa`, `uxe`, etc.), or the punctuation-shortcut keys (`/`, `,`, `.`), and any path that produces the target kana through a real IME is accepted. The data file keeps a single canonical entry per kana reading.
     - The build-time prefix-conflict linter (`io::validator`) also compares in canonical space, so real conflicts (e.g. `to` vs `tokyo`) are still detected while spurious conflicts caused only by spelling variants are no longer flagged.
     - **Data coverage test** (`src/game/quiz.rs::data_typings_are_prefix_typeable`): every registered `ja_typings` entry is type-tested prefix-by-prefix (1 char → ... → full) through `is_valid_correct_typed_prefix`. ~40 ms in release builds; runs in the default test suite, so any future data edit that breaks IME typability fails CI.
 - Score = function(CPM, accuracy, correctness).
@@ -195,7 +196,7 @@ Recommended migration order for existing JA quiz banks:
 2. Rewrite only `question_text.ja` into kanji/katakana mixed display text.
 3. Run stats/lint checks and manually inspect hiragana-heavy leftovers with `scripts/list_suspect_question_texts.py`.
 
-Validation: no two choices in a question may share a prefix that would make an auto-confirm ambiguous. Enforced by `cargo run --bin lint-questions -- <files>` (CI job `lint-data`) and by the unit tests `shipped_question_data_is_clean_{ja,en}` in `src/io/validator.rs`. The same lint binary also flags `ja_typings redundant-variant` — multiple typings in the same choice that collapse to the same canonical form (e.g. `gandhi-` / `gandi-`, where `dhi → di` makes them identical). Such duplicates are noise after v0.7.0's canonical_romaji expansion; only register one form per canonical group. Genuine reading variants (`日本` = `nihon` / `nippon`) are preserved because their canonical forms differ (the geminate `pp` distinguishes them).
+Validation: no two choices in a question may share a prefix that would make an auto-confirm ambiguous. Enforced by `cargo run --bin lint-questions -- <files>` (CI job `lint-data`) and by the unit tests `shipped_question_data_is_clean_{ja,en}` in `src/io/validator.rs`. The same lint binary also flags `ja_typings redundant-variant` — multiple typings in the same choice that collapse to the same canonical form (e.g. `ninnshou` / `ninshou`, where redundant `nn` before a consonant collapses to `n`). Such duplicates are noise after v0.7.0's canonical_romaji expansion; only register one form per canonical group. Genuine reading variants (`日本` = `nihon` / `nippon`) are preserved because their canonical forms differ (the geminate `pp` distinguishes them).
 
 ### Listening prompt (`data/listening_<lang>.yaml`)
 

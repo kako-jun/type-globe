@@ -2,12 +2,39 @@
   {
     "id": "q0326",
     "genre": "anime",
-    "question_text": {"ja": "『ONE PIECE』の作者は誰?", "en": "Who is the author of 'ONE PIECE'?"},
+    "question_text": {
+      "ja": "『ONE PIECE』の作者は誰?",
+      "en": "Who is the author of 'ONE PIECE'?"
+    },
     "choices": [
-      {"ja": "尾田栄一郎", "en": "Eiichiro Oda", "ja_typings": ["odaeiichiro"]},
-      {"ja": "鳥山明", "en": "Akira Toriyama", "ja_typings": ["toriyamaakira"]},
-      {"ja": "岸本斉史", "en": "Masashi Kishimoto", "ja_typings": ["kishimotomasashi"]},
-      {"ja": "久保帯人", "en": "Tite Kubo", "ja_typings": ["kubotaito"]}
+      {
+        "ja": "尾田栄一郎",
+        "en": "Eiichiro Oda",
+        "ja_typings": [
+          "odaeiichiro"
+        ]
+      },
+      {
+        "ja": "鳥山明",
+        "en": "Akira Toriyama",
+        "ja_typings": [
+          "toriyamaakira"
+        ]
+      },
+      {
+        "ja": "岸本斉史",
+        "en": "Masashi Kishimoto",
+        "ja_typings": [
+          "kishimotomasashi"
+        ]
+      },
+      {
+        "ja": "久保帯人",
+        "en": "Tite Kubo",
+        "ja_typings": [
+          "kubotaito"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -16,12 +43,39 @@
   {
     "id": "q0327",
     "genre": "anime",
-    "question_text": {"ja": "『NARUTO -ナルト-』の作者は誰?", "en": "Who is the author of 'NARUTO'?"},
+    "question_text": {
+      "ja": "『NARUTO -ナルト-』の作者は誰?",
+      "en": "Who is the author of 'NARUTO'?"
+    },
     "choices": [
-      {"ja": "岸本斉史", "en": "Masashi Kishimoto", "ja_typings": ["kishimotomasashi"]},
-      {"ja": "尾田栄一郎", "en": "Eiichiro Oda", "ja_typings": ["odaeiichiro"]},
-      {"ja": "冨樫義博", "en": "Yoshihiro Togashi", "ja_typings": ["togashiyoshihiro"]},
-      {"ja": "井上雄彦", "en": "Takehiko Inoue", "ja_typings": ["inouetakehiko"]}
+      {
+        "ja": "岸本斉史",
+        "en": "Masashi Kishimoto",
+        "ja_typings": [
+          "kishimotomasashi"
+        ]
+      },
+      {
+        "ja": "尾田栄一郎",
+        "en": "Eiichiro Oda",
+        "ja_typings": [
+          "odaeiichiro"
+        ]
+      },
+      {
+        "ja": "冨樫義博",
+        "en": "Yoshihiro Togashi",
+        "ja_typings": [
+          "togashiyoshihiro"
+        ]
+      },
+      {
+        "ja": "井上雄彦",
+        "en": "Takehiko Inoue",
+        "ja_typings": [
+          "inouetakehiko"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -30,12 +84,39 @@
   {
     "id": "q0328",
     "genre": "anime",
-    "question_text": {"ja": "『ドラゴンボール』の作者は誰?", "en": "Who is the author of 'Dragon Ball'?"},
+    "question_text": {
+      "ja": "『ドラゴンボール』の作者は誰?",
+      "en": "Who is the author of 'Dragon Ball'?"
+    },
     "choices": [
-      {"ja": "鳥山明", "en": "Akira Toriyama", "ja_typings": ["toriyamaakira"]},
-      {"ja": "尾田栄一郎", "en": "Eiichiro Oda", "ja_typings": ["odaeiichiro"]},
-      {"ja": "原哲夫", "en": "Tetsuo Hara", "ja_typings": ["haratetsuo"]},
-      {"ja": "車田正美", "en": "Masami Kurumada", "ja_typings": ["kurumadamasami"]}
+      {
+        "ja": "鳥山明",
+        "en": "Akira Toriyama",
+        "ja_typings": [
+          "toriyamaakira"
+        ]
+      },
+      {
+        "ja": "尾田栄一郎",
+        "en": "Eiichiro Oda",
+        "ja_typings": [
+          "odaeiichiro"
+        ]
+      },
+      {
+        "ja": "原哲夫",
+        "en": "Tetsuo Hara",
+        "ja_typings": [
+          "haratetsuo"
+        ]
+      },
+      {
+        "ja": "車田正美",
+        "en": "Masami Kurumada",
+        "ja_typings": [
+          "kurumadamasami"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -44,12 +125,39 @@
   {
     "id": "q0329",
     "genre": "anime",
-    "question_text": {"ja": "『BLEACH』の作者は誰?", "en": "Who is the author of 'BLEACH'?"},
+    "question_text": {
+      "ja": "『BLEACH』の作者は誰?",
+      "en": "Who is the author of 'BLEACH'?"
+    },
     "choices": [
-      {"ja": "久保帯人", "en": "Tite Kubo", "ja_typings": ["kubotaito"]},
-      {"ja": "岸本斉史", "en": "Masashi Kishimoto", "ja_typings": ["kishimotomasashi"]},
-      {"ja": "尾田栄一郎", "en": "Eiichiro Oda", "ja_typings": ["odaeiichiro"]},
-      {"ja": "和月伸宏", "en": "Nobuhiro Watsuki", "ja_typings": ["watsukinobuhiro"]}
+      {
+        "ja": "久保帯人",
+        "en": "Tite Kubo",
+        "ja_typings": [
+          "kubotaito"
+        ]
+      },
+      {
+        "ja": "岸本斉史",
+        "en": "Masashi Kishimoto",
+        "ja_typings": [
+          "kishimotomasashi"
+        ]
+      },
+      {
+        "ja": "尾田栄一郎",
+        "en": "Eiichiro Oda",
+        "ja_typings": [
+          "odaeiichiro"
+        ]
+      },
+      {
+        "ja": "和月伸宏",
+        "en": "Nobuhiro Watsuki",
+        "ja_typings": [
+          "watsukinobuhiro"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -58,12 +166,39 @@
   {
     "id": "q0330",
     "genre": "anime",
-    "question_text": {"ja": "『進撃の巨人』の作者は誰?", "en": "Who is the author of 'Attack on Titan'?"},
+    "question_text": {
+      "ja": "『進撃の巨人』の作者は誰?",
+      "en": "Who is the author of 'Attack on Titan'?"
+    },
     "choices": [
-      {"ja": "諫山創", "en": "Hajime Isayama", "ja_typings": ["isayamahajime"]},
-      {"ja": "藤本タツキ", "en": "Tatsuki Fujimoto", "ja_typings": ["fujimototatsuki"]},
-      {"ja": "芥見下々", "en": "Gege Akutami", "ja_typings": ["akutamigege"]},
-      {"ja": "吾峠呼世晴", "en": "Koyoharu Gotouge", "ja_typings": ["gotougekoyoharu","gotogekoyoharu"]}
+      {
+        "ja": "諫山創",
+        "en": "Hajime Isayama",
+        "ja_typings": [
+          "isayamahajime"
+        ]
+      },
+      {
+        "ja": "藤本タツキ",
+        "en": "Tatsuki Fujimoto",
+        "ja_typings": [
+          "fujimototatsuki"
+        ]
+      },
+      {
+        "ja": "芥見下々",
+        "en": "Gege Akutami",
+        "ja_typings": [
+          "akutamigege"
+        ]
+      },
+      {
+        "ja": "吾峠呼世晴",
+        "en": "Koyoharu Gotouge",
+        "ja_typings": [
+          "gotougekoyoharu"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -72,12 +207,39 @@
   {
     "id": "q0331",
     "genre": "anime",
-    "question_text": {"ja": "『鬼滅の刃』の作者は誰?", "en": "Who is the author of 'Demon Slayer'?"},
+    "question_text": {
+      "ja": "『鬼滅の刃』の作者は誰?",
+      "en": "Who is the author of 'Demon Slayer'?"
+    },
     "choices": [
-      {"ja": "吾峠呼世晴", "en": "Koyoharu Gotouge", "ja_typings": ["gotougekoyoharu","gotogekoyoharu"]},
-      {"ja": "諫山創", "en": "Hajime Isayama", "ja_typings": ["isayamahajime"]},
-      {"ja": "芥見下々", "en": "Gege Akutami", "ja_typings": ["akutamigege"]},
-      {"ja": "堀越耕平", "en": "Kohei Horikoshi", "ja_typings": ["horikoshikohei","horikoshikouhei"]}
+      {
+        "ja": "吾峠呼世晴",
+        "en": "Koyoharu Gotouge",
+        "ja_typings": [
+          "gotougekoyoharu"
+        ]
+      },
+      {
+        "ja": "諫山創",
+        "en": "Hajime Isayama",
+        "ja_typings": [
+          "isayamahajime"
+        ]
+      },
+      {
+        "ja": "芥見下々",
+        "en": "Gege Akutami",
+        "ja_typings": [
+          "akutamigege"
+        ]
+      },
+      {
+        "ja": "堀越耕平",
+        "en": "Kohei Horikoshi",
+        "ja_typings": [
+          "horikoshikouhei"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -86,12 +248,39 @@
   {
     "id": "q0332",
     "genre": "anime",
-    "question_text": {"ja": "『呪術廻戦』の作者は誰?", "en": "Who is the author of 'Jujutsu Kaisen'?"},
+    "question_text": {
+      "ja": "『呪術廻戦』の作者は誰?",
+      "en": "Who is the author of 'Jujutsu Kaisen'?"
+    },
     "choices": [
-      {"ja": "芥見下々", "en": "Gege Akutami", "ja_typings": ["akutamigege"]},
-      {"ja": "藤本タツキ", "en": "Tatsuki Fujimoto", "ja_typings": ["fujimototatsuki"]},
-      {"ja": "吾峠呼世晴", "en": "Koyoharu Gotouge", "ja_typings": ["gotougekoyoharu","gotogekoyoharu"]},
-      {"ja": "堀越耕平", "en": "Kohei Horikoshi", "ja_typings": ["horikoshikohei","horikoshikouhei"]}
+      {
+        "ja": "芥見下々",
+        "en": "Gege Akutami",
+        "ja_typings": [
+          "akutamigege"
+        ]
+      },
+      {
+        "ja": "藤本タツキ",
+        "en": "Tatsuki Fujimoto",
+        "ja_typings": [
+          "fujimototatsuki"
+        ]
+      },
+      {
+        "ja": "吾峠呼世晴",
+        "en": "Koyoharu Gotouge",
+        "ja_typings": [
+          "gotougekoyoharu"
+        ]
+      },
+      {
+        "ja": "堀越耕平",
+        "en": "Kohei Horikoshi",
+        "ja_typings": [
+          "horikoshikouhei"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -100,12 +289,39 @@
   {
     "id": "q0333",
     "genre": "anime",
-    "question_text": {"ja": "『チェンソーマン』の作者は誰?", "en": "Who is the author of 'Chainsaw Man'?"},
+    "question_text": {
+      "ja": "『チェンソーマン』の作者は誰?",
+      "en": "Who is the author of 'Chainsaw Man'?"
+    },
     "choices": [
-      {"ja": "藤本タツキ", "en": "Tatsuki Fujimoto", "ja_typings": ["fujimototatsuki"]},
-      {"ja": "芥見下々", "en": "Gege Akutami", "ja_typings": ["akutamigege"]},
-      {"ja": "諫山創", "en": "Hajime Isayama", "ja_typings": ["isayamahajime"]},
-      {"ja": "石田スイ", "en": "Sui Ishida", "ja_typings": ["ishidasui"]}
+      {
+        "ja": "藤本タツキ",
+        "en": "Tatsuki Fujimoto",
+        "ja_typings": [
+          "fujimototatsuki"
+        ]
+      },
+      {
+        "ja": "芥見下々",
+        "en": "Gege Akutami",
+        "ja_typings": [
+          "akutamigege"
+        ]
+      },
+      {
+        "ja": "諫山創",
+        "en": "Hajime Isayama",
+        "ja_typings": [
+          "isayamahajime"
+        ]
+      },
+      {
+        "ja": "石田スイ",
+        "en": "Sui Ishida",
+        "ja_typings": [
+          "ishidasui"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -114,12 +330,39 @@
   {
     "id": "q0334",
     "genre": "anime",
-    "question_text": {"ja": "『僕のヒーローアカデミア』の作者は誰?", "en": "Who is the author of 'My Hero Academia'?"},
+    "question_text": {
+      "ja": "『僕のヒーローアカデミア』の作者は誰?",
+      "en": "Who is the author of 'My Hero Academia'?"
+    },
     "choices": [
-      {"ja": "堀越耕平", "en": "Kohei Horikoshi", "ja_typings": ["horikoshikohei","horikoshikouhei"]},
-      {"ja": "芥見下々", "en": "Gege Akutami", "ja_typings": ["akutamigege"]},
-      {"ja": "藤本タツキ", "en": "Tatsuki Fujimoto", "ja_typings": ["fujimototatsuki"]},
-      {"ja": "古舘春一", "en": "Haruichi Furudate", "ja_typings": ["furudateharuichi"]}
+      {
+        "ja": "堀越耕平",
+        "en": "Kohei Horikoshi",
+        "ja_typings": [
+          "horikoshikouhei"
+        ]
+      },
+      {
+        "ja": "芥見下々",
+        "en": "Gege Akutami",
+        "ja_typings": [
+          "akutamigege"
+        ]
+      },
+      {
+        "ja": "藤本タツキ",
+        "en": "Tatsuki Fujimoto",
+        "ja_typings": [
+          "fujimototatsuki"
+        ]
+      },
+      {
+        "ja": "古舘春一",
+        "en": "Haruichi Furudate",
+        "ja_typings": [
+          "furudateharuichi"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -128,12 +371,39 @@
   {
     "id": "q0335",
     "genre": "anime",
-    "question_text": {"ja": "『HUNTER×HUNTER』の作者は誰?", "en": "Who is the author of 'HUNTER×HUNTER'?"},
+    "question_text": {
+      "ja": "『HUNTER×HUNTER』の作者は誰?",
+      "en": "Who is the author of 'HUNTER×HUNTER'?"
+    },
     "choices": [
-      {"ja": "冨樫義博", "en": "Yoshihiro Togashi", "ja_typings": ["togashiyoshihiro"]},
-      {"ja": "尾田栄一郎", "en": "Eiichiro Oda", "ja_typings": ["odaeiichiro"]},
-      {"ja": "岸本斉史", "en": "Masashi Kishimoto", "ja_typings": ["kishimotomasashi"]},
-      {"ja": "井上雄彦", "en": "Takehiko Inoue", "ja_typings": ["inouetakehiko"]}
+      {
+        "ja": "冨樫義博",
+        "en": "Yoshihiro Togashi",
+        "ja_typings": [
+          "togashiyoshihiro"
+        ]
+      },
+      {
+        "ja": "尾田栄一郎",
+        "en": "Eiichiro Oda",
+        "ja_typings": [
+          "odaeiichiro"
+        ]
+      },
+      {
+        "ja": "岸本斉史",
+        "en": "Masashi Kishimoto",
+        "ja_typings": [
+          "kishimotomasashi"
+        ]
+      },
+      {
+        "ja": "井上雄彦",
+        "en": "Takehiko Inoue",
+        "ja_typings": [
+          "inouetakehiko"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -142,12 +412,39 @@
   {
     "id": "q0336",
     "genre": "anime",
-    "question_text": {"ja": "『SLAM DUNK』の作者は誰?", "en": "Who is the author of 'SLAM DUNK'?"},
+    "question_text": {
+      "ja": "『SLAM DUNK』の作者は誰?",
+      "en": "Who is the author of 'SLAM DUNK'?"
+    },
     "choices": [
-      {"ja": "井上雄彦", "en": "Takehiko Inoue", "ja_typings": ["inouetakehiko"]},
-      {"ja": "高橋陽一", "en": "Yoichi Takahashi", "ja_typings": ["takahashiyoichi","takahashiyouichi"]},
-      {"ja": "あだち充", "en": "Mitsuru Adachi", "ja_typings": ["adachimitsuru"]},
-      {"ja": "森川ジョージ", "en": "George Morikawa", "ja_typings": ["morikawajo-ji"]}
+      {
+        "ja": "井上雄彦",
+        "en": "Takehiko Inoue",
+        "ja_typings": [
+          "inouetakehiko"
+        ]
+      },
+      {
+        "ja": "高橋陽一",
+        "en": "Yoichi Takahashi",
+        "ja_typings": [
+          "takahashiyouichi"
+        ]
+      },
+      {
+        "ja": "あだち充",
+        "en": "Mitsuru Adachi",
+        "ja_typings": [
+          "adachimitsuru"
+        ]
+      },
+      {
+        "ja": "森川ジョージ",
+        "en": "George Morikawa",
+        "ja_typings": [
+          "morikawajo-ji"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -156,12 +453,39 @@
   {
     "id": "q0337",
     "genre": "anime",
-    "question_text": {"ja": "『DEATH NOTE』の原作者(原案・原作)は誰?", "en": "Who wrote the story of 'DEATH NOTE'?"},
+    "question_text": {
+      "ja": "『DEATH NOTE』の原作者(原案・原作)は誰?",
+      "en": "Who wrote the story of 'DEATH NOTE'?"
+    },
     "choices": [
-      {"ja": "大場つぐみ", "en": "Tsugumi Ohba", "ja_typings": ["ohbatsugumi","obatsugumi"]},
-      {"ja": "小畑健", "en": "Takeshi Obata", "ja_typings": ["obatatakeshi"]},
-      {"ja": "尾田栄一郎", "en": "Eiichiro Oda", "ja_typings": ["odaeiichiro"]},
-      {"ja": "荒木飛呂彦", "en": "Hirohiko Araki", "ja_typings": ["arakihirohiko"]}
+      {
+        "ja": "大場つぐみ",
+        "en": "Tsugumi Ohba",
+        "ja_typings": [
+          "oobatsugumi"
+        ]
+      },
+      {
+        "ja": "小畑健",
+        "en": "Takeshi Obata",
+        "ja_typings": [
+          "obatatakeshi"
+        ]
+      },
+      {
+        "ja": "尾田栄一郎",
+        "en": "Eiichiro Oda",
+        "ja_typings": [
+          "odaeiichiro"
+        ]
+      },
+      {
+        "ja": "荒木飛呂彦",
+        "en": "Hirohiko Araki",
+        "ja_typings": [
+          "arakihirohiko"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -170,12 +494,39 @@
   {
     "id": "q0338",
     "genre": "anime",
-    "question_text": {"ja": "『ジョジョの奇妙な冒険』の作者は誰?", "en": "Who is the author of 'JoJo's Bizarre Adventure'?"},
+    "question_text": {
+      "ja": "『ジョジョの奇妙な冒険』の作者は誰?",
+      "en": "Who is the author of 'JoJo's Bizarre Adventure'?"
+    },
     "choices": [
-      {"ja": "荒木飛呂彦", "en": "Hirohiko Araki", "ja_typings": ["arakihirohiko"]},
-      {"ja": "原哲夫", "en": "Tetsuo Hara", "ja_typings": ["haratetsuo"]},
-      {"ja": "車田正美", "en": "Masami Kurumada", "ja_typings": ["kurumadamasami"]},
-      {"ja": "井上雄彦", "en": "Takehiko Inoue", "ja_typings": ["inouetakehiko"]}
+      {
+        "ja": "荒木飛呂彦",
+        "en": "Hirohiko Araki",
+        "ja_typings": [
+          "arakihirohiko"
+        ]
+      },
+      {
+        "ja": "原哲夫",
+        "en": "Tetsuo Hara",
+        "ja_typings": [
+          "haratetsuo"
+        ]
+      },
+      {
+        "ja": "車田正美",
+        "en": "Masami Kurumada",
+        "ja_typings": [
+          "kurumadamasami"
+        ]
+      },
+      {
+        "ja": "井上雄彦",
+        "en": "Takehiko Inoue",
+        "ja_typings": [
+          "inouetakehiko"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -184,12 +535,39 @@
   {
     "id": "q0339",
     "genre": "anime",
-    "question_text": {"ja": "『新世紀エヴァンゲリオン』の監督は誰?", "en": "Who directed 'Neon Genesis Evangelion'?"},
+    "question_text": {
+      "ja": "『新世紀エヴァンゲリオン』の監督は誰?",
+      "en": "Who directed 'Neon Genesis Evangelion'?"
+    },
     "choices": [
-      {"ja": "庵野秀明", "en": "Hideaki Anno", "ja_typings": ["annohideaki"]},
-      {"ja": "富野由悠季", "en": "Yoshiyuki Tomino", "ja_typings": ["tominoyoshiyuki"]},
-      {"ja": "押井守", "en": "Mamoru Oshii", "ja_typings": ["oshiimamoru"]},
-      {"ja": "今敏", "en": "Satoshi Kon", "ja_typings": ["konsatoshi"]}
+      {
+        "ja": "庵野秀明",
+        "en": "Hideaki Anno",
+        "ja_typings": [
+          "annohideaki"
+        ]
+      },
+      {
+        "ja": "富野由悠季",
+        "en": "Yoshiyuki Tomino",
+        "ja_typings": [
+          "tominoyoshiyuki"
+        ]
+      },
+      {
+        "ja": "押井守",
+        "en": "Mamoru Oshii",
+        "ja_typings": [
+          "oshiimamoru"
+        ]
+      },
+      {
+        "ja": "今敏",
+        "en": "Satoshi Kon",
+        "ja_typings": [
+          "konsatoshi"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -198,12 +576,39 @@
   {
     "id": "q0340",
     "genre": "anime",
-    "question_text": {"ja": "『機動戦士ガンダム』の生みの親(原作・総監督)は誰?", "en": "Who created 'Mobile Suit Gundam'?"},
+    "question_text": {
+      "ja": "『機動戦士ガンダム』の生みの親(原作・総監督)は誰?",
+      "en": "Who created 'Mobile Suit Gundam'?"
+    },
     "choices": [
-      {"ja": "富野由悠季", "en": "Yoshiyuki Tomino", "ja_typings": ["tominoyoshiyuki"]},
-      {"ja": "庵野秀明", "en": "Hideaki Anno", "ja_typings": ["annohideaki"]},
-      {"ja": "宮崎駿", "en": "Hayao Miyazaki", "ja_typings": ["miyazakihayao"]},
-      {"ja": "押井守", "en": "Mamoru Oshii", "ja_typings": ["oshiimamoru"]}
+      {
+        "ja": "富野由悠季",
+        "en": "Yoshiyuki Tomino",
+        "ja_typings": [
+          "tominoyoshiyuki"
+        ]
+      },
+      {
+        "ja": "庵野秀明",
+        "en": "Hideaki Anno",
+        "ja_typings": [
+          "annohideaki"
+        ]
+      },
+      {
+        "ja": "宮崎駿",
+        "en": "Hayao Miyazaki",
+        "ja_typings": [
+          "miyazakihayao"
+        ]
+      },
+      {
+        "ja": "押井守",
+        "en": "Mamoru Oshii",
+        "ja_typings": [
+          "oshiimamoru"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -212,12 +617,39 @@
   {
     "id": "q0341",
     "genre": "anime",
-    "question_text": {"ja": "『千と千尋の神隠し』の監督は誰?", "en": "Who directed 'Spirited Away'?"},
+    "question_text": {
+      "ja": "『千と千尋の神隠し』の監督は誰?",
+      "en": "Who directed 'Spirited Away'?"
+    },
     "choices": [
-      {"ja": "宮崎駿", "en": "Hayao Miyazaki", "ja_typings": ["miyazakihayao"]},
-      {"ja": "高畑勲", "en": "Isao Takahata", "ja_typings": ["takahataisao"]},
-      {"ja": "細田守", "en": "Mamoru Hosoda", "ja_typings": ["hosodamamoru"]},
-      {"ja": "新海誠", "en": "Makoto Shinkai", "ja_typings": ["shinkaimakoto"]}
+      {
+        "ja": "宮崎駿",
+        "en": "Hayao Miyazaki",
+        "ja_typings": [
+          "miyazakihayao"
+        ]
+      },
+      {
+        "ja": "高畑勲",
+        "en": "Isao Takahata",
+        "ja_typings": [
+          "takahataisao"
+        ]
+      },
+      {
+        "ja": "細田守",
+        "en": "Mamoru Hosoda",
+        "ja_typings": [
+          "hosodamamoru"
+        ]
+      },
+      {
+        "ja": "新海誠",
+        "en": "Makoto Shinkai",
+        "ja_typings": [
+          "shinkaimakoto"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -226,12 +658,39 @@
   {
     "id": "q0342",
     "genre": "anime",
-    "question_text": {"ja": "『もののけ姫』の監督は誰?", "en": "Who directed 'Princess Mononoke'?"},
+    "question_text": {
+      "ja": "『もののけ姫』の監督は誰?",
+      "en": "Who directed 'Princess Mononoke'?"
+    },
     "choices": [
-      {"ja": "宮崎駿", "en": "Hayao Miyazaki", "ja_typings": ["miyazakihayao"]},
-      {"ja": "高畑勲", "en": "Isao Takahata", "ja_typings": ["takahataisao"]},
-      {"ja": "押井守", "en": "Mamoru Oshii", "ja_typings": ["oshiimamoru"]},
-      {"ja": "庵野秀明", "en": "Hideaki Anno", "ja_typings": ["annohideaki"]}
+      {
+        "ja": "宮崎駿",
+        "en": "Hayao Miyazaki",
+        "ja_typings": [
+          "miyazakihayao"
+        ]
+      },
+      {
+        "ja": "高畑勲",
+        "en": "Isao Takahata",
+        "ja_typings": [
+          "takahataisao"
+        ]
+      },
+      {
+        "ja": "押井守",
+        "en": "Mamoru Oshii",
+        "ja_typings": [
+          "oshiimamoru"
+        ]
+      },
+      {
+        "ja": "庵野秀明",
+        "en": "Hideaki Anno",
+        "ja_typings": [
+          "annohideaki"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -240,12 +699,39 @@
   {
     "id": "q0343",
     "genre": "anime",
-    "question_text": {"ja": "『火垂るの墓』の監督は誰?", "en": "Who directed 'Grave of the Fireflies'?"},
+    "question_text": {
+      "ja": "『火垂るの墓』の監督は誰?",
+      "en": "Who directed 'Grave of the Fireflies'?"
+    },
     "choices": [
-      {"ja": "高畑勲", "en": "Isao Takahata", "ja_typings": ["takahataisao"]},
-      {"ja": "宮崎駿", "en": "Hayao Miyazaki", "ja_typings": ["miyazakihayao"]},
-      {"ja": "細田守", "en": "Mamoru Hosoda", "ja_typings": ["hosodamamoru"]},
-      {"ja": "新海誠", "en": "Makoto Shinkai", "ja_typings": ["shinkaimakoto"]}
+      {
+        "ja": "高畑勲",
+        "en": "Isao Takahata",
+        "ja_typings": [
+          "takahataisao"
+        ]
+      },
+      {
+        "ja": "宮崎駿",
+        "en": "Hayao Miyazaki",
+        "ja_typings": [
+          "miyazakihayao"
+        ]
+      },
+      {
+        "ja": "細田守",
+        "en": "Mamoru Hosoda",
+        "ja_typings": [
+          "hosodamamoru"
+        ]
+      },
+      {
+        "ja": "新海誠",
+        "en": "Makoto Shinkai",
+        "ja_typings": [
+          "shinkaimakoto"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -254,12 +740,39 @@
   {
     "id": "q0344",
     "genre": "anime",
-    "question_text": {"ja": "『君の名は。』の監督は誰?", "en": "Who directed 'Your Name.'?"},
+    "question_text": {
+      "ja": "『君の名は。』の監督は誰?",
+      "en": "Who directed 'Your Name.'?"
+    },
     "choices": [
-      {"ja": "新海誠", "en": "Makoto Shinkai", "ja_typings": ["shinkaimakoto"]},
-      {"ja": "細田守", "en": "Mamoru Hosoda", "ja_typings": ["hosodamamoru"]},
-      {"ja": "宮崎駿", "en": "Hayao Miyazaki", "ja_typings": ["miyazakihayao"]},
-      {"ja": "湯浅政明", "en": "Masaaki Yuasa", "ja_typings": ["yuasamasaaki"]}
+      {
+        "ja": "新海誠",
+        "en": "Makoto Shinkai",
+        "ja_typings": [
+          "shinkaimakoto"
+        ]
+      },
+      {
+        "ja": "細田守",
+        "en": "Mamoru Hosoda",
+        "ja_typings": [
+          "hosodamamoru"
+        ]
+      },
+      {
+        "ja": "宮崎駿",
+        "en": "Hayao Miyazaki",
+        "ja_typings": [
+          "miyazakihayao"
+        ]
+      },
+      {
+        "ja": "湯浅政明",
+        "en": "Masaaki Yuasa",
+        "ja_typings": [
+          "yuasamasaaki"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -268,12 +781,39 @@
   {
     "id": "q0345",
     "genre": "anime",
-    "question_text": {"ja": "『時をかける少女』(2006年劇場アニメ)の監督は誰?", "en": "Who directed the 2006 anime film 'The Girl Who Leapt Through Time'?"},
+    "question_text": {
+      "ja": "『時をかける少女』(2006年劇場アニメ)の監督は誰?",
+      "en": "Who directed the 2006 anime film 'The Girl Who Leapt Through Time'?"
+    },
     "choices": [
-      {"ja": "細田守", "en": "Mamoru Hosoda", "ja_typings": ["hosodamamoru"]},
-      {"ja": "新海誠", "en": "Makoto Shinkai", "ja_typings": ["shinkaimakoto"]},
-      {"ja": "今敏", "en": "Satoshi Kon", "ja_typings": ["konsatoshi"]},
-      {"ja": "宮崎駿", "en": "Hayao Miyazaki", "ja_typings": ["miyazakihayao"]}
+      {
+        "ja": "細田守",
+        "en": "Mamoru Hosoda",
+        "ja_typings": [
+          "hosodamamoru"
+        ]
+      },
+      {
+        "ja": "新海誠",
+        "en": "Makoto Shinkai",
+        "ja_typings": [
+          "shinkaimakoto"
+        ]
+      },
+      {
+        "ja": "今敏",
+        "en": "Satoshi Kon",
+        "ja_typings": [
+          "konsatoshi"
+        ]
+      },
+      {
+        "ja": "宮崎駿",
+        "en": "Hayao Miyazaki",
+        "ja_typings": [
+          "miyazakihayao"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -282,12 +822,39 @@
   {
     "id": "q0346",
     "genre": "anime",
-    "question_text": {"ja": "『攻殻機動隊』(1995年劇場版)の監督は誰?", "en": "Who directed the 1995 film 'Ghost in the Shell'?"},
+    "question_text": {
+      "ja": "『攻殻機動隊』(1995年劇場版)の監督は誰?",
+      "en": "Who directed the 1995 film 'Ghost in the Shell'?"
+    },
     "choices": [
-      {"ja": "押井守", "en": "Mamoru Oshii", "ja_typings": ["oshiimamoru"]},
-      {"ja": "庵野秀明", "en": "Hideaki Anno", "ja_typings": ["annohideaki"]},
-      {"ja": "今敏", "en": "Satoshi Kon", "ja_typings": ["konsatoshi"]},
-      {"ja": "大友克洋", "en": "Katsuhiro Otomo", "ja_typings": ["otomokatsuhiro","ootomokatsuhiro"]}
+      {
+        "ja": "押井守",
+        "en": "Mamoru Oshii",
+        "ja_typings": [
+          "oshiimamoru"
+        ]
+      },
+      {
+        "ja": "庵野秀明",
+        "en": "Hideaki Anno",
+        "ja_typings": [
+          "annohideaki"
+        ]
+      },
+      {
+        "ja": "今敏",
+        "en": "Satoshi Kon",
+        "ja_typings": [
+          "konsatoshi"
+        ]
+      },
+      {
+        "ja": "大友克洋",
+        "en": "Katsuhiro Otomo",
+        "ja_typings": [
+          "ootomokatsuhiro"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -296,12 +863,39 @@
   {
     "id": "q0347",
     "genre": "anime",
-    "question_text": {"ja": "『AKIRA』の原作・監督は誰?", "en": "Who is the original creator and director of 'AKIRA'?"},
+    "question_text": {
+      "ja": "『AKIRA』の原作・監督は誰?",
+      "en": "Who is the original creator and director of 'AKIRA'?"
+    },
     "choices": [
-      {"ja": "大友克洋", "en": "Katsuhiro Otomo", "ja_typings": ["otomokatsuhiro","ootomokatsuhiro"]},
-      {"ja": "押井守", "en": "Mamoru Oshii", "ja_typings": ["oshiimamoru"]},
-      {"ja": "今敏", "en": "Satoshi Kon", "ja_typings": ["konsatoshi"]},
-      {"ja": "庵野秀明", "en": "Hideaki Anno", "ja_typings": ["annohideaki"]}
+      {
+        "ja": "大友克洋",
+        "en": "Katsuhiro Otomo",
+        "ja_typings": [
+          "ootomokatsuhiro"
+        ]
+      },
+      {
+        "ja": "押井守",
+        "en": "Mamoru Oshii",
+        "ja_typings": [
+          "oshiimamoru"
+        ]
+      },
+      {
+        "ja": "今敏",
+        "en": "Satoshi Kon",
+        "ja_typings": [
+          "konsatoshi"
+        ]
+      },
+      {
+        "ja": "庵野秀明",
+        "en": "Hideaki Anno",
+        "ja_typings": [
+          "annohideaki"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -310,12 +904,39 @@
   {
     "id": "q0348",
     "genre": "anime",
-    "question_text": {"ja": "『パプリカ』『パーフェクトブルー』の監督は誰?", "en": "Who directed 'Paprika' and 'Perfect Blue'?"},
+    "question_text": {
+      "ja": "『パプリカ』『パーフェクトブルー』の監督は誰?",
+      "en": "Who directed 'Paprika' and 'Perfect Blue'?"
+    },
     "choices": [
-      {"ja": "今敏", "en": "Satoshi Kon", "ja_typings": ["konsatoshi"]},
-      {"ja": "押井守", "en": "Mamoru Oshii", "ja_typings": ["oshiimamoru"]},
-      {"ja": "細田守", "en": "Mamoru Hosoda", "ja_typings": ["hosodamamoru"]},
-      {"ja": "湯浅政明", "en": "Masaaki Yuasa", "ja_typings": ["yuasamasaaki"]}
+      {
+        "ja": "今敏",
+        "en": "Satoshi Kon",
+        "ja_typings": [
+          "konsatoshi"
+        ]
+      },
+      {
+        "ja": "押井守",
+        "en": "Mamoru Oshii",
+        "ja_typings": [
+          "oshiimamoru"
+        ]
+      },
+      {
+        "ja": "細田守",
+        "en": "Mamoru Hosoda",
+        "ja_typings": [
+          "hosodamamoru"
+        ]
+      },
+      {
+        "ja": "湯浅政明",
+        "en": "Masaaki Yuasa",
+        "ja_typings": [
+          "yuasamasaaki"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -324,12 +945,39 @@
   {
     "id": "q0349",
     "genre": "anime",
-    "question_text": {"ja": "『千と千尋の神隠し』『となりのトトロ』を制作したスタジオは?", "en": "Which studio produced 'Spirited Away' and 'My Neighbor Totoro'?"},
+    "question_text": {
+      "ja": "『千と千尋の神隠し』『となりのトトロ』を制作したスタジオは?",
+      "en": "Which studio produced 'Spirited Away' and 'My Neighbor Totoro'?"
+    },
     "choices": [
-      {"ja": "スタジオジブリ", "en": "Studio Ghibli", "ja_typings": ["sutajiojiburi"]},
-      {"ja": "京都アニメーション", "en": "Kyoto Animation", "ja_typings": ["kyotoanime-shon","kyoutoanime-shon"]},
-      {"ja": "東映アニメーション", "en": "Toei Animation", "ja_typings": ["toeianime-shon","toueianime-shon"]},
-      {"ja": "プロダクションI.G", "en": "Production I.G", "ja_typings": ["purodakushonaiji-"]}
+      {
+        "ja": "スタジオジブリ",
+        "en": "Studio Ghibli",
+        "ja_typings": [
+          "sutajiojiburi"
+        ]
+      },
+      {
+        "ja": "京都アニメーション",
+        "en": "Kyoto Animation",
+        "ja_typings": [
+          "kyoutoanime-shon"
+        ]
+      },
+      {
+        "ja": "東映アニメーション",
+        "en": "Toei Animation",
+        "ja_typings": [
+          "toueianime-shon"
+        ]
+      },
+      {
+        "ja": "プロダクションI.G",
+        "en": "Production I.G",
+        "ja_typings": [
+          "purodakushoni.g"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -338,12 +986,39 @@
   {
     "id": "q0350",
     "genre": "anime",
-    "question_text": {"ja": "『けいおん!』『ヴァイオレット・エヴァーガーデン』を制作したスタジオは?", "en": "Which studio produced 'K-On!' and 'Violet Evergarden'?"},
+    "question_text": {
+      "ja": "『けいおん!』『ヴァイオレット・エヴァーガーデン』を制作したスタジオは?",
+      "en": "Which studio produced 'K-On!' and 'Violet Evergarden'?"
+    },
     "choices": [
-      {"ja": "京都アニメーション", "en": "Kyoto Animation", "ja_typings": ["kyotoanime-shon","kyoutoanime-shon"]},
-      {"ja": "スタジオジブリ", "en": "Studio Ghibli", "ja_typings": ["sutajiojiburi"]},
-      {"ja": "MAPPA", "en": "MAPPA", "ja_typings": ["mappa"]},
-      {"ja": "ボンズ", "en": "Bones", "ja_typings": ["bonnzu"]}
+      {
+        "ja": "京都アニメーション",
+        "en": "Kyoto Animation",
+        "ja_typings": [
+          "kyoutoanime-shon"
+        ]
+      },
+      {
+        "ja": "スタジオジブリ",
+        "en": "Studio Ghibli",
+        "ja_typings": [
+          "sutajiojiburi"
+        ]
+      },
+      {
+        "ja": "MAPPA",
+        "en": "MAPPA",
+        "ja_typings": [
+          "mappa"
+        ]
+      },
+      {
+        "ja": "ボンズ",
+        "en": "Bones",
+        "ja_typings": [
+          "bonzu"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -352,12 +1027,39 @@
   {
     "id": "q0351",
     "genre": "anime",
-    "question_text": {"ja": "『呪術廻戦』『チェンソーマン』をアニメ化したスタジオは?", "en": "Which studio animated 'Jujutsu Kaisen' and 'Chainsaw Man'?"},
+    "question_text": {
+      "ja": "『呪術廻戦』『チェンソーマン』をアニメ化したスタジオは?",
+      "en": "Which studio animated 'Jujutsu Kaisen' and 'Chainsaw Man'?"
+    },
     "choices": [
-      {"ja": "MAPPA", "en": "MAPPA", "ja_typings": ["mappa"]},
-      {"ja": "ufotable", "en": "ufotable", "ja_typings": ["ufotable"]},
-      {"ja": "京都アニメーション", "en": "Kyoto Animation", "ja_typings": ["kyotoanime-shon","kyoutoanime-shon"]},
-      {"ja": "シャフト", "en": "Shaft", "ja_typings": ["shafuto"]}
+      {
+        "ja": "MAPPA",
+        "en": "MAPPA",
+        "ja_typings": [
+          "mappa"
+        ]
+      },
+      {
+        "ja": "ufotable",
+        "en": "ufotable",
+        "ja_typings": [
+          "ufotable"
+        ]
+      },
+      {
+        "ja": "京都アニメーション",
+        "en": "Kyoto Animation",
+        "ja_typings": [
+          "kyoutoanime-shon"
+        ]
+      },
+      {
+        "ja": "シャフト",
+        "en": "Shaft",
+        "ja_typings": [
+          "shafuto"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -366,12 +1068,39 @@
   {
     "id": "q0352",
     "genre": "anime",
-    "question_text": {"ja": "『鬼滅の刃』のテレビアニメを制作したスタジオは?", "en": "Which studio produced the TV anime 'Demon Slayer'?"},
+    "question_text": {
+      "ja": "『鬼滅の刃』のテレビアニメを制作したスタジオは?",
+      "en": "Which studio produced the TV anime 'Demon Slayer'?"
+    },
     "choices": [
-      {"ja": "ufotable", "en": "ufotable", "ja_typings": ["ufotable"]},
-      {"ja": "MAPPA", "en": "MAPPA", "ja_typings": ["mappa"]},
-      {"ja": "ボンズ", "en": "Bones", "ja_typings": ["bonnzu"]},
-      {"ja": "ぴえろ", "en": "Pierrot", "ja_typings": ["piero"]}
+      {
+        "ja": "ufotable",
+        "en": "ufotable",
+        "ja_typings": [
+          "ufotable"
+        ]
+      },
+      {
+        "ja": "MAPPA",
+        "en": "MAPPA",
+        "ja_typings": [
+          "mappa"
+        ]
+      },
+      {
+        "ja": "ボンズ",
+        "en": "Bones",
+        "ja_typings": [
+          "bonzu"
+        ]
+      },
+      {
+        "ja": "ぴえろ",
+        "en": "Pierrot",
+        "ja_typings": [
+          "piero"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -380,12 +1109,39 @@
   {
     "id": "q0353",
     "genre": "anime",
-    "question_text": {"ja": "『新世紀エヴァンゲリオン』のテレビシリーズを制作したスタジオは?", "en": "Which studio produced the TV series 'Neon Genesis Evangelion'?"},
+    "question_text": {
+      "ja": "『新世紀エヴァンゲリオン』のテレビシリーズを制作したスタジオは?",
+      "en": "Which studio produced the TV series 'Neon Genesis Evangelion'?"
+    },
     "choices": [
-      {"ja": "ガイナックス", "en": "Gainax", "ja_typings": ["gainakkusu"]},
-      {"ja": "スタジオカラー", "en": "Studio Khara", "ja_typings": ["sutajiokara-"]},
-      {"ja": "サンライズ", "en": "Sunrise", "ja_typings": ["sanraizu"]},
-      {"ja": "MAPPA", "en": "MAPPA", "ja_typings": ["mappa"]}
+      {
+        "ja": "ガイナックス",
+        "en": "Gainax",
+        "ja_typings": [
+          "gainakkusu"
+        ]
+      },
+      {
+        "ja": "スタジオカラー",
+        "en": "Studio Khara",
+        "ja_typings": [
+          "sutajiokara-"
+        ]
+      },
+      {
+        "ja": "サンライズ",
+        "en": "Sunrise",
+        "ja_typings": [
+          "sanraizu"
+        ]
+      },
+      {
+        "ja": "MAPPA",
+        "en": "MAPPA",
+        "ja_typings": [
+          "mappa"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -394,12 +1150,39 @@
   {
     "id": "q0354",
     "genre": "anime",
-    "question_text": {"ja": "『機動戦士ガンダム』のテレビシリーズを制作したスタジオは?", "en": "Which studio produced the TV series 'Mobile Suit Gundam'?"},
+    "question_text": {
+      "ja": "『機動戦士ガンダム』のテレビシリーズを制作したスタジオは?",
+      "en": "Which studio produced the TV series 'Mobile Suit Gundam'?"
+    },
     "choices": [
-      {"ja": "サンライズ", "en": "Sunrise", "ja_typings": ["sanraizu"]},
-      {"ja": "ガイナックス", "en": "Gainax", "ja_typings": ["gainakkusu"]},
-      {"ja": "東映アニメーション", "en": "Toei Animation", "ja_typings": ["toeianime-shon","toueianime-shon"]},
-      {"ja": "ボンズ", "en": "Bones", "ja_typings": ["bonnzu"]}
+      {
+        "ja": "サンライズ",
+        "en": "Sunrise",
+        "ja_typings": [
+          "sanraizu"
+        ]
+      },
+      {
+        "ja": "ガイナックス",
+        "en": "Gainax",
+        "ja_typings": [
+          "gainakkusu"
+        ]
+      },
+      {
+        "ja": "東映アニメーション",
+        "en": "Toei Animation",
+        "ja_typings": [
+          "toueianime-shon"
+        ]
+      },
+      {
+        "ja": "ボンズ",
+        "en": "Bones",
+        "ja_typings": [
+          "bonzu"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -408,12 +1191,39 @@
   {
     "id": "q0355",
     "genre": "anime",
-    "question_text": {"ja": "『ハイキュー!!』の作者は誰?", "en": "Who is the author of 'Haikyu!!'?"},
+    "question_text": {
+      "ja": "『ハイキュー!!』の作者は誰?",
+      "en": "Who is the author of 'Haikyu!!'?"
+    },
     "choices": [
-      {"ja": "古舘春一", "en": "Haruichi Furudate", "ja_typings": ["furudateharuichi"]},
-      {"ja": "井上雄彦", "en": "Takehiko Inoue", "ja_typings": ["inouetakehiko"]},
-      {"ja": "堀越耕平", "en": "Kohei Horikoshi", "ja_typings": ["horikoshikohei","horikoshikouhei"]},
-      {"ja": "尾田栄一郎", "en": "Eiichiro Oda", "ja_typings": ["odaeiichiro"]}
+      {
+        "ja": "古舘春一",
+        "en": "Haruichi Furudate",
+        "ja_typings": [
+          "furudateharuichi"
+        ]
+      },
+      {
+        "ja": "井上雄彦",
+        "en": "Takehiko Inoue",
+        "ja_typings": [
+          "inouetakehiko"
+        ]
+      },
+      {
+        "ja": "堀越耕平",
+        "en": "Kohei Horikoshi",
+        "ja_typings": [
+          "horikoshikouhei"
+        ]
+      },
+      {
+        "ja": "尾田栄一郎",
+        "en": "Eiichiro Oda",
+        "ja_typings": [
+          "odaeiichiro"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -422,12 +1232,39 @@
   {
     "id": "q0356",
     "genre": "anime",
-    "question_text": {"ja": "『SPY×FAMILY』の作者は誰?", "en": "Who is the author of 'SPY×FAMILY'?"},
+    "question_text": {
+      "ja": "『SPY×FAMILY』の作者は誰?",
+      "en": "Who is the author of 'SPY×FAMILY'?"
+    },
     "choices": [
-      {"ja": "遠藤達哉", "en": "Tatsuya Endo", "ja_typings": ["endotatsuya","endoutatsuya"]},
-      {"ja": "藤本タツキ", "en": "Tatsuki Fujimoto", "ja_typings": ["fujimototatsuki"]},
-      {"ja": "芥見下々", "en": "Gege Akutami", "ja_typings": ["akutamigege"]},
-      {"ja": "堀越耕平", "en": "Kohei Horikoshi", "ja_typings": ["horikoshikohei","horikoshikouhei"]}
+      {
+        "ja": "遠藤達哉",
+        "en": "Tatsuya Endo",
+        "ja_typings": [
+          "endoutatsuya"
+        ]
+      },
+      {
+        "ja": "藤本タツキ",
+        "en": "Tatsuki Fujimoto",
+        "ja_typings": [
+          "fujimototatsuki"
+        ]
+      },
+      {
+        "ja": "芥見下々",
+        "en": "Gege Akutami",
+        "ja_typings": [
+          "akutamigege"
+        ]
+      },
+      {
+        "ja": "堀越耕平",
+        "en": "Kohei Horikoshi",
+        "ja_typings": [
+          "horikoshikouhei"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -436,12 +1273,39 @@
   {
     "id": "q0357",
     "genre": "anime",
-    "question_text": {"ja": "『東京喰種』の作者は誰?", "en": "Who is the author of 'Tokyo Ghoul'?"},
+    "question_text": {
+      "ja": "『東京喰種』の作者は誰?",
+      "en": "Who is the author of 'Tokyo Ghoul'?"
+    },
     "choices": [
-      {"ja": "石田スイ", "en": "Sui Ishida", "ja_typings": ["ishidasui"]},
-      {"ja": "藤本タツキ", "en": "Tatsuki Fujimoto", "ja_typings": ["fujimototatsuki"]},
-      {"ja": "諫山創", "en": "Hajime Isayama", "ja_typings": ["isayamahajime"]},
-      {"ja": "芥見下々", "en": "Gege Akutami", "ja_typings": ["akutamigege"]}
+      {
+        "ja": "石田スイ",
+        "en": "Sui Ishida",
+        "ja_typings": [
+          "ishidasui"
+        ]
+      },
+      {
+        "ja": "藤本タツキ",
+        "en": "Tatsuki Fujimoto",
+        "ja_typings": [
+          "fujimototatsuki"
+        ]
+      },
+      {
+        "ja": "諫山創",
+        "en": "Hajime Isayama",
+        "ja_typings": [
+          "isayamahajime"
+        ]
+      },
+      {
+        "ja": "芥見下々",
+        "en": "Gege Akutami",
+        "ja_typings": [
+          "akutamigege"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -450,12 +1314,39 @@
   {
     "id": "q0358",
     "genre": "anime",
-    "question_text": {"ja": "『北斗の拳』の作画を担当した漫画家は誰?", "en": "Who drew the manga 'Fist of the North Star'?"},
+    "question_text": {
+      "ja": "『北斗の拳』の作画を担当した漫画家は誰?",
+      "en": "Who drew the manga 'Fist of the North Star'?"
+    },
     "choices": [
-      {"ja": "原哲夫", "en": "Tetsuo Hara", "ja_typings": ["haratetsuo"]},
-      {"ja": "車田正美", "en": "Masami Kurumada", "ja_typings": ["kurumadamasami"]},
-      {"ja": "荒木飛呂彦", "en": "Hirohiko Araki", "ja_typings": ["arakihirohiko"]},
-      {"ja": "鳥山明", "en": "Akira Toriyama", "ja_typings": ["toriyamaakira"]}
+      {
+        "ja": "原哲夫",
+        "en": "Tetsuo Hara",
+        "ja_typings": [
+          "haratetsuo"
+        ]
+      },
+      {
+        "ja": "車田正美",
+        "en": "Masami Kurumada",
+        "ja_typings": [
+          "kurumadamasami"
+        ]
+      },
+      {
+        "ja": "荒木飛呂彦",
+        "en": "Hirohiko Araki",
+        "ja_typings": [
+          "arakihirohiko"
+        ]
+      },
+      {
+        "ja": "鳥山明",
+        "en": "Akira Toriyama",
+        "ja_typings": [
+          "toriyamaakira"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -464,12 +1355,39 @@
   {
     "id": "q0359",
     "genre": "anime",
-    "question_text": {"ja": "『るろうに剣心』の作者は誰?", "en": "Who is the author of 'Rurouni Kenshin'?"},
+    "question_text": {
+      "ja": "『るろうに剣心』の作者は誰?",
+      "en": "Who is the author of 'Rurouni Kenshin'?"
+    },
     "choices": [
-      {"ja": "和月伸宏", "en": "Nobuhiro Watsuki", "ja_typings": ["watsukinobuhiro"]},
-      {"ja": "井上雄彦", "en": "Takehiko Inoue", "ja_typings": ["inouetakehiko"]},
-      {"ja": "久保帯人", "en": "Tite Kubo", "ja_typings": ["kubotaito"]},
-      {"ja": "岸本斉史", "en": "Masashi Kishimoto", "ja_typings": ["kishimotomasashi"]}
+      {
+        "ja": "和月伸宏",
+        "en": "Nobuhiro Watsuki",
+        "ja_typings": [
+          "watsukinobuhiro"
+        ]
+      },
+      {
+        "ja": "井上雄彦",
+        "en": "Takehiko Inoue",
+        "ja_typings": [
+          "inouetakehiko"
+        ]
+      },
+      {
+        "ja": "久保帯人",
+        "en": "Tite Kubo",
+        "ja_typings": [
+          "kubotaito"
+        ]
+      },
+      {
+        "ja": "岸本斉史",
+        "en": "Masashi Kishimoto",
+        "ja_typings": [
+          "kishimotomasashi"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -478,12 +1396,39 @@
   {
     "id": "q0360",
     "genre": "anime",
-    "question_text": {"ja": "『NARUTO -ナルト-』の主人公の名前は?", "en": "What is the name of the protagonist of 'NARUTO'?"},
+    "question_text": {
+      "ja": "『NARUTO -ナルト-』の主人公の名前は?",
+      "en": "What is the name of the protagonist of 'NARUTO'?"
+    },
     "choices": [
-      {"ja": "うずまきナルト", "en": "Naruto Uzumaki", "ja_typings": ["uzumakinaruto"]},
-      {"ja": "うちはサスケ", "en": "Sasuke Uchiha", "ja_typings": ["uchihasasuke"]},
-      {"ja": "はたけカカシ", "en": "Kakashi Hatake", "ja_typings": ["hatakekakashi"]},
-      {"ja": "自来也", "en": "Jiraiya", "ja_typings": ["jiraiya"]}
+      {
+        "ja": "うずまきナルト",
+        "en": "Naruto Uzumaki",
+        "ja_typings": [
+          "uzumakinaruto"
+        ]
+      },
+      {
+        "ja": "うちはサスケ",
+        "en": "Sasuke Uchiha",
+        "ja_typings": [
+          "uchihasasuke"
+        ]
+      },
+      {
+        "ja": "はたけカカシ",
+        "en": "Kakashi Hatake",
+        "ja_typings": [
+          "hatakekakashi"
+        ]
+      },
+      {
+        "ja": "自来也",
+        "en": "Jiraiya",
+        "ja_typings": [
+          "jiraiya"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -492,12 +1437,39 @@
   {
     "id": "q0361",
     "genre": "anime",
-    "question_text": {"ja": "『NARUTO』でナルトたちの第七班の担当上忍(担任)は誰?", "en": "Who is the jonin leader of Team 7 in 'NARUTO'?"},
+    "question_text": {
+      "ja": "『NARUTO』でナルトたちの第七班の担当上忍(担任)は誰?",
+      "en": "Who is the jonin leader of Team 7 in 'NARUTO'?"
+    },
     "choices": [
-      {"ja": "はたけカカシ", "en": "Kakashi Hatake", "ja_typings": ["hatakekakashi"]},
-      {"ja": "自来也", "en": "Jiraiya", "ja_typings": ["jiraiya"]},
-      {"ja": "綱手", "en": "Tsunade", "ja_typings": ["tsunade"]},
-      {"ja": "夜叉丸", "en": "Yashamaru", "ja_typings": ["yashamaru"]}
+      {
+        "ja": "はたけカカシ",
+        "en": "Kakashi Hatake",
+        "ja_typings": [
+          "hatakekakashi"
+        ]
+      },
+      {
+        "ja": "自来也",
+        "en": "Jiraiya",
+        "ja_typings": [
+          "jiraiya"
+        ]
+      },
+      {
+        "ja": "綱手",
+        "en": "Tsunade",
+        "ja_typings": [
+          "tsunade"
+        ]
+      },
+      {
+        "ja": "夜叉丸",
+        "en": "Yashamaru",
+        "ja_typings": [
+          "yashamaru"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -506,12 +1478,39 @@
   {
     "id": "q0362",
     "genre": "anime",
-    "question_text": {"ja": "『ONE PIECE』の主人公の名前は?", "en": "What is the name of the protagonist of 'ONE PIECE'?"},
+    "question_text": {
+      "ja": "『ONE PIECE』の主人公の名前は?",
+      "en": "What is the name of the protagonist of 'ONE PIECE'?"
+    },
     "choices": [
-      {"ja": "モンキー・D・ルフィ", "en": "Monkey D. Luffy", "ja_typings": ["monki-di-rufi"]},
-      {"ja": "ロロノア・ゾロ", "en": "Roronoa Zoro", "ja_typings": ["roronoazoro"]},
-      {"ja": "サンジ", "en": "Sanji", "ja_typings": ["sanji"]},
-      {"ja": "ナミ", "en": "Nami", "ja_typings": ["nami"]}
+      {
+        "ja": "モンキー・D・ルフィ",
+        "en": "Monkey D. Luffy",
+        "ja_typings": [
+          "monki-/d/rufi"
+        ]
+      },
+      {
+        "ja": "ロロノア・ゾロ",
+        "en": "Roronoa Zoro",
+        "ja_typings": [
+          "roronoa/zoro"
+        ]
+      },
+      {
+        "ja": "サンジ",
+        "en": "Sanji",
+        "ja_typings": [
+          "sanji"
+        ]
+      },
+      {
+        "ja": "ナミ",
+        "en": "Nami",
+        "ja_typings": [
+          "nami"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -520,12 +1519,39 @@
   {
     "id": "q0363",
     "genre": "anime",
-    "question_text": {"ja": "『鬼滅の刃』の主人公の名前は?", "en": "What is the name of the protagonist of 'Demon Slayer'?"},
+    "question_text": {
+      "ja": "『鬼滅の刃』の主人公の名前は?",
+      "en": "What is the name of the protagonist of 'Demon Slayer'?"
+    },
     "choices": [
-      {"ja": "竈門炭治郎", "en": "Tanjiro Kamado", "ja_typings": ["kamadotanjiro","kamadotanjirou"]},
-      {"ja": "竈門禰豆子", "en": "Nezuko Kamado", "ja_typings": ["kamadonezuko"]},
-      {"ja": "我妻善逸", "en": "Zenitsu Agatsuma", "ja_typings": ["agatsumazenitsu"]},
-      {"ja": "嘴平伊之助", "en": "Inosuke Hashibira", "ja_typings": ["hashibirainosuke"]}
+      {
+        "ja": "竈門炭治郎",
+        "en": "Tanjiro Kamado",
+        "ja_typings": [
+          "kamadotanjirou"
+        ]
+      },
+      {
+        "ja": "竈門禰豆子",
+        "en": "Nezuko Kamado",
+        "ja_typings": [
+          "kamadonezuko"
+        ]
+      },
+      {
+        "ja": "我妻善逸",
+        "en": "Zenitsu Agatsuma",
+        "ja_typings": [
+          "agatsumazenitsu"
+        ]
+      },
+      {
+        "ja": "嘴平伊之助",
+        "en": "Inosuke Hashibira",
+        "ja_typings": [
+          "hashibirainosuke"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -534,12 +1560,39 @@
   {
     "id": "q0364",
     "genre": "anime",
-    "question_text": {"ja": "『鬼滅の刃』で炭治郎の妹の名前は?", "en": "What is the name of Tanjiro's sister in 'Demon Slayer'?"},
+    "question_text": {
+      "ja": "『鬼滅の刃』で炭治郎の妹の名前は?",
+      "en": "What is the name of Tanjiro's sister in 'Demon Slayer'?"
+    },
     "choices": [
-      {"ja": "竈門禰豆子", "en": "Nezuko Kamado", "ja_typings": ["kamadonezuko"]},
-      {"ja": "胡蝶しのぶ", "en": "Shinobu Kocho", "ja_typings": ["kochoshinobu","kochoushinobu"]},
-      {"ja": "栗花落カナヲ", "en": "Kanao Tsuyuri", "ja_typings": ["tsuyurikanao"]},
-      {"ja": "甘露寺蜜璃", "en": "Mitsuri Kanroji", "ja_typings": ["kanrojimitsuri"]}
+      {
+        "ja": "竈門禰豆子",
+        "en": "Nezuko Kamado",
+        "ja_typings": [
+          "kamadonezuko"
+        ]
+      },
+      {
+        "ja": "胡蝶しのぶ",
+        "en": "Shinobu Kocho",
+        "ja_typings": [
+          "kochoushinobu"
+        ]
+      },
+      {
+        "ja": "栗花落カナヲ",
+        "en": "Kanao Tsuyuri",
+        "ja_typings": [
+          "tsuyurikanao"
+        ]
+      },
+      {
+        "ja": "甘露寺蜜璃",
+        "en": "Mitsuri Kanroji",
+        "ja_typings": [
+          "kanrojimitsuri"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -548,12 +1601,39 @@
   {
     "id": "q0365",
     "genre": "anime",
-    "question_text": {"ja": "『呪術廻戦』の主人公の名前は?", "en": "What is the name of the protagonist of 'Jujutsu Kaisen'?"},
+    "question_text": {
+      "ja": "『呪術廻戦』の主人公の名前は?",
+      "en": "What is the name of the protagonist of 'Jujutsu Kaisen'?"
+    },
     "choices": [
-      {"ja": "虎杖悠仁", "en": "Yuji Itadori", "ja_typings": ["itadoriyuji","itadoriyuuji"]},
-      {"ja": "伏黒恵", "en": "Megumi Fushiguro", "ja_typings": ["fushiguromegumi"]},
-      {"ja": "釘崎野薔薇", "en": "Nobara Kugisaki", "ja_typings": ["kugisakinobara"]},
-      {"ja": "五条悟", "en": "Satoru Gojo", "ja_typings": ["gojosatoru","gojousatoru"]}
+      {
+        "ja": "虎杖悠仁",
+        "en": "Yuji Itadori",
+        "ja_typings": [
+          "itadoriyuuji"
+        ]
+      },
+      {
+        "ja": "伏黒恵",
+        "en": "Megumi Fushiguro",
+        "ja_typings": [
+          "fushiguromegumi"
+        ]
+      },
+      {
+        "ja": "釘崎野薔薇",
+        "en": "Nobara Kugisaki",
+        "ja_typings": [
+          "kugisakinobara"
+        ]
+      },
+      {
+        "ja": "五条悟",
+        "en": "Satoru Gojo",
+        "ja_typings": [
+          "gojousatoru"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -562,12 +1642,39 @@
   {
     "id": "q0366",
     "genre": "anime",
-    "question_text": {"ja": "『呪術廻戦』で五条悟の領域展開の名前は?", "en": "What is the name of Satoru Gojo's domain expansion in 'Jujutsu Kaisen'?"},
+    "question_text": {
+      "ja": "『呪術廻戦』で五条悟の領域展開の名前は?",
+      "en": "What is the name of Satoru Gojo's domain expansion in 'Jujutsu Kaisen'?"
+    },
     "choices": [
-      {"ja": "無量空処", "en": "Unlimited Void", "ja_typings": ["muryokucho","muryoukuusho","muryokusho"]},
-      {"ja": "伏魔御厨子", "en": "Malevolent Shrine", "ja_typings": ["fukumamizushi"]},
-      {"ja": "嵌合暗翳庭", "en": "Chimera Shadow Garden", "ja_typings": ["kangoaneitei"]},
-      {"ja": "蓋棺鉄囲山", "en": "Coffin of the Iron Mountain", "ja_typings": ["gaikantetsuizan"]}
+      {
+        "ja": "無量空処",
+        "en": "Unlimited Void",
+        "ja_typings": [
+          "muryoukuusho"
+        ]
+      },
+      {
+        "ja": "伏魔御厨子",
+        "en": "Malevolent Shrine",
+        "ja_typings": [
+          "fukumamizushi"
+        ]
+      },
+      {
+        "ja": "嵌合暗翳庭",
+        "en": "Chimera Shadow Garden",
+        "ja_typings": [
+          "kangoaneitei"
+        ]
+      },
+      {
+        "ja": "蓋棺鉄囲山",
+        "en": "Coffin of the Iron Mountain",
+        "ja_typings": [
+          "gaikantetsuizan"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -576,12 +1683,39 @@
   {
     "id": "q0367",
     "genre": "anime",
-    "question_text": {"ja": "『呪術廻戦』で宿儺の領域展開の名前は?", "en": "What is the name of Sukuna's domain expansion in 'Jujutsu Kaisen'?"},
+    "question_text": {
+      "ja": "『呪術廻戦』で宿儺の領域展開の名前は?",
+      "en": "What is the name of Sukuna's domain expansion in 'Jujutsu Kaisen'?"
+    },
     "choices": [
-      {"ja": "伏魔御厨子", "en": "Malevolent Shrine", "ja_typings": ["fukumamizushi"]},
-      {"ja": "無量空処", "en": "Unlimited Void", "ja_typings": ["muryokucho","muryoukuusho","muryokusho"]},
-      {"ja": "嵌合暗翳庭", "en": "Chimera Shadow Garden", "ja_typings": ["kangoaneitei"]},
-      {"ja": "時の牢獄", "en": "Time Prison", "ja_typings": ["tokinorogoku"]}
+      {
+        "ja": "伏魔御厨子",
+        "en": "Malevolent Shrine",
+        "ja_typings": [
+          "fukumamizushi"
+        ]
+      },
+      {
+        "ja": "無量空処",
+        "en": "Unlimited Void",
+        "ja_typings": [
+          "muryoukuusho"
+        ]
+      },
+      {
+        "ja": "嵌合暗翳庭",
+        "en": "Chimera Shadow Garden",
+        "ja_typings": [
+          "kangoaneitei"
+        ]
+      },
+      {
+        "ja": "時の牢獄",
+        "en": "Time Prison",
+        "ja_typings": [
+          "tokinorogoku"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -590,12 +1724,39 @@
   {
     "id": "q0368",
     "genre": "anime",
-    "question_text": {"ja": "『進撃の巨人』の主人公の名前は?", "en": "What is the name of the protagonist of 'Attack on Titan'?"},
+    "question_text": {
+      "ja": "『進撃の巨人』の主人公の名前は?",
+      "en": "What is the name of the protagonist of 'Attack on Titan'?"
+    },
     "choices": [
-      {"ja": "エレン・イェーガー", "en": "Eren Yeager", "ja_typings": ["erennie-ga-"]},
-      {"ja": "ミカサ・アッカーマン", "en": "Mikasa Ackerman", "ja_typings": ["mikasaakka-man"]},
-      {"ja": "アルミン・アルレルト", "en": "Armin Arlert", "ja_typings": ["aruminnaruteruto"]},
-      {"ja": "リヴァイ・アッカーマン", "en": "Levi Ackerman", "ja_typings": ["rivaiakka-man"]}
+      {
+        "ja": "エレン・イェーガー",
+        "en": "Eren Yeager",
+        "ja_typings": [
+          "eren/ye-ga-"
+        ]
+      },
+      {
+        "ja": "ミカサ・アッカーマン",
+        "en": "Mikasa Ackerman",
+        "ja_typings": [
+          "mikasa/akka-man"
+        ]
+      },
+      {
+        "ja": "アルミン・アルレルト",
+        "en": "Armin Arlert",
+        "ja_typings": [
+          "arumin/arureruto"
+        ]
+      },
+      {
+        "ja": "リヴァイ・アッカーマン",
+        "en": "Levi Ackerman",
+        "ja_typings": [
+          "rivai/akka-man"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -604,12 +1765,39 @@
   {
     "id": "q0369",
     "genre": "anime",
-    "question_text": {"ja": "『DEATH NOTE』の主人公(ノートの所有者)の名前は?", "en": "What is the name of the protagonist (the Death Note holder) in 'DEATH NOTE'?"},
+    "question_text": {
+      "ja": "『DEATH NOTE』の主人公(ノートの所有者)の名前は?",
+      "en": "What is the name of the protagonist (the Death Note holder) in 'DEATH NOTE'?"
+    },
     "choices": [
-      {"ja": "夜神月", "en": "Light Yagami", "ja_typings": ["yagamiraito"]},
-      {"ja": "L", "en": "L", "ja_typings": ["l","eru"]},
-      {"ja": "弥海砂", "en": "Misa Amane", "ja_typings": ["amanemisa"]},
-      {"ja": "リューク", "en": "Ryuk", "ja_typings": ["ryu-ku"]}
+      {
+        "ja": "夜神月",
+        "en": "Light Yagami",
+        "ja_typings": [
+          "yagamiraito"
+        ]
+      },
+      {
+        "ja": "L",
+        "en": "L",
+        "ja_typings": [
+          "l"
+        ]
+      },
+      {
+        "ja": "弥海砂",
+        "en": "Misa Amane",
+        "ja_typings": [
+          "amanemisa"
+        ]
+      },
+      {
+        "ja": "リューク",
+        "en": "Ryuk",
+        "ja_typings": [
+          "ryu-ku"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -618,12 +1806,39 @@
   {
     "id": "q0370",
     "genre": "anime",
-    "question_text": {"ja": "『DEATH NOTE』のジャンルとして最も適切なのは?", "en": "Which genre best describes 'DEATH NOTE'?"},
+    "question_text": {
+      "ja": "『DEATH NOTE』のジャンルとして最も適切なのは?",
+      "en": "Which genre best describes 'DEATH NOTE'?"
+    },
     "choices": [
-      {"ja": "サスペンス", "en": "Suspense", "ja_typings": ["sasupensu"]},
-      {"ja": "スポーツ", "en": "Sports", "ja_typings": ["supo-tsu"]},
-      {"ja": "日常系", "en": "Slice of life", "ja_typings": ["nichijokei","nichijoukei"]},
-      {"ja": "恋愛コメディ", "en": "Romantic comedy", "ja_typings": ["renaikomedi","renaikomedei"]}
+      {
+        "ja": "サスペンス",
+        "en": "Suspense",
+        "ja_typings": [
+          "sasupensu"
+        ]
+      },
+      {
+        "ja": "スポーツ",
+        "en": "Sports",
+        "ja_typings": [
+          "supo-tsu"
+        ]
+      },
+      {
+        "ja": "日常系",
+        "en": "Slice of life",
+        "ja_typings": [
+          "nichijoukei"
+        ]
+      },
+      {
+        "ja": "恋愛コメディ",
+        "en": "Romantic comedy",
+        "ja_typings": [
+          "rennaikomedhi"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -632,12 +1847,39 @@
   {
     "id": "q0371",
     "genre": "anime",
-    "question_text": {"ja": "『新世紀エヴァンゲリオン』の主人公の名前は?", "en": "What is the name of the protagonist of 'Neon Genesis Evangelion'?"},
+    "question_text": {
+      "ja": "『新世紀エヴァンゲリオン』の主人公の名前は?",
+      "en": "What is the name of the protagonist of 'Neon Genesis Evangelion'?"
+    },
     "choices": [
-      {"ja": "碇シンジ", "en": "Shinji Ikari", "ja_typings": ["ikarishinji"]},
-      {"ja": "綾波レイ", "en": "Rei Ayanami", "ja_typings": ["ayanamirei"]},
-      {"ja": "惣流・アスカ・ラングレー", "en": "Asuka Langley Soryu", "ja_typings": ["soryuasukaranguree","souryuuasukaranguree"]},
-      {"ja": "渚カヲル", "en": "Kaworu Nagisa", "ja_typings": ["nagisakaoru"]}
+      {
+        "ja": "碇シンジ",
+        "en": "Shinji Ikari",
+        "ja_typings": [
+          "ikarishinji"
+        ]
+      },
+      {
+        "ja": "綾波レイ",
+        "en": "Rei Ayanami",
+        "ja_typings": [
+          "ayanamirei"
+        ]
+      },
+      {
+        "ja": "惣流・アスカ・ラングレー",
+        "en": "Asuka Langley Soryu",
+        "ja_typings": [
+          "souryuuasukaranguree"
+        ]
+      },
+      {
+        "ja": "渚カヲル",
+        "en": "Kaworu Nagisa",
+        "ja_typings": [
+          "nagisakaoru"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -646,12 +1888,39 @@
   {
     "id": "q0372",
     "genre": "anime",
-    "question_text": {"ja": "『機動戦士ガンダム』(初代1979)の主人公の名前は?", "en": "What is the name of the protagonist of the original 1979 'Mobile Suit Gundam'?"},
+    "question_text": {
+      "ja": "『機動戦士ガンダム』(初代1979)の主人公の名前は?",
+      "en": "What is the name of the protagonist of the original 1979 'Mobile Suit Gundam'?"
+    },
     "choices": [
-      {"ja": "アムロ・レイ", "en": "Amuro Ray", "ja_typings": ["amurorei"]},
-      {"ja": "シャア・アズナブル", "en": "Char Aznable", "ja_typings": ["shaaazunaburu"]},
-      {"ja": "カミーユ・ビダン", "en": "Kamille Bidan", "ja_typings": ["kami-yubidan"]},
-      {"ja": "ジュドー・アーシタ", "en": "Judau Ashta", "ja_typings": ["judoa-shita","judoua-shita"]}
+      {
+        "ja": "アムロ・レイ",
+        "en": "Amuro Ray",
+        "ja_typings": [
+          "amuro/rei"
+        ]
+      },
+      {
+        "ja": "シャア・アズナブル",
+        "en": "Char Aznable",
+        "ja_typings": [
+          "shaa/azunaburu"
+        ]
+      },
+      {
+        "ja": "カミーユ・ビダン",
+        "en": "Kamille Bidan",
+        "ja_typings": [
+          "kami-yu/bidan"
+        ]
+      },
+      {
+        "ja": "ジュドー・アーシタ",
+        "en": "Judau Ashta",
+        "ja_typings": [
+          "judo-/a-shita"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -660,12 +1929,39 @@
   {
     "id": "q0373",
     "genre": "anime",
-    "question_text": {"ja": "『BLEACH』の主人公の名前は?", "en": "What is the name of the protagonist of 'BLEACH'?"},
+    "question_text": {
+      "ja": "『BLEACH』の主人公の名前は?",
+      "en": "What is the name of the protagonist of 'BLEACH'?"
+    },
     "choices": [
-      {"ja": "黒崎一護", "en": "Ichigo Kurosaki", "ja_typings": ["kurosakiichigo"]},
-      {"ja": "朽木ルキア", "en": "Rukia Kuchiki", "ja_typings": ["kuchikirukia"]},
-      {"ja": "井上織姫", "en": "Orihime Inoue", "ja_typings": ["inoueorihime"]},
-      {"ja": "石田雨竜", "en": "Uryu Ishida", "ja_typings": ["ishidauryu","ishidauryuu"]}
+      {
+        "ja": "黒崎一護",
+        "en": "Ichigo Kurosaki",
+        "ja_typings": [
+          "kurosakiichigo"
+        ]
+      },
+      {
+        "ja": "朽木ルキア",
+        "en": "Rukia Kuchiki",
+        "ja_typings": [
+          "kuchikirukia"
+        ]
+      },
+      {
+        "ja": "井上織姫",
+        "en": "Orihime Inoue",
+        "ja_typings": [
+          "inoueorihime"
+        ]
+      },
+      {
+        "ja": "石田雨竜",
+        "en": "Uryu Ishida",
+        "ja_typings": [
+          "ishidauryuu"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -674,12 +1970,39 @@
   {
     "id": "q0374",
     "genre": "anime",
-    "question_text": {"ja": "『ドラゴンボール』の主人公の名前は?", "en": "What is the name of the protagonist of 'Dragon Ball'?"},
+    "question_text": {
+      "ja": "『ドラゴンボール』の主人公の名前は?",
+      "en": "What is the name of the protagonist of 'Dragon Ball'?"
+    },
     "choices": [
-      {"ja": "孫悟空", "en": "Son Goku", "ja_typings": ["songoku","songokuu"]},
-      {"ja": "ベジータ", "en": "Vegeta", "ja_typings": ["beji-ta"]},
-      {"ja": "ピッコロ", "en": "Piccolo", "ja_typings": ["pikkoro"]},
-      {"ja": "クリリン", "en": "Krillin", "ja_typings": ["kuririn"]}
+      {
+        "ja": "孫悟空",
+        "en": "Son Goku",
+        "ja_typings": [
+          "songokuu"
+        ]
+      },
+      {
+        "ja": "ベジータ",
+        "en": "Vegeta",
+        "ja_typings": [
+          "beji-ta"
+        ]
+      },
+      {
+        "ja": "ピッコロ",
+        "en": "Piccolo",
+        "ja_typings": [
+          "pikkoro"
+        ]
+      },
+      {
+        "ja": "クリリン",
+        "en": "Krillin",
+        "ja_typings": [
+          "kuririn"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -688,12 +2011,39 @@
   {
     "id": "q0375",
     "genre": "anime",
-    "question_text": {"ja": "『SPY×FAMILY』でアーニャを養女に迎える父親(スパイ)の名前は?", "en": "What is the name of Anya's adoptive father (the spy) in 'SPY×FAMILY'?"},
+    "question_text": {
+      "ja": "『SPY×FAMILY』でアーニャを養女に迎える父親(スパイ)の名前は?",
+      "en": "What is the name of Anya's adoptive father (the spy) in 'SPY×FAMILY'?"
+    },
     "choices": [
-      {"ja": "ロイド・フォージャー", "en": "Loid Forger", "ja_typings": ["roidofo-ja-"]},
-      {"ja": "ヨル・フォージャー", "en": "Yor Forger", "ja_typings": ["yorufo-ja-"]},
-      {"ja": "アーニャ・フォージャー", "en": "Anya Forger", "ja_typings": ["a-nyafo-ja-"]},
-      {"ja": "ユーリ・ブライア", "en": "Yuri Briar", "ja_typings": ["yu-riburaia"]}
+      {
+        "ja": "ロイド・フォージャー",
+        "en": "Loid Forger",
+        "ja_typings": [
+          "roido/fo-ja-"
+        ]
+      },
+      {
+        "ja": "ヨル・フォージャー",
+        "en": "Yor Forger",
+        "ja_typings": [
+          "yoru/fo-ja-"
+        ]
+      },
+      {
+        "ja": "アーニャ・フォージャー",
+        "en": "Anya Forger",
+        "ja_typings": [
+          "a-nya/fo-ja-"
+        ]
+      },
+      {
+        "ja": "ユーリ・ブライア",
+        "en": "Yuri Briar",
+        "ja_typings": [
+          "yu-ri/buraia"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -702,12 +2052,39 @@
   {
     "id": "q0376",
     "genre": "anime",
-    "question_text": {"ja": "『僕のヒーローアカデミア』の主人公の名前は?", "en": "What is the name of the protagonist of 'My Hero Academia'?"},
+    "question_text": {
+      "ja": "『僕のヒーローアカデミア』の主人公の名前は?",
+      "en": "What is the name of the protagonist of 'My Hero Academia'?"
+    },
     "choices": [
-      {"ja": "緑谷出久", "en": "Izuku Midoriya", "ja_typings": ["midoriyaizuku"]},
-      {"ja": "爆豪勝己", "en": "Katsuki Bakugo", "ja_typings": ["bakugokatsuki","bakugoukatsuki"]},
-      {"ja": "轟焦凍", "en": "Shoto Todoroki", "ja_typings": ["todorokishoto","todorokishouto"]},
-      {"ja": "オールマイト", "en": "All Might", "ja_typings": ["o-rumaito"]}
+      {
+        "ja": "緑谷出久",
+        "en": "Izuku Midoriya",
+        "ja_typings": [
+          "midoriyaizuku"
+        ]
+      },
+      {
+        "ja": "爆豪勝己",
+        "en": "Katsuki Bakugo",
+        "ja_typings": [
+          "bakugoukatsuki"
+        ]
+      },
+      {
+        "ja": "轟焦凍",
+        "en": "Shoto Todoroki",
+        "ja_typings": [
+          "todorokishouto"
+        ]
+      },
+      {
+        "ja": "オールマイト",
+        "en": "All Might",
+        "ja_typings": [
+          "o-rumaito"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -716,12 +2093,39 @@
   {
     "id": "q0377",
     "genre": "anime",
-    "question_text": {"ja": "『チェンソーマン』の主人公の名前は?", "en": "What is the name of the protagonist of 'Chainsaw Man'?"},
+    "question_text": {
+      "ja": "『チェンソーマン』の主人公の名前は?",
+      "en": "What is the name of the protagonist of 'Chainsaw Man'?"
+    },
     "choices": [
-      {"ja": "デンジ", "en": "Denji", "ja_typings": ["denji"]},
-      {"ja": "マキマ", "en": "Makima", "ja_typings": ["makima"]},
-      {"ja": "パワー", "en": "Power", "ja_typings": ["pawa-"]},
-      {"ja": "早川アキ", "en": "Aki Hayakawa", "ja_typings": ["hayakawaaki"]}
+      {
+        "ja": "デンジ",
+        "en": "Denji",
+        "ja_typings": [
+          "denji"
+        ]
+      },
+      {
+        "ja": "マキマ",
+        "en": "Makima",
+        "ja_typings": [
+          "makima"
+        ]
+      },
+      {
+        "ja": "パワー",
+        "en": "Power",
+        "ja_typings": [
+          "pawa-"
+        ]
+      },
+      {
+        "ja": "早川アキ",
+        "en": "Aki Hayakawa",
+        "ja_typings": [
+          "hayakawaaki"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -730,12 +2134,39 @@
   {
     "id": "q0378",
     "genre": "anime",
-    "question_text": {"ja": "『ハイキュー!!』の主人公の名前は?", "en": "What is the name of the protagonist of 'Haikyu!!'?"},
+    "question_text": {
+      "ja": "『ハイキュー!!』の主人公の名前は?",
+      "en": "What is the name of the protagonist of 'Haikyu!!'?"
+    },
     "choices": [
-      {"ja": "日向翔陽", "en": "Shoyo Hinata", "ja_typings": ["hinatashoyo","hinatashouyou"]},
-      {"ja": "影山飛雄", "en": "Tobio Kageyama", "ja_typings": ["kageyamatobio"]},
-      {"ja": "及川徹", "en": "Toru Oikawa", "ja_typings": ["oikawatoru","oikawatooru"]},
-      {"ja": "黒尾鉄朗", "en": "Tetsuro Kuroo", "ja_typings": ["kurootetsuro","kurootetsurou"]}
+      {
+        "ja": "日向翔陽",
+        "en": "Shoyo Hinata",
+        "ja_typings": [
+          "hinatashouyou"
+        ]
+      },
+      {
+        "ja": "影山飛雄",
+        "en": "Tobio Kageyama",
+        "ja_typings": [
+          "kageyamatobio"
+        ]
+      },
+      {
+        "ja": "及川徹",
+        "en": "Toru Oikawa",
+        "ja_typings": [
+          "oikawatooru"
+        ]
+      },
+      {
+        "ja": "黒尾鉄朗",
+        "en": "Tetsuro Kuroo",
+        "ja_typings": [
+          "kurootetsurou"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -744,12 +2175,39 @@
   {
     "id": "q0379",
     "genre": "anime",
-    "question_text": {"ja": "『ジョジョの奇妙な冒険』第3部の主人公は誰?", "en": "Who is the protagonist of Part 3 of 'JoJo's Bizarre Adventure'?"},
+    "question_text": {
+      "ja": "『ジョジョの奇妙な冒険』第3部の主人公は誰?",
+      "en": "Who is the protagonist of Part 3 of 'JoJo's Bizarre Adventure'?"
+    },
     "choices": [
-      {"ja": "空条承太郎", "en": "Jotaro Kujo", "ja_typings": ["kujojotaro","kujoujoutarou"]},
-      {"ja": "ジョナサン・ジョースター", "en": "Jonathan Joestar", "ja_typings": ["jonasanjo-suta-"]},
-      {"ja": "東方仗助", "en": "Josuke Higashikata", "ja_typings": ["higashikatajosuke"]},
-      {"ja": "ジョルノ・ジョバァーナ", "en": "Giorno Giovanna", "ja_typings": ["jorunojoba-na"]}
+      {
+        "ja": "空条承太郎",
+        "en": "Jotaro Kujo",
+        "ja_typings": [
+          "kujoujoutarou"
+        ]
+      },
+      {
+        "ja": "ジョナサン・ジョースター",
+        "en": "Jonathan Joestar",
+        "ja_typings": [
+          "jonasan/jo-suta-"
+        ]
+      },
+      {
+        "ja": "東方仗助",
+        "en": "Josuke Higashikata",
+        "ja_typings": [
+          "higashikatajosuke"
+        ]
+      },
+      {
+        "ja": "ジョルノ・ジョバァーナ",
+        "en": "Giorno Giovanna",
+        "ja_typings": [
+          "joruno/jobaa-na"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -758,12 +2216,39 @@
   {
     "id": "q0380",
     "genre": "anime",
-    "question_text": {"ja": "『涼宮ハルヒの憂鬱』を制作したスタジオは?", "en": "Which studio produced 'The Melancholy of Haruhi Suzumiya'?"},
+    "question_text": {
+      "ja": "『涼宮ハルヒの憂鬱』を制作したスタジオは?",
+      "en": "Which studio produced 'The Melancholy of Haruhi Suzumiya'?"
+    },
     "choices": [
-      {"ja": "京都アニメーション", "en": "Kyoto Animation", "ja_typings": ["kyotoanime-shon","kyoutoanime-shon"]},
-      {"ja": "シャフト", "en": "Shaft", "ja_typings": ["shafuto"]},
-      {"ja": "サンライズ", "en": "Sunrise", "ja_typings": ["sanraizu"]},
-      {"ja": "MAPPA", "en": "MAPPA", "ja_typings": ["mappa"]}
+      {
+        "ja": "京都アニメーション",
+        "en": "Kyoto Animation",
+        "ja_typings": [
+          "kyoutoanime-shon"
+        ]
+      },
+      {
+        "ja": "シャフト",
+        "en": "Shaft",
+        "ja_typings": [
+          "shafuto"
+        ]
+      },
+      {
+        "ja": "サンライズ",
+        "en": "Sunrise",
+        "ja_typings": [
+          "sanraizu"
+        ]
+      },
+      {
+        "ja": "MAPPA",
+        "en": "MAPPA",
+        "ja_typings": [
+          "mappa"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -772,12 +2257,39 @@
   {
     "id": "q0381",
     "genre": "anime",
-    "question_text": {"ja": "『〈物語〉シリーズ』を制作したスタジオは?", "en": "Which studio produced the 'Monogatari Series'?"},
+    "question_text": {
+      "ja": "『〈物語〉シリーズ』を制作したスタジオは?",
+      "en": "Which studio produced the 'Monogatari Series'?"
+    },
     "choices": [
-      {"ja": "シャフト", "en": "Shaft", "ja_typings": ["shafuto"]},
-      {"ja": "京都アニメーション", "en": "Kyoto Animation", "ja_typings": ["kyotoanime-shon","kyoutoanime-shon"]},
-      {"ja": "ボンズ", "en": "Bones", "ja_typings": ["bonnzu"]},
-      {"ja": "MAPPA", "en": "MAPPA", "ja_typings": ["mappa"]}
+      {
+        "ja": "シャフト",
+        "en": "Shaft",
+        "ja_typings": [
+          "shafuto"
+        ]
+      },
+      {
+        "ja": "京都アニメーション",
+        "en": "Kyoto Animation",
+        "ja_typings": [
+          "kyoutoanime-shon"
+        ]
+      },
+      {
+        "ja": "ボンズ",
+        "en": "Bones",
+        "ja_typings": [
+          "bonzu"
+        ]
+      },
+      {
+        "ja": "MAPPA",
+        "en": "MAPPA",
+        "ja_typings": [
+          "mappa"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -786,12 +2298,39 @@
   {
     "id": "q0382",
     "genre": "anime",
-    "question_text": {"ja": "『鋼の錬金術師』の作者は誰?", "en": "Who is the author of 'Fullmetal Alchemist'?"},
+    "question_text": {
+      "ja": "『鋼の錬金術師』の作者は誰?",
+      "en": "Who is the author of 'Fullmetal Alchemist'?"
+    },
     "choices": [
-      {"ja": "荒川弘", "en": "Hiromu Arakawa", "ja_typings": ["arakawahiromu"]},
-      {"ja": "和月伸宏", "en": "Nobuhiro Watsuki", "ja_typings": ["watsukinobuhiro"]},
-      {"ja": "久保帯人", "en": "Tite Kubo", "ja_typings": ["kubotaito"]},
-      {"ja": "荒木飛呂彦", "en": "Hirohiko Araki", "ja_typings": ["arakihirohiko"]}
+      {
+        "ja": "荒川弘",
+        "en": "Hiromu Arakawa",
+        "ja_typings": [
+          "arakawahiromu"
+        ]
+      },
+      {
+        "ja": "和月伸宏",
+        "en": "Nobuhiro Watsuki",
+        "ja_typings": [
+          "watsukinobuhiro"
+        ]
+      },
+      {
+        "ja": "久保帯人",
+        "en": "Tite Kubo",
+        "ja_typings": [
+          "kubotaito"
+        ]
+      },
+      {
+        "ja": "荒木飛呂彦",
+        "en": "Hirohiko Araki",
+        "ja_typings": [
+          "arakihirohiko"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -800,12 +2339,39 @@
   {
     "id": "q0383",
     "genre": "anime",
-    "question_text": {"ja": "『鋼の錬金術師』の主人公の名前は?", "en": "What is the name of the protagonist of 'Fullmetal Alchemist'?"},
+    "question_text": {
+      "ja": "『鋼の錬金術師』の主人公の名前は?",
+      "en": "What is the name of the protagonist of 'Fullmetal Alchemist'?"
+    },
     "choices": [
-      {"ja": "エドワード・エルリック", "en": "Edward Elric", "ja_typings": ["edowa-doerurikku"]},
-      {"ja": "アルフォンス・エルリック", "en": "Alphonse Elric", "ja_typings": ["arufonsuerurikku"]},
-      {"ja": "ロイ・マスタング", "en": "Roy Mustang", "ja_typings": ["roimasutangu"]},
-      {"ja": "ウィンリィ・ロックベル", "en": "Winry Rockbell", "ja_typings": ["winrirokkuberu"]}
+      {
+        "ja": "エドワード・エルリック",
+        "en": "Edward Elric",
+        "ja_typings": [
+          "edowa-do/erurikku"
+        ]
+      },
+      {
+        "ja": "アルフォンス・エルリック",
+        "en": "Alphonse Elric",
+        "ja_typings": [
+          "arufonsu/erurikku"
+        ]
+      },
+      {
+        "ja": "ロイ・マスタング",
+        "en": "Roy Mustang",
+        "ja_typings": [
+          "roi/masutangu"
+        ]
+      },
+      {
+        "ja": "ウィンリィ・ロックベル",
+        "en": "Winry Rockbell",
+        "ja_typings": [
+          "winrii/rokkuberu"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -814,12 +2380,39 @@
   {
     "id": "q0384",
     "genre": "anime",
-    "question_text": {"ja": "『カードキャプターさくら』を生んだ漫画家グループは?", "en": "Which manga group created 'Cardcaptor Sakura'?"},
+    "question_text": {
+      "ja": "『カードキャプターさくら』を生んだ漫画家グループは?",
+      "en": "Which manga group created 'Cardcaptor Sakura'?"
+    },
     "choices": [
-      {"ja": "CLAMP", "en": "CLAMP", "ja_typings": ["clamp","kuranpu"]},
-      {"ja": "藤子・F・不二雄", "en": "Fujiko F. Fujio", "ja_typings": ["fujikoefujio"]},
-      {"ja": "石ノ森章太郎", "en": "Shotaro Ishinomori", "ja_typings": ["ishinomorishotaro","ishinomorishoutarou"]},
-      {"ja": "手塚治虫", "en": "Osamu Tezuka", "ja_typings": ["tezukaosamu"]}
+      {
+        "ja": "CLAMP",
+        "en": "CLAMP",
+        "ja_typings": [
+          "clamp"
+        ]
+      },
+      {
+        "ja": "藤子・F・不二雄",
+        "en": "Fujiko F. Fujio",
+        "ja_typings": [
+          "fujikoefujio"
+        ]
+      },
+      {
+        "ja": "石ノ森章太郎",
+        "en": "Shotaro Ishinomori",
+        "ja_typings": [
+          "ishinomorishoutarou"
+        ]
+      },
+      {
+        "ja": "手塚治虫",
+        "en": "Osamu Tezuka",
+        "ja_typings": [
+          "tezukaosamu"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -828,12 +2421,39 @@
   {
     "id": "q0385",
     "genre": "anime",
-    "question_text": {"ja": "『ドラえもん』の作者は誰?", "en": "Who is the author of 'Doraemon'?"},
+    "question_text": {
+      "ja": "『ドラえもん』の作者は誰?",
+      "en": "Who is the author of 'Doraemon'?"
+    },
     "choices": [
-      {"ja": "藤子・F・不二雄", "en": "Fujiko F. Fujio", "ja_typings": ["fujikoefujio"]},
-      {"ja": "手塚治虫", "en": "Osamu Tezuka", "ja_typings": ["tezukaosamu"]},
-      {"ja": "石ノ森章太郎", "en": "Shotaro Ishinomori", "ja_typings": ["ishinomorishotaro","ishinomorishoutarou"]},
-      {"ja": "鳥山明", "en": "Akira Toriyama", "ja_typings": ["toriyamaakira"]}
+      {
+        "ja": "藤子・F・不二雄",
+        "en": "Fujiko F. Fujio",
+        "ja_typings": [
+          "fujikoefujio"
+        ]
+      },
+      {
+        "ja": "手塚治虫",
+        "en": "Osamu Tezuka",
+        "ja_typings": [
+          "tezukaosamu"
+        ]
+      },
+      {
+        "ja": "石ノ森章太郎",
+        "en": "Shotaro Ishinomori",
+        "ja_typings": [
+          "ishinomorishoutarou"
+        ]
+      },
+      {
+        "ja": "鳥山明",
+        "en": "Akira Toriyama",
+        "ja_typings": [
+          "toriyamaakira"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,

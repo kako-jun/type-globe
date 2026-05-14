@@ -131,7 +131,7 @@ fn find_ja_typing_errors(path: &str, questions: &[Question]) -> Vec<String> {
             // 同一 canonical 形 に潰れる variant が複数登録されていないか
             // チェック。v0.7.0 で canonical_romaji が IME 別経路 (Hepburn/
             // Kunrei, 拗音, 促音, ファ系, ウェ系 等) を吸収するようになった
-            // ため、`gandhi-`/`gandi-` のような冗長ペアは1つに減らせる。
+            // ため、`ninnshou`/`ninshou` のような冗長ペアは1つに減らせる。
             {
                 use std::collections::HashMap;
                 let mut groups: HashMap<String, Vec<String>> = HashMap::new();
@@ -329,13 +329,13 @@ mod tests {
     fn detects_redundant_variants_that_canonicalize_alike() {
         use crate::types::Question;
         use std::collections::HashMap;
-        // `gandhi-` と `gandi-` は canonical_romaji で `dhi → di` 変換で
-        // どちらも `gandi-` になるため、両方を残すのは無意味な冗長。
+        // `ninnshou` と `ninshou` は ん+子音の冗長 `n` として
+        // どちらも同じ canonical になるため、両方を残すのは無意味な冗長。
         let mut labels = HashMap::new();
-        labels.insert("ja".to_string(), "ガンディー".to_string());
+        labels.insert("ja".to_string(), "認証".to_string());
         let choice = Choice {
             labels,
-            ja_typings: vec!["gandhi-".to_string(), "gandi-".to_string()],
+            ja_typings: vec!["ninnshou".to_string(), "ninshou".to_string()],
         };
         let question = Question {
             id: "q-test".to_string(),
@@ -350,9 +350,9 @@ mod tests {
         let errors = super::find_ja_typing_errors("data/questions_ja.json", &[question]);
         assert!(
             errors.iter().any(|e| e.contains("redundant-variant")
-                && e.contains("gandhi-")
-                && e.contains("gandi-")),
-            "expected redundant-variant for gandhi-/gandi-, got: {errors:?}"
+                && e.contains("ninnshou")
+                && e.contains("ninshou")),
+            "expected redundant-variant for ninnshou/ninshou, got: {errors:?}"
         );
     }
 

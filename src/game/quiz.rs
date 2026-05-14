@@ -462,23 +462,23 @@ mod tests {
     #[test]
     fn japanese_mode_accepts_explicit_romaji() {
         let mut question = make_question(&["東京", "大阪", "京都", "名古屋"], 0);
-        question.choices[0].ja_typings = vec!["tokyo".into(), "toukyou".into()];
-        question.choices[1].ja_typings = vec!["osaka".into(), "oosaka".into()];
-        question.choices[2].ja_typings = vec!["kyoto".into(), "kyouto".into()];
+        question.choices[0].ja_typings = vec!["toukyou".into()];
+        question.choices[1].ja_typings = vec!["oosaka".into()];
+        question.choices[2].ja_typings = vec!["kyouto".into()];
         question.choices[3].ja_typings = vec!["nagoya".into()];
         let mut game = QuizGame::new(vec![question], Language::Japanese);
         game.start();
-        let result = game.answer_question_typed("tokyo").expect("result");
+        let result = game.answer_question_typed("toukyou").expect("result");
         assert!(result.is_correct);
     }
 
     #[test]
     fn japanese_mode_accepts_uppercase_romaji() {
         let mut question = make_question(&["東京", "大阪", "京都", "名古屋"], 0);
-        question.choices[0].ja_typings = vec!["tokyo".into(), "toukyou".into()];
+        question.choices[0].ja_typings = vec!["toukyou".into()];
         let mut game = QuizGame::new(vec![question], Language::Japanese);
         game.start();
-        let result = game.answer_question_typed("TOKYO").expect("result");
+        let result = game.answer_question_typed("TOUKYOU").expect("result");
         assert!(result.is_correct);
     }
 
@@ -486,14 +486,13 @@ mod tests {
     fn japanese_tokyo_tou_prefix_is_valid() {
         // Regression for the user-reported bug: typing "tou" toward
         // Tokyo (とうきょう) was rejected as a mistype even though
-        // "toukyou" is a legitimate alias.
+        // "toukyou" is the IME-strict spelling.
         let mut question = make_question(&["とうきょう", "おおさか", "きょうと", "なごや"], 0);
-        question.choices[0].ja_typings = vec!["tokyo".into(), "toukyou".into()];
+        question.choices[0].ja_typings = vec!["toukyou".into()];
         let game = QuizGame::new(vec![question], Language::Japanese);
         let cands = game.current_correct_typing_candidates();
         eprintln!("candidates: {cands:?}");
         assert!(game.is_valid_correct_typed_prefix("t"), "t");
-        assert!(game.is_valid_correct_typed_prefix("to"), "to");
         assert!(game.is_valid_correct_typed_prefix("tou"), "tou");
         assert!(game.is_valid_correct_typed_prefix("touk"), "touk");
     }
@@ -502,7 +501,7 @@ mod tests {
     fn japanese_tokyo_kanji_label_tou_prefix_is_valid() {
         // Same bug, but with kanji labels (legacy data path).
         let mut question = make_question(&["東京", "大阪", "京都", "名古屋"], 0);
-        question.choices[0].ja_typings = vec!["tokyo".into(), "toukyou".into()];
+        question.choices[0].ja_typings = vec!["toukyou".into()];
         let game = QuizGame::new(vec![question], Language::Japanese);
         let cands = game.current_correct_typing_candidates();
         eprintln!("kanji candidates: {cands:?}");
@@ -513,13 +512,13 @@ mod tests {
     }
 
     #[test]
-    fn japanese_mode_accepts_long_vowel_alias() {
+    fn japanese_mode_rejects_collapsed_hiragana_long_vowel() {
         let mut question = make_question(&["とうきょう", "おおさか", "きょうと", "なごや"], 0);
-        question.choices[0].ja_typings = vec!["tokyo".into(), "toukyou".into()];
+        question.choices[0].ja_typings = vec!["toukyou".into()];
         let mut game = QuizGame::new(vec![question], Language::Japanese);
         game.start();
-        let result = game.answer_question_typed("toukyou").expect("result");
-        assert!(result.is_correct);
+        let result = game.answer_question_typed("tokyo").expect("result");
+        assert!(!result.is_correct);
     }
 
     #[test]
@@ -581,9 +580,9 @@ mod tests {
             ("fuji", &["f", "fu", "fuj", "fuji"]),
             // texi → thi
             ("texi", &["t", "te", "tex", "texi"]),
-            // dexi → di
+            // dexi → dhi
             ("dexi", &["d", "de", "dex", "dexi"]),
-            // dhi → di
+            // dhi
             ("dhi", &["d", "dh", "dhi"]),
             // dzu → du
             ("dzu", &["d", "dz", "dzu"]),
@@ -720,11 +719,11 @@ mod tests {
 
     #[test]
     fn valid_prefix_handles_japanese_romaji_variants() {
-        let mut question = make_question(&["東京", "大阪", "京都", "名古屋"], 0);
-        question.choices[0].ja_typings = vec!["tokyo".into(), "toukyou".into()];
+        let mut question = make_question(&["しば", "ちば", "つば", "ふば"], 0);
+        question.choices[0].ja_typings = vec!["shiba".into()];
         let game = QuizGame::new(vec![question], Language::Japanese);
-        assert!(game.is_valid_correct_typed_prefix("tok"));
-        assert!(game.is_valid_correct_typed_prefix("tou"));
+        assert!(game.is_valid_correct_typed_prefix("shi"));
+        assert!(game.is_valid_correct_typed_prefix("si"));
         assert!(!game.is_valid_correct_typed_prefix("tax"));
     }
 
@@ -867,7 +866,7 @@ mod tests {
     #[test]
     fn cpm_counts_typed_variant_length_for_japanese() {
         let mut question = make_question(&["東京", "大阪", "京都", "名古屋"], 0);
-        question.choices[0].ja_typings = vec!["tokyo".into(), "toukyou".into()];
+        question.choices[0].ja_typings = vec!["toukyou".into()];
         let mut game = QuizGame::new(vec![question], Language::Japanese);
         game.start();
         game.answer_question_typed("toukyou");

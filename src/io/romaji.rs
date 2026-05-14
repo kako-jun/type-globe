@@ -7,14 +7,14 @@
 /// - ASCII only
 /// - Hepburn spellings (`shi`, `chi`, `tsu`, `fu`, `ji`)
 /// - no macrons
-/// - long `o` collapsed (`とうきょう` -> `tokyo`, `おおさか` -> `osaka`)
+/// - hiragana long vowels are preserved (`とうきょう` -> `toukyou`,
+///   `おおさか` -> `oosaka`)
 /// - katakana ー is emitted as `-` (IME 入力で `-` キー必須に合わせる、
 ///   例: `ボール` -> `bo-ru`)
 /// - `ん` always maps to `n`, even before `b/m/p`
 #[allow(dead_code)]
 pub fn hiragana_to_hepburn(input: &str) -> String {
-    let raw = hiragana_to_hepburn_raw(input);
-    collapse_long_o(&raw)
+    hiragana_to_hepburn_raw(input)
 }
 
 /// `true` if `s` contains any CJK Unified Ideograph (han). Shared utility
@@ -32,12 +32,7 @@ pub fn hiragana_to_hepburn_variants(input: &str) -> Vec<String> {
     if raw.is_empty() {
         return Vec::new();
     }
-    let collapsed = collapse_long_o(&raw);
-    if raw == collapsed {
-        vec![collapsed]
-    } else {
-        vec![collapsed, raw]
-    }
+    vec![raw]
 }
 
 fn hiragana_to_hepburn_raw(input: &str) -> String {
@@ -220,24 +215,6 @@ fn squash_spaces(s: &str) -> String {
     s.split_whitespace().collect::<Vec<_>>().join(" ")
 }
 
-fn collapse_long_o(s: &str) -> String {
-    let mut out = String::with_capacity(s.len());
-    let chars: Vec<char> = s.chars().collect();
-    let mut i = 0usize;
-
-    while i < chars.len() {
-        let c = chars[i];
-        out.push(c);
-        if c == 'o' && i + 1 < chars.len() && matches!(chars[i + 1], 'o' | 'u') {
-            i += 2;
-            continue;
-        }
-        i += 1;
-    }
-
-    out
-}
-
 fn geminate_prefix(roman: &str) -> Option<char> {
     if roman.starts_with("ch") {
         Some('t')
@@ -301,10 +278,10 @@ fn romanize_pair(pair: [char; 2]) -> Option<&'static str> {
         ['ふ', 'ぃ'] => "fi",
         ['ふ', 'ぇ'] => "fe",
         ['ふ', 'ぉ'] => "fo",
-        ['て', 'ぃ'] => "ti",
-        ['で', 'ぃ'] => "di",
-        ['と', 'ぅ'] => "tu",
-        ['ど', 'ぅ'] => "du",
+        ['て', 'ぃ'] => "thi",
+        ['で', 'ぃ'] => "dhi",
+        ['と', 'ぅ'] => "twu",
+        ['ど', 'ぅ'] => "dwu",
         ['し', 'ぇ'] => "she",
         ['じ', 'ぇ'] => "je",
         ['ち', 'ぇ'] => "che",
@@ -414,17 +391,17 @@ mod tests {
     }
 
     #[test]
-    fn collapses_long_o() {
-        assert_eq!(hiragana_to_hepburn("とうきょう"), "tokyo");
-        assert_eq!(hiragana_to_hepburn("おおさか"), "osaka");
-        assert_eq!(hiragana_to_hepburn("きょうと"), "kyoto");
+    fn preserves_hiragana_long_vowels() {
+        assert_eq!(hiragana_to_hepburn("とうきょう"), "toukyou");
+        assert_eq!(hiragana_to_hepburn("おおさか"), "oosaka");
+        assert_eq!(hiragana_to_hepburn("きょうと"), "kyouto");
     }
 
     #[test]
-    fn exposes_uncollapsed_long_vowel_variant() {
+    fn variants_do_not_add_collapsed_long_vowels() {
         assert_eq!(
             hiragana_to_hepburn_variants("とうきょう"),
-            vec!["tokyo".to_string(), "toukyou".to_string()]
+            vec!["toukyou".to_string()]
         );
     }
 
@@ -453,7 +430,7 @@ mod tests {
     #[test]
     fn handles_sokuon_and_small_kana() {
         assert_eq!(hiragana_to_hepburn("ろけっと"), "roketto");
-        assert_eq!(hiragana_to_hepburn("がっこう"), "gakko");
+        assert_eq!(hiragana_to_hepburn("がっこう"), "gakkou");
         assert_eq!(hiragana_to_hepburn("ちぇっく"), "chekku");
     }
 

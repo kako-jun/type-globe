@@ -206,26 +206,26 @@ mod tests {
                 ("ja".to_string(), "東京".to_string()),
                 ("en".to_string(), "Tokyo".to_string()),
             ]),
-            ja_typings: vec!["tokyo".to_string()],
+            ja_typings: vec!["toukyou".to_string()],
         };
         assert_eq!(
             DataLoader::get_choice_typing_texts(&choice, &Language::Japanese),
-            vec!["tokyo".to_string()]
+            vec!["toukyou".to_string()]
         );
     }
 
     #[test]
-    fn ja_choice_typing_includes_long_vowel_aliases() {
+    fn ja_choice_typing_keeps_registered_ime_strict_spelling() {
         let choice = Choice {
             labels: std::collections::HashMap::from([
                 ("ja".to_string(), "とうきょう".to_string()),
                 ("en".to_string(), "Tokyo".to_string()),
             ]),
-            ja_typings: vec!["tokyo".to_string(), "toukyou".to_string()],
+            ja_typings: vec!["toukyou".to_string()],
         };
         assert_eq!(
             DataLoader::get_choice_typing_texts(&choice, &Language::Japanese),
-            vec!["tokyo".to_string(), "toukyou".to_string()]
+            vec!["toukyou".to_string()]
         );
     }
 

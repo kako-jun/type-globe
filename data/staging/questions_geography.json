@@ -2,12 +2,39 @@
   {
     "id": "q0051",
     "genre": "geography",
-    "question_text": {"ja": "フランスの首都はどこか", "en": "What is the capital of France?"},
+    "question_text": {
+      "ja": "フランスの首都はどこか",
+      "en": "What is the capital of France?"
+    },
     "choices": [
-      {"ja": "パリ", "en": "Paris", "ja_typings": ["pari"]},
-      {"ja": "ベルリン", "en": "Berlin", "ja_typings": ["berurin"]},
-      {"ja": "ローマ", "en": "Rome", "ja_typings": ["ro-ma"]},
-      {"ja": "マドリード", "en": "Madrid", "ja_typings": ["madori-do"]}
+      {
+        "ja": "パリ",
+        "en": "Paris",
+        "ja_typings": [
+          "pari"
+        ]
+      },
+      {
+        "ja": "ベルリン",
+        "en": "Berlin",
+        "ja_typings": [
+          "berurin"
+        ]
+      },
+      {
+        "ja": "ローマ",
+        "en": "Rome",
+        "ja_typings": [
+          "ro-ma"
+        ]
+      },
+      {
+        "ja": "マドリード",
+        "en": "Madrid",
+        "ja_typings": [
+          "madori-do"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -16,12 +43,39 @@
   {
     "id": "q0052",
     "genre": "geography",
-    "question_text": {"ja": "オーストラリアの首都はどこか", "en": "What is the capital of Australia?"},
+    "question_text": {
+      "ja": "オーストラリアの首都はどこか",
+      "en": "What is the capital of Australia?"
+    },
     "choices": [
-      {"ja": "キャンベラ", "en": "Canberra", "ja_typings": ["kyanbera"]},
-      {"ja": "シドニー", "en": "Sydney", "ja_typings": ["shidoni-"]},
-      {"ja": "メルボルン", "en": "Melbourne", "ja_typings": ["meruborun"]},
-      {"ja": "パース", "en": "Perth", "ja_typings": ["pa-su"]}
+      {
+        "ja": "キャンベラ",
+        "en": "Canberra",
+        "ja_typings": [
+          "kyanbera"
+        ]
+      },
+      {
+        "ja": "シドニー",
+        "en": "Sydney",
+        "ja_typings": [
+          "shidoni-"
+        ]
+      },
+      {
+        "ja": "メルボルン",
+        "en": "Melbourne",
+        "ja_typings": [
+          "meruborun"
+        ]
+      },
+      {
+        "ja": "パース",
+        "en": "Perth",
+        "ja_typings": [
+          "pa-su"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -30,12 +84,39 @@
   {
     "id": "q0053",
     "genre": "geography",
-    "question_text": {"ja": "世界で最も面積の大きい国はどこか", "en": "Which country has the largest area in the world?"},
+    "question_text": {
+      "ja": "世界で最も面積の大きい国はどこか",
+      "en": "Which country has the largest area in the world?"
+    },
     "choices": [
-      {"ja": "ロシア", "en": "Russia", "ja_typings": ["roshia"]},
-      {"ja": "カナダ", "en": "Canada", "ja_typings": ["kanada"]},
-      {"ja": "中国", "en": "China", "ja_typings": ["chugoku", "chuugoku"]},
-      {"ja": "アメリカ合衆国", "en": "United States", "ja_typings": ["amerikagasshukoku", "amerikagasshuukoku"]}
+      {
+        "ja": "ロシア",
+        "en": "Russia",
+        "ja_typings": [
+          "roshia"
+        ]
+      },
+      {
+        "ja": "カナダ",
+        "en": "Canada",
+        "ja_typings": [
+          "kanada"
+        ]
+      },
+      {
+        "ja": "中国",
+        "en": "China",
+        "ja_typings": [
+          "chuugoku"
+        ]
+      },
+      {
+        "ja": "アメリカ合衆国",
+        "en": "United States",
+        "ja_typings": [
+          "amerikagasshuukoku"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -44,12 +125,39 @@
   {
     "id": "q0054",
     "genre": "geography",
-    "question_text": {"ja": "世界最高峰の山はどれか", "en": "What is the highest mountain in the world?"},
+    "question_text": {
+      "ja": "世界最高峰の山はどれか",
+      "en": "What is the highest mountain in the world?"
+    },
     "choices": [
-      {"ja": "エベレスト", "en": "Mount Everest", "ja_typings": ["eberesuto"]},
-      {"ja": "K2", "en": "K2", "ja_typings": ["k2", "ke-tsu-"]},
-      {"ja": "キリマンジャロ", "en": "Mount Kilimanjaro", "ja_typings": ["kirimanjaro"]},
-      {"ja": "マッキンリー", "en": "Mount McKinley", "ja_typings": ["makkinri-"]}
+      {
+        "ja": "エベレスト",
+        "en": "Mount Everest",
+        "ja_typings": [
+          "eberesuto"
+        ]
+      },
+      {
+        "ja": "K2",
+        "en": "K2",
+        "ja_typings": [
+          "k2"
+        ]
+      },
+      {
+        "ja": "キリマンジャロ",
+        "en": "Mount Kilimanjaro",
+        "ja_typings": [
+          "kirimanjaro"
+        ]
+      },
+      {
+        "ja": "マッキンリー",
+        "en": "Mount McKinley",
+        "ja_typings": [
+          "makkinri-"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -58,12 +166,39 @@
   {
     "id": "q0055",
     "genre": "geography",
-    "question_text": {"ja": "世界で最も長い川はどれか", "en": "What is the longest river in the world?"},
+    "question_text": {
+      "ja": "世界で最も長い川はどれか",
+      "en": "What is the longest river in the world?"
+    },
     "choices": [
-      {"ja": "ナイル川", "en": "Nile River", "ja_typings": ["nairugawa"]},
-      {"ja": "アマゾン川", "en": "Amazon River", "ja_typings": ["amazongawa"]},
-      {"ja": "長江", "en": "Yangtze River", "ja_typings": ["chokou", "choukou"]},
-      {"ja": "ミシシッピ川", "en": "Mississippi River", "ja_typings": ["mishishippigawa"]}
+      {
+        "ja": "ナイル川",
+        "en": "Nile River",
+        "ja_typings": [
+          "nairugawa"
+        ]
+      },
+      {
+        "ja": "アマゾン川",
+        "en": "Amazon River",
+        "ja_typings": [
+          "amazongawa"
+        ]
+      },
+      {
+        "ja": "長江",
+        "en": "Yangtze River",
+        "ja_typings": [
+          "choukou"
+        ]
+      },
+      {
+        "ja": "ミシシッピ川",
+        "en": "Mississippi River",
+        "ja_typings": [
+          "mishishippigawa"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -72,12 +207,39 @@
   {
     "id": "q0056",
     "genre": "geography",
-    "question_text": {"ja": "世界最大の砂漠はどこか", "en": "What is the largest hot desert in the world?"},
+    "question_text": {
+      "ja": "世界最大の砂漠はどこか",
+      "en": "What is the largest hot desert in the world?"
+    },
     "choices": [
-      {"ja": "サハラ砂漠", "en": "Sahara Desert", "ja_typings": ["saharasabaku"]},
-      {"ja": "ゴビ砂漠", "en": "Gobi Desert", "ja_typings": ["gobisabaku"]},
-      {"ja": "カラハリ砂漠", "en": "Kalahari Desert", "ja_typings": ["karaharisabaku"]},
-      {"ja": "アタカマ砂漠", "en": "Atacama Desert", "ja_typings": ["atakamasabaku"]}
+      {
+        "ja": "サハラ砂漠",
+        "en": "Sahara Desert",
+        "ja_typings": [
+          "saharasabaku"
+        ]
+      },
+      {
+        "ja": "ゴビ砂漠",
+        "en": "Gobi Desert",
+        "ja_typings": [
+          "gobisabaku"
+        ]
+      },
+      {
+        "ja": "カラハリ砂漠",
+        "en": "Kalahari Desert",
+        "ja_typings": [
+          "karaharisabaku"
+        ]
+      },
+      {
+        "ja": "アタカマ砂漠",
+        "en": "Atacama Desert",
+        "ja_typings": [
+          "atakamasabaku"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -86,12 +248,39 @@
   {
     "id": "q0057",
     "genre": "geography",
-    "question_text": {"ja": "南アメリカ大陸で話されている主な言語はどれか", "en": "What is the main language spoken in most of South America?"},
+    "question_text": {
+      "ja": "南アメリカ大陸で話されている主な言語はどれか",
+      "en": "What is the main language spoken in most of South America?"
+    },
     "choices": [
-      {"ja": "スペイン語", "en": "Spanish", "ja_typings": ["supeingo"]},
-      {"ja": "ポルトガル語", "en": "Portuguese", "ja_typings": ["porutogarugo"]},
-      {"ja": "英語", "en": "English", "ja_typings": ["eigo"]},
-      {"ja": "フランス語", "en": "French", "ja_typings": ["furansugo"]}
+      {
+        "ja": "スペイン語",
+        "en": "Spanish",
+        "ja_typings": [
+          "supeingo"
+        ]
+      },
+      {
+        "ja": "ポルトガル語",
+        "en": "Portuguese",
+        "ja_typings": [
+          "porutogarugo"
+        ]
+      },
+      {
+        "ja": "英語",
+        "en": "English",
+        "ja_typings": [
+          "eigo"
+        ]
+      },
+      {
+        "ja": "フランス語",
+        "en": "French",
+        "ja_typings": [
+          "furansugo"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -100,12 +289,39 @@
   {
     "id": "q0058",
     "genre": "geography",
-    "question_text": {"ja": "ブラジルの首都はどこか", "en": "What is the capital of Brazil?"},
+    "question_text": {
+      "ja": "ブラジルの首都はどこか",
+      "en": "What is the capital of Brazil?"
+    },
     "choices": [
-      {"ja": "ブラジリア", "en": "Brasilia", "ja_typings": ["burajiria"]},
-      {"ja": "リオデジャネイロ", "en": "Rio de Janeiro", "ja_typings": ["riodejaneiro"]},
-      {"ja": "サンパウロ", "en": "Sao Paulo", "ja_typings": ["sanpauro"]},
-      {"ja": "ブエノスアイレス", "en": "Buenos Aires", "ja_typings": ["buenosuairesu"]}
+      {
+        "ja": "ブラジリア",
+        "en": "Brasilia",
+        "ja_typings": [
+          "burajiria"
+        ]
+      },
+      {
+        "ja": "リオデジャネイロ",
+        "en": "Rio de Janeiro",
+        "ja_typings": [
+          "riodejaneiro"
+        ]
+      },
+      {
+        "ja": "サンパウロ",
+        "en": "Sao Paulo",
+        "ja_typings": [
+          "sanpauro"
+        ]
+      },
+      {
+        "ja": "ブエノスアイレス",
+        "en": "Buenos Aires",
+        "ja_typings": [
+          "buenosuairesu"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -114,12 +330,39 @@
   {
     "id": "q0059",
     "genre": "geography",
-    "question_text": {"ja": "イタリアの首都はどこか", "en": "What is the capital of Italy?"},
+    "question_text": {
+      "ja": "イタリアの首都はどこか",
+      "en": "What is the capital of Italy?"
+    },
     "choices": [
-      {"ja": "ローマ", "en": "Rome", "ja_typings": ["ro-ma"]},
-      {"ja": "ミラノ", "en": "Milan", "ja_typings": ["mirano"]},
-      {"ja": "ヴェネツィア", "en": "Venice", "ja_typings": ["benetsia", "venetsuia"]},
-      {"ja": "フィレンツェ", "en": "Florence", "ja_typings": ["firentse", "firentue"]}
+      {
+        "ja": "ローマ",
+        "en": "Rome",
+        "ja_typings": [
+          "ro-ma"
+        ]
+      },
+      {
+        "ja": "ミラノ",
+        "en": "Milan",
+        "ja_typings": [
+          "mirano"
+        ]
+      },
+      {
+        "ja": "ヴェネツィア",
+        "en": "Venice",
+        "ja_typings": [
+          "venetsia"
+        ]
+      },
+      {
+        "ja": "フィレンツェ",
+        "en": "Florence",
+        "ja_typings": [
+          "firentse"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -128,12 +371,39 @@
   {
     "id": "q0060",
     "genre": "geography",
-    "question_text": {"ja": "韓国の首都はどこか", "en": "What is the capital of South Korea?"},
+    "question_text": {
+      "ja": "韓国の首都はどこか",
+      "en": "What is the capital of South Korea?"
+    },
     "choices": [
-      {"ja": "ソウル", "en": "Seoul", "ja_typings": ["souru"]},
-      {"ja": "プサン", "en": "Busan", "ja_typings": ["pusan"]},
-      {"ja": "ピョンヤン", "en": "Pyongyang", "ja_typings": ["pyonyan"]},
-      {"ja": "インチョン", "en": "Incheon", "ja_typings": ["inchon"]}
+      {
+        "ja": "ソウル",
+        "en": "Seoul",
+        "ja_typings": [
+          "souru"
+        ]
+      },
+      {
+        "ja": "プサン",
+        "en": "Busan",
+        "ja_typings": [
+          "pusan"
+        ]
+      },
+      {
+        "ja": "ピョンヤン",
+        "en": "Pyongyang",
+        "ja_typings": [
+          "pyonnyan"
+        ]
+      },
+      {
+        "ja": "インチョン",
+        "en": "Incheon",
+        "ja_typings": [
+          "inchon"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -142,12 +412,39 @@
   {
     "id": "q0061",
     "genre": "geography",
-    "question_text": {"ja": "中国の首都はどこか", "en": "What is the capital of China?"},
+    "question_text": {
+      "ja": "中国の首都はどこか",
+      "en": "What is the capital of China?"
+    },
     "choices": [
-      {"ja": "北京", "en": "Beijing", "ja_typings": ["pekin"]},
-      {"ja": "上海", "en": "Shanghai", "ja_typings": ["shanhai"]},
-      {"ja": "香港", "en": "Hong Kong", "ja_typings": ["honkon"]},
-      {"ja": "南京", "en": "Nanjing", "ja_typings": ["nankin"]}
+      {
+        "ja": "北京",
+        "en": "Beijing",
+        "ja_typings": [
+          "pekin"
+        ]
+      },
+      {
+        "ja": "上海",
+        "en": "Shanghai",
+        "ja_typings": [
+          "shanhai"
+        ]
+      },
+      {
+        "ja": "香港",
+        "en": "Hong Kong",
+        "ja_typings": [
+          "honkon"
+        ]
+      },
+      {
+        "ja": "南京",
+        "en": "Nanjing",
+        "ja_typings": [
+          "nankin"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -156,12 +453,39 @@
   {
     "id": "q0062",
     "genre": "geography",
-    "question_text": {"ja": "エジプトの首都はどこか", "en": "What is the capital of Egypt?"},
+    "question_text": {
+      "ja": "エジプトの首都はどこか",
+      "en": "What is the capital of Egypt?"
+    },
     "choices": [
-      {"ja": "カイロ", "en": "Cairo", "ja_typings": ["kairo"]},
-      {"ja": "アレクサンドリア", "en": "Alexandria", "ja_typings": ["arekusandoria"]},
-      {"ja": "ギザ", "en": "Giza", "ja_typings": ["giza"]},
-      {"ja": "ルクソール", "en": "Luxor", "ja_typings": ["rukuso-ru"]}
+      {
+        "ja": "カイロ",
+        "en": "Cairo",
+        "ja_typings": [
+          "kairo"
+        ]
+      },
+      {
+        "ja": "アレクサンドリア",
+        "en": "Alexandria",
+        "ja_typings": [
+          "arekusandoria"
+        ]
+      },
+      {
+        "ja": "ギザ",
+        "en": "Giza",
+        "ja_typings": [
+          "giza"
+        ]
+      },
+      {
+        "ja": "ルクソール",
+        "en": "Luxor",
+        "ja_typings": [
+          "rukuso-ru"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -170,12 +494,39 @@
   {
     "id": "q0063",
     "genre": "geography",
-    "question_text": {"ja": "アメリカ合衆国の首都はどこか", "en": "What is the capital of the United States?"},
+    "question_text": {
+      "ja": "アメリカ合衆国の首都はどこか",
+      "en": "What is the capital of the United States?"
+    },
     "choices": [
-      {"ja": "ワシントンD.C.", "en": "Washington, D.C.", "ja_typings": ["washintondc", "washintondi-shi-"]},
-      {"ja": "ニューヨーク", "en": "New York", "ja_typings": ["nyu-yo-ku"]},
-      {"ja": "ロサンゼルス", "en": "Los Angeles", "ja_typings": ["rosanzerusu"]},
-      {"ja": "シカゴ", "en": "Chicago", "ja_typings": ["shikago"]}
+      {
+        "ja": "ワシントンD.C.",
+        "en": "Washington, D.C.",
+        "ja_typings": [
+          "washintond.c."
+        ]
+      },
+      {
+        "ja": "ニューヨーク",
+        "en": "New York",
+        "ja_typings": [
+          "nyu-yo-ku"
+        ]
+      },
+      {
+        "ja": "ロサンゼルス",
+        "en": "Los Angeles",
+        "ja_typings": [
+          "rosanzerusu"
+        ]
+      },
+      {
+        "ja": "シカゴ",
+        "en": "Chicago",
+        "ja_typings": [
+          "shikago"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -184,12 +535,39 @@
   {
     "id": "q0064",
     "genre": "geography",
-    "question_text": {"ja": "ドイツの首都はどこか", "en": "What is the capital of Germany?"},
+    "question_text": {
+      "ja": "ドイツの首都はどこか",
+      "en": "What is the capital of Germany?"
+    },
     "choices": [
-      {"ja": "ベルリン", "en": "Berlin", "ja_typings": ["berurin"]},
-      {"ja": "ミュンヘン", "en": "Munich", "ja_typings": ["myunhen"]},
-      {"ja": "ハンブルク", "en": "Hamburg", "ja_typings": ["hanburuku"]},
-      {"ja": "フランクフルト", "en": "Frankfurt", "ja_typings": ["furankufuruto"]}
+      {
+        "ja": "ベルリン",
+        "en": "Berlin",
+        "ja_typings": [
+          "berurin"
+        ]
+      },
+      {
+        "ja": "ミュンヘン",
+        "en": "Munich",
+        "ja_typings": [
+          "myunhen"
+        ]
+      },
+      {
+        "ja": "ハンブルク",
+        "en": "Hamburg",
+        "ja_typings": [
+          "hanburuku"
+        ]
+      },
+      {
+        "ja": "フランクフルト",
+        "en": "Frankfurt",
+        "ja_typings": [
+          "furankufuruto"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -198,12 +576,39 @@
   {
     "id": "q0065",
     "genre": "geography",
-    "question_text": {"ja": "イギリスの首都はどこか", "en": "What is the capital of the United Kingdom?"},
+    "question_text": {
+      "ja": "イギリスの首都はどこか",
+      "en": "What is the capital of the United Kingdom?"
+    },
     "choices": [
-      {"ja": "ロンドン", "en": "London", "ja_typings": ["rondon"]},
-      {"ja": "エディンバラ", "en": "Edinburgh", "ja_typings": ["edinbara"]},
-      {"ja": "ダブリン", "en": "Dublin", "ja_typings": ["daburin"]},
-      {"ja": "マンチェスター", "en": "Manchester", "ja_typings": ["manchesuta-"]}
+      {
+        "ja": "ロンドン",
+        "en": "London",
+        "ja_typings": [
+          "rondon"
+        ]
+      },
+      {
+        "ja": "エディンバラ",
+        "en": "Edinburgh",
+        "ja_typings": [
+          "edhinbara"
+        ]
+      },
+      {
+        "ja": "ダブリン",
+        "en": "Dublin",
+        "ja_typings": [
+          "daburin"
+        ]
+      },
+      {
+        "ja": "マンチェスター",
+        "en": "Manchester",
+        "ja_typings": [
+          "manchesuta-"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -212,12 +617,39 @@
   {
     "id": "q0066",
     "genre": "geography",
-    "question_text": {"ja": "世界で最も人口の多い大陸はどれか", "en": "Which continent has the largest population?"},
+    "question_text": {
+      "ja": "世界で最も人口の多い大陸はどれか",
+      "en": "Which continent has the largest population?"
+    },
     "choices": [
-      {"ja": "アジア", "en": "Asia", "ja_typings": ["ajia"]},
-      {"ja": "アフリカ", "en": "Africa", "ja_typings": ["afurika"]},
-      {"ja": "ヨーロッパ", "en": "Europe", "ja_typings": ["yo-roppa"]},
-      {"ja": "北アメリカ", "en": "North America", "ja_typings": ["kitaamerika"]}
+      {
+        "ja": "アジア",
+        "en": "Asia",
+        "ja_typings": [
+          "ajia"
+        ]
+      },
+      {
+        "ja": "アフリカ",
+        "en": "Africa",
+        "ja_typings": [
+          "afurika"
+        ]
+      },
+      {
+        "ja": "ヨーロッパ",
+        "en": "Europe",
+        "ja_typings": [
+          "yo-roppa"
+        ]
+      },
+      {
+        "ja": "北アメリカ",
+        "en": "North America",
+        "ja_typings": [
+          "kitaamerika"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -226,12 +658,39 @@
   {
     "id": "q0067",
     "genre": "geography",
-    "question_text": {"ja": "世界で最も面積の大きい大陸はどれか", "en": "Which is the largest continent by area?"},
+    "question_text": {
+      "ja": "世界で最も面積の大きい大陸はどれか",
+      "en": "Which is the largest continent by area?"
+    },
     "choices": [
-      {"ja": "アジア", "en": "Asia", "ja_typings": ["ajia"]},
-      {"ja": "アフリカ", "en": "Africa", "ja_typings": ["afurika"]},
-      {"ja": "北アメリカ", "en": "North America", "ja_typings": ["kitaamerika"]},
-      {"ja": "南極大陸", "en": "Antarctica", "ja_typings": ["nankyokutairiku"]}
+      {
+        "ja": "アジア",
+        "en": "Asia",
+        "ja_typings": [
+          "ajia"
+        ]
+      },
+      {
+        "ja": "アフリカ",
+        "en": "Africa",
+        "ja_typings": [
+          "afurika"
+        ]
+      },
+      {
+        "ja": "北アメリカ",
+        "en": "North America",
+        "ja_typings": [
+          "kitaamerika"
+        ]
+      },
+      {
+        "ja": "南極大陸",
+        "en": "Antarctica",
+        "ja_typings": [
+          "nankyokutairiku"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -240,12 +699,39 @@
   {
     "id": "q0068",
     "genre": "geography",
-    "question_text": {"ja": "世界で最も大きい海洋はどれか", "en": "Which is the largest ocean in the world?"},
+    "question_text": {
+      "ja": "世界で最も大きい海洋はどれか",
+      "en": "Which is the largest ocean in the world?"
+    },
     "choices": [
-      {"ja": "太平洋", "en": "Pacific Ocean", "ja_typings": ["taiheiyo", "taiheiyou"]},
-      {"ja": "大西洋", "en": "Atlantic Ocean", "ja_typings": ["taiseiyo", "taiseiyou"]},
-      {"ja": "インド洋", "en": "Indian Ocean", "ja_typings": ["indoyo", "indoyou"]},
-      {"ja": "北極海", "en": "Arctic Ocean", "ja_typings": ["hokkyokukai"]}
+      {
+        "ja": "太平洋",
+        "en": "Pacific Ocean",
+        "ja_typings": [
+          "taiheiyou"
+        ]
+      },
+      {
+        "ja": "大西洋",
+        "en": "Atlantic Ocean",
+        "ja_typings": [
+          "taiseiyou"
+        ]
+      },
+      {
+        "ja": "インド洋",
+        "en": "Indian Ocean",
+        "ja_typings": [
+          "indoyou"
+        ]
+      },
+      {
+        "ja": "北極海",
+        "en": "Arctic Ocean",
+        "ja_typings": [
+          "hokkyokukai"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -254,12 +740,39 @@
   {
     "id": "q0069",
     "genre": "geography",
-    "question_text": {"ja": "インドの首都はどこか", "en": "What is the capital of India?"},
+    "question_text": {
+      "ja": "インドの首都はどこか",
+      "en": "What is the capital of India?"
+    },
     "choices": [
-      {"ja": "ニューデリー", "en": "New Delhi", "ja_typings": ["nyu-deri-"]},
-      {"ja": "ムンバイ", "en": "Mumbai", "ja_typings": ["munbai"]},
-      {"ja": "コルカタ", "en": "Kolkata", "ja_typings": ["korukata"]},
-      {"ja": "バンガロール", "en": "Bangalore", "ja_typings": ["bangaro-ru"]}
+      {
+        "ja": "ニューデリー",
+        "en": "New Delhi",
+        "ja_typings": [
+          "nyu-deri-"
+        ]
+      },
+      {
+        "ja": "ムンバイ",
+        "en": "Mumbai",
+        "ja_typings": [
+          "munbai"
+        ]
+      },
+      {
+        "ja": "コルカタ",
+        "en": "Kolkata",
+        "ja_typings": [
+          "korukata"
+        ]
+      },
+      {
+        "ja": "バンガロール",
+        "en": "Bangalore",
+        "ja_typings": [
+          "bangaro-ru"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -268,12 +781,39 @@
   {
     "id": "q0070",
     "genre": "geography",
-    "question_text": {"ja": "カナダの首都はどこか", "en": "What is the capital of Canada?"},
+    "question_text": {
+      "ja": "カナダの首都はどこか",
+      "en": "What is the capital of Canada?"
+    },
     "choices": [
-      {"ja": "オタワ", "en": "Ottawa", "ja_typings": ["otawa"]},
-      {"ja": "トロント", "en": "Toronto", "ja_typings": ["toronto"]},
-      {"ja": "モントリオール", "en": "Montreal", "ja_typings": ["montorio-ru"]},
-      {"ja": "バンクーバー", "en": "Vancouver", "ja_typings": ["banku-ba-"]}
+      {
+        "ja": "オタワ",
+        "en": "Ottawa",
+        "ja_typings": [
+          "otawa"
+        ]
+      },
+      {
+        "ja": "トロント",
+        "en": "Toronto",
+        "ja_typings": [
+          "toronto"
+        ]
+      },
+      {
+        "ja": "モントリオール",
+        "en": "Montreal",
+        "ja_typings": [
+          "montorio-ru"
+        ]
+      },
+      {
+        "ja": "バンクーバー",
+        "en": "Vancouver",
+        "ja_typings": [
+          "banku-ba-"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -282,12 +822,39 @@
   {
     "id": "q0071",
     "genre": "geography",
-    "question_text": {"ja": "タイの首都はどこか", "en": "What is the capital of Thailand?"},
+    "question_text": {
+      "ja": "タイの首都はどこか",
+      "en": "What is the capital of Thailand?"
+    },
     "choices": [
-      {"ja": "バンコク", "en": "Bangkok", "ja_typings": ["bankoku"]},
-      {"ja": "ハノイ", "en": "Hanoi", "ja_typings": ["hanoi"]},
-      {"ja": "プノンペン", "en": "Phnom Penh", "ja_typings": ["punonpen"]},
-      {"ja": "ビエンチャン", "en": "Vientiane", "ja_typings": ["bienchan"]}
+      {
+        "ja": "バンコク",
+        "en": "Bangkok",
+        "ja_typings": [
+          "bankoku"
+        ]
+      },
+      {
+        "ja": "ハノイ",
+        "en": "Hanoi",
+        "ja_typings": [
+          "hanoi"
+        ]
+      },
+      {
+        "ja": "プノンペン",
+        "en": "Phnom Penh",
+        "ja_typings": [
+          "punonpen"
+        ]
+      },
+      {
+        "ja": "ビエンチャン",
+        "en": "Vientiane",
+        "ja_typings": [
+          "bienchan"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -296,12 +863,39 @@
   {
     "id": "q0072",
     "genre": "geography",
-    "question_text": {"ja": "アンデス山脈はどの大陸にあるか", "en": "On which continent are the Andes Mountains located?"},
+    "question_text": {
+      "ja": "アンデス山脈はどの大陸にあるか",
+      "en": "On which continent are the Andes Mountains located?"
+    },
     "choices": [
-      {"ja": "南アメリカ", "en": "South America", "ja_typings": ["minamiamerika"]},
-      {"ja": "北アメリカ", "en": "North America", "ja_typings": ["kitaamerika"]},
-      {"ja": "アジア", "en": "Asia", "ja_typings": ["ajia"]},
-      {"ja": "アフリカ", "en": "Africa", "ja_typings": ["afurika"]}
+      {
+        "ja": "南アメリカ",
+        "en": "South America",
+        "ja_typings": [
+          "minamiamerika"
+        ]
+      },
+      {
+        "ja": "北アメリカ",
+        "en": "North America",
+        "ja_typings": [
+          "kitaamerika"
+        ]
+      },
+      {
+        "ja": "アジア",
+        "en": "Asia",
+        "ja_typings": [
+          "ajia"
+        ]
+      },
+      {
+        "ja": "アフリカ",
+        "en": "Africa",
+        "ja_typings": [
+          "afurika"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -310,12 +904,39 @@
   {
     "id": "q0073",
     "genre": "geography",
-    "question_text": {"ja": "ヒマラヤ山脈に属する国でないのはどこか", "en": "Which country is NOT part of the Himalayan range?"},
+    "question_text": {
+      "ja": "ヒマラヤ山脈に属する国でないのはどこか",
+      "en": "Which country is NOT part of the Himalayan range?"
+    },
     "choices": [
-      {"ja": "モンゴル", "en": "Mongolia", "ja_typings": ["mongoru"]},
-      {"ja": "ネパール", "en": "Nepal", "ja_typings": ["nepa-ru"]},
-      {"ja": "ブータン", "en": "Bhutan", "ja_typings": ["bu-tan"]},
-      {"ja": "インド", "en": "India", "ja_typings": ["indo"]}
+      {
+        "ja": "モンゴル",
+        "en": "Mongolia",
+        "ja_typings": [
+          "mongoru"
+        ]
+      },
+      {
+        "ja": "ネパール",
+        "en": "Nepal",
+        "ja_typings": [
+          "nepa-ru"
+        ]
+      },
+      {
+        "ja": "ブータン",
+        "en": "Bhutan",
+        "ja_typings": [
+          "bu-tan"
+        ]
+      },
+      {
+        "ja": "インド",
+        "en": "India",
+        "ja_typings": [
+          "indo"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -324,12 +945,39 @@
   {
     "id": "q0074",
     "genre": "geography",
-    "question_text": {"ja": "世界で最も深い湖はどれか", "en": "What is the deepest lake in the world?"},
+    "question_text": {
+      "ja": "世界で最も深い湖はどれか",
+      "en": "What is the deepest lake in the world?"
+    },
     "choices": [
-      {"ja": "バイカル湖", "en": "Lake Baikal", "ja_typings": ["baikaruko"]},
-      {"ja": "タンガニーカ湖", "en": "Lake Tanganyika", "ja_typings": ["tangani-kako"]},
-      {"ja": "カスピ海", "en": "Caspian Sea", "ja_typings": ["kasupikai"]},
-      {"ja": "スペリオル湖", "en": "Lake Superior", "ja_typings": ["superioruko"]}
+      {
+        "ja": "バイカル湖",
+        "en": "Lake Baikal",
+        "ja_typings": [
+          "baikaruko"
+        ]
+      },
+      {
+        "ja": "タンガニーカ湖",
+        "en": "Lake Tanganyika",
+        "ja_typings": [
+          "tangani-kako"
+        ]
+      },
+      {
+        "ja": "カスピ海",
+        "en": "Caspian Sea",
+        "ja_typings": [
+          "kasupikai"
+        ]
+      },
+      {
+        "ja": "スペリオル湖",
+        "en": "Lake Superior",
+        "ja_typings": [
+          "superioruko"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -338,12 +986,39 @@
   {
     "id": "q0075",
     "genre": "geography",
-    "question_text": {"ja": "スペインの首都はどこか", "en": "What is the capital of Spain?"},
+    "question_text": {
+      "ja": "スペインの首都はどこか",
+      "en": "What is the capital of Spain?"
+    },
     "choices": [
-      {"ja": "マドリード", "en": "Madrid", "ja_typings": ["madori-do"]},
-      {"ja": "バルセロナ", "en": "Barcelona", "ja_typings": ["baruserona"]},
-      {"ja": "セビリア", "en": "Seville", "ja_typings": ["sebiria"]},
-      {"ja": "バレンシア", "en": "Valencia", "ja_typings": ["barenshia"]}
+      {
+        "ja": "マドリード",
+        "en": "Madrid",
+        "ja_typings": [
+          "madori-do"
+        ]
+      },
+      {
+        "ja": "バルセロナ",
+        "en": "Barcelona",
+        "ja_typings": [
+          "baruserona"
+        ]
+      },
+      {
+        "ja": "セビリア",
+        "en": "Seville",
+        "ja_typings": [
+          "sebiria"
+        ]
+      },
+      {
+        "ja": "バレンシア",
+        "en": "Valencia",
+        "ja_typings": [
+          "barenshia"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -352,12 +1027,39 @@
   {
     "id": "q0076",
     "genre": "geography",
-    "question_text": {"ja": "オランダの首都はどこか", "en": "What is the capital of the Netherlands?"},
+    "question_text": {
+      "ja": "オランダの首都はどこか",
+      "en": "What is the capital of the Netherlands?"
+    },
     "choices": [
-      {"ja": "アムステルダム", "en": "Amsterdam", "ja_typings": ["amusuterudamu"]},
-      {"ja": "ハーグ", "en": "The Hague", "ja_typings": ["ha-gu"]},
-      {"ja": "ロッテルダム", "en": "Rotterdam", "ja_typings": ["rotterudamu"]},
-      {"ja": "ユトレヒト", "en": "Utrecht", "ja_typings": ["yutorehito"]}
+      {
+        "ja": "アムステルダム",
+        "en": "Amsterdam",
+        "ja_typings": [
+          "amusuterudamu"
+        ]
+      },
+      {
+        "ja": "ハーグ",
+        "en": "The Hague",
+        "ja_typings": [
+          "ha-gu"
+        ]
+      },
+      {
+        "ja": "ロッテルダム",
+        "en": "Rotterdam",
+        "ja_typings": [
+          "rotterudamu"
+        ]
+      },
+      {
+        "ja": "ユトレヒト",
+        "en": "Utrecht",
+        "ja_typings": [
+          "yutorehito"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -366,12 +1068,39 @@
   {
     "id": "q0077",
     "genre": "geography",
-    "question_text": {"ja": "ロシアの首都はどこか", "en": "What is the capital of Russia?"},
+    "question_text": {
+      "ja": "ロシアの首都はどこか",
+      "en": "What is the capital of Russia?"
+    },
     "choices": [
-      {"ja": "モスクワ", "en": "Moscow", "ja_typings": ["mosukuwa"]},
-      {"ja": "サンクトペテルブルク", "en": "Saint Petersburg", "ja_typings": ["sankutopeteruburuku"]},
-      {"ja": "ノヴォシビルスク", "en": "Novosibirsk", "ja_typings": ["noboshibirusuku"]},
-      {"ja": "ウラジオストク", "en": "Vladivostok", "ja_typings": ["urajiosutoku"]}
+      {
+        "ja": "モスクワ",
+        "en": "Moscow",
+        "ja_typings": [
+          "mosukuwa"
+        ]
+      },
+      {
+        "ja": "サンクトペテルブルク",
+        "en": "Saint Petersburg",
+        "ja_typings": [
+          "sankutopeteruburuku"
+        ]
+      },
+      {
+        "ja": "ノヴォシビルスク",
+        "en": "Novosibirsk",
+        "ja_typings": [
+          "novoshibirusuku"
+        ]
+      },
+      {
+        "ja": "ウラジオストク",
+        "en": "Vladivostok",
+        "ja_typings": [
+          "urajiosutoku"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -380,12 +1109,39 @@
   {
     "id": "q0078",
     "genre": "geography",
-    "question_text": {"ja": "メキシコの首都はどこか", "en": "What is the capital of Mexico?"},
+    "question_text": {
+      "ja": "メキシコの首都はどこか",
+      "en": "What is the capital of Mexico?"
+    },
     "choices": [
-      {"ja": "メキシコシティ", "en": "Mexico City", "ja_typings": ["mekishikoshiti", "mekishikoshitei"]},
-      {"ja": "グアダラハラ", "en": "Guadalajara", "ja_typings": ["guadarahara"]},
-      {"ja": "モンテレイ", "en": "Monterrey", "ja_typings": ["monterei"]},
-      {"ja": "カンクン", "en": "Cancun", "ja_typings": ["kankun"]}
+      {
+        "ja": "メキシコシティ",
+        "en": "Mexico City",
+        "ja_typings": [
+          "mekishikoshithi"
+        ]
+      },
+      {
+        "ja": "グアダラハラ",
+        "en": "Guadalajara",
+        "ja_typings": [
+          "guadarahara"
+        ]
+      },
+      {
+        "ja": "モンテレイ",
+        "en": "Monterrey",
+        "ja_typings": [
+          "monterei"
+        ]
+      },
+      {
+        "ja": "カンクン",
+        "en": "Cancun",
+        "ja_typings": [
+          "kankun"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -394,12 +1150,39 @@
   {
     "id": "q0079",
     "genre": "geography",
-    "question_text": {"ja": "アフリカ大陸最高峰の山はどれか", "en": "What is the highest mountain in Africa?"},
+    "question_text": {
+      "ja": "アフリカ大陸最高峰の山はどれか",
+      "en": "What is the highest mountain in Africa?"
+    },
     "choices": [
-      {"ja": "キリマンジャロ", "en": "Mount Kilimanjaro", "ja_typings": ["kirimanjaro"]},
-      {"ja": "ケニア山", "en": "Mount Kenya", "ja_typings": ["keniasan"]},
-      {"ja": "アトラス山脈", "en": "Atlas Mountains", "ja_typings": ["atorasusanmyaku"]},
-      {"ja": "ルウェンゾリ山", "en": "Mount Rwenzori", "ja_typings": ["ruwenzorisan"]}
+      {
+        "ja": "キリマンジャロ",
+        "en": "Mount Kilimanjaro",
+        "ja_typings": [
+          "kirimanjaro"
+        ]
+      },
+      {
+        "ja": "ケニア山",
+        "en": "Mount Kenya",
+        "ja_typings": [
+          "keniasan"
+        ]
+      },
+      {
+        "ja": "アトラス山脈",
+        "en": "Atlas Mountains",
+        "ja_typings": [
+          "atorasusanmyaku"
+        ]
+      },
+      {
+        "ja": "ルウェンゾリ山",
+        "en": "Mount Rwenzori",
+        "ja_typings": [
+          "ruwenzorisan"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -408,12 +1191,39 @@
   {
     "id": "q0080",
     "genre": "geography",
-    "question_text": {"ja": "赤道直下にある国はどれか", "en": "Which country is located on the equator?"},
+    "question_text": {
+      "ja": "赤道直下にある国はどれか",
+      "en": "Which country is located on the equator?"
+    },
     "choices": [
-      {"ja": "エクアドル", "en": "Ecuador", "ja_typings": ["ekuadoru"]},
-      {"ja": "ペルー", "en": "Peru", "ja_typings": ["peru-"]},
-      {"ja": "チリ", "en": "Chile", "ja_typings": ["chiri"]},
-      {"ja": "アルゼンチン", "en": "Argentina", "ja_typings": ["aruzenchin"]}
+      {
+        "ja": "エクアドル",
+        "en": "Ecuador",
+        "ja_typings": [
+          "ekuadoru"
+        ]
+      },
+      {
+        "ja": "ペルー",
+        "en": "Peru",
+        "ja_typings": [
+          "peru-"
+        ]
+      },
+      {
+        "ja": "チリ",
+        "en": "Chile",
+        "ja_typings": [
+          "chiri"
+        ]
+      },
+      {
+        "ja": "アルゼンチン",
+        "en": "Argentina",
+        "ja_typings": [
+          "aruzenchin"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -422,12 +1232,39 @@
   {
     "id": "q0081",
     "genre": "geography",
-    "question_text": {"ja": "北海道の道庁所在地はどこか", "en": "What is the capital city of Hokkaido?"},
+    "question_text": {
+      "ja": "北海道の道庁所在地はどこか",
+      "en": "What is the capital city of Hokkaido?"
+    },
     "choices": [
-      {"ja": "札幌", "en": "Sapporo", "ja_typings": ["sapporo"]},
-      {"ja": "函館", "en": "Hakodate", "ja_typings": ["hakodate"]},
-      {"ja": "旭川", "en": "Asahikawa", "ja_typings": ["asahikawa"]},
-      {"ja": "釧路", "en": "Kushiro", "ja_typings": ["kushiro"]}
+      {
+        "ja": "札幌",
+        "en": "Sapporo",
+        "ja_typings": [
+          "sapporo"
+        ]
+      },
+      {
+        "ja": "函館",
+        "en": "Hakodate",
+        "ja_typings": [
+          "hakodate"
+        ]
+      },
+      {
+        "ja": "旭川",
+        "en": "Asahikawa",
+        "ja_typings": [
+          "asahikawa"
+        ]
+      },
+      {
+        "ja": "釧路",
+        "en": "Kushiro",
+        "ja_typings": [
+          "kushiro"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -436,12 +1273,39 @@
   {
     "id": "q0082",
     "genre": "geography",
-    "question_text": {"ja": "日本最大の湖はどれか", "en": "What is the largest lake in Japan?"},
+    "question_text": {
+      "ja": "日本最大の湖はどれか",
+      "en": "What is the largest lake in Japan?"
+    },
     "choices": [
-      {"ja": "琵琶湖", "en": "Lake Biwa", "ja_typings": ["biwako"]},
-      {"ja": "霞ヶ浦", "en": "Lake Kasumigaura", "ja_typings": ["kasumigaura"]},
-      {"ja": "猪苗代湖", "en": "Lake Inawashiro", "ja_typings": ["inawashiroko"]},
-      {"ja": "サロマ湖", "en": "Lake Saroma", "ja_typings": ["saromako"]}
+      {
+        "ja": "琵琶湖",
+        "en": "Lake Biwa",
+        "ja_typings": [
+          "biwako"
+        ]
+      },
+      {
+        "ja": "霞ヶ浦",
+        "en": "Lake Kasumigaura",
+        "ja_typings": [
+          "kasumigaura"
+        ]
+      },
+      {
+        "ja": "猪苗代湖",
+        "en": "Lake Inawashiro",
+        "ja_typings": [
+          "inawashiroko"
+        ]
+      },
+      {
+        "ja": "サロマ湖",
+        "en": "Lake Saroma",
+        "ja_typings": [
+          "saromako"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -450,12 +1314,39 @@
   {
     "id": "q0083",
     "genre": "geography",
-    "question_text": {"ja": "日本最高峰の山はどれか", "en": "What is the highest mountain in Japan?"},
+    "question_text": {
+      "ja": "日本最高峰の山はどれか",
+      "en": "What is the highest mountain in Japan?"
+    },
     "choices": [
-      {"ja": "富士山", "en": "Mount Fuji", "ja_typings": ["fujisan"]},
-      {"ja": "北岳", "en": "Mount Kita", "ja_typings": ["kitadake"]},
-      {"ja": "槍ヶ岳", "en": "Mount Yari", "ja_typings": ["yarigatake"]},
-      {"ja": "穂高岳", "en": "Mount Hotaka", "ja_typings": ["hotakadake"]}
+      {
+        "ja": "富士山",
+        "en": "Mount Fuji",
+        "ja_typings": [
+          "fujisan"
+        ]
+      },
+      {
+        "ja": "北岳",
+        "en": "Mount Kita",
+        "ja_typings": [
+          "kitadake"
+        ]
+      },
+      {
+        "ja": "槍ヶ岳",
+        "en": "Mount Yari",
+        "ja_typings": [
+          "yarigatake"
+        ]
+      },
+      {
+        "ja": "穂高岳",
+        "en": "Mount Hotaka",
+        "ja_typings": [
+          "hotakadake"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -464,12 +1355,39 @@
   {
     "id": "q0084",
     "genre": "geography",
-    "question_text": {"ja": "日本で最も長い川はどれか", "en": "What is the longest river in Japan?"},
+    "question_text": {
+      "ja": "日本で最も長い川はどれか",
+      "en": "What is the longest river in Japan?"
+    },
     "choices": [
-      {"ja": "信濃川", "en": "Shinano River", "ja_typings": ["shinanogawa"]},
-      {"ja": "利根川", "en": "Tone River", "ja_typings": ["tonegawa"]},
-      {"ja": "石狩川", "en": "Ishikari River", "ja_typings": ["ishikarigawa"]},
-      {"ja": "天竜川", "en": "Tenryu River", "ja_typings": ["tenryugawa", "tenryuugawa"]}
+      {
+        "ja": "信濃川",
+        "en": "Shinano River",
+        "ja_typings": [
+          "shinanogawa"
+        ]
+      },
+      {
+        "ja": "利根川",
+        "en": "Tone River",
+        "ja_typings": [
+          "tonegawa"
+        ]
+      },
+      {
+        "ja": "石狩川",
+        "en": "Ishikari River",
+        "ja_typings": [
+          "ishikarigawa"
+        ]
+      },
+      {
+        "ja": "天竜川",
+        "en": "Tenryu River",
+        "ja_typings": [
+          "tenryuugawa"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -478,12 +1396,39 @@
   {
     "id": "q0085",
     "genre": "geography",
-    "question_text": {"ja": "トルコの首都はどこか", "en": "What is the capital of Turkey?"},
+    "question_text": {
+      "ja": "トルコの首都はどこか",
+      "en": "What is the capital of Turkey?"
+    },
     "choices": [
-      {"ja": "アンカラ", "en": "Ankara", "ja_typings": ["ankara"]},
-      {"ja": "イスタンブール", "en": "Istanbul", "ja_typings": ["isutanbu-ru"]},
-      {"ja": "イズミル", "en": "Izmir", "ja_typings": ["izumiru"]},
-      {"ja": "ブルサ", "en": "Bursa", "ja_typings": ["burusa"]}
+      {
+        "ja": "アンカラ",
+        "en": "Ankara",
+        "ja_typings": [
+          "ankara"
+        ]
+      },
+      {
+        "ja": "イスタンブール",
+        "en": "Istanbul",
+        "ja_typings": [
+          "isutanbu-ru"
+        ]
+      },
+      {
+        "ja": "イズミル",
+        "en": "Izmir",
+        "ja_typings": [
+          "izumiru"
+        ]
+      },
+      {
+        "ja": "ブルサ",
+        "en": "Bursa",
+        "ja_typings": [
+          "burusa"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -492,12 +1437,39 @@
   {
     "id": "q0086",
     "genre": "geography",
-    "question_text": {"ja": "アルプス山脈が通っていない国はどれか", "en": "Which country is NOT crossed by the Alps?"},
+    "question_text": {
+      "ja": "アルプス山脈が通っていない国はどれか",
+      "en": "Which country is NOT crossed by the Alps?"
+    },
     "choices": [
-      {"ja": "スペイン", "en": "Spain", "ja_typings": ["supein"]},
-      {"ja": "スイス", "en": "Switzerland", "ja_typings": ["suisu"]},
-      {"ja": "オーストリア", "en": "Austria", "ja_typings": ["o-sutoria"]},
-      {"ja": "イタリア", "en": "Italy", "ja_typings": ["itaria"]}
+      {
+        "ja": "スペイン",
+        "en": "Spain",
+        "ja_typings": [
+          "supein"
+        ]
+      },
+      {
+        "ja": "スイス",
+        "en": "Switzerland",
+        "ja_typings": [
+          "suisu"
+        ]
+      },
+      {
+        "ja": "オーストリア",
+        "en": "Austria",
+        "ja_typings": [
+          "o-sutoria"
+        ]
+      },
+      {
+        "ja": "イタリア",
+        "en": "Italy",
+        "ja_typings": [
+          "itaria"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -506,12 +1478,39 @@
   {
     "id": "q0087",
     "genre": "geography",
-    "question_text": {"ja": "ナイアガラの滝があるのはどの2国の国境か", "en": "Niagara Falls lies on the border of which two countries?"},
+    "question_text": {
+      "ja": "ナイアガラの滝があるのはどの2国の国境か",
+      "en": "Niagara Falls lies on the border of which two countries?"
+    },
     "choices": [
-      {"ja": "アメリカとカナダ", "en": "USA and Canada", "ja_typings": ["amerikatokanada"]},
-      {"ja": "アメリカとメキシコ", "en": "USA and Mexico", "ja_typings": ["amerikatomekishiko"]},
-      {"ja": "ブラジルとアルゼンチン", "en": "Brazil and Argentina", "ja_typings": ["burajirutoaruzenchin"]},
-      {"ja": "ザンビアとジンバブエ", "en": "Zambia and Zimbabwe", "ja_typings": ["zanbiatojinbabue"]}
+      {
+        "ja": "アメリカとカナダ",
+        "en": "USA and Canada",
+        "ja_typings": [
+          "amerikatokanada"
+        ]
+      },
+      {
+        "ja": "アメリカとメキシコ",
+        "en": "USA and Mexico",
+        "ja_typings": [
+          "amerikatomekishiko"
+        ]
+      },
+      {
+        "ja": "ブラジルとアルゼンチン",
+        "en": "Brazil and Argentina",
+        "ja_typings": [
+          "burajirutoaruzenchin"
+        ]
+      },
+      {
+        "ja": "ザンビアとジンバブエ",
+        "en": "Zambia and Zimbabwe",
+        "ja_typings": [
+          "zanbiatojinbabue"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -520,12 +1519,39 @@
   {
     "id": "q0088",
     "genre": "geography",
-    "question_text": {"ja": "世界最大の島はどれか", "en": "What is the largest island in the world?"},
+    "question_text": {
+      "ja": "世界最大の島はどれか",
+      "en": "What is the largest island in the world?"
+    },
     "choices": [
-      {"ja": "グリーンランド", "en": "Greenland", "ja_typings": ["guri-nrando"]},
-      {"ja": "ニューギニア島", "en": "New Guinea", "ja_typings": ["nyu-giniatou"]},
-      {"ja": "ボルネオ島", "en": "Borneo", "ja_typings": ["boruneotou"]},
-      {"ja": "マダガスカル", "en": "Madagascar", "ja_typings": ["madagasukaru"]}
+      {
+        "ja": "グリーンランド",
+        "en": "Greenland",
+        "ja_typings": [
+          "guri-nrando"
+        ]
+      },
+      {
+        "ja": "ニューギニア島",
+        "en": "New Guinea",
+        "ja_typings": [
+          "nyu-giniatou"
+        ]
+      },
+      {
+        "ja": "ボルネオ島",
+        "en": "Borneo",
+        "ja_typings": [
+          "boruneotou"
+        ]
+      },
+      {
+        "ja": "マダガスカル",
+        "en": "Madagascar",
+        "ja_typings": [
+          "madagasukaru"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -534,12 +1560,39 @@
   {
     "id": "q0089",
     "genre": "geography",
-    "question_text": {"ja": "サウジアラビアの首都はどこか", "en": "What is the capital of Saudi Arabia?"},
+    "question_text": {
+      "ja": "サウジアラビアの首都はどこか",
+      "en": "What is the capital of Saudi Arabia?"
+    },
     "choices": [
-      {"ja": "リヤド", "en": "Riyadh", "ja_typings": ["riyado"]},
-      {"ja": "メッカ", "en": "Mecca", "ja_typings": ["mekka"]},
-      {"ja": "ジッダ", "en": "Jeddah", "ja_typings": ["jidda"]},
-      {"ja": "メディナ", "en": "Medina", "ja_typings": ["medina"]}
+      {
+        "ja": "リヤド",
+        "en": "Riyadh",
+        "ja_typings": [
+          "riyado"
+        ]
+      },
+      {
+        "ja": "メッカ",
+        "en": "Mecca",
+        "ja_typings": [
+          "mekka"
+        ]
+      },
+      {
+        "ja": "ジッダ",
+        "en": "Jeddah",
+        "ja_typings": [
+          "jidda"
+        ]
+      },
+      {
+        "ja": "メディナ",
+        "en": "Medina",
+        "ja_typings": [
+          "medhina"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -548,12 +1601,39 @@
   {
     "id": "q0090",
     "genre": "geography",
-    "question_text": {"ja": "アフリカで最も人口の多い国はどこか", "en": "Which country has the largest population in Africa?"},
+    "question_text": {
+      "ja": "アフリカで最も人口の多い国はどこか",
+      "en": "Which country has the largest population in Africa?"
+    },
     "choices": [
-      {"ja": "ナイジェリア", "en": "Nigeria", "ja_typings": ["naijeria"]},
-      {"ja": "エチオピア", "en": "Ethiopia", "ja_typings": ["echiopia"]},
-      {"ja": "エジプト", "en": "Egypt", "ja_typings": ["ejiputo"]},
-      {"ja": "南アフリカ共和国", "en": "South Africa", "ja_typings": ["minamiafurikakyowakoku", "minamiafurikakyouwakoku"]}
+      {
+        "ja": "ナイジェリア",
+        "en": "Nigeria",
+        "ja_typings": [
+          "naijeria"
+        ]
+      },
+      {
+        "ja": "エチオピア",
+        "en": "Ethiopia",
+        "ja_typings": [
+          "echiopia"
+        ]
+      },
+      {
+        "ja": "エジプト",
+        "en": "Egypt",
+        "ja_typings": [
+          "ejiputo"
+        ]
+      },
+      {
+        "ja": "南アフリカ共和国",
+        "en": "South Africa",
+        "ja_typings": [
+          "minamiafurikakyouwakoku"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -562,12 +1642,39 @@
   {
     "id": "q0091",
     "genre": "geography",
-    "question_text": {"ja": "ヨーロッパとアジアを分ける山脈はどれか", "en": "Which mountain range separates Europe and Asia?"},
+    "question_text": {
+      "ja": "ヨーロッパとアジアを分ける山脈はどれか",
+      "en": "Which mountain range separates Europe and Asia?"
+    },
     "choices": [
-      {"ja": "ウラル山脈", "en": "Ural Mountains", "ja_typings": ["urarusanmyaku"]},
-      {"ja": "アルプス山脈", "en": "Alps", "ja_typings": ["arupususanmyaku"]},
-      {"ja": "コーカサス山脈", "en": "Caucasus Mountains", "ja_typings": ["ko-kasasusanmyaku"]},
-      {"ja": "ピレネー山脈", "en": "Pyrenees", "ja_typings": ["pirene-sanmyaku"]}
+      {
+        "ja": "ウラル山脈",
+        "en": "Ural Mountains",
+        "ja_typings": [
+          "urarusanmyaku"
+        ]
+      },
+      {
+        "ja": "アルプス山脈",
+        "en": "Alps",
+        "ja_typings": [
+          "arupususanmyaku"
+        ]
+      },
+      {
+        "ja": "コーカサス山脈",
+        "en": "Caucasus Mountains",
+        "ja_typings": [
+          "ko-kasasusanmyaku"
+        ]
+      },
+      {
+        "ja": "ピレネー山脈",
+        "en": "Pyrenees",
+        "ja_typings": [
+          "pirene-sanmyaku"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -576,12 +1683,39 @@
   {
     "id": "q0092",
     "genre": "geography",
-    "question_text": {"ja": "ベトナムの首都はどこか", "en": "What is the capital of Vietnam?"},
+    "question_text": {
+      "ja": "ベトナムの首都はどこか",
+      "en": "What is the capital of Vietnam?"
+    },
     "choices": [
-      {"ja": "ハノイ", "en": "Hanoi", "ja_typings": ["hanoi"]},
-      {"ja": "ホーチミン", "en": "Ho Chi Minh City", "ja_typings": ["ho-chimin"]},
-      {"ja": "ダナン", "en": "Da Nang", "ja_typings": ["danan"]},
-      {"ja": "フエ", "en": "Hue", "ja_typings": ["fue"]}
+      {
+        "ja": "ハノイ",
+        "en": "Hanoi",
+        "ja_typings": [
+          "hanoi"
+        ]
+      },
+      {
+        "ja": "ホーチミン",
+        "en": "Ho Chi Minh City",
+        "ja_typings": [
+          "ho-chimin"
+        ]
+      },
+      {
+        "ja": "ダナン",
+        "en": "Da Nang",
+        "ja_typings": [
+          "danan"
+        ]
+      },
+      {
+        "ja": "フエ",
+        "en": "Hue",
+        "ja_typings": [
+          "fue"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -590,12 +1724,39 @@
   {
     "id": "q0093",
     "genre": "geography",
-    "question_text": {"ja": "熱帯雨林気候が広がる代表的な地域はどれか", "en": "Where is a typical tropical rainforest climate found?"},
+    "question_text": {
+      "ja": "熱帯雨林気候が広がる代表的な地域はどれか",
+      "en": "Where is a typical tropical rainforest climate found?"
+    },
     "choices": [
-      {"ja": "アマゾン盆地", "en": "Amazon Basin", "ja_typings": ["amazonbonchi"]},
-      {"ja": "ゴビ砂漠", "en": "Gobi Desert", "ja_typings": ["gobisabaku"]},
-      {"ja": "シベリア", "en": "Siberia", "ja_typings": ["shiberia"]},
-      {"ja": "地中海沿岸", "en": "Mediterranean coast", "ja_typings": ["chichukaiengan", "chichuukaiengan"]}
+      {
+        "ja": "アマゾン盆地",
+        "en": "Amazon Basin",
+        "ja_typings": [
+          "amazonbonchi"
+        ]
+      },
+      {
+        "ja": "ゴビ砂漠",
+        "en": "Gobi Desert",
+        "ja_typings": [
+          "gobisabaku"
+        ]
+      },
+      {
+        "ja": "シベリア",
+        "en": "Siberia",
+        "ja_typings": [
+          "shiberia"
+        ]
+      },
+      {
+        "ja": "地中海沿岸",
+        "en": "Mediterranean coast",
+        "ja_typings": [
+          "chichuukaiengan"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -604,12 +1765,39 @@
   {
     "id": "q0094",
     "genre": "geography",
-    "question_text": {"ja": "スカンディナビア半島にある国はどれか", "en": "Which country is on the Scandinavian Peninsula?"},
+    "question_text": {
+      "ja": "スカンディナビア半島にある国はどれか",
+      "en": "Which country is on the Scandinavian Peninsula?"
+    },
     "choices": [
-      {"ja": "ノルウェー", "en": "Norway", "ja_typings": ["noruwe-"]},
-      {"ja": "デンマーク", "en": "Denmark", "ja_typings": ["denma-ku"]},
-      {"ja": "アイスランド", "en": "Iceland", "ja_typings": ["airusurando"]},
-      {"ja": "オランダ", "en": "Netherlands", "ja_typings": ["oranda"]}
+      {
+        "ja": "ノルウェー",
+        "en": "Norway",
+        "ja_typings": [
+          "noruwe-"
+        ]
+      },
+      {
+        "ja": "デンマーク",
+        "en": "Denmark",
+        "ja_typings": [
+          "denma-ku"
+        ]
+      },
+      {
+        "ja": "アイスランド",
+        "en": "Iceland",
+        "ja_typings": [
+          "aisurando"
+        ]
+      },
+      {
+        "ja": "オランダ",
+        "en": "Netherlands",
+        "ja_typings": [
+          "oranda"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -618,12 +1806,39 @@
   {
     "id": "q0095",
     "genre": "geography",
-    "question_text": {"ja": "アルゼンチンの首都はどこか", "en": "What is the capital of Argentina?"},
+    "question_text": {
+      "ja": "アルゼンチンの首都はどこか",
+      "en": "What is the capital of Argentina?"
+    },
     "choices": [
-      {"ja": "ブエノスアイレス", "en": "Buenos Aires", "ja_typings": ["buenosuairesu"]},
-      {"ja": "サンティアゴ", "en": "Santiago", "ja_typings": ["santiago", "santeiago"]},
-      {"ja": "モンテビデオ", "en": "Montevideo", "ja_typings": ["montebideo"]},
-      {"ja": "アスンシオン", "en": "Asuncion", "ja_typings": ["asunshion"]}
+      {
+        "ja": "ブエノスアイレス",
+        "en": "Buenos Aires",
+        "ja_typings": [
+          "buenosuairesu"
+        ]
+      },
+      {
+        "ja": "サンティアゴ",
+        "en": "Santiago",
+        "ja_typings": [
+          "santhiago"
+        ]
+      },
+      {
+        "ja": "モンテビデオ",
+        "en": "Montevideo",
+        "ja_typings": [
+          "montebideo"
+        ]
+      },
+      {
+        "ja": "アスンシオン",
+        "en": "Asuncion",
+        "ja_typings": [
+          "asunshion"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -632,12 +1847,39 @@
   {
     "id": "q0096",
     "genre": "geography",
-    "question_text": {"ja": "本州と四国を結ぶ橋として知られるのはどれか", "en": "Which bridge is known for connecting Honshu and Shikoku?"},
+    "question_text": {
+      "ja": "本州と四国を結ぶ橋として知られるのはどれか",
+      "en": "Which bridge is known for connecting Honshu and Shikoku?"
+    },
     "choices": [
-      {"ja": "瀬戸大橋", "en": "Great Seto Bridge", "ja_typings": ["setoohashi", "setooohashi"]},
-      {"ja": "東京湾アクアライン", "en": "Tokyo Bay Aqua-Line", "ja_typings": ["toukyouwanakuarain", "tokyowanakuarain"]},
-      {"ja": "関門橋", "en": "Kanmon Bridge", "ja_typings": ["kanmonkyo", "kanmonkyou"]},
-      {"ja": "レインボーブリッジ", "en": "Rainbow Bridge", "ja_typings": ["reinbo-burijji"]}
+      {
+        "ja": "瀬戸大橋",
+        "en": "Great Seto Bridge",
+        "ja_typings": [
+          "setooohashi"
+        ]
+      },
+      {
+        "ja": "東京湾アクアライン",
+        "en": "Tokyo Bay Aqua-Line",
+        "ja_typings": [
+          "toukyouwanakuarain"
+        ]
+      },
+      {
+        "ja": "関門橋",
+        "en": "Kanmon Bridge",
+        "ja_typings": [
+          "kanmonkyou"
+        ]
+      },
+      {
+        "ja": "レインボーブリッジ",
+        "en": "Rainbow Bridge",
+        "ja_typings": [
+          "reinbo-burijji"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -646,12 +1888,39 @@
   {
     "id": "q0097",
     "genre": "geography",
-    "question_text": {"ja": "ギリシャの首都はどこか", "en": "What is the capital of Greece?"},
+    "question_text": {
+      "ja": "ギリシャの首都はどこか",
+      "en": "What is the capital of Greece?"
+    },
     "choices": [
-      {"ja": "アテネ", "en": "Athens", "ja_typings": ["atene"]},
-      {"ja": "テッサロニキ", "en": "Thessaloniki", "ja_typings": ["tessaroniki"]},
-      {"ja": "スパルタ", "en": "Sparta", "ja_typings": ["suparuta"]},
-      {"ja": "コリントス", "en": "Corinth", "ja_typings": ["korintosu"]}
+      {
+        "ja": "アテネ",
+        "en": "Athens",
+        "ja_typings": [
+          "atene"
+        ]
+      },
+      {
+        "ja": "テッサロニキ",
+        "en": "Thessaloniki",
+        "ja_typings": [
+          "tessaroniki"
+        ]
+      },
+      {
+        "ja": "スパルタ",
+        "en": "Sparta",
+        "ja_typings": [
+          "suparuta"
+        ]
+      },
+      {
+        "ja": "コリントス",
+        "en": "Corinth",
+        "ja_typings": [
+          "korintosu"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -660,12 +1929,39 @@
   {
     "id": "q0098",
     "genre": "geography",
-    "question_text": {"ja": "アマゾン川が流れている国はどこか", "en": "Through which country does the Amazon River mainly flow?"},
+    "question_text": {
+      "ja": "アマゾン川が流れている国はどこか",
+      "en": "Through which country does the Amazon River mainly flow?"
+    },
     "choices": [
-      {"ja": "ブラジル", "en": "Brazil", "ja_typings": ["burajiru"]},
-      {"ja": "メキシコ", "en": "Mexico", "ja_typings": ["mekishiko"]},
-      {"ja": "アルゼンチン", "en": "Argentina", "ja_typings": ["aruzenchin"]},
-      {"ja": "ベネズエラ", "en": "Venezuela", "ja_typings": ["benezuera"]}
+      {
+        "ja": "ブラジル",
+        "en": "Brazil",
+        "ja_typings": [
+          "burajiru"
+        ]
+      },
+      {
+        "ja": "メキシコ",
+        "en": "Mexico",
+        "ja_typings": [
+          "mekishiko"
+        ]
+      },
+      {
+        "ja": "アルゼンチン",
+        "en": "Argentina",
+        "ja_typings": [
+          "aruzenchin"
+        ]
+      },
+      {
+        "ja": "ベネズエラ",
+        "en": "Venezuela",
+        "ja_typings": [
+          "benezuera"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -674,12 +1970,39 @@
   {
     "id": "q0099",
     "genre": "geography",
-    "question_text": {"ja": "沖縄県の県庁所在地はどこか", "en": "What is the capital city of Okinawa Prefecture?"},
+    "question_text": {
+      "ja": "沖縄県の県庁所在地はどこか",
+      "en": "What is the capital city of Okinawa Prefecture?"
+    },
     "choices": [
-      {"ja": "那覇", "en": "Naha", "ja_typings": ["naha"]},
-      {"ja": "宜野湾", "en": "Ginowan", "ja_typings": ["ginowan"]},
-      {"ja": "石垣", "en": "Ishigaki", "ja_typings": ["ishigaki"]},
-      {"ja": "名護", "en": "Nago", "ja_typings": ["nago"]}
+      {
+        "ja": "那覇",
+        "en": "Naha",
+        "ja_typings": [
+          "naha"
+        ]
+      },
+      {
+        "ja": "宜野湾",
+        "en": "Ginowan",
+        "ja_typings": [
+          "ginowan"
+        ]
+      },
+      {
+        "ja": "石垣",
+        "en": "Ishigaki",
+        "ja_typings": [
+          "ishigaki"
+        ]
+      },
+      {
+        "ja": "名護",
+        "en": "Nago",
+        "ja_typings": [
+          "nago"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
@@ -688,12 +2011,39 @@
   {
     "id": "q0100",
     "genre": "geography",
-    "question_text": {"ja": "世界で最も標高の低い陸地はどこか", "en": "What is the lowest land area on Earth?"},
+    "question_text": {
+      "ja": "世界で最も標高の低い陸地はどこか",
+      "en": "What is the lowest land area on Earth?"
+    },
     "choices": [
-      {"ja": "死海沿岸", "en": "Dead Sea shore", "ja_typings": ["shikaiengan"]},
-      {"ja": "カスピ海沿岸", "en": "Caspian Sea shore", "ja_typings": ["kasupikaiengan"]},
-      {"ja": "アッサル湖", "en": "Lake Assal", "ja_typings": ["assaruko"]},
-      {"ja": "トゥルファン盆地", "en": "Turpan Depression", "ja_typings": ["turufanbonchi", "tourufanbonchi"]}
+      {
+        "ja": "死海沿岸",
+        "en": "Dead Sea shore",
+        "ja_typings": [
+          "shikaiengan"
+        ]
+      },
+      {
+        "ja": "カスピ海沿岸",
+        "en": "Caspian Sea shore",
+        "ja_typings": [
+          "kasupikaiengan"
+        ]
+      },
+      {
+        "ja": "アッサル湖",
+        "en": "Lake Assal",
+        "ja_typings": [
+          "assaruko"
+        ]
+      },
+      {
+        "ja": "トゥルファン盆地",
+        "en": "Turpan Depression",
+        "ja_typings": [
+          "twurufanbonchi"
+        ]
+      }
     ],
     "correct_answer_index": 0,
     "image_path": null,
