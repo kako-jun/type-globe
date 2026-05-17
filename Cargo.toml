@@ -23,6 +23,7 @@ tokio = { version = "1.0", features = ["full"] }
 rand = "0.8"
 clap = { version = "4", features = ["derive"] }
 unicode-segmentation = "1.11"
+jiwa = "0.1"
 tts = "0.26"
 rodio = { version = "0.19", default-features = false }
 

@@ -1,7 +1,7 @@
 use crate::audio::{Cue, CueEngine};
 use crate::game::QuizGame;
 use crate::io::Storage;
-use crate::jiwa_core::{lerp_rgb, RevealHandle, RevealOpts, Rgb};
+use jiwa::{lerp_rgb, RevealHandle, RevealOpts, Rgb};
 use crate::types::{Language, Question, ScoreEntry};
 use crate::ui::inline_code;
 use crate::ui::{
@@ -590,7 +590,7 @@ impl QuizUI {
             let text = self.quiz_game.get_question_text(question);
             let (stripped, ranges) = inline_code::strip_and_locate(&text);
             next_code_ranges = ranges;
-            RevealHandle::start_at(&stripped, RevealOpts::default_quiz(), now)
+            RevealHandle::start_at(&stripped, RevealOpts::soft_green(), now)
         });
         self.code_ranges = next_code_ranges;
         // Issue #72: shuffle the four choices each question and stagger
@@ -1049,7 +1049,7 @@ fn spans_from_inline_code(text: &str, base_style: Style) -> Vec<Span<'static>> {
 }
 
 /// Interpolate two `Rgb` triples and return a ratatui `Color`. Thin
-/// wrapper over `jiwa_core::lerp_rgb` so the choices fade-in (Issue #72)
+/// wrapper over `jiwa::lerp_rgb` so the choices fade-in (Issue #72)
 /// uses the same channel math as the question text reveal.
 fn lerp_rgb_color(from: Rgb, to: Rgb, t: f32) -> Color {
     let Rgb(r, g, b) = lerp_rgb(from, to, t);

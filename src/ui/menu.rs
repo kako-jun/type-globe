@@ -1,4 +1,4 @@
-use crate::jiwa_core::{lerp_rgb, Rgb};
+use jiwa::{lerp_rgb, Rgb};
 use crate::types::{GameMode, Language};
 use crate::ui::{HelpEntry, HelpLine};
 use crossterm::{

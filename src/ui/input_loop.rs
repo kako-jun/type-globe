@@ -3,7 +3,7 @@
 //! Splits keyboard input off from the main render loop so the renderer
 //! can tick on its own cadence without ever blocking on `event::read`.
 //! The architectural goal — and the spec contract — is that a player
-//! who already knows the answer can begin typing during a `jiwa_core`
+//! who already knows the answer can begin typing during a `jiwa`
 //! reveal without waiting for the animation to finish ("先打ち可能").
 //!
 //! Pattern:

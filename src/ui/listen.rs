@@ -9,7 +9,7 @@
 //!
 //! Per `docs/spec.md`, the audio is the only presentation: no text,
 //! no choices. The visible elements are limited to:
-//! - a pulsing `♪` (jiwa_core pulse) while audio is in flight,
+//! - a pulsing `♪` (jiwa pulse) while audio is in flight,
 //! - the input echo of what the player has typed,
 //! - status placeholders (kind / Floor / Run time placeholder),
 //! - a battle-log pane (used only on the result screen for v0.2.0).
@@ -17,7 +17,7 @@
 use crate::audio::TtsEngine;
 use crate::game::listening::{acceptable_listening_inputs, is_valid_listening_prefix};
 use crate::game::{ListeningSession, SubmissionResult};
-use crate::jiwa_core::{PulseHandle, PulseOpts, Rgb};
+use jiwa::{PulseHandle, PulseOpts, Rgb};
 use crate::types::{AnswerKind, Language};
 use crate::ui::{HelpEntry, HelpLine, InputChannel, PaneFrame, RecvOutcome};
 use crossterm::{
@@ -78,7 +78,7 @@ impl ListenUI {
             tts: Some(tts),
             language,
             phase: Phase::Playing,
-            pulse: Some(PulseHandle::start("♪", PulseOpts::default_listening())),
+            pulse: Some(PulseHandle::start("♪", PulseOpts::cyan_breath())),
             started_at: Instant::now(),
             plays: 0,
             rejected_char: None,
@@ -94,7 +94,7 @@ impl ListenUI {
             tts: None,
             language,
             phase: Phase::Playing,
-            pulse: Some(PulseHandle::start("♪", PulseOpts::default_listening())),
+            pulse: Some(PulseHandle::start("♪", PulseOpts::cyan_breath())),
             started_at: Instant::now(),
             plays: 0,
             rejected_char: None,
@@ -214,7 +214,7 @@ impl ListenUI {
         self.plays += 1;
         // Restart the visual pulse on each replay so the breathing
         // anchors to the new utterance.
-        self.pulse = Some(PulseHandle::start("♪", PulseOpts::default_listening()));
+        self.pulse = Some(PulseHandle::start("♪", PulseOpts::cyan_breath()));
     }
 
     fn ui(&mut self, f: &mut Frame) {
@@ -252,7 +252,7 @@ impl ListenUI {
     }
 
     fn playing_body_lines(&self) -> Vec<Line<'static>> {
-        // Pulse symbol — color comes from the jiwa_core pulse so the
+        // Pulse symbol — color comes from the jiwa pulse so the
         // listening pane uses the same primitive as the spec example.
         let (symbol, color) = if let Some(pulse) = self.pulse.as_ref() {
             let frame = pulse.snapshot(Instant::now());

@@ -25,7 +25,7 @@ Quiz prompts lead to single-run scoring, Time Attack 25, and (in `type-globe-onl
 - **Time Attack 25** — 5×5 panel battle versus CPU, inspired by the *Attack 25* TV show. Total time (thinking + typing) is the recorded result; the local self-best lands in Records.
 - **Listening RPG (TypeQuest)** — Audio-only prompts. Each prompt is an enemy; ten enemies = one run. Mistypes cost EXP, never end the run.
 
-## Display Animation (`jiwa_core`)
+## Display Animation (`jiwa` crate)
 
 Question text is revealed **one character at a time**, with each character **fading in** through TrueColor interpolation. Players who already know the answer may type during the reveal — the input layer accepts keystrokes concurrently. The animation has **no skip key** (fairness).
 
@@ -50,7 +50,7 @@ Audio is generated at runtime via the `tts` crate (a cross-platform wrapper over
 | Language | Rust |
 | TUI | `ratatui` + `crossterm` |
 | Audio | `tts` crate (cross-platform OS TTS) |
-| Animation | in-tree `jiwa_core` (typewriter + RGB fade) |
+| Animation | [`jiwa`](https://crates.io/crates/jiwa) crate (typewriter + RGB fade), extracted from this repo's former `jiwa_core` module |
 | Storage | local JSON |
 
 ## Quiz Content
