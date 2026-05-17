@@ -17,7 +17,6 @@
 use crate::audio::TtsEngine;
 use crate::game::listening::{acceptable_listening_inputs, is_valid_listening_prefix};
 use crate::game::{ListeningSession, SubmissionResult};
-use jiwa::{PulseHandle, PulseOpts, Rgb};
 use crate::types::{AnswerKind, Language};
 use crate::ui::{HelpEntry, HelpLine, InputChannel, PaneFrame, RecvOutcome};
 use crossterm::{
@@ -25,6 +24,7 @@ use crossterm::{
     execute,
     terminal::{disable_raw_mode, enable_raw_mode, EnterAlternateScreen, LeaveAlternateScreen},
 };
+use jiwa::{PulseHandle, PulseOpts, Rgb};
 use ratatui::{
     backend::CrosstermBackend,
     layout::{Alignment, Rect},

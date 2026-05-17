@@ -1,4 +1,3 @@
-use jiwa::{lerp_rgb, Rgb};
 use crate::types::{GameMode, Language};
 use crate::ui::{HelpEntry, HelpLine};
 use crossterm::{
@@ -6,6 +5,7 @@ use crossterm::{
     execute,
     terminal::{disable_raw_mode, enable_raw_mode, EnterAlternateScreen, LeaveAlternateScreen},
 };
+use jiwa::{lerp_rgb, Rgb};
 use ratatui::{
     backend::CrosstermBackend,
     layout::{Alignment, Constraint, Direction, Layout, Rect},

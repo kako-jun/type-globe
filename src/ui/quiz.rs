@@ -1,7 +1,6 @@
 use crate::audio::{Cue, CueEngine};
 use crate::game::QuizGame;
 use crate::io::Storage;
-use jiwa::{lerp_rgb, RevealHandle, RevealOpts, Rgb};
 use crate::types::{Language, Question, ScoreEntry};
 use crate::ui::inline_code;
 use crate::ui::{
@@ -13,6 +12,7 @@ use crossterm::{
     execute,
     terminal::{disable_raw_mode, enable_raw_mode, EnterAlternateScreen, LeaveAlternateScreen},
 };
+use jiwa::{lerp_rgb, RevealHandle, RevealOpts, Rgb};
 use rand::seq::SliceRandom;
 use ratatui::{
     backend::CrosstermBackend,
