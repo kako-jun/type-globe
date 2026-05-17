@@ -18,8 +18,9 @@
 //!
 //! Grapheme alignment: [`strip_and_locate`] returns code ranges in
 //! *grapheme cluster* indices (via `unicode-segmentation`), matching the
-//! ordering used by [`crate::jiwa_core::reveal::RevealHandle::snapshot`]
-//! (see the `iterates_grapheme_clusters_not_chars` test in `reveal.rs`).
+//! ordering used by [`jiwa::reveal::RevealHandle::snapshot`]
+//! (see the `iterates_grapheme_clusters_not_chars` test in the
+//! `jiwa` crate's `reveal.rs`).
 //! That alignment is what lets the renderer pair each revealed grapheme
 //! with its `is_code` flag without re-tokenizing the source string.
 
