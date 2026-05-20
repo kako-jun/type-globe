@@ -7,6 +7,11 @@
 //! now the side pane shows placeholder run info ("Practice — RPG run
 //! lands in #32+").
 //!
+//! Boss encounters are intentionally *not* forced into this exact file's
+//! surface. Issue #111 defines a separate stacked-hint layout plan in
+//! `ui::listen_boss`, so the regular "♪ + input + status + log" practice
+//! flow can stay simple while the miniboss / boss UI grows as its own rule.
+//!
 //! Per `docs/spec.md`, the audio is the only presentation: no text,
 //! no choices. The visible elements are limited to:
 //! - a pulsing `♪` (jiwa pulse) while audio is in flight,
@@ -513,6 +518,7 @@ mod tests {
             text_reading: "apple".into(),
             text_display: "apple".into(),
             kind: AnswerKind::Word,
+            boss: None,
         }
     }
 

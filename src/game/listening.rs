@@ -150,6 +150,7 @@ mod tests {
             text_reading: text.into(),
             text_display: text.into(),
             kind: AnswerKind::Word,
+            boss: None,
         }
     }
 

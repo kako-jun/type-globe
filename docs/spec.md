@@ -131,6 +131,47 @@ Quiz is paired with score-attack modes; listening is paired with the RPG. The tw
 - Current shipping state: the build still exposes **single-prompt listening practice** as the stable flow. The full ten-battle run is in progress.
 - Planned pacing update: the run should not remain a flat dictation stream. Prompt 5 is expected to become a miniboss and prompt 10 a boss, using a reverse-Akinator-style layered-hint format rather than only reading the answer verbatim.
 
+#### Boss Encounter UI (planned layout)
+
+Boss encounters do **not** reuse the ordinary listening pane unchanged. They use a stacked-hint variant of the same 4-pane family:
+
+```
+┌──────────────────────────────────────┬──────────────────┐
+│ Miniboss 5/10                        │ Hint 2 / 4       │
+│ [1] Part of speech: noun             │ Reveal timed     │
+│ [2] Used when: train travel          │ Plays  2         │
+│ [3] Not this: airport                │ Run time 1:08    │
+│ [4] First letter: t                  │ Boss HP ███░     │
+├──────────────────────────────────────┴──────────────────┤
+│ > to▌                                                │
+├────────────────────────────────────────────────────────┤
+│ ▸ Hint 2 voiced                                       │
+│ ▸ Hint 3 opens in 4.0 s                               │
+└────────────────────────────────────────────────────────┘
+[Esc] Quit  [Space] Replay  [S-Tab] Prev hint
+```
+
+- The **main pane** becomes a **hint stack**. Earlier hints stay visible; the newest hint is the active one.
+- The **side pane** shows boss-only state such as hint count, reveal mode, replay count, run time, and enemy/boss HP.
+- The **input echo** stays unchanged: the player still types blind and exact-match auto-confirm remains the intended answer flow.
+- The **log pane** holds event history: which hint was voiced, when the next hint opens, and hit/miss results after answer.
+- **Current input-model constraint**: as long as `Space` remains replay and exact-match auto-confirm stays intact, boss answers must remain **`word`-kind prompts**. Phrase / sentence boss answers are deferred until the listening input model itself is rebased in the later RPG issue set.
+
+Two reveal modes are planned:
+
+- **Prompt 5 miniboss**: default to **timed reveal**. Hints open automatically after short delays, keeping the fight brisk.
+- **Prompt 10 boss**: default to **manual reveal**. The player controls escalation and can ask for the next hint deliberately.
+
+Planned active-phase keys:
+
+- `Esc`: quit the run
+- `Space`: replay the currently focused voiced hint
+- `Tab`: next hint (manual boss only)
+- `S-Tab`: previous hint / re-focus an older stacked hint
+- `Backspace`: erase typed input
+
+`Enter` is intentionally **not** the primary answer-confirm key here either; the intended rule stays exact-match auto-confirm on the final character.
+
 ## `jiwa` Animation Crate
 
 Extracted from this repo's former `src/jiwa_core/` module into the standalone [`jiwa`](https://crates.io/crates/jiwa) crate (since v0.1.0). type-globe consumes it via `Cargo.toml`'s `jiwa = "0.1"` dependency.
@@ -229,6 +270,37 @@ Validation: no two choices in a question may share a prefix that would make an a
 ```
 
 `text_reading` is passed to TTS and used for romaji conversion (hiragana-only for JA). `text_display` is shown on screen (kanji/katakana for JA; same as `text_reading` for EN). Prompt banks live in `data/listening_<lang>.yaml` (100 items each: word×70 / phrase×20 / sentence×10).
+
+Boss-ready prompt entries may also carry optional `boss` metadata:
+
+```yaml
+- id: l-en-boss-010
+  text_reading: ticket
+  text_display: ticket
+  kind: word
+  boss:
+    tier: boss
+    reveal_mode: manual
+    hints:
+      - label: Part of speech
+        text_display: noun
+      - label: Used when
+        text_display: when boarding a train
+      - label: First letter
+        text_display: t
+        text_reading: tee
+```
+
+Boss fields:
+
+- `boss.tier`: `miniboss` or `boss`
+- `boss.reveal_mode`: `manual` or `timed`
+- `boss.hints[]`: stacked hint steps
+- `boss.hints[].label`: short on-screen heading
+- `boss.hints[].text_display`: visible hint text
+- `boss.hints[].text_reading`: optional TTS-specific reading override
+- `boss.hints[].auto_reveal_after_ms`: optional timed-mode delay
+- For the current blind-input model, boss prompt answers should stay `kind: word`. The hints themselves may be longer phrases.
 
 #### Linux runtime requirement
 
