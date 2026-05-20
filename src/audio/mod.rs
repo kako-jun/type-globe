@@ -5,4 +5,4 @@ pub mod cues;
 pub mod tts;
 
 pub use cues::{Cue, CueEngine};
-pub use tts::TtsEngine;
+pub use tts::{TtsEngine, TtsRequest, TtsRequestKind};
