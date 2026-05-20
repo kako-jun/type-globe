@@ -14,7 +14,7 @@
 //! - status placeholders (kind / Floor / Run time placeholder),
 //! - a battle-log pane (used only on the result screen for v0.2.0).
 
-use crate::audio::TtsEngine;
+use crate::audio::{TtsEngine, TtsRequest, TtsRequestKind};
 use crate::game::listening::{acceptable_listening_inputs, is_valid_listening_prefix};
 use crate::game::{ListeningSession, SubmissionResult};
 use crate::types::{AnswerKind, Language};
@@ -113,7 +113,11 @@ impl ListenUI {
         // the player can still try Space-replay, and the result screen
         // works even if no audio came out (helps debug TTS issues).
         if let Some(tts) = self.tts.as_mut() {
-            if let Err(err) = tts.speak(&self.session.prompt().text_reading, &self.language) {
+            if let Err(err) = tts.speak_request(TtsRequest {
+                text: &self.session.prompt().text_reading,
+                lang: &self.language,
+                kind: TtsRequestKind::PromptAnswer,
+            }) {
                 eprintln!("warning: initial TTS speak failed: {err}");
             } else {
                 self.plays += 1;
@@ -205,7 +209,11 @@ impl ListenUI {
 
     fn replay(&mut self) {
         if let Some(tts) = self.tts.as_mut() {
-            if let Err(err) = tts.speak(&self.session.prompt().text_reading, &self.language) {
+            if let Err(err) = tts.speak_request(TtsRequest {
+                text: &self.session.prompt().text_reading,
+                lang: &self.language,
+                kind: TtsRequestKind::PromptReplay,
+            }) {
                 eprintln!("warning: TTS replay failed: {err}");
                 return;
             }
