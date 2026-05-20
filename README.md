@@ -4,7 +4,7 @@
 
 > A typing game where the string you must type is **never shown on screen**.
 
-This repository now ships the v0.2.0 blind-typing redesign. Some roadmap items (notably Time Attack 25 and the full ten-prompt RPG loop) remain follow-up work, but the core "the answer is never shown" interaction is already the live behavior.
+This repository now ships the v0.2.0 blind-typing redesign. Some roadmap items (notably nostr_arena-backed TA25 and the full ten-prompt RPG loop) remain follow-up work, but the core "the answer is never shown" interaction is already the live behavior.
 
 Inspired by competitive Hyakunin Isshu karuta — where the lower verse is never recited and players strike from memory — type-globe rewards **knowledge, memory, and listening comprehension** instead of visual reflex.
 
@@ -43,7 +43,7 @@ You can also jump directly into a mode:
 ```sh
 type-globe quiz             # Quiz mode, language selected at startup
 type-globe rpg              # Listening RPG, language selected at startup
-type-globe ta25             # Time Attack 25 (planned as 4 seats: You + CPU 1/2/3)
+type-globe ta25             # Time Attack 25 local prototype (You + CPU 1/2/3)
 type-globe ranking          # View local Records
 
 type-globe quiz --lang ja   # Jump straight to Japanese Quiz
@@ -84,9 +84,9 @@ For quiz-data migration work, the repository also ships:
 | Mode | Status | Description |
 |---|---|---|
 | Quiz (single-run) | available now | The standard play mode: type-to-select 4-choice quiz, ten questions per run |
-| Time Attack 25 | planned next | A four-seat Quiz battle with red / blue / green / yellow seats; the intended default is one human plus three CPU seats. The current build exposes the menu slot only. |
+| Time Attack 25 | practice now | A four-seat Quiz battle with red / blue / green / yellow seats. The current build ships a 25-question local prototype with one human and three CPU seats, filling the 5x5 board in order. Result saving is not wired yet. |
 | Listening RPG (TypeQuest) | practice now, full run in progress | Audio-first blind typing. The current build ships single-prompt listening practice; the ten-battle RPG run is the next epic. |
-| Records | available now | Local self-best history across Quiz, Time Attack 25, and Listening RPG |
+| Records | available now | Local self-best history browser. Quiz saving is live today; TA25 and Listening RPG sections are reserved while those prototype flows do not yet persist results. |
 | Image Quiz | v0.3.0+ | Requires terminal graphics protocol (kitty / iTerm2 / wezterm) |
 | Stealth | v0.3.0+ | Disguises the UI as a generic CLI tool |
 | `type-globe-online` | v0.3.0+ | mypace WebSocket + **Nostralgic Ranking** (world ranking via Nostr) + Nostr feed |

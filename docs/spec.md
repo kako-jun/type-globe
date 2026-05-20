@@ -96,8 +96,10 @@ Quiz is paired with score-attack modes; listening is paired with the RPG. The tw
 - The current prototype model is a four-slot roster with, per seat: `color`, `kind` (`human` / `cpu` / `empty`), `player_id`, and `display_name`.
 - The standard local roster is: `red=You(human), blue=CPU 1(cpu), green=CPU 2(cpu), yellow=CPU 3(cpu)`.
 - 5×5 panel grid (homage to the Japanese TV show *Attack 25*).
-- Current shipping state: **not playable yet**. The menu entry is intentional, but the board UI / CPU trio / local prototype flow land before any `nostr_arena` online implementation.
-- Final direction: whoever answers correctly first claims the panel; total elapsed time (thinking + typing) is the recorded result; the local self-best lands in Records.
+- Current shipping state: **local prototype playable now**. The build ships a 25-question offline run with a visible 5×5 board, three pseudo-CPU opponents, and sequential panel acquisition for panel 01..25.
+- Prototype scope note: panel choice is intentionally simplified for now. The current build fills the board in order so pacing, color ownership, and CPU tempo can be tuned before full `nostr_arena` play and richer capture rules land.
+- Prototype persistence note: TA25 result saving is **not wired yet**. The Records screen already reserves a TA25 section, but the current prototype is for board / tempo / roster validation first.
+- Final direction: whoever answers correctly first claims the panel; total elapsed time (thinking + typing) becomes the recorded result once the TA25 Records path is implemented.
 
 ### Listening × Hack-and-Slash RPG
 
