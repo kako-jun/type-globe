@@ -114,6 +114,8 @@ Listening prompts are synthesized at runtime via the [`tts`](https://crates.io/c
 
 The baseline direction is **real-time synthesis**, not pre-generated voice clips. This keeps the game compatible with growing prompt banks and future layered boss hints.
 
+The audio pipeline already distinguishes normal prompt reads and replay, and it is prepared for future boss-hint reads on the same API surface. When the backend supports speech-rate control, replay and future early boss hints can be spoken more slowly; when it does not, type-globe degrades to normal-speed speech instead of failing. See [docs/audio.md](./docs/audio.md).
+
 On Linux, the `speech-dispatcher` daemon must be installed and running. If it is not, type-globe shows a clear "Listening mode is unavailable on this system" message and returns to the menu rather than crashing the binary; Quiz / Records / Time Attack 25 still work without TTS.
 
 ## Key Bindings

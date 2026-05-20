@@ -236,6 +236,8 @@ The `tts` crate's Linux backend is `speech-dispatcher`, which must be installed 
 
 The baseline audio strategy is **runtime synthesis**, not pre-generated voice files. This keeps the system compatible with growing prompt banks and future boss-hint variants; alternate voices may be added later as swappable runtime backends.
 
+The speech pipeline distinguishes at least four utterance intents: ordinary prompt read, replay, boss hint, and boss reveal. The current build actively uses ordinary prompt read and replay, and prepares boss hint / boss reveal on the same runtime TTS path. If the backend supports speech-rate control, replay and future early boss hints may be slowed down, and if it does not, the system falls back to normal-speed speech rather than failing the run. Runtime support is treated in three operational buckets: unavailable (engine init fails), basic (speech works but rate/stop controls may be missing), and preferred (speech + stop + rate available). See `docs/audio.md` for the operational policy.
+
 #### v0.2.0 foundation scope (#28-#31)
 
 The foundation epic ships:
