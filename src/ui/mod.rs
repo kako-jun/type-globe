@@ -7,6 +7,7 @@ pub mod menu;
 pub mod quiz;
 pub mod records;
 pub mod status;
+pub mod time_attack;
 
 pub use help_line::{HelpEntry, HelpLine};
 pub use input_loop::{
@@ -20,3 +21,4 @@ pub use records::RecordsUI;
 // TODO(#11): drop this allow once rpg UI wires up ProgressBar / StatusItem.
 #[allow(unused_imports)]
 pub use status::{ProgressBar, StatusItem, StatusPane};
+pub use time_attack::TimeAttack25UI;
