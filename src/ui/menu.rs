@@ -34,25 +34,32 @@ const DETAIL_FADE_TO: Rgb = Rgb(220, 220, 220);
 
 struct LanguageOption {
     label: &'static str,
-    description: [&'static str; 2],
+    description: &'static [&'static str],
 }
 
 struct ModeOption {
     label: &'static str,
-    description: [&'static str; 2],
+    stage: StageBadge,
+    description: &'static [&'static str],
+}
+
+#[derive(Clone, Copy)]
+struct StageBadge {
+    label: &'static str,
+    color: Color,
 }
 
 const LANGUAGE_OPTIONS: [LanguageOption; 2] = [
     LanguageOption {
         label: "Japanese / 日本語",
-        description: [
+        description: &[
             "Use Japanese prompts and localized records.",
             "問題文と記録表示を日本語にします。",
         ],
     },
     LanguageOption {
         label: "English",
-        description: [
+        description: &[
             "Use English prompts and localized records.",
             "問題文と記録表示を英語にします。",
         ],
@@ -62,30 +69,54 @@ const LANGUAGE_OPTIONS: [LanguageOption; 2] = [
 const MODE_OPTIONS: [ModeOption; 4] = [
     ModeOption {
         label: "Quiz",
-        description: [
+        stage: StageBadge {
+            label: "Playable",
+            color: Color::Green,
+        },
+        description: &[
             "The standard play mode: answer quiz prompts and build core skill.",
+            "Available now: full 10-question runs, records, jiwa reveal, and sound cues.",
             "基本プレイ。問題に答えて type-globe の土台を鍛えます。",
+            "今すぐ遊べます。10問ラン、Records、jiwa演出、効果音まで実装済みです。",
         ],
     },
     ModeOption {
         label: "Time Attack 25",
-        description: [
-            "A Quiz variant with panel capture and head-to-head pressure.",
-            "Quiz 派生。対戦とパネル奪取で 25 マスを奪い合います。",
+        stage: StageBadge {
+            label: "Planned",
+            color: Color::Yellow,
+        },
+        description: &[
+            "A four-seat Quiz battle inspired by Attack 25.",
+            "Current status: menu slot only. The board, CPU trio, and local prototype land before nostr_arena online play.",
+            "Attack 25 オマージュの4人戦です。",
+            "現状はメニュー枠のみ。nostr_arena 本番前に、盤面・CPU3人・ローカル試作を先に育てます。",
         ],
     },
     ModeOption {
         label: "Listening RPG",
-        description: [
-            "Hear the prompt, type it blind. v0.2.0 ships practice mode; the 10-battle run lands in #32-#37.",
-            "聞いた音をブラインドで打つ別ルール。v0.2.0 は練習モード、10戦RPGは #32-#37 で来ます。",
+        stage: StageBadge {
+            label: "Practice",
+            color: Color::Cyan,
+        },
+        description: &[
+            "Hear the prompt and type it blind.",
+            "Available now: single-prompt listening practice. The real 10-battle RPG, minibosses, and boss UI are still in progress.",
+            "聞いた音をブラインドで打つ別ルールです。",
+            "今すぐ遊べるのは1問練習まで。10戦RPG、中ボス、ボスUIはこれから実装します。",
         ],
     },
     ModeOption {
         label: "Records",
-        description: [
+        stage: StageBadge {
+            label: "Playable",
+            color: Color::Green,
+        },
+        description: &[
             "Browse your local self-best records across Quiz, Time Attack 25, and Listening RPG.",
+            "Available now: read-only local records browser. Ranking stays reserved for future online play.",
             "3 モードぶんの自己ベスト記録を横断して見る画面です。",
+            "今すぐ使えるのはローカル Records 閲覧です。世界 Ranking は将来の online 側に残します。",
         ],
     },
 ];
@@ -305,6 +336,7 @@ impl MenuUI {
         self.render_detail_panel(
             f,
             detail_area,
+            None,
             LANGUAGE_OPTIONS[self.selected_language].description,
         );
     }
@@ -320,7 +352,14 @@ impl MenuUI {
                 } else {
                     STYLE_NORMAL
                 };
-                ListItem::new(Line::from(Span::styled(mode.label, style)))
+                let badge_style = Style::new()
+                    .fg(mode.stage.color)
+                    .add_modifier(Modifier::BOLD);
+                ListItem::new(Line::from(vec![
+                    Span::styled(mode.label, style),
+                    Span::raw(" "),
+                    Span::styled(format!("[{}]", mode.stage.label), badge_style),
+                ]))
             })
             .collect();
 
@@ -337,7 +376,8 @@ impl MenuUI {
         state.select(Some(self.selected_mode));
         f.render_stateful_widget(mode_list, list_area, &mut state);
 
-        self.render_detail_panel(f, detail_area, MODE_OPTIONS[self.selected_mode].description);
+        let mode = &MODE_OPTIONS[self.selected_mode];
+        self.render_detail_panel(f, detail_area, Some(mode.stage), mode.description);
     }
 
     fn help_line(&self) -> HelpLine {
@@ -356,13 +396,29 @@ impl MenuUI {
         }
     }
 
-    fn render_detail_panel(&self, f: &mut Frame, area: Rect, description: [&str; 2]) {
+    fn render_detail_panel(
+        &self,
+        f: &mut Frame,
+        area: Rect,
+        badge: Option<StageBadge>,
+        description: &[&str],
+    ) {
         let color = self.detail_fade_color();
         let style = Style::new().fg(color);
-        let lines = vec![
-            Line::from(Span::styled(description[0].to_string(), style)),
-            Line::from(Span::styled(description[1].to_string(), style)),
-        ];
+        let mut lines: Vec<Line<'static>> = Vec::new();
+        if let Some(stage) = badge {
+            lines.push(Line::from(vec![
+                Span::styled("Stage: ", Style::new().fg(Color::DarkGray)),
+                Span::styled(
+                    stage.label,
+                    Style::new().fg(stage.color).add_modifier(Modifier::BOLD),
+                ),
+            ]));
+            lines.push(Line::default());
+        }
+        for line in description {
+            lines.push(Line::from(Span::styled((*line).to_string(), style)));
+        }
 
         let detail = Paragraph::new(lines)
             .wrap(ratatui::widgets::Wrap { trim: true })

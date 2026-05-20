@@ -91,9 +91,10 @@ Quiz is paired with score-attack modes; listening is paired with the RPG. The tw
 
 ### Time Attack 25
 
+- Intended structure: **four seats**, not a simplified head-to-head duel. The default local roster is **one human + three CPU seats**; whenever extra humans are available, they replace CPU seats instead of changing the underlying game shape.
 - 5×5 panel grid (homage to the Japanese TV show *Attack 25*).
-- CPU opponent. Whoever answers correctly first claims the panel.
-- Total elapsed time (thinking + typing) is the recorded result; the local self-best lands in Records.
+- Current shipping state: **not playable yet**. The menu entry is intentional, but the board UI / CPU trio / local prototype flow land before any `nostr_arena` online implementation.
+- Final direction: whoever answers correctly first claims the panel; total elapsed time (thinking + typing) is the recorded result; the local self-best lands in Records.
 
 ### Listening × Hack-and-Slash RPG
 
@@ -122,6 +123,8 @@ Quiz is paired with score-attack modes; listening is paired with the RPG. The tw
 - **One prompt = one enemy. One run = 10 enemies (fixed)** — a roguelike "go down, come back" cycle.
 - **No failure state in v0.2.0.** Mistyping reduces EXP gain only; a run always completes after 10 prompts.
 - **Audio replay is unlimited** (`Space`); no penalty other than the time it consumes.
+- Current shipping state: the build still exposes **single-prompt listening practice** as the stable flow. The full ten-battle run is in progress.
+- Planned pacing update: the run should not remain a flat dictation stream. Prompt 5 is expected to become a miniboss and prompt 10 a boss, using a reverse-Akinator-style layered-hint format rather than only reading the answer verbatim.
 
 ## `jiwa` Animation Crate
 
@@ -144,21 +147,24 @@ All persistent data files use **YAML** (`serde_yaml`). Question banks (`data/que
 
 ### Answer-form classification (`kind`)
 
-Every answer string is classified into one of three forms. This drives the RPG boss placement and lets the renderer choose appropriate enemy visuals.
+Every answer string is classified into one of three forms. This guides ordinary enemy selection and lets the renderer choose appropriate enemy visuals. Boss encounters may override the plain `kind` pacing with their own presentation format.
 
 | kind | form | examples | role |
 |---|---|---|---|
 | `word` | a single word | `Tokyo` / `move` / `borrow` | regular enemy |
 | `phrase` | space-separated proper noun / compound | `George Washington` / `HyperText Transfer Protocol` | mid-tier enemy |
-| `sentence` | a short sentence | `the quick brown fox jumps over the lazy dog` | **boss** |
+| `sentence` | a short sentence | `the quick brown fox jumps over the lazy dog` | heavy / high-tier prompt |
 
-### Hack-and-slash boss placement (Plan A — fixed)
+### Hack-and-slash run pacing (current direction)
 
 Within one 10-prompt run:
 
-- prompts 1–7 → `word`
-- prompts 8–9 → `phrase`
-- **prompt 10 → `sentence` (boss)** — guaranteed dramatic finish; the TTS readout is also longer, reinforcing the boss feel acoustically.
+- prompts 1–4 → regular listening encounters, usually `word` / short-form material
+- **prompt 5 → miniboss** — a layered-hint encounter may override the plain dictation format
+- prompts 6–9 → regular encounters again, with `word` / `phrase` / harder prompt mixes as needed
+- **prompt 10 → boss** — expected to use a reverse-Akinator-style layered-hint format instead of only reading the final answer verbatim
+
+The `kind` field still matters for data organization and ordinary enemy flavor. The boss slots are a higher-level run-structure rule layered on top of it, not a full replacement for `kind`.
 
 Quiz-side runs are not bound by this layout — quiz questions may freely mix kinds.
 
@@ -222,6 +228,8 @@ Validation: no two choices in a question may share a prefix that would make an a
 #### Linux runtime requirement
 
 The `tts` crate's Linux backend is `speech-dispatcher`, which must be installed and running before listening mode can speak. Build-time, `libspeechd-dev` must be installed (CI installs it in the test / clippy / lint-data jobs). When the daemon isn't available at runtime, the listening UI shows a "Listening mode is unavailable on this system" message and returns to the menu rather than crashing — Quiz / Records / Time Attack 25 stay reachable.
+
+The baseline audio strategy is **runtime synthesis**, not pre-generated voice files. This keeps the system compatible with growing prompt banks and future boss-hint variants; alternate voices may be added later as swappable runtime backends.
 
 #### v0.2.0 foundation scope (#28-#31)
 

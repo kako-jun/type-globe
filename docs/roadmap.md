@@ -34,6 +34,7 @@ v0.1.x の「画面に出た文字列を打つタイピングモード」を **�
 ### Epic [UI] 共通インフラ
 
 - [x] メインメニュー画面（モード選択：Quiz / Time Attack 25 / Listening RPG / Records）
+- [x] メニューに実装段階を表示（Playable / Practice / Planned）
 - [x] ペインレイアウト基盤（クイズ3分割 / ハクスラ4分割）
 - [x] ステータスペイン部品（CPM / WPM / Score / Time / HP / Lv / EXP）
 - [x] ヘルプ行コンポーネント（モード別の常時表示）
@@ -79,6 +80,7 @@ v0.1.x の「画面に出た文字列を打つタイピングモード」を **�
 
 ### Epic [TA25] Time Attack 25
 
+- [ ] 4席構成を正規形にする（標準は human 1 + CPU 3、人間がいれば置換）
 - [ ] 5×5 パネル UI
 - [ ] CPU 対戦 AI
 - [ ] パネル獲得ロジック
