@@ -84,6 +84,7 @@ impl ListeningSession {
     /// Pick a random prompt from `pool`. Returns `None` when the pool
     /// is empty so the caller can show a "no listening data" message
     /// instead of panicking.
+    #[cfg_attr(not(test), allow(dead_code))]
     pub fn from_pool(pool: &[ListeningPrompt], language: Language) -> Option<Self> {
         let mut rng = rand::thread_rng();
         pool.choose(&mut rng)

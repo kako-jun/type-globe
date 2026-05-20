@@ -85,7 +85,7 @@ For quiz-data migration work, the repository also ships:
 |---|---|---|
 | Quiz (single-run) | available now | The standard play mode: type-to-select 4-choice quiz, ten questions per run |
 | Time Attack 25 | practice now | A four-seat Quiz battle with red / blue / green / yellow seats. The current build ships a 25-question local prototype with one human and three CPU seats, filling the 5x5 board in order. Result saving is not wired yet. |
-| Listening RPG (TypeQuest) | practice now, full run in progress | Audio-first blind typing. The current build ships single-prompt listening practice; the ten-battle RPG run is the next epic. |
+| Listening RPG (TypeQuest) | practice now | Audio-first blind typing. The current build ships a 10-battle prototype run: regular encounters on 1-4 / 6-9, a timed miniboss on 5, and a manual stacked-hint boss on 10. HP / EXP persistence is still follow-up work. |
 | Records | available now | Local self-best history browser. Quiz saving is live today; TA25 and Listening RPG sections are reserved while those prototype flows do not yet persist results. |
 | Image Quiz | v0.3.0+ | Requires terminal graphics protocol (kitty / iTerm2 / wezterm) |
 | Stealth | v0.3.0+ | Disguises the UI as a generic CLI tool |
@@ -136,10 +136,14 @@ Quiz answers are typed directly — there is no arrow / number-key fallback. An 
 | Key | Action |
 |---|---|
 | Letters | Append only if they keep the input on a valid answer prefix |
+| `Backspace` | Erase the last character |
 | `Space` | Replay sound (unlimited, no penalty) |
-| `Esc` | Return to menu |
+| `Tab` | Open the next hint during the final manual boss |
+| `Shift+Tab` | Focus the previous revealed hint during boss fights |
+| `Enter` | Advance after each encounter result screen |
+| `Esc` / `Ctrl+C` | Return to menu |
 
-The v0.2.0 build ships the **listening foundation**: TTS, the prompt data structure, and a single-prompt practice flow (word-kind prompts only, since `Space` is reserved for replay). The full ten-prompt RPG run with HP / EXP is the next epic (#32–#37), and the current direction is to give prompt 5 a miniboss beat and prompt 10 a boss beat instead of keeping all ten encounters flat.
+The v0.2.0 build now ships a **10-battle listening RPG prototype**: TTS, the prompt data structure, regular blind-listening encounters, a timed reverse-Akinator miniboss on prompt 5, and a manual stacked-hint boss on prompt 10. HP / EXP / title persistence is still the next epic (#32–#37), and the current prototype keeps answer input word-only so `Space` can remain replay without rebinding phrase/sentence input.
 
 ## Install
 

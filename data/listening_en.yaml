@@ -272,6 +272,20 @@
   text_reading: language
   text_display: language
   kind: word
+  boss:
+    tier: boss
+    reveal_mode: manual
+    hints:
+      - label: Part of speech
+        text_display: noun
+      - label: Used when
+        text_display: Sharing thoughts between people
+      - label: Not this
+        text_display: A single word or a single sentence
+      - label: Old synonym
+        text_display: tongue
+      - label: First letter
+        text_display: l
 - id: l-en-068
   text_reading: mountain
   text_display: mountain
@@ -280,6 +294,21 @@
   text_reading: treasure
   text_display: treasure
   kind: word
+  boss:
+    tier: miniboss
+    reveal_mode: timed
+    hints:
+      - label: Part of speech
+        text_display: noun
+      - label: Found in
+        text_display: Pirate stories and adventure tales
+        auto_reveal_after_ms: 1800
+      - label: Not this
+        text_display: An ordinary daily tool
+        auto_reveal_after_ms: 3600
+      - label: First letter
+        text_display: t
+        auto_reveal_after_ms: 5400
 - id: l-en-070
   text_reading: wonderful
   text_display: wonderful

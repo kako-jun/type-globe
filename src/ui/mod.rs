@@ -15,6 +15,7 @@ pub use input_loop::{
     DemoInputSource, InputChannel, KeyEventSource, MultiplexedSource, RecvOutcome,
 };
 pub use layout::PaneFrame;
+pub use listen_boss::BossListenUI;
 pub use listen::{tts_unavailable_message, ListenUI};
 pub use menu::MenuUI;
 pub use quiz::QuizUI;

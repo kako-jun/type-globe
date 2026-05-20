@@ -19,7 +19,7 @@ The runtime path distinguishes a small set of utterance intents:
 - `BossHint { layer }`: structured reverse-Akinator hint reading, slower on early layers and closer to normal speed on later layers
 - `BossReveal`: final explicit reveal when a boss encounter chooses to speak the answer directly
 
-These intents are represented in code by `src/audio/tts.rs` as `TtsRequestKind`. The current build actively uses `PromptAnswer` and `PromptReplay`; `BossHint` / `BossReveal` are prepared for the later boss UI work.
+These intents are represented in code by `src/audio/tts.rs` as `TtsRequestKind`. The current build actively uses all four: `PromptAnswer` / `PromptReplay` in regular encounters, and `BossHint` / `BossReveal` in the stacked-hint miniboss / boss flow.
 
 ## Speech Policy
 

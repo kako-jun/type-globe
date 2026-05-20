@@ -74,6 +74,7 @@ pub struct ListenUI {
     plays: u32,
     rejected_char: Option<char>,
     reject_flash_until: Option<Instant>,
+    run_progress: Option<(usize, usize)>,
 }
 
 impl ListenUI {
@@ -88,6 +89,7 @@ impl ListenUI {
             plays: 0,
             rejected_char: None,
             reject_flash_until: None,
+            run_progress: None,
         }
     }
 
@@ -104,7 +106,16 @@ impl ListenUI {
             plays: 0,
             rejected_char: None,
             reject_flash_until: None,
+            run_progress: None,
         }
+    }
+
+    pub fn set_run_progress(&mut self, current: usize, total: usize) {
+        self.run_progress = Some((current, total));
+    }
+
+    pub fn take_tts(&mut self) -> Option<TtsEngine> {
+        self.tts.take()
     }
 
     pub fn run(&mut self) -> Result<Option<SubmissionResult>, Box<dyn std::error::Error>> {
@@ -243,8 +254,20 @@ impl ListenUI {
 
     fn render_main_pane(&self, f: &mut Frame, area: Rect) {
         let title_text = match self.phase {
-            Phase::Playing => "type-globe - Listening",
-            Phase::Result => "type-globe - Listening",
+            Phase::Playing => {
+                if self.run_progress.is_some() {
+                    "type-globe - Listening RPG"
+                } else {
+                    "type-globe - Listening"
+                }
+            }
+            Phase::Result => {
+                if self.run_progress.is_some() {
+                    "type-globe - Listening RPG"
+                } else {
+                    "type-globe - Listening"
+                }
+            }
         };
 
         let body_lines = match self.phase {
@@ -328,14 +351,21 @@ impl ListenUI {
             AnswerKind::Phrase => "phrase",
             AnswerKind::Sentence => "sentence",
         };
-        let lines = vec![
-            Line::from(Span::styled("Practice", STYLE_LABEL)),
-            Line::from(Span::styled("(RPG run: #32+)", STYLE_DIM)),
-            Line::from(""),
-            Line::from(format!("Kind   : {kind}")),
-            Line::from(format!("Plays  : {}", self.plays)),
-            Line::from(format!("Time   : {mins}:{secs:02}")),
-        ];
+        let mut lines = Vec::new();
+        if let Some((current, total)) = self.run_progress {
+            lines.push(Line::from(Span::styled("Run", STYLE_LABEL)));
+            lines.push(Line::from(Span::styled(
+                format!("{current}/{total}"),
+                STYLE_DIM,
+            )));
+        } else {
+            lines.push(Line::from(Span::styled("Practice", STYLE_LABEL)));
+            lines.push(Line::from(Span::styled("(RPG run: #32+)", STYLE_DIM)));
+        }
+        lines.push(Line::from(""));
+        lines.push(Line::from(format!("Kind   : {kind}")));
+        lines.push(Line::from(format!("Plays  : {}", self.plays)));
+        lines.push(Line::from(format!("Time   : {mins}:{secs:02}")));
         let para = Paragraph::new(lines).alignment(Alignment::Left).block(
             Block::default()
                 .title(" Status ")

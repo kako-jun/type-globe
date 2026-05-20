@@ -8,13 +8,17 @@ mod ui;
 use audio::TtsEngine;
 use clap::{Parser, Subcommand};
 use config::Config;
-use game::{ListeningSession, Ta25LocalGame, TA25_RUN_LENGTH};
+use game::{
+    ListeningRpgRun, ListeningSession, RpgEncounterKind, Ta25LocalGame, RPG_RUN_LENGTH,
+    TA25_RUN_LENGTH,
+};
 use io::{DataLoader, Storage};
 use std::io::{stdin, stdout, Write};
 use std::time::Duration;
-use types::{AnswerKind, GameMode, Language, ListeningPrompt, Question};
+use types::{GameMode, Language, Question};
 use ui::{
-    tts_unavailable_message, DemoInputSource, ListenUI, MenuUI, QuizUI, RecordsUI, TimeAttack25UI,
+    tts_unavailable_message, BossListenUI, DemoInputSource, ListenUI, MenuUI, QuizUI,
+    RecordsUI, TimeAttack25UI,
 };
 
 // ---------------------------------------------------------------------------
@@ -203,7 +207,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             }
 
             let language = resolve_language_or_select(lang)?;
-            run_listening_practice(&config, &language, no_tts)?;
+            run_listening_rpg(&config, &language, no_tts)?;
             Ok(())
         }
 
@@ -274,7 +278,7 @@ fn run_menu_loop(config: &Config) -> Result<(), Box<dyn std::error::Error>> {
                 menu.return_to_mode_selection(language);
             }
             GameMode::Rpg => {
-                run_listening_practice(config, &language, false)?;
+                run_listening_rpg(config, &language, false)?;
                 menu.return_to_mode_selection(language);
             }
             GameMode::Records => {
@@ -453,59 +457,93 @@ fn show_return_to_menu_message(message: &str) -> Result<(), Box<dyn std::error::
     Ok(())
 }
 
-/// One round of listening practice (#28-#31). v0.2.0 foundation only —
-/// the 10-prompt run loop is #32-#37. Foundation restricts the pool to
-/// `word`-kind prompts because Space is reserved for replay (per
-/// `docs/spec.md`); phrase / sentence input mapping is part of the
-/// run-loop work and is intentionally out of scope here.
+/// Listening RPG prototype run. Ships a fixed 10-encounter structure:
+/// regular listening on 1-4 / 6-9, timed miniboss on 5, manual boss on
+/// 10. Persistence (HP / EXP / titles / records) still lands in the
+/// later RPG issues, but #113 wires the boss beats into the actual run.
 ///
 /// `skip_tts`: when `true` (set via `rpg --no-tts`), the TTS engine is
 /// not initialised and the session runs silently. Useful for debugging
 /// in environments where TTS is unavailable or undesirable.
-fn run_listening_practice(
+fn run_listening_rpg(
     config: &Config,
     language: &Language,
     skip_tts: bool,
 ) -> Result<(), Box<dyn std::error::Error>> {
     let path = config.listening_file_path(language);
     let prompts = DataLoader::load_listening_prompts(&path)?;
-    let pool: Vec<ListeningPrompt> = prompts
-        .into_iter()
-        .filter(|p| p.kind == AnswerKind::Word)
-        .collect();
-
-    if pool.is_empty() {
+    if prompts.is_empty() {
         show_return_to_menu_message(
-            "No listening prompts available for this language. Add `data/listening_<lang>.json`.",
+            "No listening prompts available for this language. Add `data/listening_<lang>.yaml`.",
         )?;
         return Ok(());
     }
 
-    let session = match ListeningSession::from_pool(&pool, language.clone()) {
-        Some(s) => s,
-        None => {
-            show_return_to_menu_message("Failed to pick a listening prompt.")?;
+    let run = match ListeningRpgRun::build(&prompts) {
+        Ok(run) => run,
+        Err(err) => {
+            show_return_to_menu_message(&err)?;
             return Ok(());
         }
     };
 
-    if skip_tts {
-        // --no-tts: TTS を初期化せずサイレント実行
-        let mut ui = ListenUI::new_without_tts(session, language.clone());
-        let _ = ui.run()?;
-        return Ok(());
+    let mut tts = if skip_tts {
+        None
+    } else {
+        match TtsEngine::new() {
+            Ok(tts) => Some(tts),
+            Err(err) => {
+                show_return_to_menu_message(&tts_unavailable_message(err.as_ref()))?;
+                return Ok(());
+            }
+        }
+    };
+
+    let mut correct = 0usize;
+    for encounter in run.encounters() {
+        let session = ListeningSession::new(encounter.prompt.clone(), language.clone());
+        let result = match encounter.kind {
+            RpgEncounterKind::Regular => {
+                let mut ui = if let Some(engine) = tts.take() {
+                    ListenUI::new(session, engine, language.clone())
+                } else {
+                    ListenUI::new_without_tts(session, language.clone())
+                };
+                ui.set_run_progress(encounter.ordinal, RPG_RUN_LENGTH);
+                let result = ui.run()?;
+                tts = ui.take_tts();
+                result
+            }
+            RpgEncounterKind::Miniboss | RpgEncounterKind::Boss => {
+                let spec = encounter
+                    .prompt
+                    .boss
+                    .clone()
+                    .expect("boss encounters are built only from boss prompts");
+                let mut ui = BossListenUI::new(
+                    session,
+                    spec,
+                    tts.take(),
+                    language.clone(),
+                    encounter.ordinal,
+                );
+                let result = ui.run()?;
+                tts = ui.take_tts();
+                result
+            }
+        };
+
+        let Some(result) = result else {
+            return Ok(());
+        };
+        if result.is_correct {
+            correct += 1;
+        }
     }
 
-    let tts = match TtsEngine::new() {
-        Ok(t) => t,
-        Err(err) => {
-            show_return_to_menu_message(&tts_unavailable_message(err.as_ref()))?;
-            return Ok(());
-        }
-    };
-
-    let mut ui = ListenUI::new(session, tts, language.clone());
-    let _ = ui.run()?;
+    show_return_to_menu_message(&format!(
+        "Listening RPG run complete.\nCorrect: {correct}/{RPG_RUN_LENGTH}\nBoss structure: regular 1-4 / miniboss 5 / regular 6-9 / boss 10."
+    ))?;
     Ok(())
 }
 
