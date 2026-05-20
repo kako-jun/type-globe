@@ -69,6 +69,14 @@ v0.1.x の「画面に出た文字列を打つタイピングモード」を **�
 - [x] runtime support を `Unavailable / Basic / Preferred` の運用基準で整理
 - [ ] user 設定としての voice/rate 永続化
 
+### Epic [Hack][Boss UI] 逆アキネーター型ボス戦
+
+- [x] ボス戦を通常 Listening UI とは別の stacked-hint 4-pane 亜種として定義
+- [x] prompt 5 (miniboss) と prompt 10 (boss) の reveal mode 差を定義
+- [x] boss hint data fields (`tier` / `reveal_mode` / `hints[]`) を schema に追加
+- [x] active-phase help keys (`Space` / `Tab` / `S-Tab` / `Backspace` / `Esc`) を定義
+- [ ] 実際の boss encounter renderer と state machine
+
 ### Epic [Hack] ハクスラ RPG
 
 - [ ] プレイヤー進捗永続化（`player.json`：Lv / EXP / HP / 称号）
