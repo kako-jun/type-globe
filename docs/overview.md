@@ -22,8 +22,15 @@ Quiz prompts lead to single-run scoring, Time Attack 25, and (in `type-globe-onl
 ## Game Modes
 
 - **Quiz Mode** — Read the question, see the four choices, and **type the correct one's text** (no arrow-key selection). Exact matches auto-confirm, and non-prefix typos are rejected immediately.
-- **Time Attack 25** — 5×5 panel battle versus CPU, inspired by the *Attack 25* TV show. Total time (thinking + typing) is the recorded result; the local self-best lands in Records.
-- **Listening RPG (TypeQuest)** — Audio-only prompts. Each prompt is an enemy; ten enemies = one run. Mistypes cost EXP, never end the run.
+- **Time Attack 25** — Planned next as a **four-seat** quiz battle. The intended default is **one human plus three CPU seats**, with humans replacing CPU seats when available. The current build only exposes the menu slot; board UI and local prototype flow are next.
+- **Listening RPG (TypeQuest)** — Audio-first blind typing. The current build ships **single-prompt listening practice**; the ten-battle RPG run is still in progress. The run is expected to gain miniboss / boss beats instead of staying a flat stream of dictation prompts.
+
+## Current Shipping State
+
+- **Available now**: Quiz, Records
+- **Practice available now**: listening practice
+- **In progress**: full Listening RPG run
+- **Planned**: Time Attack 25 four-seat battle, `type-globe-online`, world Ranking
 
 ## Display Animation (`jiwa` crate)
 
@@ -34,6 +41,8 @@ For listening mode, no text is shown; a `♪` note pulses with the same animatio
 ## Audio
 
 Audio is generated at runtime via the `tts` crate (a cross-platform wrapper over speech-dispatcher / AVSpeechSynthesizer / SAPI — the same model as the browser's `SpeechSynthesisUtterance`). No audio files ship with the binary. Replay is unlimited and unpenalized; the only cost is the time it consumes.
+
+The baseline direction is **real-time speech synthesis**, not pre-baked clips. Future voice backends may be swapped in, but the game design assumes prompts and layered boss hints can be spoken on demand.
 
 ## Design Philosophy
 

@@ -83,10 +83,10 @@ For quiz-data migration work, the repository also ships:
 
 | Mode | Status | Description |
 |---|---|---|
-| Quiz (single-run) | target: v0.2.0 | The standard play mode: type-to-select 4-choice quiz, ten questions per run |
-| Time Attack 25 | target: v0.2.0 | A Quiz variant with a 5×5 panel battle vs. CPU |
-| Listening RPG (TypeQuest) | target: v0.2.0 | A separate ruleset: audio-only prompts, ten enemies per dungeon run |
-| Records | target: v0.2.0 | Local self-best history across Quiz, Time Attack 25, and Listening RPG |
+| Quiz (single-run) | available now | The standard play mode: type-to-select 4-choice quiz, ten questions per run |
+| Time Attack 25 | planned next | A four-seat Quiz battle; the intended default is one human plus three CPU seats. The current build exposes the menu slot only. |
+| Listening RPG (TypeQuest) | practice now, full run in progress | Audio-first blind typing. The current build ships single-prompt listening practice; the ten-battle RPG run is the next epic. |
+| Records | available now | Local self-best history across Quiz, Time Attack 25, and Listening RPG |
 | Image Quiz | v0.3.0+ | Requires terminal graphics protocol (kitty / iTerm2 / wezterm) |
 | Stealth | v0.3.0+ | Disguises the UI as a generic CLI tool |
 | `type-globe-online` | v0.3.0+ | mypace WebSocket + **Nostralgic Ranking** (world ranking via Nostr) + Nostr feed |
@@ -112,6 +112,8 @@ Both **CPM** (characters per minute) and **WPM** (words per minute) are displaye
 
 Listening prompts are synthesized at runtime via the [`tts`](https://crates.io/crates/tts) crate, which wraps the OS-native TTS engine (speech-dispatcher on Linux, AVSpeechSynthesizer on macOS, SAPI on Windows). No audio files ship with the binary. Replay is **unlimited and unpenalized** — the only cost is the time it consumes.
 
+The baseline direction is **real-time synthesis**, not pre-generated voice clips. This keeps the game compatible with growing prompt banks and future layered boss hints.
+
 On Linux, the `speech-dispatcher` daemon must be installed and running. If it is not, type-globe shows a clear "Listening mode is unavailable on this system" message and returns to the menu rather than crashing the binary; Quiz / Records / Time Attack 25 still work without TTS.
 
 ## Key Bindings
@@ -135,7 +137,7 @@ Quiz answers are typed directly — there is no arrow / number-key fallback. An 
 | `Space` | Replay sound (unlimited, no penalty) |
 | `Esc` | Return to menu |
 
-The v0.2.0 build ships the **listening foundation**: TTS, the prompt data structure, and a single-prompt practice flow (word-kind prompts only, since `Space` is reserved for replay). The full ten-prompt RPG run with HP / EXP / boss placement is the next epic (#32–#37).
+The v0.2.0 build ships the **listening foundation**: TTS, the prompt data structure, and a single-prompt practice flow (word-kind prompts only, since `Space` is reserved for replay). The full ten-prompt RPG run with HP / EXP is the next epic (#32–#37), and the current direction is to give prompt 5 a miniboss beat and prompt 10 a boss beat instead of keeping all ten encounters flat.
 
 ## Install
 
