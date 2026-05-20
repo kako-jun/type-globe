@@ -31,11 +31,11 @@ pub struct Choice {
     pub ja_typings: Vec<String>,
 }
 
-/// Answer-form classification per `docs/spec.md`. Drives the RPG
-/// boss placement (#33-#37: prompts 1-7 word, 8-9 phrase, 10 sentence)
-/// and gives the renderer a hint for enemy size / visuals. `Question`
-/// will gain this field when the YAML migration lands; `ListeningPrompt`
-/// uses it from day one (#29).
+/// Answer-form classification per `docs/spec.md`. Used for ordinary
+/// listening-enemy flavor / sizing and as a hint for future run pacing.
+/// Boss encounters may override the plain dictation format with their
+/// own presentation rules. `Question` will gain this field when the YAML
+/// migration lands; `ListeningPrompt` uses it from day one (#29).
 #[derive(Debug, Clone, Copy, Deserialize, Serialize, PartialEq, Eq)]
 #[serde(rename_all = "lowercase")]
 pub enum AnswerKind {

@@ -43,7 +43,7 @@ You can also jump directly into a mode:
 ```sh
 type-globe quiz             # Quiz mode, language selected at startup
 type-globe rpg              # Listening RPG, language selected at startup
-type-globe ta25             # Time Attack 25 (coming in v0.2.0)
+type-globe ta25             # Time Attack 25 (planned as 4 seats: You + CPU 1/2/3)
 type-globe ranking          # View local Records
 
 type-globe quiz --lang ja   # Jump straight to Japanese Quiz
@@ -84,7 +84,7 @@ For quiz-data migration work, the repository also ships:
 | Mode | Status | Description |
 |---|---|---|
 | Quiz (single-run) | available now | The standard play mode: type-to-select 4-choice quiz, ten questions per run |
-| Time Attack 25 | planned next | A four-seat Quiz battle; the intended default is one human plus three CPU seats. The current build exposes the menu slot only. |
+| Time Attack 25 | planned next | A four-seat Quiz battle with red / blue / green / yellow seats; the intended default is one human plus three CPU seats. The current build exposes the menu slot only. |
 | Listening RPG (TypeQuest) | practice now, full run in progress | Audio-first blind typing. The current build ships single-prompt listening practice; the ten-battle RPG run is the next epic. |
 | Records | available now | Local self-best history across Quiz, Time Attack 25, and Listening RPG |
 | Image Quiz | v0.3.0+ | Requires terminal graphics protocol (kitty / iTerm2 / wezterm) |
