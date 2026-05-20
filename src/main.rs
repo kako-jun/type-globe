@@ -8,12 +8,14 @@ mod ui;
 use audio::TtsEngine;
 use clap::{Parser, Subcommand};
 use config::Config;
-use game::{ListeningSession, Ta25Roster};
+use game::{ListeningSession, Ta25LocalGame, TA25_RUN_LENGTH};
 use io::{DataLoader, Storage};
 use std::io::{stdin, stdout, Write};
 use std::time::Duration;
 use types::{AnswerKind, GameMode, Language, ListeningPrompt, Question};
-use ui::{tts_unavailable_message, DemoInputSource, ListenUI, MenuUI, QuizUI, RecordsUI};
+use ui::{
+    tts_unavailable_message, DemoInputSource, ListenUI, MenuUI, QuizUI, RecordsUI, TimeAttack25UI,
+};
 
 // ---------------------------------------------------------------------------
 // CLI definition (#48)
@@ -206,14 +208,14 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         }
 
         // ---- ta25 サブコマンド ----
-        Some(Commands::Ta25 { lang: _, seed }) => {
+        Some(Commands::Ta25 { lang, seed }) => {
             // TODO(#48): --seed は未実装。引数を受け取るのみ。
             if seed.is_some() {
                 eprintln!("note: --seed は現在未実装です（スタブ）");
             }
 
-            // Ta25 は未実装のため言語選択プロンプトを出さずに即メッセージ表示。
-            show_return_to_menu_message(&ta25_placeholder_message("You"))?;
+            let language = resolve_language_or_select(lang)?;
+            run_ta25_mode(&config, &language)?;
             Ok(())
         }
 
@@ -268,7 +270,7 @@ fn run_menu_loop(config: &Config) -> Result<(), Box<dyn std::error::Error>> {
                 menu.return_to_mode_selection(language);
             }
             GameMode::TimeAttack25 => {
-                show_return_to_menu_message(&ta25_placeholder_message("You"))?;
+                run_ta25_mode(config, &language)?;
                 menu.return_to_mode_selection(language);
             }
             GameMode::Rpg => {
@@ -408,6 +410,27 @@ fn run_quiz_mode(config: &Config, language: &Language) -> Result<(), Box<dyn std
     Ok(())
 }
 
+fn run_ta25_mode(config: &Config, language: &Language) -> Result<(), Box<dyn std::error::Error>> {
+    let questions_file = config.questions_file_path(language);
+    let questions = load_questions_with_warnings(&questions_file)?;
+    if questions.len() < TA25_RUN_LENGTH {
+        show_return_to_menu_message(&format!(
+            "Time Attack 25 needs at least {TA25_RUN_LENGTH} questions for this language.\n\
+             Current pool: {}",
+            questions.len()
+        ))?;
+        return Ok(());
+    }
+
+    let Some(game) = Ta25LocalGame::from_pool(&questions, language.clone(), "You") else {
+        show_return_to_menu_message("Failed to build the local TA25 prototype run.")?;
+        return Ok(());
+    };
+    let mut ui = TimeAttack25UI::new(game);
+    ui.run()?;
+    Ok(())
+}
+
 /// Load a question bank and warn (non-fatally) on any prefix conflicts in
 /// the data. Routing every question-loading code path through this helper
 /// keeps future modes (Time Attack 25, Records) from silently bypassing the
@@ -428,16 +451,6 @@ fn show_return_to_menu_message(message: &str) -> Result<(), Box<dyn std::error::
     let mut input = String::new();
     stdin().read_line(&mut input)?;
     Ok(())
-}
-
-fn ta25_placeholder_message(human_name: &str) -> String {
-    let roster = Ta25Roster::standard_local(human_name);
-    format!(
-        "Time Attack 25 is not implemented yet.\n\
-         Planned default roster: {}\n\
-         Humans replace CPU seats when they join.",
-        roster.summary_line()
-    )
 }
 
 /// One round of listening practice (#28-#31). v0.2.0 foundation only —
@@ -587,12 +600,8 @@ mod tests {
     }
 
     #[test]
-    fn ta25_placeholder_message_mentions_four_seat_default_roster() {
-        let message = ta25_placeholder_message("You");
-        assert!(message.contains("red=You(human)"));
-        assert!(message.contains("blue=CPU 1(cpu)"));
-        assert!(message.contains("green=CPU 2(cpu)"));
-        assert!(message.contains("yellow=CPU 3(cpu)"));
-        assert!(message.contains("Humans replace CPU seats when they join."));
+    fn missing_questions_file_returns_empty_vec() {
+        let questions = load_questions_with_warnings("data/__missing__.json").expect("loads");
+        assert!(questions.is_empty());
     }
 }

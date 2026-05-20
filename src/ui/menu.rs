@@ -83,14 +83,14 @@ const MODE_OPTIONS: [ModeOption; 4] = [
     ModeOption {
         label: "Time Attack 25",
         stage: StageBadge {
-            label: "Planned",
-            color: Color::Yellow,
+            label: "Practice",
+            color: Color::Cyan,
         },
         description: &[
             "A four-seat Quiz battle inspired by Attack 25.",
-            "Current status: menu slot only. The board, CPU trio, and local prototype land before nostr_arena online play.",
+            "Available now: a local 25-question prototype with a 5x5 board and three CPU seats. nostr_arena online play is still separate future work.",
             "Attack 25 オマージュの4人戦です。",
-            "現状はメニュー枠のみ。nostr_arena 本番前に、盤面・CPU3人・ローカル試作を先に育てます。",
+            "今すぐ遊べるのは 25 問固定のローカル試作です。nostr_arena 本番は別の次段階です。",
         ],
     },
     ModeOption {
