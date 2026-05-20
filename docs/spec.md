@@ -92,6 +92,9 @@ Quiz is paired with score-attack modes; listening is paired with the RPG. The tw
 ### Time Attack 25
 
 - Intended structure: **four seats**, not a simplified head-to-head duel. The default local roster is **one human + three CPU seats**; whenever extra humans are available, they replace CPU seats instead of changing the underlying game shape.
+- Canonical seat colors are **red / blue / green / yellow**.
+- The current prototype model is a four-slot roster with, per seat: `color`, `kind` (`human` / `cpu` / `empty`), `player_id`, and `display_name`.
+- The standard local roster is: `red=You(human), blue=CPU 1(cpu), green=CPU 2(cpu), yellow=CPU 3(cpu)`.
 - 5×5 panel grid (homage to the Japanese TV show *Attack 25*).
 - Current shipping state: **not playable yet**. The menu entry is intentional, but the board UI / CPU trio / local prototype flow land before any `nostr_arena` online implementation.
 - Final direction: whoever answers correctly first claims the panel; total elapsed time (thinking + typing) is the recorded result; the local self-best lands in Records.
@@ -238,7 +241,7 @@ The foundation epic ships:
 - the listening prompt schema and bilingual data (`data/listening_<lang>.yaml`),
 - a single-prompt practice flow under the **Listening RPG** menu entry that exercises the blind-input judge end-to-end.
 
-The ten-prompt run loop with HP / EXP and the fixed boss placement (1-7 word, 8-9 phrase, 10 sentence) is the next epic (#32-#37). Until then, the practice mode filters the pool to `word`-kind prompts because `Space` is reserved for replay (per the key bindings above) and a phrase / sentence answer cannot be typed without rebinding the input model — that rebinding is part of #32-#37.
+The ten-prompt run loop with HP / EXP and boss-beat pacing (regular fights, miniboss at prompt 5, boss at prompt 10) is the next epic (#32-#37). Until then, the practice mode filters the pool to `word`-kind prompts because `Space` is reserved for replay (per the key bindings above) and a phrase / sentence answer cannot be typed without rebinding the input model — that rebinding is part of #32-#37.
 
 ### Player progress (`player.yaml`)
 

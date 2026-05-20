@@ -8,7 +8,7 @@ mod ui;
 use audio::TtsEngine;
 use clap::{Parser, Subcommand};
 use config::Config;
-use game::ListeningSession;
+use game::{ListeningSession, Ta25Roster};
 use io::{DataLoader, Storage};
 use std::io::{stdin, stdout, Write};
 use std::time::Duration;
@@ -213,7 +213,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             }
 
             // Ta25 は未実装のため言語選択プロンプトを出さずに即メッセージ表示。
-            show_return_to_menu_message("Time Attack 25 is not implemented yet.")?;
+            show_return_to_menu_message(&ta25_placeholder_message("You"))?;
             Ok(())
         }
 
@@ -268,7 +268,7 @@ fn run_menu_loop(config: &Config) -> Result<(), Box<dyn std::error::Error>> {
                 menu.return_to_mode_selection(language);
             }
             GameMode::TimeAttack25 => {
-                show_return_to_menu_message("Time Attack 25 is not implemented yet.")?;
+                show_return_to_menu_message(&ta25_placeholder_message("You"))?;
                 menu.return_to_mode_selection(language);
             }
             GameMode::Rpg => {
@@ -430,6 +430,16 @@ fn show_return_to_menu_message(message: &str) -> Result<(), Box<dyn std::error::
     Ok(())
 }
 
+fn ta25_placeholder_message(human_name: &str) -> String {
+    let roster = Ta25Roster::standard_local(human_name);
+    format!(
+        "Time Attack 25 is not implemented yet.\n\
+         Planned default roster: {}\n\
+         Humans replace CPU seats when they join.",
+        roster.summary_line()
+    )
+}
+
 /// One round of listening practice (#28-#31). v0.2.0 foundation only —
 /// the 10-prompt run loop is #32-#37. Foundation restricts the pool to
 /// `word`-kind prompts because Space is reserved for replay (per
@@ -574,5 +584,15 @@ mod tests {
         let args = ["type-globe", "quiz", "--seed", "-1"];
         let result = Cli::try_parse_from(args);
         assert!(result.is_err(), "--seed -1 should be rejected by clap");
+    }
+
+    #[test]
+    fn ta25_placeholder_message_mentions_four_seat_default_roster() {
+        let message = ta25_placeholder_message("You");
+        assert!(message.contains("red=You(human)"));
+        assert!(message.contains("blue=CPU 1(cpu)"));
+        assert!(message.contains("green=CPU 2(cpu)"));
+        assert!(message.contains("yellow=CPU 3(cpu)"));
+        assert!(message.contains("Humans replace CPU seats when they join."));
     }
 }
