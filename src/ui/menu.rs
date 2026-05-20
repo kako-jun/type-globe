@@ -101,9 +101,9 @@ const MODE_OPTIONS: [ModeOption; 4] = [
         },
         description: &[
             "Hear the prompt and type it blind.",
-            "Available now: single-prompt listening practice. The real 10-battle RPG, minibosses, and boss UI are still in progress.",
+            "Available now: a 10-battle prototype run with a timed miniboss on 5 and a manual boss on 10. HP / EXP persistence is still follow-up work.",
             "聞いた音をブラインドで打つ別ルールです。",
-            "今すぐ遊べるのは1問練習まで。10戦RPG、中ボス、ボスUIはこれから実装します。",
+            "今すぐ遊べるのは 10 戦試作です。5 戦目は timed 中ボス、10 戦目は manual ボスです。HP / EXP 永続化は次段階です。",
         ],
     },
     ModeOption {

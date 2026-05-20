@@ -153,6 +153,21 @@
   text_reading: としょかん
   text_display: 図書館
   kind: word
+  boss:
+    tier: miniboss
+    reveal_mode: timed
+    hints:
+      - label: 品詞
+        text_display: 名詞
+      - label: 使う場面
+        text_display: 本を借りたり静かに読んだりする場所
+        auto_reveal_after_ms: 1800
+      - label: ちがうもの
+        text_display: 病気を診る建物ではない
+        auto_reveal_after_ms: 3600
+      - label: 先頭のかな
+        text_display: と
+        auto_reveal_after_ms: 5400
 - id: l-ja-038
   text_reading: びょういん
   text_display: 病院
@@ -273,6 +288,20 @@
   text_reading: げんご
   text_display: 言語
   kind: word
+  boss:
+    tier: boss
+    reveal_mode: manual
+    hints:
+      - label: 品詞
+        text_display: 名詞
+      - label: 使う場面
+        text_display: 人と人が考えを伝え合うとき
+      - label: ちがうもの
+        text_display: 単語一つだけや文章一つだけではない
+      - label: 関連語
+        text_display: 日本語、英語、スペイン語
+      - label: 先頭のかな
+        text_display: げ
 - id: l-ja-068
   text_reading: おんがく
   text_display: 音楽

@@ -128,8 +128,8 @@ Quiz is paired with score-attack modes; listening is paired with the RPG. The tw
 - **One prompt = one enemy. One run = 10 enemies (fixed)** — a roguelike "go down, come back" cycle.
 - **No failure state in v0.2.0.** Mistyping reduces EXP gain only; a run always completes after 10 prompts.
 - **Audio replay is unlimited** (`Space`); no penalty other than the time it consumes.
-- Current shipping state: the build still exposes **single-prompt listening practice** as the stable flow. The full ten-battle run is in progress.
-- Planned pacing update: the run should not remain a flat dictation stream. Prompt 5 is expected to become a miniboss and prompt 10 a boss, using a reverse-Akinator-style layered-hint format rather than only reading the answer verbatim.
+- Current shipping state: the build now exposes a **10-battle prototype run**. Encounters 1-4 and 6-9 use the ordinary listening pane; prompt 5 is a timed reverse-Akinator miniboss; prompt 10 is a manual stacked-hint boss.
+- HP / EXP / title persistence is still follow-up work, but the run no longer stays a flat dictation stream.
 
 #### Boss Encounter UI (planned layout)
 
@@ -315,7 +315,7 @@ The speech pipeline distinguishes at least four utterance intents: ordinary prom
 The foundation epic ships:
 - `tts` crate integration (`src/audio/tts.rs`),
 - the listening prompt schema and bilingual data (`data/listening_<lang>.yaml`),
-- a single-prompt practice flow under the **Listening RPG** menu entry that exercises the blind-input judge end-to-end.
+- a 10-battle prototype flow under the **Listening RPG** menu entry that exercises the blind-input judge, regular encounters, and boss-hint pacing end-to-end.
 
 The ten-prompt run loop with HP / EXP and boss-beat pacing (regular fights, miniboss at prompt 5, boss at prompt 10) is the next epic (#32-#37). Until then, the practice mode filters the pool to `word`-kind prompts because `Space` is reserved for replay (per the key bindings above) and a phrase / sentence answer cannot be typed without rebinding the input model — that rebinding is part of #32-#37.
 
