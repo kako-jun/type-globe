@@ -62,10 +62,15 @@ impl ListeningRpgRun {
             ));
         }
         if minibosses.is_empty() {
-            return Err("Listening RPG needs at least one miniboss prompt with `boss.tier: miniboss`.".into());
+            return Err(
+                "Listening RPG needs at least one miniboss prompt with `boss.tier: miniboss`."
+                    .into(),
+            );
         }
         if bosses.is_empty() {
-            return Err("Listening RPG needs at least one boss prompt with `boss.tier: boss`.".into());
+            return Err(
+                "Listening RPG needs at least one boss prompt with `boss.tier: boss`.".into(),
+            );
         }
 
         regulars.shuffle(&mut rng);
@@ -162,7 +167,10 @@ mod tests {
 
     #[test]
     fn build_places_miniboss_and_boss_at_slots_five_and_ten() {
-        let mut prompts = vec![boss("mini", BossTier::Miniboss), boss("boss", BossTier::Boss)];
+        let mut prompts = vec![
+            boss("mini", BossTier::Miniboss),
+            boss("boss", BossTier::Boss),
+        ];
         for idx in 0..8 {
             prompts.push(regular(&format!("r{idx}")));
         }
@@ -188,7 +196,10 @@ mod tests {
 
     #[test]
     fn build_ignores_non_word_regular_prompts() {
-        let mut prompts = vec![boss("mini", BossTier::Miniboss), boss("boss", BossTier::Boss)];
+        let mut prompts = vec![
+            boss("mini", BossTier::Miniboss),
+            boss("boss", BossTier::Boss),
+        ];
         for idx in 0..8 {
             prompts.push(regular(&format!("r{idx}")));
         }

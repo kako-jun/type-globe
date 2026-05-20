@@ -17,8 +17,8 @@ use std::io::{stdin, stdout, Write};
 use std::time::Duration;
 use types::{GameMode, Language, Question};
 use ui::{
-    tts_unavailable_message, BossListenUI, DemoInputSource, ListenUI, MenuUI, QuizUI,
-    RecordsUI, TimeAttack25UI,
+    tts_unavailable_message, BossListenUI, DemoInputSource, ListenUI, MenuUI, QuizUI, RecordsUI,
+    TimeAttack25UI,
 };
 
 // ---------------------------------------------------------------------------
