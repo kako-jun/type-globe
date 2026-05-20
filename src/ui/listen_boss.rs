@@ -339,7 +339,10 @@ impl BossListenUI {
     }
 
     fn render_main_pane(&self, f: &mut Frame, area: Rect) {
-        let title = format!(" {} {}/{} ", self.plan.title, self.encounter_index, RPG_RUN_LENGTH);
+        let title = format!(
+            " {} {}/{} ",
+            self.plan.title, self.encounter_index, RPG_RUN_LENGTH
+        );
         let mut lines = Vec::new();
 
         for (index, hint) in self.spec.hints.iter().enumerate() {
@@ -384,15 +387,13 @@ impl BossListenUI {
             }
         }
 
-        let para = Paragraph::new(lines)
-            .alignment(Alignment::Left)
-            .block(
-                Block::default()
-                    .title(title)
-                    .title_style(STYLE_TITLE)
-                    .borders(Borders::ALL)
-                    .padding(Padding::uniform(1)),
-            );
+        let para = Paragraph::new(lines).alignment(Alignment::Left).block(
+            Block::default()
+                .title(title)
+                .title_style(STYLE_TITLE)
+                .borders(Borders::ALL)
+                .padding(Padding::uniform(1)),
+        );
         f.render_widget(para, area);
     }
 
@@ -469,11 +470,17 @@ impl BossListenUI {
             spans.push(Span::styled("_", STYLE_INPUT_ECHO));
         }
 
-        f.render_widget(Paragraph::new(Line::from(spans)).alignment(Alignment::Left), area);
+        f.render_widget(
+            Paragraph::new(Line::from(spans)).alignment(Alignment::Left),
+            area,
+        );
     }
 
     fn render_log_pane(&self, f: &mut Frame, area: Rect) {
-        let start = self.logs.len().saturating_sub(area.height.saturating_sub(2) as usize);
+        let start = self
+            .logs
+            .len()
+            .saturating_sub(area.height.saturating_sub(2) as usize);
         let lines: Vec<Line<'static>> = if self.logs.is_empty() {
             vec![Line::from(Span::styled("(no events)", STYLE_DIM))]
         } else {
