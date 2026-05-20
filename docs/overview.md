@@ -44,6 +44,8 @@ Audio is generated at runtime via the `tts` crate (a cross-platform wrapper over
 
 The baseline direction is **real-time speech synthesis**, not pre-baked clips. Future voice backends may be swapped in, but the game design assumes prompts and layered boss hints can be spoken on demand.
 
+Ordinary prompts and replay already use the same runtime pipeline, and future boss hints are prepared on that same API surface. Where the backend exposes rate control, type-globe can slow replay and future early hint layers; otherwise it degrades to normal-speed speech and keeps the run playable.
+
 ## Design Philosophy
 
 - **Reflex-free** — knowledge and memory beat fast eyes.

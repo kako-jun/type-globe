@@ -56,10 +56,18 @@ v0.1.x の「画面に出た文字列を打つタイピングモード」を **�
 
 ### Epic [Listen] リスニング基盤
 
-- [ ] `tts` crate 統合（言語コード切替、音声プロパティ）
+- [x] `tts` crate 統合（言語コード切替、音声プロパティ）
 - [ ] リスニング問題データ構造（`data/listening_<lang>.json`）
 - [ ] 音声再生 + リプレイ（Space で無制限・ペナルティなし）
 - [ ] ブラインド入力判定（聞いた文字列との一致、自動確定）
+
+### Epic [Hack][Audio] 音声パイプライン
+
+- [x] リアルタイム読み上げを正とする方針を固定
+- [x] 通常戦 / replay / boss hint / boss reveal の音声種別を整理
+- [x] `TtsRequestKind` / `TtsProfile` で話速ポリシーをコード化
+- [x] runtime support を `Unavailable / Basic / Preferred` の運用基準で整理
+- [ ] user 設定としての voice/rate 永続化
 
 ### Epic [Hack] ハクスラ RPG
 
