@@ -1,4 +1,4 @@
-use serde::{Deserialize, Serialize};
+use serde::{Deserialize, Deserializer, Serialize, Serializer};
 use std::collections::HashMap;
 
 #[derive(Debug, Clone, Deserialize, Serialize)]
@@ -44,6 +44,56 @@ pub enum AnswerKind {
     Sentence,
 }
 
+#[derive(Debug, Clone, Copy, Deserialize, Serialize, PartialEq, Eq)]
+#[serde(rename_all = "snake_case")]
+pub enum BossTier {
+    Miniboss,
+    Boss,
+}
+
+#[derive(Debug, Clone, Copy, Deserialize, Serialize, PartialEq, Eq)]
+#[serde(rename_all = "snake_case")]
+pub enum BossHintRevealMode {
+    Manual,
+    Timed,
+}
+
+#[derive(Debug, Clone, Deserialize, Serialize, PartialEq, Eq)]
+pub struct BossHintStep {
+    /// Short label shown in the hint stack, e.g. "Part of speech".
+    pub label: String,
+    /// Human-readable text rendered on screen.
+    pub text_display: String,
+    /// Optional TTS-specific reading form. Falls back to `text_display`
+    /// when omitted, so a hint can stay text-only or share one string.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub text_reading: Option<String>,
+    /// For timed reveal mode only. Manual mode ignores this field.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub auto_reveal_after_ms: Option<u64>,
+}
+
+#[derive(Debug, Clone, Deserialize, Serialize, PartialEq, Eq)]
+pub struct ListeningBossSpec {
+    pub tier: BossTier,
+    pub reveal_mode: BossHintRevealMode,
+    #[serde(deserialize_with = "deserialize_non_empty_boss_hints")]
+    pub hints: Vec<BossHintStep>,
+}
+
+fn deserialize_non_empty_boss_hints<'de, D>(deserializer: D) -> Result<Vec<BossHintStep>, D::Error>
+where
+    D: Deserializer<'de>,
+{
+    let hints = Vec::<BossHintStep>::deserialize(deserializer)?;
+    if hints.is_empty() {
+        return Err(serde::de::Error::custom(
+            "boss.hints must contain at least one hint step",
+        ));
+    }
+    Ok(hints)
+}
+
 /// One audio-only listening prompt. The TTS layer turns `text_reading`
 /// into audio at runtime (#28) — no audio files are shipped.
 /// `text_reading` is hiragana-only (JA) or plain English, used for TTS
@@ -51,12 +101,78 @@ pub enum AnswerKind {
 /// (kanji/katakana for JA; identical to `text_reading` for EN).
 /// `text_display` is shown on the result screen after the player answers.
 /// TODO(#33): wire `text_display` into the result/log pane of the RPG UI.
-#[derive(Debug, Clone, Deserialize, Serialize)]
+#[derive(Debug, Clone)]
 pub struct ListeningPrompt {
     pub id: String,
     pub text_reading: String,
     pub text_display: String,
     pub kind: AnswerKind,
+    /// Optional boss-encounter override for layered reverse-Akinator
+    /// presentation. Ordinary listening prompts leave this unset.
+    pub boss: Option<ListeningBossSpec>,
+}
+
+#[derive(Debug, Deserialize)]
+struct ListeningPromptWire {
+    id: String,
+    text_reading: String,
+    text_display: String,
+    kind: AnswerKind,
+    #[serde(default)]
+    boss: Option<ListeningBossSpec>,
+}
+
+impl<'de> Deserialize<'de> for ListeningPrompt {
+    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+    where
+        D: Deserializer<'de>,
+    {
+        let wire = ListeningPromptWire::deserialize(deserializer)?;
+        if wire.boss.is_some() && wire.kind != AnswerKind::Word {
+            return Err(serde::de::Error::custom(
+                "boss prompts must stay kind=word until the listening input model supports spaces during active play",
+            ));
+        }
+        Ok(Self {
+            id: wire.id,
+            text_reading: wire.text_reading,
+            text_display: wire.text_display,
+            kind: wire.kind,
+            boss: wire.boss,
+        })
+    }
+}
+
+impl Serialize for ListeningPrompt {
+    fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+    where
+        S: Serializer,
+    {
+        if self.boss.is_some() && self.kind != AnswerKind::Word {
+            return Err(serde::ser::Error::custom(
+                "boss prompts must stay kind=word until the listening input model supports spaces during active play",
+            ));
+        }
+
+        #[derive(Serialize)]
+        struct ListeningPromptWireRef<'a> {
+            id: &'a str,
+            text_reading: &'a str,
+            text_display: &'a str,
+            kind: AnswerKind,
+            #[serde(default, skip_serializing_if = "Option::is_none")]
+            boss: &'a Option<ListeningBossSpec>,
+        }
+
+        ListeningPromptWireRef {
+            id: &self.id,
+            text_reading: &self.text_reading,
+            text_display: &self.text_display,
+            kind: self.kind,
+            boss: &self.boss,
+        }
+        .serialize(serializer)
+    }
 }
 
 #[derive(Debug, Clone, Deserialize, Serialize)]
@@ -141,6 +257,7 @@ impl Records {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use serde_yaml::Value;
 
     fn score_entry(name: &str, score: u32) -> ScoreEntry {
         ScoreEntry {
@@ -242,6 +359,134 @@ mod tests {
         records.push_ta25(time_entry("tortoise", 9999));
         assert_eq!(records.time_attack_25.len(), 10);
         assert!(records.time_attack_25.iter().all(|e| e.time_seconds <= 100));
+    }
+
+    #[test]
+    fn listening_prompt_without_boss_metadata_still_deserializes() {
+        let yaml = r#"
+id: l-en-001
+text_reading: apple
+text_display: apple
+kind: word
+"#;
+        let prompt: ListeningPrompt = serde_yaml::from_str(yaml).expect("prompt");
+        assert!(prompt.boss.is_none());
+    }
+
+    #[test]
+    fn listening_prompt_with_boss_metadata_deserializes() {
+        let yaml = r#"
+id: l-en-boss-010
+text_reading: ticket
+text_display: ticket
+kind: word
+boss:
+  tier: boss
+  reveal_mode: manual
+  hints:
+    - label: Part of speech
+      text_display: proper noun
+    - label: First letter
+      text_display: t
+      text_reading: tee
+      auto_reveal_after_ms: 2500
+"#;
+        let prompt: ListeningPrompt = serde_yaml::from_str(yaml).expect("prompt");
+        let boss = prompt.boss.expect("boss metadata");
+        assert_eq!(boss.tier, BossTier::Boss);
+        assert_eq!(boss.reveal_mode, BossHintRevealMode::Manual);
+        assert_eq!(boss.hints.len(), 2);
+        assert_eq!(boss.hints[1].text_reading.as_deref(), Some("tee"));
+    }
+
+    #[test]
+    fn boss_prompt_rejects_non_word_answer_kind() {
+        let yaml = r#"
+id: l-en-boss-011
+text_reading: tokyo station
+text_display: Tokyo Station
+kind: phrase
+boss:
+  tier: boss
+  reveal_mode: manual
+  hints:
+    - label: Category
+      text_display: station
+"#;
+        let err = serde_yaml::from_str::<ListeningPrompt>(yaml).expect_err("phrase boss rejected");
+        assert!(err.to_string().contains("kind=word"));
+    }
+
+    #[test]
+    fn boss_metadata_requires_explicit_reveal_mode() {
+        let yaml = r#"
+tier: miniboss
+hints:
+  - label: Category
+    text_display: place
+"#;
+        let err = serde_yaml::from_str::<ListeningBossSpec>(yaml).expect_err("missing reveal_mode");
+        assert!(err.to_string().contains("reveal_mode"));
+    }
+
+    #[test]
+    fn boss_metadata_rejects_empty_hints() {
+        let yaml = r#"
+tier: boss
+reveal_mode: manual
+hints: []
+"#;
+        let err = serde_yaml::from_str::<ListeningBossSpec>(yaml).expect_err("empty hints");
+        assert!(err.to_string().contains("at least one hint"));
+    }
+
+    #[test]
+    fn boss_metadata_serializes_cleanly() {
+        let prompt = ListeningPrompt {
+            id: "boss".into(),
+            text_reading: "ticket".into(),
+            text_display: "ticket".into(),
+            kind: AnswerKind::Word,
+            boss: Some(ListeningBossSpec {
+                tier: BossTier::Miniboss,
+                reveal_mode: BossHintRevealMode::Timed,
+                hints: vec![BossHintStep {
+                    label: "Used when".into(),
+                    text_display: "discussing trains".into(),
+                    text_reading: None,
+                    auto_reveal_after_ms: Some(3000),
+                }],
+            }),
+        };
+        let value = serde_yaml::to_value(prompt).expect("yaml value");
+        let boss = value
+            .get("boss")
+            .and_then(Value::as_mapping)
+            .expect("boss mapping");
+        assert!(boss.contains_key(Value::from("tier")));
+        assert!(boss.contains_key(Value::from("hints")));
+    }
+
+    #[test]
+    fn invalid_boss_prompt_is_rejected_on_serialize_too() {
+        let prompt = ListeningPrompt {
+            id: "boss-bad".into(),
+            text_reading: "tokyo station".into(),
+            text_display: "Tokyo Station".into(),
+            kind: AnswerKind::Phrase,
+            boss: Some(ListeningBossSpec {
+                tier: BossTier::Boss,
+                reveal_mode: BossHintRevealMode::Manual,
+                hints: vec![BossHintStep {
+                    label: "Category".into(),
+                    text_display: "station".into(),
+                    text_reading: None,
+                    auto_reveal_after_ms: None,
+                }],
+            }),
+        };
+        let err = serde_yaml::to_string(&prompt).expect_err("serialize rejects invalid boss");
+        assert!(err.to_string().contains("kind=word"));
     }
 }
 
