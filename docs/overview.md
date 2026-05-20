@@ -22,15 +22,15 @@ Quiz prompts lead to single-run scoring, Time Attack 25, and (in `type-globe-onl
 ## Game Modes
 
 - **Quiz Mode** — Read the question, see the four choices, and **type the correct one's text** (no arrow-key selection). Exact matches auto-confirm, and non-prefix typos are rejected immediately.
-- **Time Attack 25** — Planned next as a **four-seat** quiz battle. The intended default is **one human plus three CPU seats**, with humans replacing CPU seats when available. The current build only exposes the menu slot; board UI and local prototype flow are next.
+- **Time Attack 25** — A **four-seat** quiz battle. The current build ships a **local prototype**: one human plus three CPU seats, a 25-question run, and a sequential 5x5 board fill. `nostr_arena` online play remains future work, but the seat model and board UI are already live.
 - **Listening RPG (TypeQuest)** — Audio-first blind typing. The current build ships **single-prompt listening practice**; the ten-battle RPG run is still in progress. The run is expected to gain miniboss / boss beats instead of staying a flat stream of dictation prompts.
 
 ## Current Shipping State
 
 - **Available now**: Quiz, Records
-- **Practice available now**: listening practice
+- **Practice available now**: Time Attack 25 local prototype, listening practice
 - **In progress**: full Listening RPG run
-- **Planned**: Time Attack 25 four-seat battle, `type-globe-online`, world Ranking
+- **Planned**: `type-globe-online`, world Ranking
 
 ## Display Animation (`jiwa` crate)
 

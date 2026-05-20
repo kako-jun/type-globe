@@ -7,4 +7,5 @@ pub use listening::{ListeningSession, SubmissionResult};
 // `listening::is_correct_listening_input`; not re-exported until a
 // non-test caller appears.
 pub use quiz::QuizGame;
-pub use time_attack::Ta25Roster;
+#[allow(unused_imports)]
+pub use time_attack::{Ta25LocalGame, Ta25Roster, Ta25SeatColor, TA25_RUN_LENGTH};
