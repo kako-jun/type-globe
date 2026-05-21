@@ -613,7 +613,11 @@ mod tests {
     /// "return Records::default()" fast path on first load.
     fn fresh_records_path() -> (tempfile::TempDir, String) {
         let dir = tempdir().expect("tempdir");
-        let path = dir.path().join("records.yaml").to_string_lossy().to_string();
+        let path = dir
+            .path()
+            .join("records.yaml")
+            .to_string_lossy()
+            .to_string();
         (dir, path)
     }
 
@@ -831,7 +835,10 @@ mod tests {
         let quit = ui.handle_key(key(KeyCode::Enter));
 
         assert!(!quit);
-        assert!(ui.saved, "saved flag should be true after successful persist");
+        assert!(
+            ui.saved,
+            "saved flag should be true after successful persist"
+        );
         assert!(ui.pending_warnings.is_empty());
         let loaded = Storage::load_records(&path).expect("load records");
         assert_eq!(loaded.time_attack_25.len(), 1);
