@@ -1,3 +1,4 @@
+pub mod enemy;
 pub mod listening;
 pub mod quiz;
 pub mod rpg;
