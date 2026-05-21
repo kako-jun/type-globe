@@ -208,9 +208,16 @@ impl TimeAttack25UI {
 
     fn handle_key_naming(&mut self, key: KeyEvent) -> bool {
         if self.saved {
-            // Once the row has been written, any printable key / Enter
-            // / Esc dismisses the confirmation screen back to the menu.
-            if matches!(key.code, KeyCode::Enter | KeyCode::Char(_) | KeyCode::Esc) {
+            // After a successful save the name is locked in. Treat
+            // Backspace and other editing keys as no-ops so the player
+            // cannot mutate the already-persisted record.
+            //
+            // Esc is intentionally excluded from the dismiss set to
+            // match `QuizUI::handle_key_naming`: once saved, Esc would
+            // mean two things at once ("skip the save" and "dismiss"),
+            // so we keep it inert. Enter / printable keys dismiss the
+            // confirmation screen back to the menu.
+            if matches!(key.code, KeyCode::Enter | KeyCode::Char(_)) {
                 return true;
             }
             return false;
@@ -981,12 +988,14 @@ mod tests {
     }
 
     // -------------------------------------------------------------------
-    // #15: After saved=true, Enter / Char / Esc all dismiss (quit=true).
-    //      "要確認" 観点 → 現状の挙動を assertion で固定する。
+    // #15: After saved=true, Enter / Char dismiss (quit=true).
+    //      Esc は意図的に除外（後続 #15b の no-op 観点で確認）。Quiz と
+    //      挙動を揃え、saved 後の Esc は「save をスキップ」と「dismiss」
+    //      の意味が二重化しないよう no-op にする。
     // -------------------------------------------------------------------
     #[test]
     fn test_handle_key_naming_after_saved_any_dismiss_key_returns_quit() {
-        for dismiss_code in [KeyCode::Enter, KeyCode::Char('x'), KeyCode::Esc] {
+        for dismiss_code in [KeyCode::Enter, KeyCode::Char('x')] {
             let mut ui = make_ui();
             finish_game(&mut ui);
             ui.phase = Phase::NamingForRecord;
@@ -995,6 +1004,25 @@ mod tests {
             let quit = ui.handle_key(key(dismiss_code));
             assert!(quit, "{dismiss_code:?} should dismiss when saved=true");
         }
+    }
+
+    // -------------------------------------------------------------------
+    // #15b: After saved=true, Esc is a no-op (quit=false).
+    //      Mirrors `QuizUI::handle_key_naming` — Esc is reserved for
+    //      "skip the save" during un-saved naming, so once saved it
+    //      must not double as a dismiss key.
+    // -------------------------------------------------------------------
+    #[test]
+    fn test_handle_key_naming_after_saved_esc_is_noop() {
+        let mut ui = make_ui();
+        finish_game(&mut ui);
+        ui.phase = Phase::NamingForRecord;
+        ui.saved = true;
+        ui.name_buffer = "Alice".to_string();
+
+        let quit = ui.handle_key(key(KeyCode::Esc));
+        assert!(!quit, "Esc must not dismiss when saved=true");
+        assert_eq!(ui.name_buffer, "Alice", "Esc must not mutate the buffer");
     }
 
     // -------------------------------------------------------------------
