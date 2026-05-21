@@ -2,6 +2,7 @@ pub mod listening;
 pub mod quiz;
 pub mod rpg;
 pub mod time_attack;
+pub mod title;
 
 pub use listening::{ListeningSession, SubmissionResult};
 // `is_correct_listening_input` stays reachable via
