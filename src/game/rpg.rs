@@ -156,7 +156,7 @@ impl ListeningRpgRun {
         })
     }
 
-    #[allow(dead_code)]
+    #[cfg(test)]
     pub fn encounters(&self) -> &[RpgEncounter] {
         &self.encounters
     }

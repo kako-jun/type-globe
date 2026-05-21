@@ -503,6 +503,7 @@ fn run_listening_rpg(
             show_return_to_menu_message(&err)?;
             // Even on early-exit, persist whatever language switch the
             // player made. Failure here is non-fatal (warn only).
+            // Phase 2: 検討 — closure/scopeguard で defer 化
             if let Err(err) = Storage::save_player_data(&player_path, &player) {
                 eprintln!("warning: failed to save player.yaml: {err}");
             }
@@ -517,6 +518,7 @@ fn run_listening_rpg(
             Ok(tts) => Some(tts),
             Err(err) => {
                 show_return_to_menu_message(&tts_unavailable_message(err.as_ref()))?;
+                // Phase 2: 検討 — closure/scopeguard で defer 化
                 if let Err(err) = Storage::save_player_data(&player_path, &player) {
                     eprintln!("warning: failed to save player.yaml: {err}");
                 }
@@ -596,6 +598,7 @@ fn run_listening_rpg(
             RpgEncounterKind::Miniboss => "Miniboss",
             RpgEncounterKind::Boss => "Boss",
         };
+        // TODO(#34): localize once i18n table lands
         if result.is_correct {
             correct += 1;
             run.push_battle_log(format!("▸ {} {}: Hit!", label, encounter.ordinal));
@@ -615,6 +618,7 @@ fn run_listening_rpg(
     // #32: persist progression on the way back to the menu. Phase 1
     // does not mutate level/exp, so this is effectively just a
     // language-write today, but it cements the load→save round-trip.
+    // Phase 2: 検討 — closure/scopeguard で defer 化
     if let Err(err) = Storage::save_player_data(&player_path, &player) {
         eprintln!("warning: failed to save player.yaml: {err}");
     }

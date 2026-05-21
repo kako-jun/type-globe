@@ -214,6 +214,27 @@ mod tests {
     }
 
     #[test]
+    fn load_player_data_accepts_yaml_without_rpg_stats_block() {
+        // n2: legacy player.yaml from before #32 had no `rpg_stats:` block
+        // at all. Struct-level `#[serde(default)]` on `RpgStats` plus
+        // `#[serde(default)]` on `Player::rpg_stats` must fully populate
+        // a `RpgStats::default()` when the block is absent.
+        let path = unique_path("player-no-rpg-stats");
+        std::fs::write(&path, "player_name: Legacy\nlanguage: ja\n").expect("write legacy");
+
+        let loaded = Storage::load_player_data(&path).expect("load");
+        let defaults = crate::types::RpgStats::default();
+        assert_eq!(loaded.player_name, "Legacy");
+        assert_eq!(loaded.language, "ja");
+        assert_eq!(loaded.rpg_stats.level, defaults.level);
+        assert_eq!(loaded.rpg_stats.exp, defaults.exp);
+        assert_eq!(loaded.rpg_stats.hp_max, defaults.hp_max);
+        assert_eq!(loaded.rpg_stats.titles_unlocked, defaults.titles_unlocked);
+
+        let _ = std::fs::remove_file(&path);
+    }
+
+    #[test]
     fn load_records_file_absent_returns_default() {
         let path = unique_path("absent-yaml");
         // Ensure the file does not exist
