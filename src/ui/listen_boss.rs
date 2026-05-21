@@ -115,6 +115,10 @@ pub struct BossListenUI {
     /// extra context lines below the in-encounter event log so the player
     /// can see Hit/Missed history coming into the boss/miniboss fight.
     battle_log: Vec<String>,
+    /// Cosmetic enemy label injected by the run loop (#37). Rendered at
+    /// the top of the main pane so the player sees "👾 Centurion" or
+    /// "🐲 Final Dragon" before the hint stack.
+    enemy_display: Option<String>,
 }
 
 /// Maximum visible battle-log tail rendered above the per-encounter log.
@@ -144,6 +148,7 @@ impl BossListenUI {
             rejected_char: None,
             reject_flash_until: None,
             battle_log: Vec::new(),
+            enemy_display: None,
         }
     }
 
@@ -152,6 +157,13 @@ impl BossListenUI {
     /// visible tail.
     pub fn set_battle_log(&mut self, log: Vec<String>) {
         self.battle_log = log;
+    }
+
+    /// Show the enemy facing the player during this encounter (#37).
+    /// Pass `Some(display)` (e.g. "👾 Centurion") from the run loop; the
+    /// UI shows it at the top of the main pane.
+    pub fn set_enemy_display<S: Into<String>>(&mut self, display: S) {
+        self.enemy_display = Some(display.into());
     }
 
     pub fn take_tts(&mut self) -> Option<TtsEngine> {
@@ -358,6 +370,14 @@ impl BossListenUI {
             self.plan.title, self.encounter_index, RPG_RUN_LENGTH
         );
         let mut lines = Vec::new();
+
+        // #37: surface the enemy display above the hint stack so the
+        // player can see who they're up against. Stand-alone tests still
+        // skip this (no setter → empty line preserved).
+        if let Some(enemy) = self.enemy_display.as_ref() {
+            lines.push(Line::from(Span::styled(enemy.clone(), STYLE_HINT_ACTIVE)));
+            lines.push(Line::from(""));
+        }
 
         for (index, hint) in self.spec.hints.iter().enumerate() {
             if index < self.revealed_hints {

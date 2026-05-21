@@ -79,6 +79,9 @@ pub struct ListenUI {
     /// only displays the tail in the log pane — composition / mutation
     /// lives on `ListeningRpgRun`.
     battle_log: Vec<String>,
+    /// Cosmetic enemy label injected by the run loop (#37). `None` for
+    /// stand-alone listening practice.
+    enemy_display: Option<String>,
 }
 
 /// Maximum visible battle-log lines in the play-phase log pane. The pane
@@ -100,6 +103,7 @@ impl ListenUI {
             reject_flash_until: None,
             run_progress: None,
             battle_log: Vec::new(),
+            enemy_display: None,
         }
     }
 
@@ -118,11 +122,19 @@ impl ListenUI {
             reject_flash_until: None,
             run_progress: None,
             battle_log: Vec::new(),
+            enemy_display: None,
         }
     }
 
     pub fn set_run_progress(&mut self, current: usize, total: usize) {
         self.run_progress = Some((current, total));
+    }
+
+    /// Show the enemy facing the player during this encounter (#37).
+    /// Pass `Some(display)` (e.g. "🟢 Slime") from the run loop; the UI
+    /// shows it above the listening pulse.
+    pub fn set_enemy_display<S: Into<String>>(&mut self, display: S) {
+        self.enemy_display = Some(display.into());
     }
 
     /// Seed the play-phase log pane with the rolling battle log from
@@ -317,18 +329,25 @@ impl ListenUI {
         let Rgb(r, g, b) = color;
         let symbol_span = Span::styled(symbol, Style::new().fg(Color::Rgb(r, g, b)));
 
-        vec![
-            Line::from(""),
-            Line::from(""),
-            Line::from(symbol_span),
-            Line::from(""),
-            Line::from(Span::styled("Listening...", STYLE_NORMAL)),
-            Line::from(""),
-            Line::from(Span::styled(
-                "(audio only — exact match auto-confirms)",
-                STYLE_DIM,
-            )),
-        ]
+        let mut lines = Vec::with_capacity(9);
+        lines.push(Line::from(""));
+        // #37: surface the enemy directly above the pulse so the player
+        // can see who they're fighting (the audio + emoji is the only
+        // presentation — still no answer text).
+        if let Some(enemy) = self.enemy_display.as_ref() {
+            lines.push(Line::from(Span::styled(enemy.clone(), STYLE_NORMAL)));
+        } else {
+            lines.push(Line::from(""));
+        }
+        lines.push(Line::from(symbol_span));
+        lines.push(Line::from(""));
+        lines.push(Line::from(Span::styled("Listening...", STYLE_NORMAL)));
+        lines.push(Line::from(""));
+        lines.push(Line::from(Span::styled(
+            "(audio only — exact match auto-confirms)",
+            STYLE_DIM,
+        )));
+        lines
     }
 
     fn result_body_lines(&self) -> Vec<Line<'static>> {

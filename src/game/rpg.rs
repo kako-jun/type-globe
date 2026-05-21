@@ -10,32 +10,21 @@ const REGULAR_ENCOUNTER_COUNT: usize = 8;
 // exercise it without booting any UI. `run_listening_rpg` in `main.rs`
 // is the only caller; it threads `RpgStats` through these functions and
 // surfaces emitted events to the battle log + title-unlock pipeline.
-//
-// The `dead_code` allows below cover the first commit of Phase 2: the
-// constants / functions are introduced here with full unit-test coverage,
-// then wired into `run_listening_rpg` in commit-4. clippy `-D warnings`
-// runs in the pre-commit hook, so without the allows the intermediate
-// commit would fail to land.
 
 /// Base EXP per correct hit, before the speed bonus.
-#[allow(dead_code)]
 pub const BASE_EXP_PER_HIT: u32 = 10;
 /// Maximum bonus EXP awarded for an instant (≤ 0s) correct answer.
-#[allow(dead_code)]
 pub const MAX_SPEED_BONUS: u32 = 5;
 /// Time-to-correct beyond which the speed bonus is 0.
-#[allow(dead_code)]
 pub const SPEED_BONUS_WINDOW_SECS: f64 = 5.0;
 /// EXP penalty per missed encounter. Per CLAUDE.md the v0.2.0 RPG has no
 /// failure state; missed answers only chip away at progression.
-#[allow(dead_code)]
 pub const MISS_EXP_PENALTY: u32 = 1;
 
 /// Required EXP to advance *from* `level` to `level + 1`. Issue #34 picks
 /// the linear `level * 100` schedule (Lv 1→2: 100, Lv 2→3: 200, …). The
 /// `max(100)` clamp protects the (presently unreachable) `level == 0`
 /// case from collapsing to a zero threshold.
-#[allow(dead_code)]
 pub fn next_level_exp(level: u32) -> u32 {
     level.saturating_mul(100).max(100)
 }
@@ -44,7 +33,6 @@ pub fn next_level_exp(level: u32) -> u32 {
 /// Bonus is a linear ramp from `MAX_SPEED_BONUS` (≤ 0s) down to 0 at
 /// `SPEED_BONUS_WINDOW_SECS`, rounded to the nearest integer. NaN /
 /// negative inputs are treated as "instant" — never as a penalty.
-#[allow(dead_code)]
 pub fn exp_gain_for_hit(elapsed_secs: f64) -> u32 {
     let bonus = if !elapsed_secs.is_finite() || elapsed_secs <= 0.0 {
         MAX_SPEED_BONUS
@@ -61,7 +49,6 @@ pub fn exp_gain_for_hit(elapsed_secs: f64) -> u32 {
 /// callers turn these into `🎉 Level up!` lines and feed `new_level` to
 /// the title-unlock pipeline (#35).
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
-#[allow(dead_code)]
 pub struct LevelUpEvent {
     pub new_level: u32,
 }
@@ -70,7 +57,6 @@ pub struct LevelUpEvent {
 /// the running total allows. Returns a `LevelUpEvent` per level crossed,
 /// in ascending order. Pure: only mutates `stats`. Saturating on u32
 /// overflow so cosmically large EXP totals can't panic the run loop.
-#[allow(dead_code)]
 pub fn apply_exp_gain(stats: &mut RpgStats, gain: u32) -> Vec<LevelUpEvent> {
     stats.exp = stats.exp.saturating_add(gain);
     let mut events = Vec::new();
@@ -94,7 +80,6 @@ pub fn apply_exp_gain(stats: &mut RpgStats, gain: u32) -> Vec<LevelUpEvent> {
 
 /// Subtract `loss` EXP from `stats`, saturating at 0 (no negative EXP /
 /// level loss per CLAUDE.md "失敗概念なし").
-#[allow(dead_code)]
 pub fn apply_exp_loss(stats: &mut RpgStats, loss: u32) {
     stats.exp = stats.exp.saturating_sub(loss);
 }
@@ -486,7 +471,10 @@ mod tests {
     #[test]
     fn exp_gain_for_hit_negative_and_nan_are_treated_as_instant() {
         assert_eq!(exp_gain_for_hit(-1.0), BASE_EXP_PER_HIT + MAX_SPEED_BONUS);
-        assert_eq!(exp_gain_for_hit(f64::NAN), BASE_EXP_PER_HIT + MAX_SPEED_BONUS);
+        assert_eq!(
+            exp_gain_for_hit(f64::NAN),
+            BASE_EXP_PER_HIT + MAX_SPEED_BONUS
+        );
     }
 
     #[test]

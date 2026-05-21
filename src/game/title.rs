@@ -13,12 +13,6 @@
 //! The persistence side (`RpgStats.titles_unlocked: Vec<String>`) stores
 //! the `key`. UIs / battle-log lines pick up the `display` via
 //! `TITLE_TABLE` when they need to render.
-//!
-//! Phase 2 commit-2 lands the table + lookup; the wiring into
-//! `run_listening_rpg` is commit-4, so until then the module's public
-//! API is dead code from the binary's POV. clippy `-D warnings` (run by
-//! the pre-commit hook) requires us to allow that explicitly.
-#![allow(dead_code)]
 
 /// One row of the title table. See module docs for the role of `key` vs
 /// `display`.
@@ -143,7 +137,14 @@ mod tests {
         let keys: Vec<&str> = unlocked.iter().map(|t| t.key).collect();
         assert_eq!(
             keys,
-            vec!["apprentice", "veteran", "champion", "master", "grandmaster", "legend"]
+            vec![
+                "apprentice",
+                "veteran",
+                "champion",
+                "master",
+                "grandmaster",
+                "legend"
+            ]
         );
     }
 

@@ -11,10 +11,6 @@
 //! state ("失敗概念なし" per CLAUDE.md), so the UI never decrements it.
 //! It's exposed so a follow-up "show enemy HP shrinking" effect can hook
 //! in without re-shaping the table.
-//!
-//! Phase 2 commit-3 lands the table + lookup; the wiring into the
-//! listening UIs is commit-4, so the public API is dead code until then.
-#![allow(dead_code)]
 
 /// One row of the enemy table. `key` stays stable for save / i18n
 /// purposes; `display` is what the player sees.
