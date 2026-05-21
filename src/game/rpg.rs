@@ -35,7 +35,7 @@ pub enum RpgRunPhase {
     Town,
     Diving,
     /// 1..=`RPG_RUN_LENGTH`. Ordinal matches `RpgEncounter::ordinal`.
-    Encounter(u32),
+    Encounter(usize),
     Return,
 }
 
@@ -178,19 +178,19 @@ impl ListeningRpgRun {
     /// `main.rs` calls `advance_to_next_encounter` between beats and
     /// trusts the returned `Option<&RpgEncounter>` for control flow.
     pub fn advance_to_next_encounter(&mut self) -> Option<&RpgEncounter> {
-        let next_ordinal = match self.phase {
+        let next_ordinal: usize = match self.phase {
             RpgRunPhase::Town | RpgRunPhase::Return => return None,
             RpgRunPhase::Diving => 1,
             RpgRunPhase::Encounter(n) => n + 1,
         };
 
-        if (next_ordinal as usize) > self.encounters.len() {
+        if next_ordinal > self.encounters.len() {
             self.phase = RpgRunPhase::Return;
             return None;
         }
 
         self.phase = RpgRunPhase::Encounter(next_ordinal);
-        self.encounters.get((next_ordinal - 1) as usize)
+        self.encounters.get(next_ordinal - 1)
     }
 
     /// Force the run back into `Town`. Called once the `Return` beat
@@ -311,9 +311,9 @@ mod tests {
         run.enter_diving();
         assert_eq!(run.phase(), RpgRunPhase::Diving);
 
-        for expected in 1..=RPG_RUN_LENGTH as u32 {
+        for expected in 1..=RPG_RUN_LENGTH {
             let encounter = run.advance_to_next_encounter().expect("encounter present");
-            assert_eq!(encounter.ordinal as u32, expected);
+            assert_eq!(encounter.ordinal, expected);
             assert_eq!(run.phase(), RpgRunPhase::Encounter(expected));
         }
 

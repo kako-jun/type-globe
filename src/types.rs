@@ -185,36 +185,24 @@ pub struct Player {
 
 /// Per-player RPG progression. Phase 1 (#32) only persists the data —
 /// EXP/level updates and title-unlock logic land in Phase 2 (#34/#35).
-/// `#[serde(default)]` on every field keeps legacy `player.yaml` files
-/// loadable when new columns are added later in the same Phase 1 wave.
+/// Struct-level `#[serde(default)]` delegates per-field defaults to the
+/// `Default` impl below, so legacy `player.yaml` files (with `rpg_stats`
+/// missing or partial) load cleanly without per-field default fns.
 #[derive(Debug, Clone, Deserialize, Serialize)]
+#[serde(default)]
 pub struct RpgStats {
-    #[serde(default = "RpgStats::default_level")]
     pub level: u32,
-    #[serde(default)]
     pub exp: u32,
-    #[serde(default = "RpgStats::default_hp_max")]
     pub hp_max: u32,
-    #[serde(default)]
     pub titles_unlocked: Vec<String>,
-}
-
-impl RpgStats {
-    fn default_level() -> u32 {
-        1
-    }
-
-    fn default_hp_max() -> u32 {
-        100
-    }
 }
 
 impl Default for RpgStats {
     fn default() -> Self {
         RpgStats {
-            level: Self::default_level(),
+            level: 1,
             exp: 0,
-            hp_max: Self::default_hp_max(),
+            hp_max: 100,
             titles_unlocked: Vec::new(),
         }
     }
