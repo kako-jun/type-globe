@@ -129,7 +129,22 @@ Quiz is paired with score-attack modes; listening is paired with the RPG. The tw
 - **No failure state in v0.2.0.** Mistyping reduces EXP gain only; a run always completes after 10 prompts.
 - **Audio replay is unlimited** (`Space`); no penalty other than the time it consumes.
 - Current shipping state: the build now exposes a **10-battle prototype run**. Encounters 1-4 and 6-9 use the ordinary listening pane; prompt 5 is a timed reverse-Akinator miniboss; prompt 10 is a manual stacked-hint boss.
-- HP / EXP / title persistence is still follow-up work, but the run no longer stays a flat dictation stream.
+- Persistence (#32) loads / saves `RpgStats { level, exp, hp_max, titles_unlocked }` from `player.yaml` across runs.
+- EXP / level progression (#34) is live: each correct answer awards `BASE_EXP_PER_HIT (10) + speed_bonus` where the bonus is a linear ramp from `MAX_SPEED_BONUS (5)` (≤ 0 s) down to 0 at `SPEED_BONUS_WINDOW_SECS (5.0)`, rounded to the nearest integer. Missed answers chip `MISS_EXP_PENALTY (1)` off the running total (saturating at 0 — no level loss). The threshold to advance from level `N` to `N+1` is `next_level_exp(N) = max(100, N * 100)`. Crossing a threshold rolls the level forward and carries any surplus EXP into the next tier.
+- Title table (#35) is live. `RpgStats.titles_unlocked` holds the `key` set; UIs render the `display` string from `TITLE_TABLE`:
+
+  | Level | Key | Display |
+  |---|---|---|
+  | 2  | `apprentice`  | Apprentice |
+  | 5  | `veteran`     | Veteran |
+  | 10 | `champion`    | Champion |
+  | 20 | `master`      | Master |
+  | 30 | `grandmaster` | Grandmaster |
+  | 50 | `legend`      | Legend |
+
+  Each level-up runs `newly_unlocked_titles(reached_level, &current)` and pushes any newly available keys; the battle log surfaces `🏆 Title unlocked: {display}` per unlock.
+- Enemy table (#37) is live. `enemy_for_ordinal(ordinal)` resolves the cosmetic enemy for each beat: regular pool cycles through 🟢 Slime / 👹 Goblin / 🦇 Bat / 🐺 Wolf / 💀 Skeleton; encounter 5 is 👾 Centurion; encounter 10 is 🐲 Final Dragon. The enemy display is shown above the listening pulse in `ListenUI` and above the hint stack in `BossListenUI`. The per-spec `hp` field is currently cosmetic — the v0.2.0 RPG keeps "失敗概念なし".
+- Battle log (#36) now reads: `▸ {enemy} defeated! +{gain} EXP` on hit, `▸ Stumble against {enemy}. -{MISS_EXP_PENALTY} EXP` on miss, `🎉 Level up! Lv {old} → {new}` per level-up event, `🏆 Title unlocked: {display}` per new title. The expected answer is appended on a follow-up line for review.
 
 #### Boss Encounter UI (planned layout)
 

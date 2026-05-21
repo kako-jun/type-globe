@@ -9,12 +9,15 @@ use audio::TtsEngine;
 use clap::{Parser, Subcommand};
 use config::Config;
 use game::{
+    enemy::enemy_for_ordinal,
+    rpg::{apply_exp_gain, apply_exp_loss, exp_gain_for_hit, MISS_EXP_PENALTY},
+    title::newly_unlocked_titles,
     ListeningRpgRun, ListeningSession, RpgEncounterKind, RpgRunPhase, Ta25LocalGame,
     RPG_RUN_LENGTH, TA25_RUN_LENGTH,
 };
 use io::{DataLoader, Storage};
 use std::io::{stdin, stdout, Write};
-use std::time::Duration;
+use std::time::{Duration, Instant};
 use types::{GameMode, Language, Player, Question};
 use ui::{
     tts_unavailable_message, BossListenUI, DemoInputSource, ListenUI, MenuUI, QuizUI, RecordsUI,
@@ -549,6 +552,16 @@ fn run_listening_rpg(
             None => break 'run,
         };
 
+        // #37: pick the cosmetic enemy spec for this beat (regular pool
+        // cycles by ordinal; 5 = miniboss, 10 = boss).
+        let enemy = enemy_for_ordinal(encounter.ordinal);
+
+        // #34: measure how long the player takes to land an exact match,
+        // so the speed bonus has something concrete to feed off. The
+        // session itself doesn't (yet) expose elapsed time, so we wrap
+        // the UI call in an `Instant`.
+        let encounter_started_at = Instant::now();
+
         let session = ListeningSession::new(encounter.prompt.clone(), language.clone());
         let result = match encounter.kind {
             RpgEncounterKind::Regular => {
@@ -559,6 +572,7 @@ fn run_listening_rpg(
                 };
                 ui.set_run_progress(encounter.ordinal, RPG_RUN_LENGTH);
                 ui.set_battle_log(run.battle_log().to_vec());
+                ui.set_enemy_display(enemy.display);
                 let result = ui.run()?;
                 tts = ui.take_tts();
                 result
@@ -577,6 +591,7 @@ fn run_listening_rpg(
                     encounter.ordinal,
                 );
                 ui.set_battle_log(run.battle_log().to_vec());
+                ui.set_enemy_display(enemy.display);
                 let result = ui.run()?;
                 tts = ui.take_tts();
                 result
@@ -590,20 +605,44 @@ fn run_listening_rpg(
             break 'run;
         };
 
-        // #36: Phase 1 battle-log entries. The data layer carries the
-        // strings; ListenUI surfaces the tail on the next encounter's
-        // play pane. Damage / EXP / level-up lines come in Phase 2.
-        let label = match encounter.kind {
-            RpgEncounterKind::Regular => "Encounter",
-            RpgEncounterKind::Miniboss => "Miniboss",
-            RpgEncounterKind::Boss => "Boss",
-        };
-        // TODO(#34): localize once i18n table lands
+        // #34 / #36: richer battle-log entries. The data layer carries
+        // the strings; ListenUI surfaces the tail on the next encounter's
+        // play pane.
+        //
+        // TODO(phase3): structured log を導入して 1 ビートあたり大量行
+        // (連続レベルアップ + 複数称号アンロック) でも `▸ Hit / Expected:`
+        // ペアが崩れない構造にする。現状は flat な Vec<String> なので、
+        // 1 beat で 10+ lines emit すると BATTLE_LOG_MAX (64) の tail に
+        // Hit/Expected の片割れだけ残るリスクがある。Phase 3 では
+        // BattleLogEntry { kind, lines } のような構造体を導入し、UI 側で
+        // entry 単位に表示 (古い entry まるごとを drop) する。
         if result.is_correct {
             correct += 1;
-            run.push_battle_log(format!("▸ {} {}: Hit!", label, encounter.ordinal));
+            let elapsed = encounter_started_at.elapsed().as_secs_f64();
+            let gain = exp_gain_for_hit(elapsed);
+            let events = apply_exp_gain(&mut player.rpg_stats, gain);
+            run.push_battle_log(format!("▸ {} defeated! +{gain} EXP", enemy.display));
+            // #35: surface every level-up and any new titles each one
+            // unlocked. We emit titles after the level-up line so the
+            // log reads "Lv up → title unlocked".
+            for event in events {
+                run.push_battle_log(format!(
+                    "🎉 Level up! Lv {} → {}",
+                    event.old_level, event.new_level
+                ));
+                let unlocked =
+                    newly_unlocked_titles(event.new_level, &player.rpg_stats.titles_unlocked);
+                for title in unlocked {
+                    player.rpg_stats.titles_unlocked.push(title.key.to_string());
+                    run.push_battle_log(format!("🏆 Title unlocked: {}", title.display));
+                }
+            }
         } else {
-            run.push_battle_log(format!("▸ {} {}: Missed.", label, encounter.ordinal));
+            apply_exp_loss(&mut player.rpg_stats, MISS_EXP_PENALTY);
+            run.push_battle_log(format!(
+                "▸ Stumble against {}. -{MISS_EXP_PENALTY} EXP",
+                enemy.display
+            ));
         }
         run.push_battle_log(format!("  Expected: {}", encounter.prompt.text_display));
     }
