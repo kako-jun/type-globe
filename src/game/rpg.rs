@@ -1,8 +1,103 @@
-use crate::types::{AnswerKind, BossTier, ListeningPrompt};
+use crate::types::{AnswerKind, BossTier, ListeningPrompt, RpgStats};
 use rand::seq::SliceRandom;
 
 pub const RPG_RUN_LENGTH: usize = 10;
 const REGULAR_ENCOUNTER_COUNT: usize = 8;
+
+// --- #34: EXP / level-up pure functions --------------------------------------
+//
+// Phase 2 keeps the math in `game::rpg` (data layer) so unit tests can
+// exercise it without booting any UI. `run_listening_rpg` in `main.rs`
+// is the only caller; it threads `RpgStats` through these functions and
+// surfaces emitted events to the battle log + title-unlock pipeline.
+//
+// The `dead_code` allows below cover the first commit of Phase 2: the
+// constants / functions are introduced here with full unit-test coverage,
+// then wired into `run_listening_rpg` in commit-4. clippy `-D warnings`
+// runs in the pre-commit hook, so without the allows the intermediate
+// commit would fail to land.
+
+/// Base EXP per correct hit, before the speed bonus.
+#[allow(dead_code)]
+pub const BASE_EXP_PER_HIT: u32 = 10;
+/// Maximum bonus EXP awarded for an instant (≤ 0s) correct answer.
+#[allow(dead_code)]
+pub const MAX_SPEED_BONUS: u32 = 5;
+/// Time-to-correct beyond which the speed bonus is 0.
+#[allow(dead_code)]
+pub const SPEED_BONUS_WINDOW_SECS: f64 = 5.0;
+/// EXP penalty per missed encounter. Per CLAUDE.md the v0.2.0 RPG has no
+/// failure state; missed answers only chip away at progression.
+#[allow(dead_code)]
+pub const MISS_EXP_PENALTY: u32 = 1;
+
+/// Required EXP to advance *from* `level` to `level + 1`. Issue #34 picks
+/// the linear `level * 100` schedule (Lv 1→2: 100, Lv 2→3: 200, …). The
+/// `max(100)` clamp protects the (presently unreachable) `level == 0`
+/// case from collapsing to a zero threshold.
+#[allow(dead_code)]
+pub fn next_level_exp(level: u32) -> u32 {
+    level.saturating_mul(100).max(100)
+}
+
+/// EXP awarded for a correct answer that took `elapsed_secs` seconds.
+/// Bonus is a linear ramp from `MAX_SPEED_BONUS` (≤ 0s) down to 0 at
+/// `SPEED_BONUS_WINDOW_SECS`, rounded to the nearest integer. NaN /
+/// negative inputs are treated as "instant" — never as a penalty.
+#[allow(dead_code)]
+pub fn exp_gain_for_hit(elapsed_secs: f64) -> u32 {
+    let bonus = if !elapsed_secs.is_finite() || elapsed_secs <= 0.0 {
+        MAX_SPEED_BONUS
+    } else if elapsed_secs >= SPEED_BONUS_WINDOW_SECS {
+        0
+    } else {
+        let ratio = 1.0 - (elapsed_secs / SPEED_BONUS_WINDOW_SECS);
+        (ratio * MAX_SPEED_BONUS as f64).round() as u32
+    };
+    BASE_EXP_PER_HIT + bonus
+}
+
+/// A single level-up event emitted by `apply_exp_gain`. UI / battle-log
+/// callers turn these into `🎉 Level up!` lines and feed `new_level` to
+/// the title-unlock pipeline (#35).
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[allow(dead_code)]
+pub struct LevelUpEvent {
+    pub new_level: u32,
+}
+
+/// Add `gain` EXP to `stats` and roll the level forward as many times as
+/// the running total allows. Returns a `LevelUpEvent` per level crossed,
+/// in ascending order. Pure: only mutates `stats`. Saturating on u32
+/// overflow so cosmically large EXP totals can't panic the run loop.
+#[allow(dead_code)]
+pub fn apply_exp_gain(stats: &mut RpgStats, gain: u32) -> Vec<LevelUpEvent> {
+    stats.exp = stats.exp.saturating_add(gain);
+    let mut events = Vec::new();
+    // Hard cap on `events.len()` is unnecessary in practice (one beat
+    // never grants enough EXP to cross multiple levels at sane Lv values)
+    // but the `saturating_add` on `stats.level` keeps the loop sound even
+    // if EXP grows past u32::MAX semantics.
+    loop {
+        let threshold = next_level_exp(stats.level);
+        if stats.exp < threshold {
+            break;
+        }
+        stats.exp -= threshold;
+        stats.level = stats.level.saturating_add(1);
+        events.push(LevelUpEvent {
+            new_level: stats.level,
+        });
+    }
+    events
+}
+
+/// Subtract `loss` EXP from `stats`, saturating at 0 (no negative EXP /
+/// level loss per CLAUDE.md "失敗概念なし").
+#[allow(dead_code)]
+pub fn apply_exp_loss(stats: &mut RpgStats, loss: u32) {
+    stats.exp = stats.exp.saturating_sub(loss);
+}
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum RpgEncounterKind {
@@ -337,6 +432,125 @@ mod tests {
             run.battle_log().last().map(String::as_str),
             Some(format!("entry {}", BATTLE_LOG_MAX + 4).as_str())
         );
+    }
+
+    // --- #34: EXP / level math --------------------------------------------
+
+    #[test]
+    fn next_level_exp_is_monotonic_and_positive() {
+        let mut prev = 0;
+        for level in 1..=20u32 {
+            let n = next_level_exp(level);
+            assert!(n > 0, "Lv {level} threshold must be positive");
+            assert!(n >= prev, "Lv {level} threshold must be ≥ Lv {}", level - 1);
+            prev = n;
+        }
+        assert_eq!(next_level_exp(1), 100);
+        assert_eq!(next_level_exp(2), 200);
+        assert_eq!(next_level_exp(10), 1000);
+    }
+
+    #[test]
+    fn next_level_exp_clamps_level_zero() {
+        // Defensive: protects against accidental Lv 0 RpgStats from a
+        // hand-edited save.
+        assert_eq!(next_level_exp(0), 100);
+    }
+
+    #[test]
+    fn exp_gain_for_hit_boundaries() {
+        assert_eq!(
+            exp_gain_for_hit(0.0),
+            BASE_EXP_PER_HIT + MAX_SPEED_BONUS,
+            "instant answer = full bonus"
+        );
+        assert_eq!(
+            exp_gain_for_hit(SPEED_BONUS_WINDOW_SECS),
+            BASE_EXP_PER_HIT,
+            "at the window edge the bonus must be 0"
+        );
+        assert_eq!(
+            exp_gain_for_hit(10.0),
+            BASE_EXP_PER_HIT,
+            "past the window the bonus must stay 0 (no negative bonus)"
+        );
+        // Mid-window: 2.5s = halfway → bonus ≈ MAX/2 (rounded)
+        let mid = exp_gain_for_hit(2.5);
+        assert!(
+            (BASE_EXP_PER_HIT + 2..=BASE_EXP_PER_HIT + 3).contains(&mid),
+            "mid-window gain ≈ {BASE_EXP_PER_HIT} + ~{}, got {mid}",
+            MAX_SPEED_BONUS / 2
+        );
+    }
+
+    #[test]
+    fn exp_gain_for_hit_negative_and_nan_are_treated_as_instant() {
+        assert_eq!(exp_gain_for_hit(-1.0), BASE_EXP_PER_HIT + MAX_SPEED_BONUS);
+        assert_eq!(exp_gain_for_hit(f64::NAN), BASE_EXP_PER_HIT + MAX_SPEED_BONUS);
+    }
+
+    #[test]
+    fn apply_exp_gain_accumulates_without_level_up() {
+        let mut stats = RpgStats::default();
+        let events = apply_exp_gain(&mut stats, 50);
+        assert!(events.is_empty());
+        assert_eq!(stats.level, 1);
+        assert_eq!(stats.exp, 50);
+    }
+
+    #[test]
+    fn apply_exp_gain_emits_one_level_up_event_with_carry() {
+        let mut stats = RpgStats::default();
+        // Lv 1 needs 100 EXP. Granting 150 should level up once with 50 carry.
+        let events = apply_exp_gain(&mut stats, 150);
+        assert_eq!(events.len(), 1);
+        assert_eq!(events[0].new_level, 2);
+        assert_eq!(stats.level, 2);
+        assert_eq!(stats.exp, 50);
+    }
+
+    #[test]
+    fn apply_exp_gain_emits_multiple_level_ups_in_order() {
+        let mut stats = RpgStats::default();
+        // Lv 1→2 needs 100, Lv 2→3 needs 200 → total 300 to reach Lv 3.
+        let events = apply_exp_gain(&mut stats, 350);
+        assert_eq!(events.len(), 2);
+        assert_eq!(events[0].new_level, 2);
+        assert_eq!(events[1].new_level, 3);
+        assert_eq!(stats.level, 3);
+        assert_eq!(stats.exp, 50);
+    }
+
+    #[test]
+    fn apply_exp_gain_saturates_on_u32_overflow() {
+        let mut stats = RpgStats {
+            exp: u32::MAX - 10,
+            ..RpgStats::default()
+        };
+        // Should not panic; level rolls forward and EXP stays bounded.
+        let _ = apply_exp_gain(&mut stats, u32::MAX);
+        assert!(stats.level > 1, "should have leveled up at least once");
+    }
+
+    #[test]
+    fn apply_exp_loss_saturates_at_zero() {
+        let mut stats = RpgStats {
+            exp: 3,
+            ..RpgStats::default()
+        };
+        apply_exp_loss(&mut stats, 10);
+        assert_eq!(stats.exp, 0);
+        assert_eq!(stats.level, 1, "loss never decreases level");
+    }
+
+    #[test]
+    fn apply_exp_loss_subtracts_normally() {
+        let mut stats = RpgStats {
+            exp: 50,
+            ..RpgStats::default()
+        };
+        apply_exp_loss(&mut stats, 1);
+        assert_eq!(stats.exp, 49);
     }
 
     #[test]
