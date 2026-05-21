@@ -574,6 +574,7 @@ fn run_listening_rpg(
                     language.clone(),
                     encounter.ordinal,
                 );
+                ui.set_battle_log(run.battle_log().to_vec());
                 let result = ui.run()?;
                 tts = ui.take_tts();
                 result
@@ -619,8 +620,20 @@ fn run_listening_rpg(
     }
 
     if !aborted {
+        // q1: surface the tail of the rolling battle log so the player
+        // can see the last few encounters — most importantly the boss
+        // (#10) Hit/Missed line, which otherwise never appears in any UI
+        // because the boss UI exits immediately after its Result phase.
+        const SUMMARY_LOG_TAIL: usize = 6;
+        let log = run.battle_log();
+        let start = log.len().saturating_sub(SUMMARY_LOG_TAIL);
+        let tail = if log.is_empty() {
+            String::new()
+        } else {
+            format!("\n\nRecent log:\n{}", log[start..].join("\n"))
+        };
         show_return_to_menu_message(&format!(
-            "Listening RPG run complete.\nCorrect: {correct}/{RPG_RUN_LENGTH}\nBoss structure: regular 1-4 / miniboss 5 / regular 6-9 / boss 10."
+            "Listening RPG run complete.\nCorrect: {correct}/{RPG_RUN_LENGTH}\nBoss structure: regular 1-4 / miniboss 5 / regular 6-9 / boss 10.{tail}"
         ))?;
     }
     Ok(())
