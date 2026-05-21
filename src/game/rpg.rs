@@ -19,6 +19,10 @@ pub const MAX_SPEED_BONUS: u32 = 5;
 pub const SPEED_BONUS_WINDOW_SECS: f64 = 5.0;
 /// EXP penalty per missed encounter. Per CLAUDE.md the v0.2.0 RPG has no
 /// failure state; missed answers only chip away at progression.
+///
+/// CLAUDE.md「失敗概念なし」を踏まえ、miss penalty は base hit gain の
+/// 1/10 (10 EXP gain vs 1 EXP loss)。プレイテスト後に再調整可能な
+/// バランス値。
 pub const MISS_EXP_PENALTY: u32 = 1;
 
 /// Required EXP to advance *from* `level` to `level + 1`. Issue #34 picks

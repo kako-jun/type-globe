@@ -608,6 +608,14 @@ fn run_listening_rpg(
         // #34 / #36: richer battle-log entries. The data layer carries
         // the strings; ListenUI surfaces the tail on the next encounter's
         // play pane.
+        //
+        // TODO(phase3): structured log を導入して 1 ビートあたり大量行
+        // (連続レベルアップ + 複数称号アンロック) でも `▸ Hit / Expected:`
+        // ペアが崩れない構造にする。現状は flat な Vec<String> なので、
+        // 1 beat で 10+ lines emit すると BATTLE_LOG_MAX (64) の tail に
+        // Hit/Expected の片割れだけ残るリスクがある。Phase 3 では
+        // BattleLogEntry { kind, lines } のような構造体を導入し、UI 側で
+        // entry 単位に表示 (古い entry まるごとを drop) する。
         if result.is_correct {
             correct += 1;
             let elapsed = encounter_started_at.elapsed().as_secs_f64();

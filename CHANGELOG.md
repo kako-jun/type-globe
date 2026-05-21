@@ -31,9 +31,10 @@
 - New modules `src/game/title.rs` and `src/game/enemy.rs` carry the
   table + lookup; EXP math lives in `src/game/rpg.rs` alongside the
   existing run state machine.
-- New unit tests: `game::rpg::tests` (+9 EXP / level cases), `game::title::tests`
-  (9 cases), `game::enemy::tests` (7 cases). Full release suite goes from
-  270 → 296 passes.
+- New unit tests: `game::rpg::tests` (+10 (EXP / level + Phase 1 word filter
+  regression test)), `game::title::tests` (9 cases), `game::enemy::tests`
+  (8 cases incl. `enemy_for_ordinal_wraps_past_eleven`). Full release suite
+  goes from 270 → 297 passes.
 
 ## v0.8.0 — 2026-05-22
 

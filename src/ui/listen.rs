@@ -133,6 +133,9 @@ impl ListenUI {
     /// Show the enemy facing the player during this encounter (#37).
     /// Pass `Some(display)` (e.g. "🟢 Slime") from the run loop; the UI
     /// shows it above the listening pulse.
+    ///
+    /// enemy_display は encounter ごとに setter 呼び出し必須。stale を
+    /// 防ぐため reset API は提供しない (毎回新 UI インスタンス生成前提)。
     pub fn set_enemy_display<S: Into<String>>(&mut self, display: S) {
         self.enemy_display = Some(display.into());
     }
