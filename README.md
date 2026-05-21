@@ -85,7 +85,7 @@ For quiz-data migration work, the repository also ships:
 |---|---|---|
 | Quiz (single-run) | available now | The standard play mode: type-to-select 4-choice quiz, ten questions per run |
 | Time Attack 25 | practice now | A four-seat Quiz battle with red / blue / green / yellow seats. The current build ships a 25-question local prototype with one human and three CPU seats, filling the 5x5 board in order. Completed runs save to the `time_attack_25` section of Records. |
-| Listening RPG (TypeQuest) | practice now | Audio-first blind typing. The current build ships a 10-battle prototype run: regular encounters on 1-4 / 6-9, a timed miniboss on 5, and a manual stacked-hint boss on 10. HP / EXP persistence is still follow-up work. |
+| Listening RPG (TypeQuest) | practice now | Audio-first blind typing. The current build ships a 10-battle run: regular encounters on 1-4 / 6-9, a timed miniboss on 5, and a manual stacked-hint boss on 10. Level / EXP / title progression and enemy display (🟢 Slime through 🐲 Final Dragon) persist across runs via `player.yaml`. |
 | Records | available now | Local self-best history browser. Quiz and Time Attack 25 saving are live today; the Listening RPG section is reserved while its prototype flow does not yet persist results. |
 | Image Quiz | v0.3.0+ | Requires terminal graphics protocol (kitty / iTerm2 / wezterm) |
 | Stealth | v0.3.0+ | Disguises the UI as a generic CLI tool |
@@ -143,7 +143,7 @@ Quiz answers are typed directly — there is no arrow / number-key fallback. An 
 | `Enter` | Advance after each encounter result screen |
 | `Esc` / `Ctrl+C` | Return to menu |
 
-The v0.2.0 build now ships a **10-battle listening RPG prototype**: TTS, the prompt data structure, regular blind-listening encounters, a timed reverse-Akinator miniboss on prompt 5, and a manual stacked-hint boss on prompt 10. HP / EXP / title persistence is still the next epic (#32–#37), and the current prototype keeps answer input word-only so `Space` can remain replay without rebinding phrase/sentence input.
+The v0.2.0 build now ships the **full 10-battle listening RPG**: TTS, the prompt data structure, regular blind-listening encounters, a timed reverse-Akinator miniboss on prompt 5, a manual stacked-hint boss on prompt 10, plus the Hack RPG Phase 2 layer — EXP / level progression with a speed bonus, the six-tier title table (Apprentice → Legend), cosmetic enemy display (🟢 Slime / 👹 Goblin / 🦇 Bat / 🐺 Wolf / 💀 Skeleton / 👾 Centurion / 🐲 Final Dragon), and a battle log that surfaces `▸ {enemy} defeated! +EXP`, `🎉 Level up!`, and `🏆 Title unlocked` lines. All progression persists across runs through `player.yaml`. The current build keeps answer input word-only so `Space` can remain replay without rebinding phrase/sentence input.
 
 ## Install
 
