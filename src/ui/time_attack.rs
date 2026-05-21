@@ -300,6 +300,20 @@ impl TimeAttack25UI {
         self.reject_flash_until = None;
     }
 
+    /// Test-only mirror of the `run_app` top-of-loop auto-promote check.
+    /// `run_app` itself requires a live `Terminal<CrosstermBackend>` and
+    /// is therefore not exercisable from unit tests, so this helper lets
+    /// the test module assert the exact same `Playing → Summary` flip
+    /// without duplicating the conditional in the test body.
+    #[cfg(test)]
+    pub(super) fn tick_for_test(&mut self) {
+        if self.phase == Phase::Playing && self.game.is_finished() {
+            self.phase = Phase::Summary;
+            self.input_buffer.clear();
+            self.clear_reject_flash();
+        }
+    }
+
     fn input_style(&self) -> Style {
         if self
             .reject_flash_until
@@ -588,6 +602,20 @@ mod tests {
     use super::*;
     use crate::types::{Choice, Question};
     use std::collections::HashMap;
+    use tempfile::tempdir;
+
+    /// Return `(TempDir, path)` where `path` points to a file inside the
+    /// tempdir that does **not yet exist**. We can't use
+    /// `NamedTempFile` here because it leaves a zero-byte file on disk,
+    /// and `Storage::load_records` insists on a valid YAML document if
+    /// the path exists (the empty-file case routes to deserialize and
+    /// fails). Using a non-existent path triggers the
+    /// "return Records::default()" fast path on first load.
+    fn fresh_records_path() -> (tempfile::TempDir, String) {
+        let dir = tempdir().expect("tempdir");
+        let path = dir.path().join("records.yaml").to_string_lossy().to_string();
+        (dir, path)
+    }
 
     fn sample_question(id: usize) -> Question {
         Question {
@@ -618,6 +646,45 @@ mod tests {
         TimeAttack25UI::new(game, String::new())
     }
 
+    /// Variant of [`make_ui`] that points `records_file_path` at a real
+    /// file on disk so persist-record paths can be exercised end-to-end.
+    fn make_ui_with_records_path(path: String) -> TimeAttack25UI {
+        let pool = (1..40).map(sample_question).collect::<Vec<_>>();
+        let game =
+            Ta25LocalGame::from_pool(&pool, crate::types::Language::English, "You").expect("game");
+        TimeAttack25UI::new(game, path)
+    }
+
+    /// Force the game to its terminal state by forfeiting every remaining
+    /// round. `forfeit_current_round` is a no-op once `is_finished()` is
+    /// true, so this is safe to over-call.
+    fn finish_game(ui: &mut TimeAttack25UI) {
+        while !ui.game.is_finished() {
+            ui.game.forfeit_current_round(Instant::now());
+        }
+    }
+
+    /// Bring the game one panel away from finishing, leaving the UI in
+    /// Playing phase. Used by tests that need to exercise the "last
+    /// panel resolves" promotion path through a single key press.
+    fn play_until_last_panel(ui: &mut TimeAttack25UI) {
+        // 25 panels total → forfeit 24 so the 25th remains open. The
+        // TA25 run length is a fixed product constant; mirroring it as
+        // a literal keeps the test independent of game-internal paths.
+        for _ in 0..24 {
+            ui.game.forfeit_current_round(Instant::now());
+        }
+        assert!(!ui.game.is_finished(), "setup: game should still be live");
+    }
+
+    fn key(code: KeyCode) -> KeyEvent {
+        KeyEvent::new(code, KeyModifiers::NONE)
+    }
+
+    fn key_with(code: KeyCode, mods: KeyModifiers) -> KeyEvent {
+        KeyEvent::new(code, mods)
+    }
+
     #[test]
     fn rejects_wrong_prefix_and_clears_buffer() {
         let mut ui = make_ui();
@@ -645,5 +712,520 @@ mod tests {
             out.push_str(buf[(x, 0)].symbol());
         }
         assert!(out.contains("[Enter]"));
+    }
+
+    // -------------------------------------------------------------------
+    // #1: auto-promote inside the run loop
+    // -------------------------------------------------------------------
+    #[test]
+    fn test_auto_promote_to_summary_on_finish() {
+        let mut ui = make_ui();
+        // Seed leftover Playing-phase residue that the auto-promote
+        // must clean up.
+        ui.input_buffer = "alp".to_string();
+        ui.rejected_char = Some('z');
+        ui.reject_flash_until = Some(Instant::now() + Duration::from_secs(60));
+        finish_game(&mut ui);
+        assert_eq!(ui.phase, Phase::Playing, "precondition: still Playing");
+
+        ui.tick_for_test();
+
+        assert_eq!(ui.phase, Phase::Summary);
+        assert!(ui.input_buffer.is_empty());
+        assert!(ui.reject_flash_until.is_none());
+        assert!(ui.rejected_char.is_none());
+    }
+
+    // -------------------------------------------------------------------
+    // #2: Char input that resolves the 25th panel promotes immediately
+    // -------------------------------------------------------------------
+    #[test]
+    fn test_handle_key_playing_promotes_to_summary_when_last_panel_resolves() {
+        let mut ui = make_ui();
+        play_until_last_panel(&mut ui);
+
+        // "alpha" is the correct typing for sample_question — submitting
+        // it claims the final panel as Red and finishes the game.
+        for ch in "alpha".chars() {
+            let quit = ui.handle_key(key(KeyCode::Char(ch)));
+            assert!(!quit, "char input must not quit during play");
+        }
+
+        assert!(ui.game.is_finished(), "final panel must resolve");
+        assert_eq!(ui.phase, Phase::Summary);
+        assert!(ui.input_buffer.is_empty());
+        assert!(ui.reject_flash_until.is_none());
+    }
+
+    // -------------------------------------------------------------------
+    // #3: Tab forfeit on the last round promotes to Summary
+    // -------------------------------------------------------------------
+    #[test]
+    fn test_handle_key_playing_tab_forfeit_promotes_to_summary_on_finish() {
+        let mut ui = make_ui();
+        play_until_last_panel(&mut ui);
+
+        let quit = ui.handle_key(key(KeyCode::Tab));
+        assert!(!quit);
+        assert!(ui.game.is_finished());
+        assert_eq!(ui.phase, Phase::Summary);
+        assert!(ui.input_buffer.is_empty());
+    }
+
+    // -------------------------------------------------------------------
+    // #4: Summary + Enter → NamingForRecord + buffer clear
+    // -------------------------------------------------------------------
+    #[test]
+    fn test_handle_key_summary_enter_transitions_to_naming_and_clears_buffer() {
+        let mut ui = make_ui();
+        finish_game(&mut ui);
+        ui.phase = Phase::Summary;
+        ui.name_buffer = "stale".to_string();
+
+        let quit = ui.handle_key(key(KeyCode::Enter));
+
+        assert!(!quit);
+        assert_eq!(ui.phase, Phase::NamingForRecord);
+        assert!(ui.name_buffer.is_empty());
+    }
+
+    // -------------------------------------------------------------------
+    // #5: Summary + Esc → quit
+    // -------------------------------------------------------------------
+    #[test]
+    fn test_handle_key_summary_esc_returns_quit() {
+        let mut ui = make_ui();
+        finish_game(&mut ui);
+        ui.phase = Phase::Summary;
+
+        assert!(ui.handle_key(key(KeyCode::Esc)));
+    }
+
+    // -------------------------------------------------------------------
+    // #6: Summary ignores Char / Backspace / Tab
+    // -------------------------------------------------------------------
+    #[test]
+    fn test_handle_key_summary_ignores_other_keys() {
+        let mut ui = make_ui();
+        finish_game(&mut ui);
+        ui.phase = Phase::Summary;
+
+        for code in [KeyCode::Char('x'), KeyCode::Backspace, KeyCode::Tab] {
+            let quit = ui.handle_key(key(code));
+            assert!(!quit, "{code:?} should not quit");
+            assert_eq!(ui.phase, Phase::Summary, "{code:?} should not change phase");
+        }
+    }
+
+    // -------------------------------------------------------------------
+    // #7: Naming + Enter persists record and sets saved=true
+    // -------------------------------------------------------------------
+    #[test]
+    fn test_handle_key_naming_enter_persists_record_and_sets_saved() {
+        let (_tmp, path) = fresh_records_path();
+        let mut ui = make_ui_with_records_path(path.clone());
+        finish_game(&mut ui);
+        ui.phase = Phase::NamingForRecord;
+        ui.name_buffer = "Alice".to_string();
+
+        let quit = ui.handle_key(key(KeyCode::Enter));
+
+        assert!(!quit);
+        assert!(ui.saved, "saved flag should be true after successful persist");
+        assert!(ui.pending_warnings.is_empty());
+        let loaded = Storage::load_records(&path).expect("load records");
+        assert_eq!(loaded.time_attack_25.len(), 1);
+        assert_eq!(loaded.time_attack_25[0].name, "Alice");
+    }
+
+    // -------------------------------------------------------------------
+    // #8: Naming accepts up to NAME_MAX_CHARS=16, rejects the 17th
+    // -------------------------------------------------------------------
+    #[test]
+    fn test_handle_key_naming_accepts_up_to_16_chars_then_rejects() {
+        let mut ui = make_ui();
+        finish_game(&mut ui);
+        ui.phase = Phase::NamingForRecord;
+
+        for ch in "abcdefghijklmnop".chars() {
+            assert!(!ui.handle_key(key(KeyCode::Char(ch))));
+        }
+        assert_eq!(ui.name_buffer.chars().count(), NAME_MAX_CHARS);
+
+        let before = ui.name_buffer.clone();
+        let _ = ui.handle_key(key(KeyCode::Char('q')));
+        assert_eq!(ui.name_buffer, before, "17th char must be ignored");
+    }
+
+    // -------------------------------------------------------------------
+    // #9: chars().count() counts grapheme-ish, not bytes — JP works
+    // -------------------------------------------------------------------
+    #[test]
+    fn test_handle_key_naming_counts_japanese_chars_by_grapheme_not_bytes() {
+        let mut ui = make_ui();
+        finish_game(&mut ui);
+        ui.phase = Phase::NamingForRecord;
+
+        // 16 Japanese characters → each ~3 bytes in UTF-8, but the
+        // limit is per-`char`, so all 16 must fit.
+        let jp: Vec<char> = "あいうえおかきくけこさしすせそた".chars().collect();
+        assert_eq!(jp.len(), NAME_MAX_CHARS);
+        for ch in &jp {
+            assert!(!ui.handle_key(key(KeyCode::Char(*ch))));
+        }
+        assert_eq!(ui.name_buffer.chars().count(), NAME_MAX_CHARS);
+
+        // 17th JP char rejected, byte length irrelevant.
+        let _ = ui.handle_key(key(KeyCode::Char('ち')));
+        assert_eq!(ui.name_buffer.chars().count(), NAME_MAX_CHARS);
+    }
+
+    // -------------------------------------------------------------------
+    // #10: empty name + Enter is a no-op (does not persist, stays in Naming)
+    // -------------------------------------------------------------------
+    #[test]
+    fn test_handle_key_naming_enter_empty_name_is_noop() {
+        let (_tmp, path) = fresh_records_path();
+        let mut ui = make_ui_with_records_path(path.clone());
+        finish_game(&mut ui);
+        ui.phase = Phase::NamingForRecord;
+        ui.name_buffer.clear();
+
+        let quit = ui.handle_key(key(KeyCode::Enter));
+        assert!(!quit);
+        assert!(!ui.saved);
+        assert_eq!(ui.phase, Phase::NamingForRecord);
+        // Nothing should have been written.
+        let loaded = Storage::load_records(&path).expect("load");
+        assert!(loaded.time_attack_25.is_empty());
+    }
+
+    // -------------------------------------------------------------------
+    // #11: whitespace-only name + Enter is also a no-op
+    // -------------------------------------------------------------------
+    #[test]
+    fn test_handle_key_naming_enter_whitespace_only_name_is_noop() {
+        let (_tmp, path) = fresh_records_path();
+        let mut ui = make_ui_with_records_path(path.clone());
+        finish_game(&mut ui);
+        ui.phase = Phase::NamingForRecord;
+        ui.name_buffer = "   ".to_string();
+
+        let quit = ui.handle_key(key(KeyCode::Enter));
+        assert!(!quit);
+        assert!(!ui.saved);
+        assert_eq!(ui.phase, Phase::NamingForRecord);
+        let loaded = Storage::load_records(&path).expect("load");
+        assert!(loaded.time_attack_25.is_empty());
+    }
+
+    // -------------------------------------------------------------------
+    // #12: Backspace pops last char in name_buffer
+    // -------------------------------------------------------------------
+    #[test]
+    fn test_handle_key_naming_backspace_pops_last_char() {
+        let mut ui = make_ui();
+        finish_game(&mut ui);
+        ui.phase = Phase::NamingForRecord;
+        ui.name_buffer = "Alice".to_string();
+
+        let quit = ui.handle_key(key(KeyCode::Backspace));
+        assert!(!quit);
+        assert_eq!(ui.name_buffer, "Alic");
+    }
+
+    // -------------------------------------------------------------------
+    // #13: Ctrl+A and Alt+B do NOT push into name_buffer
+    //      (Ctrl+C is special-cased upstream as global quit — see #18.)
+    // -------------------------------------------------------------------
+    #[test]
+    fn test_handle_key_naming_ignores_modified_char_keys() {
+        let mut ui = make_ui();
+        finish_game(&mut ui);
+        ui.phase = Phase::NamingForRecord;
+
+        let _ = ui.handle_key(key_with(KeyCode::Char('a'), KeyModifiers::CONTROL));
+        assert!(ui.name_buffer.is_empty(), "Ctrl+A must not push");
+        let _ = ui.handle_key(key_with(KeyCode::Char('b'), KeyModifiers::ALT));
+        assert!(ui.name_buffer.is_empty(), "Alt+B must not push");
+    }
+
+    // -------------------------------------------------------------------
+    // #14: After saved=true, Enter dismisses (quit=true) and does NOT
+    //      append another entry to the records file.
+    // -------------------------------------------------------------------
+    #[test]
+    fn test_handle_key_naming_after_saved_enter_dismisses_without_re_persisting() {
+        let (_tmp, path) = fresh_records_path();
+        let mut ui = make_ui_with_records_path(path.clone());
+        finish_game(&mut ui);
+        ui.phase = Phase::NamingForRecord;
+        ui.name_buffer = "Alice".to_string();
+        // First Enter → persist & saved=true.
+        assert!(!ui.handle_key(key(KeyCode::Enter)));
+        assert!(ui.saved);
+        let count_after_save = Storage::load_records(&path).unwrap().time_attack_25.len();
+
+        // Second Enter → quit, no re-persist.
+        let quit = ui.handle_key(key(KeyCode::Enter));
+        assert!(quit);
+        let count_after_dismiss = Storage::load_records(&path).unwrap().time_attack_25.len();
+        assert_eq!(count_after_dismiss, count_after_save);
+    }
+
+    // -------------------------------------------------------------------
+    // #15: After saved=true, Enter / Char / Esc all dismiss (quit=true).
+    //      "要確認" 観点 → 現状の挙動を assertion で固定する。
+    // -------------------------------------------------------------------
+    #[test]
+    fn test_handle_key_naming_after_saved_any_dismiss_key_returns_quit() {
+        for dismiss_code in [KeyCode::Enter, KeyCode::Char('x'), KeyCode::Esc] {
+            let mut ui = make_ui();
+            finish_game(&mut ui);
+            ui.phase = Phase::NamingForRecord;
+            ui.saved = true;
+
+            let quit = ui.handle_key(key(dismiss_code));
+            assert!(quit, "{dismiss_code:?} should dismiss when saved=true");
+        }
+    }
+
+    // -------------------------------------------------------------------
+    // #16: After saved=true, Backspace is a no-op (quit=false).
+    //      "要確認" 観点 → 現状の挙動を assertion で固定する。
+    // -------------------------------------------------------------------
+    #[test]
+    fn test_handle_key_naming_after_saved_non_dismiss_key_is_noop() {
+        let mut ui = make_ui();
+        finish_game(&mut ui);
+        ui.phase = Phase::NamingForRecord;
+        ui.saved = true;
+        ui.name_buffer = "Alice".to_string();
+
+        let quit = ui.handle_key(key(KeyCode::Backspace));
+        assert!(!quit, "Backspace must not dismiss when saved=true");
+        // And it must NOT mutate the buffer either.
+        assert_eq!(ui.name_buffer, "Alice");
+    }
+
+    // -------------------------------------------------------------------
+    // #17: Esc during Naming (saved=false) skips the save and quits,
+    //      leaving saved=false.
+    // -------------------------------------------------------------------
+    #[test]
+    fn test_handle_key_naming_esc_skips_without_saving() {
+        let mut ui = make_ui();
+        finish_game(&mut ui);
+        ui.phase = Phase::NamingForRecord;
+        ui.name_buffer = "Alice".to_string();
+        assert!(!ui.saved);
+
+        let quit = ui.handle_key(key(KeyCode::Esc));
+        assert!(quit);
+        assert!(!ui.saved);
+    }
+
+    // -------------------------------------------------------------------
+    // #18: Ctrl+C quits from every phase.
+    // -------------------------------------------------------------------
+    #[test]
+    fn test_ctrl_c_quits_in_every_phase() {
+        for phase in [Phase::Playing, Phase::Summary, Phase::NamingForRecord] {
+            let mut ui = make_ui();
+            if phase != Phase::Playing {
+                finish_game(&mut ui);
+            }
+            ui.phase = phase.clone();
+            let quit = ui.handle_key(key_with(KeyCode::Char('c'), KeyModifiers::CONTROL));
+            assert!(quit, "Ctrl+C must quit from {phase:?}");
+        }
+    }
+
+    // -------------------------------------------------------------------
+    // #19: persist_record failure → pending_warnings += 1, saved stays false
+    // -------------------------------------------------------------------
+    #[test]
+    fn test_persist_record_failure_appends_pending_warning_and_keeps_saved_false() {
+        // Point at a file under a non-existent directory so the write
+        // will fail without depending on filesystem permissions.
+        let bogus = "/tmp/type-globe-nonexistent-dir-xyzzy/records.yaml".to_string();
+        let mut ui = make_ui_with_records_path(bogus);
+        finish_game(&mut ui);
+        ui.phase = Phase::NamingForRecord;
+        ui.name_buffer = "Alice".to_string();
+
+        let quit = ui.handle_key(key(KeyCode::Enter));
+        assert!(!quit, "failed persist must not quit");
+        assert!(!ui.saved);
+        assert_eq!(ui.pending_warnings.len(), 1);
+        assert!(ui.pending_warnings[0].contains("warning"));
+    }
+
+    // -------------------------------------------------------------------
+    // #20: repeated persist failure accumulates warnings (no dedupe).
+    // -------------------------------------------------------------------
+    #[test]
+    fn test_persist_record_repeated_failure_appends_multiple_warnings() {
+        let bogus = "/tmp/type-globe-nonexistent-dir-xyzzy-2/records.yaml".to_string();
+        let mut ui = make_ui_with_records_path(bogus);
+        finish_game(&mut ui);
+        ui.phase = Phase::NamingForRecord;
+        ui.name_buffer = "Alice".to_string();
+
+        let _ = ui.handle_key(key(KeyCode::Enter));
+        let _ = ui.handle_key(key(KeyCode::Enter));
+
+        assert_eq!(ui.pending_warnings.len(), 2);
+        assert!(!ui.saved);
+    }
+
+    // -------------------------------------------------------------------
+    // #21: persist_record trims surrounding whitespace from the name.
+    // -------------------------------------------------------------------
+    #[test]
+    fn test_persist_record_trims_name_whitespace() {
+        let (_tmp, path) = fresh_records_path();
+        let mut ui = make_ui_with_records_path(path.clone());
+        finish_game(&mut ui);
+        ui.phase = Phase::NamingForRecord;
+        ui.name_buffer = "  Alice  ".to_string();
+
+        assert!(!ui.handle_key(key(KeyCode::Enter)));
+        let loaded = Storage::load_records(&path).expect("load");
+        assert_eq!(loaded.time_attack_25.len(), 1);
+        assert_eq!(loaded.time_attack_25[0].name, "Alice");
+    }
+
+    // -------------------------------------------------------------------
+    // #22: TimeEntry.time_seconds matches game.elapsed() in seconds.
+    // -------------------------------------------------------------------
+    #[test]
+    fn test_persist_record_writes_time_seconds_from_game_elapsed() {
+        let (_tmp, path) = fresh_records_path();
+        let mut ui = make_ui_with_records_path(path.clone());
+        finish_game(&mut ui);
+        let expected_secs = ui.game.elapsed(Instant::now()).as_secs() as u32;
+        ui.phase = Phase::NamingForRecord;
+        ui.name_buffer = "Alice".to_string();
+
+        assert!(!ui.handle_key(key(KeyCode::Enter)));
+
+        let loaded = Storage::load_records(&path).expect("load");
+        assert_eq!(loaded.time_attack_25.len(), 1);
+        // Game freezes `finished_elapsed` at finish, so the stored value
+        // must equal the elapsed we captured pre-save.
+        assert_eq!(loaded.time_attack_25[0].time_seconds, expected_secs);
+    }
+
+    // -------------------------------------------------------------------
+    // #23: TimeEntry.ts is RFC3339 (YYYY-MM-DDTHH:MM:SSZ, 20 chars).
+    // -------------------------------------------------------------------
+    #[test]
+    fn test_persist_record_writes_rfc3339_timestamp() {
+        let (_tmp, path) = fresh_records_path();
+        let mut ui = make_ui_with_records_path(path.clone());
+        finish_game(&mut ui);
+        ui.phase = Phase::NamingForRecord;
+        ui.name_buffer = "Alice".to_string();
+
+        assert!(!ui.handle_key(key(KeyCode::Enter)));
+
+        let loaded = Storage::load_records(&path).expect("load");
+        let ts = &loaded.time_attack_25[0].ts;
+        assert_eq!(ts.len(), 20, "unexpected ts length: {ts}");
+        assert_eq!(&ts[4..5], "-");
+        assert_eq!(&ts[7..8], "-");
+        assert_eq!(&ts[10..11], "T");
+        assert_eq!(&ts[13..14], ":");
+        assert_eq!(&ts[16..17], ":");
+        assert_eq!(&ts[19..20], "Z");
+    }
+
+    // -------------------------------------------------------------------
+    // #24: pre-existing TA25 entries are preserved on append.
+    // -------------------------------------------------------------------
+    #[test]
+    fn test_persist_record_preserves_existing_entries_and_pushes_new() {
+        let dir = tempdir().expect("tempdir");
+        let path = dir
+            .path()
+            .join("records.yaml")
+            .to_string_lossy()
+            .to_string();
+
+        // Pre-populate the records file with an existing TA25 entry.
+        let mut seed = crate::types::Records::default();
+        seed.time_attack_25.push(TimeEntry {
+            name: "Existing".into(),
+            time_seconds: 999,
+            ts: "2020-01-01T00:00:00Z".into(),
+        });
+        Storage::save_records(&path, &seed).expect("seed");
+
+        let mut ui = make_ui_with_records_path(path.clone());
+        finish_game(&mut ui);
+        ui.phase = Phase::NamingForRecord;
+        ui.name_buffer = "Alice".to_string();
+        assert!(!ui.handle_key(key(KeyCode::Enter)));
+
+        let loaded = Storage::load_records(&path).expect("load");
+        assert_eq!(loaded.time_attack_25.len(), 2);
+        let names: Vec<&str> = loaded
+            .time_attack_25
+            .iter()
+            .map(|e| e.name.as_str())
+            .collect();
+        assert!(names.contains(&"Existing"));
+        assert!(names.contains(&"Alice"));
+    }
+
+    // -------------------------------------------------------------------
+    // #25: Constructor stores the supplied records_file_path verbatim.
+    //      White-box regression for the `new(game, records_file_path)`
+    //      shape so a future refactor cannot silently drop the field.
+    // -------------------------------------------------------------------
+    #[test]
+    fn test_new_stores_records_file_path() {
+        let pool = (1..40).map(sample_question).collect::<Vec<_>>();
+        let game =
+            Ta25LocalGame::from_pool(&pool, crate::types::Language::English, "You").expect("game");
+        let ui = TimeAttack25UI::new(game, "/tmp/records-marker.yaml".to_string());
+        assert_eq!(ui.records_file_path, "/tmp/records-marker.yaml");
+    }
+
+    // -------------------------------------------------------------------
+    // #26: parametrised — Char and Tab input paths both lift the UI out
+    //      of Playing as soon as the game finishes (no stale Playing).
+    // -------------------------------------------------------------------
+    #[test]
+    fn test_no_stale_playing_phase_after_finish_via_each_input_path() {
+        // Variant A: final panel resolved by typing the answer.
+        {
+            let mut ui = make_ui();
+            play_until_last_panel(&mut ui);
+            for ch in "alpha".chars() {
+                let _ = ui.handle_key(key(KeyCode::Char(ch)));
+            }
+            assert!(ui.game.is_finished());
+            assert_ne!(
+                ui.phase,
+                Phase::Playing,
+                "Char path must not leave UI in Playing after finish"
+            );
+            assert_eq!(ui.phase, Phase::Summary);
+        }
+        // Variant B: final panel resolved by Tab forfeit.
+        {
+            let mut ui = make_ui();
+            play_until_last_panel(&mut ui);
+            let _ = ui.handle_key(key(KeyCode::Tab));
+            assert!(ui.game.is_finished());
+            assert_ne!(
+                ui.phase,
+                Phase::Playing,
+                "Tab path must not leave UI in Playing after finish"
+            );
+            assert_eq!(ui.phase, Phase::Summary);
+        }
     }
 }

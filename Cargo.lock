@@ -404,7 +404,7 @@ dependencies = [
  "crossterm_winapi",
  "mio",
  "parking_lot",
- "rustix",
+ "rustix 0.38.44",
  "signal-hook",
  "signal-hook-mio",
  "winapi",
@@ -508,6 +508,12 @@ dependencies = [
  "libc",
  "windows-sys 0.60.2",
 ]
+
+[[package]]
+name = "fastrand"
+version = "2.4.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9f1f227452a390804cdb637b74a86990f2a7d7ba4b7d5693aac9b4dd6defd8d6"
 
 [[package]]
 name = "find-msvc-tools"
@@ -778,6 +784,12 @@ name = "linux-raw-sys"
 version = "0.4.15"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d26c52dbd32dccf2d10cac7725f8eae5296885fb5703b261f7d0a0739ec807ab"
+
+[[package]]
+name = "linux-raw-sys"
+version = "0.11.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "df1d3c3b53da64cf5760482273a98e575c651a67eec7f77df96b5b642de8f039"
 
 [[package]]
 name = "lock_api"
@@ -1221,8 +1233,21 @@ dependencies = [
  "bitflags 2.9.1",
  "errno",
  "libc",
- "linux-raw-sys",
+ "linux-raw-sys 0.4.15",
  "windows-sys 0.59.0",
+]
+
+[[package]]
+name = "rustix"
+version = "1.1.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "cd15f8a2c5551a84d56efdc1cd049089e409ac19a3072d5037a17fd70719ff3e"
+dependencies = [
+ "bitflags 2.9.1",
+ "errno",
+ "libc",
+ "linux-raw-sys 0.11.0",
+ "windows-sys 0.60.2",
 ]
 
 [[package]]
@@ -1432,6 +1457,19 @@ dependencies = [
 ]
 
 [[package]]
+name = "tempfile"
+version = "3.23.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2d31c77bdf42a745371d260a26ca7163f1e0924b64afa0b688e61b5a9fa02f16"
+dependencies = [
+ "fastrand",
+ "getrandom 0.3.4",
+ "once_cell",
+ "rustix 1.1.2",
+ "windows-sys 0.60.2",
+]
+
+[[package]]
 name = "thiserror"
 version = "1.0.69"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1549,6 +1587,7 @@ dependencies = [
  "serde",
  "serde_json",
  "serde_yaml",
+ "tempfile",
  "tokio",
  "tts",
  "unicode-segmentation",

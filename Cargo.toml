@@ -29,6 +29,7 @@ rodio = { version = "0.19", default-features = false }
 
 [dev-dependencies]
 cargo-husky = { version = "1", default-features = false, features = ["user-hooks"] }
+tempfile = "3"
 
 [profile.release]
 lto = true
