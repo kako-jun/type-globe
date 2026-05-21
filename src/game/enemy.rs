@@ -134,6 +134,16 @@ mod tests {
     }
 
     #[test]
+    fn enemy_for_ordinal_wraps_past_eleven() {
+        // RPG_RUN_LENGTH is 10 today, but `enemy_for_ordinal` should
+        // stay total for any usize so debug builds / future longer runs
+        // don't panic. Ordinal 11 = (11 - 1) % 5 = 0 → Slime.
+        let enemy = enemy_for_ordinal(11);
+        assert_eq!(enemy.key, REGULAR_ENEMIES[0].key);
+        assert_eq!(enemy.key, "slime");
+    }
+
+    #[test]
     fn enemy_displays_include_an_emoji_prefix() {
         for spec in REGULAR_ENEMIES {
             // A loose check: every regular display starts with a
