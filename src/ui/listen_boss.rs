@@ -509,10 +509,7 @@ impl BossListenUI {
             let remaining = inner_height.saturating_sub(lines.len()).max(1);
             let start = self.logs.len().saturating_sub(remaining);
             for entry in &self.logs[start..] {
-                lines.push(Line::from(Span::styled(
-                    format!("▸ {entry}"),
-                    STYLE_NORMAL,
-                )));
+                lines.push(Line::from(Span::styled(format!("▸ {entry}"), STYLE_NORMAL)));
             }
         }
 
