@@ -71708,10 +71708,9 @@
       },
       {
         "en": "Yuki Kaji",
-        "ja": "梶裕介",
+        "ja": "梶裕貴",
         "ja_typings": [
-          "kajiyuuki",
-          "kajiyuusuke"
+          "kajiyuuki"
         ]
       }
     ],
@@ -75317,7 +75316,7 @@
       }
     ],
     "correct_answer_index": 0,
-    "genre": "manga",
+    "genre": "general_knowledge",
     "id": "q01860",
     "image_path": null,
     "question_text": {
@@ -75357,7 +75356,7 @@
       }
     ],
     "correct_answer_index": 0,
-    "genre": "manga",
+    "genre": "general_knowledge",
     "id": "q01861",
     "image_path": null,
     "question_text": {
@@ -75397,7 +75396,7 @@
       }
     ],
     "correct_answer_index": 0,
-    "genre": "manga",
+    "genre": "general_knowledge",
     "id": "q01862",
     "image_path": null,
     "question_text": {
@@ -75437,7 +75436,7 @@
       }
     ],
     "correct_answer_index": 0,
-    "genre": "manga",
+    "genre": "general_knowledge",
     "id": "q01863",
     "image_path": null,
     "question_text": {
@@ -91660,7 +91659,7 @@
       }
     ],
     "correct_answer_index": 0,
-    "genre": "vtuber_net_culture",
+    "genre": "general_knowledge",
     "id": "q02267",
     "image_path": null,
     "question_text": {
@@ -91700,7 +91699,7 @@
       }
     ],
     "correct_answer_index": 0,
-    "genre": "vtuber_net_culture",
+    "genre": "general_knowledge",
     "id": "q02268",
     "image_path": null,
     "question_text": {
