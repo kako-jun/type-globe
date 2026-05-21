@@ -9,13 +9,13 @@ use audio::TtsEngine;
 use clap::{Parser, Subcommand};
 use config::Config;
 use game::{
-    ListeningRpgRun, ListeningSession, RpgEncounterKind, Ta25LocalGame, RPG_RUN_LENGTH,
-    TA25_RUN_LENGTH,
+    ListeningRpgRun, ListeningSession, RpgEncounterKind, RpgRunPhase, Ta25LocalGame,
+    RPG_RUN_LENGTH, TA25_RUN_LENGTH,
 };
 use io::{DataLoader, Storage};
 use std::io::{stdin, stdout, Write};
 use std::time::Duration;
-use types::{GameMode, Language, Question};
+use types::{GameMode, Language, Player, Question};
 use ui::{
     tts_unavailable_message, BossListenUI, DemoInputSource, ListenUI, MenuUI, QuizUI, RecordsUI,
     TimeAttack25UI,
@@ -480,10 +480,33 @@ fn run_listening_rpg(
         return Ok(());
     }
 
-    let run = match ListeningRpgRun::build(&prompts) {
+    // #32: load persistent RPG progression up-front, save it on exit.
+    // Phase 1 deliberately does *not* mutate level / exp — the load →
+    // save round-trip is the acceptance criterion. EXP/level wiring lands
+    // in Phase 2 (#34).
+    let player_path = config.player_file_path();
+    let mut player = match Storage::load_player_data(&player_path) {
+        Ok(p) => p,
+        Err(err) => {
+            eprintln!("warning: failed to load player.yaml ({err}); starting from defaults");
+            Player::default()
+        }
+    };
+    // Remember the language the player most recently played, so the
+    // next launch can prefer it. Selection itself stays where it is —
+    // this is only persistence.
+    player.language = language.code().to_string();
+
+    let mut run = match ListeningRpgRun::build(&prompts) {
         Ok(run) => run,
         Err(err) => {
             show_return_to_menu_message(&err)?;
+            // Even on early-exit, persist whatever language switch the
+            // player made. Failure here is non-fatal (warn only).
+            // Phase 2: 検討 — closure/scopeguard で defer 化
+            if let Err(err) = Storage::save_player_data(&player_path, &player) {
+                eprintln!("warning: failed to save player.yaml: {err}");
+            }
             return Ok(());
         }
     };
@@ -495,13 +518,37 @@ fn run_listening_rpg(
             Ok(tts) => Some(tts),
             Err(err) => {
                 show_return_to_menu_message(&tts_unavailable_message(err.as_ref()))?;
+                // Phase 2: 検討 — closure/scopeguard で defer 化
+                if let Err(err) = Storage::save_player_data(&player_path, &player) {
+                    eprintln!("warning: failed to save player.yaml: {err}");
+                }
                 return Ok(());
             }
         }
     };
 
+    // ----- Phase-driven run loop (#33) ----------------------------------
+    // Town → Diving → Encounter(1..=10) → Return → Town. UI behaviour
+    // matches the previous straight-line for-loop; the explicit state
+    // machine is what Phase 2 (#34/#37) will hang EXP / enemy art off of.
+    run.enter_diving();
     let mut correct = 0usize;
-    for encounter in run.encounters() {
+    let mut aborted = false;
+
+    'run: loop {
+        match run.phase() {
+            RpgRunPhase::Town | RpgRunPhase::Return => break 'run,
+            RpgRunPhase::Diving | RpgRunPhase::Encounter(_) => {}
+        }
+
+        // `advance_to_next_encounter` transitions Diving → Encounter(1)
+        // and Encounter(N) → Encounter(N+1) / Return. When it returns
+        // `None` the run is done.
+        let encounter = match run.advance_to_next_encounter() {
+            Some(encounter) => encounter.clone(),
+            None => break 'run,
+        };
+
         let session = ListeningSession::new(encounter.prompt.clone(), language.clone());
         let result = match encounter.kind {
             RpgEncounterKind::Regular => {
@@ -511,6 +558,7 @@ fn run_listening_rpg(
                     ListenUI::new_without_tts(session, language.clone())
                 };
                 ui.set_run_progress(encounter.ordinal, RPG_RUN_LENGTH);
+                ui.set_battle_log(run.battle_log().to_vec());
                 let result = ui.run()?;
                 tts = ui.take_tts();
                 result
@@ -528,23 +576,70 @@ fn run_listening_rpg(
                     language.clone(),
                     encounter.ordinal,
                 );
+                ui.set_battle_log(run.battle_log().to_vec());
                 let result = ui.run()?;
                 tts = ui.take_tts();
                 result
             }
         };
 
+        // Esc / Ctrl+C inside the UI returns None — abort cleanly but
+        // still persist player state on the way out.
         let Some(result) = result else {
-            return Ok(());
+            aborted = true;
+            break 'run;
         };
+
+        // #36: Phase 1 battle-log entries. The data layer carries the
+        // strings; ListenUI surfaces the tail on the next encounter's
+        // play pane. Damage / EXP / level-up lines come in Phase 2.
+        let label = match encounter.kind {
+            RpgEncounterKind::Regular => "Encounter",
+            RpgEncounterKind::Miniboss => "Miniboss",
+            RpgEncounterKind::Boss => "Boss",
+        };
+        // TODO(#34): localize once i18n table lands
         if result.is_correct {
             correct += 1;
+            run.push_battle_log(format!("▸ {} {}: Hit!", label, encounter.ordinal));
+        } else {
+            run.push_battle_log(format!("▸ {} {}: Missed.", label, encounter.ordinal));
         }
+        run.push_battle_log(format!("  Expected: {}", encounter.prompt.text_display));
     }
 
-    show_return_to_menu_message(&format!(
-        "Listening RPG run complete.\nCorrect: {correct}/{RPG_RUN_LENGTH}\nBoss structure: regular 1-4 / miniboss 5 / regular 6-9 / boss 10."
-    ))?;
+    // Run finished naturally: transition Return → Town. (If aborted, we
+    // skip this so future Phase-2 introspection can tell apart "ended"
+    // and "bailed".)
+    if !aborted {
+        run.return_to_town();
+    }
+
+    // #32: persist progression on the way back to the menu. Phase 1
+    // does not mutate level/exp, so this is effectively just a
+    // language-write today, but it cements the load→save round-trip.
+    // Phase 2: 検討 — closure/scopeguard で defer 化
+    if let Err(err) = Storage::save_player_data(&player_path, &player) {
+        eprintln!("warning: failed to save player.yaml: {err}");
+    }
+
+    if !aborted {
+        // q1: surface the tail of the rolling battle log so the player
+        // can see the last few encounters — most importantly the boss
+        // (#10) Hit/Missed line, which otherwise never appears in any UI
+        // because the boss UI exits immediately after its Result phase.
+        const SUMMARY_LOG_TAIL: usize = 6;
+        let log = run.battle_log();
+        let start = log.len().saturating_sub(SUMMARY_LOG_TAIL);
+        let tail = if log.is_empty() {
+            String::new()
+        } else {
+            format!("\n\nRecent log:\n{}", log[start..].join("\n"))
+        };
+        show_return_to_menu_message(&format!(
+            "Listening RPG run complete.\nCorrect: {correct}/{RPG_RUN_LENGTH}\nBoss structure: regular 1-4 / miniboss 5 / regular 6-9 / boss 10.{tail}"
+        ))?;
+    }
     Ok(())
 }
 

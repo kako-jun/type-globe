@@ -179,13 +179,33 @@ impl Serialize for ListeningPrompt {
 pub struct Player {
     pub player_name: String,
     pub language: String,
+    #[serde(default)]
     pub rpg_stats: RpgStats,
 }
 
+/// Per-player RPG progression. Phase 1 (#32) only persists the data —
+/// EXP/level updates and title-unlock logic land in Phase 2 (#34/#35).
+/// Struct-level `#[serde(default)]` delegates per-field defaults to the
+/// `Default` impl below, so legacy `player.yaml` files (with `rpg_stats`
+/// missing or partial) load cleanly without per-field default fns.
 #[derive(Debug, Clone, Deserialize, Serialize)]
+#[serde(default)]
 pub struct RpgStats {
     pub level: u32,
     pub exp: u32,
+    pub hp_max: u32,
+    pub titles_unlocked: Vec<String>,
+}
+
+impl Default for RpgStats {
+    fn default() -> Self {
+        RpgStats {
+            level: 1,
+            exp: 0,
+            hp_max: 100,
+            titles_unlocked: Vec::new(),
+        }
+    }
 }
 
 /// One row in a Records list. `ts` is RFC3339 format (e.g. "2025-05-11T12:34:56Z").
@@ -518,7 +538,7 @@ impl Default for Player {
         Player {
             player_name: "Player".to_string(),
             language: "ja".to_string(),
-            rpg_stats: RpgStats { level: 1, exp: 0 },
+            rpg_stats: RpgStats::default(),
         }
     }
 }

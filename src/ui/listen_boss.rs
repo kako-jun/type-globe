@@ -111,7 +111,14 @@ pub struct BossListenUI {
     logs: Vec<String>,
     rejected_char: Option<char>,
     reject_flash_until: Option<Instant>,
+    /// Snapshot of the parent run's rolling battle log (#36). Surfaced as
+    /// extra context lines below the in-encounter event log so the player
+    /// can see Hit/Missed history coming into the boss/miniboss fight.
+    battle_log: Vec<String>,
 }
+
+/// Maximum visible battle-log tail rendered above the per-encounter log.
+const BOSS_LOG_TAIL_MAX: usize = 6;
 
 impl BossListenUI {
     pub fn new(
@@ -136,7 +143,15 @@ impl BossListenUI {
             logs: Vec::new(),
             rejected_char: None,
             reject_flash_until: None,
+            battle_log: Vec::new(),
         }
+    }
+
+    /// Seed the log pane with the rolling battle log from the parent
+    /// `ListeningRpgRun` (#36). Pass the *full* log; the UI clips to the
+    /// visible tail.
+    pub fn set_battle_log(&mut self, log: Vec<String>) {
+        self.battle_log = log;
     }
 
     pub fn take_tts(&mut self) -> Option<TtsEngine> {
@@ -476,18 +491,28 @@ impl BossListenUI {
     }
 
     fn render_log_pane(&self, f: &mut Frame, area: Rect) {
-        let start = self
-            .logs
-            .len()
-            .saturating_sub(area.height.saturating_sub(2) as usize);
-        let lines: Vec<Line<'static>> = if self.logs.is_empty() {
-            vec![Line::from(Span::styled("(no events)", STYLE_DIM))]
+        let mut lines: Vec<Line<'static>> = Vec::new();
+
+        // Surface the tail of the parent run's battle log first (#36 s1),
+        // so boss/miniboss encounters see prior Hit/Missed history.
+        if !self.battle_log.is_empty() {
+            let start = self.battle_log.len().saturating_sub(BOSS_LOG_TAIL_MAX);
+            for entry in &self.battle_log[start..] {
+                lines.push(Line::from(Span::styled(entry.clone(), STYLE_DIM)));
+            }
+        }
+
+        if self.logs.is_empty() && self.battle_log.is_empty() {
+            lines.push(Line::from(Span::styled("(no events)", STYLE_DIM)));
         } else {
-            self.logs[start..]
-                .iter()
-                .map(|entry| Line::from(Span::styled(format!("▸ {entry}"), STYLE_NORMAL)))
-                .collect()
-        };
+            let inner_height = area.height.saturating_sub(2) as usize;
+            let remaining = inner_height.saturating_sub(lines.len()).max(1);
+            let start = self.logs.len().saturating_sub(remaining);
+            for entry in &self.logs[start..] {
+                lines.push(Line::from(Span::styled(format!("▸ {entry}"), STYLE_NORMAL)));
+            }
+        }
+
         let para = Paragraph::new(lines)
             .alignment(Alignment::Left)
             .block(Block::default().title(" Log ").borders(Borders::ALL));
