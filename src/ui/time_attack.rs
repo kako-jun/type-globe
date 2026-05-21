@@ -574,17 +574,33 @@ impl TimeAttack25UI {
     }
 
     fn render_help_line(&self, f: &mut Frame, area: Rect) {
-        let help = if self.game.is_finished() {
-            HelpLine::new(vec![
+        // Mirror `QuizUI::help_line` (src/ui/quiz.rs:966-987): drive the
+        // help footer from `self.phase` (plus `saved` while in Naming)
+        // so each screen advertises only the keys that actually do
+        // something on it. The previous `is_finished()` switch lumped
+        // Summary and Naming together and hid the Enter/Esc choices.
+        let help = match self.phase {
+            Phase::Playing => HelpLine::new(vec![
+                HelpEntry::new("Backspace", "Erase"),
+                HelpEntry::new("Tab", "Skip panel"),
+                HelpEntry::new("Esc", "Quit"),
+            ]),
+            Phase::Summary => HelpLine::new(vec![
+                HelpEntry::new("Enter", "Save record"),
+                HelpEntry::new("Esc", "Skip & menu"),
+            ]),
+            Phase::NamingForRecord if self.saved => HelpLine::new(vec![
+                // After save, Esc is intentionally inert (see
+                // `handle_key_naming`), so advertise the keys that
+                // actually dismiss the confirmation screen.
                 HelpEntry::new("Enter", "Menu"),
-                HelpEntry::new("Esc", "Quit"),
-            ])
-        } else {
-            HelpLine::new(vec![
-                HelpEntry::new("Esc", "Quit"),
-                HelpEntry::new("Tab", "Forfeit"),
+                HelpEntry::new("Ctrl+C", "Quit"),
+            ]),
+            Phase::NamingForRecord => HelpLine::new(vec![
+                HelpEntry::new("Enter", "Save"),
+                HelpEntry::new("Esc", "Skip"),
                 HelpEntry::new("Backspace", "Edit"),
-            ])
+            ]),
         };
         help.render(f, area);
     }
@@ -705,24 +721,73 @@ mod tests {
         assert_eq!(ui.rejected_char, Some('z'));
     }
 
-    #[test]
-    fn help_line_switches_on_finish() {
-        let mut ui = make_ui();
-        ui.game.forfeit_current_round(Instant::now());
-        while !ui.game.is_finished() {
-            ui.game.forfeit_current_round(Instant::now());
-        }
-        let backend = ratatui::backend::TestBackend::new(60, 1);
+    /// Helper: render `render_help_line` to a 80×1 TestBackend and dump
+    /// the row as a `String`. The 80-cell width matches the widest help
+    /// hint string (`[Backspace] Erase  [Tab] Skip panel  [Esc] Quit`).
+    fn render_help_to_string(ui: &TimeAttack25UI) -> String {
+        let backend = ratatui::backend::TestBackend::new(80, 1);
         let mut terminal = Terminal::new(backend).unwrap();
         terminal
-            .draw(|f| ui.render_help_line(f, Rect::new(0, 0, 60, 1)))
+            .draw(|f| ui.render_help_line(f, Rect::new(0, 0, 80, 1)))
             .unwrap();
-        let mut out = String::new();
         let buf = terminal.backend().buffer();
+        let mut out = String::new();
         for x in 0..buf.area.width {
             out.push_str(buf[(x, 0)].symbol());
         }
-        assert!(out.contains("[Enter]"));
+        out
+    }
+
+    #[test]
+    fn help_line_switches_per_phase() {
+        // Playing: Backspace / Tab / Esc, but no Enter (typing the
+        // answer auto-confirms — there is no Enter affordance).
+        let ui_playing = make_ui();
+        let out = render_help_to_string(&ui_playing);
+        assert!(
+            out.contains("[Backspace]"),
+            "playing missing Backspace: {out}"
+        );
+        assert!(out.contains("[Tab]"), "playing missing Tab: {out}");
+        assert!(out.contains("[Esc]"), "playing missing Esc: {out}");
+        assert!(
+            !out.contains("[Enter]"),
+            "playing must not advertise Enter: {out}"
+        );
+
+        // Summary: Enter saves, Esc skips.
+        let mut ui_summary = make_ui();
+        finish_game(&mut ui_summary);
+        ui_summary.phase = Phase::Summary;
+        let out = render_help_to_string(&ui_summary);
+        assert!(out.contains("[Enter]"), "summary missing Enter: {out}");
+        assert!(out.contains("[Esc]"), "summary missing Esc: {out}");
+
+        // NamingForRecord (saved=false): Enter / Esc / Backspace.
+        let mut ui_naming = make_ui();
+        finish_game(&mut ui_naming);
+        ui_naming.phase = Phase::NamingForRecord;
+        let out = render_help_to_string(&ui_naming);
+        assert!(out.contains("[Enter]"), "naming missing Enter: {out}");
+        assert!(out.contains("[Esc]"), "naming missing Esc: {out}");
+        assert!(
+            out.contains("[Backspace]"),
+            "naming missing Backspace: {out}"
+        );
+
+        // NamingForRecord (saved=true): Enter dismisses; Esc no-op so
+        // it must NOT be advertised.
+        let mut ui_saved = make_ui();
+        finish_game(&mut ui_saved);
+        ui_saved.phase = Phase::NamingForRecord;
+        ui_saved.saved = true;
+        let out = render_help_to_string(&ui_saved);
+        assert!(out.contains("[Enter]"), "saved missing Enter: {out}");
+        assert!(out.contains("[Ctrl+C]"), "saved missing Ctrl+C hint: {out}");
+        assert!(
+            !out.contains("[Esc]"),
+            "saved must not advertise Esc: {out}"
+        );
     }
 
     // -------------------------------------------------------------------
