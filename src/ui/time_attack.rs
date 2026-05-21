@@ -124,11 +124,7 @@ impl TimeAttack25UI {
                 // closing CPU capture transitions straight into the
                 // results screen without an extra frame of stale board
                 // rendering.
-                if self.game.is_finished() {
-                    self.phase = Phase::Summary;
-                    self.input_buffer.clear();
-                    self.clear_reject_flash();
-                }
+                self.promote_if_finished();
             }
             terminal.draw(|f| self.ui(f))?;
 
@@ -307,17 +303,29 @@ impl TimeAttack25UI {
         self.reject_flash_until = None;
     }
 
-    /// Test-only mirror of the `run_app` top-of-loop auto-promote check.
-    /// `run_app` itself requires a live `Terminal<CrosstermBackend>` and
-    /// is therefore not exercisable from unit tests, so this helper lets
-    /// the test module assert the exact same `Playing → Summary` flip
-    /// without duplicating the conditional in the test body.
-    #[cfg(test)]
-    pub(super) fn tick_for_test(&mut self) {
+    /// If we are still in Playing but the game has just finished, flip
+    /// the phase to Summary and tidy up the Playing-only state (input
+    /// echo / reject flash). Idempotent: if the phase is already past
+    /// Playing this is a no-op, so `run_app` can call it on every tick
+    /// and tests can call it directly without bookkeeping.
+    fn promote_if_finished(&mut self) {
         if self.phase == Phase::Playing && self.game.is_finished() {
             self.phase = Phase::Summary;
             self.input_buffer.clear();
             self.clear_reject_flash();
+        }
+    }
+
+    /// Test-only thin wrapper around the `run_app` top-of-loop tick.
+    /// `run_app` itself requires a live `Terminal<CrosstermBackend>` and
+    /// is therefore not exercisable from unit tests, so this helper lets
+    /// the test module drive `poll_cpu → promote_if_finished` without
+    /// reaching into `Ta25LocalGame` directly.
+    #[cfg(test)]
+    pub(super) fn tick_for_test(&mut self) {
+        if self.phase == Phase::Playing {
+            self.game.poll_cpu(Instant::now());
+            self.promote_if_finished();
         }
     }
 
