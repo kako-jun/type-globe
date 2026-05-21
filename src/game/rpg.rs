@@ -48,8 +48,14 @@ pub fn exp_gain_for_hit(elapsed_secs: f64) -> u32 {
 /// A single level-up event emitted by `apply_exp_gain`. UI / battle-log
 /// callers turn these into `🎉 Level up!` lines and feed `new_level` to
 /// the title-unlock pipeline (#35).
+///
+/// `old_level` is the level immediately before this event fired, so a
+/// caller emitting `Lv {old} → {new}` lines does not have to reconstruct
+/// it from `new_level - 1` (which is fragile if the schedule ever skips
+/// levels — Phase 3 may grant +N levels in a single beat).
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub struct LevelUpEvent {
+    pub old_level: u32,
     pub new_level: u32,
 }
 
@@ -70,8 +76,10 @@ pub fn apply_exp_gain(stats: &mut RpgStats, gain: u32) -> Vec<LevelUpEvent> {
             break;
         }
         stats.exp -= threshold;
+        let old_level = stats.level;
         stats.level = stats.level.saturating_add(1);
         events.push(LevelUpEvent {
+            old_level,
             new_level: stats.level,
         });
     }
@@ -492,6 +500,7 @@ mod tests {
         // Lv 1 needs 100 EXP. Granting 150 should level up once with 50 carry.
         let events = apply_exp_gain(&mut stats, 150);
         assert_eq!(events.len(), 1);
+        assert_eq!(events[0].old_level, 1);
         assert_eq!(events[0].new_level, 2);
         assert_eq!(stats.level, 2);
         assert_eq!(stats.exp, 50);
@@ -503,7 +512,9 @@ mod tests {
         // Lv 1→2 needs 100, Lv 2→3 needs 200 → total 300 to reach Lv 3.
         let events = apply_exp_gain(&mut stats, 350);
         assert_eq!(events.len(), 2);
+        assert_eq!(events[0].old_level, 1);
         assert_eq!(events[0].new_level, 2);
+        assert_eq!(events[1].old_level, 2);
         assert_eq!(events[1].new_level, 3);
         assert_eq!(stats.level, 3);
         assert_eq!(stats.exp, 50);
