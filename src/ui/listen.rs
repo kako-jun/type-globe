@@ -75,7 +75,16 @@ pub struct ListenUI {
     rejected_char: Option<char>,
     reject_flash_until: Option<Instant>,
     run_progress: Option<(usize, usize)>,
+    /// Snapshot of the parent run's rolling battle log (#36). Phase 1
+    /// only displays the tail in the log pane — composition / mutation
+    /// lives on `ListeningRpgRun`.
+    battle_log: Vec<String>,
 }
+
+/// Maximum visible battle-log lines in the play-phase log pane. The pane
+/// usually shows fewer than this; this just bounds the slice we hand to
+/// ratatui when the pane is taller than expected.
+const PLAY_LOG_TAIL_MAX: usize = 8;
 
 impl ListenUI {
     pub fn new(session: ListeningSession, tts: TtsEngine, language: Language) -> Self {
@@ -90,6 +99,7 @@ impl ListenUI {
             rejected_char: None,
             reject_flash_until: None,
             run_progress: None,
+            battle_log: Vec::new(),
         }
     }
 
@@ -107,11 +117,19 @@ impl ListenUI {
             rejected_char: None,
             reject_flash_until: None,
             run_progress: None,
+            battle_log: Vec::new(),
         }
     }
 
     pub fn set_run_progress(&mut self, current: usize, total: usize) {
         self.run_progress = Some((current, total));
+    }
+
+    /// Seed the play-phase log pane with the rolling battle log from
+    /// the parent `ListeningRpgRun` (#36). Pass the *full* log; the UI
+    /// clips to the visible tail.
+    pub fn set_battle_log(&mut self, log: Vec<String>) {
+        self.battle_log = log;
     }
 
     pub fn take_tts(&mut self) -> Option<TtsEngine> {
@@ -388,13 +406,21 @@ impl ListenUI {
 
     fn render_log_pane(&self, f: &mut Frame, area: Rect) {
         let lines: Vec<Line<'static>> = match self.phase {
-            Phase::Playing => vec![
-                Line::from(Span::styled("(no events)", STYLE_DIM)),
-                Line::from(Span::styled(
-                    "Battle log fills in once #32-#37 land.",
-                    STYLE_DIM,
-                )),
-            ],
+            Phase::Playing => {
+                if self.battle_log.is_empty() {
+                    vec![Line::from(Span::styled("(no events yet)", STYLE_DIM))]
+                } else {
+                    // Show the tail of the rolling battle log (#36). Use
+                    // the smaller of `PLAY_LOG_TAIL_MAX` and the visible
+                    // pane height (minus the border).
+                    let visible = (area.height.saturating_sub(2) as usize).min(PLAY_LOG_TAIL_MAX);
+                    let start = self.battle_log.len().saturating_sub(visible.max(1));
+                    self.battle_log[start..]
+                        .iter()
+                        .map(|entry| Line::from(Span::styled(entry.clone(), STYLE_NORMAL)))
+                        .collect()
+                }
+            }
             Phase::Result => match self.session.result() {
                 Some(r) if r.is_correct => {
                     vec![
