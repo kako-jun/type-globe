@@ -619,10 +619,7 @@ fn run_listening_rpg(
             // log reads "Lv up → title unlocked".
             for event in events {
                 let old_level = event.new_level.saturating_sub(1);
-                run.push_battle_log(format!(
-                    "🎉 Level up! Lv {old_level} → {}",
-                    event.new_level
-                ));
+                run.push_battle_log(format!("🎉 Level up! Lv {old_level} → {}", event.new_level));
                 let unlocked =
                     newly_unlocked_titles(event.new_level, &player.rpg_stats.titles_unlocked);
                 for title in unlocked {
