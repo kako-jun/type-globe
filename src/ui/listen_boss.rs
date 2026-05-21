@@ -237,23 +237,22 @@ impl BossListenUI {
             {
                 self.voice_hint(self.focused_hint, true);
             }
-            KeyCode::Tab if self.plan.reveal_mode == BossHintRevealMode::Manual => {
-                if self.revealed_hints < self.spec.hints.len() {
-                    self.revealed_hints += 1;
-                    self.focused_hint = self.revealed_hints - 1;
-                    self.logs
-                        .push(format!("Hint {} opened by player.", self.focused_hint + 1));
-                    self.voice_hint(self.focused_hint, false);
-                }
+            KeyCode::Tab
+                if self.plan.reveal_mode == BossHintRevealMode::Manual
+                    && self.revealed_hints < self.spec.hints.len() =>
+            {
+                self.revealed_hints += 1;
+                self.focused_hint = self.revealed_hints - 1;
+                self.logs
+                    .push(format!("Hint {} opened by player.", self.focused_hint + 1));
+                self.voice_hint(self.focused_hint, false);
             }
-            KeyCode::BackTab => {
-                if self.focused_hint > 0 {
-                    self.focused_hint -= 1;
-                    self.logs.push(format!(
-                        "Focus moved back to hint {}.",
-                        self.focused_hint + 1
-                    ));
-                }
+            KeyCode::BackTab if self.focused_hint > 0 => {
+                self.focused_hint -= 1;
+                self.logs.push(format!(
+                    "Focus moved back to hint {}.",
+                    self.focused_hint + 1
+                ));
             }
             KeyCode::Backspace => {
                 self.session.pop_char();

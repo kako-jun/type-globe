@@ -9,6 +9,7 @@ pub mod quiz;
 pub mod records;
 pub mod status;
 pub mod time_attack;
+pub mod timestamp;
 
 pub use help_line::{HelpEntry, HelpLine};
 pub use input_loop::{
