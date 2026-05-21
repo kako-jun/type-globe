@@ -1,5 +1,40 @@
 # Changelog
 
+## Unreleased — Hack RPG Phase 2
+
+### Added
+
+- **Hack RPG Phase 2 (#34 / #35 / #36 / #37) lands the full progression
+  layer on top of the Phase 1 state machine.**
+  - **EXP / level (#34).** Each correct answer awards `BASE_EXP_PER_HIT (10)
+    + speed_bonus` where the bonus is a linear ramp from `MAX_SPEED_BONUS (5)`
+    (≤ 0 s) down to 0 at `SPEED_BONUS_WINDOW_SECS (5.0)`. Missed answers
+    apply `MISS_EXP_PENALTY (1)` (saturating, no level loss). The
+    threshold to advance from level `N` to `N+1` is `max(100, N * 100)`.
+    Crossing a threshold rolls the level forward and carries surplus EXP.
+  - **Title table (#35).** Six ranks across Lv 2 / 5 / 10 / 20 / 30 / 50
+    (Apprentice → Veteran → Champion → Master → Grandmaster → Legend).
+    `newly_unlocked_titles` returns only the titles the player has yet
+    to claim at the new level. Keys persist in `RpgStats.titles_unlocked`,
+    display strings come from `TITLE_TABLE`.
+  - **Enemy display (#37).** `enemy_for_ordinal(ordinal)` resolves a
+    cosmetic enemy per beat: regular pool cycles through 🟢 Slime /
+    👹 Goblin / 🦇 Bat / 🐺 Wolf / 💀 Skeleton; encounter 5 is
+    👾 Centurion; encounter 10 is 🐲 Final Dragon. The enemy display is
+    rendered above the pulse on `ListenUI` and above the hint stack on
+    `BossListenUI`. The per-spec `hp` field is currently cosmetic.
+  - **Richer battle log (#36).** Lines now read
+    `▸ {enemy} defeated! +{gain} EXP` on hit,
+    `▸ Stumble against {enemy}. -{MISS_EXP_PENALTY} EXP` on miss,
+    `🎉 Level up! Lv {old} → {new}` per level-up event, and
+    `🏆 Title unlocked: {display}` per new title.
+- New modules `src/game/title.rs` and `src/game/enemy.rs` carry the
+  table + lookup; EXP math lives in `src/game/rpg.rs` alongside the
+  existing run state machine.
+- New unit tests: `game::rpg::tests` (+9 EXP / level cases), `game::title::tests`
+  (9 cases), `game::enemy::tests` (7 cases). Full release suite goes from
+  270 → 296 passes.
+
 ## v0.8.0 — 2026-05-22
 
 ### Added
