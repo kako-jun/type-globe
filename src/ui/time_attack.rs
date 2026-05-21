@@ -51,7 +51,7 @@ pub struct TimeAttack25UI {
     reject_flash_until: Option<Instant>,
     phase: Phase,
     name_buffer: String,
-    /// Absolute path of `records_<lang>.json`. Passed in by `main.rs` so
+    /// Absolute path of `records_<lang>.yaml`. Passed in by `main.rs` so
     /// the UI never has to know the disk layout.
     records_file_path: String,
     /// Once the run's `TimeEntry` has been pushed and saved, a second
