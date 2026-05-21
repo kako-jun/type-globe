@@ -1,6 +1,9 @@
 # Changelog
 
-## Unreleased — Hack RPG Phase 2
+## v0.9.0 — 2026-05-22 — Hack RPG complete
+
+Hack RPG (Listening RPG) の Phase 1 + Phase 2 を 1 リリースに統合。
+`#32` `#33` `#34` `#35` `#36` `#37` の 6 Issue が close 済。
 
 ### Added
 
