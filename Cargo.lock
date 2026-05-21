@@ -1575,7 +1575,7 @@ dependencies = [
 
 [[package]]
 name = "type-globe"
-version = "0.7.7"
+version = "0.8.0"
 dependencies = [
  "cargo-husky",
  "clap",
