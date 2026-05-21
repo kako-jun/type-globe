@@ -52,8 +52,11 @@ impl Config {
         )
     }
 
-    #[allow(dead_code)]
-    pub fn player_data_file_path(&self) -> String {
+    /// Single-file path for the cross-language player progression file
+    /// (`player.yaml`). Unlike `records_file_path` this is **not**
+    /// language-keyed: RPG progression persists once per user across
+    /// all languages they sample (#32).
+    pub fn player_file_path(&self) -> String {
         format!("{}/{}", self.data_dir, self.player_data_file)
     }
 

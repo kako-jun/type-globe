@@ -8,6 +8,6 @@ pub use listening::{ListeningSession, SubmissionResult};
 // `listening::is_correct_listening_input`; not re-exported until a
 // non-test caller appears.
 pub use quiz::QuizGame;
-pub use rpg::{ListeningRpgRun, RpgEncounterKind, RPG_RUN_LENGTH};
+pub use rpg::{ListeningRpgRun, RpgEncounterKind, RpgRunPhase, RPG_RUN_LENGTH};
 #[allow(unused_imports)]
 pub use time_attack::{Ta25LocalGame, Ta25Roster, Ta25SeatColor, TA25_RUN_LENGTH};
