@@ -7018,8 +7018,8 @@
     "id": "q0172",
     "genre": "programming",
     "question_text": {
-      "ja": "1 バイトは何ビット？",
-      "en": "How many bits are in one byte?"
+      "ja": "現代のコンピューティングで 1 バイトを構成するビット数は?",
+      "en": "How many bits make up one byte in modern computing?"
     },
     "choices": [
       {
@@ -47386,14 +47386,14 @@
         "en": "Rurouni Kenshin",
         "ja": "るろうに剣心",
         "ja_typings": [
-          "rurouninikenshin"
+          "rurounikenshin"
         ]
       },
       {
         "en": "Peacemaker Kurogane",
         "ja": "ピースメーカー鐵",
         "ja_typings": [
-          "piisumeekaakurogane"
+          "pi-sume-ka-kurogane"
         ]
       },
       {
@@ -47499,7 +47499,7 @@
         "en": "Kuroko's Basketball",
         "ja": "黒子のバスケ",
         "ja_typings": [
-          "kuronobasuke"
+          "kurokonobasuke"
         ]
       },
       {
@@ -57652,6 +57652,13 @@
   {
     "choices": [
       {
+        "en": "Sega",
+        "ja": "セガ",
+        "ja_typings": [
+          "sega"
+        ]
+      },
+      {
         "en": "Atlus",
         "ja": "アトラス",
         "ja_typings": [
@@ -57671,13 +57678,6 @@
         "ja_typings": [
           "bandainamuko"
         ]
-      },
-      {
-        "en": "Sega",
-        "ja": "セガ",
-        "ja_typings": [
-          "sega"
-        ]
       }
     ],
     "correct_answer_index": 0,
@@ -57685,8 +57685,8 @@
     "id": "q01420",
     "image_path": null,
     "question_text": {
-      "en": "Which company developed Persona 5?",
-      "ja": "ペルソナ5を開発した会社は?"
+      "en": "Which company developed the 'Yakuza' (Like a Dragon) series?",
+      "ja": "『龍が如く』シリーズを開発した会社は?"
     }
   },
   {
@@ -57732,6 +57732,13 @@
   {
     "choices": [
       {
+        "en": "Square Enix",
+        "ja": "スクウェア・エニックス",
+        "ja_typings": [
+          "sukuwea/enikkusu"
+        ]
+      },
+      {
         "en": "Capcom",
         "ja": "カプコン",
         "ja_typings": [
@@ -57746,17 +57753,10 @@
         ]
       },
       {
-        "en": "Bandai Namco",
-        "ja": "バンダイナムコ",
+        "en": "Konami",
+        "ja": "コナミ",
         "ja_typings": [
-          "bandainamuko"
-        ]
-      },
-      {
-        "en": "Koei Tecmo",
-        "ja": "コーエーテクモ",
-        "ja_typings": [
-          "ko-e-tekumo"
+          "konami"
         ]
       }
     ],
@@ -57765,8 +57765,8 @@
     "id": "q01422",
     "image_path": null,
     "question_text": {
-      "en": "Which company developed Monster Hunter series?",
-      "ja": "モンスターハンターシリーズを開発した会社は?"
+      "en": "Which company developed the 'Dragon Quest' series?",
+      "ja": "『ドラゴンクエスト』シリーズを開発した会社は?"
     }
   },
   {
@@ -62237,17 +62237,17 @@
   {
     "choices": [
       {
+        "en": "Jupiter",
+        "ja": "木星",
+        "ja_typings": [
+          "mokusei"
+        ]
+      },
+      {
         "en": "Saturn",
         "ja": "土星",
         "ja_typings": [
           "dosei"
-        ]
-      },
-      {
-        "en": "Uranus",
-        "ja": "天王星",
-        "ja_typings": [
-          "tennousei"
         ]
       },
       {
@@ -62258,10 +62258,10 @@
         ]
       },
       {
-        "en": "Venus",
-        "ja": "金星",
+        "en": "Mars",
+        "ja": "火星",
         "ja_typings": [
-          "kinsei"
+          "kasei"
         ]
       }
     ],
@@ -62270,8 +62270,8 @@
     "id": "q01534",
     "image_path": null,
     "question_text": {
-      "en": "Which planet is known for its prominent rings?",
-      "ja": "顕著な環で知られる惑星は?"
+      "en": "Which planet has the Great Red Spot?",
+      "ja": "大赤斑がある惑星は?"
     }
   },
   {
@@ -64005,14 +64005,14 @@
         "en": "Snake lemma",
         "ja": "蛇の補題",
         "ja_typings": [
-          "hebi no hodai"
+          "hebinohodai"
         ]
       },
       {
         "en": "Zorn lemma",
         "ja": "ツォルンの補題",
         "ja_typings": [
-          "tsorunnnohodai"
+          "tsorunnohodai"
         ]
       },
       {
@@ -68727,14 +68727,14 @@
         "en": "Objectives and Key Results",
         "ja": "目標と主要な成果",
         "ja_typings": [
-          "mokuhyou to shuyou na seika"
+          "mokuhyoutoshuyounaseika"
         ]
       },
       {
         "en": "Operations Key Reports",
         "ja": "運用報告",
         "ja_typings": [
-          "unnyouhoukoku"
+          "unyouhoukoku"
         ]
       },
       {
