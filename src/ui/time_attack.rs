@@ -1,4 +1,7 @@
 use crate::game::{Ta25LocalGame, Ta25SeatColor};
+use crate::io::Storage;
+use crate::types::TimeEntry;
+use crate::ui::timestamp::now_rfc3339;
 use crate::ui::{
     HelpEntry, HelpLine, InputChannel, KeyEventSource, PaneFrame, RecvOutcome, StatusItem,
     StatusPane,
@@ -23,23 +26,57 @@ const STYLE_TITLE: Style = Style::new().fg(Color::Cyan).add_modifier(Modifier::B
 const STYLE_NORMAL: Style = Style::new().fg(Color::White);
 const STYLE_DIM: Style = Style::new().fg(Color::DarkGray);
 const STYLE_REJECTED: Style = Style::new().fg(Color::Red).add_modifier(Modifier::BOLD);
+const STYLE_INPUT_ECHO: Style = Style::new().fg(Color::Yellow).add_modifier(Modifier::BOLD);
 const INPUT_REJECT_FLASH_MS: u64 = 180;
 const REDRAW_TICK: Duration = Duration::from_millis(50);
+/// Same upper bound as `QuizUI` (`NAME_MAX_CHARS`) so Records rows from
+/// both modes line up under the 16-wide column in `ui/records.rs`.
+const NAME_MAX_CHARS: usize = 16;
+
+/// High-level state machine for one TA25 session. Mirrors `QuizUI::Phase`:
+/// the 25 panels play out, the player sees a summary, and on Enter they
+/// can stamp the run into Records (`time_attack_25`) — or Esc to skip
+/// the save and head back to the menu.
+#[derive(Debug, Clone, PartialEq)]
+enum Phase {
+    Playing,
+    Summary,
+    NamingForRecord,
+}
 
 pub struct TimeAttack25UI {
     game: Ta25LocalGame,
     input_buffer: String,
     rejected_char: Option<char>,
     reject_flash_until: Option<Instant>,
+    phase: Phase,
+    name_buffer: String,
+    /// Absolute path of `records_<lang>.json`. Passed in by `main.rs` so
+    /// the UI never has to know the disk layout.
+    records_file_path: String,
+    /// Once the run's `TimeEntry` has been pushed and saved, a second
+    /// Enter dismisses the confirmation screen instead of writing a
+    /// duplicate row.
+    saved: bool,
+    /// Warnings collected during the run that must be surfaced to the
+    /// user *after* the alt screen has been torn down (mirrors the same
+    /// pattern in `QuizUI`). Used for `persist_record` disk-write
+    /// failures so the message survives in the user's scrollback.
+    pending_warnings: Vec<String>,
 }
 
 impl TimeAttack25UI {
-    pub fn new(game: Ta25LocalGame) -> Self {
+    pub fn new(game: Ta25LocalGame, records_file_path: String) -> Self {
         Self {
             game,
             input_buffer: String::new(),
             rejected_char: None,
             reject_flash_until: None,
+            phase: Phase::Playing,
+            name_buffer: String::new(),
+            records_file_path,
+            saved: false,
+            pending_warnings: Vec::new(),
         }
     }
 
@@ -57,6 +94,14 @@ impl TimeAttack25UI {
         execute!(terminal.backend_mut(), LeaveAlternateScreen)?;
         terminal.show_cursor()?;
 
+        // Mirror `QuizUI::run`: flush deferred warnings only after the
+        // alt screen is gone so any persist_record failure survives in
+        // the user's scrollback instead of being painted over by the
+        // next redraw.
+        for w in self.pending_warnings.drain(..) {
+            eprintln!("{w}");
+        }
+
         result
     }
 
@@ -66,7 +111,25 @@ impl TimeAttack25UI {
         input: &impl KeyEventSource,
     ) -> Result<(), Box<dyn std::error::Error>> {
         loop {
-            self.game.poll_cpu(Instant::now());
+            // CPU bots only advance while the panels are still being
+            // played out. Once the 25th panel resolves the game freezes
+            // its `finished_elapsed`, so polling further would be a
+            // no-op; skipping it keeps the summary / name-entry phases
+            // visually still.
+            if self.phase == Phase::Playing {
+                self.game.poll_cpu(Instant::now());
+                // The game itself flips to `is_finished()` the moment
+                // the final panel is claimed. Promote the UI to Summary
+                // here (rather than only on the next keypress) so the
+                // closing CPU capture transitions straight into the
+                // results screen without an extra frame of stale board
+                // rendering.
+                if self.game.is_finished() {
+                    self.phase = Phase::Summary;
+                    self.input_buffer.clear();
+                    self.clear_reject_flash();
+                }
+            }
             terminal.draw(|f| self.ui(f))?;
 
             match input.recv_until(REDRAW_TICK) {
@@ -82,14 +145,25 @@ impl TimeAttack25UI {
     }
 
     fn handle_key(&mut self, key: KeyEvent) -> bool {
-        if matches!(key.code, KeyCode::Esc)
-            || (key.code == KeyCode::Char('c') && key.modifiers.contains(KeyModifiers::CONTROL))
-        {
+        // Ctrl+C is always a global quit, matching `QuizUI`. Esc is
+        // routed phase-by-phase so the player can skip Records save
+        // (Summary / Naming) without it doubling as "quit immediately".
+        if key.code == KeyCode::Char('c') && key.modifiers.contains(KeyModifiers::CONTROL) {
             return true;
         }
 
-        if self.game.is_finished() {
-            return matches!(key.code, KeyCode::Enter | KeyCode::Esc);
+        match self.phase {
+            Phase::Playing => self.handle_key_playing(key),
+            Phase::Summary => self.handle_key_summary(key),
+            Phase::NamingForRecord => self.handle_key_naming(key),
+        }
+    }
+
+    fn handle_key_playing(&mut self, key: KeyEvent) -> bool {
+        if matches!(key.code, KeyCode::Esc) {
+            // Bail out of the run entirely. The session is unsaved by
+            // design — only completed runs are eligible for Records.
+            return true;
         }
 
         match key.code {
@@ -99,14 +173,107 @@ impl TimeAttack25UI {
             KeyCode::Tab => {
                 self.input_buffer.clear();
                 self.game.forfeit_current_round(Instant::now());
+                if self.game.is_finished() {
+                    self.phase = Phase::Summary;
+                    self.clear_reject_flash();
+                }
             }
             KeyCode::Char(ch) => {
                 self.push_input_char(ch);
+                if self.game.is_finished() {
+                    self.phase = Phase::Summary;
+                    self.input_buffer.clear();
+                    self.clear_reject_flash();
+                }
             }
             _ => {}
         }
 
         false
+    }
+
+    fn handle_key_summary(&mut self, key: KeyEvent) -> bool {
+        // Match `QuizUI::handle_key_summary`: Enter advances to name
+        // entry, Esc skips the save and returns to the menu.
+        match key.code {
+            KeyCode::Enter => {
+                self.phase = Phase::NamingForRecord;
+                self.name_buffer.clear();
+                false
+            }
+            KeyCode::Esc => true,
+            _ => false,
+        }
+    }
+
+    fn handle_key_naming(&mut self, key: KeyEvent) -> bool {
+        if self.saved {
+            // Once the row has been written, any printable key / Enter
+            // / Esc dismisses the confirmation screen back to the menu.
+            if matches!(key.code, KeyCode::Enter | KeyCode::Char(_) | KeyCode::Esc) {
+                return true;
+            }
+            return false;
+        }
+
+        match key.code {
+            KeyCode::Esc => {
+                // Explicit "skip Records save" — leaves the run
+                // unrecorded and returns to the menu.
+                true
+            }
+            KeyCode::Enter => {
+                if self.name_buffer.trim().is_empty() {
+                    return false;
+                }
+                if let Err(err) = self.persist_record() {
+                    // Defer the error to `run`'s post-alt-screen flush
+                    // so the message survives in the user's scrollback
+                    // instead of being repainted away.
+                    self.pending_warnings
+                        .push(format!("warning: failed to save records: {err}"));
+                    return false;
+                }
+                self.saved = true;
+                false
+            }
+            KeyCode::Backspace => {
+                self.name_buffer.pop();
+                false
+            }
+            KeyCode::Char(c)
+                if !key
+                    .modifiers
+                    .intersects(KeyModifiers::CONTROL | KeyModifiers::ALT)
+                    && self.name_buffer.chars().count() < NAME_MAX_CHARS =>
+            {
+                self.name_buffer.push(c);
+                false
+            }
+            _ => false,
+        }
+    }
+
+    /// Persist the just-finished run as a `TimeEntry` row in the local
+    /// Records file. Mirrors `QuizUI::persist_record` so both modes use
+    /// the same load → push → save pattern and end up reading back
+    /// identically in `ui/records.rs`.
+    ///
+    /// `time_seconds` is taken from `game.elapsed(now)` which the game
+    /// freezes to `finished_elapsed` as soon as the 25th panel resolves
+    /// — so the value is stable regardless of how long the player
+    /// lingers on the Summary / Naming screens.
+    fn persist_record(&self) -> Result<(), Box<dyn std::error::Error>> {
+        let mut records = Storage::load_records(&self.records_file_path)?;
+        let elapsed = self.game.elapsed(Instant::now());
+        let entry = TimeEntry {
+            name: self.name_buffer.trim().to_string(),
+            time_seconds: elapsed.as_secs() as u32,
+            ts: now_rfc3339(),
+        };
+        records.push_ta25(entry);
+        Storage::save_records(&self.records_file_path, &records)?;
+        Ok(())
     }
 
     fn push_input_char(&mut self, ch: char) {
@@ -163,10 +330,15 @@ impl TimeAttack25UI {
             ])
             .split(area);
 
-        if self.game.is_finished() {
-            self.render_summary(f, chunks[0]);
-        } else {
-            self.render_question(f, chunks[0]);
+        match self.phase {
+            // The Summary card lives in the question slot — same
+            // dimensions, just different content. Naming reuses the
+            // same slot so the board stays visible and the player can
+            // glance at their finished panel layout while typing in a
+            // name.
+            Phase::Summary => self.render_summary(f, chunks[0]),
+            Phase::NamingForRecord => self.render_naming(f, chunks[0]),
+            Phase::Playing => self.render_question(f, chunks[0]),
         }
         self.render_board(f, chunks[1]);
         self.render_action_line(f, chunks[2]);
@@ -235,6 +407,51 @@ impl TimeAttack25UI {
                 Span::styled(format!("{count:>2} panels"), STYLE_NORMAL),
             ]));
         }
+        lines.push(Line::from(""));
+        lines.push(Line::from(Span::styled(
+            "Press Enter to register a record (Esc to skip).",
+            STYLE_NORMAL,
+        )));
+        let block = Block::default()
+            .title(Span::styled(" Summary ", STYLE_TITLE))
+            .borders(Borders::ALL)
+            .padding(Padding::uniform(1));
+        f.render_widget(Paragraph::new(lines).block(block), area);
+    }
+
+    fn render_naming(&self, f: &mut Frame, area: Rect) {
+        let lines = if self.saved {
+            vec![
+                Line::from(Span::styled(" Record saved. ", STYLE_TITLE)),
+                Line::from(""),
+                Line::from(format!("  Name : {}", self.name_buffer.trim())),
+                Line::from(format!(
+                    "  Time : {}",
+                    format_time(self.game.elapsed(Instant::now()))
+                )),
+                Line::from(""),
+                Line::from(Span::styled(
+                    "Press any key to return to the menu.",
+                    STYLE_NORMAL,
+                )),
+            ]
+        } else {
+            vec![
+                Line::from(Span::styled(" Records entry ", STYLE_TITLE)),
+                Line::from(""),
+                Line::from("Enter a name for your records entry."),
+                Line::from(""),
+                Line::from(Span::styled(
+                    format!("  name : {}_", self.name_buffer),
+                    STYLE_INPUT_ECHO,
+                )),
+                Line::from(""),
+                Line::from(Span::styled(
+                    format!("(max {NAME_MAX_CHARS} chars; Enter saves, Esc skips)"),
+                    STYLE_NORMAL,
+                )),
+            ]
+        };
         let block = Block::default()
             .title(Span::styled(" Summary ", STYLE_TITLE))
             .borders(Borders::ALL)
@@ -398,7 +615,7 @@ mod tests {
         let pool = (1..40).map(sample_question).collect::<Vec<_>>();
         let game =
             Ta25LocalGame::from_pool(&pool, crate::types::Language::English, "You").expect("game");
-        TimeAttack25UI::new(game)
+        TimeAttack25UI::new(game, String::new())
     }
 
     #[test]

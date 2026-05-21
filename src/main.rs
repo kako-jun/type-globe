@@ -430,7 +430,8 @@ fn run_ta25_mode(config: &Config, language: &Language) -> Result<(), Box<dyn std
         show_return_to_menu_message("Failed to build the local TA25 prototype run.")?;
         return Ok(());
     };
-    let mut ui = TimeAttack25UI::new(game);
+    let records_path = config.records_file_path(language);
+    let mut ui = TimeAttack25UI::new(game, records_path);
     ui.run()?;
     Ok(())
 }
