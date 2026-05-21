@@ -179,13 +179,45 @@ impl Serialize for ListeningPrompt {
 pub struct Player {
     pub player_name: String,
     pub language: String,
+    #[serde(default)]
     pub rpg_stats: RpgStats,
 }
 
+/// Per-player RPG progression. Phase 1 (#32) only persists the data —
+/// EXP/level updates and title-unlock logic land in Phase 2 (#34/#35).
+/// `#[serde(default)]` on every field keeps legacy `player.yaml` files
+/// loadable when new columns are added later in the same Phase 1 wave.
 #[derive(Debug, Clone, Deserialize, Serialize)]
 pub struct RpgStats {
+    #[serde(default = "RpgStats::default_level")]
     pub level: u32,
+    #[serde(default)]
     pub exp: u32,
+    #[serde(default = "RpgStats::default_hp_max")]
+    pub hp_max: u32,
+    #[serde(default)]
+    pub titles_unlocked: Vec<String>,
+}
+
+impl RpgStats {
+    fn default_level() -> u32 {
+        1
+    }
+
+    fn default_hp_max() -> u32 {
+        100
+    }
+}
+
+impl Default for RpgStats {
+    fn default() -> Self {
+        RpgStats {
+            level: Self::default_level(),
+            exp: 0,
+            hp_max: Self::default_hp_max(),
+            titles_unlocked: Vec::new(),
+        }
+    }
 }
 
 /// One row in a Records list. `ts` is RFC3339 format (e.g. "2025-05-11T12:34:56Z").
@@ -518,7 +550,7 @@ impl Default for Player {
         Player {
             player_name: "Player".to_string(),
             language: "ja".to_string(),
-            rpg_stats: RpgStats { level: 1, exp: 0 },
+            rpg_stats: RpgStats::default(),
         }
     }
 }

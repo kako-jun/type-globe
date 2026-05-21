@@ -150,6 +150,70 @@ mod tests {
     }
 
     #[test]
+    fn load_player_data_returns_default_when_file_absent() {
+        let path = unique_path("player-missing");
+        let _ = std::fs::remove_file(&path);
+        let player = Storage::load_player_data(&path).expect("load");
+        assert_eq!(player.player_name, "Player");
+        assert_eq!(player.language, "ja");
+        assert_eq!(player.rpg_stats.level, 1);
+        assert_eq!(player.rpg_stats.exp, 0);
+        assert_eq!(player.rpg_stats.hp_max, 100);
+        assert!(player.rpg_stats.titles_unlocked.is_empty());
+    }
+
+    #[test]
+    fn save_then_load_player_data_round_trip() {
+        let path = unique_path("player-roundtrip");
+        let player = crate::types::Player {
+            player_name: "Goku".into(),
+            language: "en".into(),
+            rpg_stats: crate::types::RpgStats {
+                level: 5,
+                exp: 1234,
+                hp_max: 150,
+                titles_unlocked: vec!["Apprentice".into(), "Veteran".into()],
+            },
+        };
+
+        Storage::save_player_data(&path, &player).expect("save");
+
+        let loaded = Storage::load_player_data(&path).expect("load");
+        assert_eq!(loaded.player_name, "Goku");
+        assert_eq!(loaded.language, "en");
+        assert_eq!(loaded.rpg_stats.level, 5);
+        assert_eq!(loaded.rpg_stats.exp, 1234);
+        assert_eq!(loaded.rpg_stats.hp_max, 150);
+        assert_eq!(
+            loaded.rpg_stats.titles_unlocked,
+            vec!["Apprentice".to_string(), "Veteran".to_string()]
+        );
+
+        let _ = std::fs::remove_file(&path);
+    }
+
+    #[test]
+    fn load_player_data_accepts_legacy_yaml_without_new_fields() {
+        // Legacy player.yaml from before #32 had `rpg_stats: { level, exp }`
+        // only. New fields must default rather than refuse to deserialize.
+        let path = unique_path("player-legacy");
+        std::fs::write(
+            &path,
+            "player_name: Legacy\nlanguage: ja\nrpg_stats:\n  level: 3\n  exp: 200\n",
+        )
+        .expect("write legacy");
+
+        let loaded = Storage::load_player_data(&path).expect("load");
+        assert_eq!(loaded.player_name, "Legacy");
+        assert_eq!(loaded.rpg_stats.level, 3);
+        assert_eq!(loaded.rpg_stats.exp, 200);
+        assert_eq!(loaded.rpg_stats.hp_max, 100);
+        assert!(loaded.rpg_stats.titles_unlocked.is_empty());
+
+        let _ = std::fs::remove_file(&path);
+    }
+
+    #[test]
     fn load_records_file_absent_returns_default() {
         let path = unique_path("absent-yaml");
         // Ensure the file does not exist
