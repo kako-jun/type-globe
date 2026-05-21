@@ -143110,24 +143110,24 @@
         ]
       },
       {
-        "en": "Flamenco",
-        "ja": "フラメンコ",
+        "en": "Samba",
+        "ja": "サンバ",
         "ja_typings": [
-          "furamenko"
+          "sanba"
         ]
       },
       {
-        "en": "Krav Maga",
-        "ja": "クラヴマガ",
+        "en": "Tango",
+        "ja": "タンゴ",
         "ja_typings": [
-          "kuravumaga"
+          "tango"
         ]
       },
       {
-        "en": "Taekwondo",
-        "ja": "テコンドー",
+        "en": "Salsa",
+        "ja": "サルサ",
         "ja_typings": [
-          "tekondo-"
+          "sarusa"
         ]
       }
     ],
@@ -143164,10 +143164,10 @@
         ]
       },
       {
-        "en": "Eiffel Tower",
-        "ja": "エッフェル塔",
+        "en": "Ganges River",
+        "ja": "ガンジス川",
         "ja_typings": [
-          "efferutou"
+          "ganjisugawa"
         ]
       }
     ],
@@ -143391,24 +143391,24 @@
         ]
       },
       {
-        "en": "Bossa Nova",
-        "ja": "ボサノバ",
+        "en": "Bolero",
+        "ja": "ボレロ",
         "ja_typings": [
-          "bosanoba"
+          "borero"
         ]
       },
       {
-        "en": "Krav Maga",
-        "ja": "クラヴマガ",
+        "en": "Sevillanas",
+        "ja": "セビジャーナス",
         "ja_typings": [
-          "kuravumaga"
+          "sebija-nasu"
         ]
       },
       {
-        "en": "Taekwondo",
-        "ja": "テコンドー",
+        "en": "Jota",
+        "ja": "ホタ",
         "ja_typings": [
-          "tekondo-"
+          "hota"
         ]
       }
     ],
@@ -143803,17 +143803,17 @@
         ]
       },
       {
-        "en": "Flamenco",
-        "ja": "フラメンコ",
+        "en": "Judo",
+        "ja": "柔道",
         "ja_typings": [
-          "furamenko"
+          "juudou"
         ]
       },
       {
-        "en": "Bossa Nova",
-        "ja": "ボサノバ",
+        "en": "Sambo",
+        "ja": "サンボ",
         "ja_typings": [
-          "bosanoba"
+          "sanbo"
         ]
       }
     ],
@@ -144441,24 +144441,24 @@
         ]
       },
       {
-        "en": "Krav Maga",
-        "ja": "クラヴマガ",
+        "en": "Karate",
+        "ja": "空手",
         "ja_typings": [
-          "kuravumaga"
+          "karate"
         ]
       },
       {
-        "en": "Flamenco",
-        "ja": "フラメンコ",
+        "en": "Hapkido",
+        "ja": "ハプキドー",
         "ja_typings": [
-          "furamenko"
+          "hapukido-"
         ]
       },
       {
-        "en": "Bossa Nova",
-        "ja": "ボサノバ",
+        "en": "Wushu",
+        "ja": "武術",
         "ja_typings": [
-          "bosanoba"
+          "bujutsu"
         ]
       }
     ],
@@ -144735,10 +144735,10 @@
         ]
       },
       {
-        "en": "Eiffel Tower",
-        "ja": "エッフェル塔",
+        "en": "Sarasvati River",
+        "ja": "サラスヴァティー川",
         "ja_typings": [
-          "efferutou"
+          "sarasuvati-gawa"
         ]
       }
     ],
@@ -146501,7 +146501,7 @@
         "en": "Niger-Congo",
         "ja": "ニジェール・コンゴ語族",
         "ja_typings": [
-          "nijie-ru kongo gozoku"
+          "nije-ru kongo gozoku"
         ]
       }
     ],
@@ -148358,7 +148358,7 @@
       }
     ],
     "correct_answer_index": 0,
-    "genre": "manga",
+    "genre": "general_knowledge",
     "id": "q03652",
     "image_path": null,
     "question_text": {
@@ -148518,7 +148518,7 @@
       }
     ],
     "correct_answer_index": 0,
-    "genre": "manga",
+    "genre": "general_knowledge",
     "id": "q03656",
     "image_path": null,
     "question_text": {
@@ -148558,7 +148558,7 @@
       }
     ],
     "correct_answer_index": 0,
-    "genre": "manga",
+    "genre": "general_knowledge",
     "id": "q03657",
     "image_path": null,
     "question_text": {
