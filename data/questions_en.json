@@ -30136,5 +30136,2757 @@
     "correct_answer_index": 1,
     "image_path": null,
     "ja_reviewed": true
+  },
+  {
+    "choices": [
+      {
+        "en": "merge --no-ff",
+        "ja": "マージノーエフエフ",
+        "ja_typings": []
+      },
+      {
+        "en": "rebase",
+        "ja": "リベース",
+        "ja_typings": []
+      },
+      {
+        "en": "cherry-pick",
+        "ja": "チェリーピック",
+        "ja_typings": []
+      },
+      {
+        "en": "squash",
+        "ja": "スカッシュ",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "it_terminology",
+    "id": "q00736",
+    "image_path": null,
+    "question_text": {
+      "en": "Which Git command merges by creating a new commit that combines branch histories without fast-forward?",
+      "ja": "ファストフォワードなしで新しいコミットを作ってブランチ履歴をマージする Git コマンドは?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "301",
+        "ja": "サンマルイチ",
+        "ja_typings": []
+      },
+      {
+        "en": "302",
+        "ja": "サンマルニ",
+        "ja_typings": []
+      },
+      {
+        "en": "307",
+        "ja": "サンマルナナ",
+        "ja_typings": []
+      },
+      {
+        "en": "308",
+        "ja": "サンマルハチ",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "it_terminology",
+    "id": "q00737",
+    "image_path": null,
+    "question_text": {
+      "en": "Which HTTP status code indicates that the requested resource was permanently moved?",
+      "ja": "リクエストされたリソースが恒久的に移動したことを示す HTTP ステータスコードは?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Singleton",
+        "ja": "シングルトン",
+        "ja_typings": []
+      },
+      {
+        "en": "Factory",
+        "ja": "ファクトリー",
+        "ja_typings": []
+      },
+      {
+        "en": "Builder",
+        "ja": "ビルダー",
+        "ja_typings": []
+      },
+      {
+        "en": "Prototype",
+        "ja": "プロトタイプ",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "it_terminology",
+    "id": "q00738",
+    "image_path": null,
+    "question_text": {
+      "en": "Which design pattern ensures a class has only one instance?",
+      "ja": "クラスがただ一つのインスタンスしか持たないことを保証するデザインパターンは?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "SFTP",
+        "ja": "エスエフティーピー",
+        "ja_typings": []
+      },
+      {
+        "en": "FTPS",
+        "ja": "エフティーピーエス",
+        "ja_typings": []
+      },
+      {
+        "en": "FTP",
+        "ja": "エフティーピー",
+        "ja_typings": []
+      },
+      {
+        "en": "TFTP",
+        "ja": "ティーエフティーピー",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "it_terminology",
+    "id": "q00739",
+    "image_path": null,
+    "question_text": {
+      "en": "Which protocol is used to securely transfer files over SSH?",
+      "ja": "SSH 経由で安全にファイルを転送するプロトコルは?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "ReplicaSet",
+        "ja": "レプリカセット",
+        "ja_typings": []
+      },
+      {
+        "en": "DaemonSet",
+        "ja": "デーモンセット",
+        "ja_typings": []
+      },
+      {
+        "en": "StatefulSet",
+        "ja": "ステートフルセット",
+        "ja_typings": []
+      },
+      {
+        "en": "Job",
+        "ja": "ジョブ",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "it_terminology",
+    "id": "q00740",
+    "image_path": null,
+    "question_text": {
+      "en": "In Kubernetes, what controller maintains a stable set of replica Pods?",
+      "ja": "Kubernetes でレプリカ Pod の安定集合を維持するコントローラーは?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Aurora",
+        "ja": "オーロラ",
+        "ja_typings": []
+      },
+      {
+        "en": "DynamoDB",
+        "ja": "ダイナモディービー",
+        "ja_typings": []
+      },
+      {
+        "en": "Redshift",
+        "ja": "レッドシフト",
+        "ja_typings": []
+      },
+      {
+        "en": "Neptune",
+        "ja": "ネプチューン",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "it_terminology",
+    "id": "q00741",
+    "image_path": null,
+    "question_text": {
+      "en": "Which AWS service provides a fully managed relational database for PostgreSQL with Aurora compatibility?",
+      "ja": "Aurora 互換のマネージドリレーショナル DB を提供する AWS サービスは?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Consistency",
+        "ja": "コンシステンシー",
+        "ja_typings": []
+      },
+      {
+        "en": "Availability",
+        "ja": "アベイラビリティ",
+        "ja_typings": []
+      },
+      {
+        "en": "Partition tolerance",
+        "ja": "パーティショントレランス",
+        "ja_typings": []
+      },
+      {
+        "en": "Durability",
+        "ja": "デュラビリティ",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "it_terminology",
+    "id": "q00742",
+    "image_path": null,
+    "question_text": {
+      "en": "Which CAP theorem property guarantees every read returns the most recent write?",
+      "ja": "CAP 定理で、すべての読み出しが最新の書き込みを返すことを保証する性質は?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Integration test",
+        "ja": "インテグレーションテスト",
+        "ja_typings": []
+      },
+      {
+        "en": "Unit test",
+        "ja": "ユニットテスト",
+        "ja_typings": []
+      },
+      {
+        "en": "End-to-end test",
+        "ja": "エンドトゥーエンドテスト",
+        "ja_typings": []
+      },
+      {
+        "en": "Smoke test",
+        "ja": "スモークテスト",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "it_terminology",
+    "id": "q00743",
+    "image_path": null,
+    "question_text": {
+      "en": "Which test type checks the integration of multiple modules working together?",
+      "ja": "複数のモジュールが連携して動作することを検証するテストの種類は?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Transport layer",
+        "ja": "トランスポート層",
+        "ja_typings": []
+      },
+      {
+        "en": "Network layer",
+        "ja": "ネットワーク層",
+        "ja_typings": []
+      },
+      {
+        "en": "Session layer",
+        "ja": "セッション層",
+        "ja_typings": []
+      },
+      {
+        "en": "Data link layer",
+        "ja": "データリンク層",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "it_terminology",
+    "id": "q00744",
+    "image_path": null,
+    "question_text": {
+      "en": "Which OSI model layer is responsible for end-to-end communication and reliability?",
+      "ja": "OSI 参照モデルでエンドツーエンドの通信と信頼性を担う層は?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Durability",
+        "ja": "デュラビリティ",
+        "ja_typings": []
+      },
+      {
+        "en": "Isolation",
+        "ja": "アイソレーション",
+        "ja_typings": []
+      },
+      {
+        "en": "Consistency",
+        "ja": "コンシステンシー",
+        "ja_typings": []
+      },
+      {
+        "en": "Atomicity",
+        "ja": "アトミシティ",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "it_terminology",
+    "id": "q00745",
+    "image_path": null,
+    "question_text": {
+      "en": "Which database concept ensures that committed data survives system failures?",
+      "ja": "コミット済みのデータがシステム障害後も残ることを保証する DB の概念は?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "ip route",
+        "ja": "アイピールート",
+        "ja_typings": []
+      },
+      {
+        "en": "netstat",
+        "ja": "ネットスタット",
+        "ja_typings": []
+      },
+      {
+        "en": "traceroute",
+        "ja": "トレースルート",
+        "ja_typings": []
+      },
+      {
+        "en": "ifconfig",
+        "ja": "アイエフコンフィグ",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "it_terminology",
+    "id": "q00746",
+    "image_path": null,
+    "question_text": {
+      "en": "Which Linux command shows the routing table?",
+      "ja": "Linux でルーティングテーブルを表示するコマンドは?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Retrospective",
+        "ja": "レトロスペクティブ",
+        "ja_typings": []
+      },
+      {
+        "en": "Sprint Review",
+        "ja": "スプリントレビュー",
+        "ja_typings": []
+      },
+      {
+        "en": "Daily Stand-up",
+        "ja": "デイリースタンドアップ",
+        "ja_typings": []
+      },
+      {
+        "en": "Sprint Planning",
+        "ja": "スプリントプランニング",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "it_terminology",
+    "id": "q00747",
+    "image_path": null,
+    "question_text": {
+      "en": "Which Agile ceremony reviews what the team learned during the sprint to improve processes?",
+      "ja": "プロセス改善のためスプリント中の学びを振り返るアジャイルのセレモニーは?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "SQS",
+        "ja": "エスキューエス",
+        "ja_typings": []
+      },
+      {
+        "en": "SNS",
+        "ja": "エスエヌエス",
+        "ja_typings": []
+      },
+      {
+        "en": "Kinesis",
+        "ja": "キネシス",
+        "ja_typings": []
+      },
+      {
+        "en": "EventBridge",
+        "ja": "イベントブリッジ",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "it_terminology",
+    "id": "q00748",
+    "image_path": null,
+    "question_text": {
+      "en": "Which AWS service provides a managed message queue?",
+      "ja": "マネージドメッセージキューを提供する AWS サービスは?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Functional programming",
+        "ja": "関数型プログラミング",
+        "ja_typings": []
+      },
+      {
+        "en": "Object-oriented programming",
+        "ja": "オブジェクト指向プログラミング",
+        "ja_typings": []
+      },
+      {
+        "en": "Procedural programming",
+        "ja": "手続き型プログラミング",
+        "ja_typings": []
+      },
+      {
+        "en": "Logic programming",
+        "ja": "論理型プログラミング",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "it_terminology",
+    "id": "q00749",
+    "image_path": null,
+    "question_text": {
+      "en": "Which programming paradigm treats computation as evaluation of mathematical functions?",
+      "ja": "計算を数学的関数の評価として扱うプログラミングパラダイムは?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "SAML",
+        "ja": "サムル",
+        "ja_typings": []
+      },
+      {
+        "en": "OAuth",
+        "ja": "オーオース",
+        "ja_typings": []
+      },
+      {
+        "en": "OpenID Connect",
+        "ja": "オープンアイディーコネクト",
+        "ja_typings": []
+      },
+      {
+        "en": "Kerberos",
+        "ja": "ケルベロス",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "it_terminology",
+    "id": "q00750",
+    "image_path": null,
+    "question_text": {
+      "en": "Which authentication standard is widely used for federated single sign-on with XML assertions?",
+      "ja": "XML アサーションでフェデレーテッド SSO に広く使われる認証規格は?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Lead Time for Changes",
+        "ja": "リードタイムフォーチェンジズ",
+        "ja_typings": []
+      },
+      {
+        "en": "Mean Time to Recover",
+        "ja": "ミーンタイムトゥーリカバー",
+        "ja_typings": []
+      },
+      {
+        "en": "Change Failure Rate",
+        "ja": "チェンジフェイリャーレート",
+        "ja_typings": []
+      },
+      {
+        "en": "Deployment Frequency",
+        "ja": "デプロイメントフリークエンシー",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "it_terminology",
+    "id": "q00751",
+    "image_path": null,
+    "question_text": {
+      "en": "Which DevOps metric measures the time from code commit to production deployment?",
+      "ja": "コミットから本番デプロイまでの時間を計測する DevOps メトリクスは?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "SaaS",
+        "ja": "サース",
+        "ja_typings": []
+      },
+      {
+        "en": "PaaS",
+        "ja": "パース",
+        "ja_typings": []
+      },
+      {
+        "en": "IaaS",
+        "ja": "アイアース",
+        "ja_typings": []
+      },
+      {
+        "en": "FaaS",
+        "ja": "ファース",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "it_terminology",
+    "id": "q00752",
+    "image_path": null,
+    "question_text": {
+      "en": "Which type of cloud computing service provides ready-to-use applications over the internet?",
+      "ja": "利用可能なアプリケーションをインターネット経由で提供するクラウドサービス種別は?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "wa",
+        "ja": "は",
+        "ja_typings": []
+      },
+      {
+        "en": "ga",
+        "ja": "が",
+        "ja_typings": []
+      },
+      {
+        "en": "wo",
+        "ja": "を",
+        "ja_typings": []
+      },
+      {
+        "en": "ni",
+        "ja": "に",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "language",
+    "id": "q00753",
+    "image_path": null,
+    "question_text": {
+      "en": "Which Japanese particle marks the topic of a sentence?",
+      "ja": "日本語で文の主題を示す助詞は?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Uralic",
+        "ja": "ウラル語族",
+        "ja_typings": []
+      },
+      {
+        "en": "Indo-European",
+        "ja": "インドヨーロッパ語族",
+        "ja_typings": []
+      },
+      {
+        "en": "Turkic",
+        "ja": "テュルク語族",
+        "ja_typings": []
+      },
+      {
+        "en": "Altaic",
+        "ja": "アルタイ語族",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "language",
+    "id": "q00754",
+    "image_path": null,
+    "question_text": {
+      "en": "Which language family does Finnish belong to?",
+      "ja": "フィンランド語が属する語族は?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Homophone",
+        "ja": "同音異義語",
+        "ja_typings": []
+      },
+      {
+        "en": "Synonym",
+        "ja": "類義語",
+        "ja_typings": []
+      },
+      {
+        "en": "Antonym",
+        "ja": "対義語",
+        "ja_typings": []
+      },
+      {
+        "en": "Hyponym",
+        "ja": "下位語",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "language",
+    "id": "q00755",
+    "image_path": null,
+    "question_text": {
+      "en": "What is the linguistic term for words that sound the same but have different meanings?",
+      "ja": "音は同じだが意味が異なる単語を指す言語学用語は?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Cuneiform",
+        "ja": "楔形文字",
+        "ja_typings": []
+      },
+      {
+        "en": "Hieroglyphs",
+        "ja": "ヒエログリフ",
+        "ja_typings": []
+      },
+      {
+        "en": "Linear A",
+        "ja": "線文字A",
+        "ja_typings": []
+      },
+      {
+        "en": "Phoenician",
+        "ja": "フェニキア文字",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "language",
+    "id": "q00756",
+    "image_path": null,
+    "question_text": {
+      "en": "Which writing system was used in ancient Mesopotamia?",
+      "ja": "古代メソポタミアで使われた文字体系は?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Humble language",
+        "ja": "謙譲語",
+        "ja_typings": []
+      },
+      {
+        "en": "Respectful language",
+        "ja": "尊敬語",
+        "ja_typings": []
+      },
+      {
+        "en": "Polite language",
+        "ja": "丁寧語",
+        "ja_typings": []
+      },
+      {
+        "en": "Beautified language",
+        "ja": "美化語",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "language",
+    "id": "q00757",
+    "image_path": null,
+    "question_text": {
+      "en": "Which Japanese honorific form lowers the speaker to elevate the listener?",
+      "ja": "話者を低めて聴者を高める日本語の敬語は?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Accusative",
+        "ja": "対格",
+        "ja_typings": []
+      },
+      {
+        "en": "Nominative",
+        "ja": "主格",
+        "ja_typings": []
+      },
+      {
+        "en": "Genitive",
+        "ja": "属格",
+        "ja_typings": []
+      },
+      {
+        "en": "Dative",
+        "ja": "与格",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "language",
+    "id": "q00758",
+    "image_path": null,
+    "question_text": {
+      "en": "Which grammatical case marks the direct object in Latin?",
+      "ja": "ラテン語で直接目的語を示す格は?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Fourth tone",
+        "ja": "第四声",
+        "ja_typings": []
+      },
+      {
+        "en": "First tone",
+        "ja": "第一声",
+        "ja_typings": []
+      },
+      {
+        "en": "Second tone",
+        "ja": "第二声",
+        "ja_typings": []
+      },
+      {
+        "en": "Third tone",
+        "ja": "第三声",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "language",
+    "id": "q00759",
+    "image_path": null,
+    "question_text": {
+      "en": "Which Chinese tone is described as a sharp falling tone?",
+      "ja": "中国語で鋭く下がる調子とされる四声は?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Loanword",
+        "ja": "借用語",
+        "ja_typings": []
+      },
+      {
+        "en": "Calque",
+        "ja": "翻訳借用",
+        "ja_typings": []
+      },
+      {
+        "en": "Cognate",
+        "ja": "同源語",
+        "ja_typings": []
+      },
+      {
+        "en": "Neologism",
+        "ja": "新造語",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "language",
+    "id": "q00760",
+    "image_path": null,
+    "question_text": {
+      "en": "Which term refers to the borrowing of a word from another language with adaptation?",
+      "ja": "他言語からの適応付き単語借用を指す用語は?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Past perfect",
+        "ja": "過去完了",
+        "ja_typings": []
+      },
+      {
+        "en": "Present perfect",
+        "ja": "現在完了",
+        "ja_typings": []
+      },
+      {
+        "en": "Future perfect",
+        "ja": "未来完了",
+        "ja_typings": []
+      },
+      {
+        "en": "Simple past",
+        "ja": "過去",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "language",
+    "id": "q00761",
+    "image_path": null,
+    "question_text": {
+      "en": "In English grammar, which tense expresses an action completed before another past action?",
+      "ja": "英文法で、別の過去の行為より前に完了した行為を表す時制は?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Romanian",
+        "ja": "ルーマニア語",
+        "ja_typings": []
+      },
+      {
+        "en": "Italian",
+        "ja": "イタリア語",
+        "ja_typings": []
+      },
+      {
+        "en": "Spanish",
+        "ja": "スペイン語",
+        "ja_typings": []
+      },
+      {
+        "en": "Catalan",
+        "ja": "カタルーニャ語",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "language",
+    "id": "q00762",
+    "image_path": null,
+    "question_text": {
+      "en": "Which Romance language is the official language of Romania?",
+      "ja": "ルーマニアの公用語であるロマンス諸語は?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Hangul",
+        "ja": "ハングル",
+        "ja_typings": []
+      },
+      {
+        "en": "Hanja",
+        "ja": "ハンジャ",
+        "ja_typings": []
+      },
+      {
+        "en": "Katakana",
+        "ja": "カタカナ",
+        "ja_typings": []
+      },
+      {
+        "en": "Cyrillic",
+        "ja": "キリル文字",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "language",
+    "id": "q00763",
+    "image_path": null,
+    "question_text": {
+      "en": "Which is the official script used to write Korean?",
+      "ja": "朝鮮語の表記に使われる公式文字は?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Verb",
+        "ja": "動詞",
+        "ja_typings": []
+      },
+      {
+        "en": "i-adjective",
+        "ja": "イ形容詞",
+        "ja_typings": []
+      },
+      {
+        "en": "na-adjective",
+        "ja": "ナ形容詞",
+        "ja_typings": []
+      },
+      {
+        "en": "Adverb",
+        "ja": "副詞",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "language",
+    "id": "q00764",
+    "image_path": null,
+    "question_text": {
+      "en": "Which kind of word in Japanese conjugates and ends in u?",
+      "ja": "日本語でウ段で終わり活用する品詞は?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Simile",
+        "ja": "直喩",
+        "ja_typings": []
+      },
+      {
+        "en": "Metaphor",
+        "ja": "隠喩",
+        "ja_typings": []
+      },
+      {
+        "en": "Personification",
+        "ja": "擬人法",
+        "ja_typings": []
+      },
+      {
+        "en": "Hyperbole",
+        "ja": "誇張法",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "language",
+    "id": "q00765",
+    "image_path": null,
+    "question_text": {
+      "en": "Which figure of speech compares two things using like or as?",
+      "ja": "「ようだ」「みたいに」を使って似たものを喩える修辞法は?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Serbian",
+        "ja": "セルビア語",
+        "ja_typings": []
+      },
+      {
+        "en": "Russian",
+        "ja": "ロシア語",
+        "ja_typings": []
+      },
+      {
+        "en": "Polish",
+        "ja": "ポーランド語",
+        "ja_typings": []
+      },
+      {
+        "en": "Czech",
+        "ja": "チェコ語",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "language",
+    "id": "q00766",
+    "image_path": null,
+    "question_text": {
+      "en": "Which Slavic language is written with both Latin and Cyrillic scripts officially?",
+      "ja": "ラテン文字とキリル文字の両方が公式に使われるスラブ語は?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Niger-Congo",
+        "ja": "ニジェールコンゴ語族",
+        "ja_typings": []
+      },
+      {
+        "en": "Indo-European",
+        "ja": "インドヨーロッパ語族",
+        "ja_typings": []
+      },
+      {
+        "en": "Sino-Tibetan",
+        "ja": "シナチベット語族",
+        "ja_typings": []
+      },
+      {
+        "en": "Austronesian",
+        "ja": "オーストロネシア語族",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "language",
+    "id": "q00767",
+    "image_path": null,
+    "question_text": {
+      "en": "Which is the largest language family in the world by number of languages?",
+      "ja": "言語数で世界最大の語族は?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "To-on",
+        "ja": "唐音",
+        "ja_typings": []
+      },
+      {
+        "en": "Go-on",
+        "ja": "呉音",
+        "ja_typings": []
+      },
+      {
+        "en": "Kan-on",
+        "ja": "漢音",
+        "ja_typings": []
+      },
+      {
+        "en": "Kun-yomi",
+        "ja": "訓読み",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "language",
+    "id": "q00768",
+    "image_path": null,
+    "question_text": {
+      "en": "Which Japanese kanji reading was brought from Tang-dynasty China?",
+      "ja": "唐代中国から伝わった漢字の読みは?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Sumerian cuneiform",
+        "ja": "シュメール楔形文字",
+        "ja_typings": []
+      },
+      {
+        "en": "Egyptian hieroglyphs",
+        "ja": "エジプトヒエログリフ",
+        "ja_typings": []
+      },
+      {
+        "en": "Chinese oracle bone script",
+        "ja": "中国甲骨文字",
+        "ja_typings": []
+      },
+      {
+        "en": "Indus script",
+        "ja": "インダス文字",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "language",
+    "id": "q00769",
+    "image_path": null,
+    "question_text": {
+      "en": "Which is the oldest known fully deciphered writing system?",
+      "ja": "完全に解読された最古の文字体系は?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Kimchi",
+        "ja": "キムチ",
+        "ja_typings": []
+      },
+      {
+        "en": "Bibimbap",
+        "ja": "ビビンバ",
+        "ja_typings": []
+      },
+      {
+        "en": "Bulgogi",
+        "ja": "プルコギ",
+        "ja_typings": []
+      },
+      {
+        "en": "Japchae",
+        "ja": "チャプチェ",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "culture",
+    "id": "q00770",
+    "image_path": null,
+    "question_text": {
+      "en": "Which traditional Korean dish consists of fermented vegetables, typically cabbage?",
+      "ja": "発酵野菜、特に白菜を使った韓国の伝統料理は?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Galette",
+        "ja": "ガレット",
+        "ja_typings": []
+      },
+      {
+        "en": "Crepe",
+        "ja": "クレープ",
+        "ja_typings": []
+      },
+      {
+        "en": "Frittata",
+        "ja": "フリッタータ",
+        "ja_typings": []
+      },
+      {
+        "en": "Quiche",
+        "ja": "キッシュ",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "culture",
+    "id": "q00771",
+    "image_path": null,
+    "question_text": {
+      "en": "Which French dish is a thin pancake filled with savory ingredients, originally from Brittany?",
+      "ja": "ブルターニュ地方発祥の塩味の薄焼き菓子料理は?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Obon",
+        "ja": "お盆",
+        "ja_typings": []
+      },
+      {
+        "en": "Tanabata",
+        "ja": "七夕",
+        "ja_typings": []
+      },
+      {
+        "en": "Hanami",
+        "ja": "花見",
+        "ja_typings": []
+      },
+      {
+        "en": "Shichigosan",
+        "ja": "七五三",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "culture",
+    "id": "q00772",
+    "image_path": null,
+    "question_text": {
+      "en": "Which Japanese summer festival features paper lanterns and is held in mid-August to honor ancestors?",
+      "ja": "8月中旬に先祖供養のため灯籠を掲げる日本の夏祭りは?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Paella",
+        "ja": "パエリア",
+        "ja_typings": []
+      },
+      {
+        "en": "Risotto",
+        "ja": "リゾット",
+        "ja_typings": []
+      },
+      {
+        "en": "Jambalaya",
+        "ja": "ジャンバラヤ",
+        "ja_typings": []
+      },
+      {
+        "en": "Biryani",
+        "ja": "ビリヤニ",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "culture",
+    "id": "q00773",
+    "image_path": null,
+    "question_text": {
+      "en": "Which Spanish dish features saffron-flavored rice with seafood or meat?",
+      "ja": "サフラン風味の米にシーフードや肉を入れたスペイン料理は?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Day of the Dead",
+        "ja": "死者の日",
+        "ja_typings": []
+      },
+      {
+        "en": "Cinco de Mayo",
+        "ja": "シンコデマヨ",
+        "ja_typings": []
+      },
+      {
+        "en": "Las Posadas",
+        "ja": "ラスポサダス",
+        "ja_typings": []
+      },
+      {
+        "en": "Carnival",
+        "ja": "カーニバル",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "culture",
+    "id": "q00774",
+    "image_path": null,
+    "question_text": {
+      "en": "Which Mexican festival on November 1-2 honors deceased relatives?",
+      "ja": "11月1日から2日に故人を讃えるメキシコの祭りは?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Karesansui",
+        "ja": "枯山水",
+        "ja_typings": []
+      },
+      {
+        "en": "Tsukiyama",
+        "ja": "築山",
+        "ja_typings": []
+      },
+      {
+        "en": "Chaniwa",
+        "ja": "茶庭",
+        "ja_typings": []
+      },
+      {
+        "en": "Kaiyu-shiki",
+        "ja": "回遊式",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "culture",
+    "id": "q00775",
+    "image_path": null,
+    "question_text": {
+      "en": "Which Japanese garden style uses raked gravel and rocks to represent landscapes?",
+      "ja": "砂利や岩で景色を表現する日本庭園の様式は?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Sari",
+        "ja": "サリー",
+        "ja_typings": []
+      },
+      {
+        "en": "Dhoti",
+        "ja": "ドーティ",
+        "ja_typings": []
+      },
+      {
+        "en": "Lehenga",
+        "ja": "レヘンガ",
+        "ja_typings": []
+      },
+      {
+        "en": "Salwar",
+        "ja": "サルワール",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "culture",
+    "id": "q00776",
+    "image_path": null,
+    "question_text": {
+      "en": "Which traditional Indian garment is a long unstitched cloth wrapped around the body?",
+      "ja": "長く縫っていない布を体に巻くインドの伝統衣装は?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Opera cake",
+        "ja": "オペラ",
+        "ja_typings": []
+      },
+      {
+        "en": "Mille-feuille",
+        "ja": "ミルフィーユ",
+        "ja_typings": []
+      },
+      {
+        "en": "Eclair",
+        "ja": "エクレア",
+        "ja_typings": []
+      },
+      {
+        "en": "Macaron",
+        "ja": "マカロン",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "culture",
+    "id": "q00777",
+    "image_path": null,
+    "question_text": {
+      "en": "Which French dessert is a layered cake with coffee buttercream and chocolate?",
+      "ja": "コーヒーバタークリームとチョコレートの層状ケーキはフランスの何という菓子?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Cezve",
+        "ja": "ジェズベ",
+        "ja_typings": []
+      },
+      {
+        "en": "Drip",
+        "ja": "ドリップ",
+        "ja_typings": []
+      },
+      {
+        "en": "French press",
+        "ja": "フレンチプレス",
+        "ja_typings": []
+      },
+      {
+        "en": "Espresso",
+        "ja": "エスプレッソ",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "culture",
+    "id": "q00778",
+    "image_path": null,
+    "question_text": {
+      "en": "Which Turkish coffee preparation involves boiling finely ground coffee in a small pot?",
+      "ja": "小さな鍋で細かく挽いたコーヒーを煮詰めるトルコのコーヒー抽出法は?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Piobaireachd",
+        "ja": "ピーブロック",
+        "ja_typings": []
+      },
+      {
+        "en": "Reel",
+        "ja": "リール",
+        "ja_typings": []
+      },
+      {
+        "en": "Jig",
+        "ja": "ジグ",
+        "ja_typings": []
+      },
+      {
+        "en": "Strathspey",
+        "ja": "ストラススペイ",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "culture",
+    "id": "q00779",
+    "image_path": null,
+    "question_text": {
+      "en": "Which Scottish bagpipe music style features ornate variations on a theme?",
+      "ja": "主題への装飾的変奏が特徴のスコットランドのバグパイプ曲は?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Tango",
+        "ja": "タンゴ",
+        "ja_typings": []
+      },
+      {
+        "en": "Samba",
+        "ja": "サンバ",
+        "ja_typings": []
+      },
+      {
+        "en": "Salsa",
+        "ja": "サルサ",
+        "ja_typings": []
+      },
+      {
+        "en": "Bachata",
+        "ja": "バチャータ",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "culture",
+    "id": "q00780",
+    "image_path": null,
+    "question_text": {
+      "en": "Which Argentine dance originated in Buenos Aires and Montevideo in the late 19th century?",
+      "ja": "19世紀後半にブエノスアイレスとモンテビデオで生まれたアルゼンチンの舞踊は?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Borscht",
+        "ja": "ボルシチ",
+        "ja_typings": []
+      },
+      {
+        "en": "Solyanka",
+        "ja": "ソリャンカ",
+        "ja_typings": []
+      },
+      {
+        "en": "Shchi",
+        "ja": "シチー",
+        "ja_typings": []
+      },
+      {
+        "en": "Okroshka",
+        "ja": "オクローシカ",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "culture",
+    "id": "q00781",
+    "image_path": null,
+    "question_text": {
+      "en": "Which traditional Russian soup is made with beetroot?",
+      "ja": "ビーツを使ったロシアの伝統スープは?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "La Scala",
+        "ja": "ラ・スカラ",
+        "ja_typings": []
+      },
+      {
+        "en": "Teatro Massimo",
+        "ja": "テアトロマッシモ",
+        "ja_typings": []
+      },
+      {
+        "en": "La Fenice",
+        "ja": "ラ・フェニーチェ",
+        "ja_typings": []
+      },
+      {
+        "en": "San Carlo",
+        "ja": "サンカルロ",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "culture",
+    "id": "q00782",
+    "image_path": null,
+    "question_text": {
+      "en": "Which Italian opera house in Milan opened in 1778?",
+      "ja": "1778年に開館したミラノのオペラ劇場は?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Capoeira",
+        "ja": "カポエイラ",
+        "ja_typings": []
+      },
+      {
+        "en": "Vale tudo",
+        "ja": "バーリトゥード",
+        "ja_typings": []
+      },
+      {
+        "en": "Luta livre",
+        "ja": "ルタリーブリ",
+        "ja_typings": []
+      },
+      {
+        "en": "Jiu-jitsu",
+        "ja": "ジュージツ",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "culture",
+    "id": "q00783",
+    "image_path": null,
+    "question_text": {
+      "en": "Which Brazilian martial art combines dance, acrobatics, and music?",
+      "ja": "ダンス、アクロバット、音楽を組み合わせたブラジルの武術は?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Symposium",
+        "ja": "シンポシウム",
+        "ja_typings": []
+      },
+      {
+        "en": "Agora",
+        "ja": "アゴラ",
+        "ja_typings": []
+      },
+      {
+        "en": "Hetairia",
+        "ja": "ヘタイリア",
+        "ja_typings": []
+      },
+      {
+        "en": "Andron",
+        "ja": "アンドロン",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "culture",
+    "id": "q00784",
+    "image_path": null,
+    "question_text": {
+      "en": "Which Greek philosophical drinking party was the subject of works by Plato and Xenophon?",
+      "ja": "プラトンとクセノフォンの著作の主題となったギリシャの哲学的宴会は?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Daiginjo",
+        "ja": "大吟醸",
+        "ja_typings": []
+      },
+      {
+        "en": "Ginjo",
+        "ja": "吟醸",
+        "ja_typings": []
+      },
+      {
+        "en": "Junmai",
+        "ja": "純米",
+        "ja_typings": []
+      },
+      {
+        "en": "Honjozo",
+        "ja": "本醸造",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "culture",
+    "id": "q00785",
+    "image_path": null,
+    "question_text": {
+      "en": "Which type of Japanese sake brewing requires polishing rice to at least 50% of its original size?",
+      "ja": "米を原料の50%以下まで精米する日本酒の種類は?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Samba",
+        "ja": "サンバ",
+        "ja_typings": []
+      },
+      {
+        "en": "Tango",
+        "ja": "タンゴ",
+        "ja_typings": []
+      },
+      {
+        "en": "Bachata",
+        "ja": "バチャータ",
+        "ja_typings": []
+      },
+      {
+        "en": "Salsa",
+        "ja": "サルサ",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "culture",
+    "id": "q00786",
+    "image_path": null,
+    "question_text": {
+      "en": "Which Brazilian dance is the signature of the Rio Carnival?",
+      "ja": "リオのカーニバルを代表するブラジルのダンスは?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Cheongsam",
+        "ja": "チャイナドレス",
+        "ja_typings": []
+      },
+      {
+        "en": "Hanfu",
+        "ja": "漢服",
+        "ja_typings": []
+      },
+      {
+        "en": "Tangzhuang",
+        "ja": "唐装",
+        "ja_typings": []
+      },
+      {
+        "en": "Ao Dai",
+        "ja": "アオザイ",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "culture",
+    "id": "q00787",
+    "image_path": null,
+    "question_text": {
+      "en": "Which traditional Chinese dress for women features a high collar and side slits?",
+      "ja": "高い襟とサイドスリットが特徴の中国伝統衣装(女性用)は?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Cinco de Mayo",
+        "ja": "シンコデマヨ",
+        "ja_typings": []
+      },
+      {
+        "en": "Day of the Dead",
+        "ja": "死者の日",
+        "ja_typings": []
+      },
+      {
+        "en": "Las Posadas",
+        "ja": "ラスポサダス",
+        "ja_typings": []
+      },
+      {
+        "en": "Independence Day",
+        "ja": "独立記念日",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "culture",
+    "id": "q00788",
+    "image_path": null,
+    "question_text": {
+      "en": "Which Mexican holiday on May 5 commemorates the 1862 victory over the French at Puebla?",
+      "ja": "1862年のプエブラでの対仏勝利を讃える5月5日のメキシコの祝日は?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "San Fermin",
+        "ja": "サンフェルミン",
+        "ja_typings": []
+      },
+      {
+        "en": "La Tomatina",
+        "ja": "ラ・トマティーナ",
+        "ja_typings": []
+      },
+      {
+        "en": "Las Fallas",
+        "ja": "ラスファジャス",
+        "ja_typings": []
+      },
+      {
+        "en": "Feria de Abril",
+        "ja": "フェリアデアブリル",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "culture",
+    "id": "q00789",
+    "image_path": null,
+    "question_text": {
+      "en": "Which Spanish festival is famous for the running of the bulls in Pamplona?",
+      "ja": "パンプローナでの牛追いで有名なスペインの祭りは?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Salsa",
+        "ja": "サルサ",
+        "ja_typings": []
+      },
+      {
+        "en": "Tango",
+        "ja": "タンゴ",
+        "ja_typings": []
+      },
+      {
+        "en": "Samba",
+        "ja": "サンバ",
+        "ja_typings": []
+      },
+      {
+        "en": "Flamenco",
+        "ja": "フラメンコ",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "culture",
+    "id": "q00790",
+    "image_path": null,
+    "question_text": {
+      "en": "Which Cuban-origin dance is known for its quick step patterns and is popular worldwide?",
+      "ja": "キューバ発祥で速いステップで世界的に普及している舞踊は?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Diwali",
+        "ja": "ディワリ",
+        "ja_typings": []
+      },
+      {
+        "en": "Holi",
+        "ja": "ホーリー",
+        "ja_typings": []
+      },
+      {
+        "en": "Navratri",
+        "ja": "ナヴラトリ",
+        "ja_typings": []
+      },
+      {
+        "en": "Pongal",
+        "ja": "ポンガル",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "culture",
+    "id": "q00791",
+    "image_path": null,
+    "question_text": {
+      "en": "Which Hindu festival of lights is celebrated in autumn?",
+      "ja": "秋に祝われるヒンドゥー教の光の祭りは?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Semantics",
+        "ja": "意味論",
+        "ja_typings": []
+      },
+      {
+        "en": "Syntax",
+        "ja": "統語論",
+        "ja_typings": []
+      },
+      {
+        "en": "Phonology",
+        "ja": "音韻論",
+        "ja_typings": []
+      },
+      {
+        "en": "Pragmatics",
+        "ja": "語用論",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "language",
+    "id": "q00792",
+    "image_path": null,
+    "question_text": {
+      "en": "Which field of linguistics studies meaning in language?",
+      "ja": "言語の意味を研究する言語学の分野は?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Kanji",
+        "ja": "漢字",
+        "ja_typings": []
+      },
+      {
+        "en": "Hiragana",
+        "ja": "ひらがな",
+        "ja_typings": []
+      },
+      {
+        "en": "Katakana",
+        "ja": "カタカナ",
+        "ja_typings": []
+      },
+      {
+        "en": "Romaji",
+        "ja": "ローマ字",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "language",
+    "id": "q00793",
+    "image_path": null,
+    "question_text": {
+      "en": "Which kind of Japanese characters represent meaning rather than sound?",
+      "ja": "音ではなく意味を表現する日本語の文字は?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Active voice",
+        "ja": "能動態",
+        "ja_typings": []
+      },
+      {
+        "en": "Passive voice",
+        "ja": "受動態",
+        "ja_typings": []
+      },
+      {
+        "en": "Middle voice",
+        "ja": "中動態",
+        "ja_typings": []
+      },
+      {
+        "en": "Causative voice",
+        "ja": "使役態",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "language",
+    "id": "q00794",
+    "image_path": null,
+    "question_text": {
+      "en": "In English grammar, which voice has the subject performing the action?",
+      "ja": "主語が動作を行う英文法の態は?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Adverb",
+        "ja": "副詞",
+        "ja_typings": []
+      },
+      {
+        "en": "Noun",
+        "ja": "名詞",
+        "ja_typings": []
+      },
+      {
+        "en": "Particle",
+        "ja": "助詞",
+        "ja_typings": []
+      },
+      {
+        "en": "Conjunction",
+        "ja": "接続詞",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "language",
+    "id": "q00795",
+    "image_path": null,
+    "question_text": {
+      "en": "Which part of speech modifies verbs, adjectives, or other adverbs?",
+      "ja": "動詞、形容詞、または他の副詞を修飾する品詞は?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Sino-Tibetan",
+        "ja": "シナチベット語族",
+        "ja_typings": []
+      },
+      {
+        "en": "Indo-European",
+        "ja": "インドヨーロッパ語族",
+        "ja_typings": []
+      },
+      {
+        "en": "Austroasiatic",
+        "ja": "オーストロアジア語族",
+        "ja_typings": []
+      },
+      {
+        "en": "Altaic",
+        "ja": "アルタイ語族",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "language",
+    "id": "q00796",
+    "image_path": null,
+    "question_text": {
+      "en": "Which language family includes Mandarin Chinese and Tibetan?",
+      "ja": "中国語とチベット語を含む語族は?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Austronesian",
+        "ja": "オーストロネシア語族",
+        "ja_typings": []
+      },
+      {
+        "en": "Sino-Tibetan",
+        "ja": "シナチベット語族",
+        "ja_typings": []
+      },
+      {
+        "en": "Dravidian",
+        "ja": "ドラビダ語族",
+        "ja_typings": []
+      },
+      {
+        "en": "Niger-Congo",
+        "ja": "ニジェールコンゴ語族",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "language",
+    "id": "q00797",
+    "image_path": null,
+    "question_text": {
+      "en": "Which language family includes Indonesian, Tagalog, and Malagasy?",
+      "ja": "インドネシア語、タガログ語、マダガスカル語を含む語族は?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Hyperbole",
+        "ja": "誇張法",
+        "ja_typings": []
+      },
+      {
+        "en": "Metaphor",
+        "ja": "隠喩",
+        "ja_typings": []
+      },
+      {
+        "en": "Litotes",
+        "ja": "緩叙法",
+        "ja_typings": []
+      },
+      {
+        "en": "Irony",
+        "ja": "皮肉",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "language",
+    "id": "q00798",
+    "image_path": null,
+    "question_text": {
+      "en": "Which figure of speech exaggerates for emphasis or effect?",
+      "ja": "強調や効果のため誇張する修辞法は?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Bopomofo",
+        "ja": "ボポモフォ",
+        "ja_typings": []
+      },
+      {
+        "en": "Pinyin",
+        "ja": "ピンイン",
+        "ja_typings": []
+      },
+      {
+        "en": "Wade-Giles",
+        "ja": "ウェード式",
+        "ja_typings": []
+      },
+      {
+        "en": "Zhuyin Fuhao",
+        "ja": "注音符号",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "language",
+    "id": "q00799",
+    "image_path": null,
+    "question_text": {
+      "en": "Which Mandarin phonetic system uses zhuyin symbols and is used in Taiwan?",
+      "ja": "台湾で使われる注音符号のマンダリン発音表記は?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Fargate",
+        "ja": "ファーゲート",
+        "ja_typings": []
+      },
+      {
+        "en": "ECS",
+        "ja": "イーシーエス",
+        "ja_typings": []
+      },
+      {
+        "en": "EKS",
+        "ja": "イーケーエス",
+        "ja_typings": []
+      },
+      {
+        "en": "Lambda",
+        "ja": "ラムダ",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "it_terminology",
+    "id": "q00800",
+    "image_path": null,
+    "question_text": {
+      "en": "Which AWS service provides serverless container compute that runs without managing servers?",
+      "ja": "サーバー管理不要でコンテナ実行環境を提供する AWS サービスは?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "IaaS",
+        "ja": "アイアース",
+        "ja_typings": []
+      },
+      {
+        "en": "PaaS",
+        "ja": "パース",
+        "ja_typings": []
+      },
+      {
+        "en": "SaaS",
+        "ja": "サース",
+        "ja_typings": []
+      },
+      {
+        "en": "FaaS",
+        "ja": "ファース",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "it_terminology",
+    "id": "q00801",
+    "image_path": null,
+    "question_text": {
+      "en": "Which type of cloud computing provides raw virtualized hardware resources?",
+      "ja": "生の仮想化ハードウェアリソースを提供するクラウドの種類は?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "FaaS",
+        "ja": "ファース",
+        "ja_typings": []
+      },
+      {
+        "en": "PaaS",
+        "ja": "パース",
+        "ja_typings": []
+      },
+      {
+        "en": "IaaS",
+        "ja": "アイアース",
+        "ja_typings": []
+      },
+      {
+        "en": "SaaS",
+        "ja": "サース",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "it_terminology",
+    "id": "q00802",
+    "image_path": null,
+    "question_text": {
+      "en": "Which cloud computing model executes code in response to events without managing infrastructure?",
+      "ja": "インフラ管理不要でイベント応答コード実行をするクラウドモデルは?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "DynamoDB",
+        "ja": "ダイナモディービー",
+        "ja_typings": []
+      },
+      {
+        "en": "RDS",
+        "ja": "アールディーエス",
+        "ja_typings": []
+      },
+      {
+        "en": "Aurora",
+        "ja": "オーロラ",
+        "ja_typings": []
+      },
+      {
+        "en": "Redshift",
+        "ja": "レッドシフト",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "it_terminology",
+    "id": "q00803",
+    "image_path": null,
+    "question_text": {
+      "en": "Which AWS service is a fully managed NoSQL key-value database?",
+      "ja": "マネージドな NoSQL キーバリュー DB である AWS サービスは?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Redshift",
+        "ja": "レッドシフト",
+        "ja_typings": []
+      },
+      {
+        "en": "RDS",
+        "ja": "アールディーエス",
+        "ja_typings": []
+      },
+      {
+        "en": "Athena",
+        "ja": "アテナ",
+        "ja_typings": []
+      },
+      {
+        "en": "Aurora",
+        "ja": "オーロラ",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "it_terminology",
+    "id": "q00804",
+    "image_path": null,
+    "question_text": {
+      "en": "Which AWS service is a petabyte-scale data warehouse?",
+      "ja": "ペタバイト規模のデータウェアハウスである AWS サービスは?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Terraform",
+        "ja": "テラフォーム",
+        "ja_typings": []
+      },
+      {
+        "en": "Pulumi",
+        "ja": "プルミ",
+        "ja_typings": []
+      },
+      {
+        "en": "Ansible",
+        "ja": "アンシブル",
+        "ja_typings": []
+      },
+      {
+        "en": "CloudFormation",
+        "ja": "クラウドフォーメーション",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "it_terminology",
+    "id": "q00805",
+    "image_path": null,
+    "question_text": {
+      "en": "Which open-source IaC tool by HashiCorp uses HCL to define cloud infrastructure?",
+      "ja": "HashiCorp 製で HCL でクラウドインフラを定義する IaC ツールは?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Ansible",
+        "ja": "アンシブル",
+        "ja_typings": []
+      },
+      {
+        "en": "Chef",
+        "ja": "シェフ",
+        "ja_typings": []
+      },
+      {
+        "en": "Puppet",
+        "ja": "パペット",
+        "ja_typings": []
+      },
+      {
+        "en": "Salt",
+        "ja": "ソルト",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "it_terminology",
+    "id": "q00806",
+    "image_path": null,
+    "question_text": {
+      "en": "Which open-source configuration management tool uses YAML playbooks?",
+      "ja": "YAML プレイブックを使う構成管理ツールは?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Sprint Review",
+        "ja": "スプリントレビュー",
+        "ja_typings": []
+      },
+      {
+        "en": "Retrospective",
+        "ja": "レトロスペクティブ",
+        "ja_typings": []
+      },
+      {
+        "en": "Daily Stand-up",
+        "ja": "デイリースタンドアップ",
+        "ja_typings": []
+      },
+      {
+        "en": "Sprint Planning",
+        "ja": "スプリントプランニング",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "it_terminology",
+    "id": "q00807",
+    "image_path": null,
+    "question_text": {
+      "en": "In Scrum, which ceremony lets the team demo completed work to stakeholders?",
+      "ja": "Scrum でステークホルダーに完了作業をデモするセレモニーは?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Kepler",
+        "ja": "ケプラー",
+        "ja_typings": []
+      },
+      {
+        "en": "Galileo",
+        "ja": "ガリレオ",
+        "ja_typings": []
+      },
+      {
+        "en": "Copernicus",
+        "ja": "コペルニクス",
+        "ja_typings": []
+      },
+      {
+        "en": "Brahe",
+        "ja": "ブラーエ",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "science",
+    "id": "q00808",
+    "image_path": null,
+    "question_text": {
+      "en": "Which German astronomer formulated the laws of planetary motion?",
+      "ja": "惑星運動の法則を定式化したドイツの天文学者は?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Koch",
+        "ja": "コッホ",
+        "ja_typings": []
+      },
+      {
+        "en": "Pasteur",
+        "ja": "パスツール",
+        "ja_typings": []
+      },
+      {
+        "en": "Lister",
+        "ja": "リスター",
+        "ja_typings": []
+      },
+      {
+        "en": "Jenner",
+        "ja": "ジェンナー",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "science",
+    "id": "q00809",
+    "image_path": null,
+    "question_text": {
+      "en": "Which German physician proved that specific microorganisms cause specific diseases?",
+      "ja": "特定の微生物が特定の病気を引き起こすことを証明したドイツの医師は?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Helium",
+        "ja": "ヘリウム",
+        "ja_typings": []
+      },
+      {
+        "en": "Neon",
+        "ja": "ネオン",
+        "ja_typings": []
+      },
+      {
+        "en": "Argon",
+        "ja": "アルゴン",
+        "ja_typings": []
+      },
+      {
+        "en": "Hydrogen",
+        "ja": "水素",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "science",
+    "id": "q00810",
+    "image_path": null,
+    "question_text": {
+      "en": "Which noble gas is used to inflate party balloons and is the second lightest element?",
+      "ja": "パーティー用風船に使われ、2番目に軽い気体元素は?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Liver",
+        "ja": "肝臓",
+        "ja_typings": []
+      },
+      {
+        "en": "Pancreas",
+        "ja": "膵臓",
+        "ja_typings": []
+      },
+      {
+        "en": "Kidney",
+        "ja": "腎臓",
+        "ja_typings": []
+      },
+      {
+        "en": "Spleen",
+        "ja": "脾臓",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "science",
+    "id": "q00811",
+    "image_path": null,
+    "question_text": {
+      "en": "Which human organ produces bile and detoxifies the blood?",
+      "ja": "胆汁を分泌し血液を解毒するヒトの臓器は?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Volt",
+        "ja": "ボルト",
+        "ja_typings": []
+      },
+      {
+        "en": "Watt",
+        "ja": "ワット",
+        "ja_typings": []
+      },
+      {
+        "en": "Ohm",
+        "ja": "オーム",
+        "ja_typings": []
+      },
+      {
+        "en": "Ampere",
+        "ja": "アンペア",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "science",
+    "id": "q00812",
+    "image_path": null,
+    "question_text": {
+      "en": "Which unit of electric potential difference is named after an Italian physicist?",
+      "ja": "イタリア人物理学者にちなんだ電位差の単位は?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Watt",
+        "ja": "ワット",
+        "ja_typings": []
+      },
+      {
+        "en": "Volt",
+        "ja": "ボルト",
+        "ja_typings": []
+      },
+      {
+        "en": "Joule",
+        "ja": "ジュール",
+        "ja_typings": []
+      },
+      {
+        "en": "Newton",
+        "ja": "ニュートン",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "science",
+    "id": "q00813",
+    "image_path": null,
+    "question_text": {
+      "en": "Which SI unit of power equals one joule per second?",
+      "ja": "毎秒1ジュールに相当する SI 単位は?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Rutherford",
+        "ja": "ラザフォード",
+        "ja_typings": []
+      },
+      {
+        "en": "Bohr",
+        "ja": "ボーア",
+        "ja_typings": []
+      },
+      {
+        "en": "Thomson",
+        "ja": "トムソン",
+        "ja_typings": []
+      },
+      {
+        "en": "Curie",
+        "ja": "キュリー",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "science",
+    "id": "q00814",
+    "image_path": null,
+    "question_text": {
+      "en": "Which physicist discovered the atomic nucleus through the gold foil experiment?",
+      "ja": "金箔実験で原子核を発見した物理学者は?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Pascal",
+        "ja": "パスカル",
+        "ja_typings": []
+      },
+      {
+        "en": "Bar",
+        "ja": "バール",
+        "ja_typings": []
+      },
+      {
+        "en": "Torr",
+        "ja": "トール",
+        "ja_typings": []
+      },
+      {
+        "en": "Atmosphere",
+        "ja": "アトモスフィア",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "science",
+    "id": "q00815",
+    "image_path": null,
+    "question_text": {
+      "en": "Which unit of pressure equals one newton per square meter?",
+      "ja": "平方メートルあたり1ニュートンの圧力単位は?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Nero",
+        "ja": "ネロ",
+        "ja_typings": []
+      },
+      {
+        "en": "Caligula",
+        "ja": "カリグラ",
+        "ja_typings": []
+      },
+      {
+        "en": "Domitian",
+        "ja": "ドミティアヌス",
+        "ja_typings": []
+      },
+      {
+        "en": "Commodus",
+        "ja": "コンモドゥス",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "history",
+    "id": "q00816",
+    "image_path": null,
+    "question_text": {
+      "en": "Which Roman emperor is infamous for allegedly playing music while Rome burned?",
+      "ja": "ローマ市街炎上中に演奏したと言われる悪名高いローマ皇帝は?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Hadrian",
+        "ja": "ハドリアヌス",
+        "ja_typings": []
+      },
+      {
+        "en": "Trajan",
+        "ja": "トラヤヌス",
+        "ja_typings": []
+      },
+      {
+        "en": "Antoninus Pius",
+        "ja": "アントニヌスピウス",
+        "ja_typings": []
+      },
+      {
+        "en": "Marcus Aurelius",
+        "ja": "マルクスアウレリウス",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "history",
+    "id": "q00817",
+    "image_path": null,
+    "question_text": {
+      "en": "Which Roman emperor built a famous wall across northern Britain?",
+      "ja": "北ブリテンに有名な城壁を築いたローマ皇帝は?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Battle of Waterloo",
+        "ja": "ワーテルローの戦い",
+        "ja_typings": []
+      },
+      {
+        "en": "Battle of Leipzig",
+        "ja": "ライプツィヒの戦い",
+        "ja_typings": []
+      },
+      {
+        "en": "Battle of Valmy",
+        "ja": "バルミーの戦い",
+        "ja_typings": []
+      },
+      {
+        "en": "Battle of Borodino",
+        "ja": "ボロジノの戦い",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "history",
+    "id": "q00818",
+    "image_path": null,
+    "question_text": {
+      "en": "In which 1815 battle was Napoleon finally defeated?",
+      "ja": "1815年にナポレオンが最終的に敗北した戦闘は?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Vasco da Gama",
+        "ja": "ヴァスコ・ダ・ガマ",
+        "ja_typings": []
+      },
+      {
+        "en": "Magellan",
+        "ja": "マゼラン",
+        "ja_typings": []
+      },
+      {
+        "en": "Columbus",
+        "ja": "コロンブス",
+        "ja_typings": []
+      },
+      {
+        "en": "Henry the Navigator",
+        "ja": "エンリケ航海王子",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "history",
+    "id": "q00819",
+    "image_path": null,
+    "question_text": {
+      "en": "Which Portuguese explorer was the first European to reach India by sea?",
+      "ja": "海路で初めてインドに到達したポルトガル人探検家は?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Amerigo Vespucci",
+        "ja": "アメリゴ・ヴェスプッチ",
+        "ja_typings": []
+      },
+      {
+        "en": "Magellan",
+        "ja": "マゼラン",
+        "ja_typings": []
+      },
+      {
+        "en": "Columbus",
+        "ja": "コロンブス",
+        "ja_typings": []
+      },
+      {
+        "en": "Marco Polo",
+        "ja": "マルコ・ポーロ",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "history",
+    "id": "q00820",
+    "image_path": null,
+    "question_text": {
+      "en": "Which Italian explorer's first name became the basis for the name 'America'?",
+      "ja": "「アメリカ」の語源となったイタリア人探検家の名は?"
+    }
+  },
+  {
+    "choices": [
+      {
+        "en": "Magellan",
+        "ja": "マゼラン",
+        "ja_typings": []
+      },
+      {
+        "en": "Vasco da Gama",
+        "ja": "ヴァスコ・ダ・ガマ",
+        "ja_typings": []
+      },
+      {
+        "en": "Cabral",
+        "ja": "カブラル",
+        "ja_typings": []
+      },
+      {
+        "en": "Dias",
+        "ja": "ディアス",
+        "ja_typings": []
+      }
+    ],
+    "correct_answer_index": 0,
+    "genre": "history",
+    "id": "q00821",
+    "image_path": null,
+    "question_text": {
+      "en": "Which Portuguese-born explorer led the first expedition to circumnavigate the globe?",
+      "ja": "世界一周航海の最初の遠征を率いたポルトガル出身の探検家は?"
+    }
   }
 ]
