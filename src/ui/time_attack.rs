@@ -37,7 +37,7 @@ const NAME_MAX_CHARS: usize = 16;
 /// the 25 panels play out, the player sees a summary, and on Enter they
 /// can stamp the run into Records (`time_attack_25`) — or Esc to skip
 /// the save and head back to the menu.
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
 enum Phase {
     Playing,
     Summary,
@@ -438,7 +438,7 @@ impl TimeAttack25UI {
         }
         lines.push(Line::from(""));
         lines.push(Line::from(Span::styled(
-            "Press Enter to register a record (Esc to skip).",
+            "Press Enter to save your record (Esc to skip).",
             STYLE_NORMAL,
         )));
         let block = Block::default()
@@ -482,7 +482,7 @@ impl TimeAttack25UI {
             ]
         };
         let block = Block::default()
-            .title(Span::styled(" Summary ", STYLE_TITLE))
+            .title(Span::styled(" Records ", STYLE_TITLE))
             .borders(Borders::ALL)
             .padding(Padding::uniform(1));
         f.render_widget(Paragraph::new(lines).block(block), area);
@@ -1143,7 +1143,7 @@ mod tests {
             if phase != Phase::Playing {
                 finish_game(&mut ui);
             }
-            ui.phase = phase.clone();
+            ui.phase = phase;
             let quit = ui.handle_key(key_with(KeyCode::Char('c'), KeyModifiers::CONTROL));
             assert!(quit, "Ctrl+C must quit from {phase:?}");
         }
@@ -1154,9 +1154,20 @@ mod tests {
     // -------------------------------------------------------------------
     #[test]
     fn test_persist_record_failure_appends_pending_warning_and_keeps_saved_false() {
-        // Point at a file under a non-existent directory so the write
-        // will fail without depending on filesystem permissions.
-        let bogus = "/tmp/type-globe-nonexistent-dir-xyzzy/records.yaml".to_string();
+        // Point at a file under a tempdir that has been dropped, so the
+        // parent dir is guaranteed not to exist on whichever filesystem
+        // CI happens to be running. This is more robust than a
+        // hard-coded `/tmp/...nonexistent...` path because we can't
+        // assume `/tmp` semantics (or that no prior run left an
+        // identically-named dir behind).
+        let bogus = {
+            let tmp = tempdir().expect("tempdir");
+            tmp.path()
+                .join("records.yaml")
+                .to_string_lossy()
+                .to_string()
+            // tmp drops here → directory disappears.
+        };
         let mut ui = make_ui_with_records_path(bogus);
         finish_game(&mut ui);
         ui.phase = Phase::NamingForRecord;
@@ -1174,7 +1185,14 @@ mod tests {
     // -------------------------------------------------------------------
     #[test]
     fn test_persist_record_repeated_failure_appends_multiple_warnings() {
-        let bogus = "/tmp/type-globe-nonexistent-dir-xyzzy-2/records.yaml".to_string();
+        // Same drop-the-tempdir trick as #19 — see that test for why.
+        let bogus = {
+            let tmp = tempdir().expect("tempdir");
+            tmp.path()
+                .join("records.yaml")
+                .to_string_lossy()
+                .to_string()
+        };
         let mut ui = make_ui_with_records_path(bogus);
         finish_game(&mut ui);
         ui.phase = Phase::NamingForRecord;
