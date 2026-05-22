@@ -110,6 +110,11 @@ def _hiragana_to_hepburn_raw(text: str) -> str:
             i += 1
             continue
         if c == "ー":
+            # IME-strict: ー is typed with the `-` key, so emit it literally.
+            # Dropping it (legacy behaviour) made `rukusooru` indistinguishable
+            # from `rukuso-ru` and let bad data through review.
+            out.append("-")
+            geminate = False
             i += 1
             continue
         if c == "っ":
@@ -201,8 +206,13 @@ def has_kanji(s: str) -> bool:
 
 
 def _normalize_for_match(s: str) -> str:
-    # ja_typings registered by humans may include hyphens / spaces; strip them for matching.
-    return re.sub(r"[\s\-_]+", "", s.lower())
+    # Whitespace/underscore are scaffolding from human-edited entries and
+    # can be stripped. `-` is **NOT** strippable: it carries the IME-strict
+    # long-vowel signal (カタカナ ー = `-` key). Stripping it lets
+    # `rukusooru` and `rukuso-ru` collide and silently pass review, which
+    # is exactly the regression the fix_long_vowel pass is undoing.
+    # `/` is the IME `・` key — optional structural separator, drop for match.
+    return re.sub(r"[\s_/]+", "", s.lower())
 
 
 def matches_any(expected_variants: Iterable[str], actual: Iterable[str]) -> bool:
