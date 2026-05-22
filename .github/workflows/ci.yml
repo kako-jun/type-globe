@@ -75,3 +75,9 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y libspeechd-dev libasound2-dev
       - name: Run question-data linter
         run: cargo run --bin lint-questions -- data/questions_ja.json data/questions_en.json
+      - name: Set up Python (for IME-strict ja_typings lint)
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Run IME-strict ja_typings lint (long vowel / ティ / ディ / kunrei / English literal)
+        run: python3 scripts/lint_ja_typings.py

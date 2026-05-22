@@ -7,3 +7,5 @@ __pycache__/
 .pytest_cache/
 scripts/suspicious_ja_typings.json
 data/review/
+scripts/lint_report.json
+scripts/suspicious_ja_typings.json
