@@ -58,11 +58,15 @@ In code this is exposed as `SpeechCapabilities`, with `Unavailable` represented 
 
 ## Local Command Protocol
 
-`type-globe rpg --speech-backend local-command --speech-command '<command>'` starts a long-lived child process and communicates through newline-delimited JSON. Each request is written to the child's stdin and must be acknowledged by one JSON line on stdout:
+`type-globe rpg --speech-backend local-command --speech-command '<command>'` starts a long-lived child process and communicates through newline-delimited JSON. The child stays alive for the whole RPG run so prompt replay, stop, and boss hints share one audio process.
+
+Each request is written to the child's stdin and must be acknowledged by one JSON line on stdout:
 
 ```json
 {"ok":true}
 ```
+
+The ack means **accepted by the speech process**, not "audio playback finished". `type-globe` waits for this line before returning control to the TUI event loop, so an implementation that blocks until synthesis or playback completes will make replay and typing feel frozen. Long-running synthesis/playback should continue asynchronously inside the child process after the ack.
 
 Speak requests look like this:
 
@@ -70,7 +74,9 @@ Speak requests look like this:
 {"type":"speak","text":"apple","lang":"en","kind":"prompt_replay","layer":null,"voice_role":null,"interrupt":true,"rate_multiplier":0.96}
 ```
 
-The same process also receives `{"type":"stop"}` and `{"type":"shutdown"}`. `--speech-command` may be replaced by the `OFFLINE_VOICE_RUNTIME_COMMAND` environment variable.
+The same process also receives `{"type":"stop"}` and `{"type":"shutdown"}`. `stop` should interrupt any in-flight utterance and ack once the interruption request has been accepted. `shutdown` is best-effort cleanup during backend drop; the current client sends it and then tears down the child process without waiting for a response.
+
+Stdout is reserved for JSON ack lines. Diagnostics should go to stderr so logs do not get parsed as protocol responses. `--speech-command` may be replaced by the `OFFLINE_VOICE_RUNTIME_COMMAND` environment variable.
 
 ## Platform Policy
 

@@ -115,7 +115,7 @@ Listening prompts are synthesized at runtime through a pluggable speech backend.
 
 The baseline direction is **real-time synthesis**, not pre-generated voice clips. This keeps the game compatible with growing prompt banks and future layered boss hints, and establishes the shared local speech foundation intended for later `esuna` / `osaka-kenpo` reuse.
 
-The audio pipeline already distinguishes normal prompt reads and replay, and it is prepared for future boss-hint reads on the same API surface. When the backend supports speech-rate control, replay and future early boss hints can be spoken more slowly; when it does not, type-globe degrades to normal-speed speech instead of failing. See [docs/audio.md](./docs/audio.md).
+The audio pipeline distinguishes normal prompt reads, replay, boss hints, and boss reveals on the same API surface. When the backend supports speech-rate control, replay and early boss hints can be spoken more slowly; when it does not, type-globe degrades to normal-speed speech instead of failing. See [docs/audio.md](./docs/audio.md) for the `local-command` JSONL protocol and daemon lifecycle rules.
 
 On Linux, the `system` backend requires the `speech-dispatcher` daemon to be installed and running. If it is not, type-globe shows a clear "Listening mode is unavailable on this system" message and returns to the menu rather than crashing the binary; Quiz / Records / Time Attack 25 still work without TTS.
 
