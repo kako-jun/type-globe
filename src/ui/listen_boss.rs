@@ -1,4 +1,4 @@
-use crate::audio::{TtsEngine, TtsRequest, TtsRequestKind};
+use crate::audio::{SpeechBackendHandle, SpeechRequest, SpeechRequestKind};
 use crate::game::listening::{acceptable_listening_inputs, is_valid_listening_prefix};
 use crate::game::{ListeningSession, SubmissionResult, RPG_RUN_LENGTH};
 use crate::types::{BossHintRevealMode, BossTier, Language, ListeningBossSpec};
@@ -101,7 +101,7 @@ pub struct BossListenUI {
     spec: ListeningBossSpec,
     plan: BossUiPlan,
     language: Language,
-    tts: Option<TtsEngine>,
+    speech: Option<SpeechBackendHandle>,
     phase: Phase,
     encounter_index: usize,
     started_at: Instant,
@@ -128,7 +128,7 @@ impl BossListenUI {
     pub fn new(
         session: ListeningSession,
         spec: ListeningBossSpec,
-        tts: Option<TtsEngine>,
+        speech: Option<SpeechBackendHandle>,
         language: Language,
         encounter_index: usize,
     ) -> Self {
@@ -137,7 +137,7 @@ impl BossListenUI {
             plan: BossUiPlan::from_spec(&spec),
             spec,
             language,
-            tts,
+            speech,
             phase: Phase::Playing,
             encounter_index,
             started_at: Instant::now(),
@@ -169,8 +169,8 @@ impl BossListenUI {
         self.enemy_display = Some(display.into());
     }
 
-    pub fn take_tts(&mut self) -> Option<TtsEngine> {
-        self.tts.take()
+    pub fn take_speech(&mut self) -> Option<SpeechBackendHandle> {
+        self.speech.take()
     }
 
     pub fn run(&mut self) -> Result<Option<SubmissionResult>, Box<dyn std::error::Error>> {
@@ -183,8 +183,8 @@ impl BossListenUI {
         self.voice_hint(0, true);
         let result = self.run_app(&mut terminal);
 
-        if let Some(tts) = self.tts.as_mut() {
-            let _ = tts.stop();
+        if let Some(speech) = self.speech.as_mut() {
+            let _ = speech.stop();
         }
         disable_raw_mode()?;
         execute!(terminal.backend_mut(), LeaveAlternateScreen)?;
@@ -303,13 +303,14 @@ impl BossListenUI {
 
     fn voice_hint(&mut self, index: usize, replay: bool) {
         if let Some(hint) = self.spec.hints.get(index) {
-            if let Some(tts) = self.tts.as_mut() {
-                let _ = tts.speak_request(TtsRequest {
+            if let Some(speech) = self.speech.as_mut() {
+                let _ = speech.speak(SpeechRequest {
                     text: hint.text_reading.as_deref().unwrap_or(&hint.text_display),
                     lang: &self.language,
-                    kind: TtsRequestKind::BossHint {
+                    kind: SpeechRequestKind::BossHint {
                         layer: (index + 1) as u8,
                     },
+                    voice_role: None,
                 });
             }
             self.plays += 1;
@@ -344,12 +345,13 @@ impl BossListenUI {
             self.session.submit();
             self.phase = Phase::Result;
             self.logs.push("Boss defeated.".into());
-            if let Some(tts) = self.tts.as_mut() {
-                let _ = tts.stop();
-                let _ = tts.speak_request(TtsRequest {
+            if let Some(speech) = self.speech.as_mut() {
+                let _ = speech.stop();
+                let _ = speech.speak(SpeechRequest {
                     text: &self.session.prompt().text_reading,
                     lang: &self.language,
-                    kind: TtsRequestKind::BossReveal,
+                    kind: SpeechRequestKind::BossReveal,
+                    voice_role: None,
                 });
                 self.plays += 1;
             }
@@ -626,7 +628,7 @@ mod tests {
     }
 
     #[test]
-    fn take_tts_is_none_when_built_without_tts() {
+    fn take_speech_is_none_when_built_without_speech() {
         let mut ui = BossListenUI::new(
             boss_session(),
             boss_spec(BossTier::Boss, BossHintRevealMode::Manual),
@@ -634,6 +636,6 @@ mod tests {
             Language::English,
             10,
         );
-        assert!(ui.take_tts().is_none());
+        assert!(ui.take_speech().is_none());
     }
 }

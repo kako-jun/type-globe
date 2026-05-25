@@ -19,7 +19,7 @@
 //! - status placeholders (kind / Floor / Run time placeholder),
 //! - a battle-log pane (used only on the result screen for v0.2.0).
 
-use crate::audio::{TtsEngine, TtsRequest, TtsRequestKind};
+use crate::audio::{SpeechBackendHandle, SpeechRequest, SpeechRequestKind};
 use crate::game::listening::{acceptable_listening_inputs, is_valid_listening_prefix};
 use crate::game::{ListeningSession, SubmissionResult};
 use crate::types::{AnswerKind, Language};
@@ -59,7 +59,7 @@ enum Phase {
 pub struct ListenUI {
     session: ListeningSession,
     /// `None` when the caller passed `--no-tts` (#48).
-    tts: Option<TtsEngine>,
+    speech: Option<SpeechBackendHandle>,
     language: Language,
     phase: Phase,
     /// `♪` pulse for the active prompt — anchors per-frame color.
@@ -90,10 +90,10 @@ pub struct ListenUI {
 const PLAY_LOG_TAIL_MAX: usize = 8;
 
 impl ListenUI {
-    pub fn new(session: ListeningSession, tts: TtsEngine, language: Language) -> Self {
+    pub fn new(session: ListeningSession, speech: SpeechBackendHandle, language: Language) -> Self {
         Self {
             session,
-            tts: Some(tts),
+            speech: Some(speech),
             language,
             phase: Phase::Playing,
             pulse: Some(PulseHandle::start("♪", PulseOpts::cyan_breath())),
@@ -112,7 +112,7 @@ impl ListenUI {
     pub fn new_without_tts(session: ListeningSession, language: Language) -> Self {
         Self {
             session,
-            tts: None,
+            speech: None,
             language,
             phase: Phase::Playing,
             pulse: Some(PulseHandle::start("♪", PulseOpts::cyan_breath())),
@@ -147,8 +147,8 @@ impl ListenUI {
         self.battle_log = log;
     }
 
-    pub fn take_tts(&mut self) -> Option<TtsEngine> {
-        self.tts.take()
+    pub fn take_speech(&mut self) -> Option<SpeechBackendHandle> {
+        self.speech.take()
     }
 
     pub fn run(&mut self) -> Result<Option<SubmissionResult>, Box<dyn std::error::Error>> {
@@ -161,13 +161,14 @@ impl ListenUI {
         // Speak the prompt once on entry. Failure here is non-fatal —
         // the player can still try Space-replay, and the result screen
         // works even if no audio came out (helps debug TTS issues).
-        if let Some(tts) = self.tts.as_mut() {
-            if let Err(err) = tts.speak_request(TtsRequest {
+        if let Some(speech) = self.speech.as_mut() {
+            if let Err(err) = speech.speak(SpeechRequest {
                 text: &self.session.prompt().text_reading,
                 lang: &self.language,
-                kind: TtsRequestKind::PromptAnswer,
+                kind: SpeechRequestKind::PromptAnswer,
+                voice_role: None,
             }) {
-                eprintln!("warning: initial TTS speak failed: {err}");
+                eprintln!("warning: initial speech request failed: {err}");
             } else {
                 self.plays += 1;
             }
@@ -176,8 +177,8 @@ impl ListenUI {
         let result = self.run_app(&mut terminal);
 
         // Stop any in-flight utterance so the terminal returns silently.
-        if let Some(tts) = self.tts.as_mut() {
-            let _ = tts.stop();
+        if let Some(speech) = self.speech.as_mut() {
+            let _ = speech.stop();
         }
         disable_raw_mode()?;
         execute!(terminal.backend_mut(), LeaveAlternateScreen)?;
@@ -257,13 +258,14 @@ impl ListenUI {
     }
 
     fn replay(&mut self) {
-        if let Some(tts) = self.tts.as_mut() {
-            if let Err(err) = tts.speak_request(TtsRequest {
+        if let Some(speech) = self.speech.as_mut() {
+            if let Err(err) = speech.speak(SpeechRequest {
                 text: &self.session.prompt().text_reading,
                 lang: &self.language,
-                kind: TtsRequestKind::PromptReplay,
+                kind: SpeechRequestKind::PromptReplay,
+                voice_role: None,
             }) {
-                eprintln!("warning: TTS replay failed: {err}");
+                eprintln!("warning: speech replay failed: {err}");
                 return;
             }
         }
@@ -535,8 +537,8 @@ impl ListenUI {
             self.session.submit();
             self.pulse = None;
             self.phase = Phase::Result;
-            if let Some(tts) = self.tts.as_mut() {
-                let _ = tts.stop();
+            if let Some(speech) = self.speech.as_mut() {
+                let _ = speech.stop();
             }
         }
     }
@@ -604,32 +606,32 @@ mod tests {
         ListeningSession::new(stub_prompt(), Language::English)
     }
 
-    // --- TC-12: new_without_tts → tts field is None ---
+    // --- TC-12: new_without_tts → speech field is None ---
     #[test]
-    fn new_without_tts_has_no_tts_engine() {
+    fn new_without_tts_has_no_speech_backend() {
         let ui = ListenUI::new_without_tts(stub_session(), Language::English);
         assert!(
-            ui.tts.is_none(),
-            "tts should be None when built without TTS"
+            ui.speech.is_none(),
+            "speech should be None when built without TTS"
         );
     }
 
-    // --- TC-13: new (with TTS engine) → tts field is Some ---
+    // --- TC-13: new (with system speech backend) → speech field is Some ---
     #[test]
-    fn new_with_tts_engine_has_some_tts() {
-        // We cannot guarantee TtsEngine::new() succeeds in all CI environments,
-        // so we skip this test if TTS initialisation fails.
-        match crate::audio::TtsEngine::new() {
-            Ok(tts) => {
-                let ui = ListenUI::new(stub_session(), tts, Language::English);
+    fn new_with_speech_backend_has_some_speech() {
+        // We cannot guarantee OS speech initialisation succeeds in all CI
+        // environments, so we skip this test if the backend is unavailable.
+        match crate::audio::SpeechBackendHandle::system() {
+            Ok(speech) => {
+                let ui = ListenUI::new(stub_session(), speech, Language::English);
                 assert!(
-                    ui.tts.is_some(),
-                    "tts should be Some when built with a TTS engine"
+                    ui.speech.is_some(),
+                    "speech should be Some when built with a speech backend"
                 );
             }
             Err(_) => {
-                // TTS unavailable in this environment — skip rather than fail.
-                eprintln!("TC-13: TtsEngine::new() failed; skipping assertion (TTS unavailable)");
+                // Speech unavailable in this environment — skip rather than fail.
+                eprintln!("TC-13: SpeechBackendHandle::system() failed; skipping assertion");
             }
         }
     }

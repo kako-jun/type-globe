@@ -4,11 +4,13 @@
 
 Listening RPG uses **runtime speech synthesis** as the primary audio path.
 
-- **Chosen baseline**: OS-native TTS through the `tts` crate
+- **Chosen baseline**: the pluggable `SpeechBackendHandle` boundary
+- **Default backend**: OS-native TTS through the `tts` crate
+- **Local backend hook**: `local-command` JSONL bridge for `offline-voice-runtime` style daemons
 - **Not the baseline**: pre-generated voice clips checked into the repo
 - **Why**: prompt banks grow, boss hints are layered and dynamic, and pre-rendering every variant would explode maintenance cost
 
-This keeps ordinary prompts and replay on one live pipeline, and prepares future boss hints on that same surface.
+This keeps ordinary prompts and replay on one live pipeline, prepares future boss hints on that same surface, and makes `type-globe` the first proving ground for the shared local speech foundation later reused by `esuna` and `osaka-kenpo`.
 
 ## Audio Kinds
 
@@ -19,16 +21,17 @@ The runtime path distinguishes a small set of utterance intents:
 - `BossHint { layer }`: structured reverse-Akinator hint reading, slower on early layers and closer to normal speed on later layers
 - `BossReveal`: final explicit reveal when a boss encounter chooses to speak the answer directly
 
-These intents are represented in code by `src/audio/tts.rs` as `TtsRequestKind`. The current build actively uses all four: `PromptAnswer` / `PromptReplay` in regular encounters, and `BossHint` / `BossReveal` in the stacked-hint miniboss / boss flow.
+These intents are represented above the concrete engine by `src/audio/speech.rs` as `SpeechRequestKind`. The current build actively uses all four: `PromptAnswer` / `PromptReplay` in regular encounters, and `BossHint` / `BossReveal` in the stacked-hint miniboss / boss flow.
 
 ## Speech Policy
 
-`TtsEngine` now accepts a `TtsRequest` instead of treating every utterance identically.
+UI and RPG code now submit a `SpeechRequest` instead of depending on a concrete TTS engine.
 
 - Voice selection remains **best-effort by language primary tag** (`ja`, `en`)
 - Interrupt behavior remains `true` for all current intents so replay replaces in-flight audio
 - Rate is set **only if the backend supports it**
 - If rate control is unavailable, the request still speaks normally instead of failing
+- `voice_role` exists on the request shape for future fixed-role routing, but current `type-globe` calls pass `None`
 
 Current rate policy:
 
@@ -43,21 +46,44 @@ Current rate policy:
 Listening is classified at runtime in three practical buckets:
 
 1. **Unavailable**
-   `TtsEngine::new()` fails. On Linux this is commonly missing or stopped `speech-dispatcher`.
+   Backend construction fails. For the default `system` backend on Linux this is commonly missing or stopped `speech-dispatcher`.
 2. **Basic**
-   TTS initialises, but some controls such as rate/stop may be unavailable.
+   Speech initialises, but some controls such as rate/stop may be unavailable.
    The mode is still usable for ordinary listening prompts.
 3. **Preferred**
-   TTS initialises and supports both `stop` and `rate`.
+   Speech initialises and supports both `stop` and `rate`.
    This is the target baseline for the full RPG and boss-hint pacing.
 
-In code this is exposed as `TtsRuntimeSupport`, with `Unavailable` represented by constructor failure rather than an enum variant.
+In code this is exposed as `SpeechCapabilities`, with `Unavailable` represented by constructor failure rather than an enum variant.
+
+## Local Command Protocol
+
+`type-globe rpg --speech-backend local-command --speech-command '<command>'` starts a long-lived child process and communicates through newline-delimited JSON. The child stays alive for the whole RPG run so prompt replay, stop, and boss hints share one audio process.
+
+Each request is written to the child's stdin and must be acknowledged by one JSON line on stdout:
+
+```json
+{"ok":true}
+```
+
+The ack means **accepted by the speech process**, not "audio playback finished". `type-globe` waits for this line before returning control to the TUI event loop, so an implementation that blocks until synthesis or playback completes will make replay and typing feel frozen. Long-running synthesis/playback should continue asynchronously inside the child process after the ack.
+
+Speak requests look like this:
+
+```json
+{"type":"speak","text":"apple","lang":"en","kind":"prompt_replay","layer":null,"voice_role":null,"interrupt":true,"rate_multiplier":0.96}
+```
+
+The same process also receives `{"type":"stop"}` and `{"type":"shutdown"}`. `stop` should interrupt any in-flight utterance and ack once the interruption request has been accepted. `shutdown` is best-effort cleanup during backend drop; the current client sends it and then tears down the child process without waiting for a response.
+
+Stdout is reserved for JSON ack lines. Diagnostics should go to stderr so logs do not get parsed as protocol responses. `--speech-command` may be replaced by the `OFFLINE_VOICE_RUNTIME_COMMAND` environment variable.
 
 ## Platform Policy
 
-- **Linux**: supported through `speech-dispatcher`; this is the main operational dependency
+- **Linux**: the default `system` backend is supported through `speech-dispatcher`; this is the main operational dependency
 - **macOS**: supported through AVFoundation/AppKit via `tts`
 - **Windows**: supported through WinRT/SAPI paths provided by `tts`
+- **Local daemon**: supported anywhere a command can speak the JSONL protocol
 
 We accept that voice identity differs by machine. What must remain stable is:
 
@@ -73,11 +99,12 @@ What this issue settles:
 - runtime synthesis is the default architecture
 - boss hints use the same pipeline as normal prompts
 - rate/voice controls are best-effort capability-driven, not mandatory
-- implementation may proceed on top of `tts` without waiting for a separate studio pipeline
+- UI/RPG logic no longer depends on the concrete `tts` implementation
+- `local-command` can be swapped in without changing RPG/UI code
 
 What remains for later issues:
 
 - exact boss-hint script format
 - per-language content authoring rules for hint text
 - user-facing audio settings persistence
-- optional alternate backends such as a dedicated studio voice service
+- the actual `offline-voice-runtime` model daemon implementation and quality tuning
