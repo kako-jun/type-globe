@@ -5,8 +5,8 @@ mod io;
 mod types;
 mod ui;
 
-use audio::TtsEngine;
-use clap::{Parser, Subcommand};
+use audio::SpeechBackendHandle;
+use clap::{Parser, Subcommand, ValueEnum};
 use config::Config;
 use game::{
     enemy::enemy_for_ordinal,
@@ -16,7 +16,7 @@ use game::{
     RPG_RUN_LENGTH, TA25_RUN_LENGTH,
 };
 use io::{DataLoader, Storage};
-use std::io::{stdin, stdout, Write};
+use std::io::{stdin, stdout, Error as StdIoError, ErrorKind, Write};
 use std::time::{Duration, Instant};
 use types::{GameMode, Language, Player, Question};
 use ui::{
@@ -104,6 +104,14 @@ enum Commands {
         /// TTS 読み上げをスキップする
         #[arg(long)]
         no_tts: bool,
+
+        /// 読み上げ backend を選ぶ（system / local-command）
+        #[arg(long, value_enum, default_value_t = SpeechBackendCli::System)]
+        speech_backend: SpeechBackendCli,
+
+        /// local-command backend の起動コマンド（未指定時は OFFLINE_VOICE_RUNTIME_COMMAND）
+        #[arg(long)]
+        speech_command: Option<String>,
     },
 
     /// Time Attack 25 を即開始
@@ -123,6 +131,12 @@ enum Commands {
         #[arg(long, value_parser = parse_language)]
         lang: Option<Language>,
     },
+}
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq, ValueEnum)]
+enum SpeechBackendCli {
+    System,
+    LocalCommand,
 }
 
 fn parse_language(s: &str) -> Result<Language, String> {
@@ -199,6 +213,8 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             seed,
             floor,
             no_tts,
+            speech_backend,
+            speech_command,
         }) => {
             // TODO(#48): --seed は未実装。引数を受け取るのみ。
             if seed.is_some() {
@@ -210,7 +226,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             }
 
             let language = resolve_language_or_select(lang)?;
-            run_listening_rpg(&config, &language, no_tts)?;
+            run_listening_rpg(&config, &language, no_tts, speech_backend, speech_command)?;
             Ok(())
         }
 
@@ -281,7 +297,7 @@ fn run_menu_loop(config: &Config) -> Result<(), Box<dyn std::error::Error>> {
                 menu.return_to_mode_selection(language);
             }
             GameMode::Rpg => {
-                run_listening_rpg(config, &language, false)?;
+                run_listening_rpg(config, &language, false, SpeechBackendCli::System, None)?;
                 menu.return_to_mode_selection(language);
             }
             GameMode::Records => {
@@ -466,13 +482,15 @@ fn show_return_to_menu_message(message: &str) -> Result<(), Box<dyn std::error::
 /// 10. Persistence (HP / EXP / titles / records) still lands in the
 /// later RPG issues, but #113 wires the boss beats into the actual run.
 ///
-/// `skip_tts`: when `true` (set via `rpg --no-tts`), the TTS engine is
-/// not initialised and the session runs silently. Useful for debugging
-/// in environments where TTS is unavailable or undesirable.
+/// `skip_tts`: when `true` (set via `rpg --no-tts`), no speech backend is
+/// initialised and the session runs silently. Useful for debugging in
+/// environments where speech is unavailable or undesirable.
 fn run_listening_rpg(
     config: &Config,
     language: &Language,
     skip_tts: bool,
+    speech_backend: SpeechBackendCli,
+    speech_command: Option<String>,
 ) -> Result<(), Box<dyn std::error::Error>> {
     let path = config.listening_file_path(language);
     let prompts = DataLoader::load_listening_prompts(&path)?;
@@ -514,11 +532,11 @@ fn run_listening_rpg(
         }
     };
 
-    let mut tts = if skip_tts {
+    let mut speech = if skip_tts {
         None
     } else {
-        match TtsEngine::new() {
-            Ok(tts) => Some(tts),
+        match build_speech_backend(speech_backend, speech_command) {
+            Ok(speech) => Some(speech),
             Err(err) => {
                 show_return_to_menu_message(&tts_unavailable_message(err.as_ref()))?;
                 // Phase 2: 検討 — closure/scopeguard で defer 化
@@ -565,7 +583,7 @@ fn run_listening_rpg(
         let session = ListeningSession::new(encounter.prompt.clone(), language.clone());
         let result = match encounter.kind {
             RpgEncounterKind::Regular => {
-                let mut ui = if let Some(engine) = tts.take() {
+                let mut ui = if let Some(engine) = speech.take() {
                     ListenUI::new(session, engine, language.clone())
                 } else {
                     ListenUI::new_without_tts(session, language.clone())
@@ -574,7 +592,7 @@ fn run_listening_rpg(
                 ui.set_battle_log(run.battle_log().to_vec());
                 ui.set_enemy_display(enemy.display);
                 let result = ui.run()?;
-                tts = ui.take_tts();
+                speech = ui.take_speech();
                 result
             }
             RpgEncounterKind::Miniboss | RpgEncounterKind::Boss => {
@@ -586,14 +604,14 @@ fn run_listening_rpg(
                 let mut ui = BossListenUI::new(
                     session,
                     spec,
-                    tts.take(),
+                    speech.take(),
                     language.clone(),
                     encounter.ordinal,
                 );
                 ui.set_battle_log(run.battle_log().to_vec());
                 ui.set_enemy_display(enemy.display);
                 let result = ui.run()?;
-                tts = ui.take_tts();
+                speech = ui.take_speech();
                 result
             }
         };
@@ -682,6 +700,26 @@ fn run_listening_rpg(
     Ok(())
 }
 
+fn build_speech_backend(
+    backend: SpeechBackendCli,
+    command: Option<String>,
+) -> Result<SpeechBackendHandle, Box<dyn std::error::Error>> {
+    match backend {
+        SpeechBackendCli::System => SpeechBackendHandle::system(),
+        SpeechBackendCli::LocalCommand => {
+            let command = command
+                .or_else(|| std::env::var("OFFLINE_VOICE_RUNTIME_COMMAND").ok())
+                .ok_or_else(|| {
+                    StdIoError::new(
+                        ErrorKind::InvalidInput,
+                        "--speech-backend local-command requires --speech-command or OFFLINE_VOICE_RUNTIME_COMMAND",
+                    )
+                })?;
+            SpeechBackendHandle::local_command(command)
+        }
+    }
+}
+
 // ---------------------------------------------------------------------------
 // Tests
 // ---------------------------------------------------------------------------
@@ -759,6 +797,32 @@ mod tests {
         match cli.command {
             Some(Commands::Rpg { floor, .. }) => {
                 assert_eq!(floor, Some(u32::MAX));
+            }
+            other => panic!("expected Rpg subcommand, got {other:?}"),
+        }
+    }
+
+    #[test]
+    fn rpg_speech_backend_local_command_parses() {
+        let args = [
+            "type-globe",
+            "rpg",
+            "--lang",
+            "en",
+            "--speech-backend",
+            "local-command",
+            "--speech-command",
+            "ovr-qwen-daemon",
+        ];
+        let cli = Cli::parse_from(args);
+        match cli.command {
+            Some(Commands::Rpg {
+                speech_backend,
+                speech_command,
+                ..
+            }) => {
+                assert_eq!(speech_backend, SpeechBackendCli::LocalCommand);
+                assert_eq!(speech_command.as_deref(), Some("ovr-qwen-daemon"));
             }
             other => panic!("expected Rpg subcommand, got {other:?}"),
         }

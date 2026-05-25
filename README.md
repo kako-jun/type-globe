@@ -48,6 +48,7 @@ type-globe ranking          # View local Records
 
 type-globe quiz --lang ja   # Jump straight to Japanese Quiz
 type-globe rpg  --lang en --no-tts  # Listening RPG without TTS (silent mode)
+type-globe rpg  --lang en --speech-backend local-command --speech-command 'ovr-qwen-daemon'
 ```
 
 ### Demo mode (auto-play, for screencasts and unattended displays)
@@ -110,13 +111,13 @@ Both **CPM** (characters per minute) and **WPM** (words per minute) are displaye
 
 ## Audio
 
-Listening prompts are synthesized at runtime via the [`tts`](https://crates.io/crates/tts) crate, which wraps the OS-native TTS engine (speech-dispatcher on Linux, AVSpeechSynthesizer on macOS, SAPI on Windows). No audio files ship with the binary. Replay is **unlimited and unpenalized** — the only cost is the time it consumes.
+Listening prompts are synthesized at runtime through a pluggable speech backend. The default `system` backend uses the [`tts`](https://crates.io/crates/tts) crate, which wraps the OS-native TTS engine (speech-dispatcher on Linux, AVSpeechSynthesizer on macOS, SAPI on Windows). `local-command` can hand the same request shape to an offline voice daemon such as the future `offline-voice-runtime`. No audio files ship with the binary. Replay is **unlimited and unpenalized** — the only cost is the time it consumes.
 
-The baseline direction is **real-time synthesis**, not pre-generated voice clips. This keeps the game compatible with growing prompt banks and future layered boss hints.
+The baseline direction is **real-time synthesis**, not pre-generated voice clips. This keeps the game compatible with growing prompt banks and future layered boss hints, and establishes the shared local speech foundation intended for later `esuna` / `osaka-kenpo` reuse.
 
 The audio pipeline already distinguishes normal prompt reads and replay, and it is prepared for future boss-hint reads on the same API surface. When the backend supports speech-rate control, replay and future early boss hints can be spoken more slowly; when it does not, type-globe degrades to normal-speed speech instead of failing. See [docs/audio.md](./docs/audio.md).
 
-On Linux, the `speech-dispatcher` daemon must be installed and running. If it is not, type-globe shows a clear "Listening mode is unavailable on this system" message and returns to the menu rather than crashing the binary; Quiz / Records / Time Attack 25 still work without TTS.
+On Linux, the `system` backend requires the `speech-dispatcher` daemon to be installed and running. If it is not, type-globe shows a clear "Listening mode is unavailable on this system" message and returns to the menu rather than crashing the binary; Quiz / Records / Time Attack 25 still work without TTS.
 
 ## Key Bindings
 
