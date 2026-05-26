@@ -164,7 +164,7 @@ type-globe は**タイピング練習として IME-wapuro 流儀を「正」**�
 
 新しい問題を作るときは、既存データから雰囲気で推測せず、必ずこの順で決める。
 
-1. `ja` がかな・カタカナ・ASCIIだけなら `cargo run --bin backfill-ja-typing -- <file>` に任せる。手で variant を足さない。
+1. `ja` がかな・カタカナ・ASCIIだけなら `cargo run --bin review-ja-typings -- apply <file>` に任せる（backfill を兼ね、canonical 化に加えて kana/ASCII question を `ja_reviewed=true` に自動確定する、#135）。手で variant を足さない。
 2. 漢字入りなら、まず標準的な読みを1つ決め、その IME-wapuro 表記を1つだけ登録する。
 3. `ja_typings` を2つ以上にしてよいのは、かな読み自体が複数ある場合だけ。
    - OK: `日本` = `nihon` / `nippon`
@@ -174,7 +174,12 @@ type-globe は**タイピング練習として IME-wapuro 流儀を「正」**�
 
 ## ja_typings 全件チェック手順（新規問題追加時・定期保守時）
 
-**前提**: `scripts/check_ja_typings.py` は pykakasi で粗く比較するだけの**事前フィルタ**。最終判定はフリーザ様が per-entry で全件行う。スクリプトを信用しすぎて一括処理しないこと。
+**まず読み方の軸を分ける（#135 / #134）**:
+
+- **kana / ASCII choice**: 読みが一意なので**機械的に確定できる**。`cargo run --bin review-ja-typings -- apply data/questions_ja.json` が canonical 化＋全 kana/ASCII question の `ja_reviewed=true` を自動でやる。CI の `verify` が非 canonical を弾くので再発しない。**この層に下記の手作業 per-entry レビューは不要**。
+- **漢字 choice**: 読みが曖昧（複合語・固有名詞・数詞）。`ja_reviewed=false` のまま残り、下記の手順 or LLM-judge（#134）で確定する。
+
+**前提（漢字層のみ）**: `scripts/check_ja_typings.py` は pykakasi で粗く比較するだけの**事前フィルタ**で、複合語・固有名詞で**約95%が false positive**（陽子→youko、インド洋→indohiroshi 等、#134 参照）。最終判定は per-entry で行う。スクリプトを信用して一括処理しないこと。kakasi 比較の置き換えとして LLM-judge を #134 で導入予定。
 
 ### 手順
 
@@ -221,6 +226,8 @@ type-globe は**タイピング練習として IME-wapuro 流儀を「正」**�
 
    per-entry 判定が完了した問題は `Question.ja_reviewed` を `true` にする。
    - 新規問題は default `false`
+   - kana/ASCII のみの question は `review-ja-typings apply` が自動で `true` にする（手作業不要）
+   - 漢字 choice を含む question だけが手作業 or LLM-judge（#134）対象
    - `cargo run --bin lint-questions data/questions_ja.json` が unreviewed 件数を表示する
 
 6. **コミット**
