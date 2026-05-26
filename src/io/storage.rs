@@ -78,6 +78,7 @@ fn atomic_write(file_path: &str, content: &[u8]) -> Result<(), Box<dyn std::erro
         file.sync_all()?;
         drop(file);
         fs::rename(&tmp_path, path)?;
+        sync_parent_directory(path)?;
         Ok(())
     })();
 
@@ -85,6 +86,21 @@ fn atomic_write(file_path: &str, content: &[u8]) -> Result<(), Box<dyn std::erro
         let _ = fs::remove_file(&tmp_path);
     }
     write_result
+}
+
+#[cfg(unix)]
+fn sync_parent_directory(path: &Path) -> Result<(), Box<dyn std::error::Error>> {
+    let parent = path
+        .parent()
+        .filter(|parent| !parent.as_os_str().is_empty())
+        .unwrap_or_else(|| Path::new("."));
+    fs::File::open(parent)?.sync_all()?;
+    Ok(())
+}
+
+#[cfg(not(unix))]
+fn sync_parent_directory(_path: &Path) -> Result<(), Box<dyn std::error::Error>> {
+    Ok(())
 }
 
 #[cfg(test)]

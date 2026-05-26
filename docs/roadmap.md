@@ -90,9 +90,10 @@ v0.1.x の「画面に出た文字列を打つタイピングモード」を **�
 
 > 用語: ローカル自己ベストは Records、世界順位は Ranking（v0.3.0+ Nostralgic Ranking 連携で実現）。混同禁止。
 
-- [x] `records_<lang>.json` データ構造（#26 PR #63 で確定）
+- [x] `records_<lang>.yaml` データ構造（#26 PR #63 で確定、YAML 永続化へ移行済み）
 - [x] スコア永続化（モード別・言語別 Top10、ローカル自己ベスト、#26 PR #63）
 - [x] Records 表示画面 + 最新エントリハイライト（#40）
+- [x] Records 書き込みの atomic replace 化（同一ディレクトリ temp + rename、#123）
 
 ### Epic [TA25] Time Attack 25
 
