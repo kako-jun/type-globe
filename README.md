@@ -197,7 +197,13 @@ uv run python3 scripts/restore_ja_question_texts_with_ollama.py data/questions_j
 # 4. list any stragglers for manual review
 uv run python3 scripts/list_suspect_question_texts.py data/questions_ja.json
 
-# 5. final lint
+# 5. auto-review kana/ASCII typings: canonicalise + confirm ja_reviewed
+#    (verify is the CI gate; apply also flips ja_reviewed on all-kana/ASCII
+#    questions. Kanji-bearing questions are left for the LLM-judge pass.)
+cargo run --bin review-ja-typings -- verify data/questions_ja.json
+cargo run --bin review-ja-typings -- apply data/questions_ja.json
+
+# 6. final lint
 cargo run --bin lint-questions -- data/questions_ja.json data/questions_en.json
 ```
 
