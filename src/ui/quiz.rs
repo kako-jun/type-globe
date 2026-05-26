@@ -975,9 +975,18 @@ impl QuizUI {
                 HelpEntry::new("Esc", "Skip"),
                 HelpEntry::new("Enter", "Register"),
             ]),
-            Phase::NamingForRecord if self.saved => {
-                HelpLine::new(vec![HelpEntry::new("Enter", "Menu")])
-            }
+            Phase::NamingForRecord if self.saved => HelpLine::new(vec![
+                // #124: mirror TA25's saved-phase footer for visual parity.
+                // Enter dismisses to the menu; Ctrl+C is a global quit in
+                // every phase (handled at the top of `handle_key`), but only
+                // TA25 used to surface it. Esc also quits globally here, but
+                // we omit it from the footer so both modes' saved footers are
+                // byte-for-byte identical (in TA25 Esc is genuinely inert in
+                // this phase; in Quiz it quits, so the omission is purely for
+                // a consistent UI rather than because the key is dead).
+                HelpEntry::new("Enter", "Menu"),
+                HelpEntry::new("Ctrl+C", "Quit"),
+            ]),
             Phase::NamingForRecord => HelpLine::new(vec![
                 HelpEntry::new("Esc", "Skip"),
                 HelpEntry::new("Enter", "Save"),
@@ -1174,6 +1183,45 @@ mod tests {
         let quit = ui.handle_key(ctrl_c);
         assert!(quit, "Ctrl+C must request quit");
         assert!(ui.user_aborted, "Ctrl+C must record user abort");
+    }
+
+    /// Render `render_help_line` to an 80×1 TestBackend and dump the row as
+    /// a `String`. Mirrors the helper in `time_attack.rs` so the two modes'
+    /// help footers can be asserted with the same pattern.
+    fn render_help_to_string(ui: &QuizUI) -> String {
+        let backend = ratatui::backend::TestBackend::new(80, 1);
+        let mut terminal = Terminal::new(backend).unwrap();
+        terminal
+            .draw(|f| ui.render_help_line(f, Rect::new(0, 0, 80, 1)))
+            .unwrap();
+        let buf = terminal.backend().buffer();
+        let mut out = String::new();
+        for x in 0..buf.area.width {
+            out.push_str(buf[(x, 0)].symbol());
+        }
+        out
+    }
+
+    #[test]
+    fn help_line_saved_phase_matches_ta25() {
+        // #124: after a record is saved, the Quiz help line must advertise
+        // the same keys as TA25 — `[Enter] Menu` and `[Ctrl+C] Quit`. Esc is
+        // inert once saved, so it must NOT be advertised.
+        let mut ui = make_quiz_ui_with_choice(
+            "東京",
+            "Tokyo",
+            vec!["toukyou".to_string()],
+            Language::Japanese,
+        );
+        ui.phase = Phase::NamingForRecord;
+        ui.saved = true;
+        let out = render_help_to_string(&ui);
+        assert!(out.contains("[Enter]"), "saved missing Enter: {out}");
+        assert!(out.contains("[Ctrl+C]"), "saved missing Ctrl+C hint: {out}");
+        assert!(
+            !out.contains("[Esc]"),
+            "saved must not advertise Esc: {out}"
+        );
     }
 
     #[test]
