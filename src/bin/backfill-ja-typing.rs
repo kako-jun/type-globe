@@ -47,7 +47,9 @@ fn main() -> ExitCode {
             // ASCII / かな のみのラベルは IME-strict の標準形を機械生成できる。
             // 同じかな読みのローマ字 variant は runtime canonical に任せるため、
             // 既存 variant と merge せず標準形で置換する。
-            let Some(generated) = derive_ja_typings(ja) else {
+            // 生成ルールは romaji::derive_ja_typings に一元化（review-ja-typings
+            // が同じ関数で検証するので、生成と検証が乖離しない）。
+            let Some(generated) = romaji::derive_ja_typings(ja) else {
                 continue;
             };
             obj.insert(
@@ -71,14 +73,4 @@ fn main() -> ExitCode {
     }
 
     ExitCode::SUCCESS
-}
-
-fn derive_ja_typings(ja: &str) -> Option<Vec<String>> {
-    match ja {
-        "酸素" => Some(vec!["sanso".to_string()]),
-        "鉄" => Some(vec!["tetsu".to_string()]),
-        _ if ja.is_ascii() => Some(vec![ja.to_ascii_lowercase()]),
-        _ if romaji::contains_han(ja) => None,
-        _ => Some(romaji::hiragana_to_hepburn_variants(ja)),
-    }
 }

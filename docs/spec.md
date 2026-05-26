@@ -265,6 +265,14 @@ Recommended migration order for existing JA quiz banks:
 
 Validation: no two choices in a question may share a prefix that would make an auto-confirm ambiguous. Enforced by `cargo run --bin lint-questions -- <files>` (CI job `lint-data`) and by the unit tests `shipped_question_data_is_clean_{ja,en}` in `src/io/validator.rs`. The same lint binary also flags `ja_typings redundant-variant` — multiple typings in the same choice that collapse to the same canonical form (e.g. `ninnshou` / `ninshou`, where redundant `nn` before a consonant collapses to `n`). Such duplicates are noise after v0.7.0's canonical_romaji expansion; only register one form per canonical group. Genuine reading variants (`日本` = `nihon` / `nippon`) are preserved because their canonical forms differ (the geminate `pp` distinguishes them).
 
+#### `ja_reviewed` review policy (#135)
+
+`ja_reviewed` marks a question whose Japanese typing data has been verified. Because reviewing thousands of questions by hand is infeasible, verification is automated by reading dimension:
+
+- **kana / ASCII choices** have an unambiguous reading: the canonical IME-strict typing is a function of the label (`romaji::derive_ja_typings`). `cargo run --bin review-ja-typings -- verify <file>` (CI job `lint-data`) fails if any such stored typing is not canonical; `apply` rewrites them to canonical and sets `ja_reviewed = true` on every question whose choices are *all* kana/ASCII. `backfill-ja-typing` shares the same `derive_ja_typings`, so the generator and the verifier cannot drift apart.
+- **A choice whose canonical typing would itself fail the IME-strict form lint** (e.g. a `:` in the label becomes a space, violating the S1 rule) is reported as *needs attention* and left untouched — the auto-reviewer never writes a typing the linter would reject.
+- **kanji-bearing choices** have ambiguous readings (compounds, proper nouns, number readings) that a reading engine like kakasi gets wrong far too often. They keep `ja_reviewed = false` and are verified by an LLM-judge pass (#134), not by `review-ja-typings`.
+
 ### Listening prompt (`data/listening_<lang>.yaml`)
 
 ```yaml

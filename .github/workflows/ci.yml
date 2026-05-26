@@ -75,6 +75,8 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y libspeechd-dev libasound2-dev
       - name: Run question-data linter
         run: cargo run --bin lint-questions -- data/questions_ja.json data/questions_en.json
+      - name: Verify kana/ASCII ja_typings are canonical (#135)
+        run: cargo run --bin review-ja-typings -- verify data/questions_ja.json
       - name: Set up Python (for IME-strict ja_typings lint)
         uses: actions/setup-python@v5
         with:

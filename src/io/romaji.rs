@@ -35,6 +35,31 @@ pub fn hiragana_to_hepburn_variants(input: &str) -> Vec<String> {
     vec![raw]
 }
 
+/// Derive the canonical IME-strict `ja_typings` for a choice label, or
+/// `None` when the reading can't be generated mechanically.
+///
+/// - ASCII labels → the lowercased label (e.g. `"H2O"` → `["h2o"]`).
+/// - A small hand-curated table for kanji whose single reading is fixed
+///   and common (`酸素`, `鉄`).
+/// - Any other kanji-bearing label → `None`: its reading is ambiguous
+///   (compounds, proper nouns, number readings) and must be reviewed by a
+///   human or an LLM, not guessed by a reading engine.
+/// - Otherwise (pure kana / kana+ASCII) → the canonical Hepburn variants.
+///
+/// Shared by `backfill-ja-typing` (which *writes* these) and
+/// `review-ja-typings` (which *verifies* stored typings against them) so the
+/// generator and the verifier can never drift apart.
+#[allow(dead_code)]
+pub fn derive_ja_typings(ja: &str) -> Option<Vec<String>> {
+    match ja {
+        "酸素" => Some(vec!["sanso".to_string()]),
+        "鉄" => Some(vec!["tetsu".to_string()]),
+        _ if ja.is_ascii() => Some(vec![ja.to_ascii_lowercase()]),
+        _ if contains_han(ja) => None,
+        _ => Some(hiragana_to_hepburn_variants(ja)),
+    }
+}
+
 fn hiragana_to_hepburn_raw(input: &str) -> String {
     let chars: Vec<char> = input.chars().map(normalize_kana).collect();
     let mut out = String::new();
