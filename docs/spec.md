@@ -371,6 +371,8 @@ rpg:
 
 Top 10 per mode per language. This is a local self-best file — never call it a "ranking". World ranking (Nostralgic Ranking) is wired in the v0.3.0+ `type-globe-online` build and submits the same entries to a Nostr-relay-backed feed.
 
+Record saves use an atomic replacement policy in `Storage::save_records`: serialize the full YAML document, write it to a same-directory hidden temp file, `sync_all` the temp file, then `rename` it over `records_<lang>.yaml`. On Unix, the parent directory is also synced after the rename so the replacement directory entry is flushed when the platform allows it. If any step before the rename fails, the existing records file remains untouched and the temp file is cleaned up best-effort.
+
 The Records menu entry opens a read-only browser (`src/ui/records.rs`) that shows three sections — Quiz, Time Attack 25, Listening RPG — with the most recent ts in each section highlighted so the player can spot a just-saved entry without scrolling. Esc / Enter / `q` returns to the menu.
 
 ## Source Architecture (target)
