@@ -1,5 +1,6 @@
 use crate::types::{Player, Records};
 use std::fs;
+use std::io::Write;
 use std::path::Path;
 
 pub struct Storage;
@@ -50,9 +51,40 @@ impl Storage {
         records: &Records,
     ) -> Result<(), Box<dyn std::error::Error>> {
         let content = serde_yaml::to_string(records)?;
-        fs::write(file_path, content)?;
+        atomic_write(file_path, content.as_bytes())?;
         Ok(())
     }
+}
+
+fn atomic_write(file_path: &str, content: &[u8]) -> Result<(), Box<dyn std::error::Error>> {
+    let path = Path::new(file_path);
+    let file_name = path
+        .file_name()
+        .and_then(|name| name.to_str())
+        .ok_or_else(|| format!("invalid records file path: {file_path}"))?;
+    let tmp_name = format!(
+        ".{file_name}.tmp.{}.{}",
+        std::process::id(),
+        std::time::SystemTime::now()
+            .duration_since(std::time::UNIX_EPOCH)
+            .map(|duration| duration.as_nanos())
+            .unwrap_or(0)
+    );
+    let tmp_path = path.with_file_name(tmp_name);
+
+    let write_result = (|| -> Result<(), Box<dyn std::error::Error>> {
+        let mut file = fs::File::create(&tmp_path)?;
+        file.write_all(content)?;
+        file.sync_all()?;
+        drop(file);
+        fs::rename(&tmp_path, path)?;
+        Ok(())
+    })();
+
+    if write_result.is_err() {
+        let _ = fs::remove_file(&tmp_path);
+    }
+    write_result
 }
 
 #[cfg(test)]
@@ -99,6 +131,40 @@ mod tests {
         assert_eq!(loaded.quiz_mode[0].cpm, 230);
         assert_eq!(loaded.quiz_mode[0].wpm, 46);
         assert_eq!(loaded.quiz_mode[0].ts, "2025-05-11T00:00:00Z");
+
+        let _ = std::fs::remove_file(&path);
+    }
+
+    #[test]
+    fn save_records_replaces_existing_file_with_complete_yaml() {
+        let path = unique_path("atomic-replace");
+        let mut old_records = Records::default();
+        old_records.quiz_mode.push(ScoreEntry {
+            name: "Old".into(),
+            score: 10,
+            cpm: 100,
+            wpm: 20,
+            ts: "2025-05-10T00:00:00Z".into(),
+        });
+        Storage::save_records(&path, &old_records).expect("seed old records");
+
+        let mut new_records = Records::default();
+        new_records.quiz_mode.push(ScoreEntry {
+            name: "New".into(),
+            score: 999,
+            cpm: 320,
+            wpm: 64,
+            ts: "2025-05-11T00:00:00Z".into(),
+        });
+        Storage::save_records(&path, &new_records).expect("replace records");
+
+        let content = std::fs::read_to_string(&path).expect("read replaced file");
+        assert_eq!(content, serde_yaml::to_string(&new_records).unwrap());
+
+        let loaded = Storage::load_records(&path).expect("load replaced records");
+        assert_eq!(loaded.quiz_mode.len(), 1);
+        assert_eq!(loaded.quiz_mode[0].name, "New");
+        assert_eq!(loaded.quiz_mode[0].score, 999);
 
         let _ = std::fs::remove_file(&path);
     }
