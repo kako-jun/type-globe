@@ -232,7 +232,10 @@ fn main() -> ExitCode {
     println!("all-derivable (kana/ASCII): {}", report.all_derivable);
     println!("has-kanji (left for #134) : {}", report.has_kanji);
     println!("non-canonical typings     : {}", report.mismatches.len());
-    println!("needs attention (unsafe)  : {}", report.needs_attention.len());
+    println!(
+        "needs attention (unsafe)  : {}",
+        report.needs_attention.len()
+    );
     for m in report.needs_attention.iter() {
         println!("  ! {m}");
     }
