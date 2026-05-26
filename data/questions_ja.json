@@ -30503,7 +30503,8 @@
     "question_text": {
       "en": "Which OSI model layer is responsible for end-to-end communication and reliability?",
       "ja": "OSI 参照モデルでエンドツーエンドの通信と信頼性を担う層は?"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -30707,7 +30708,8 @@
     "question_text": {
       "en": "Which programming paradigm treats computation as evaluation of mathematical functions?",
       "ja": "計算を数学的関数の評価として扱うプログラミングパラダイムは?"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -68598,7 +68600,7 @@
         "en": "Financial Operations",
         "ja": "クラウド財務運用",
         "ja_typings": [
-          "kuraudozaimuunyou"
+          "kuraudozaimuunnyou"
         ]
       },
       {
@@ -68630,7 +68632,8 @@
     "question_text": {
       "en": "What does FinOps stand for?",
       "ja": "FinOpsの意味は?"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -68711,7 +68714,8 @@
     "question_text": {
       "en": "What does SLO stand for?",
       "ja": "SLOの意味は?"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -68751,7 +68755,8 @@
     "question_text": {
       "en": "Which testing technique tries unexpected inputs?",
       "ja": "予期しない入力を試すテスト技法は?"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -68832,7 +68837,8 @@
     "question_text": {
       "en": "What does MTTR mean in SRE?",
       "ja": "SREの『MTTR』は?"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -68954,7 +68960,8 @@
     "question_text": {
       "en": "What does TDD stand for?",
       "ja": "TDDの意味は?"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -69117,7 +69124,8 @@
     "question_text": {
       "en": "What does the term 'shift left' mean?",
       "ja": "『シフトレフト』の意味は?"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -69132,7 +69140,7 @@
         "en": "Operations Key Reports",
         "ja": "運用報告",
         "ja_typings": [
-          "unyouhoukoku"
+          "unnyouhoukoku"
         ]
       },
       {
@@ -69157,7 +69165,8 @@
     "question_text": {
       "en": "Which framework defines OKRs?",
       "ja": "OKRsを定める枠組みは?"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -69238,7 +69247,8 @@
     "question_text": {
       "en": "What is a feature flag?",
       "ja": "フィーチャーフラグとは?"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -69278,7 +69288,8 @@
     "question_text": {
       "en": "Which methodology limits work in progress?",
       "ja": "進行中作業を制限する手法は?"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -69318,7 +69329,8 @@
     "question_text": {
       "en": "Which test isolates a single function?",
       "ja": "単一機能を分離して試すテストは?"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -69367,7 +69379,7 @@
         "en": "intentional failure injection",
         "ja": "意図的障害注入",
         "ja_typings": [
-          "itotekishougainyuunyuu"
+          "itotekishougaichuunyuu"
         ]
       },
       {
@@ -69399,7 +69411,8 @@
     "question_text": {
       "en": "What is 'chaos engineering' about?",
       "ja": "カオスエンジニアリングとは?"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -69439,7 +69452,8 @@
     "question_text": {
       "en": "Which deployment uses identical environment swap?",
       "ja": "同一環境を切り替える展開は?"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -69520,7 +69534,8 @@
     "question_text": {
       "en": "What is a SLA?",
       "ja": "SLAとは?"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -69560,7 +69575,8 @@
     "question_text": {
       "en": "Which testing examines security flaws?",
       "ja": "セキュリティ欠陥を調べるテストは?"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -69641,7 +69657,8 @@
     "question_text": {
       "en": "What is a 'sidecar' pattern in K8s?",
       "ja": "K8sの『サイドカー』パターンとは?"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -98005,7 +98022,8 @@
     "question_text": {
       "en": "Which non-functional requirement measures uptime of a system?",
       "ja": "システムの稼働率を示す非機能要件は?"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -98291,7 +98309,8 @@
     "question_text": {
       "en": "Which DevOps practice automatically delivers code to production?",
       "ja": "コードを自動で本番にデリバリする DevOps プラクティスは?"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -98496,7 +98515,8 @@
     "question_text": {
       "en": "Which metric measures how often predictions are correct?",
       "ja": "予測の正答率を表す指標は?"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -98537,7 +98557,8 @@
     "question_text": {
       "en": "Which security concept verifies the identity of a user?",
       "ja": "ユーザーの本人確認を行うセキュリティ概念は?"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -98579,7 +98600,8 @@
     "question_text": {
       "en": "Which data property describes data surviving after the program ends?",
       "ja": "プログラム終了後もデータが保持される性質は?"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -98621,7 +98643,8 @@
     "question_text": {
       "en": "Which non-functional requirement is about response time and throughput?",
       "ja": "応答時間やスループットを評価する非機能要件は?"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -98662,7 +98685,8 @@
     "question_text": {
       "en": "Which non-functional requirement protects personal information?",
       "ja": "個人情報の保護に関する非機能要件は?"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -98784,7 +98808,8 @@
     "question_text": {
       "en": "Which project term marks a significant scheduled checkpoint?",
       "ja": "プロジェクトの重要な節目を示す用語は?"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -99193,7 +99218,8 @@
     "question_text": {
       "en": "Which processing mode runs a job collectively at scheduled times?",
       "ja": "決まった時刻にまとめて処理する方式は?"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
