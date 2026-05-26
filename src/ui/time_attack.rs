@@ -248,7 +248,13 @@ impl TimeAttack25UI {
                 if !key
                     .modifiers
                     .intersects(KeyModifiers::CONTROL | KeyModifiers::ALT)
-                    && self.name_buffer.chars().count() < NAME_MAX_CHARS =>
+                    && self.name_buffer.chars().count() < NAME_MAX_CHARS
+                    // #122: drop a leading Space (mirror `QuizUI`). The
+                    // buffer is only `trim()`-ed at save time, so a name
+                    // starting with whitespace made typed-vs-saved char
+                    // counts diverge against NAME_MAX_CHARS. Mid/trailing
+                    // spaces stay allowed; the save-time trim absorbs them.
+                    && !(c == ' ' && self.name_buffer.is_empty()) =>
             {
                 self.name_buffer.push(c);
                 false
@@ -942,6 +948,36 @@ mod tests {
         let before = ui.name_buffer.clone();
         let _ = ui.handle_key(key(KeyCode::Char('q')));
         assert_eq!(ui.name_buffer, before, "17th char must be ignored");
+    }
+
+    // -------------------------------------------------------------------
+    // #122: a leading Space is dropped; mid / trailing spaces are kept.
+    // -------------------------------------------------------------------
+    #[test]
+    fn test_handle_key_naming_rejects_leading_space_keeps_inner() {
+        let mut ui = make_ui();
+        finish_game(&mut ui);
+        ui.phase = Phase::NamingForRecord;
+
+        // Space on an empty buffer is dropped — no leading whitespace.
+        let _ = ui.handle_key(key(KeyCode::Char(' ')));
+        assert!(
+            ui.name_buffer.is_empty(),
+            "leading Space must not enter the buffer"
+        );
+        // Repeated leading Spaces stay dropped (buffer never leaves empty).
+        let _ = ui.handle_key(key(KeyCode::Char(' ')));
+        assert!(ui.name_buffer.is_empty(), "second leading Space dropped");
+
+        // Once there is content, an inner Space is accepted...
+        for ch in "ab".chars() {
+            let _ = ui.handle_key(key(KeyCode::Char(ch)));
+        }
+        let _ = ui.handle_key(key(KeyCode::Char(' ')));
+        let _ = ui.handle_key(key(KeyCode::Char('c')));
+        // ...and a trailing Space is accepted too (trim absorbs it on save).
+        let _ = ui.handle_key(key(KeyCode::Char(' ')));
+        assert_eq!(ui.name_buffer, "ab c ", "inner/trailing spaces kept");
     }
 
     // -------------------------------------------------------------------
