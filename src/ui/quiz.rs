@@ -495,7 +495,14 @@ impl QuizUI {
                 if !key
                     .modifiers
                     .intersects(KeyModifiers::CONTROL | KeyModifiers::ALT)
-                    && self.name_buffer.chars().count() < NAME_MAX_CHARS =>
+                    && self.name_buffer.chars().count() < NAME_MAX_CHARS
+                    // #122: drop a leading Space so a name can never start
+                    // with whitespace. The buffer was only `trim()`-ed at
+                    // save time, so a leading-space name made the "typed"
+                    // and "saved" char counts diverge against NAME_MAX_CHARS.
+                    // Mid-word and trailing spaces are still accepted; the
+                    // save-time trim absorbs trailing ones.
+                    && !(c == ' ' && self.name_buffer.is_empty()) =>
             {
                 self.name_buffer.push(c);
             }
@@ -1183,6 +1190,49 @@ mod tests {
         let quit = ui.handle_key(ctrl_c);
         assert!(quit, "Ctrl+C must request quit");
         assert!(ui.user_aborted, "Ctrl+C must record user abort");
+    }
+
+    #[test]
+    fn handle_key_naming_rejects_leading_space_keeps_inner() {
+        // #122: a leading Space must not enter `name_buffer` (it was only
+        // trimmed at save time). Mid / trailing spaces are still accepted.
+        let mut ui = make_quiz_ui_with_choice(
+            "東京",
+            "Tokyo",
+            vec!["toukyou".to_string()],
+            Language::Japanese,
+        );
+        ui.phase = Phase::NamingForRecord;
+
+        let space = KeyEvent::new(KeyCode::Char(' '), KeyModifiers::NONE);
+        ui.handle_key(space);
+        assert!(
+            ui.name_buffer.is_empty(),
+            "leading Space must not enter the buffer"
+        );
+        ui.handle_key(space);
+        assert!(ui.name_buffer.is_empty(), "second leading Space dropped");
+
+        for ch in "ab".chars() {
+            ui.handle_key(KeyEvent::new(KeyCode::Char(ch), KeyModifiers::NONE));
+        }
+        ui.handle_key(space);
+        ui.handle_key(KeyEvent::new(KeyCode::Char('c'), KeyModifiers::NONE));
+        ui.handle_key(space);
+        assert_eq!(ui.name_buffer, "ab c ", "inner/trailing spaces kept");
+
+        // Backspace all the way to empty, then a Space is dropped again —
+        // the guard reads current state every keypress, not a one-shot flag.
+        let bksp = KeyEvent::new(KeyCode::Backspace, KeyModifiers::NONE);
+        for _ in 0..ui.name_buffer.chars().count() {
+            ui.handle_key(bksp);
+        }
+        assert!(ui.name_buffer.is_empty(), "buffer emptied via Backspace");
+        ui.handle_key(space);
+        assert!(
+            ui.name_buffer.is_empty(),
+            "Space after Backspace-to-empty must be dropped"
+        );
     }
 
     /// Render `render_help_line` to an 80×1 TestBackend and dump the row as
