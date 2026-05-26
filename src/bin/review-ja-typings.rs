@@ -348,7 +348,10 @@ mod tests {
         // spaced typing past the form linter.
         match check_choice("テスト（カッコ）", &["tesutokakko".to_string()]) {
             ChoiceCheck::Unsafe { canonical } => {
-                assert!(canonical.iter().any(|t| t.contains(' ')), "got {canonical:?}");
+                assert!(
+                    canonical.iter().any(|t| t.contains(' ')),
+                    "got {canonical:?}"
+                );
             }
             other => panic!("expected Unsafe, got {other:?}"),
         }
