@@ -90,19 +90,30 @@ def extract(scope: str) -> int:
     return 0
 
 
+VALID_VERDICTS = {"ok", "fix", "wrong"}
+
+
 def apply(verdicts_path: str) -> int:
     with open(verdicts_path, encoding="utf-8") as f:
         verdicts = json.load(f)
-    # (qid, idx) -> verdict dict
+    # (qid, idx) -> verdict dict, with verdict normalised to lowercase.
     table: dict[tuple[str, int], dict] = {}
+    malformed = 0
     for v in verdicts:
-        table[(v["qid"], int(v["idx"]))] = v
+        try:
+            key = (v["qid"], int(v["idx"]))
+        except (KeyError, ValueError, TypeError):
+            malformed += 1
+            continue
+        v = dict(v)
+        v["verdict"] = str(v.get("verdict", "")).strip().lower()
+        table[key] = v
 
     data = load()
     confirmed = 0
     fixed = 0
     skipped_incomplete = 0
-    skipped_wrong = 0
+    skipped_problem = 0
 
     for q in data:
         if q.get("ja_reviewed", False):
@@ -112,29 +123,40 @@ def apply(verdicts_path: str) -> int:
         if not kanji_idxs:
             continue  # handled by review-ja-typings (#135)
 
-        # Every kanji choice must have a verdict, and none may be "wrong"
-        # (a "wrong" with no usable typing means the data is bad and a human
-        # must look — never auto-confirm it).
         verdicts_here = [table.get((q["id"], i)) for i in kanji_idxs]
-        if any(v is None for v in verdicts_here):
+
+        # Every kanji choice must have an *understood* verdict. A missing
+        # verdict or an unrecognised value (typo, wrong case, hand-edit) is
+        # treated as not-yet-judged — never silently confirmed.
+        if any(v is None or v["verdict"] not in VALID_VERDICTS for v in verdicts_here):
             skipped_incomplete += 1
             continue
-        if any(v.get("verdict") == "wrong" for v in verdicts_here):
-            skipped_wrong += 1
+        # A "wrong" verdict means a human must look — never auto-confirm.
+        if any(v["verdict"] == "wrong" for v in verdicts_here):
+            skipped_problem += 1
             continue
 
-        # Apply fixes, then confirm.
+        # Stage fixes first; only commit them once we know the whole question
+        # is confirmable. This keeps a skipped question completely untouched
+        # rather than leaving a half-applied typing behind.
+        pending_fixes: list[tuple[int, list[str]]] = []
+        bad = False
         for i, v in zip(kanji_idxs, verdicts_here):
-            if v.get("verdict") == "fix":
+            if v["verdict"] == "fix":
                 typing = v.get("typing") or []
-                if not typing:
-                    skipped_wrong += 1
+                if not typing or not all(isinstance(t, str) for t in typing):
+                    bad = True
                     break
-                choices[i]["ja_typings"] = list(typing)
-                fixed += 1
-        else:
-            q["ja_reviewed"] = True
-            confirmed += 1
+                pending_fixes.append((i, list(typing)))
+        if bad:
+            skipped_problem += 1
+            continue
+
+        for i, typing in pending_fixes:
+            choices[i]["ja_typings"] = typing
+            fixed += 1
+        q["ja_reviewed"] = True
+        confirmed += 1
 
     QUESTIONS_PATH.write_text(
         json.dumps(data, ensure_ascii=False, indent=2) + "\n",
@@ -142,8 +164,10 @@ def apply(verdicts_path: str) -> int:
     )
     print(f"questions confirmed (ja_reviewed=true): {confirmed}")
     print(f"typings fixed                         : {fixed}")
-    print(f"skipped (verdict missing for a choice): {skipped_incomplete}")
-    print(f"skipped (a choice judged wrong)       : {skipped_wrong}")
+    print(f"skipped (verdict missing/unknown)     : {skipped_incomplete}")
+    print(f"skipped (wrong / unusable fix)        : {skipped_problem}")
+    if malformed:
+        print(f"malformed verdict entries ignored     : {malformed}")
     return 0
 
 
