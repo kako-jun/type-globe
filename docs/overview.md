@@ -62,7 +62,7 @@ Ordinary prompts and replay already use the same runtime pipeline, and future bo
 | TUI | `ratatui` + `crossterm` |
 | Audio | `tts` crate (cross-platform OS TTS) |
 | Animation | [`jiwa`](https://crates.io/crates/jiwa) crate (typewriter + RGB fade), extracted from this repo's former `jiwa_core` module |
-| Storage | local JSON |
+| Storage | local YAML (`player.yaml`, `records_<lang>.yaml`) |
 
 ## Quiz Content
 
