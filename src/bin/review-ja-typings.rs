@@ -48,6 +48,16 @@ enum ChoiceCheck {
 /// separators (`:`, `(`, `)`, …) into spaces, which would otherwise produce
 /// a typing the form linter rejects — so the auto-reviewer must never emit
 /// or confirm one.
+///
+/// Only the S1 (whitespace) rule is checked here, deliberately: the other
+/// form-lint categories are unreachable from `derive_ja_typings` output.
+/// That output only ever contains `[a-z0-9./,-]` plus spaces — the engine
+/// maps `・`→`/`, `、`→`,`, `。`→`.`, treats `（）「」` etc. as separators
+/// (→ space, caught here), drops `+^`, and emits a digit only when the label
+/// already has one (which makes the whole label ASCII, where the linter's
+/// A1 rule does not apply). So S2 (`・　、。「」`) and A1 (`+()[]^`/digits on a
+/// non-ASCII label) cannot fire. If the romaji map ever grows a new symbol,
+/// revisit this guard.
 fn canonical_is_lint_safe(ja: &str, canonical: &[String]) -> bool {
     let ja_has_ws = ja.chars().any(|c| c.is_whitespace() || c == '　');
     if ja_has_ws {
@@ -251,8 +261,15 @@ fn main() -> ExitCode {
         }
     }
 
-    // `verify` fails the build when any derivable choice is non-canonical;
-    // `apply` always succeeds (it just fixed them).
+    // `verify` fails the build only on *mismatches* (a kana/ASCII typing
+    // that is not canonical — a real, fixable regression). `apply` always
+    // succeeds (it just fixed them).
+    //
+    // `needs_attention` (Unsafe) deliberately does NOT fail the build: those
+    // are labels the tool legitimately cannot auto-handle (canonical would
+    // need a space the linter forbids), not regressions. Failing CI would
+    // block an otherwise-valid question from being added. They are printed
+    // for a human / the #134 LLM-judge pass to resolve instead.
     if !apply && !report.mismatches.is_empty() {
         ExitCode::from(1)
     } else {
@@ -322,6 +339,42 @@ mod tests {
             }
             other => panic!("expected Unsafe, got {other:?}"),
         }
+    }
+
+    #[test]
+    fn fullwidth_paren_label_is_unsafe() {
+        // Not just `:` — any separator the engine maps to a space (（）「」 etc.)
+        // must be flagged Unsafe so the separator→space mapping can't sneak a
+        // spaced typing past the form linter.
+        match check_choice("テスト（カッコ）", &["tesutokakko".to_string()]) {
+            ChoiceCheck::Unsafe { canonical } => {
+                assert!(canonical.iter().any(|t| t.contains(' ')), "got {canonical:?}");
+            }
+            other => panic!("expected Unsafe, got {other:?}"),
+        }
+    }
+
+    #[test]
+    fn mixed_question_canonicalises_kana_choice_but_stays_unconfirmed() {
+        // A question with one kanji choice stays ja_reviewed=false, but its
+        // derivable kana choices are still canonicalised (verify checks every
+        // derivable choice regardless of question-level confirmation).
+        let mut q = json!({
+            "id": "qmixed",
+            "choices": [
+                {"ja": "陽子", "ja_typings": ["youshi"]},
+                {"ja": "ソウル", "ja_typings": ["souru", "soru"]}
+            ],
+            "ja_reviewed": false
+        });
+        let mut report = Report::default();
+        process_question(&mut q, true, &mut report);
+
+        assert_eq!(report.all_derivable, 0, "kanji blocks confirmation");
+        assert_eq!(report.fixed_choices, 1, "kana choice still canonicalised");
+        assert_eq!(report.confirmed_now, 0);
+        assert_eq!(q["ja_reviewed"], json!(false));
+        assert_eq!(q["choices"][1]["ja_typings"], json!(["souru"]));
     }
 
     #[test]
