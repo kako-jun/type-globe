@@ -976,11 +976,14 @@ impl QuizUI {
                 HelpEntry::new("Enter", "Register"),
             ]),
             Phase::NamingForRecord if self.saved => HelpLine::new(vec![
-                // #124: mirror TA25's saved-phase help. After save, Esc is
-                // intentionally inert (see `handle_key` / `saved` branch), so
-                // we advertise the keys that actually dismiss the screen.
-                // Ctrl+C is a global quit in every phase, but only TA25 used
-                // to surface it — back-port it here so both modes match.
+                // #124: mirror TA25's saved-phase footer for visual parity.
+                // Enter dismisses to the menu; Ctrl+C is a global quit in
+                // every phase (handled at the top of `handle_key`), but only
+                // TA25 used to surface it. Esc also quits globally here, but
+                // we omit it from the footer so both modes' saved footers are
+                // byte-for-byte identical (in TA25 Esc is genuinely inert in
+                // this phase; in Quiz it quits, so the omission is purely for
+                // a consistent UI rather than because the key is dead).
                 HelpEntry::new("Enter", "Menu"),
                 HelpEntry::new("Ctrl+C", "Quit"),
             ]),
