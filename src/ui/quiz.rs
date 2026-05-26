@@ -1215,7 +1215,10 @@ mod tests {
         let out = render_help_to_string(&ui);
         assert!(out.contains("[Enter]"), "saved missing Enter: {out}");
         assert!(out.contains("[Ctrl+C]"), "saved missing Ctrl+C hint: {out}");
-        assert!(!out.contains("[Esc]"), "saved must not advertise Esc: {out}");
+        assert!(
+            !out.contains("[Esc]"),
+            "saved must not advertise Esc: {out}"
+        );
     }
 
     #[test]
