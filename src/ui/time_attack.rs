@@ -978,6 +978,19 @@ mod tests {
         // ...and a trailing Space is accepted too (trim absorbs it on save).
         let _ = ui.handle_key(key(KeyCode::Char(' ')));
         assert_eq!(ui.name_buffer, "ab c ", "inner/trailing spaces kept");
+
+        // Backspace all the way to empty, then a Space is dropped again —
+        // the guard reads current state every keypress, it is not a
+        // one-shot "first character" flag.
+        for _ in 0..ui.name_buffer.chars().count() {
+            let _ = ui.handle_key(key(KeyCode::Backspace));
+        }
+        assert!(ui.name_buffer.is_empty(), "buffer emptied via Backspace");
+        let _ = ui.handle_key(key(KeyCode::Char(' ')));
+        assert!(
+            ui.name_buffer.is_empty(),
+            "Space after Backspace-to-empty must be dropped"
+        );
     }
 
     // -------------------------------------------------------------------

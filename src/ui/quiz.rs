@@ -1220,6 +1220,19 @@ mod tests {
         ui.handle_key(KeyEvent::new(KeyCode::Char('c'), KeyModifiers::NONE));
         ui.handle_key(space);
         assert_eq!(ui.name_buffer, "ab c ", "inner/trailing spaces kept");
+
+        // Backspace all the way to empty, then a Space is dropped again —
+        // the guard reads current state every keypress, not a one-shot flag.
+        let bksp = KeyEvent::new(KeyCode::Backspace, KeyModifiers::NONE);
+        for _ in 0..ui.name_buffer.chars().count() {
+            ui.handle_key(bksp);
+        }
+        assert!(ui.name_buffer.is_empty(), "buffer emptied via Backspace");
+        ui.handle_key(space);
+        assert!(
+            ui.name_buffer.is_empty(),
+            "Space after Backspace-to-empty must be dropped"
+        );
     }
 
     /// Render `render_help_line` to an 80×1 TestBackend and dump the row as
