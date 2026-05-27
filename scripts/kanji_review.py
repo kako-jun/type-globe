@@ -172,6 +172,19 @@ def apply(verdicts_path: str) -> int:
     return 0
 
 
+def _strip_spurious_slashes(t: str) -> str:
+    """Drop bare `/` separators, mirroring `canonical_romaji`'s handling so
+    the result types the same kana. A lone `n` before `/`+(vowel/n/y) doubles
+    to `nn` (`kan/no` -> `kanno`-with-the-extra-n); an already-doubled `nn/`
+    is protected first so it never becomes `nnn` (matches the matcher's
+    sentinel trick in normalize.rs)."""
+    sentinel = "\x01"
+    t = t.replace("nn/", sentinel)
+    t = re.sub(r"n/([aiueoyn])", r"nn\1", t)
+    t = t.replace(sentinel, "nn")
+    return t.replace("/", "")
+
+
 def fix_spurious_slashes() -> int:
     """Remove `/` used as a bare word separator (lint rule P1).
 
@@ -190,16 +203,23 @@ def fix_spurious_slashes() -> int:
         for c in q.get("choices", []):
             ja = c.get("ja", "")
             allowed = ja.count("・") + ja.count("/")
+            typings = c.get("ja_typings") or []
             new_typings = []
-            for t in c.get("ja_typings") or []:
-                if t.count("/") > allowed:
-                    t2 = re.sub(r"n/([aiueoyn])", r"nn\1", t).replace("/", "")
+            for t in typings:
+                # Only auto-fix when the label justifies *no* slash at all
+                # (allowed == 0): then every `/` is spurious and safe to drop.
+                # If the label has a ・/literal `/` but the typing has *more*
+                # slashes than that, which to keep is ambiguous — leave it for
+                # a human (P1 lint still flags it) rather than risk stripping a
+                # legitimate ・ keystroke.
+                if allowed == 0 and "/" in t:
+                    t2 = _strip_spurious_slashes(t)
                     if t2 != t:
                         fixed += 1
                     new_typings.append(t2)
                 else:
                     new_typings.append(t)
-            if new_typings != (c.get("ja_typings") or []):
+            if new_typings != typings:
                 c["ja_typings"] = new_typings
     QUESTIONS_PATH.write_text(
         json.dumps(data, ensure_ascii=False, indent=2) + "\n",
@@ -244,8 +264,8 @@ def sync_en() -> int:
             qe["ja_reviewed"] = qa.get("ja_reviewed", False)
             changed += 1
         for ca, ce in zip(qa["choices"], qe["choices"]):
-            if ce.get("ja_typings") != ca.get("ja_typings"):
-                ce["ja_typings"] = ca.get("ja_typings")
+            if ce.get("ja_typings") != (ca.get("ja_typings") or []):
+                ce["ja_typings"] = ca.get("ja_typings") or []
                 changed += 1
     EN_PATH.write_text(
         json.dumps(en, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
