@@ -81,5 +81,7 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.x"
-      - name: Run IME-strict ja_typings lint (long vowel / ティ / ディ / kunrei / English literal)
+      - name: Run IME-strict ja_typings lint (long vowel / ティ / ディ / kunrei / English literal / spurious /)
         run: python3 scripts/lint_ja_typings.py
+      - name: Verify ja/en choice data stays in sync (#134)
+        run: python3 scripts/kanji_review.py verify-sync
