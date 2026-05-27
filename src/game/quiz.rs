@@ -1,6 +1,6 @@
 use crate::io::normalize::{canonical_romaji, punctuation_skip_variant};
 use crate::io::DataLoader;
-use crate::types::{Language, Question};
+use crate::types::{Choice, Language, Question};
 use rand::seq::SliceRandom;
 use std::time::{Duration, Instant};
 
@@ -118,14 +118,20 @@ impl QuizGame {
         let Some(choice) = question.choices.get(question.correct_answer_index) else {
             return Vec::new();
         };
+        self.choice_typing_candidates(choice)
+    }
+
+    /// All accepted typing candidates for a single choice: the registered
+    /// `ja_typings` (lowercased) plus a punctuation-skipped variant of each
+    /// (so a displayed separator may be omitted). Shared by the completion
+    /// check and the answer recorder so the two never diverge — a string the
+    /// UI accepts as "complete" must record as the same choice.
+    fn choice_typing_candidates(&self, choice: &Choice) -> Vec<String> {
         let mut candidates: Vec<String> =
             DataLoader::get_choice_typing_texts(choice, &self.language)
                 .into_iter()
                 .map(|candidate| candidate.to_lowercase())
                 .collect();
-        // Accept skipping displayed punctuation (・, :, parens, &, …): a
-        // player who omits a separator still matches. Typing it also works
-        // because the base candidate keeps it. See `punctuation_skip_variant`.
         for variant in candidates
             .iter()
             .filter_map(|c| punctuation_skip_variant(c))
@@ -199,17 +205,19 @@ impl QuizGame {
         // ja_typings / choice labels are ASCII in practice, so char count
         // and byte count coincide; we use char count for safety.
         let typed_chars = typed.chars().count() as u32;
-        let matched = self.get_current_question().and_then(|question| {
-            question
-                .choices
+        // Resolve against the *same* candidate set the completion check uses
+        // (`choice_typing_candidates`, which includes punctuation-skip
+        // variants) so a string the UI accepted as complete records as that
+        // choice rather than silently scoring wrong.
+        let choices: Vec<Choice> = self
+            .get_current_question()
+            .map(|q| q.choices.clone())
+            .unwrap_or_default();
+        let matched = choices.iter().enumerate().find_map(|(idx, choice)| {
+            self.choice_typing_candidates(choice)
                 .iter()
-                .enumerate()
-                .find_map(|(idx, choice)| {
-                    DataLoader::get_choice_typing_texts(choice, &self.language)
-                        .into_iter()
-                        .find(|candidate| self.canonical_key(candidate) == typed_key)
-                        .map(|_| (idx, typed_chars))
-                })
+                .find(|candidate| self.canonical_key(candidate) == typed_key)
+                .map(|_| (idx, typed_chars))
         });
         // usize::MAX guarantees a non-match against any valid index.
         let (index, typed_chars) = matched.unwrap_or((usize::MAX, 0));
@@ -417,16 +425,19 @@ mod tests {
             image_path: None,
             ja_reviewed: true,
         };
-        let mut game = QuizGame::new(vec![question], Language::Japanese);
-        game.start();
-        assert!(
-            game.is_complete_correct_typed("ido:inveideddo"),
-            "typing the displayed colon must be accepted"
-        );
-        assert!(
-            game.is_complete_correct_typed("idoinveideddo"),
-            "skipping the colon must also be accepted"
-        );
+        // Both the completion check AND the recorder must accept each form —
+        // otherwise the UI plays "Correct!" but scores the answer wrong.
+        for form in ["ido:inveideddo", "idoinveideddo"] {
+            let mut game = QuizGame::new(vec![question.clone()], Language::Japanese);
+            game.start();
+            assert!(
+                game.is_complete_correct_typed(form),
+                "{form}: completion check must accept"
+            );
+            let result = game.answer_question_typed(form).expect("result");
+            assert!(result.is_correct, "{form}: recorder must score correct");
+            assert_eq!(result.selected_answer_index, 0, "{form}: picks correct choice");
+        }
     }
 
     #[test]

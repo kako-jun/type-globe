@@ -254,7 +254,9 @@ pub fn punctuation_skip_variant(s: &str) -> Option<String> {
         out.push(c);
         i += 1;
     }
-    if changed {
+    // Skip the degenerate all-punctuation case (`&&`, `::` → "") — an empty
+    // candidate would match empty input and is never a useful skip form.
+    if changed && !out.is_empty() {
         Some(out)
     } else {
         None
