@@ -11,6 +11,8 @@ use serde::Serialize;
 use std::io::{self, BufRead, BufReader, Cursor, Read, Write};
 use std::process::{Child, ChildStdin, ChildStdout, Command, Stdio};
 
+const MAX_LOCAL_SPEECH_WAV_BYTES: usize = 32 * 1024 * 1024;
+
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum SpeechRequestKind {
     PromptAnswer,
@@ -164,6 +166,7 @@ struct LocalCommandSpeechBackend {
     child: Child,
     stdin: ChildStdin,
     stdout: BufReader<ChildStdout>,
+    // `OutputStream` must stay alive for every Sink created from its handle.
     #[allow(dead_code)]
     output_stream: OutputStream,
     output_handle: OutputStreamHandle,
@@ -234,7 +237,7 @@ impl LocalCommandSpeechBackend {
 
     fn capabilities(&self) -> SpeechCapabilities {
         SpeechCapabilities {
-            level: SpeechSupportLevel::Preferred,
+            level: SpeechSupportLevel::Basic,
             can_stop: true,
             can_set_rate: true,
             can_choose_voice: true,
@@ -260,14 +263,8 @@ impl LocalCommandSpeechBackend {
             .into());
         }
 
-        let byte_len = response.byte_len.ok_or_else(|| {
-            io::Error::new(
-                io::ErrorKind::InvalidData,
-                "local speech command returned ok=true without byte_len",
-            )
-        })?;
-        let mut wav_bytes = vec![0_u8; byte_len];
-        self.stdout.read_exact(&mut wav_bytes)?;
+        let byte_len = validate_local_wav_byte_len(&response)?;
+        let wav_bytes = read_exact_local_wav_bytes(&mut self.stdout, byte_len)?;
 
         let source = Decoder::new(BufReader::new(Cursor::new(wav_bytes)))?;
         let sink = Sink::try_new(&self.output_handle)?;
@@ -324,9 +321,35 @@ struct LocalSpeechResponse {
     error: Option<String>,
 }
 
+fn validate_local_wav_byte_len(response: &LocalSpeechResponse) -> io::Result<usize> {
+    let byte_len = response.byte_len.ok_or_else(|| {
+        io::Error::new(
+            io::ErrorKind::InvalidData,
+            "local speech command returned ok=true without byte_len",
+        )
+    })?;
+    if byte_len > MAX_LOCAL_SPEECH_WAV_BYTES {
+        return Err(io::Error::new(
+            io::ErrorKind::InvalidData,
+            format!(
+                "local speech command returned oversized WAV payload: {byte_len} bytes (max {MAX_LOCAL_SPEECH_WAV_BYTES})"
+            ),
+        ));
+    }
+    Ok(byte_len)
+}
+
+fn read_exact_local_wav_bytes<R: Read>(reader: &mut R, byte_len: usize) -> io::Result<Vec<u8>> {
+    let mut wav_bytes = vec![0_u8; byte_len];
+    reader.read_exact(&mut wav_bytes)?;
+    Ok(wav_bytes)
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
+    use rodio::Source;
+    use std::io::Cursor;
 
     #[test]
     fn local_speak_command_serializes_shared_request_shape() {
@@ -359,10 +382,62 @@ mod tests {
     }
 
     #[test]
+    fn local_response_header_requires_byte_len_when_ok() {
+        let header: LocalSpeechResponse = serde_json::from_str(r#"{"ok":true}"#).unwrap();
+        let err = validate_local_wav_byte_len(&header).unwrap_err();
+        assert_eq!(err.kind(), io::ErrorKind::InvalidData);
+    }
+
+    #[test]
+    fn local_response_header_rejects_oversized_audio() {
+        let header = LocalSpeechResponse {
+            ok: true,
+            byte_len: Some(MAX_LOCAL_SPEECH_WAV_BYTES + 1),
+            error: None,
+        };
+        let err = validate_local_wav_byte_len(&header).unwrap_err();
+        assert_eq!(err.kind(), io::ErrorKind::InvalidData);
+    }
+
+    #[test]
+    fn local_wav_body_reader_rejects_truncated_body() {
+        let mut bytes = Cursor::new(vec![0_u8; 3]);
+        let err = read_exact_local_wav_bytes(&mut bytes, 4).unwrap_err();
+        assert_eq!(err.kind(), io::ErrorKind::UnexpectedEof);
+    }
+
+    #[test]
+    fn minimal_wav_decodes_with_enabled_rodio_feature() {
+        let wav = minimal_pcm_wav_bytes();
+        let decoder = Decoder::new(BufReader::new(Cursor::new(wav))).unwrap();
+        assert_eq!(decoder.channels(), 1);
+        assert_eq!(decoder.sample_rate(), 8_000);
+    }
+
+    #[test]
     fn boss_hint_kind_maps_to_flat_protocol_parts() {
         assert_eq!(
             SpeechRequestKind::BossHint { layer: 3 }.protocol_parts(),
             ("boss_hint", Some(3))
         );
+    }
+
+    fn minimal_pcm_wav_bytes() -> Vec<u8> {
+        let mut wav = Vec::new();
+        wav.extend_from_slice(b"RIFF");
+        wav.extend_from_slice(&38_u32.to_le_bytes());
+        wav.extend_from_slice(b"WAVE");
+        wav.extend_from_slice(b"fmt ");
+        wav.extend_from_slice(&16_u32.to_le_bytes());
+        wav.extend_from_slice(&1_u16.to_le_bytes());
+        wav.extend_from_slice(&1_u16.to_le_bytes());
+        wav.extend_from_slice(&8_000_u32.to_le_bytes());
+        wav.extend_from_slice(&16_000_u32.to_le_bytes());
+        wav.extend_from_slice(&2_u16.to_le_bytes());
+        wav.extend_from_slice(&16_u16.to_le_bytes());
+        wav.extend_from_slice(b"data");
+        wav.extend_from_slice(&2_u32.to_le_bytes());
+        wav.extend_from_slice(&0_i16.to_le_bytes());
+        wav
     }
 }

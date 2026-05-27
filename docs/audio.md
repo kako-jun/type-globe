@@ -56,6 +56,8 @@ Listening is classified at runtime in three practical buckets:
 
 In code this is exposed as `SpeechCapabilities`, with `Unavailable` represented by constructor failure rather than an enum variant.
 
+The `local-command` backend is currently classified as **Basic** even though it accepts rate and voice-role fields. It can stop playback after WAV bytes have been received, but it cannot interrupt an in-flight synchronous synthesis request while the UI thread is waiting for the daemon response.
+
 ## Local Command Protocol
 
 `type-globe rpg --speech-backend local-command --speech-command '<command>'` starts a long-lived child process and communicates through newline-delimited JSON plus raw WAV bytes. The child stays alive for the whole RPG run so prompt replay and boss hints share one synthesis process.
@@ -78,7 +80,7 @@ When synthesis fails, return:
 {"ok":false,"error":"message"}
 ```
 
-Playback is owned by `type-globe`, not the daemon. Replay interruption stops the current in-memory `rodio` sink before the next request. The same process also receives `{"type":"shutdown"}` as best-effort cleanup during backend drop; the client sends it and then tears down the child process without waiting for a response.
+Playback is owned by `type-globe`, not the daemon. Replay interruption stops the current in-memory `rodio` sink before the next request. The current bridge is synchronous: while the daemon is generating and streaming bytes for one request, the listening UI is waiting for that response and cannot process stop/replay input. A production daemon should therefore return short prompt audio promptly; prefetch / streaming can be layered onto the same memory-only contract later if long-form narration needs it. The same process also receives `{"type":"shutdown"}` as best-effort cleanup during backend drop; the client sends it and then tears down the child process without waiting for a response.
 
 Stdout is reserved for the JSON header line and WAV byte stream. Diagnostics must go to stderr so logs do not corrupt the binary protocol. No temp audio files are part of the contract. `--speech-command` may be replaced by the `OFFLINE_VOICE_RUNTIME_COMMAND` environment variable.
 

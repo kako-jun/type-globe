@@ -25,7 +25,7 @@ clap = { version = "4", features = ["derive"] }
 unicode-segmentation = "1.11"
 jiwa = "0.1"
 tts = "0.26"
-rodio = { version = "0.19", default-features = false }
+rodio = { version = "0.19", default-features = false, features = ["wav"] }
 
 [dev-dependencies]
 cargo-husky = { version = "1", default-features = false, features = ["user-hooks"] }
