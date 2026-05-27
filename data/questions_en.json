@@ -66723,47 +66723,6 @@
   {
     "choices": [
       {
-        "en": "hisashiburu",
-        "ja": "ひさしぶる",
-        "ja_typings": [
-          "hisashiburu"
-        ]
-      },
-      {
-        "en": "kuriku ri",
-        "ja": "クリクリ",
-        "ja_typings": [
-          "kurikuri"
-        ]
-      },
-      {
-        "en": "itai",
-        "ja": "イタイ",
-        "ja_typings": [
-          "itai"
-        ]
-      },
-      {
-        "en": "gugu ru",
-        "ja": "ググる",
-        "ja_typings": [
-          "guguru"
-        ]
-      }
-    ],
-    "correct_answer_index": 0,
-    "genre": "vtuber_net_culture",
-    "id": "q01628",
-    "image_path": null,
-    "question_text": {
-      "en": "Which slang phrase originated from 2channel for 'has been a while'?",
-      "ja": "2ちゃん発祥の『久しぶり』系スラングは?"
-    },
-    "ja_reviewed": true
-  },
-  {
-    "choices": [
-      {
         "en": "clever idea",
         "ja": "賢い発想",
         "ja_typings": [
@@ -93653,7 +93612,7 @@
         ]
       }
     ],
-    "correct_answer_index": 0,
+    "correct_answer_index": 1,
     "genre": "vtuber_net_culture",
     "id": "q02284",
     "image_path": null,
@@ -107290,7 +107249,7 @@
         ]
       }
     ],
-    "correct_answer_index": 0,
+    "correct_answer_index": 1,
     "genre": "programming",
     "id": "q02613",
     "image_path": null,
@@ -148760,47 +148719,6 @@
   {
     "choices": [
       {
-        "en": "Noun ending",
-        "ja": "体言止め",
-        "ja_typings": [
-          "taigendome"
-        ]
-      },
-      {
-        "en": "Auxiliary verb",
-        "ja": "助動詞",
-        "ja_typings": [
-          "jodoushi"
-        ]
-      },
-      {
-        "en": "Particle",
-        "ja": "助詞",
-        "ja_typings": [
-          "joshi"
-        ]
-      },
-      {
-        "en": "Adverbial",
-        "ja": "連用形",
-        "ja_typings": [
-          "renyoukei"
-        ]
-      }
-    ],
-    "correct_answer_index": 0,
-    "genre": "language",
-    "id": "q03623",
-    "image_path": null,
-    "question_text": {
-      "en": "What is the final part of a Japanese noun's conjugational form called?",
-      "ja": "日本語で名詞活用の語尾部分を指す用語は?"
-    },
-    "ja_reviewed": true
-  },
-  {
-    "choices": [
-      {
         "en": "Particle",
         "ja": "助詞",
         "ja_typings": [
@@ -149936,7 +149854,7 @@
         ]
       }
     ],
-    "correct_answer_index": 0,
+    "correct_answer_index": 2,
     "genre": "manga",
     "id": "q03651",
     "image_path": null,
