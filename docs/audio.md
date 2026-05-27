@@ -6,11 +6,11 @@ Listening RPG uses **runtime speech synthesis** as the primary audio path.
 
 - **Chosen baseline**: the pluggable `SpeechBackendHandle` boundary
 - **Default backend**: OS-native TTS through the `tts` crate
-- **Local backend hook**: `local-command` JSONL bridge for `offline-voice-runtime` style daemons
+- **Local backend hook**: `local-command` JSONL + in-memory WAV bridge for `offline-voice-runtime` style daemons
 - **Not the baseline**: pre-generated voice clips checked into the repo
 - **Why**: prompt banks grow, boss hints are layered and dynamic, and pre-rendering every variant would explode maintenance cost
 
-This keeps ordinary prompts and replay on one live pipeline, prepares future boss hints on that same surface, and makes `type-globe` the first proving ground for the shared local speech foundation later reused by `esuna` and `osaka-kenpo`.
+This keeps ordinary prompts and replay on one live pipeline, prepares future boss hints on that same surface, and makes `type-globe` the first proving ground for the shared local speech foundation later reused by `esuna` and `osaka-kenpo`. The local backend contract deliberately avoids temporary audio files: the daemon returns audio bytes and `type-globe` plays them from memory.
 
 ## Audio Kinds
 
@@ -58,32 +58,36 @@ In code this is exposed as `SpeechCapabilities`, with `Unavailable` represented 
 
 ## Local Command Protocol
 
-`type-globe rpg --speech-backend local-command --speech-command '<command>'` starts a long-lived child process and communicates through newline-delimited JSON. The child stays alive for the whole RPG run so prompt replay, stop, and boss hints share one audio process.
+`type-globe rpg --speech-backend local-command --speech-command '<command>'` starts a long-lived child process and communicates through newline-delimited JSON plus raw WAV bytes. The child stays alive for the whole RPG run so prompt replay and boss hints share one synthesis process.
 
-Each request is written to the child's stdin and must be acknowledged by one JSON line on stdout:
-
-```json
-{"ok":true}
-```
-
-The ack means **accepted by the speech process**, not "audio playback finished". `type-globe` waits for this line before returning control to the TUI event loop, so an implementation that blocks until synthesis or playback completes will make replay and typing feel frozen. Long-running synthesis/playback should continue asynchronously inside the child process after the ack.
-
-Speak requests look like this:
+Each speak request is written to the child's stdin:
 
 ```json
 {"type":"speak","text":"apple","lang":"en","kind":"prompt_replay","layer":null,"voice_role":null,"interrupt":true,"rate_multiplier":0.96}
 ```
 
-The same process also receives `{"type":"stop"}` and `{"type":"shutdown"}`. `stop` should interrupt any in-flight utterance and ack once the interruption request has been accepted. `shutdown` is best-effort cleanup during backend drop; the current client sends it and then tears down the child process without waiting for a response.
+For each speak request, stdout must return one JSON header line followed immediately by exactly `byte_len` bytes of WAV data:
 
-Stdout is reserved for JSON ack lines. Diagnostics should go to stderr so logs do not get parsed as protocol responses. `--speech-command` may be replaced by the `OFFLINE_VOICE_RUNTIME_COMMAND` environment variable.
+```json
+{"ok":true,"byte_len":123456}
+```
+
+When synthesis fails, return:
+
+```json
+{"ok":false,"error":"message"}
+```
+
+Playback is owned by `type-globe`, not the daemon. Replay interruption stops the current in-memory `rodio` sink before the next request. The same process also receives `{"type":"shutdown"}` as best-effort cleanup during backend drop; the client sends it and then tears down the child process without waiting for a response.
+
+Stdout is reserved for the JSON header line and WAV byte stream. Diagnostics must go to stderr so logs do not corrupt the binary protocol. No temp audio files are part of the contract. `--speech-command` may be replaced by the `OFFLINE_VOICE_RUNTIME_COMMAND` environment variable.
 
 ## Platform Policy
 
 - **Linux**: the default `system` backend is supported through `speech-dispatcher`; this is the main operational dependency
 - **macOS**: supported through AVFoundation/AppKit via `tts`
 - **Windows**: supported through WinRT/SAPI paths provided by `tts`
-- **Local daemon**: supported anywhere a command can speak the JSONL protocol
+- **Local daemon**: supported anywhere a command can speak the JSONL + WAV-byte protocol
 
 We accept that voice identity differs by machine. What must remain stable is:
 

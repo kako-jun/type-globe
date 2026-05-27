@@ -6,8 +6,9 @@
 
 use crate::audio::tts::{TtsEngine, TtsRequest, TtsRequestKind};
 use crate::types::Language;
+use rodio::{Decoder, OutputStream, OutputStreamHandle, Sink};
 use serde::Serialize;
-use std::io::{self, BufRead, BufReader, Write};
+use std::io::{self, BufRead, BufReader, Cursor, Read, Write};
 use std::process::{Child, ChildStdin, ChildStdout, Command, Stdio};
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
@@ -104,7 +105,7 @@ impl SpeechBackendHandle {
     pub fn is_speaking(&self) -> bool {
         match &self.inner {
             SpeechBackendImpl::System(backend) => backend.is_speaking(),
-            SpeechBackendImpl::LocalCommand(_) => false,
+            SpeechBackendImpl::LocalCommand(backend) => backend.is_speaking(),
         }
     }
 
@@ -163,6 +164,10 @@ struct LocalCommandSpeechBackend {
     child: Child,
     stdin: ChildStdin,
     stdout: BufReader<ChildStdout>,
+    #[allow(dead_code)]
+    output_stream: OutputStream,
+    output_handle: OutputStreamHandle,
+    sink: Option<Sink>,
 }
 
 impl LocalCommandSpeechBackend {
@@ -172,6 +177,7 @@ impl LocalCommandSpeechBackend {
             .arg(command)
             .stdin(Stdio::piped())
             .stdout(Stdio::piped())
+            .stderr(Stdio::inherit())
             .spawn()?;
         let stdin = child.stdin.take().ok_or_else(|| {
             io::Error::new(
@@ -185,17 +191,23 @@ impl LocalCommandSpeechBackend {
                 "local speech command did not expose stdout",
             )
         })?;
+        let (output_stream, output_handle) = OutputStream::try_default()?;
         Ok(Self {
             child,
             stdin,
             stdout: BufReader::new(stdout),
+            output_stream,
+            output_handle,
+            sink: None,
         })
     }
 
     fn speak(&mut self, request: SpeechRequest<'_>) -> Result<(), Box<dyn std::error::Error>> {
+        self.stop()?;
+
         let profile = crate::audio::tts::TtsProfile::for_request(request.kind.into());
         let (kind, layer) = request.kind.protocol_parts();
-        self.write_command(&LocalSpeechCommand::Speak {
+        self.write_speak_command(&LocalSpeechCommand::Speak {
             text: request.text,
             lang: request.lang.code(),
             kind,
@@ -207,7 +219,17 @@ impl LocalCommandSpeechBackend {
     }
 
     fn stop(&mut self) -> Result<(), Box<dyn std::error::Error>> {
-        self.write_command(&LocalSpeechCommand::Stop)
+        if let Some(sink) = self.sink.take() {
+            sink.stop();
+        }
+        Ok(())
+    }
+
+    fn is_speaking(&self) -> bool {
+        self.sink
+            .as_ref()
+            .map(|sink| !sink.empty())
+            .unwrap_or(false)
     }
 
     fn capabilities(&self) -> SpeechCapabilities {
@@ -220,7 +242,7 @@ impl LocalCommandSpeechBackend {
         }
     }
 
-    fn write_command(
+    fn write_speak_command(
         &mut self,
         command: &LocalSpeechCommand<'_>,
     ) -> Result<(), Box<dyn std::error::Error>> {
@@ -228,26 +250,43 @@ impl LocalCommandSpeechBackend {
         self.stdin.write_all(b"\n")?;
         self.stdin.flush()?;
 
+        let response = self.read_response_header()?;
+        if !response.ok {
+            return Err(io::Error::other(
+                response
+                    .error
+                    .unwrap_or_else(|| "local speech command returned ok=false".to_string()),
+            )
+            .into());
+        }
+
+        let byte_len = response.byte_len.ok_or_else(|| {
+            io::Error::new(
+                io::ErrorKind::InvalidData,
+                "local speech command returned ok=true without byte_len",
+            )
+        })?;
+        let mut wav_bytes = vec![0_u8; byte_len];
+        self.stdout.read_exact(&mut wav_bytes)?;
+
+        let source = Decoder::new(BufReader::new(Cursor::new(wav_bytes)))?;
+        let sink = Sink::try_new(&self.output_handle)?;
+        sink.append(source);
+        self.sink = Some(sink);
+        Ok(())
+    }
+
+    fn read_response_header(&mut self) -> Result<LocalSpeechResponse, Box<dyn std::error::Error>> {
         let mut line = String::new();
         let bytes = self.stdout.read_line(&mut line)?;
         if bytes == 0 {
             return Err(io::Error::new(
                 io::ErrorKind::UnexpectedEof,
-                "local speech command exited before acknowledging request",
+                "local speech command exited before returning audio header",
             )
             .into());
         }
-        let response: LocalSpeechResponse = serde_json::from_str(line.trim())?;
-        if response.ok {
-            Ok(())
-        } else {
-            Err(io::Error::other(
-                response
-                    .error
-                    .unwrap_or_else(|| "local speech command returned ok=false".to_string()),
-            )
-            .into())
-        }
+        Ok(serde_json::from_str(line.trim())?)
     }
 }
 
@@ -273,13 +312,14 @@ enum LocalSpeechCommand<'a> {
         interrupt: bool,
         rate_multiplier: f32,
     },
-    Stop,
     Shutdown,
 }
 
 #[derive(serde::Deserialize)]
 struct LocalSpeechResponse {
     ok: bool,
+    #[serde(default)]
+    byte_len: Option<usize>,
     #[serde(default)]
     error: Option<String>,
 }
@@ -307,6 +347,15 @@ mod tests {
         assert!(json.contains(r#""layer":null"#));
         assert!(json.contains(r#""voice_role":"neutral""#));
         assert!(json.contains(r#""rate_multiplier":0.96"#));
+    }
+
+    #[test]
+    fn local_response_header_carries_audio_byte_len() {
+        let header: LocalSpeechResponse =
+            serde_json::from_str(r#"{"ok":true,"byte_len":42}"#).unwrap();
+        assert!(header.ok);
+        assert_eq!(header.byte_len, Some(42));
+        assert!(header.error.is_none());
     }
 
     #[test]
