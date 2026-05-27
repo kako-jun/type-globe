@@ -1,4 +1,7 @@
-use crate::io::{normalize::canonical_romaji, DataLoader};
+use crate::io::{
+    normalize::{canonical_romaji, punctuation_skip_variant},
+    DataLoader,
+};
 use crate::types::{Language, Question};
 use rand::seq::SliceRandom;
 use rand::Rng;
@@ -272,6 +275,16 @@ impl Ta25LocalGame {
             .into_iter()
             .map(|candidate| candidate.to_lowercase())
             .collect::<Vec<_>>();
+        // Accept skipping displayed punctuation (・, :, parens, &, …): a
+        // player who omits a separator still matches. Typing it also works
+        // because the base candidate keeps it. See `punctuation_skip_variant`.
+        for variant in candidates
+            .iter()
+            .filter_map(|c| punctuation_skip_variant(c))
+            .collect::<Vec<_>>()
+        {
+            candidates.push(variant);
+        }
         candidates.sort();
         candidates.dedup();
         candidates
