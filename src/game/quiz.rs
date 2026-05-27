@@ -1,4 +1,4 @@
-use crate::io::normalize::canonical_romaji;
+use crate::io::normalize::{canonical_romaji, punctuation_skip_variant};
 use crate::io::DataLoader;
 use crate::types::{Language, Question};
 use rand::seq::SliceRandom;
@@ -123,6 +123,16 @@ impl QuizGame {
                 .into_iter()
                 .map(|candidate| candidate.to_lowercase())
                 .collect();
+        // Accept skipping displayed punctuation (・, :, parens, &, …): a
+        // player who omits a separator still matches. Typing it also works
+        // because the base candidate keeps it. See `punctuation_skip_variant`.
+        for variant in candidates
+            .iter()
+            .filter_map(|c| punctuation_skip_variant(c))
+            .collect::<Vec<_>>()
+        {
+            candidates.push(variant);
+        }
         candidates.sort();
         candidates.dedup();
         candidates
@@ -377,6 +387,46 @@ mod tests {
             image_path: None,
             ja_reviewed: false,
         }
+    }
+
+    #[test]
+    fn displayed_punctuation_is_typeable_and_skippable() {
+        // kako-jun's rule: a displayed char must be accepted when typed, and
+        // may also be skipped. A choice whose typing carries a `:` accepts
+        // both the colon form and the colon-skipped form.
+        let mut labels = HashMap::new();
+        labels.insert("ja".to_string(), "イド:インヴェイデッド".to_string());
+        labels.insert("en".to_string(), "ID:INVADED".to_string());
+        let correct = Choice {
+            labels,
+            ja_typings: vec!["ido:inveideddo".to_string()],
+        };
+        let dummy = Choice {
+            labels: HashMap::from([("ja".to_string(), "ダミー".to_string())]),
+            ja_typings: vec!["damii".to_string()],
+        };
+        let mut qt = HashMap::new();
+        qt.insert("ja".to_string(), "テスト".to_string());
+        let question = Question {
+            id: "q-punct".into(),
+            genre: "test".into(),
+            question_text: qt,
+            question_text_reading: HashMap::new(),
+            choices: vec![correct, dummy],
+            correct_answer_index: 0,
+            image_path: None,
+            ja_reviewed: true,
+        };
+        let mut game = QuizGame::new(vec![question], Language::Japanese);
+        game.start();
+        assert!(
+            game.is_complete_correct_typed("ido:inveideddo"),
+            "typing the displayed colon must be accepted"
+        );
+        assert!(
+            game.is_complete_correct_typed("idoinveideddo"),
+            "skipping the colon must also be accepted"
+        );
     }
 
     #[test]

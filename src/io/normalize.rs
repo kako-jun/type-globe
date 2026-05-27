@@ -189,9 +189,116 @@ fn collapse_redundant_nn(s: &str) -> String {
     out
 }
 
+/// Decorative / separator punctuation a player may omit while typing
+/// (中黒・コロン・括弧・`&` 等). Per kako-jun's rule, a displayed character
+/// must be typeable *and* skippable. The long-vowel mark `-` (カタカナ ー) is
+/// phonetic, not decorative, so it is NOT skippable. Alphanumerics are never
+/// punctuation.
+fn is_skippable_punct(c: char) -> bool {
+    if c.is_ascii_alphanumeric() || c == '-' {
+        return false;
+    }
+    c.is_ascii_punctuation()
+        || c.is_whitespace()
+        || matches!(
+            c,
+            '・' | '／'
+                | '：'
+                | '；'
+                | '！'
+                | '？'
+                | '（'
+                | '）'
+                | '「'
+                | '」'
+                | '『'
+                | '』'
+                | '＝'
+                | '＋'
+                | '☆'
+                | '×'
+                | '　'
+        )
+}
+
+/// Build a "punctuation-skipped" variant of a typing candidate so a player
+/// who omits displayed separators/punctuation still matches (the *skip* half
+/// of "displayed chars are typeable and skippable"). Returns `None` when
+/// nothing would change.
+///
+/// A `/`, `,` or `.` removed from right after a lone `n` re-doubles the `n`
+/// to `nn`, mirroring [`canonical_romaji`] (which doubles `n` before these):
+/// `kan/no` -> `kannno` so 漢の still reads かんの, not かの.
+pub fn punctuation_skip_variant(s: &str) -> Option<String> {
+    let chars: Vec<char> = s.chars().collect();
+    let mut out = String::with_capacity(s.len());
+    let mut changed = false;
+    let mut i = 0;
+    while i < chars.len() {
+        let c = chars[i];
+        if is_skippable_punct(c) {
+            changed = true;
+            if matches!(c, '/' | ',' | '.')
+                && out.ends_with('n')
+                && !out.ends_with("nn")
+                && matches!(
+                    chars.get(i + 1),
+                    Some('a' | 'i' | 'u' | 'e' | 'o' | 'y' | 'n')
+                )
+            {
+                out.push('n');
+            }
+            i += 1;
+            continue;
+        }
+        out.push(c);
+        i += 1;
+    }
+    if changed {
+        Some(out)
+    } else {
+        None
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn skip_variant_drops_separators_keeps_long_vowel() {
+        // 中黒/コロン/括弧/& are skippable; `-` (長音 ー) is NOT.
+        assert_eq!(
+            punctuation_skip_variant("denisu/ricchi-"),
+            Some("denisuricchi-".to_string())
+        );
+        assert_eq!(
+            punctuation_skip_variant("ido:inveideddo"),
+            Some("idoinveideddo".to_string())
+        );
+        assert_eq!(
+            punctuation_skip_variant("hakku&surasshu"),
+            Some("hakkusurasshu".to_string())
+        );
+        // no skippable punct → None (long vowel hyphen is not skippable)
+        assert_eq!(punctuation_skip_variant("bo-ru"), None);
+    }
+
+    #[test]
+    fn skip_variant_redoubles_n_before_removed_slash() {
+        // 漢の: removing `/` from after a lone `n` before a vowel must keep
+        // the ん by doubling, so the skip form still reads かんの.
+        assert_eq!(
+            punctuation_skip_variant("kan/no/butei"),
+            Some("kannnobutei".to_string())
+        );
+        // canonical of the skip variant matches what a player types when they
+        // skip the ・ and type the reading directly.
+        assert_eq!(
+            canonical_romaji("kannnobutei"),
+            canonical_romaji(&punctuation_skip_variant("kan/no/butei").unwrap())
+        );
+    }
 
     #[test]
     fn hepburn_collapses_to_kunrei() {
