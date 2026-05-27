@@ -142430,46 +142430,6 @@
   {
     "choices": [
       {
-        "en": "Enja",
-        "ja": "英じゃ",
-        "ja_typings": [
-          "enja"
-        ]
-      },
-      {
-        "en": "Aba",
-        "ja": "アバ",
-        "ja_typings": [
-          "aba"
-        ]
-      },
-      {
-        "en": "Gara",
-        "ja": "ガラ",
-        "ja_typings": [
-          "gara"
-        ]
-      },
-      {
-        "en": "Bimyou",
-        "ja": "微妙",
-        "ja_typings": [
-          "bimyou"
-        ]
-      }
-    ],
-    "correct_answer_index": 0,
-    "genre": "vtuber_net_culture",
-    "id": "q03468",
-    "image_path": null,
-    "question_text": {
-      "en": "What net slang refers to the English language or being in English?",
-      "ja": "英語であることを指すネットスラングは?"
-    }
-  },
-  {
-    "choices": [
-      {
         "en": "FYI",
         "ja": "参考までに",
         "ja_typings": [
