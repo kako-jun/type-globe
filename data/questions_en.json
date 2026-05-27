@@ -54908,47 +54908,6 @@
   {
     "choices": [
       {
-        "en": "Patlabor: The Movie",
-        "ja": "機動警察パトレイバー the Movie",
-        "ja_typings": [
-          "kidoukeisatsupatoreiba-themovie"
-        ]
-      },
-      {
-        "en": "Angel's Egg",
-        "ja": "天使のたまご",
-        "ja_typings": [
-          "tenshinotamago"
-        ]
-      },
-      {
-        "en": "Urusei Yatsura 2: Beautiful Dreamer",
-        "ja": "うる星やつら2 ビューティフルドリーマー",
-        "ja_typings": [
-          "uruseiyatsura2byu-thifurudori-ma-"
-        ]
-      },
-      {
-        "en": "Ghost in the Shell",
-        "ja": "GHOST IN THE SHELL",
-        "ja_typings": [
-          "ghost in the shell"
-        ]
-      }
-    ],
-    "correct_answer_index": 0,
-    "genre": "anime",
-    "id": "q01340",
-    "image_path": null,
-    "question_text": {
-      "en": "Which 1988 OVA film by Mamoru Oshii features a sentient airliner?",
-      "ja": "意思を持つ旅客機が登場する1988年押井守監督のOVAは?"
-    },
-    "ja_reviewed": true
-  },
-  {
-    "choices": [
-      {
         "en": "Castle in the Sky",
         "ja": "天空の城ラピュタ",
         "ja_typings": [
@@ -55189,47 +55148,6 @@
     "question_text": {
       "en": "Which 1978 Miyazaki TV series follows Conan after a global cataclysm?",
       "ja": "大災害後の世界を描く1978年宮崎駿監督のTVシリーズは?"
-    },
-    "ja_reviewed": true
-  },
-  {
-    "choices": [
-      {
-        "en": "Tomorrow's Joe 2",
-        "ja": "あしたのジョー2",
-        "ja_typings": [
-          "ashitanojo-2"
-        ]
-      },
-      {
-        "en": "Ginga: Nagareboshi Gin",
-        "ja": "銀牙 流れ星銀",
-        "ja_typings": [
-          "ginganagareboshigin"
-        ]
-      },
-      {
-        "en": "YAWARA!",
-        "ja": "YAWARA!",
-        "ja_typings": [
-          "yawara!"
-        ]
-      },
-      {
-        "en": "Slow Step",
-        "ja": "スローステップ",
-        "ja_typings": [
-          "suro-suteppu"
-        ]
-      }
-    ],
-    "correct_answer_index": 2,
-    "genre": "anime",
-    "id": "q01347",
-    "image_path": null,
-    "question_text": {
-      "en": "Which 1992 anime is about a girl boxing kickboxer named Hibiki?",
-      "ja": "響子が主人公の1992年のキックボクシングアニメは?"
     },
     "ja_reviewed": true
   },
@@ -55887,47 +55805,6 @@
     "question_text": {
       "en": "Which studio produced Made in Abyss?",
       "ja": "メイドインアビスを制作したスタジオは?"
-    },
-    "ja_reviewed": true
-  },
-  {
-    "choices": [
-      {
-        "en": "Bones",
-        "ja": "ボンズ",
-        "ja_typings": [
-          "bonzu"
-        ]
-      },
-      {
-        "en": "Madhouse",
-        "ja": "マッドハウス",
-        "ja_typings": [
-          "maddohausu"
-        ]
-      },
-      {
-        "en": "Production I.G",
-        "ja": "Production I.G",
-        "ja_typings": [
-          "production i.g"
-        ]
-      },
-      {
-        "en": "J.C.Staff",
-        "ja": "J.C.STAFF",
-        "ja_typings": [
-          "j.c.staff"
-        ]
-      }
-    ],
-    "correct_answer_index": 0,
-    "genre": "anime",
-    "id": "q01364",
-    "image_path": null,
-    "question_text": {
-      "en": "Which studio is famous for Mob Psycho 100 and One-Punch Man season 1?",
-      "ja": "モブサイコ100とワンパンマン1期で有名なスタジオは?"
     },
     "ja_reviewed": true
   },
@@ -59050,47 +58927,6 @@
   {
     "choices": [
       {
-        "en": "Section Z",
-        "ja": "セクションZ",
-        "ja_typings": [
-          "sekushonz"
-        ]
-      },
-      {
-        "en": "Bionic Commando",
-        "ja": "ヒットラーの復活",
-        "ja_typings": [
-          "hittora-nofukkatsu"
-        ]
-      },
-      {
-        "en": "Strider",
-        "ja": "ストライダー飛竜",
-        "ja_typings": [
-          "sutoraida-hiryuu"
-        ]
-      },
-      {
-        "en": "Trojan",
-        "ja": "闘いの挽歌",
-        "ja_typings": [
-          "tatakainobanka"
-        ]
-      }
-    ],
-    "correct_answer_index": 2,
-    "genre": "game",
-    "id": "q01441",
-    "image_path": null,
-    "question_text": {
-      "en": "Which 1986 Capcom platformer features the Red Falcon enemies?",
-      "ja": "1986年カプコンの横スクロール作品でレッドファルコンが登場する作品は?"
-    },
-    "ja_reviewed": true
-  },
-  {
-    "choices": [
-      {
         "en": "Darkstalkers",
         "ja": "ヴァンパイア",
         "ja_typings": [
@@ -60891,47 +60727,6 @@
     "question_text": {
       "en": "Which is the largest country by area in Africa?",
       "ja": "アフリカで面積最大の国は?"
-    },
-    "ja_reviewed": true
-  },
-  {
-    "choices": [
-      {
-        "en": "Japan",
-        "ja": "日出国",
-        "ja_typings": [
-          "hiizurukuni"
-        ]
-      },
-      {
-        "en": "Korea",
-        "ja": "朝鮮",
-        "ja_typings": [
-          "chousen"
-        ]
-      },
-      {
-        "en": "China",
-        "ja": "中華",
-        "ja_typings": [
-          "chuuka"
-        ]
-      },
-      {
-        "en": "Mongolia",
-        "ja": "モンゴル",
-        "ja_typings": [
-          "mongoru"
-        ]
-      }
-    ],
-    "correct_answer_index": 0,
-    "genre": "geography",
-    "id": "q01486",
-    "image_path": null,
-    "question_text": {
-      "en": "Which country is known as the Land of the Rising Sun?",
-      "ja": "「日出ずる国」と呼ばれる国は?"
     },
     "ja_reviewed": true
   },
@@ -65780,47 +65575,6 @@
   {
     "choices": [
       {
-        "en": "kinjitou",
-        "ja": "金字塔",
-        "ja_typings": [
-          "kinjitou"
-        ]
-      },
-      {
-        "en": "touki bansei",
-        "ja": "陶器万歳",
-        "ja_typings": [
-          "toukibanzai"
-        ]
-      },
-      {
-        "en": "seiten hekireki",
-        "ja": "晴天霹靂",
-        "ja_typings": [
-          "seitenhekireki"
-        ]
-      },
-      {
-        "en": "muga muchuu",
-        "ja": "無我夢中",
-        "ja_typings": [
-          "mugamuchuu"
-        ]
-      }
-    ],
-    "correct_answer_index": 0,
-    "genre": "general_knowledge",
-    "id": "q01605",
-    "image_path": null,
-    "question_text": {
-      "en": "Which idiom describes a perfect match?",
-      "ja": "完璧な組合せを表す四字熟語は?"
-    },
-    "ja_reviewed": true
-  },
-  {
-    "choices": [
-      {
         "en": "buying books without reading",
         "ja": "本を買って積むこと",
         "ja_typings": [
@@ -66969,47 +66723,6 @@
   {
     "choices": [
       {
-        "en": "Mori Calliope",
-        "ja": "森カリオペ",
-        "ja_typings": [
-          "morikariope"
-        ]
-      },
-      {
-        "en": "Houshou Marine",
-        "ja": "宝鐘マリン",
-        "ja_typings": [
-          "houshoumarine"
-        ]
-      },
-      {
-        "en": "Usada Pekora",
-        "ja": "兎田ぺこら",
-        "ja_typings": [
-          "usadapekora"
-        ]
-      },
-      {
-        "en": "Shirakami Fubuki",
-        "ja": "白上フブキ",
-        "ja_typings": [
-          "shirakamifubuki"
-        ]
-      }
-    ],
-    "correct_answer_index": 0,
-    "genre": "vtuber_net_culture",
-    "id": "q01635",
-    "image_path": null,
-    "question_text": {
-      "en": "Which Vtuber created the song 'Hyperdontia'?",
-      "ja": "『Hyperdontia』を歌ったVtuberは?"
-    },
-    "ja_reviewed": true
-  },
-  {
-    "choices": [
-      {
         "en": "invisible muting by platform",
         "ja": "プラットフォームによる隠れミュート",
         "ja_typings": [
@@ -67373,47 +67086,6 @@
     "question_text": {
       "en": "Which meme features Drake approving/disapproving?",
       "ja": "Drakeが承認/否認するミームは?"
-    },
-    "ja_reviewed": true
-  },
-  {
-    "choices": [
-      {
-        "en": "spineless",
-        "ja": "腰抜け",
-        "ja_typings": [
-          "koshinuke"
-        ]
-      },
-      {
-        "en": "brave",
-        "ja": "勇敢",
-        "ja_typings": [
-          "yuukan"
-        ]
-      },
-      {
-        "en": "idle",
-        "ja": "怠け者",
-        "ja_typings": [
-          "namakemono"
-        ]
-      },
-      {
-        "en": "noisy",
-        "ja": "騒がしい",
-        "ja_typings": [
-          "sawagashii"
-        ]
-      }
-    ],
-    "correct_answer_index": 0,
-    "genre": "vtuber_net_culture",
-    "id": "q01645",
-    "image_path": null,
-    "question_text": {
-      "en": "What does 'mukoukotsu' mean in net slang?",
-      "ja": "ネット用語『無向骨』に近い意味は?"
     },
     "ja_reviewed": true
   },
@@ -74349,47 +74021,6 @@
   {
     "choices": [
       {
-        "en": "Jiraiya",
-        "ja": "ジライヤ",
-        "ja_typings": [
-          "jiraiya"
-        ]
-      },
-      {
-        "en": "Chimera Shadow Garden",
-        "ja": "キメラ・シャドウガーデン",
-        "ja_typings": [
-          "kimera/shadouga-den"
-        ]
-      },
-      {
-        "en": "Log Horizon",
-        "ja": "ログ・ホライズン",
-        "ja_typings": [
-          "rogu/horaizun"
-        ]
-      },
-      {
-        "en": "Outlaw Star",
-        "ja": "アウトロースター",
-        "ja_typings": [
-          "autoro-suta-"
-        ]
-      }
-    ],
-    "correct_answer_index": 0,
-    "genre": "anime",
-    "id": "q01815",
-    "image_path": null,
-    "question_text": {
-      "en": "What is the name of Saitama's S-Class hero disciple in One-Punch Man?",
-      "ja": "『ワンパンマン』でサイタマの弟子となる S級ヒーローの名は?"
-    },
-    "ja_reviewed": true
-  },
-  {
-    "choices": [
-      {
         "en": "Weekly Shonen Magazine",
         "ja": "週刊少年マガジン",
         "ja_typings": [
@@ -74425,47 +74056,6 @@
     "question_text": {
       "en": "Which Kodansha weekly serializes Fairy Tail and Hajime no Ippo?",
       "ja": "『フェアリーテイル』『はじめの一歩』を連載する講談社の週刊誌は?"
-    },
-    "ja_reviewed": true
-  },
-  {
-    "choices": [
-      {
-        "en": "Morning",
-        "ja": "モーニング",
-        "ja_typings": [
-          "mo-ningu"
-        ]
-      },
-      {
-        "en": "Monthly Afternoon",
-        "ja": "月刊アフタヌーン",
-        "ja_typings": [
-          "gekkanafutanu-n"
-        ]
-      },
-      {
-        "en": "Big Comic Original",
-        "ja": "ビッグコミックオリジナル",
-        "ja_typings": [
-          "biggukomikkuorijinaru"
-        ]
-      },
-      {
-        "en": "Weekly Shonen Champion",
-        "ja": "週刊少年チャンピオン",
-        "ja_typings": [
-          "shuukanshounenchanpion"
-        ]
-      }
-    ],
-    "correct_answer_index": 0,
-    "genre": "manga",
-    "id": "q01817",
-    "image_path": null,
-    "question_text": {
-      "en": "Which Kodansha seinen magazine serializes Vagabond and Vinland Saga?",
-      "ja": "『バガボンド』『ヴィンランド・サガ』を連載する講談社の青年誌は?"
     },
     "ja_reviewed": true
   },
@@ -74671,47 +74261,6 @@
     "question_text": {
       "en": "Which Shueisha magazine serializes One Piece and Jujutsu Kaisen?",
       "ja": "『ONE PIECE』『呪術廻戦』を連載する集英社の雑誌は?"
-    },
-    "ja_reviewed": true
-  },
-  {
-    "choices": [
-      {
-        "en": "Magi",
-        "ja": "マギ",
-        "ja_typings": [
-          "magi"
-        ]
-      },
-      {
-        "en": "Black Clover",
-        "ja": "ブラッククローバー",
-        "ja_typings": [
-          "burakkukuro-ba-"
-        ]
-      },
-      {
-        "en": "Bakuman",
-        "ja": "バクマン。",
-        "ja_typings": [
-          "bakuman."
-        ]
-      },
-      {
-        "en": "Platinum End",
-        "ja": "プラチナエンド",
-        "ja_typings": [
-          "purachinaendo"
-        ]
-      }
-    ],
-    "correct_answer_index": 0,
-    "genre": "manga",
-    "id": "q01823",
-    "image_path": null,
-    "question_text": {
-      "en": "Which manga features Akira Yuki training under his master in Edo-era Japan?",
-      "ja": "アスタが魔法の国で修行する少年漫画は? (誤) — 正: アラジンとアリババがダンジョンに挑む小学館連載作品は?"
     },
     "ja_reviewed": true
   },
@@ -75989,47 +75538,6 @@
   {
     "choices": [
       {
-        "en": "Fusako Kuramochi",
-        "ja": "倉持房子",
-        "ja_typings": [
-          "kuramochifusako"
-        ]
-      },
-      {
-        "en": "Machiko Satonaka",
-        "ja": "里中満智子",
-        "ja_typings": [
-          "satonakamachiko"
-        ]
-      },
-      {
-        "en": "Karuho Shiina",
-        "ja": "椎名軽穂",
-        "ja_typings": [
-          "shiinakaruho"
-        ]
-      },
-      {
-        "en": "Yoko Kamio",
-        "ja": "神尾葉子",
-        "ja_typings": [
-          "kamioyouko"
-        ]
-      }
-    ],
-    "correct_answer_index": 0,
-    "genre": "manga",
-    "id": "q01855",
-    "image_path": null,
-    "question_text": {
-      "en": "Who is the author of Tenshi nanka ja nai?",
-      "ja": "『天使なんかじゃない』の作者は?"
-    },
-    "ja_reviewed": true
-  },
-  {
-    "choices": [
-      {
         "en": "Akimi Yoshida",
         "ja": "吉田秋生",
         "ja_typings": [
@@ -76352,47 +75860,6 @@
     "question_text": {
       "en": "Which Japanese newspaper focuses on business and economics?",
       "ja": "経済を専門に扱う日本の新聞は?"
-    },
-    "ja_reviewed": true
-  },
-  {
-    "choices": [
-      {
-        "en": "Ayumi Himekawa",
-        "ja": "姫川亜弓",
-        "ja_typings": [
-          "himekawaayumi"
-        ]
-      },
-      {
-        "en": "Chigusa Tsukikage",
-        "ja": "月影千草",
-        "ja_typings": [
-          "tsukikagechigusa"
-        ]
-      },
-      {
-        "en": "Fusako Kuramochi",
-        "ja": "倉持房子",
-        "ja_typings": [
-          "kuramochifusako"
-        ]
-      },
-      {
-        "en": "Karuho Shiina",
-        "ja": "椎名軽穂",
-        "ja_typings": [
-          "shiinakaruho"
-        ]
-      }
-    ],
-    "correct_answer_index": 0,
-    "genre": "manga",
-    "id": "q01864",
-    "image_path": null,
-    "question_text": {
-      "en": "Who is the heir to Hanagumi at the Imperial Theatre in Sakura Wars?",
-      "ja": "『サクラ大戦』で帝国華撃団・花組の隊員は神崎すみれと誰? (新人の少女の名)"
     },
     "ja_reviewed": true
   },
@@ -92682,47 +92149,6 @@
   {
     "choices": [
       {
-        "en": "Chato",
-        "ja": "ちゃと",
-        "ja_typings": [
-          "chato"
-        ]
-      },
-      {
-        "en": "Nekomasu",
-        "ja": "ねこます",
-        "ja_typings": [
-          "nekomasu"
-        ]
-      },
-      {
-        "en": "Siro",
-        "ja": "シロ",
-        "ja_typings": [
-          "shiro"
-        ]
-      },
-      {
-        "en": "Mikoto",
-        "ja": "ミコト",
-        "ja_typings": [
-          "mikoto"
-        ]
-      }
-    ],
-    "correct_answer_index": 0,
-    "genre": "vtuber_net_culture",
-    "id": "q02262",
-    "image_path": null,
-    "question_text": {
-      "en": "What live streaming community term refers to the meme cat 'chato' that became iconic in early Japanese VTuber chats?",
-      "ja": "初期VTuber配信のコメント文化で象徴的になった猫「ちゃと」を指す言葉は?"
-    },
-    "ja_reviewed": true
-  },
-  {
-    "choices": [
-      {
         "en": "Watson Amelia",
         "ja": "ワトソン アメリア",
         "ja_typings": [
@@ -107590,47 +107016,6 @@
   {
     "choices": [
       {
-        "en": "Arc",
-        "ja": "Arc",
-        "ja_typings": [
-          "arc"
-        ]
-      },
-      {
-        "en": "Brave",
-        "ja": "Brave",
-        "ja_typings": [
-          "brave"
-        ]
-      },
-      {
-        "en": "Vivaldi",
-        "ja": "Vivaldi",
-        "ja_typings": [
-          "vivaldi"
-        ]
-      },
-      {
-        "en": "Opera",
-        "ja": "Opera",
-        "ja_typings": [
-          "opera"
-        ]
-      }
-    ],
-    "correct_answer_index": 0,
-    "genre": "programming",
-    "id": "q02622",
-    "image_path": null,
-    "question_text": {
-      "en": "Which browser was made by The Browser Company with a focus on tabs and workflows?",
-      "ja": "Mozillaが開発したJavaScriptランタイム向けの新ブラウザは?"
-    },
-    "ja_reviewed": true
-  },
-  {
-    "choices": [
-      {
         "en": "Assembler",
         "ja": "アセンブラ",
         "ja_typings": [
@@ -118181,47 +117566,6 @@
     "question_text": {
       "en": "Which manga author created My Hero Academia?",
       "ja": "僕のヒーローアカデミアの原作者は?"
-    },
-    "ja_reviewed": true
-  },
-  {
-    "choices": [
-      {
-        "en": "Koki Uchiyama",
-        "ja": "内山昂輝",
-        "ja_typings": [
-          "uchiyamakouki"
-        ]
-      },
-      {
-        "en": "Kaito Ishikawa",
-        "ja": "石川界人",
-        "ja_typings": [
-          "ishikawakaito"
-        ]
-      },
-      {
-        "en": "Megumi Ogata",
-        "ja": "緒方恵美",
-        "ja_typings": [
-          "ogatamegumi"
-        ]
-      },
-      {
-        "en": "Toru Furuya",
-        "ja": "古谷徹",
-        "ja_typings": [
-          "furuyatooru"
-        ]
-      }
-    ],
-    "correct_answer_index": 0,
-    "genre": "anime",
-    "id": "q02880",
-    "image_path": null,
-    "question_text": {
-      "en": "Which voice actor for L (Death Note) is also known for Echizen in Prince of Tennis?",
-      "ja": "デスノートのＬや越前リョーマを演じた声優は?"
     },
     "ja_reviewed": true
   },
@@ -133718,7 +133062,7 @@
         ]
       }
     ],
-    "correct_answer_index": 0,
+    "correct_answer_index": 1,
     "genre": "general_knowledge",
     "id": "q03257",
     "image_path": null,
@@ -133852,7 +133196,7 @@
         ]
       }
     ],
-    "correct_answer_index": 0,
+    "correct_answer_index": 2,
     "genre": "general_knowledge",
     "id": "q03260",
     "image_path": null,
@@ -135723,7 +135067,7 @@
         ]
       }
     ],
-    "correct_answer_index": 0,
+    "correct_answer_index": 1,
     "genre": "general_knowledge",
     "id": "q03305",
     "image_path": null,
@@ -135764,7 +135108,7 @@
         ]
       }
     ],
-    "correct_answer_index": 0,
+    "correct_answer_index": 1,
     "genre": "general_knowledge",
     "id": "q03306",
     "image_path": null,
@@ -136436,47 +135780,6 @@
     "question_text": {
       "en": "Which bit width can represent IPv6 addresses?",
       "ja": "IPv6アドレスを表現できるビット幅は?"
-    },
-    "ja_reviewed": true
-  },
-  {
-    "choices": [
-      {
-        "en": "2 bits",
-        "ja": "2ビット",
-        "ja_typings": [
-          "2bitto"
-        ]
-      },
-      {
-        "en": "4 bits",
-        "ja": "4ビット",
-        "ja_typings": [
-          "4bitto"
-        ]
-      },
-      {
-        "en": "8 bits",
-        "ja": "8ビット",
-        "ja_typings": [
-          "8bitto"
-        ]
-      },
-      {
-        "en": "16 bits",
-        "ja": "16ビット",
-        "ja_typings": [
-          "16bitto"
-        ]
-      }
-    ],
-    "correct_answer_index": 0,
-    "genre": "technology",
-    "id": "q03323",
-    "image_path": null,
-    "question_text": {
-      "en": "Which bit width can represent only two values, 0 and 1?",
-      "ja": "0と1の2値しか表現できないビット幅は?"
     },
     "ja_reviewed": true
   },
@@ -142682,47 +141985,6 @@
   {
     "choices": [
       {
-        "en": "Inuyama Tamaki",
-        "ja": "犬山たまき",
-        "ja_typings": [
-          "inuyamatamaki"
-        ]
-      },
-      {
-        "en": "Tenkai Tsukasa",
-        "ja": "天開司",
-        "ja_typings": [
-          "tenkaitsukasa"
-        ]
-      },
-      {
-        "en": "Yamato Iori",
-        "ja": "ヤマトイオリ",
-        "ja_typings": [
-          "yamatoiori"
-        ]
-      },
-      {
-        "en": "Robocosan",
-        "ja": "ロボ子さん",
-        "ja_typings": [
-          "robokosan"
-        ]
-      }
-    ],
-    "correct_answer_index": 0,
-    "genre": "vtuber_net_culture",
-    "id": "q03476",
-    "image_path": null,
-    "question_text": {
-      "en": "Which Nijisanji VTuber is the leader of the 'Iwagumi' generation and has cat ears?",
-      "ja": "にじさんじの「岩組」のリーダーで猫耳のVTuberは?"
-    },
-    "ja_reviewed": true
-  },
-  {
-    "choices": [
-      {
         "en": "Japan",
         "ja": "日本",
         "ja_typings": [
@@ -148098,47 +147360,6 @@
     "question_text": {
       "en": "Which part of speech in English includes \"can,\" \"will,\" \"must,\" and \"may\"?",
       "ja": "英語で can / will / must / may を含む品詞は?"
-    },
-    "ja_reviewed": true
-  },
-  {
-    "choices": [
-      {
-        "en": "Bottom to top",
-        "ja": "下から上",
-        "ja_typings": [
-          "shitakaraue"
-        ]
-      },
-      {
-        "en": "Top to bottom",
-        "ja": "上から下",
-        "ja_typings": [
-          "uekarashita"
-        ]
-      },
-      {
-        "en": "Left to right",
-        "ja": "左から右",
-        "ja_typings": [
-          "hidarikaramigi"
-        ]
-      },
-      {
-        "en": "Right to left",
-        "ja": "右から左",
-        "ja_typings": [
-          "migikarahidari"
-        ]
-      }
-    ],
-    "correct_answer_index": 0,
-    "genre": "language",
-    "id": "q03608",
-    "image_path": null,
-    "question_text": {
-      "en": "In Japanese kanji learning order, which direction is sometimes used in stroke order references?",
-      "ja": "漢字の筆順の説明で、下から上へ書く方向性を指す表現は?"
     },
     "ja_reviewed": true
   },
