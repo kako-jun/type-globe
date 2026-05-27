@@ -22782,7 +22782,8 @@
         "ja": "黄金比 φ",
         "en": "Golden ratio φ",
         "ja_typings": [
-          "oogonhi"
+          "ougonhifai",
+          "ougonhi"
         ]
       },
       {
@@ -55375,6 +55376,7 @@
         "en": "ID:INVADED",
         "ja": "イド:インヴェイデッド",
         "ja_typings": [
+          "ido:inveideddo",
           "idoinveideddo"
         ]
       },
@@ -55393,7 +55395,8 @@
     "question_text": {
       "en": "Which 2021 anime follows Ai singing diva android?",
       "ja": "歌姫アンドロイドのヴィヴィが主人公の2021年のアニメは?"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -131988,8 +131991,8 @@
         "en": "Golden ratio φ",
         "ja": "黄金比φ",
         "ja_typings": [
-          "ougonhihuxi-",
-          "ougonhifi"
+          "ougonhifai",
+          "ougonhi"
         ]
       },
       {
@@ -132021,7 +132024,8 @@
     "question_text": {
       "en": "Which symbol denotes the golden ratio?",
       "ja": "黄金比を表す記号はどれ?"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
@@ -132823,7 +132827,8 @@
         "en": "Golden ratio φ",
         "ja": "黄金比φ",
         "ja_typings": [
-          "ougonhihuxi-"
+          "ougonhifai",
+          "ougonhi"
         ]
       },
       {
@@ -132841,7 +132846,8 @@
     "question_text": {
       "en": "Which famous constant gives the ratio of a circle's circumference to its diameter?",
       "ja": "円周と直径の比を表す有名な定数はどれ?"
-    }
+    },
+    "ja_reviewed": true
   },
   {
     "choices": [
