@@ -436,7 +436,10 @@ mod tests {
             );
             let result = game.answer_question_typed(form).expect("result");
             assert!(result.is_correct, "{form}: recorder must score correct");
-            assert_eq!(result.selected_answer_index, 0, "{form}: picks correct choice");
+            assert_eq!(
+                result.selected_answer_index, 0,
+                "{form}: picks correct choice"
+            );
         }
     }
 
