@@ -19,6 +19,7 @@ Categories detected:
   A1  ASCII / English-letter variant  (c++20, base64url, o(1), jinsei game)
   S1  全角 space inside typing
   S2  ・ retained as raw rather than `/`
+  P1  `/` used as a bare separator (more `/` than the label's ・ + literal `/`)
 
 Output: scripts/lint_report.json with per-violation entries.
 """
@@ -96,6 +97,16 @@ def categorise(ja: str, typing: str) -> list[str]:
     # S2 — raw ・ / fullwidth punct inside typing.
     if FORBIDDEN_RE.search(typing):
         cats.append("S2")
+    # P1 — a `/` in the typing not justified by the label. The matcher
+    # (src/io/normalize.rs::canonical_romaji) keeps `/` and matches it
+    # positionally: `/` is the keystroke for ・, and a literal `/` in the
+    # label types itself. A `/` used as a bare word separator (e.g.
+    # `tokugawa/iemochi` for 徳川家茂, which has no ・) is unreachable — the
+    # player typing the natural reading never presses `/`, so the answer
+    # can never be completed. Allow at most as many `/` as the label has
+    # ・ plus literal `/`.
+    if typing.count("/") > ja.count("・") + ja.count("/"):
+        cats.append("P1")
     return cats
 
 

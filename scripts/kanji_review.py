@@ -32,6 +32,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 QUESTIONS_PATH = ROOT / "data" / "questions_ja.json"
+EN_PATH = ROOT / "data" / "questions_en.json"
 
 KANJI_RE = re.compile(r"[一-鿿㐀-䶿]")
 
@@ -171,15 +172,130 @@ def apply(verdicts_path: str) -> int:
     return 0
 
 
+def fix_spurious_slashes() -> int:
+    """Remove `/` used as a bare word separator (lint rule P1).
+
+    The matcher (src/io/normalize.rs::canonical_romaji) keeps `/` and matches
+    it positionally — it is the keystroke for ・. A `/` with no ・ (or literal
+    `/`) in the label is unreachable, so blind-typing the reading can never
+    complete the answer. We strip such `/`, re-doubling a preceding lone `n`
+    to `nn` when it now lands before a vowel / `n` / `y` (e.g.
+    `kan/no/butei` -> `kannnobutei`), which is exactly what canonical_romaji
+    would have done at the `/`. Legitimate `/` (HTTP/1.1, らんま1/2) is left
+    untouched because the label carries a matching ・ or literal `/`.
+    """
+    data = load()
+    fixed = 0
+    for q in data:
+        for c in q.get("choices", []):
+            ja = c.get("ja", "")
+            allowed = ja.count("・") + ja.count("/")
+            new_typings = []
+            for t in c.get("ja_typings") or []:
+                if t.count("/") > allowed:
+                    t2 = re.sub(r"n/([aiueoyn])", r"nn\1", t).replace("/", "")
+                    if t2 != t:
+                        fixed += 1
+                    new_typings.append(t2)
+                else:
+                    new_typings.append(t)
+            if new_typings != (c.get("ja_typings") or []):
+                c["ja_typings"] = new_typings
+    QUESTIONS_PATH.write_text(
+        json.dumps(data, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    print(f"spurious-slash typings fixed: {fixed}")
+    return 0
+
+
+def _choices_aligned(a: list[dict], b: list[dict]) -> bool:
+    """True if both files hold the same questions and choice labels in the
+    same order — the precondition for copying choice data positionally."""
+    if [q.get("id") for q in a] != [q.get("id") for q in b]:
+        return False
+    for qa, qb in zip(a, b):
+        ca, cb = qa.get("choices", []), qb.get("choices", [])
+        if [c.get("ja") for c in ca] != [c.get("ja") for c in cb]:
+            return False
+        if [c.get("en") for c in ca] != [c.get("en") for c in cb]:
+            return False
+    return True
+
+
+def sync_en() -> int:
+    """Copy the language-independent choice data (`ja_typings`) and
+    `ja_reviewed` from questions_ja.json into questions_en.json.
+
+    The two files hold the same questions and choices; only `question_text`
+    differs by language. The review pipeline (#134/#135) only edits the ja
+    file, so this propagates the result to the en file. Positional copy is
+    safe only when the choices align, which we assert first.
+    """
+    ja = load()
+    with EN_PATH.open(encoding="utf-8") as f:
+        en = json.load(f)
+    if not _choices_aligned(ja, en):
+        sys.stderr.write("ja/en questions or choice labels are not aligned; aborting\n")
+        return 1
+    changed = 0
+    for qa, qe in zip(ja, en):
+        if qe.get("ja_reviewed") != qa.get("ja_reviewed", False):
+            qe["ja_reviewed"] = qa.get("ja_reviewed", False)
+            changed += 1
+        for ca, ce in zip(qa["choices"], qe["choices"]):
+            if ce.get("ja_typings") != ca.get("ja_typings"):
+                ce["ja_typings"] = ca.get("ja_typings")
+                changed += 1
+    EN_PATH.write_text(
+        json.dumps(en, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+    )
+    print(f"en fields synced from ja: {changed}")
+    return 0
+
+
+def verify_sync() -> int:
+    """CI gate: the two files' choice data (`ja_typings`) and `ja_reviewed`
+    must be identical, so a review applied to one is never lost on the other.
+    """
+    with QUESTIONS_PATH.open(encoding="utf-8") as f:
+        ja = json.load(f)
+    with EN_PATH.open(encoding="utf-8") as f:
+        en = json.load(f)
+    if not _choices_aligned(ja, en):
+        print("ja/en questions or choice labels are NOT aligned")
+        return 1
+    problems = []
+    for qa, qe in zip(ja, en):
+        if qa.get("ja_reviewed", False) != qe.get("ja_reviewed", False):
+            problems.append(f"{qa['id']}: ja_reviewed differs")
+        for i, (ca, ce) in enumerate(zip(qa["choices"], qe["choices"])):
+            if ca.get("ja_typings") != ce.get("ja_typings"):
+                problems.append(f"{qa['id']}#{i}: ja_typings differs")
+    print(f"ja/en choice-data sync problems: {len(problems)}")
+    for p in problems[:20]:
+        print(f"  {p}")
+    return 0 if not problems else 1
+
+
 def main() -> int:
+    if len(sys.argv) >= 2 and sys.argv[1] == "sync-en":
+        return sync_en()
+    if len(sys.argv) >= 2 and sys.argv[1] == "verify-sync":
+        return verify_sync()
     if len(sys.argv) >= 3 and sys.argv[1] == "extract":
         return extract(sys.argv[2])
     if len(sys.argv) >= 3 and sys.argv[1] == "apply":
         return apply(sys.argv[2])
+    if len(sys.argv) >= 2 and sys.argv[1] == "fix-slashes":
+        return fix_spurious_slashes()
     sys.stderr.write(
         "usage:\n"
         "  kanji_review.py extract <genre|qid-prefix|all>   > manifest.json\n"
         "  kanji_review.py apply <verdicts.json>\n"
+        "  kanji_review.py fix-slashes\n"
+        "  kanji_review.py sync-en       # copy ja_typings + ja_reviewed ja -> en\n"
+        "  kanji_review.py verify-sync   # CI gate: ja/en choice data identical\n"
     )
     return 2
 

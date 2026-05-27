@@ -21045,7 +21045,7 @@
         "ja": "オスマン帝国",
         "en": "Ottoman Empire",
         "ja_typings": [
-          "osumantekoku"
+          "osumanteikoku"
         ]
       },
       {
@@ -50931,7 +50931,7 @@
         "en": "Doubly linked list + hash map",
         "ja": "双方向連結リスト + ハッシュマップ",
         "ja_typings": [
-          "souhoukourenketsurisuto/+/hasshumappu"
+          "souhoukourenketsurisuto+hasshumappu"
         ]
       },
       {
@@ -84563,28 +84563,28 @@
         "en": "Henry IV",
         "ja": "アンリ4世",
         "ja_typings": [
-          "anri/4/sei"
+          "anri4sei"
         ]
       },
       {
         "en": "Louis XIII",
         "ja": "ルイ13世",
         "ja_typings": [
-          "rui/13/sei"
+          "rui13sei"
         ]
       },
       {
         "en": "Henry III",
         "ja": "アンリ3世",
         "ja_typings": [
-          "anri/3/sei"
+          "anri3sei"
         ]
       },
       {
         "en": "Charles IX",
         "ja": "シャルル9世",
         "ja_typings": [
-          "sharuru/9/sei"
+          "sharuru9sei"
         ]
       }
     ],
@@ -84727,28 +84727,28 @@
         "en": "Crimean War",
         "ja": "クリミア戦争",
         "ja_typings": [
-          "kurimia/sensou"
+          "kurimiasensou"
         ]
       },
       {
         "en": "Russo-Turkish War",
         "ja": "露土戦争",
         "ja_typings": [
-          "roto/sensou"
+          "rotosensou"
         ]
       },
       {
         "en": "Franco-Prussian War",
         "ja": "普仏戦争",
         "ja_typings": [
-          "fufutsu/sensou"
+          "fufutsusensou"
         ]
       },
       {
         "en": "Austro-Prussian War",
         "ja": "普墺戦争",
         "ja_typings": [
-          "fuou/sensou"
+          "fuousensou"
         ]
       }
     ],
@@ -84816,14 +84816,14 @@
         "en": "Storming of the Bastille",
         "ja": "バスティーユ襲撃",
         "ja_typings": [
-          "basuthi-yu/shuugeki"
+          "basuthi-yushuugeki"
         ]
       },
       {
         "en": "Night of August 4",
         "ja": "8月4日の夜",
         "ja_typings": [
-          "8gatsu/4nichi/no/yoru"
+          "8gatsu4nichinoyoru"
         ]
       },
       {
@@ -84850,28 +84850,28 @@
         "en": "Battle of Valmy",
         "ja": "ヴァルミーの戦い",
         "ja_typings": [
-          "varumi-/no/tatakai"
+          "varumi-notatakai"
         ]
       },
       {
         "en": "Battle of Jemappes",
         "ja": "ジェマップの戦い",
         "ja_typings": [
-          "jemappu/no/tatakai"
+          "jemappunotatakai"
         ]
       },
       {
         "en": "Battle of Fleurus",
         "ja": "フルーリュスの戦い",
         "ja_typings": [
-          "furu-ryusu/no/tatakai"
+          "furu-ryusunotatakai"
         ]
       },
       {
         "en": "Battle of Marengo",
         "ja": "マレンゴの戦い",
         "ja_typings": [
-          "marengo/no/tatakai"
+          "marengonotatakai"
         ]
       }
     ],
@@ -85096,14 +85096,14 @@
         "en": "Charles X",
         "ja": "シャルル10世",
         "ja_typings": [
-          "sharuru/10/sei"
+          "sharuru10sei"
         ]
       },
       {
         "en": "Louis XVIII",
         "ja": "ルイ18世",
         "ja_typings": [
-          "rui/18/sei"
+          "rui18sei"
         ]
       },
       {
@@ -85117,7 +85117,7 @@
         "en": "Napoleon III",
         "ja": "ナポレオン3世",
         "ja_typings": [
-          "naporeon/3/sei"
+          "naporeon3sei"
         ]
       }
     ],
@@ -85178,28 +85178,28 @@
         "en": "Battle of Leipzig",
         "ja": "ライプツィヒの戦い",
         "ja_typings": [
-          "raiputsihi/no/tatakai"
+          "raiputsihinotatakai"
         ]
       },
       {
         "en": "Battle of Waterloo",
         "ja": "ワーテルローの戦い",
         "ja_typings": [
-          "wa-teruro-/no/tatakai"
+          "wa-teruro-notatakai"
         ]
       },
       {
         "en": "Battle of Borodino",
         "ja": "ボロジノの戦い",
         "ja_typings": [
-          "borojino/no/tatakai"
+          "borojinonotatakai"
         ]
       },
       {
         "en": "Battle of Austerlitz",
         "ja": "アウステルリッツの戦い",
         "ja_typings": [
-          "ausuterurittsu/no/tatakai"
+          "ausuterurittsunotatakai"
         ]
       }
     ],
@@ -85629,28 +85629,28 @@
         "en": "Balkan War",
         "ja": "バルカン戦争",
         "ja_typings": [
-          "barukan/sensou"
+          "barukansensou"
         ]
       },
       {
         "en": "Crimean War",
         "ja": "クリミア戦争",
         "ja_typings": [
-          "kurimia/sensou"
+          "kurimiasensou"
         ]
       },
       {
         "en": "Russo-Turkish War",
         "ja": "露土戦争",
         "ja_typings": [
-          "roto/sensou"
+          "rotosensou"
         ]
       },
       {
         "en": "Greco-Turkish War",
         "ja": "希土戦争",
         "ja_typings": [
-          "kido/sensou"
+          "kidosensou"
         ]
       }
     ],
@@ -85800,21 +85800,21 @@
         "en": "Edward VII",
         "ja": "エドワード7世",
         "ja_typings": [
-          "edowa-do/7/sei"
+          "edowa-do7sei"
         ]
       },
       {
         "en": "George V",
         "ja": "ジョージ5世",
         "ja_typings": [
-          "jo-ji/5/sei"
+          "jo-ji5sei"
         ]
       },
       {
         "en": "William IV",
         "ja": "ウィリアム4世",
         "ja_typings": [
-          "wiriamu/4/sei"
+          "wiriamu4sei"
         ]
       }
     ],
@@ -85916,28 +85916,28 @@
         "en": "Vietnam War",
         "ja": "ベトナム戦争",
         "ja_typings": [
-          "betonamu/sensou"
+          "betonamusensou"
         ]
       },
       {
         "en": "Korean War",
         "ja": "朝鮮戦争",
         "ja_typings": [
-          "chousen/sensou"
+          "chousensensou"
         ]
       },
       {
         "en": "Gulf War",
         "ja": "湾岸戦争",
         "ja_typings": [
-          "wangan/sensou"
+          "wangansensou"
         ]
       },
       {
         "en": "Cambodian Civil War",
         "ja": "カンボジア内戦",
         "ja_typings": [
-          "kanbojia/naisen"
+          "kanbojianaisen"
         ]
       }
     ],
@@ -85957,28 +85957,28 @@
         "en": "Holy Roman Empire",
         "ja": "神聖ローマ帝国",
         "ja_typings": [
-          "shinsei/ro-ma/teikoku"
+          "shinseiro-mateikoku"
         ]
       },
       {
         "en": "Byzantine Empire",
         "ja": "ビザンツ帝国",
         "ja_typings": [
-          "bizantsu/teikoku"
+          "bizantsuteikoku"
         ]
       },
       {
         "en": "Carolingian Empire",
         "ja": "カロリング帝国",
         "ja_typings": [
-          "karoringu/teikoku"
+          "karoringuteikoku"
         ]
       },
       {
         "en": "Frankish Kingdom",
         "ja": "フランク王国",
         "ja_typings": [
-          "furanku/oukoku"
+          "furankuoukoku"
         ]
       }
     ],
@@ -85998,28 +85998,28 @@
         "en": "Abu Simbel Temple",
         "ja": "アブ・シンベル神殿",
         "ja_typings": [
-          "abu/shinberu/shinden"
+          "abushinberushinden"
         ]
       },
       {
         "en": "Luxor Temple",
         "ja": "ルクソール神殿",
         "ja_typings": [
-          "rukuso-ru/shinden"
+          "rukuso-rushinden"
         ]
       },
       {
         "en": "Karnak Temple",
         "ja": "カルナック神殿",
         "ja_typings": [
-          "karunakku/shinden"
+          "karunakkushinden"
         ]
       },
       {
         "en": "Temple of Hatshepsut",
         "ja": "ハトシェプスト葬祭殿",
         "ja_typings": [
-          "hatoshepusuto/sousaiden"
+          "hatoshepusutosousaiden"
         ]
       }
     ],
@@ -86039,28 +86039,28 @@
         "en": "Luxor Temple",
         "ja": "ルクソール神殿",
         "ja_typings": [
-          "rukuso-ru/shinden"
+          "rukuso-rushinden"
         ]
       },
       {
         "en": "Karnak Temple",
         "ja": "カルナック神殿",
         "ja_typings": [
-          "karunakku/shinden"
+          "karunakkushinden"
         ]
       },
       {
         "en": "Abu Simbel Temple",
         "ja": "アブ・シンベル神殿",
         "ja_typings": [
-          "abu/shinberu/shinden"
+          "abushinberushinden"
         ]
       },
       {
         "en": "Edfu Temple",
         "ja": "エドフ神殿",
         "ja_typings": [
-          "edofu/shinden"
+          "edofushinden"
         ]
       }
     ],
@@ -86080,28 +86080,28 @@
         "en": "Karnak Temple",
         "ja": "カルナック神殿",
         "ja_typings": [
-          "karunakku/shinden"
+          "karunakkushinden"
         ]
       },
       {
         "en": "Luxor Temple",
         "ja": "ルクソール神殿",
         "ja_typings": [
-          "rukuso-ru/shinden"
+          "rukuso-rushinden"
         ]
       },
       {
         "en": "Abu Simbel Temple",
         "ja": "アブ・シンベル神殿",
         "ja_typings": [
-          "abu/shinberu/shinden"
+          "abushinberushinden"
         ]
       },
       {
         "en": "Philae Temple",
         "ja": "フィラエ神殿",
         "ja_typings": [
-          "firae/shinden"
+          "firaeshinden"
         ]
       }
     ],
@@ -86162,28 +86162,28 @@
         "en": "Tokugawa Iemochi",
         "ja": "徳川家茂",
         "ja_typings": [
-          "tokugawa/iemochi"
+          "tokugawaiemochi"
         ]
       },
       {
         "en": "Tokugawa Iesada",
         "ja": "徳川家定",
         "ja_typings": [
-          "tokugawa/iesada"
+          "tokugawaiesada"
         ]
       },
       {
         "en": "Tokugawa Nariaki",
         "ja": "徳川斉昭",
         "ja_typings": [
-          "tokugawa/nariaki"
+          "tokugawanariaki"
         ]
       },
       {
         "en": "Tokugawa Yoshinobu",
         "ja": "徳川慶喜",
         "ja_typings": [
-          "tokugawa/yoshinobu"
+          "tokugawayoshinobu"
         ]
       }
     ],
@@ -86203,28 +86203,28 @@
         "en": "Tokugawa Iesada",
         "ja": "徳川家定",
         "ja_typings": [
-          "tokugawa/iesada"
+          "tokugawaiesada"
         ]
       },
       {
         "en": "Tokugawa Iemochi",
         "ja": "徳川家茂",
         "ja_typings": [
-          "tokugawa/iemochi"
+          "tokugawaiemochi"
         ]
       },
       {
         "en": "Tokugawa Ieyoshi",
         "ja": "徳川家慶",
         "ja_typings": [
-          "tokugawa/ieyoshi"
+          "tokugawaieyoshi"
         ]
       },
       {
         "en": "Tokugawa Yoshinobu",
         "ja": "徳川慶喜",
         "ja_typings": [
-          "tokugawa/yoshinobu"
+          "tokugawayoshinobu"
         ]
       }
     ],
@@ -86244,28 +86244,28 @@
         "en": "Tokugawa Nariaki",
         "ja": "徳川斉昭",
         "ja_typings": [
-          "tokugawa/nariaki"
+          "tokugawanariaki"
         ]
       },
       {
         "en": "Tokugawa Iemochi",
         "ja": "徳川家茂",
         "ja_typings": [
-          "tokugawa/iemochi"
+          "tokugawaiemochi"
         ]
       },
       {
         "en": "Tokugawa Iesada",
         "ja": "徳川家定",
         "ja_typings": [
-          "tokugawa/iesada"
+          "tokugawaiesada"
         ]
       },
       {
         "en": "Ii Naosuke",
         "ja": "井伊直弼",
         "ja_typings": [
-          "ii/naosuke"
+          "iinaosuke"
         ]
       }
     ],
@@ -86285,28 +86285,28 @@
         "en": "Emperor Wu of Han",
         "ja": "漢の武帝",
         "ja_typings": [
-          "kan/no/butei"
+          "kannnobutei"
         ]
       },
       {
         "en": "Emperor Gaozu of Han",
         "ja": "漢の高祖",
         "ja_typings": [
-          "kan/no/kouso"
+          "kannnokouso"
         ]
       },
       {
         "en": "Emperor Wen of Han",
         "ja": "漢の文帝",
         "ja_typings": [
-          "kan/no/buntei"
+          "kannnobuntei"
         ]
       },
       {
         "en": "Emperor Jing of Han",
         "ja": "漢の景帝",
         "ja_typings": [
-          "kan/no/keitei"
+          "kannnokeitei"
         ]
       }
     ],
@@ -86326,28 +86326,28 @@
         "en": "Emperor Taizong of Tang",
         "ja": "唐の太宗",
         "ja_typings": [
-          "tou/no/taisou"
+          "tounotaisou"
         ]
       },
       {
         "en": "Emperor Gaozu of Tang",
         "ja": "唐の高祖",
         "ja_typings": [
-          "tou/no/kouso"
+          "tounokouso"
         ]
       },
       {
         "en": "Emperor Xuanzong of Tang",
         "ja": "唐の玄宗",
         "ja_typings": [
-          "tou/no/gensou"
+          "tounogensou"
         ]
       },
       {
         "en": "Emperor Gaozong of Tang",
         "ja": "唐の高宗",
         "ja_typings": [
-          "tou/no/kousou"
+          "tounokousou"
         ]
       }
     ],
@@ -86367,28 +86367,28 @@
         "en": "Emperor Yang of Sui",
         "ja": "隋の煬帝",
         "ja_typings": [
-          "zui/no/youdai"
+          "zuinoyoudai"
         ]
       },
       {
         "en": "Emperor Wen of Sui",
         "ja": "隋の文帝",
         "ja_typings": [
-          "zui/no/buntei"
+          "zuinobuntei"
         ]
       },
       {
         "en": "Emperor Gong of Sui",
         "ja": "隋の恭帝",
         "ja_typings": [
-          "zui/no/kyoutei"
+          "zuinokyoutei"
         ]
       },
       {
         "en": "Emperor Taizong of Tang",
         "ja": "唐の太宗",
         "ja_typings": [
-          "tou/no/taisou"
+          "tounotaisou"
         ]
       }
     ],
@@ -86408,14 +86408,14 @@
         "en": "Bill of Rights",
         "ja": "権利章典",
         "ja_typings": [
-          "kenri/shouten"
+          "kenrishouten"
         ]
       },
       {
         "en": "Petition of Right",
         "ja": "権利の請願",
         "ja_typings": [
-          "kenri/no/seigan"
+          "kenrinoseigan"
         ]
       },
       {
@@ -86429,7 +86429,7 @@
         "en": "Habeas Corpus Act",
         "ja": "人身保護法",
         "ja_typings": [
-          "jinshin/hogo/hou"
+          "jinshinhogohou"
         ]
       }
     ],
@@ -86449,14 +86449,14 @@
         "en": "Petition of Right",
         "ja": "権利の請願",
         "ja_typings": [
-          "kenri/no/seigan"
+          "kenrinoseigan"
         ]
       },
       {
         "en": "Bill of Rights",
         "ja": "権利章典",
         "ja_typings": [
-          "kenri/shouten"
+          "kenrishouten"
         ]
       },
       {
@@ -86470,7 +86470,7 @@
         "en": "Act of Settlement",
         "ja": "王位継承法",
         "ja_typings": [
-          "oui/keishou/hou"
+          "ouikeishouhou"
         ]
       }
     ],
@@ -86490,28 +86490,28 @@
         "en": "Edict of Nantes",
         "ja": "ナント勅令",
         "ja_typings": [
-          "nanto/chokurei"
+          "nantochokurei"
         ]
       },
       {
         "en": "Edict of Fontainebleau",
         "ja": "フォンテーヌブロー勅令",
         "ja_typings": [
-          "fonte-nuburo-/chokurei"
+          "fonte-nuburo-chokurei"
         ]
       },
       {
         "en": "Bill of Rights",
         "ja": "権利章典",
         "ja_typings": [
-          "kenri/shouten"
+          "kenrishouten"
         ]
       },
       {
         "en": "Concordat of Bologna",
         "ja": "ボローニャ政教条約",
         "ja_typings": [
-          "boro-nya/seikyou/jouyaku"
+          "boro-nyaseikyoujouyaku"
         ]
       }
     ],
@@ -86531,28 +86531,28 @@
         "en": "Elba",
         "ja": "エルバ島",
         "ja_typings": [
-          "eruba/tou"
+          "erubatou"
         ]
       },
       {
         "en": "Saint Helena",
         "ja": "セントヘレナ島",
         "ja_typings": [
-          "sentoherena/tou"
+          "sentoherenatou"
         ]
       },
       {
         "en": "Corsica",
         "ja": "コルシカ島",
         "ja_typings": [
-          "korushika/tou"
+          "korushikatou"
         ]
       },
       {
         "en": "Sardinia",
         "ja": "サルデーニャ島",
         "ja_typings": [
-          "sarude-nya/tou"
+          "sarude-nyatou"
         ]
       }
     ],
